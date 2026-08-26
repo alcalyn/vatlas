@@ -1,0 +1,100 @@
+<!-- @meta
+{
+  "title": "Israeli company number: format, check digit and lookup",
+  "description": "IL plus nine digits. How the Israeli company number is built, what an Osek Murshe number is, and how to find the company behind one for free.",
+  "h1": "The Israeli company number",
+  "term": "Israeli company number",
+  "updated": "2026-09-13"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Israel · IL</p>
+        <h1>The Israeli company number</h1>
+        <p class="section__lead">Israel has VAT, and a company charges it under the same nine digits it was incorporated with: the מספר חברה, published in full by the Registrar of Companies.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>IL</code> + 9 digits</p>
+        <p><strong>Example:</strong> <code>IL520000472</code></p>
+        <p><strong>Issued by:</strong> the Registrar of Companies (רשם החברות), at the Ministry of Justice.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>An Israeli company number, מספר חברה, written ח.פ. on an invoice, is <strong>nine digits</strong>, allocated on incorporation and never reissued. Company numbers begin with <strong>5</strong>; the same nine-digit space holds other kinds of body under other leading digits, and a natural person's identity number (תעודת זהות) is nine digits too.</p>
+      <p>The last digit is a check on the other eight, by exactly the rule used for identity numbers:</p>
+      <ul class="breakdown">
+        <li><b>×</b><span>Multiply the digits alternately by 1 and 2, from the left.</span></li>
+        <li><b>Σ</b><span>Add the digits of each product, so <code>2 × 7 = 14</code> contributes 5.</span></li>
+        <li><b>mod 10</b><span>The total is a multiple of 10.</span></li>
+      </ul>
+      <p>So a mistyped Israeli number can be caught before any network call, like a French key or a Polish NIP.</p>
+
+      <h2 id="osek">Company number, Osek Murshe, Osek Patur</h2>
+      <p>This is the distinction to get right. For a <strong>company</strong>, the VAT registration and the company number are the same nine digits: there is no second number to ask for, and an invoice showing ח.פ. is showing you what you need.</p>
+      <p>For an <strong>unincorporated business</strong> it is not. A sole trader registers as an <strong>עוסק מורשה</strong> (Osek Murshe, VAT-charging) or an <strong>עוסק פטור</strong> (Osek Patur, below the threshold and charging none), and the number is their personal identity number. Those are not in the Registrar's file, because the Registrar registers companies.</p>
+      <p>{{siteName}} therefore answers for Israeli <strong>companies</strong>. A number the register does not hold comes back as not found rather than as an error.</p>
+
+      <h2 id="find">Finding the company behind the number</h2>
+      <h3>The open data portal</h3>
+      <p>The Registrar publishes the whole register on <code>data.gov.il</code>, some <strong>730,000 companies</strong>, free and with no account or key, and the portal answers a single company number directly, so there is nothing to download to resolve one. It returns the registered name, the company type, the status and the full street address.</p>
+      <h3>What the answer contains</h3>
+      <p>More than most registers on this site: street, house number, city, postal code and a country field, plus the company type as a phrase rather than a code: <span lang="he" dir="rtl">ישראלית חברה פרטית</span> for a private company, <span lang="he" dir="rtl">ישראלית חברה ציבורית</span> for a public one.</p>
+      <p>Everything is in <strong>Hebrew</strong>. There is an English name column, but it is filled in on a minority of rows, so the Hebrew name is what {{siteName}} returns when it is the only one there.</p>
+
+      <h2 id="pitfalls">Israel-specific pitfalls</h2>
+      <ul>
+        <li><strong>A sole trader is not in this register.</strong> An Osek Murshe number is a personal identity number and the Registrar does not publish it.</li>
+        <li><strong>Status is not a yes or a no.</strong> A company in voluntary liquidation still legally exists and can still be invoiced; a struck-off one cannot. {{siteName}} reads the register's own status code rather than the wording.</li>
+        <li><strong>The portal writes a double quote as a tilde.</strong> <span lang="he" dir="rtl">בע"מ</span>, the Hebrew for Ltd, arrives as <code>בע~מ</code> on some rows and with the quote simply dropped on others. It is an artefact of the publication, and {{siteName}} puts it back.</li>
+        <li><strong>Nine digits is not enough to know what you are holding.</strong> Identity numbers share the length and the check digit; the leading digit is what tells them apart.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Israeli company number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does an Israeli company number have?</summary>
+          <p>Nine, the last of which is a check digit. Company numbers begin with 5.</p>
+        </details>
+        <details>
+          <summary>Is the company number the same as the VAT number?</summary>
+          <p>For a company, yes: the nine digits it was incorporated with are the number it charges VAT under. For a sole trader it is their personal identity number instead.</p>
+        </details>
+        <details>
+          <summary>What is an Osek Murshe?</summary>
+          <p>An unincorporated business registered to charge VAT. An Osek Patur is below the threshold and charges none. Neither is in the Registrar of Companies.</p>
+        </details>
+        <details>
+          <summary>Is the Israeli register free to query?</summary>
+          <p>Yes. The whole Registrar of Companies file is on the national open data portal, with no account and no key.</p>
+        </details>
+        <details>
+          <summary>Why is the company name in Hebrew?</summary>
+          <p>Because that is what the register holds. The English name column exists but is filled in on a minority of rows.</p>
+        </details>
+      </div>
+
+      <h2>Business numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/taiwan/">Taiwan</a></li>
+        <li><a href="/en/vat-number/singapore/">Singapore</a></li>
+        <li><a href="/en/vat-number/australia/">Australia</a></li>
+        <li><a href="/en/vat-number/costa-rica/">Costa Rica</a></li>
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 13 September 2026.</p>
+    </div>
+  </section>
+</main>

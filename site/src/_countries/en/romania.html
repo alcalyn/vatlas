@@ -1,0 +1,103 @@
+<!-- @meta
+{
+  "title": "Romanian VAT number: CUI, format and the ANAF lookup",
+  "description": "RO plus the company’s CUI. Why the number has a variable length, what cash-accounting VAT means, and how the free ANAF API resolves it.",
+  "h1": "The Romanian VAT number",
+  "term": "Romanian VAT registration code",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Romania · RO</p>
+        <h1>The Romanian VAT number</h1>
+        <p class="section__lead">The VAT number is the CUI with RO in front, and ANAF resolves it for free and without an account: a hundred codes per request, and several things VIES does not carry.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>RO</code> + 2 to 10 digits (the CUI)</p>
+        <p><strong>Example:</strong> <code>RO14905506</code>, CUI <code>14905506</code></p>
+        <p><strong>Issued by:</strong> ANAF, on VAT registration.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Romanian VAT number carries <strong>between 2 and 10 digits</strong> after the prefix. The variable length surprises people, but it is correct: companies registered early have very short CUIs, and those remain valid.</p>
+      <ul class="breakdown">
+        <li><b>RO</b><span>The country code.</span></li>
+        <li><b>1490550</b><span>The identifying part, of variable length.</span></li>
+        <li><b>6</b><span>The check digit.</span></li>
+      </ul>
+      <p>The check digit uses the weights 7, 5, 3, 2, 1, 7, 5, 3, 2, right-aligned. A code such as <code>RO1154</code> is perfectly valid: a validator that insists on a minimum of eight digits rejects real companies.</p>
+
+      <h2 id="cui">CUI, CIF and the trade register number</h2>
+      <p>The <strong>CUI</strong> (unique registration code) is assigned by ANAF to every company at incorporation. <strong>CIF</strong> is the same thing under an older name that is still widely used.</p>
+      <p>The <strong>VAT number</strong> is the CUI with <code>RO</code> in front, but the prefix only appears if the company is actually VAT registered. That is the essential distinction: <strong>a non-VAT-registered company has a CUI and no prefix</strong>. Its documents show <code>14905506</code>, not <code>RO14905506</code>.</p>
+      <p>Separately there is the <strong>trade register number</strong>, in the form <code>J12/1234/2005</code>, county, sequence, year. Nothing computable links it to the CUI.</p>
+
+      <h2 id="find">Finding the company</h2>
+      <h3>The ANAF API</h3>
+      <p>ANAF runs a public service that is <strong>free and unauthenticated</strong>: give it a CUI and it returns the company name, the seat address in separate fields, the company status and the VAT registration periods. It accepts up to 100 codes in one request, rate-limited to one request per second.</p>
+      <p>What it returns goes well past validity: whether the company is fiscally inactive, whether it applies <strong>cash-accounting VAT</strong>, and the exact periods for which it was VAT registered.</p>
+      <h3>The trade register</h3>
+      <p>ONRC offers online search, but detailed information is supplied for a fee. It is searched by name or by CUI.</p>
+      <h3>VIES</h3>
+      <p>Romania <strong>discloses the name and the address</strong>. The address arrives on one line, starts with the locality type (<code>MUN.</code>, <code>ORȘ.</code>, <code>COM.</code>) and carries the postcode in the middle, between the locality and the street, an unusual ordering.</p>
+
+      <h2 id="pitfalls">Romania-specific pitfalls</h2>
+      <ul>
+        <li><strong>The length varies.</strong> <code>RO1154</code> is valid; a validator demanding eight digits rejects real companies.</li>
+        <li><strong>No <code>RO</code> prefix means not VAT registered.</strong> The CUI exists, but the company is not registered for VAT.</li>
+        <li><strong>Fiscally inactive companies</strong> are flagged as such by ANAF, and VIES says nothing about it.</li>
+        <li><strong>Cash-accounting VAT</strong> changes when the tax becomes chargeable for the counterparty, information only ANAF provides.</li>
+        <li><strong>The postcode sits in the middle of the address</strong>, between the locality and the street.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Romanian VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Romanian VAT number have?</summary>
+          <p>Between 2 and 10 after the <code>RO</code> prefix. Companies registered early have very short codes, and they remain valid.</p>
+        </details>
+        <details>
+          <summary>What is the difference between the CUI and the VAT number?</summary>
+          <p>The CUI is assigned to every company at incorporation. The VAT number is that same CUI with <code>RO</code> in front, and it exists only if the company is VAT registered.</p>
+        </details>
+        <details>
+          <summary>What does it mean when a company has no RO prefix?</summary>
+          <p>That it is not VAT registered. It has a CUI and trades lawfully, but cannot charge VAT and does not appear in VIES.</p>
+        </details>
+        <details>
+          <summary>What is cash-accounting VAT?</summary>
+          <p>A regime in which VAT becomes chargeable when the invoice is paid rather than when it is issued. ANAF publishes this; VIES does not.</p>
+        </details>
+        <details>
+          <summary>How do I check a Romanian company for free?</summary>
+          <p>Through the public ANAF service, which takes a CUI and returns the name, seat, status and VAT registration periods, with no account and no cost.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/germany/">Germany</a></li>
+        <li><a href="/en/vat-number/italy/">Italy</a></li>
+        <li><a href="/en/vat-number/spain/">Spain</a></li>
+        <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+        <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

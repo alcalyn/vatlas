@@ -1,0 +1,96 @@
+<!-- @meta
+{
+  "title": "Schweizer UID und MWST-Nummer: Aufbau, Prüfziffer und Abfrage",
+  "description": "CHE plus neun Ziffern plus MWST. Wie die UID aufgebaut ist, warum das Kürzel am Ende eine eigene Aussage trifft, und was das UID-Register kostenlos beantwortet.",
+  "h1": "Die Schweizer UID",
+  "term": "UID",
+  "updated": "2026-09-15"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Schweiz · CHE</p>
+        <h1>Die Schweizer UID</h1>
+        <p class="section__lead">Die Schweiz gehört nicht zur Union: Eine Schweizer Nummer ist keine innergemeinschaftliche USt-IdNr., und VIES kennt sie nicht. Sie ist die UID, eine Nummer für jedes Schweizer Unternehmen, über einen öffentlichen Dienst des Bundesamts für Statistik abfragbar.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>CHE</code> + 9 Ziffern + <code>MWST</code>, <code>TVA</code> oder <code>IVA</code></p>
+        <p><strong>Beispiel:</strong> <code>CHE-105.805.313 MWST</code></p>
+        <p><strong>Vergeben von:</strong> dem Bundesamt für Statistik, das das UID-Register führt.</p>
+      </div>
+
+      <h2 id="format">Der Aufbau</h2>
+      <p>Eine UID besteht aus <code>CHE</code> und <strong>neun Ziffern</strong>, in Dreiergruppen mit Punkten geschrieben: <code>CHE-105.805.313</code>. Seit 2011 ersetzt sie sämtliche Vorgänger (die alte sechsstellige MWST-Nummer, die Handelsregisternummer, die AHV-Abrechnungsnummer) durch eine einzige Kennung für die ganze Verwaltung.</p>
+      <p>Die neunte Ziffer ist eine <strong>Prüfziffer</strong>: Modulo 11 über die ersten acht, mit den Gewichten 5, 4, 3, 2, 7, 6, 5, 4. Bei einem von elf Resten bleibt keine schreibbare Ziffer übrig; solche Nummern werden schlicht nicht vergeben.</p>
+      <p>Das <code>E</code> gehört zum Präfix, nicht zur Nummer. Entfernt man die Satzzeichen aus <code>CHE-105.805.313 MWST</code>, bleibt <code>CHE105805313MWST</code>, und nur die neun Ziffern in der Mitte sind die Kennung. Wer das übersieht, führt dieselbe Firma unter zwei Schreibweisen.</p>
+
+      <h2 id="status">Was das Kürzel am Ende bedeutet</h2>
+      <p>Eine UID allein sagt, dass das Unternehmen existiert. Das Kürzel sagt, dass es im MWST-Register eingetragen ist, in der jeweiligen Amtssprache: <strong>MWST</strong>, <strong>TVA</strong>, <strong>IVA</strong>. Alle drei meinen dasselbe und ändern die Nummer nicht.</p>
+      <p>Das Register hält beides auseinander und veröffentlicht beides. Die Schweiz gehört damit zu den wenigen Ländern ausserhalb der Union, bei denen eine Abfrage mit Datum sagen kann, dass eine Nummer existiert und <strong>nicht</strong> mehrwertsteuerpflichtig ist, oder dass der Eintrag inzwischen gelöscht wurde. {{siteName}} liest beide Codes, denn jeder von ihnen kann eine Registrierung beenden.</p>
+      <p>Die Pflicht beginnt bei CHF 100'000 weltweitem Umsatz. Darunter ist die Eintragung freiwillig, und viele aktive Schweizer Firmen haben eine UID ohne MWST-Eintrag.</p>
+
+      <h2 id="find">Das Unternehmen hinter der Nummer finden</h2>
+      <h3>Der öffentliche UID-Webservice</h3>
+      <p>Das Bundesamt für Statistik stellt das Register über einen SOAP-Dienst bereit, dessen öffentlicher Teil (Abfrage nach UID, Suche, Prüfung einer MWST-Nummer) <strong>weder Konto noch Zertifikat</strong> verlangt. Er liefert Firmenname, Rechtsform, Sitz und MWST-Status in einem Zug. Die veröffentlichte Obergrenze liegt bei zwanzig Abfragen pro Minute.</p>
+      <h3>Eine Nummer, mitunter zwei Einträge</h3>
+      <p>Zu einer UID können mehrere Einträge gehören: Eine gemeinsam abrechnende Gruppe erscheint als <em>Mehrwertsteuergruppe</em> neben dem Unternehmen selbst. Der erste Eintrag ist die Einheit, der die Nummer gehört.</p>
+      <h3>Zefix und das Handelsregister</h3>
+      <p>Zefix, der Zentrale Firmenindex, führt den Handelsregistereintrag. Das ist ein anderes Register als das UID-Register, und seine Schnittstelle ist nicht in gleicher Weise offen.</p>
+
+      <h2 id="pitfalls">Typische Stolpersteine</h2>
+      <ul>
+        <li><strong>VIES antwortet nicht.</strong> Die Schweiz ist kein Mitgliedstaat; es gibt keine innergemeinschaftliche Nummer zu prüfen.</li>
+        <li><strong>Das <code>E</code> ist Präfix, das Kürzel ist Sprache.</strong> Neun Ziffern sind die ganze Nummer.</li>
+        <li><strong>Existieren heisst nicht steuerpflichtig sein.</strong> Die Schwelle liegt bei CHF 100'000.</li>
+        <li><strong>Ein gelöschter MWST-Eintrag lässt die UID bestehen.</strong> Nur die Registrierung endet.</li>
+        <li><strong>Zwanzig Abfragen pro Minute.</strong> Für Massenabfragen ist dieser Dienst nicht gebaut.</li>
+      </ul>
+
+      <!-- @include partials/country/de.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Häufige Fragen</p>
+        <h2>Die UID in Kürze</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Wie sieht eine Schweizer MWST-Nummer aus?</summary>
+          <p><code>CHE-123.456.789 MWST</code>: die Buchstaben CHE, neun Ziffern und ein Kürzel auf Deutsch, Französisch oder Italienisch.</p>
+        </details>
+        <details>
+          <summary>Ist MWST etwas anderes als TVA oder IVA?</summary>
+          <p>Nein. Dasselbe Kürzel in den drei Amtssprachen, dieselbe Registrierung.</p>
+        </details>
+        <details>
+          <summary>Kann VIES eine Schweizer Nummer prüfen?</summary>
+          <p>Nein. VIES beantwortet nur Nummern der Mitgliedstaaten.</p>
+        </details>
+        <details>
+          <summary>Warum gilt eine bestehende Firma als nicht registriert?</summary>
+          <p>Weil sie eine UID hat, aber keinen MWST-Eintrag, meist wegen der Umsatzschwelle.</p>
+        </details>
+        <details>
+          <summary>Kostet die Abfrage etwas?</summary>
+          <p>An der Quelle nichts. Der öffentliche Teil des UID-Webservice ist kostenlos und ohne Konto nutzbar.</p>
+        </details>
+      </div>
+
+      <h2>Steuernummern in anderen Ländern</h2>
+      <ul class="otherlinks">
+        <li><a href="/de/umsatzsteuer-identifikationsnummer/deutschland/">Deutschland</a></li>
+        <li><a href="/de/uid-nummer/oesterreich/">Österreich</a></li>
+        <li><a href="/en/vat-number/switzerland/">Switzerland (English)</a></li>
+        <li><a href="/fr/numero-tva-intracommunautaire/suisse/">Suisse (français)</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Zuletzt aktualisiert am 15. September 2026.</p>
+    </div>
+  </section>
+</main>

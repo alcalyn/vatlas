@@ -1,0 +1,112 @@
+<!-- @meta
+{
+  "title": "IČ DPH: formát slovenského čísla pre DPH, rozdiel oproti IČO a DIČ",
+  "description": "SK plus desať číslic. Prečo IČ DPH nemožno odvodiť z IČO, aký je rozdiel medzi tromi slovenskými číslami a ako nájsť firmu.",
+  "h1": "Slovenské IČ DPH",
+  "term": "IČ DPH",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Slovensko · SK</p>
+        <h1>Slovenské IČ DPH</h1>
+        <p class="section__lead">Tri čísla, ktoré sa neustále zamieňajú (IČO, DIČ a IČ DPH) a iba to posledné patrí na faktúru do iného členského štátu.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Formát:</strong> <code>SK</code> + 10 číslic</p>
+        <p><strong>Príklad:</strong> <code>SK2020677824</code></p>
+        <p><strong>Prideľuje:</strong> finančná správa pri registrácii pre DPH.</p>
+      </div>
+
+      <h2 id="format">Štruktúra</h2>
+      <p>Slovenské IČ DPH má po predpone vždy <strong>desať číslic</strong>. Prvé dve prezrádzajú, o aký subjekt ide.</p>
+      <ul class="breakdown">
+        <li><b>SK</b><span>Kód krajiny.</span></li>
+        <li><b>20</b><span>Právnická osoba. Fyzická osoba má 10, zahraničný subjekt 40.</span></li>
+        <li><b>20677824</b><span>Zvyšok, vrátane kontrolnej číslice.</span></li>
+      </ul>
+      <p>Desať číslic IČ DPH sa zhoduje s <strong>DIČ</strong>, daňovým identifikačným číslom. Celé číslo je deliteľné jedenástimi, čo umožňuje jednoduchú offline kontrolu preklepov.</p>
+
+      <h2 id="cisla">IČO, DIČ a IČ DPH</h2>
+      <p>Toto je jediná tabuľka, ktorú treba k Slovensku poznať.</p>
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Slovenské identifikačné čísla</caption>
+          <thead><tr><th scope="col">Číslo</th><th scope="col">Formát</th><th scope="col">Prideľuje</th><th scope="col">Kto ho má</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">IČO</th><td>8 číslic</td><td>Štatistický úrad SR</td><td>Každý podnikateľ</td></tr>
+            <tr><th scope="row">DIČ</th><td>10 číslic (10 / 20 / 40 na začiatku)</td><td>Finančná správa</td><td>Každý daňovník</td></tr>
+            <tr><th scope="row">IČ DPH</th><td><code>SK</code> + tých istých 10 číslic</td><td>Finančná správa</td><td>Iba platiteľ DPH</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Kľúčové je, že <strong>IČ DPH sa z IČO odvodiť nedá</strong>. Vzniká z DIČ, ktoré prideľuje daňový úrad nezávisle od registra. Práve to robí zo Slovenska ťažší prípad než z Česka, kde DIČ = <code>CZ</code> + IČO.</p>
+
+      <h2 id="vyhladanie">Ako nájsť firmu</h2>
+      <h3>Register právnických osôb a Obchodný register</h3>
+      <p><a href="https://rpo.statistics.sk/" rel="noopener">RPO</a> Štatistického úradu je bezplatný, má otvorené API a obsahuje názov, sídlo, právnu formu a stav. Rovnako <a href="https://www.orsr.sk/" rel="noopener">ORSR</a> pre obchodný register. Oba sa však vyhľadávajú <strong>podľa IČO alebo názvu, nie podľa IČ DPH</strong>, a keďže sa jedno z druhého neodvodí, z čísla pre DPH sa k záznamu nedostanete.</p>
+      <h3>Zoznamy finančnej správy</h3>
+      <p>Finančná správa zverejňuje zoznam platiteľov DPH a (čo je dôležitejšie) <strong>zoznam rizikových subjektov</strong>. Overiť, či číslo patrí platiteľovi, sa teda dá; získať k nemu adresu už nie.</p>
+      <h3>VIES</h3>
+      <p>Slovensko cez VIES <strong>zverejňuje názov aj adresu</strong>, a je tak jedinou bezplatnou cestou od IČ DPH k firme. Adresa prichádza na troch riadkoch a posledný z nich býva slovo <code>Slovensko</code>, ktoré netreba pokladať za mesto.</p>
+
+      <h2 id="uskalia">Slovenské zvláštnosti</h2>
+      <ul>
+        <li><strong>IČ DPH nie je IČO s predponou.</strong> To je najčastejší omyl; na Slovensku to neplatí, hoci v susednom Česku áno.</li>
+        <li><strong>IČ DPH nie je to isté ako DIČ.</strong> Číslice sú rovnaké, ale DIČ má každý daňovník a IČ DPH iba platiteľ DPH.</li>
+        <li><strong>Prvé dve číslice majú význam:</strong> 10 fyzická osoba, 20 právnická osoba, 40 zahraničný subjekt registrovaný v SR.</li>
+        <li><strong>Registre sa vyhľadávajú podľa IČO</strong>, takže z čísla pre DPH k nim priamy prístup nevedie.</li>
+        <li><strong>Posledný riadok adresy vo VIES býva „Slovensko“</strong>, je to krajina, nie obec.</li>
+      </ul>
+
+      <!-- @include partials/country/sk.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Časté otázky</p>
+        <h2>IČ DPH v skratke</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Koľko číslic má slovenské IČ DPH?</summary>
+          <p>Desať po predpone <code>SK</code>, teda dvanásť znakov celkovo.</p>
+        </details>
+        <details>
+          <summary>Aký je rozdiel medzi IČO, DIČ a IČ DPH?</summary>
+          <p>IČO prideľuje Štatistický úrad každému podnikateľovi. DIČ prideľuje finančná správa každému daňovníkovi. IČ DPH je to isté desaťmiestne číslo s predponou <code>SK</code> a má ho iba platiteľ DPH.</p>
+        </details>
+        <details>
+          <summary>Dá sa IČ DPH vypočítať z IČO?</summary>
+          <p>Nie. Vzniká z DIČ, ktoré prideľuje daňový úrad nezávisle od registra, a nijaký výpočet medzi nimi neexistuje.</p>
+        </details>
+        <details>
+          <summary>Čo znamenajú prvé dve číslice?</summary>
+          <p>Typ subjektu: 10 fyzická osoba, 20 právnická osoba, 40 zahraničný subjekt registrovaný na Slovensku.</p>
+        </details>
+        <details>
+          <summary>Prečo VIES odmieta existujúcu firmu?</summary>
+          <p>Pretože nie je platiteľom DPH. IČO aj DIČ má, ale IČ DPH jej pridelené nebolo.</p>
+        </details>
+      </div>
+
+      <h2>IČ DPH v ďalších krajinách</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+            <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/" hreflang="en" lang="en">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/" hreflang="en" lang="en">Belgium</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Aktualizované 28. augusta 2026.</p>
+    </div>
+  </section>
+</main>

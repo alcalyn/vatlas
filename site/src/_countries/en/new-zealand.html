@@ -1,0 +1,108 @@
+<!-- @meta
+{
+  "title": "New Zealand NZBN: format, GST and lookup",
+  "description": "NZ plus thirteen digits. How the NZBN works, why it is not the IRD number a GST invoice carries, and what the free NZBN register answers about the entity behind it.",
+  "h1": "The New Zealand Business Number",
+  "term": "New Zealand Business Number",
+  "updated": "2026-09-17"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">New Zealand · NZ</p>
+        <h1>The New Zealand Business Number</h1>
+        <p class="section__lead">One number that every agency and every invoice in the country quotes, and the whole register published behind it: names, legal forms, statuses and addresses. It is not the tax number, and that distinction is the thing to get right before you build on it.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>NZ</code> + 13 digits</p>
+        <p><strong>Example:</strong> <code>NZ9429040402543</code></p>
+        <p><strong>Issued by:</strong> the NZBN Registrar, at the Companies Office (MBIE).</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>An NZBN is <strong>thirteen digits</strong> and nothing else: no letters, no separators, no prefix on the number itself. It is a GS1 Global Location Number, which is what gives it its shape: the leading digits are a GS1 country prefix, and the thirteenth is the ordinary GTIN check digit, with weights 1 and 3 alternating from the left and the digit that rounds the total up to the next multiple of ten.</p>
+      <p>That check is real arithmetic and not a formality, so a mistyped NZBN is caught before anyone is asked: {{siteName}} rejects it offline rather than spending a call on it. The register does the same, and says so in plain words: <code>Checksum 4 is invalid for number 942904190421</code>.</p>
+
+      <h2 id="gst">The NZBN is not the GST number</h2>
+      <p>This is the one to be clear about. New Zealand's tax number is the <strong>IRD number</strong>, issued by Inland Revenue, and it is the number a GST-registered business puts on its invoices. It is <strong>not public and will not become so</strong>: there is no IRD equivalent of VIES, and no lookup anywhere returns it as a matter of course.</p>
+      <p>The NZBN is the other number, the identifier a New Zealand business is actually quoted by, across government and between businesses. It is the one that plays the part here, the same arrangement as Singapore's UEN or Australia's ABN.</p>
+      <p>So a lookup tells you <strong>who the entity is</strong>: legal name, entity type, whether it is live, and its current addresses. It does not tell you whether the entity charges GST. Registration is compulsory above <strong>NZD 60,000</strong> of turnover in a year and voluntary below it, and nothing on this site will pretend the NZBN proves it.</p>
+      <div class="callout">
+        <p><strong>One exception, and it is not a reliable one.</strong> A business may choose to publish its GST number on its own NZBN record, and some do; it comes back in the entity's <code>gstNumbers</code>. It is opt-in and sparse: of fifty-six entities sampled from the register, eight had published one. An absent GST number means nothing at all.</p>
+      </div>
+
+      <h2 id="who">Who has one</h2>
+      <p>Everything registered with the Companies Office has been allocated an NZBN automatically: registered companies, incorporated societies, charitable trust boards, building societies, credit unions, limited partnerships. Everyone else applies, and the register is the better for it: sole traders, partnerships, trusts and charities are all in there alongside the companies.</p>
+      <ul class="breakdown">
+        <li><b>NZ Limited Company</b><span>The bulk of the register, and the richest rows in it: registered office, address for service, directors, industry codes.</span></li>
+        <li><b>Sole Trader</b><span>Self-employed, registered on application. Often the thinnest row in the register; see the pitfalls below.</span></li>
+        <li><b>Charitable Trust / Incorporated Society</b><span>Both carry a registered address, filed by the register that holds them rather than by the Companies Office.</span></li>
+      </ul>
+
+      <h2 id="find">Finding the entity behind the number</h2>
+      <h3>The NZBN API</h3>
+      <p>The register answers one number at a time over a public API at <code>api.business.govt.nz</code>, <strong>free, but keyed</strong>: a subscription key granted on the spot when you register at the portal. One request resolves a number outright, because the endpoint is keyed by the NZBN itself.</p>
+      <h3>What comes back</h3>
+      <p>More than most registers publish: the legal name, the entity type and its description, the registration status, the registration date, every <em>current</em> address, and, where the entity has filled them in, trading names, industry classifications, a website, a phone number and an email.</p>
+      <h3>Several addresses, not one</h3>
+      <p>An entity holds its addresses side by side rather than in one field: registered office, address for service, postal, delivery, office. The historical ones stay in the list with an end date on them, which is exactly what makes the register worth reading, and what makes it easy to quote an address the entity left five years ago. {{siteName}} takes the registered office where there is one, and only ever among the addresses that have not ended.</p>
+
+      <h2 id="pitfalls">New Zealand-specific pitfalls</h2>
+      <ul>
+        <li><strong>The NZBN is not the IRD number.</strong> The tax number is not published, and nothing here returns it. An NZBN is not proof of GST registration.</li>
+        <li><strong>The register has no 404.</strong> A well-formed number that belongs to nobody comes back as a <code>400</code> saying <em>Could not find NZBN Number</em>. Read literally, every miss looks like an outage.</li>
+        <li><strong>Most of the thirteen-digit space is unissued.</strong> Which makes that miss the commonest answer there is, not an edge case.</li>
+        <li><strong>A sole trader may publish nothing.</strong> The number resolves, the entity is real, and the name is a private individual's, so it is often withheld, along with every address. Nine of ten sole traders sampled came back with no name at all.</li>
+        <li><strong>The town is not always in the same field.</strong> The companies register files it one line up from where the charities register does. A record read by fixed position loses the city on one of the two.</li>
+        <li><strong>Removed is not the only way to stop.</strong> The register states receivership, liquidation and statutory management separately; all of them are reported as inactive here.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The NZBN in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does an NZBN have?</summary>
+          <p>Thirteen, the last of which is a check digit computed the way a barcode's is.</p>
+        </details>
+        <details>
+          <summary>Is the NZBN the same as the GST number?</summary>
+          <p>No. The GST number is the IRD number, issued by Inland Revenue and not published. The NZBN identifies the entity, not its tax status.</p>
+        </details>
+        <details>
+          <summary>Does New Zealand have a VAT number?</summary>
+          <p>No. It has GST, and the number on a GST invoice is the supplier's IRD number.</p>
+        </details>
+        <details>
+          <summary>Can I look up a New Zealand company for free?</summary>
+          <p>Yes. The NZBN API is free; it asks you to register for a subscription key, which is granted immediately.</p>
+        </details>
+        <details>
+          <summary>Why does a sole trader come back with no name?</summary>
+          <p>Because the name would be a private individual's. The number and the entity type are published; the rest is the holder's to disclose.</p>
+        </details>
+      </div>
+
+      <h2>Business numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/australia/">Australia</a></li>
+        <li><a href="/en/vat-number/singapore/">Singapore</a></li>
+        <li><a href="/en/vat-number/japan/">Japan</a></li>
+        <li><a href="/en/vat-number/taiwan/">Taiwan</a></li>
+        <li><a href="/en/vat-number/norway/">Norway</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 17 September 2026.</p>
+    </div>
+  </section>
+</main>

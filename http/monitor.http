@@ -1,0 +1,132 @@
+# /v1/monitor - the companies this account follows.
+#
+# A cron checks every followed company once a night and sends a signed `company.changed`
+# callback when a register's answer changed.
+#
+# Not metered. Each plan has a limit, returned as `meta.limit`.
+#
+# Run with: VATLAS_KEY=vtl_live_... npx httpyac send http/monitor.http --all
+#
+# The file creates a monitor and deletes it at the end.
+
+@host = http://localhost:3000
+@secretKey = {{$processEnv VATLAS_KEY}}
+@vat = FR68005420120
+
+###
+
+# @name follow
+# Follow a company. `url` is optional and defaults to the account's monitor URL (set on the
+# console's /monitor page). Without either, the request is refused.
+POST {{host}}/v1/monitor/{{vat}}
+Authorization: Bearer {{secretKey}}
+
+?? status == 201
+?? body data.vatNumber == FR68005420120
+
+# Example response - 201 Created
+#
+# {
+#   "data": {
+#     "publicId": "01a08018-e2b8-770c-a9e6-89c82d01bf53",
+#     "vatNumber": "FR68005420120",
+#     "url": null,
+#     "createdAt": "2026-09-08T08:18:30.000Z",
+#     "lastCheckedAt": null,
+#     "lastChangedAt": null,
+#     "lastSource": null,
+#     "last": null
+#   }
+# }
+#
+# `last` is the last state sent to the account, in the lookup envelope. It stays null until the
+# first nightly check, which records the state and sends nothing.
+
+###
+
+# @name The followed companies
+# `meta.limit` is the plan's limit.
+GET {{host}}/v1/monitor
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? js response.parsedBody.meta.limit >= 1
+
+###
+
+# @name One monitor, with its deliveries
+# One row per delivery attempt, failures included.
+GET {{host}}/v1/monitor/{{follow.data.vatNumber}}
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? js Array.isArray(response.parsedBody.data.deliveries)
+
+###
+
+# @name Following the same number twice
+# Enforced by a unique index.
+POST {{host}}/v1/monitor/{{vat}}
+Authorization: Bearer {{secretKey}}
+
+?? status == 409
+?? body error.code == MONITOR_EXISTS
+
+###
+
+# @name A number that is not a number
+# Normalized and validated like a lookup.
+POST {{host}}/v1/monitor/NOTAVAT
+Authorization: Bearer {{secretKey}}
+
+?? status == 400
+?? body error.code == INVALID_VAT_FORMAT
+
+###
+
+# @name A URL we will not call
+# The URL must be absolute http(s), without credentials, and not a private host in production.
+POST {{host}}/v1/monitor/IT00743110157
+Authorization: Bearer {{secretKey}}
+Content-Type: application/json
+
+{ "url": "ftp://example.com/hook" }
+
+?? status == 400
+?? body error.code == INVALID_CALLBACK_URL
+
+###
+
+# @name Monitors need a key
+GET {{host}}/v1/monitor
+
+?? status == 401
+?? body error.code == MISSING_SECRET_KEY
+?? header WWW-Authenticate == Bearer
+
+###
+
+# @name A number you do not follow
+# Same 404 as a number nobody follows, so other accounts' monitors cannot be probed.
+GET {{host}}/v1/monitor/LU10137807
+Authorization: Bearer {{secretKey}}
+
+?? status == 404
+?? body error.code == NOT_FOUND
+
+###
+
+# @name Stop following
+# Deletes the delivery history too.
+DELETE {{host}}/v1/monitor/{{follow.data.vatNumber}}
+Authorization: Bearer {{secretKey}}
+
+?? status == 204
+
+###
+
+# @name Stopping twice
+DELETE {{host}}/v1/monitor/{{follow.data.vatNumber}}
+Authorization: Bearer {{secretKey}}
+
+?? status == 404

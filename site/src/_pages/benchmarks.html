@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="{{lang}}">
+  <head>
+    <!-- @include partials/head.html -->
+  </head>
+  <body>
+    <!-- @include partials/header.html -->
+
+    <main id="main">
+      <!-- Every figure is read at runtime from /data/benchmark.json, written by `npm run benchmark`.
+           See src/js/benchmarks.js. -->
+      <section
+        class="section"
+        data-bench
+        data-t-loading="{{t.benchmarks.loading}}"
+        data-t-error="{{t.benchmarks.error}}"
+        data-t-run="{{t.benchmarks.run}}"
+        data-t-nodata="{{t.benchmarks.noData}}"
+      >
+        <div class="container">
+          <div class="section__head">
+            <h1>{{t.benchmarks.h1}}</h1>
+            <p class="section__lead">{{t.benchmarks.lead}}</p>
+            <p class="bench-run" data-bench-run>{{t.benchmarks.loading}}</p>
+          </div>
+
+          <noscript>
+            <p class="bench-run">{{t.benchmarks.noscript}}</p>
+          </noscript>
+
+          <div class="stats stats--bench">
+            <div class="stat">
+              <p class="stat__value" data-bench-stat="p50">-</p>
+              <p class="stat__label">{{t.benchmarksStats.p50}}</p>
+            </div>
+            <div class="stat">
+              <p class="stat__value" data-bench-stat="p95">-</p>
+              <p class="stat__label">{{t.benchmarksStats.p95}}</p>
+            </div>
+            <div class="stat">
+              <p class="stat__value" data-bench-stat="answered">-</p>
+              <p class="stat__label">{{t.benchmarksStats.answered}}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Completeness, all countries together -->
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2>{{t.benchmarksCompleteness.title}}</h2>
+            <p class="section__lead">{{t.benchmarksCompleteness.lead}}</p>
+          </div>
+
+          <!-- One tile per field. -->
+          <div class="stats stats--bench section--stack" data-bench-fields>
+            <p class="bench-empty">{{t.benchmarks.loading}}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Per country -->
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2>{{t.benchmarksPerCountry.title}}</h2>
+            <p class="section__lead">{{t.benchmarksPerCountry.lead}}</p>
+          </div>
+
+          <div class="table-wrap section--stack">
+            <table class="table table--bench">
+              <caption class="sr-only">{{t.benchmarksPerCountry.caption}}</caption>
+              <thead>
+                <tr>
+                  <th scope="col" rowspan="2">{{t.benchmarksPerCountry.thCountry}}</th>
+                  <th scope="col" rowspan="2">{{t.benchmarksPerCountry.thAnswered}}</th>
+                  <th scope="colgroup" colspan="2" class="table__group">{{t.benchmarksPerCountry.thLatency}}</th>
+                  <th scope="colgroup" colspan="4" class="table__group">{{t.benchmarksPerCountry.thCompleteness}}</th>
+                  <th scope="col" rowspan="2">{{t.benchmarksPerCountry.thNotes}}</th>
+                </tr>
+                <tr>
+                  <th scope="col">p50</th>
+                  <th scope="col">p95</th>
+                  <th scope="col">{{t.benchmarksFields.name}}</th>
+                  <th scope="col">{{t.benchmarksFields.address}}</th>
+                  <th scope="col">{{t.benchmarksFields.postalCode}}</th>
+                  <th scope="col">{{t.benchmarksFields.city}}</th>
+                </tr>
+              </thead>
+              <tbody data-bench-rows>
+                <tr>
+                  <td colspan="9">{{t.benchmarks.loading}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- The notes referenced as [1], [2]... in the table. Built by the script, in row order, only for
+               the countries this run measured. -->
+          <ol class="bench-notes" data-bench-footnotes></ol>
+
+          <p class="note">{{t.benchmarks.method}}</p>
+        </div>
+      </section>
+
+
+      <!-- Field labels for the tiles. Markup rather than JSON: build tokens are substituted raw, and a
+           quote in a French string would break JSON.parse. -->
+      <div class="bench-i18n" hidden data-bench-fields-labels>
+        <span data-code="name">{{t.benchmarksFields.name}}</span>
+        <span data-code="address">{{t.benchmarksFields.address}}</span>
+        <span data-code="postalCode">{{t.benchmarksFields.postalCode}}</span>
+        <span data-code="city">{{t.benchmarksFields.city}}</span>
+      </div>
+      <!-- Notes per country, written by hand, only where a low figure has a known reason. Markup rather
+           than JSON for the same reason as above. -->
+      <div class="bench-i18n" hidden data-bench-notes>
+        <p data-code="DE">{{t.benchmarksNotes.DE}}</p>
+        <p data-code="ES">{{t.benchmarksNotes.ES}}</p>
+        <p data-code="IE">{{t.benchmarksNotes.IE}}</p>
+        <p data-code="PL">{{t.benchmarksNotes.PL}}</p>
+        <p data-code="LV">{{t.benchmarksNotes.LV}}</p>
+      </div>
+    </main>
+
+    <!-- @include partials/cta.html -->
+    <!-- @include partials/footer.html -->
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,2349 @@
+vat             first   vatlas                 ms  vies                   ms  name        address     postalCode  city
+ESB98896137     vies    found                2910  found                 320  neither     neither     neither     neither
+BE0746474089    vatlas  found                53.4  found                2498  different   different   equal       equal
+ESB66340514     vies    found                1320  found                1229  neither     neither     neither     neither
+ESG64946387     vatlas  found                 368  found                 219  neither     neither     neither     neither
+ESQ7550001G     vies    found                 349  found                1221  neither     neither     neither     neither
+IT02118311006   vatlas  found                 492  found                1574  equal       equal       equal       equal
+DE811335517     vies    found                22.2  found                 367  onlyVatlas  neither     neither     neither
+ESG48975767     vatlas  found                1175  found                1326  neither     neither     neither     neither
+SE202100293201  vies    found                2307  found                3683  equal       equal       equal       equal
+ESB66161514     vatlas  found                 983  found                 223  neither     neither     neither     neither
+ESV90486200     vies    found                 462  found                 242  neither     neither     neither     neither
+NL003240782B01  vatlas  found                2210  unavailable           350  -           -           -           -
+BE0325777171    vies    found                50.8  found                2801  different   equal       equal       equal
+PL6340008825    vatlas  found                1164  found                 288  equal       equal       equal       equal
+ESB65886012     vies    found                 338  found                 548  neither     neither     neither     neither
+BE0442397402    vatlas  found                19.9  found                2493  different   equal       equal       equal
+PT503821012     vies    found                 705  found                 412  equal       equal       equal       equal
+BG000670602     vatlas  found                 491  found                 467  equal       equal       neither     neither
+IE3602284DH     vies    found                 382  found                 199  equal       equal       neither     neither
+DE333288665     vatlas  found                1485  found                 947  neither     neither     neither     neither
+RO45151380      vies    found                 453  found                 743  equal       different   onlyVatlas  onlyVatlas
+HR85799845149   vatlas  found                 369  found                 222  equal       equal       equal       equal
+NL002791250B01  vies    found                2058  found                1596  equal       equal       equal       equal
+DE122624631     vatlas  found                66.5  found                 768  onlyVatlas  onlyVatlas  neither     neither
+CY18000856L     vies    found                 463  found                 367  equal       equal       equal       equal
+IT03929151003   vatlas  found                 368  found                 219  equal       equal       equal       equal
+BE0678485603    vies    found                 125  found                3640  different   equal       equal       equal
+EL090101655     vatlas  found                 480  found                 496  equal       equal       equal       equal
+IE9590828H      vies    found                 350  found                 110  equal       equal       neither     neither
+PT503024260     vatlas  found                 245  found                 223  equal       equal       equal       equal
+FI27256903      vies    found                24.9  found                 613  equal       different   different   equal
+PL7010073777    vatlas  found                 314  found                 147  equal       equal       equal       equal
+CZ86652079      vies    found                 459  found                8307  equal       equal       equal       different
+FR55379716764   vatlas  found                 102  unavailable          32.1  -           -           -           -
+ESB18732545     vies    found                 337  found                 335  neither     neither     neither     neither
+BE0449012406    vatlas  found                20.5  found                3521  different   different   equal       different
+HU15854946      vies    found                 337  found                 243  equal       equal       equal       equal
+NL851230106B01  vatlas  found                2827  found                2925  equal       equal       equal       equal
+SI86431340      vies    found                1816  found                2209  equal       equal       equal       equal
+ESG95532826     vatlas  found                1966  found                1573  neither     neither     neither     neither
+BE0465872192    vies    found                73.7  found                5653  different   equal       equal       equal
+IT13938821009   vatlas  found                 388  found                2188  equal       equal       equal       equal
+DK44541882      vies    found                9254  found                9338  equal       equal       equal       equal
+IT06761700639   vatlas  found                 423  found                 711  equal       equal       equal       equal
+ATU14703506     vies    found                 214  found                 248  equal       equal       neither     neither
+FR43775685019   vatlas  found                20.7  unavailable          36.2  -           -           -           -
+ESG01241876     vies    found                 338  found                 288  neither     neither     neither     neither
+DE286308427     vatlas  not-registered       1229  not-registered        836  -           -           -           -
+IT02616760597   vies    found                 462  found                 733  equal       equal       equal       equal
+DE301387798     vatlas  found                 585  found                 866  neither     neither     neither     neither
+DE266749428     vies    found                 584  found                 491  neither     neither     neither     neither
+SI45266743      vatlas  found                 250  found                 340  equal       equal       equal       equal
+FR32319632790   vies    found                25.5  unavailable          33.8  -           -           -           -
+DE344543307     vatlas  not-registered        527  not-registered        462  -           -           -           -
+FR38971509070   vies    found                20.9  unavailable          33.5  -           -           -           -
+DK41853816      vatlas  found               10482  found                8943  equal       equal       equal       equal
+FR21383703873   vies    found                83.7  unavailable           371  -           -           -           -
+ESG60037348     vatlas  found                 377  found                 220  neither     neither     neither     neither
+ATU16285008     vies    found                 216  found                 245  equal       equal       neither     neither
+FR40413939620   vatlas  found                20.6  unavailable          34.3  -           -           -           -
+FI02459042      vies    found                2467  found                1024  equal       equal       equal       equal
+FR63490096591   vatlas  found                38.5  unavailable           388  -           -           -           -
+BE0244195916    vies    found                68.3  found                3933  different   equal       equal       equal
+EL099793475     vatlas  found                 515  found                1572  equal       equal       equal       equal
+DE129515865     vies    found                1725  found                1807  neither     neither     neither     neither
+DE812334050     vatlas  found                 738  found                 836  neither     neither     neither     neither
+EL800662857     vies    found                 586  found                 368  equal       equal       equal       equal
+ATU66196868     vatlas  found                 246  found                 496  equal       equal       neither     neither
+BE0471382683    vies    found                21.7  found                2916  different   equal       equal       equal
+BE0401574852    vatlas  found                16.3  found                2981  different   different   equal       different
+NL001569569B01  vies    found                1729  found                2581  equal       equal       equal       equal
+FR49501455448   vatlas  found                62.5  unavailable          35.6  -           -           -           -
+BE0719311418    vies    found                72.5  found                3760  different   equal       equal       equal
+IT07084560015   vatlas  found                1995  found                2184  equal       equal       equal       equal
+DE813228346     vies    found                1690  found                1969  neither     neither     neither     neither
+SE556464687401  vatlas  found                1945  found                 890  equal       equal       equal       equal
+ATU74739214     vies    found                1406  found                1601  equal       equal       neither     neither
+DE152330858     vatlas  found                5161  found                4152  neither     neither     neither     neither
+LV90002124925   vies    found                74.3  found                4430  equal       onlyVies    neither     neither
+FR14310199146   vatlas  found                75.5  unavailable          36.6  -           -           -           -
+SE559155067701  vies    found                3657  found                 364  equal       equal       equal       equal
+ESG20588588     vatlas  found                 253  found                 336  neither     neither     neither     neither
+SE559123444701  vies    found                3852  found                 542  equal       equal       equal       equal
+BE0692797754    vatlas  found                63.2  found                4336  different   equal       equal       equal
+BE0791153081    vies    found                69.7  found                 984  different   different   equal       different
+ESA31419773     vatlas  found                3582  found                 223  neither     neither     neither     neither
+DE136782457     vies    found                 140  found                3370  onlyVatlas  onlyVatlas  neither     neither
+IT04423980483   vatlas  found                3095  found                2433  equal       equal       equal       equal
+NL850004287B01  vies    found                1490  found                3888  equal       equal       equal       equal
+IT00985801000   vatlas  found                 367  found                2834  equal       equal       equal       equal
+BE0841068588    vies    found                67.9  unavailable          1443  -           -           -           -
+IT00518460019   vatlas  found                1130  found                 221  equal       equal       equal       equal
+IT12621570154   vies    found                1119  found                 492  equal       equal       equal       equal
+BE0446408747    vatlas  found                17.4  unavailable           578  -           -           -           -
+SE556904925601  vies    found                1566  found                 811  equal       equal       equal       equal
+IT01937990560   vatlas  found                 492  found                2677  equal       equal       equal       equal
+BE0749652424    vies    found                74.7  found                7249  different   equal       equal       equal
+BE0427416939    vatlas  found                 120  found                4484  different   equal       equal       equal
+DE174051125     vies    found                2183  found                3498  neither     neither     neither     neither
+FR76850572231   vatlas  found                 101  found                7615  different   equal       equal       equal
+ESG08360232     vies    found                2796  found                2458  neither     neither     neither     neither
+IT02133771002   vatlas  found                 737  found                2212  equal       equal       equal       equal
+SE556479559801  vies    found                2306  found                 341  equal       equal       equal       equal
+IT01593330036   vatlas  found                2458  found                1081  equal       equal       equal       equal
+ESG50556091     vies    found                 246  found                1965  neither     neither     neither     neither
+EL099785242     vatlas  found                2058  found                 468  equal       equal       equal       equal
+IT03476550102   vies    found                 953  found                2579  equal       equal       equal       equal
+PT504040847     vatlas  found                2088  found                1631  equal       equal       equal       equal
+ESQ5018001G     vies    found                1814  found                1170  neither     neither     neither     neither
+NL810587828B01  vatlas  found                5653  found                3783  equal       equal       equal       equal
+SI33840890      vies    found                2306  found                2211  equal       equal       equal       equal
+NL858186007B01  vatlas  found                1604  found                2180  equal       equal       equal       equal
+ESQ2818002D     vies    found                1144  found                 176  neither     neither     neither     neither
+LU23662462      vatlas  found                 983  found                 107  equal       equal       neither     neither
+BE0835360733    vies    found                52.0  found                2770  different   equal       equal       equal
+DK30060946      vatlas  found               10532  unavailable         10012  -           -           -           -
+IT01131710376   vies    found                 460  found                 406  equal       equal       equal       equal
+NL858863406B01  vatlas  found                2826  found                2556  equal       equal       equal       equal
+NL813486105B01  vies    found                2675  found                2088  equal       equal       equal       equal
+ESQ4118001I     vatlas  found                 368  found                 219  neither     neither     neither     neither
+FR22198013443   vies    found                21.0  unavailable           251  -           -           -           -
+FI29064024      vatlas  found                20.2  found                 224  equal       equal       equal       equal
+PT501413197     vies    found                 337  found                 415  equal       equal       equal       equal
+NL863001968B01  vatlas  found                2504  found                2645  equal       equal       equal       equal
+ESQ4618002B     vies    found                 340  found                 358  neither     neither     neither     neither
+FR40180089013   vatlas  found                18.1  unavailable           694  -           -           -           -
+PT501814957     vies    found                 238  found                1105  equal       equal       equal       equal
+SI54162513      vatlas  found                 221  found                 221  equal       equal       equal       equal
+ESF20079828     vies    found                1198  found                1107  neither     neither     neither     neither
+BE0441571714    vatlas  found                18.2  found                4996  different   different   equal       equal
+PT504041266     vies    found                 304  found                 980  equal       equal       equal       equal
+IT00952120012   vatlas  found                2001  found                 590  equal       equal       equal       equal
+FR24493635817   vies    found                22.2  unavailable          32.7  -           -           -           -
+FR52519397442   vatlas  found                17.3  unavailable          36.8  -           -           -           -
+IT00308780345   vies    found                1076  found                1309  equal       equal       equal       equal
+FR01448566182   vatlas  found                17.9  unavailable           414  -           -           -           -
+DE213505511     vies    found                2061  found                2612  neither     neither     neither     neither
+ESG70302427     vatlas  found                 369  found                 222  neither     neither     neither     neither
+ESB87692166     vies    found                 337  found                 244  neither     neither     neither     neither
+IT03365141203   vatlas  found                 491  found                 468  equal       equal       equal       equal
+DE254939909     vies    found                1321  found                1348  neither     neither     neither     neither
+DE276793499     vatlas  found                 984  found                1327  neither     neither     neither     neither
+DE123603033     vies    found                1075  found                 983  neither     neither     neither     neither
+ATU16296407     vatlas  found                 738  found                 217  equal       equal       neither     neither
+DE283990443     vies    found                 830  found                 740  neither     neither     neither     neither
+EL800525457     vatlas  found                 369  found                 302  equal       equal       equal       equal
+BE0678767990    vies    found                23.9  unavailable          31.9  -           -           -           -
+BE0883745026    vatlas  found                17.7  unavailable          76.1  -           -           -           -
+PL5250007307    vies    found                 584  found                 327  equal       equal       equal       equal
+IT03873750750   vatlas  found                 368  found                 343  equal       equal       equal       equal
+ESA59503961     vies    found                 217  found                 244  neither     neither     neither     neither
+ATU28752908     vatlas  found                 248  found                 222  equal       equal       neither     neither
+DE126118759     vies    found                 829  found                1105  neither     neither     neither     neither
+BE0455664329    vatlas  found                19.2  unavailable         10004  -           -           -           -
+FI10942595      vies    found                81.8  found                1133  equal       different   different   equal
+FR83542050315   vatlas  found                77.9  found                6829  different   different   equal       equal
+FI22283574      vies    found                60.5  found                1158  equal       different   different   different
+FR60501493605   vatlas  found                55.0  unavailable          1179  -           -           -           -
+FR60452793300   vies    found                21.6  unavailable          33.2  -           -           -           -
+ESG46714853     vatlas  found                 437  found                1450  neither     neither     neither     neither
+BE0641923036    vies    found                72.0  found                2457  different   different   equal       different
+ESG31667850     vatlas  found                1986  found                 220  neither     neither     neither     neither
+IT02446681203   vies    found                 313  found                 247  equal       equal       equal       equal
+FR71491767257   vatlas  found                18.8  unavailable           864  -           -           -           -
+BE0451884396    vies    found                59.2  found                1818  different   different   equal       different
+IT02003000227   vatlas  found                1017  found                1327  equal       equal       equal       equal
+IT11277910961   vies    found                 461  found                 492  equal       equal       equal       equal
+ESA12011946     vatlas  found                 199  found                1001  neither     neither     neither     neither
+ESB86428232     vies    found                1322  found                 249  neither     neither     neither     neither
+IT04376620151   vatlas  found                 244  found                1329  equal       equal       equal       equal
+BE0508690863    vies    found                60.2  found                3192  different   equal       equal       equal
+ESG47565478     vatlas  found                 402  found                 959  neither     neither     neither     neither
+ESG66210345     vies    found                 923  found                 156  neither     neither     neither     neither
+ATU57511277     vatlas  found                 733  found                 834  equal       equal       neither     neither
+IT11344540965   vies    found                 434  found                1133  equal       equal       equal       equal
+DE268792260     vatlas  found                 737  found                1217  neither     neither     neither     neither
+BG175004782     vies    found                2306  found                1581  equal       equal       neither     neither
+SE202100305401  vatlas  found                1473  found                 589  equal       equal       equal       equal
+PL9442248813    vies    found                 430  found                 249  equal       equal       equal       equal
+SE559239855501  vatlas  found                 891  found                 344  equal       equal       equal       equal
+ESF79366878     vies    found                 830  found                 737  neither     neither     neither     neither
+NL001798650B01  vatlas  found                1474  found                2309  equal       equal       equal       equal
+NL001956218B01  vies    found                4025  found                5161  equal       equal       equal       equal
+FI01162976      vatlas  found                 106  found                 361  equal       different   different   different
+IT00159560366   vies    found                 340  found                 245  equal       equal       equal       equal
+IE6609370G      vatlas  found                 150  found                 316  equal       equal       neither     neither
+ATU57326628     vies    found                1847  found                 123  equal       equal       neither     neither
+DE121965658     vatlas  found                27.6  found                 403  onlyVatlas  onlyVatlas  neither     neither
+LV40203161388   vies    found                22.9  found                1107  equal       different   onlyVatlas  neither
+DE150546536     vatlas  found                 684  found                1573  neither     neither     neither     neither
+DE147839443     vies    found                 582  found                1475  neither     neither     neither     neither
+PL7543349578    vatlas  found                 132  found                1080  equal       equal       equal       equal
+DE330555487     vies    found                 552  found                 394  neither     neither     neither     neither
+IE9851266Q      vatlas  found                 245  found                 105  equal       equal       neither     neither
+PT500832498     vies    found                1076  found                1220  equal       equal       equal       equal
+DE210372698     vatlas  found                1002  found                1184  neither     neither     neither     neither
+BE0407626464    vies    found                64.1  found                3563  different   equal       equal       equal
+FR05811231497   vatlas  found                58.4  unavailable          34.3  -           -           -           -
+PT501559094     vies    found                 241  found                1263  equal       equal       equal       equal
+RO2788151       vatlas  found                 198  found                1593  equal       different   neither     onlyVatlas
+FR37843591322   vies    found                19.0  unavailable          27.3  -           -           -           -
+DE324863884     vatlas  found                1030  found                 345  neither     neither     neither     neither
+ESB66488149     vies    found                 214  found                1106  neither     neither     neither     neither
+ESA59377135     vatlas  found                1351  found                1368  neither     neither     neither     neither
+IT00742430283   vies    found                1811  found                1680  equal       equal       equal       equal
+ESQ0818003F     vatlas  found                 369  found                1592  neither     neither     neither     neither
+ESA61121752     vies    found                 275  found                 167  neither     neither     neither     neither
+FR60790160949   vatlas  found                17.4  unavailable           448  -           -           -           -
+CZ29199077      vies    found                 583  found                6268  equal       equal       equal       different
+FR01779555887   vatlas  found                 108  unavailable          33.6  -           -           -           -
+NL860777145B01  vies    found                2477  unavailable          30.0  -           -           -           -
+FR66780129987   vatlas  found                18.3  unavailable          38.2  -           -           -           -
+FR05193819125   vies    found                20.2  unavailable          35.0  -           -           -           -
+BE0434800025    vatlas  found                18.7  found                4211  equal       different   equal       equal
+NL804987117B01  vies    found                2547  unavailable           125  -           -           -           -
+ESB01600105     vatlas  unavailable          6390  unavailable          1450  -           -           -           -
+IT10757660013   vies    found                2163  found                1747  equal       equal       equal       equal
+BE0406015373    vatlas  found                50.2  found                5200  different   different   different   different
+FR30130026081   vies    found                61.1  found                7617  equal       different   equal       different
+ESG75067454     vatlas  unavailable          53.2  unavailable          1307  -           -           -           -
+FR15922245931   vies    found                83.7  found                7604  equal       different   equal       equal
+FR74421090051   vatlas  found                90.9  unavailable          35.9  -           -           -           -
+SK2120595257    vies    found                 763  found                1345  equal       equal       equal       equal
+NL822888087B01  vatlas  found                3091  found                2408  equal       equal       equal       equal
+ESQ4818001B     vies    unavailable           116  unavailable          36.8  -           -           -           -
+DE324947962     vatlas  found                1019  found                1180  neither     neither     neither     neither
+NL002875718B01  vies    found                2182  found                2580  equal       equal       equal       equal
+DE121689807     vatlas  found                83.4  found                1843  onlyVatlas  neither     neither     neither
+FR66300960754   vies    found                18.4  unavailable          41.0  -           -           -           -
+NL861125836B01  vatlas  found                2012  found                1451  equal       equal       equal       equal
+DE815231289     vies    found                1214  found                1228  neither     neither     neither     neither
+IT00881841001   vatlas  found                 475  found                 468  equal       equal       equal       equal
+FR46775729155   vies    found                60.7  found                7372  different   different   equal       equal
+SE202100500001  vatlas  found                 522  found                 590  equal       equal       equal       equal
+HU15831000      vies    found                 546  found                 369  equal       equal       equal       equal
+BG175467353     vatlas  not-registered       3308  not-registered       3739  -           -           -           -
+EE100913275     vies    found                58.8  found                 206  equal       different   equal       different
+ESG82999871     vatlas  found                 905  unavailable           836  -           -           -           -
+PT517713233     vies    not-registered        339  not-registered        245  -           -           -           -
+FI05126964      vatlas  found                1105  found                 344  equal       equal       equal       equal
+DK29035695      vies    found               11105  unavailable         10001  -           -           -           -
+ESQ2802338J     vatlas  not-registered        737  not-registered        835  -           -           -           -
+ATU39393704     vies    found                 583  found                 245  equal       equal       neither     neither
+SE202100523201  vatlas  found                 984  found                 767  equal       equal       equal       equal
+SE202100521601  vies    found                1446  found                1048  equal       neither     equal       equal
+CZ72050365      vatlas  not-registered       9462  not-registered       7471  -           -           -           -
+SE556605524901  vies    found                2799  found                1226  equal       equal       equal       equal
+LV90000048222   vatlas  not-registered       1475  not-registered       2924  -           -           -           -
+NL851646839B01  vies    found                8579  found                3072  equal       equal       equal       equal
+FR75784668717   vatlas  found                56.5  found                7652  different   equal       equal       equal
+HU26231019      vies    found                 830  found                 245  equal       equal       equal       equal
+BE0316380841    vatlas  found                86.0  unavailable           504  -           -           -           -
+PT600084965     vies    found                 378  found                 370  equal       equal       equal       equal
+PT600076610     vatlas  found                 328  found                 219  equal       equal       equal       equal
+FR94130018310   vies    found                38.0  unavailable          35.1  -           -           -           -
+SI31434860      vatlas  not-registered        513  not-registered        220  -           -           -           -
+BE0880212840    vies    found                26.6  unavailable          33.8  -           -           -           -
+PT503904040     vatlas  found                 245  found                 221  equal       equal       equal       equal
+DE815788583     vies    found                 741  found                1055  neither     neither     neither     neither
+IT02484430232   vatlas  found                 786  found                 715  equal       equal       equal       equal
+DE811272995     vies    found                 827  found                 790  neither     neither     neither     neither
+DE129517720     vatlas  found                 855  found                 666  neither     neither     neither     neither
+PL7770006350    vies    found                1179  found                 265  equal       equal       equal       equal
+ESG84908987     vatlas  found                 245  found                 221  neither     neither     neither     neither
+ESG20662292     vies    found                 668  found                 246  neither     neither     neither     neither
+IT04301530723   vatlas  found                 532  found                 711  equal       equal       equal       equal
+ESQ5850017D     vies    found                 320  found                 755  neither     neither     neither     neither
+NL002968721B01  vatlas  found                2176  found                1279  equal       equal       equal       equal
+FI02458955      vies    found                1198  found                 329  equal       equal       equal       equal
+SE202100321101  vatlas  found                1229  unavailable           835  -           -           -           -
+PL6750001923    vies    found                 215  found                 982  equal       equal       equal       equal
+NL804735529B02  vatlas  found                2644  found                2310  equal       equal       equal       equal
+FR15199115684   vies    found                72.2  found                7678  equal       different   equal       equal
+FR19938106564   vatlas  found                 111  unavailable          37.3  -           -           -           -
+IT00816350276   vies    found                 475  found                 831  equal       equal       equal       equal
+FR75180006025   vatlas  found                19.8  unavailable           187  -           -           -           -
+ESG62426937     vies    found                 311  found                 369  neither     neither     neither     neither
+ATU57495455     vatlas  found                 143  found                 348  equal       equal       neither     neither
+CZ00216208      vies    found                 257  found                7618  equal       equal       equal       different
+NL001935549B01  vatlas  found                2124  found                1733  equal       equal       equal       equal
+SE262000112901  vies    found                1198  found                 990  equal       equal       equal       equal
+SE202100306201  vatlas  found                 861  found                 894  equal       equal       equal       equal
+ESQ3718001E     vies    found                 512  found                 556  neither     neither     neither     neither
+DK29979812      vatlas  unavailable         12065  unavailable           102  -           -           -           -
+DE248558812     vies    found                1567  found                1152  neither     neither     neither     neither
+DE115314015     vatlas  found                1229  found                 835  neither     neither     neither     neither
+NL001932706B01  vies    found                1569  found                 982  equal       equal       equal       equal
+DE811264317     vatlas  found                 633  found                 470  neither     neither     neither     neither
+FR57180070039   vies    found                18.4  unavailable          32.2  -           -           -           -
+FI02458947      vatlas  found                 758  found                 960  equal       equal       equal       equal
+DE154285400     vies    found                 542  found                 286  neither     neither     neither     neither
+DE811193231     vatlas  found                 736  found                 712  neither     neither     neither     neither
+DK31119103      vies    unavailable           149  unavailable         10003  -           -           -           -
+IT01118840501   vatlas  found                 712  found                 633  equal       equal       equal       equal
+DE811245527     vies    found                 861  found                 614  neither     neither     neither     neither
+ATU57495437     vatlas  found                 174  found                 751  equal       equal       neither     neither
+DE141510383     vies    found                1075  found                 738  neither     neither     neither     neither
+DE811205325     vatlas  found                 245  found                 975  neither     neither     neither     neither
+FR31180036048   vies    found                20.8  unavailable          28.1  -           -           -           -
+IT03064870151   vatlas  found                 192  found                 423  equal       equal       equal       equal
+BE0208359859    vies    found                19.8  found                2827  different   equal       equal       equal
+CY10083353J     vatlas  found                 395  found                1742  equal       equal       equal       equal
+IT01541040232   vies    found                1568  found                 612  equal       equal       equal       equal
+EE100030417     vatlas  found                74.4  found                1108  equal       different   equal       different
+BE0257216482    vies    found                69.8  found                3706  different   equal       equal       equal
+IT04150680280   vatlas  found                1373  found                 835  equal       equal       equal       equal
+ESG83727016     vies    found                 429  found                 695  neither     neither     neither     neither
+IT00206200289   vatlas  found                1206  found                 809  equal       equal       equal       equal
+DE308828276     vies    found                 270  found                 683  neither     neither     neither     neither
+ESQ2801221I     vatlas  found                 346  found                 177  neither     neither     neither     neither
+ESG83195305     vies    found                 340  found                 802  neither     neither     neither     neither
+NL004205315B01  vatlas  found                1721  found                1400  equal       equal       equal       equal
+IT03256440284   vies    found                1568  found                1892  equal       equal       equal       equal
+ESG83727057     vatlas  found                 369  found                 712  neither     neither     neither     neither
+IT02133971008   vies    found                1516  found                1475  equal       equal       equal       equal
+IT00273530527   vatlas  found                1563  found                1239  equal       equal       equal       equal
+IT08691440153   vies    found                1297  found                1055  equal       equal       equal       equal
+DE215420431     vatlas  found                1230  found                 464  neither     neither     neither     neither
+PT507618319     vies    found                 954  found                 368  equal       equal       equal       equal
+PL8520006757    vatlas  found                 615  found                1328  equal       equal       equal       equal
+LT243645610     vies    found                1093  found                1061  equal       equal       neither     neither
+SE202100297301  vatlas  found                1130  found                1224  equal       equal       equal       equal
+IT05080991002   vies    found                1396  found                1086  equal       equal       equal       equal
+DE812383453     vatlas  found                1646  found                 580  neither     neither     neither     neither
+IT09321970965   vies    found                 584  found                1236  equal       equal       equal       equal
+IT00646640755   vatlas  found                 983  found                1081  equal       equal       equal       equal
+IT09950311002   vies    found                1321  found                 982  equal       equal       equal       equal
+ESQ5855973C     vatlas  found                 368  found                 717  neither     neither     neither     neither
+IT01984560662   vies    found                1198  found                1225  equal       equal       equal       equal
+IT09198791007   vatlas  found                 368  found                 343  equal       equal       equal       equal
+DE112591322     vies    found                 425  found                 243  neither     neither     neither     neither
+PT501461108     vatlas  found                 257  found                1231  equal       equal       equal       equal
+BE0248015142    vies    found                73.1  found                2948  different   equal       equal       equal
+NL801427228B01  vatlas  found                1987  found                2925  equal       equal       equal       equal
+FR45180089047   vies    found                77.8  unavailable           857  -           -           -           -
+NL861608884B01  vatlas  found                3458  found                2666  equal       equal       equal       equal
+IT03628350153   vies    found                 460  found                 504  equal       equal       equal       equal
+FR68775665789   vatlas  found                16.6  unavailable          34.0  -           -           -           -
+DE811917555     vies    found                 245  found                 294  neither     neither     neither     neither
+IE0006286E      vatlas  found                 340  found                 103  equal       equal       neither     neither
+FR52194508552   vies    found                18.0  unavailable          33.1  -           -           -           -
+IT01279680480   vatlas  found                 424  found                 309  equal       equal       equal       equal
+IT00876220633   vies    found                 462  found                 262  equal       equal       equal       equal
+DE122119125     vatlas  found                 736  found                 837  neither     neither     neither     neither
+NL002958697B01  vies    found                2129  found                2287  equal       equal       equal       equal
+DE114110511     vatlas  found                 838  found                 466  neither     neither     neither     neither
+BE0419052173    vies    found                54.3  found                3390  different   equal       equal       equal
+PL5250011266    vatlas  found                 704  found                 466  equal       equal       equal       equal
+NL002882243B01  vies    found                2676  found                2701  equal       equal       equal       equal
+DE138408327     vatlas  found                1261  found                1171  neither     neither     neither     neither
+DE811304768     vies    found                1247  found                1351  neither     neither     neither     neither
+DE123486767     vatlas  found                1058  found                 836  neither     neither     neither     neither
+PL5250008057    vies    found                 171  found                 367  equal       equal       equal       equal
+NL822165776B01  vatlas  found                2446  found                2409  equal       equal       equal       equal
+ATU57469858     vies    found                 339  found                 202  equal       equal       neither     neither
+MT12979127      vatlas  found                 245  found                 222  equal       equal       neither     neither
+FI03134717      vies    found                1200  found                 242  equal       equal       equal       equal
+IE6517386K      vatlas  found                 127  found                 123  equal       equal       neither     neither
+LU14472612      vies    found                 297  found                 380  equal       equal       neither     neither
+BE0473647634    vatlas  found                17.5  found                1799  different   different   equal       different
+IT09127781004   vies    not-registered        607  not-registered        369  -           -           -           -
+CZ00209805      vatlas  found                 595  found                6241  equal       equal       equal       different
+DK29190941      vies    found                7221  found                6635  equal       equal       equal       equal
+FR29434033619   vatlas  found                59.1  found                7167  different   different   equal       equal
+NL002562169B01  vies    found                2929  found                2455  equal       equal       equal       equal
+BE0818999605    vatlas  found                91.7  found                3771  different   equal       equal       equal
+FR53130026024   vies    found                71.6  unavailable          32.4  -           -           -           -
+BE0894176979    vatlas  found                63.9  found                4149  different   different   equal       different
+SK2120169865    vies    found                1075  found                 824  equal       equal       equal       equal
+HU15309769      vatlas  found                 226  found                 124  equal       equal       equal       equal
+BE0693876830    vies    found                20.7  unavailable          32.7  -           -           -           -
+FI02463121      vatlas  found                1263  found                 537  equal       equal       equal       equal
+NL002946725B01  vies    found                2429  found                2510  equal       equal       equal       equal
+PT505722232     vatlas  found                 369  found                 361  equal       equal       equal       equal
+FR65775684897   vies    found                20.0  unavailable          28.8  -           -           -           -
+FR25199411117   vatlas  found                16.6  unavailable          36.7  -           -           -           -
+NL003475268B01  vies    found                3183  found                2285  equal       equal       equal       equal
+PT501617582     vatlas  found                 350  found                 218  equal       equal       equal       equal
+FR72197546922   vies    found                18.2  unavailable          27.1  -           -           -           -
+FR24130015506   vatlas  found                15.0  unavailable          33.8  -           -           -           -
+BE0419052272    vies    found                21.5  unavailable          27.4  -           -           -           -
+NL811383696B01  vatlas  found                2232  found                2442  equal       equal       equal       equal
+FR84331596270   vies    found                53.3  unavailable           236  -           -           -           -
+FR95190615633   vatlas  found                18.2  unavailable          30.2  -           -           -           -
+PT505387271     vies    found                 339  found                 334  equal       equal       equal       equal
+NL003566213B01  vatlas  found                2090  found                2555  equal       equal       equal       equal
+SE202100315301  vies    found                 708  found                1229  equal       equal       equal       equal
+BE0456343923    vatlas  found                72.1  found                3670  different   equal       equal       equal
+ATU64938189     vies    found                 870  found                 125  equal       equal       neither     neither
+CZ61388963      vatlas  found                 182  found                7289  equal       equal       equal       different
+PL6750002236    vies    found                 587  found                 244  equal       equal       equal       equal
+PT501510184     vatlas  found                 366  found                 219  equal       equal       equal       equal
+PT516155636     vies    found                 340  found                 246  equal       equal       equal       equal
+CZ86652036      vatlas  found                 244  unavailable          39.3  -           -           -           -
+PL5250012159    vies    found                 210  found                 188  equal       different   equal       equal
+SE202100281701  vatlas  found                 308  found                 527  equal       equal       equal       equal
+IE9587715A      vies    found                 231  found                 107  equal       equal       neither     neither
+FR54197534597   vatlas  found                18.1  unavailable          34.0  -           -           -           -
+FR06130025976   vies    found                24.1  unavailable          27.5  -           -           -           -
+BE0425260668    vatlas  found                21.3  found                3839  different   equal       equal       equal
+PT514187808     vies    found                 338  found                 257  equal       equal       equal       equal
+FI28445618      vatlas  found                68.2  found                 768  equal       different   different   different
+MT12894031      vies    found                 205  found                 243  equal       equal       neither     neither
+SE202100309601  vatlas  found                1855  found                 344  equal       equal       equal       equal
+DK29283958      vies    found                4839  found                4689  equal       equal       equal       equal
+HU15854939      vatlas  found                 191  found                 306  equal       equal       equal       equal
+IE2200007U      vies    found                 149  found                 240  equal       equal       neither     neither
+ATU37586901     vatlas  found                 146  found                 263  equal       equal       neither     neither
+ATU37116303     vies    found                 371  found                 245  equal       equal       neither     neither
+PT500745684     vatlas  found                 337  found                 263  equal       equal       equal       equal
+PT517706156     vies    found                 215  found                 325  equal       equal       equal       equal
+DK29057753      vatlas  found                7432  found                7513  equal       equal       equal       equal
+ATU51438706     vies    found                 585  found                 142  equal       equal       neither     neither
+CZ00216224      vatlas  found                 163  found                6555  equal       equal       equal       different
+HU19308650      vies    found                 338  found                 261  equal       equal       equal       equal
+FI22857339      vatlas  found                3489  found                 359  equal       equal       equal       equal
+ATU37675002     vies    found                 189  found                 307  equal       equal       neither     neither
+ATU14238608     vatlas  found                 215  found                 277  equal       equal       neither     neither
+SI71633065      vies    found                 179  found                 245  equal       equal       equal       equal
+BE0409530535    vatlas  found                22.8  found                3839  different   equal       equal       equal
+DK29102384      vies    found                9509  found                9806  equal       equal       equal       equal
+NL803595943B01  vatlas  found                1984  found                2026  equal       equal       equal       equal
+PT509830072     vies    found                 338  found                 290  equal       equal       equal       equal
+SE232100001601  vatlas  found                 716  found                 735  equal       equal       equal       equal
+NL855546670B01  vies    found                2059  found                1843  equal       equal       equal       equal
+BE0750495334    vatlas  found                79.0  found                4317  different   equal       equal       equal
+ATU78680526     vies    found                 343  found                 120  equal       equal       neither     neither
+PT506506770     vatlas  found                 368  found                 343  equal       equal       equal       equal
+NL811087864B01  vies    found                1814  found                1351  equal       equal       equal       equal
+PT508424780     vatlas  found                 245  found                 193  equal       equal       equal       equal
+SK2020719646    vies    found                 339  found                 273  equal       equal       equal       equal
+ATU73499136     vatlas  found                 221  found                 244  equal       equal       neither     neither
+DK33370873      vies    found                8388  found                7435  equal       equal       equal       equal
+PL1231269116    vatlas  found                 737  found                 345  equal       equal       equal       equal
+RO1154          vies    found                 312  found                 368  equal       different   neither     onlyVatlas
+CY90001673W     vatlas  found                 394  found                 465  equal       equal       equal       equal
+IE9746930M      vies    found                 229  found                 109  equal       equal       neither     neither
+ATU58083139     vatlas  found                 248  found                 465  equal       equal       neither     neither
+BE0454894069    vies    found                22.7  found                2457  different   equal       equal       equal
+IE3793434QH     vatlas  found                 134  found                 158  equal       neither     equal       equal
+PT513010661     vies    found                 963  found                 616  equal       equal       equal       equal
+PT508633346     vatlas  found                2320  unavailable         10003  -           -           -           -
+PL6310200736    vies    found                 273  found                 416  equal       equal       equal       equal
+ATU57477929     vatlas  found                3663  found                 264  equal       equal       neither     neither
+PL6750001805    vies    found                 602  found                3593  equal       equal       equal       equal
+BE0700470058    vatlas  found                97.9  found                4054  different   equal       equal       equal
+SI55560822      vies    found                 339  found                4055  equal       equal       equal       equal
+SE556777166101  vatlas  not-registered       4487  not-registered       2984  -           -           -           -
+PL9512482142    vies    found                 190  found                 245  equal       equal       equal       equal
+LU19805732      vatlas  found                1146  found                 123  equal       equal       neither     neither
+EL090085651     vies    found                 461  found                 697  equal       equal       equal       equal
+NL800866393B01  vatlas  found                3270  found                2849  equal       equal       equal       equal
+CZ25246992      vies    found                 171  found                6757  equal       equal       equal       different
+IE3341729NH     vatlas  found                 290  found                 222  equal       equal       neither     neither
+PL8960005851    vies    found                 444  found                 244  equal       equal       equal       equal
+PL5213212384    vatlas  found                 134  found                 212  equal       equal       equal       equal
+ATU46981707     vies    found                 164  found                 261  equal       equal       neither     neither
+NL852004436B01  vatlas  found                2976  found                2993  equal       equal       equal       equal
+NL820838445B01  vies    found                2901  unavailable          35.0  -           -           -           -
+IE0022578J      vatlas  found                 210  found                 195  equal       equal       neither     neither
+BE0662391620    vies    found                57.7  found                3440  different   equal       equal       equal
+ATU28781306     vatlas  found                 281  found                 146  equal       equal       neither     neither
+PT515769053     vies    found                 342  found                 441  equal       equal       equal       equal
+DK64723413      vatlas  found                9831  found                8553  equal       equal       equal       equal
+PT513776788     vies    found                 486  found                 244  equal       equal       equal       equal
+PT514528648     vatlas  found                 368  found                 713  equal       equal       equal       equal
+CZ28400020      vies    found                 698  found                6513  equal       equal       equal       different
+ATU79879525     vatlas  found                 254  found                 154  equal       equal       neither     neither
+SI46635874      vies    found                 218  found                 313  equal       equal       equal       equal
+PL7770002062    vatlas  found                 418  found                 169  equal       different   onlyVatlas  onlyVatlas
+PT502083514     vies    found                 212  found                 224  equal       equal       equal       equal
+PL5272445658    vatlas  found                 272  found                 209  equal       equal       equal       equal
+NL863479121B01  vies    found                2811  unavailable          41.2  -           -           -           -
+ATU63185617     vatlas  found                 151  found                 147  equal       equal       neither     neither
+FI35503038      vies    found                19.7  found                 550  equal       equal       equal       equal
+FI26473754      vatlas  found                14.8  found                 465  equal       different   different   different
+CZ68378271      vies    found                 191  found                6881  equal       equal       equal       different
+FI29583465      vatlas  found                52.6  not-registered        226  -           -           -           -
+SK2020798395    vies    found                 586  found                 579  equal       equal       equal       equal
+BG130534477     vatlas  not-registered       3537  not-registered       3691  -           -           -           -
+EL996844271     vies    found                 446  found                 260  equal       equal       equal       equal
+NL858808730B01  vatlas  found                2827  found                3046  equal       equal       equal       equal
+CZ61989592      vies    found                 217  found                5897  equal       equal       equal       different
+SI14246821      vatlas  not-registered        369  not-registered        587  -           -           -           -
+DK19596915      vies    found                8817  found                9464  equal       equal       equal       equal
+NL805612270B01  vatlas  found                2950  found                2925  equal       equal       equal       equal
+NL002972499B01  vies    found                2701  unavailable          35.5  -           -           -           -
+EL095775349     vatlas  found                 427  found                 322  equal       equal       equal       equal
+BG000662064     vies    found                3299  found                3574  equal       equal       neither     neither
+EL090029284     vatlas  found                 613  found                 346  equal       equal       equal       equal
+FI02446292      vies    found                 830  found                 490  equal       equal       equal       equal
+DK18456834      vatlas  not-registered       9954  unavailable         10003  -           -           -           -
+BE0466279196    vies    found                 113  found                4888  different   equal       equal       equal
+NL851029279B01  vatlas  found                1788  found                2899  equal       equal       equal       equal
+HR13579392023   vies    found                 546  found                 257  equal       equal       equal       equal
+IE6420625M      vatlas  found                 653  found                 256  equal       equal       neither     neither
+CZ00020681      vies    found                 186  found                7705  equal       equal       equal       different
+BE0458036374    vatlas  found                52.1  found                3639  different   equal       different   equal
+FI02446647      vies    found                1140  found                 248  equal       equal       equal       equal
+SI37808052      vatlas  found                 424  found                 193  equal       equal       equal       equal
+BE0867636096    vies    found                19.5  unavailable          59.5  -           -           -           -
+BE0716803967    vatlas  found                18.0  unavailable          41.5  -           -           -           -
+EE100901067     vies    found                21.0  found                 324  equal       different   equal       different
+EE100356955     vatlas  found                20.1  found                 272  equal       different   neither     onlyVatlas
+SE559227058001  vies    found                 829  found                 491  equal       equal       equal       equal
+CZ00008648      vatlas  found                 133  found                5986  equal       equal       equal       different
+NL806433413B01  vies    found                1689  found                2088  equal       equal       equal       equal
+CZ27160572      vatlas  found                 224  found                6510  equal       equal       equal       different
+DK26145260      vies    found               10381  unavailable         10003  -           -           -           -
+ATU76064134     vatlas  found                 966  found                 959  equal       equal       neither     neither
+SK2020677824    vies    found                 462  found                 368  equal       equal       equal       equal
+BE0766541015    vatlas  found                18.0  found                4508  different   equal       equal       equal
+CZ00064203      vies    found                 217  unavailable           239  -           -           -           -
+SE232100013101  vatlas  found                1475  found                1941  equal       equal       equal       equal
+PL9462698560    vies    found                1200  found                 244  equal       different   equal       equal
+FI27951535      vatlas  found                21.1  found                 323  equal       different   equal       equal
+SE556487275101  vies    found                1567  found                 983  equal       equal       equal       equal
+FI10586439      vatlas  found                20.2  found                 567  equal       equal       equal       equal
+NL855342468B01  vies    found                1671  found                1669  equal       equal       equal       equal
+BG200421236     vatlas  found                2194  found                3260  equal       equal       neither     neither
+DK30113721      vies    unavailable         12208  unavailable         10002  -           -           -           -
+DK46837428      vatlas  unavailable          90.9  unavailable         10004  -           -           -           -
+EL090052367     vies    found                 465  found                 323  equal       equal       equal       equal
+DK29190658      vatlas  unavailable          72.9  found                9015  -           -           -           -
+EL090145420     vies    found                 830  found                 471  equal       equal       equal       equal
+NL856600957B01  vatlas  found                2098  found                1266  equal       equal       equal       equal
+NL009607213B01  vies    found                2373  found                1697  equal       equal       equal       equal
+EE100251335     vatlas  found                55.7  found                 417  equal       different   equal       different
+IE3452010FH     vies    found                 209  found                 106  equal       equal       neither     neither
+IE3462843MH     vatlas  found                 120  found                 203  equal       neither     equal       equal
+ATU64723829     vies    found                 246  found                 137  equal       equal       neither     neither
+MT24061713      vatlas  found                 246  found                 177  equal       equal       neither     neither
+EL090186413     vies    found                 389  found                 239  equal       equal       equal       equal
+SI76530566      vatlas  found                 245  found                 222  equal       equal       equal       equal
+IE6369091R      vies    found                 233  found                 105  equal       equal       neither     neither
+NL809142272B01  vatlas  found                2704  found                2064  equal       equal       equal       equal
+SE202100284101  vies    found                1321  found                1227  equal       equal       equal       equal
+FI02446807      vatlas  found                1230  found                 465  equal       equal       equal       equal
+CZ24211851      vies    found                 171  found                6759  equal       equal       equal       equal
+FI24555385      vatlas  found                49.3  found                 952  equal       equal       equal       equal
+FI29143953      vies    found                19.0  found                 983  equal       equal       equal       equal
+SE559143238901  vatlas  found                2532  found                2034  equal       equal       equal       equal
+FI02458963      vies    found                 955  found                 398  equal       equal       equal       equal
+NL009807184B01  vatlas  found                1964  found                2190  equal       equal       equal       equal
+LU10137807      vies    found                 183  found                 112  equal       equal       neither     neither
+SE556116244601  vatlas  found                1469  found                1988  equal       equal       equal       equal
+EL801609104     vies    found                 340  found                 368  equal       equal       equal       equal
+PT500058580     vatlas  found                 368  found                 343  equal       equal       equal       equal
+DK29190909      vies    not-registered      10980  unavailable         10003  -           -           -           -
+DK31908574      vatlas  unavailable           244  found                9683  -           -           -           -
+DK41572760      vies    unavailable          73.0  found                8726  -           -           -           -
+SE202100287401  vatlas  found                2109  found                1328  equal       equal       equal       equal
+DK18933144      vies    unavailable          67.8  unavailable         10002  -           -           -           -
+SI34052674      vatlas  found                1080  found                1081  equal       equal       equal       equal
+ATU60955513     vies    found                 401  found                 796  equal       equal       neither     neither
+IE6351814I      vatlas  found                 368  found                 345  equal       equal       neither     neither
+CZ09639233      vies    found                 579  found                7371  equal       equal       equal       different
+IE3379421UH     vatlas  found                 352  found                 159  equal       neither     equal       equal
+CZ08466068      vies    found                 190  found                6984  equal       equal       equal       different
+PT501082174     vatlas  found                 663  found                 792  equal       equal       equal       equal
+FI25397673      vies    found                32.0  found                1135  equal       different   different   equal
+DK30843126      vatlas  unavailable          44.8  unavailable         10003  -           -           -           -
+HU27749007      vies    found                 265  found                 281  equal       equal       equal       equal
+EE101339803     vatlas  found                58.1  found                 237  equal       different   equal       different
+SE202100312001  vies    found                 707  found                 491  equal       equal       equal       equal
+FI15675350      vatlas  found                 492  found                 467  equal       equal       equal       equal
+FI18777694      vies    found                21.9  found                 759  equal       equal       equal       equal
+EE102503683     vatlas  found                20.7  found                 251  equal       different   equal       different
+EE100875737     vies    found                23.5  found                 243  equal       different   equal       different
+HU23383540      vatlas  found                 177  found                 237  equal       equal       equal       equal
+SE202100186801  vies    found                 623  found                 809  equal       neither     equal       equal
+EL090114189     vatlas  found                 627  found                 283  equal       equal       equal       equal
+LV90000076669   vies    found                20.9  found                2719  equal       onlyVies    neither     neither
+CZ00159816      vatlas  found                 237  found                6120  equal       equal       equal       different
+RO4283570       vies    not-registered        495  not-registered        366  -           -           -           -
+PL5250009387    vatlas  found                 466  found                 135  equal       equal       equal       equal
+IE3574697EH     vies    found                 310  found                 108  equal       equal       neither     neither
+BG831605813     vatlas  found                 245  found                 341  equal       equal       neither     neither
+FI21958031      vies    found                23.3  found                 233  equal       equal       equal       equal
+ATU62615557     vatlas  found                1190  found                 220  equal       equal       neither     neither
+HR45001686598   vies    found                 338  found                 246  equal       equal       equal       equal
+PT515743550     vatlas  found                 402  found                 678  equal       equal       equal       equal
+SE556818733901  vies    found                 833  found                 367  equal       equal       equal       equal
+ATU48191102     vatlas  found                 231  found                 156  equal       equal       neither     neither
+RO14905506      vies    found                 339  found                 326  equal       different   equal       different
+ATU66270867     vatlas  found                 246  found                 219  equal       equal       neither     neither
+IE6421562T      vies    found                 216  found                 246  equal       equal       neither     neither
+IE3726417MH     vatlas  found                 122  found                 222  equal       equal       neither     neither
+IE3599141RH     vies    found                 221  found                 114  equal       neither     equal       equal
+PL5250005834    vatlas  found                 186  found                 284  equal       equal       equal       equal
+PL7240003125    vies    found                 215  found                 243  equal       equal       equal       equal
+EL999161778     vatlas  found                 369  found                 344  equal       equal       equal       equal
+SK2021157050    vies    found                 421  found                 493  equal       equal       equal       equal
+SI56644817      vatlas  found                 285  found                 178  equal       equal       equal       equal
+EL801330142     vies    found                 460  found                 289  equal       equal       equal       equal
+PT515232319     vatlas  unavailable         16220  unavailable          83.4  -           -           -           -
+SE556011748201  vies    found                1468  found                1611  equal       equal       equal       equal
+EL090050626     vatlas  found                 836  found                 243  equal       equal       equal       equal
+IE3544554KH     vies    found                 596  found                 827  equal       equal       neither     neither
+PT516616242     vatlas  unavailable          17.9  unavailable           325  -           -           -           -
+IE3442644RH     vies    found                 705  found                 125  equal       equal       neither     neither
+FI19992126      vatlas  found                18.8  found                 916  equal       equal       equal       equal
+IE9829859T      vies    found                 219  found                 760  equal       equal       neither     neither
+LV40900041720   vatlas  found                18.4  found                2534  equal       onlyVies    neither     neither
+EL090009802     vies    not-registered        830  not-registered        245  -           -           -           -
+IE3469709UH     vatlas  found                 369  found                 220  equal       equal       neither     neither
+EL998212331     vies    found                 355  found                 492  equal       equal       equal       equal
+CY10267434R     vatlas  found                 416  found                 403  equal       equal       equal       equal
+EL999252142     vies    found                 462  found                 367  equal       equal       equal       equal
+SE556459915601  vatlas  found                 983  found                 836  equal       equal       equal       equal
+EL998219694     vies    found                 852  found                 736  equal       equal       equal       equal
+EE100506239     vatlas  found                21.4  found                 422  equal       different   equal       different
+EE100714827     vies    found                19.0  found                 592  different   different   different   different
+CZ28488946      vatlas  found                 147  found                7303  equal       equal       equal       different
+CZ27872963      vies    not-registered       6513  unavailable           456  -           -           -           -
+LT100005517118  vatlas  found                 524  found                 548  equal       equal       neither     neither
+IE9767830C      vies    found                 748  found                 254  equal       equal       neither     neither
+EL800722822     vatlas  found                 328  found                 343  equal       equal       equal       equal
+EL094027767     vies    found                 342  found                 243  equal       equal       equal       equal
+EL094079101     vatlas  found                 925  found                 279  equal       equal       equal       equal
+ATU64690418     vies    found                 707  found                 367  equal       equal       neither     neither
+DK62565314      vatlas  unavailable         12043  unavailable         10002  -           -           -           -
+CY10312992T     vies    found                 557  found                 418  equal       equal       equal       equal
+EL800512150     vatlas  found                2732  found                1446  equal       equal       equal       equal
+SE556351237401  vies    found                1812  found                1846  equal       equal       equal       equal
+SE556142874801  vatlas  found                1106  found                1202  equal       equal       equal       equal
+IE3666331TH     vies    found                 209  found                1056  equal       equal       neither     neither
+PL5262278704    vatlas  found                 549  found                1450  equal       equal       equal       equal
+SE556826851901  vies    found                3853  found                1587  equal       equal       equal       equal
+EL090073178     vatlas  found                 919  found                1818  equal       equal       equal       equal
+BG000663694     vies    found                 709  found                 737  equal       equal       neither     neither
+RO15595373      vatlas  found                 244  found                1872  equal       different   onlyVatlas  onlyVatlas
+FI23889244      vies    found                87.4  found                1985  equal       different   different   equal
+FI31367737      vatlas  found                89.2  found                3014  equal       different   equal       equal
+HR69715301002   vies    found                 339  found                1719  equal       equal       equal       equal
+DK53317812      vatlas  unavailable          71.0  unavailable         10002  -           -           -           -
+FI27853898      vies    found                51.2  found                3541  equal       different   equal       equal
+FI28405026      vatlas  found                48.5  not-registered       3287  -           -           -           -
+HR95862798984   vies    found                 450  found                1237  equal       equal       equal       equal
+FI26506624      vatlas  found                50.2  found                1274  equal       equal       equal       equal
+HR87425920265   vies    found                1938  found                 246  equal       equal       equal       equal
+HR72712746460   vatlas  found                 231  found                1709  equal       equal       equal       equal
+HR39982657045   vies    found                 379  found                2171  equal       equal       equal       equal
+DK34208115      vatlas  unavailable          83.7  unavailable          32.1  -           -           -           -
+HR62612424147   vies    found                 828  found                1581  equal       equal       equal       equal
+SI43950019      vatlas  found                 737  found                 835  equal       equal       equal       equal
+DK37537314      vies    unavailable          26.5  unavailable           370  -           -           -           -
+FI29285599      vatlas  found                22.4  found                 754  equal       different   equal       equal
+FI09893765      vies    found                20.3  found                 686  equal       different   different   equal
+FI32751589      vatlas  found                16.8  found                 345  equal       different   different   equal
+HR62924153420   vies    found                 462  found                 227  equal       equal       equal       equal
+DK41357932      vatlas  unavailable          22.1  unavailable           323  -           -           -           -
+PT510571514     vies    found                 338  found                 244  equal       equal       equal       equal
+EL800521378     vatlas  found                 370  found                 238  equal       equal       equal       equal
+ATU70404458     vies    found                 338  found                 227  equal       equal       neither     neither
+PL7120106911    vatlas  found                 491  found                 315  equal       equal       equal       equal
+CY10115315W     vies    found                 706  found                 398  equal       equal       equal       equal
+FI21706299      vatlas  found                20.3  found                 324  equal       equal       equal       equal
+FI19870727      vies    found                20.6  found                 983  equal       equal       equal       equal
+FI07737443      vatlas  found                16.7  found                 891  equal       different   different   equal
+PL6751381891    vies    found                 135  not-registered       1228  -           -           -           -
+EL999600130     vatlas  found                1186  found                 834  equal       equal       equal       equal
+HU19253055      vies    found                1319  found                 249  equal       equal       equal       equal
+PT501189408     vatlas  found                 341  found                1971  equal       equal       equal       equal
+EL997069118     vies    found                1609  found                1801  equal       equal       equal       equal
+BG121835150     vatlas  not-registered        369  not-registered        835  -           -           -           -
+DK39713756      vies    unavailable           155  unavailable         10001  -           -           -           -
+DK76486212      vatlas  unavailable          63.0  unavailable          1028  -           -           -           -
+EL090087411     vies    found                 340  found                1475  equal       equal       equal       equal
+SE663000107801  vatlas  found                 368  found                 710  equal       equal       equal       equal
+EL094250001     vies    found                1077  found                1478  equal       equal       equal       equal
+FI15917399      vatlas  found                17.3  found                 328  equal       equal       equal       equal
+EL094170559     vies    found                1073  found                1472  equal       equal       equal       equal
+LU33080278      vatlas  found                 248  found                 218  equal       equal       neither     neither
+EL996897528     vies    found                1078  found                 861  equal       equal       equal       equal
+FI06651672      vatlas  found                17.0  found                 324  equal       equal       equal       equal
+SK2022890012    vies    found                1021  found                 981  equal       equal       equal       equal
+PT501797173     vatlas  found                 424  found                 467  equal       equal       equal       equal
+PT502616695     vies    found                 234  found                 368  equal       equal       equal       equal
+ATU52385100     vatlas  found                 135  found                 146  equal       equal       neither     neither
+EL093877451     vies    found                 610  found                1028  equal       equal       equal       equal
+LU16853659      vatlas  found                 219  found                 222  equal       equal       neither     neither
+SE559086174501  vies    found                 338  found                 370  equal       equal       equal       equal
+SE556865465001  vatlas  found                 309  found                 523  equal       equal       equal       equal
+ATU63046279     vies    found                 215  found                 248  equal       equal       neither     neither
+CZ75147653      vatlas  not-registered       6267  not-registered       6488  -           -           -           -
+FI33966573      vies    found                69.2  found                 370  equal       different   equal       equal
+FI07720174      vatlas  found                55.2  found                1170  equal       different   different   equal
+PT504943782     vies    found                 391  found                 193  equal       equal       equal       equal
+ATU57480504     vatlas  found                1476  found                1327  equal       equal       neither     neither
+ATU72371523     vies    found                 215  found                 244  equal       equal       neither     neither
+EL090049627     vatlas  found                 371  found                1816  equal       equal       equal       equal
+ATU36897300     vies    found                1679  found                 135  equal       equal       neither     neither
+HU18875906      vatlas  found                1228  found                 179  equal       equal       equal       equal
+PT504441361     vies    found                 311  found                 191  equal       equal       equal       equal
+RO32189146      vatlas  found                 246  found                2063  equal       different   neither     onlyVatlas
+PT514061944     vies    found                1074  found                 245  equal       equal       equal       equal
+IE3629141FH     vatlas  found                 985  found                 465  equal       equal       neither     neither
+ATU66357747     vies    found                 216  found                 368  equal       equal       neither     neither
+RO6195017       vatlas  found                 204  found                1247  equal       different   neither     onlyVatlas
+EL998751013     vies    found                 340  found                 365  equal       equal       equal       equal
+ATU35822909     vatlas  found                 245  found                 122  equal       equal       neither     neither
+ATU29236109     vies    found                 189  found                 126  equal       equal       neither     neither
+EL095521165     vatlas  found                 367  found                 346  equal       equal       equal       equal
+DK31582229      vies    unavailable           288  unavailable         10001  -           -           -           -
+ATU41161602     vatlas  found                 159  found                 184  equal       equal       neither     neither
+DK28669070      vies    unavailable          63.6  unavailable         10002  -           -           -           -
+ATU16269507     vatlas  found                 690  found                 699  equal       equal       neither     neither
+EL094346312     vies    found                 292  found                 768  equal       equal       equal       equal
+DK26696348      vatlas  unavailable          24.7  unavailable         10002  -           -           -           -
+SI30161096      vies    found                1844  found                 420  equal       equal       equal       equal
+IE3203139RH     vatlas  found                2011  found                 204  equal       equal       neither     neither
+IE9Y17894Q      vies    found                2172  found                 104  equal       equal       neither     neither
+SI51207915      vatlas  found                 246  found                 342  equal       equal       equal       equal
+FI18523029      vies    found                17.6  found                2187  equal       different   different   different
+LU15406203      vatlas  found                1822  found                1203  equal       equal       neither     neither
+ATU66033936     vies    found                 135  found                 123  equal       equal       neither     neither
+EE100435656     vatlas  found                19.0  found                1388  equal       different   equal       different
+FI19623611      vies    found                21.9  found                 367  equal       different   different   equal
+EE100077975     vatlas  found                18.9  found                1499  equal       different   equal       different
+RO36235547      vies    found                 244  found                1080  equal       different   neither     onlyVatlas
+EE100224841     vatlas  found                16.5  found                1186  equal       different   equal       different
+SE556052746601  vies    found                 490  found                1078  equal       equal       equal       equal
+SE790830283401  vatlas  found                1230  found                1250  equal       equal       equal       equal
+FI24740185      vies    found                19.6  found                1182  equal       equal       equal       equal
+SE556481007401  vatlas  found                1425  found                1945  equal       equal       equal       equal
+SI23064145      vies    found                1275  found                 230  equal       equal       equal       equal
+LU16464079      vatlas  not-registered        398  not-registered       1231  -           -           -           -
+PT502011378     vies    found                 411  found                 493  equal       equal       equal       equal
+PL5840152140    vatlas  found                 542  found                1203  equal       different   equal       equal
+BG200388925     vies    found                1347  found                2635  equal       equal       neither     neither
+PT516564285     vatlas  found                 458  found                 299  equal       equal       equal       equal
+CZ70883858      vies    found                 254  found                5483  equal       equal       equal       different
+PT506064433     vatlas  found                1194  found                 212  equal       equal       equal       equal
+PL5260204995    vies    found                 143  found                 727  equal       equal       equal       equal
+PT500051070     vatlas  found                 207  found                1047  equal       equal       equal       equal
+SE556712402801  vies    found                1067  found                 438  equal       equal       equal       equal
+PT500064580     vatlas  found                 276  found                 655  equal       equal       equal       equal
+ATU50447306     vies    found                 631  found                 621  equal       equal       neither     neither
+RO13091574      vatlas  found                 176  found                 940  equal       different   equal       different
+EE102400317     vies    found                17.9  found                 321  equal       different   equal       different
+EL800419255     vatlas  found                 349  found                 325  equal       equal       equal       equal
+ATU77153679     vies    found                 149  found                1387  equal       equal       neither     neither
+EL094000362     vatlas  found                2242  found                2578  equal       equal       equal       equal
+PL5270207340    vies    found                 503  found                2310  equal       equal       equal       equal
+PL5223185370    vatlas  found                 194  found                 141  equal       equal       equal       equal
+ATU38420507     vies    found                2192  found                 118  equal       equal       neither     neither
+ATU47390407     vatlas  found                 148  found                 122  equal       equal       neither     neither
+IE8246185I      vies    found                1670  found                1851  equal       equal       neither     neither
+ATU53616207     vatlas  found                 140  found                1681  equal       equal       neither     neither
+SI75860309      vies    found                1775  found                 155  equal       equal       equal       equal
+SI92211798      vatlas  found                 229  found                1181  equal       equal       equal       equal
+PL5223195397    vies    found                 176  found                 160  equal       different   equal       equal
+DK34577358      vatlas  found               11123  found                8320  equal       equal       equal       equal
+PL9541300712    vies    found                1223  found                 135  equal       equal       equal       equal
+SE556074308901  vatlas  found                 582  found                 379  equal       equal       equal       equal
+SE802410015101  vies    found                1225  found                1102  equal       equal       equal       equal
+DK47458714      vatlas  found                9157  unavailable         10004  -           -           -           -
+EL998688671     vies    found                1895  found                1170  equal       equal       equal       equal
+DK41803606      vatlas  unavailable          1410  unavailable         10003  -           -           -           -
+PL7292712388    vies    found                 574  found                 428  equal       equal       equal       equal
+SE559448537601  vatlas  found                 828  found                1239  equal       equal       equal       equal
+SE556975865801  vies    not-registered        853  not-registered        695  -           -           -           -
+MT27909426      vatlas  found                1368  found                 208  equal       equal       neither     neither
+LU28149274      vies    not-registered       1094  not-registered       1028  -           -           -           -
+SE556057345201  vatlas  found                1299  found                 278  equal       equal       equal       equal
+CZ61384399      vies    found                 179  found                7553  equal       equal       equal       different
+PT500140022     vatlas  found                 641  found                 240  equal       equal       equal       equal
+LT100008581015  vies    found                1205  found                 979  equal       equal       neither     neither
+SK2020845255    vatlas  found                 856  found                 352  equal       equal       equal       equal
+LT100010607810  vies    found                 649  found                 841  equal       equal       neither     neither
+LT100015429311  vatlas  found                 866  found                 421  equal       equal       neither     neither
+BG117611755     vies    found                 292  found                 659  equal       equal       neither     neither
+EL999152155     vatlas  found                 857  found                 752  equal       equal       equal       equal
+LT100668716     vies    found                 348  found                 186  equal       equal       neither     neither
+EL099364171     vatlas  found                 631  found                 379  equal       equal       equal       equal
+SI48018830      vies    found                 620  found                 448  equal       equal       equal       equal
+IE8F53787S      vatlas  found                 567  found                 141  equal       equal       neither     neither
+EL094014004     vies    found                 404  found                 694  equal       equal       equal       equal
+BG206280881     vatlas  found                1336  found                2053  equal       equal       neither     neither
+DK14375597      vies    unavailable           102  found                9517  -           -           -           -
+EL095444420     vatlas  found                2724  found                 220  equal       equal       equal       equal
+DK38151886      vies    unavailable         12111  unavailable         10001  -           -           -           -
+EL801694299     vatlas  found                 332  found                 603  equal       equal       equal       equal
+PT514840960     vies    found                 222  found                 240  equal       equal       equal       equal
+PL5833199407    vatlas  found                 450  found                 166  equal       equal       equal       equal
+EL094316669     vies    found                 680  found                 491  equal       equal       equal       equal
+PL8522545056    vatlas  found                 264  found                 284  equal       equal       equal       equal
+CZ00216275      vies    found                 206  found                6773  equal       equal       equal       different
+EL090055634     vatlas  found                 472  found                 316  equal       equal       equal       equal
+LT119511515     vies    found                 225  found                 182  equal       equal       neither     neither
+EL997604027     vatlas  found                 396  found                 331  equal       equal       equal       equal
+EL800390337     vies    found                 404  found                 339  equal       equal       equal       equal
+RO5194978       vatlas  found                 277  found                 465  equal       different   onlyVatlas  onlyVatlas
+EE100210813     vies    found                18.6  found                 191  equal       different   equal       different
+SE559134669601  vatlas  not-registered        496  not-registered        402  -           -           -           -
+FI21700292      vies    found                17.3  found                 554  equal       equal       equal       equal
+FI26896124      vatlas  found                18.4  found                 251  equal       different   different   equal
+FI02151945      vies    found                 552  found                 579  equal       equal       equal       equal
+EE100670291     vatlas  found                16.2  found                 204  equal       different   equal       different
+PL6761687491    vies    found                 138  found                 276  equal       equal       equal       equal
+PL6772323982    vatlas  not-registered        228  not-registered        144  -           -           -           -
+PL5250009269    vies    found                 130  found                 245  equal       equal       equal       equal
+HU19253268      vatlas  found                 176  found                 165  equal       equal       equal       equal
+SK2020486699    vies    found                 423  found                 383  equal       equal       equal       equal
+HU15598347      vatlas  found                 285  found                 165  equal       equal       equal       equal
+PL8361848508    vies    found                 181  found                 127  equal       equal       equal       equal
+LV90000041898   vatlas  found                51.3  found                2450  equal       onlyVies    neither     neither
+DK60997314      vies    unavailable           108  unavailable         10002  -           -           -           -
+HR36389528408   vatlas  found                 568  found                 245  equal       equal       equal       equal
+SI81079435      vies    found                 179  found                 163  equal       equal       equal       equal
+SI23887729      vatlas  found                 242  found                 176  equal       equal       equal       equal
+PL7861000583    vies    found                 416  found                 161  equal       equal       equal       equal
+PL7861697911    vatlas  found                 148  found                 143  equal       equal       onlyVatlas  onlyVatlas
+PL7811365331    vies    found                 163  found                 131  equal       different   equal       equal
+SI46920226      vatlas  found                 194  found                 452  equal       equal       equal       equal
+HR01221346160   vies    found                 452  found                 313  equal       equal       equal       equal
+HU23393958      vatlas  found                 377  found                 438  equal       equal       equal       equal
+IE6600338L      vies    found                 503  found                 438  equal       equal       neither     neither
+RO4279685       vatlas  not-registered        712  not-registered        454  -           -           -           -
+PL5260205291    vies    found                 221  found                 151  equal       different   equal       equal
+IE8214173T      vatlas  found                 388  found                 138  equal       equal       neither     neither
+CY10166991A     vies    found                 749  found                 362  equal       equal       equal       equal
+CY10396180Z     vatlas  found                 599  found                 383  equal       equal       equal       equal
+IE0539918O      vies    not-registered        585  not-registered        456  -           -           -           -
+IE3926731JH     vatlas  found                 141  found                 505  equal       neither     equal       equal
+PL5250007425    vies    found                 145  found                 763  equal       equal       equal       equal
+SI94947333      vatlas  found                 860  found                 875  equal       equal       equal       equal
+SI51545535      vies    found                 686  found                 890  equal       equal       equal       equal
+HU18120141      vatlas  found                 517  found                 149  equal       equal       equal       equal
+MT31108702      vies    found                 525  found                 313  equal       equal       neither     neither
+SE202100070401  vatlas  found                1161  found                 496  equal       neither     equal       equal
+CZ60646594      vies    found                 171  found                7967  equal       equal       equal       equal
+RO37821331      vatlas  found                 274  found                 814  equal       different   equal       different
+RO29600496      vies    found                80.3  found                 401  equal       different   equal       different
+HR57029260362   vatlas  found                1144  found                 441  equal       equal       equal       equal
+DK31597544      vies    found               11811  found                8685  equal       equal       equal       equal
+LT100014004618  vatlas  found                 326  found                 380  equal       equal       neither     neither
+DK61056416      vies    unavailable           208  unavailable         10004  -           -           -           -
+DK30560787      vatlas  unavailable          48.3  found                9960  -           -           -           -
+HR38583303160   vies    found                3258  found                 203  equal       equal       equal       equal
+RO14871616      vatlas  found                 196  found                 270  equal       different   onlyVatlas  onlyVatlas
+DK42543799      vies    unavailable          93.8  unavailable         10002  -           -           -           -
+SI45597162      vatlas  found                 271  found                 183  equal       equal       equal       equal
+HR25385906011   vies    found                 229  found                 278  equal       equal       equal       equal
+SI54707218      vatlas  found                 281  found                 196  equal       equal       equal       equal
+BG1222030125    vies    not-registered        652  not-registered        214  -           -           -           -
+HU15300337      vatlas  not-registered        144  not-registered        213  -           -           -           -
+HU19426237      vies    found                 243  found                 145  equal       equal       equal       equal
+SI38108674      vatlas  found                 195  found                 191  equal       equal       equal       equal
+MT27045009      vies    found                 370  found                1127  equal       equal       neither     neither
+LV90002121030   vatlas  found                16.3  found                2999  equal       onlyVies    neither     neither
+CZ00883921      vies    found                 674  found                6346  equal       equal       equal       equal
+IE6430759Q      vatlas  found                 303  found                 124  equal       equal       neither     neither
+HR02588515194   vies    found                 706  found                 300  equal       equal       equal       equal
+EE101014953     vatlas  not-registered        537  not-registered        296  -           -           -           -
+PL5730111401    vies    found                 458  found                 143  equal       equal       equal       equal
+PL5130141977    vatlas  found                 123  found                 204  equal       different   equal       equal
+HU24672393      vies    not-registered        167  not-registered        205  -           -           -           -
+HU24906917      vatlas  found                 165  found                 238  equal       equal       equal       equal
+CY10052927G     vies    found                 549  found                 367  equal       equal       equal       equal
+CY10421722Z     vatlas  found                 405  found                 576  equal       equal       equal       equal
+HU12638932      vies    found                 172  found                 173  equal       equal       equal       equal
+IE8288489Q      vatlas  found                 161  found                 112  equal       equal       neither     neither
+PL1180183740    vies    found                 182  found                 133  equal       equal       equal       equal
+SI15779092      vatlas  found                 254  found                 154  equal       equal       equal       equal
+PL7010366812    vies    found                 129  found                 122  equal       equal       equal       equal
+PL8943032420    vatlas  found                 141  found                 234  equal       equal       equal       equal
+HR40237608715   vies    found                 430  found                 401  equal       equal       equal       equal
+IE3699192SH     vatlas  found                 155  found                 150  equal       equal       neither     neither
+HR92278052107   vies    found                 454  found                 294  equal       equal       equal       equal
+RO21524920      vatlas  found                 212  found                 376  equal       different   equal       different
+RO22736939      vies    found                86.9  found                 252  equal       different   equal       different
+IE6517957E      vatlas  found                 144  found                 134  equal       equal       neither     neither
+HU18118463      vies    found                 158  found                 176  equal       equal       equal       equal
+HU10243231      vatlas  found                 152  found                 179  equal       equal       equal       equal
+IE0650202O      vies    found                 122  found                 114  equal       equal       neither     neither
+CZ25271121      vatlas  found                 181  found                7701  equal       equal       equal       different
+IE4853153T      vies    found                 212  found                 110  equal       equal       neither     neither
+RO4433775       vatlas  not-registered        523  not-registered        590  -           -           -           -
+SK2022385387    vies    found                 212  found                 416  equal       equal       equal       equal
+SK2021724804    vatlas  found                 603  found                 556  equal       equal       equal       equal
+IE3514077HH     vies    found                 128  found                 122  equal       equal       neither     neither
+HU25717002      vatlas  found                 173  found                 145  equal       equal       equal       equal
+BG000413725     vies    found                1928  found                 957  equal       equal       neither     neither
+BG130455211     vatlas  found                2390  found                1707  equal       equal       neither     neither
+BG000455471     vies    found                3513  found                2320  equal       equal       neither     neither
+BG831385737     vatlas  found                3160  found                1785  equal       equal       neither     neither
+BG000517346     vies    found                 345  found                 736  equal       equal       neither     neither
+BG000080612     vatlas  found                 336  found                 642  equal       equal       neither     neither
+BG176648004     vies    found                3242  found                1793  equal       equal       neither     neither
+BG148078636     vatlas  found                3462  found                3656  equal       equal       neither     neither
+BG175905652     vies    found                4485  found                3034  equal       equal       neither     neither
+BG203301249     vatlas  found                4283  unavailable          2054  -           -           -           -
+BG000670673     vies    found                4222  found                3774  equal       equal       neither     neither
+BG000210319     vatlas  found                2634  found                2740  equal       equal       neither     neither
+BG175905773     vies    found                1260  found                3131  equal       equal       neither     neither
+BG000670616     vatlas  found                 750  found                3219  equal       equal       neither     neither
+BG202099976     vies    found                4227  found                1884  equal       equal       neither     neither
+BG831917834     vatlas  found                1916  found                2535  equal       equal       neither     neither
+MT16515317      vies    found                2045  found                 207  equal       equal       neither     neither
+MT13325115      vatlas  found                 368  found                1942  equal       equal       neither     neither
+IE3626887TH     vies    not-registered       1404  not-registered       1652  -           -           -           -
+DK63407216      vatlas  unavailable         12066  unavailable         10001  -           -           -           -
+SK2022733834    vies    found                 697  found                 423  equal       equal       equal       equal
+HU19156972      vatlas  found                 197  found                 243  equal       equal       equal       equal
+DK29057559      vies    unavailable           112  unavailable         10001  -           -           -           -
+CZ08884731      vatlas  found                 187  found                7702  equal       equal       equal       different
+SI12077941      vies    found                 340  found                 245  equal       equal       equal       equal
+SI96599944      vatlas  found                1996  found                 189  equal       equal       equal       equal
+EE102339491     vies    found                20.1  found                 245  equal       different   equal       different
+HR61738073226   vatlas  found                 321  found                 344  equal       equal       equal       equal
+HR86235185568   vies    found                 339  found                 489  equal       equal       equal       equal
+HR29845096215   vatlas  found                 245  found                1289  equal       equal       equal       equal
+HR90884993104   vies    found                 259  found                 241  equal       equal       equal       equal
+HR70410022758   vatlas  found                 300  found                 291  equal       equal       equal       equal
+HR01338491514   vies    found                 239  found                 931  equal       equal       equal       equal
+HR10839679016   vatlas  found                1086  found                 259  equal       equal       equal       equal
+HR64218323816   vies    found                 421  found                 376  equal       equal       equal       equal
+BG123024538     vatlas  found                 288  found                 426  equal       equal       neither     neither
+BG131575523     vies    not-registered        604  not-registered       1515  -           -           -           -
+BG176055801     vatlas  not-registered        349  not-registered        899  -           -           -           -
+BG176937717     vies    found                 584  found                 552  equal       equal       neither     neither
+BG000522685     vatlas  found                 288  found                 608  equal       equal       neither     neither
+BG000665249     vies    found                 460  found                 194  equal       equal       neither     neither
+BG115013887     vatlas  not-registered        292  not-registered        314  -           -           -           -
+DK38442813      vies    unavailable          20.2  unavailable          63.8  -           -           -           -
+SI28187229      vatlas  found                 324  found                 246  equal       equal       equal       equal
+SI18845673      vies    found                 190  found                 348  equal       equal       equal       equal
+DK26138485      vatlas  unavailable          25.7  unavailable          36.3  -           -           -           -
+DK10403782      vies    unavailable           177  unavailable         10003  -           -           -           -
+SI71345442      vatlas  found                 276  found                1123  equal       equal       equal       equal
+SI62166859      vies    found                 194  found                 845  equal       equal       equal       equal
+SI25290363      vatlas  found                 405  found                 181  equal       equal       equal       equal
+SI12235016      vies    found                 763  found                 636  equal       equal       equal       equal
+DK34722293      vatlas  unavailable          48.7  unavailable          39.0  -           -           -           -
+SI66742790      vies    found                 829  found                 561  equal       equal       equal       equal
+CZ60460709      vatlas  found                 131  found                7489  equal       equal       equal       different
+SI19230052      vies    found                 329  found                2090  equal       equal       equal       equal
+LU25610956      vatlas  found                2503  found                 136  equal       equal       neither     neither
+HR17560201884   vies    found                 293  found                 215  equal       equal       equal       equal
+BG822106269     vatlas  found                2765  found                2241  equal       equal       neither     neither
+HR99534693762   vies    found                1099  found                1821  equal       equal       equal       equal
+BG000665352     vatlas  found                 518  found                 323  equal       equal       neither     neither
+HU12609596      vies    found                 417  found                 488  equal       equal       equal       equal
+HU21905955      vatlas  found                 150  found                 238  equal       equal       equal       equal
+BG130173429     vies    not-registered        251  not-registered        263  -           -           -           -
+DK25666070      vatlas  unavailable          21.1  unavailable          40.1  -           -           -           -
+BG203824541     vies    found                 214  found                 315  equal       equal       neither     neither
+CZ26296080      vatlas  found                 147  found                6751  equal       equal       equal       equal
+SI29880068      vies    found                 310  found                 367  equal       equal       equal       equal
+RO21881990      vatlas  found                 325  found                 416  equal       different   onlyVatlas  onlyVatlas
+CZ24839523      vies    found                 173  found                6395  equal       equal       equal       different
+HU15300540      vatlas  not-registered        774  not-registered        149  -           -           -           -
+IE3910261IH     vies    found                1078  found                 820  equal       equal       neither     neither
+BG000455464     vatlas  found                1506  found                1239  equal       equal       neither     neither
+LU27327040      vies    found                1320  found                 167  equal       equal       neither     neither
+HR77817939141   vatlas  found                 362  found                1256  equal       equal       equal       equal
+LT350214515     vies    found                1700  found                1500  equal       equal       neither     neither
+SK2024121704    vatlas  found                1331  found                 241  equal       equal       equal       equal
+EE100943452     vies    found                18.8  found                1394  equal       different   equal       different
+HR37879152548   vatlas  found                1550  found                 710  equal       equal       equal       equal
+LV40008042411   vies    found                20.2  found                1104  equal       different   onlyVatlas  neither
+EE101960829     vatlas  found                21.5  found                 201  equal       different   equal       different
+IE3462972AH     vies    found                 140  found                 439  equal       equal       neither     neither
+HU19253086      vatlas  found                 165  found                 131  equal       equal       equal       equal
+LT100008277714  vies    found                 389  found                 197  equal       equal       neither     neither
+HR27788012253   vatlas  found                 245  found                 345  equal       equal       equal       equal
+CY10238165W     vies    found                 390  found                 315  equal       equal       equal       equal
+IE3955104SH     vatlas  found                 246  found                 220  equal       equal       neither     neither
+SI69697205      vies    found                 336  found                 249  equal       equal       equal       equal
+EE102086346     vatlas  found                17.0  found                 277  equal       different   equal       different
+SK2023677018    vies    found                 289  found                 467  equal       equal       equal       equal
+LT119508113     vatlas  found                 241  found                 212  equal       equal       neither     neither
+CY10137255O     vies    found                 379  found                 565  equal       equal       equal       equal
+HU26130396      vatlas  found                 170  found                 150  equal       equal       equal       equal
+RO2646378       vies    found                 203  found                 322  equal       different   neither     onlyVatlas
+RO23641900      vatlas  found                74.1  found                 223  equal       different   equal       different
+SI33925950      vies    found                 183  found                 274  equal       equal       equal       equal
+SI69655774      vatlas  found                 280  found                 220  equal       equal       equal       equal
+HR32475284418   vies    found                 206  found                 245  equal       equal       equal       equal
+HR10295005578   vatlas  not-registered        748  not-registered        357  -           -           -           -
+LU23804761      vies    found                 195  found                 130  equal       equal       neither     neither
+IE2199803V      vatlas  found                 153  found                 121  equal       equal       neither     neither
+HU18133844      vies    found                 235  found                 171  equal       equal       equal       equal
+HU19002457      vatlas  found                 144  found                 151  equal       equal       equal       equal
+HU19308760      vies    found                 215  found                 171  equal       equal       equal       equal
+HU23417562      vatlas  found                 165  found                 181  equal       equal       equal       equal
+HU11687335      vies    found                 147  found                 243  equal       equal       equal       equal
+CZ00216305      vatlas  found                 129  found                7043  equal       equal       equal       different
+SK2020845332    vies    found                 611  found                 244  equal       equal       equal       equal
+RO29280537      vatlas  found                 344  found                 343  equal       different   onlyVatlas  onlyVatlas
+BG000670723     vies    found                1645  found                2087  equal       equal       neither     neither
+HR36948235505   vatlas  found                 292  found                 340  equal       equal       equal       equal
+LV90000039164   vies    found                18.0  found                1710  equal       onlyVies    neither     neither
+RO5495458       vatlas  not-registered        701  not-registered        306  -           -           -           -
+RO9052135       vies    found                84.3  found                 694  equal       different   neither     onlyVatlas
+RO3127522       vatlas  not-registered        429  not-registered        373  -           -           -           -
+RO9068280       vies    found                83.3  found                 861  equal       different   onlyVatlas  onlyVatlas
+RO3321234       vatlas  found                80.2  found                 274  equal       different   onlyVatlas  onlyVatlas
+RO21616390      vies    found                 108  found                 796  equal       different   equal       different
+RO4701606       vatlas  not-registered       1306  not-registered       1664  -           -           -           -
+CY10331119U     vies    found                1772  found                 321  equal       equal       equal       equal
+SI13183109      vatlas  found                1931  found                1572  equal       equal       equal       equal
+HU15327040      vies    not-registered        229  not-registered        246  -           -           -           -
+SI65835794      vatlas  found                 232  found                1450  equal       equal       equal       equal
+CZ61388971      vies    found                 392  found                6758  equal       equal       equal       different
+SI65332547      vatlas  not-registered        440  not-registered        281  -           -           -           -
+RO10608391      vies    found                 154  found                 800  equal       different   onlyVatlas  onlyVatlas
+EE101823966     vatlas  found                16.4  found                 509  equal       different   equal       different
+CZ70883521      vies    found                 171  found                8254  equal       equal       equal       different
+LU32972064      vatlas  found                 269  found                 120  equal       equal       neither     neither
+SK2820012096    vies    found                 248  found                 346  equal       equal       equal       equal
+CZ68407700      vatlas  found                82.4  found                7649  equal       equal       equal       different
+LT100003641116  vies    found                 543  found                 321  equal       equal       neither     neither
+IE9692485U      vatlas  found                 249  found                 380  equal       equal       neither     neither
+CZ47537256      vies    found                 228  found                8436  equal       equal       equal       different
+SI37502417      vatlas  found                 308  found                 189  equal       equal       equal       equal
+LU32157417      vies    found                 214  found                 246  equal       equal       neither     neither
+RO7614474       vatlas  found                 156  found                 305  equal       different   onlyVatlas  onlyVatlas
+RO40433259      vies    found                83.7  found                 824  equal       different   onlyVatlas  onlyVatlas
+CY10386967J     vatlas  found                 543  found                 466  equal       equal       equal       equal
+BG000670552     vies    not-registered       2718  not-registered       1966  -           -           -           -
+CY90002687H     vatlas  found                 571  found                 465  equal       equal       equal       equal
+HU18304433      vies    found                 176  found                 227  equal       equal       equal       equal
+BG206119839     vatlas  found                1247  found                 772  equal       equal       neither     neither
+CY10298153Y     vies    found                 460  found                 351  equal       equal       equal       equal
+CY10435036M     vatlas  found                 503  found                 456  equal       equal       equal       equal
+CY60074439A     vies    found                 461  found                 491  equal       equal       equal       equal
+CY10167225J     vatlas  found                 491  found                 714  equal       equal       equal       equal
+EE100018015     vies    found                16.4  found                 243  equal       different   equal       different
+RO42745273      vatlas  found                 163  found                 579  equal       different   onlyVatlas  onlyVatlas
+LV90000065985   vies    found                22.9  found                1957  equal       onlyVies    neither     neither
+HU19426268      vatlas  found                 249  found                 219  equal       equal       equal       equal
+HU15329499      vies    not-registered        141  not-registered        121  -           -           -           -
+CZ22729674      vatlas  found                 199  found                7471  equal       equal       equal       different
+MT22629723      vies    found                 321  found                 492  equal       equal       neither     neither
+MT12435416      vatlas  found                 385  found                 267  equal       equal       neither     neither
+CZ62156489      vies    found                 172  found                7941  equal       equal       equal       different
+LT100011863517  vatlas  found                 415  found                 341  equal       equal       neither     neither
+EE102160673     vies    found                17.1  found                 175  equal       different   equal       different
+LT100012301611  vatlas  found                 268  found                 222  equal       equal       neither     neither
+SK2022617421    vies    found                 338  found                 370  equal       equal       equal       equal
+HU10678970      vatlas  found                 203  found                 263  equal       equal       equal       equal
+HU17784234      vies    found                 357  found                 162  equal       equal       equal       equal
+HU23094817      vatlas  found                 189  found                 177  equal       equal       equal       equal
+HU13519027      vies    found                 147  found                 169  equal       equal       equal       equal
+CZ24779334      vatlas  found                 190  found                6813  equal       equal       equal       different
+CY10392142H     vies    found                 583  found                 536  equal       equal       equal       equal
+BG205345397     vatlas  found                 983  found                 772  equal       equal       neither     neither
+BG175905702     vies    found                1201  found                 924  equal       equal       neither     neither
+CZ26482347      vatlas  found                 130  unavailable          68.1  -           -           -           -
+CY10373773W     vies    found                 384  found                 347  equal       equal       equal       equal
+CY10166534L     vatlas  found                 490  found                 466  equal       equal       equal       equal
+CZ60461373      vies    found                79.4  unavailable           105  -           -           -           -
+EE102098321     vatlas  found                18.4  found                 356  equal       different   equal       different
+EE102133189     vies    found                18.8  found                 521  equal       different   equal       different
+RO20571923      vatlas  found                 291  found                 342  equal       different   neither     onlyVatlas
+LU28385130      vies    found                 564  found                 265  equal       equal       neither     neither
+HU17782294      vatlas  found                 216  found                 250  equal       equal       equal       equal
+SI56124767      vies    found                 189  found                 234  equal       equal       equal       equal
+RO11463302      vatlas  not-registered        775  not-registered        341  -           -           -           -
+EE100296086     vies    found                18.1  found                 334  equal       different   equal       different
+HU18984303      vatlas  found                 234  found                 224  equal       equal       equal       equal
+LV90002135242   vies    found                19.4  found                2200  equal       onlyVies    neither     neither
+SI44444656      vatlas  found                 206  found                 221  equal       equal       equal       equal
+CZ00023752      vies    found                 487  found                6322  equal       equal       equal       equal
+HU15308744      vatlas  found                1320  found                1331  equal       equal       equal       equal
+LT100011754612  vies    found                 385  found                 271  equal       equal       neither     neither
+CZ63839172      vatlas  found                72.5  found                5923  equal       equal       equal       different
+LU21621837      vies    found                1521  found                 169  equal       equal       neither     neither
+HU28953409      vatlas  found                 243  found                 223  equal       equal       equal       equal
+CZ49777513      vies    found                 202  found                5939  equal       equal       equal       different
+CY60072118L     vatlas  found                1446  found                1081  equal       equal       equal       equal
+CY10357733U     vies    found                1076  found                1719  equal       equal       equal       equal
+CY10358531S     vatlas  found                1055  found                1623  equal       equal       equal       equal
+CY90007817C     vies    found                 634  found                 809  equal       equal       equal       equal
+MT12816435      vatlas  found                1217  found                 232  equal       equal       neither     neither
+CY90004817U     vies    found                 815  found                 309  equal       equal       equal       equal
+CY90000457V     vatlas  found                1674  found                1919  equal       equal       equal       equal
+CY10016154J     vies    found                1936  found                 510  equal       equal       equal       equal
+MT28802009      vatlas  found                1621  found                1551  equal       equal       neither     neither
+CY10410610R     vies    found                1842  found                 310  equal       equal       equal       equal
+CY10077498G     vatlas  found                1345  found                 534  equal       equal       equal       equal
+RO15076287      vies    found                 205  found                 584  equal       different   equal       different
+SK2121334391    vatlas  found                 352  found                 239  equal       equal       equal       equal
+SI38048183      vies    found                 215  found                 251  equal       equal       equal       equal
+RO2785503       vatlas  found                77.8  found                 895  equal       different   neither     onlyVatlas
+HR34016189309   vies    found                 460  found                 600  equal       equal       equal       equal
+HU14459249      vatlas  found                 163  found                 180  equal       equal       equal       equal
+BG000215630     vies    found                 461  found                1229  equal       equal       neither     neither
+HU12796560      vatlas  found                 220  found                 172  equal       equal       equal       equal
+HU20342850      vies    found                 215  found                 197  equal       equal       equal       equal
+LU14471400      vatlas  found                 137  found                 174  equal       equal       neither     neither
+HU21925221      vies    not-registered        242  not-registered        256  -           -           -           -
+CZ28184564      vatlas  found                 243  found                6611  equal       equal       equal       different
+BG130545438     vies    found                1675  found                1039  equal       equal       neither     neither
+CZ09054014      vatlas  found                 186  found                6888  equal       equal       equal       different
+HU17783305      vies    found                 256  found                 232  equal       equal       equal       equal
+CZ68081731      vatlas  found                 173  found                5047  equal       equal       equal       different
+LT119503917     vies    found                 425  found                 246  equal       equal       neither     neither
+LU20415780      vatlas  found                 256  found                 247  equal       equal       neither     neither
+LU35821781      vies    found                 169  found                 118  equal       equal       neither     neither
+CZ00063703      vatlas  found                 142  found                5413  equal       equal       equal       different
+LV90001342592   vies    found                77.7  found                 823  equal       onlyVies    neither     neither
+RO4269282       vatlas  not-registered        789  not-registered        429  -           -           -           -
+LT260168314     vies    found                 268  found                 283  equal       equal       neither     neither
+CY99000222P     vatlas  found                 563  found                 322  equal       equal       equal       equal
+MT27948534      vies    found                 341  found                 263  equal       equal       neither     neither
+HR28011548575   vatlas  found                 242  found                 225  equal       equal       equal       equal
+RO1644670       vies    found                 157  found                 365  equal       different   equal       different
+CY10365601I     vatlas  found                 382  found                 484  equal       equal       equal       equal
+LT119505811     vies    found                 253  found                 362  equal       equal       neither     neither
+EE102038860     vatlas  found                23.4  found                 178  equal       different   equal       different
+HR74555862029   vies    found                 249  found                 228  equal       equal       equal       equal
+BG205895028     vatlas  found                 248  found                 218  equal       equal       neither     neither
+SK2120651368    vies    found                 462  found                 248  equal       equal       equal       equal
+LT100008958611  vatlas  found                 259  found                 326  equal       equal       neither     neither
+SK2023440848    vies    found                 377  found                 208  equal       equal       equal       equal
+MT26290535      vatlas  found                 273  found                 316  equal       equal       neither     neither
+BG175370801     vies    found                 582  found                 248  equal       equal       neither     neither
+RO32356520      vatlas  found                 245  found                 675  equal       different   neither     onlyVatlas
+RO4480173       vies    not-registered        850  not-registered        727  -           -           -           -
+LU24083085      vatlas  found                 152  found                 181  equal       equal       neither     neither
+EE102364408     vies    not-registered        257  not-registered        212  -           -           -           -
+HR75923203828   vatlas  found                 228  found                 393  equal       equal       equal       equal
+LU32010056      vies    found                 235  found                 103  equal       equal       neither     neither
+LV50003050931   vatlas  found                18.7  found                1721  equal       different   onlyVatlas  neither
+LV40003344207   vies    found                81.2  found                2172  equal       different   onlyVatlas  neither
+LU20829030      vatlas  found                 376  found                 121  equal       equal       neither     neither
+LT100002802516  vies    found                 242  found                 196  equal       equal       neither     neither
+EE100560275     vatlas  found                18.6  found                 173  equal       different   equal       different
+LT100007301614  vies    found                 339  found                 273  equal       equal       neither     neither
+MT27736623      vatlas  found                 235  found                 354  equal       equal       neither     neither
+CY10141459E     vies    found                 446  found                 493  equal       equal       equal       equal
+RO434670        vatlas  found                 260  found                 290  equal       different   neither     onlyVatlas
+HR27208467122   vies    found                 378  found                 544  equal       equal       equal       equal
+SK2021109211    vatlas  found                 759  found                1755  equal       equal       equal       equal
+CY18002749N     vies    found                 432  found                 398  equal       equal       equal       equal
+RO18923009      vatlas  found                 156  found                 310  equal       different   equal       different
+RO14151658      vies    found                77.0  found                 206  equal       different   equal       different
+RO9113623       vatlas  found                78.6  found                 565  equal       different   neither     onlyVatlas
+CY10215243H     vies    found                 448  found                 380  equal       equal       equal       equal
+HR76722145702   vatlas  found                 743  found                 527  equal       equal       equal       equal
+LV40008009027   vies    found                67.9  found                3867  equal       different   onlyVatlas  neither
+HR78707119336   vatlas  found                 333  found                1934  equal       equal       equal       equal
+SK2020795821    vies    found                 386  found                 434  equal       equal       equal       equal
+CY90001590W     vatlas  found                2410  found                 465  equal       equal       equal       equal
+LU17535424      vies    found                 179  found                1476  equal       equal       neither     neither
+CY10402900Y     vatlas  found                1635  found                 378  equal       equal       equal       equal
+MT27298231      vies    found                 918  found                 188  equal       equal       neither     neither
+RO1572582       vatlas  found                 185  found                 314  equal       different   neither     onlyVatlas
+EE101761497     vies    found                20.0  found                 272  equal       different   equal       different
+EE100322358     vatlas  found                15.7  found                 277  equal       different   equal       different
+EE101339816     vies    found                18.9  found                 212  equal       different   equal       different
+RO15034095      vatlas  not-registered        778  not-registered        889  -           -           -           -
+CY10345472V     vies    found                 356  found                 505  equal       equal       equal       equal
+RO15378153      vatlas  not-registered        719  not-registered       1496  -           -           -           -
+RO29327770      vies    found                 865  found                1025  equal       different   neither     onlyVatlas
+RO5037256       vatlas  not-registered        654  not-registered        794  -           -           -           -
+EE101531148     vies    found                18.4  found                 173  equal       different   equal       different
+SK2020383695    vatlas  found                 517  found                 191  equal       equal       equal       equal
+CY10164329G     vies    found                 431  found                 306  equal       equal       equal       equal
+LT100008923715  vatlas  found                 246  found                 712  equal       equal       neither     neither
+SK2023599853    vies    found                 636  found                 613  equal       equal       equal       equal
+LU25784916      vatlas  found                 439  found                 103  equal       equal       neither     neither
+CY10378448C     vies    found                 353  found                 485  equal       equal       equal       equal
+HR31120185175   vatlas  found                 230  found                 468  equal       equal       equal       equal
+CY10379132T     vies    found                 386  found                 377  equal       equal       equal       equal
+EE101952206     vatlas  found                21.8  found                 170  equal       different   equal       different
+EE101761552     vies    found                19.5  found                 216  equal       different   equal       different
+SK2020227770    vatlas  found                 280  found                 392  equal       equal       equal       equal
+SK2022750686    vies    found                 374  found                 482  equal       equal       equal       equal
+HR48640028500   vatlas  found                 337  found                 216  equal       equal       equal       equal
+HR46675049527   vies    found                 340  found                 370  equal       equal       equal       equal
+HR25410051374   vatlas  found                 244  found                 203  equal       equal       equal       equal
+HR22910368449   vies    found                 255  found                 469  equal       equal       equal       equal
+LV40203334748   vatlas  not-registered       3515  not-registered       2605  -           -           -           -
+CY10394150N     vies    found                 481  found                 492  equal       equal       equal       equal
+EE100113596     vatlas  found                17.5  found                 305  equal       different   equal       different
+HR19370100881   vies    found                 339  found                 368  equal       equal       equal       equal
+SK2021526188    vatlas  found                 492  found                 466  equal       equal       equal       equal
+SK2023106679    vies    found                 485  found                 538  equal       equal       equal       equal
+SK2020437738    vatlas  found                 666  found                 591  equal       equal       equal       equal
+CY90007241Z     vies    found                 497  found                 330  equal       equal       equal       equal
+CY10397700P     vatlas  found                 684  found                 378  equal       equal       equal       equal
+SK2020316540    vies    found                 415  found                 387  equal       equal       equal       equal
+HR19904220725   vatlas  found                 292  found                 321  equal       equal       equal       equal
+LT100005122310  vies    found                 412  found                 512  equal       equal       neither     neither
+CY10391439K     vatlas  found                 420  found                 836  equal       equal       equal       equal
+CY10015806E     vies    found                 463  found                 366  equal       equal       equal       equal
+LU15420355      vatlas  found                 645  found                 833  equal       equal       neither     neither
+LT100005579315  vies    found                 912  found                1057  equal       equal       neither     neither
+LV40003347699   vatlas  found                24.0  found                4085  equal       different   onlyVatlas  neither
+EE100388732     vies    found                55.7  found                 351  equal       different   equal       different
+SK2021786393    vatlas  found                 452  found                 410  equal       equal       equal       equal
+LT119517219     vies    found                 257  found                 196  equal       equal       neither     neither
+CY10112301L     vatlas  found                 386  found                 360  equal       equal       equal       equal
+HR56658947772   vies    found                 294  found                 531  equal       equal       equal       equal
+EE101834683     vatlas  found                29.3  found                 305  equal       different   equal       different
+LT100004103016  vies    found                 420  found                 322  equal       equal       neither     neither
+LU20976581      vatlas  found                 452  found                 470  equal       equal       neither     neither
+SK2021252827    vies    found                 353  found                 477  equal       equal       equal       equal
+LT100573314     vatlas  found                 447  found                 688  equal       equal       neither     neither
+EE100736494     vies    found                19.0  found                 189  equal       different   equal       different
+CY10418185C     vatlas  found                 445  found                 322  equal       equal       equal       equal
+HR68802103157   vies    found                 522  found                 635  equal       equal       equal       equal
+CY10281020S     vatlas  found                 671  found                 717  equal       equal       equal       equal
+SK2020223271    vies    found                 295  found                 288  equal       equal       equal       equal
+LV90002111653   vatlas  found                23.9  not-registered       2164  -           -           -           -
+EE100518544     vies    found                16.2  found                 218  equal       different   equal       different
+LV50003888871   vatlas  found                17.2  found                3958  equal       different   onlyVatlas  neither
+LT100005300110  vies    found                 327  found                 404  equal       equal       neither     neither
+EE101114112     vatlas  found                49.5  found                 305  equal       different   equal       different
+SK2021328243    vies    found                 257  found                 314  equal       equal       equal       equal
+SK2024180136    vatlas  found                 261  found                 189  equal       equal       equal       equal
+LT100006274618  vies    found                 283  found                 211  equal       equal       neither     neither
+EE102316508     vatlas  found                16.1  found                 169  equal       different   equal       different
+LV40203233262   vies    found                19.1  found                2861  equal       different   onlyVatlas  neither
+LV50103237791   vatlas  found                18.1  found                1207  equal       different   onlyVatlas  neither
+MT17981218      vies    found                 457  found                 181  equal       equal       neither     neither
+LU22594664      vatlas  found                 146  found                 128  equal       equal       neither     neither
+LV90000013771   vies    found                23.4  found                1954  equal       onlyVies    neither     neither
+SK2120568714    vatlas  found                 272  found                 249  equal       equal       equal       equal
+EE101946296     vies    found                21.2  found                 462  equal       different   equal       different
+EE101082406     vatlas  found                17.4  found                 186  equal       different   equal       different
+LU31633327      vies    found                 526  found                 242  equal       equal       neither     neither
+LT351634917     vatlas  found                 222  found                 643  equal       equal       neither     neither
+LV90000068977   vies    found                19.5  found                1356  equal       onlyVies    neither     neither
+LV40003910687   vatlas  found                16.1  found                 883  equal       different   onlyVatlas  neither
+LT100001908917  vies    found                 565  found                 635  equal       equal       neither     neither
+MT28860913      vatlas  found                 246  found                 207  equal       equal       neither     neither
+MT15170707      vies    found                 221  found                 628  equal       equal       neither     neither
+LV40203135154   vatlas  found                20.4  found                1179  equal       different   onlyVatlas  neither
+LV90000086008   vies    found                20.2  found                2088  equal       onlyVies    neither     neither
+SK2021458197    vatlas  found                 406  found                1117  equal       equal       equal       equal
+EE102280760     vies    found                23.7  found                 206  equal       different   equal       different
+EE100012613     vatlas  found                17.6  found                 233  equal       different   equal       different
+EE102214820     vies    not-registered        313  not-registered       3517  -           -           -           -
+SK2020879245    vatlas  found                4320  found                4048  equal       equal       equal       equal
+LU20686731      vies    found                2987  found                 104  equal       equal       neither     neither
+MT21888809      vatlas  found                1024  found                 365  equal       equal       neither     neither
+SK2020894678    vies    found                 416  found                4054  equal       equal       equal       equal
+SK2021385861    vatlas  found                 398  found                3154  equal       equal       equal       equal
+LT100016003812  vies    found                 780  found                1874  equal       equal       neither     neither
+EE102261873     vatlas  found                 119  found                 272  equal       different   equal       different
+EE101509442     vies    found                17.2  found                 864  equal       different   equal       different
+SK2022540905    vatlas  found                 442  found                1209  equal       equal       equal       equal
+LT305135243     vies    not-registered       67.0  not-registered       1153  -           -           -           -
+LV90011524360   vatlas  found                70.8  found                1107  equal       onlyVies    neither     neither
+LU15852112      vies    found                 334  found                1722  equal       equal       neither     neither
+MT16959526      vatlas  found                 363  found                 302  equal       equal       neither     neither
+LT100007179012  vies    found                1550  found                1418  equal       equal       neither     neither
+SK2020983261    vatlas  found                1106  found                1085  equal       equal       equal       equal
+SK2121303140    vies    found                 338  found                1346  equal       equal       equal       equal
+LT100013828913  vatlas  found                 228  found                 323  equal       equal       neither     neither
+SK2020066213    vies    found                 465  found                 284  equal       equal       equal       equal
+SK2021125821    vatlas  found                 364  found                 466  equal       equal       equal       equal
+LV40103528963   vies    found                28.9  found                2217  equal       different   onlyVatlas  neither
+SK2022091027    vatlas  found                1320  found                 312  equal       equal       equal       equal
+LV90002120158   vies    found                29.3  not-registered        982  -           -           -           -
+SK2020848368    vatlas  found                 372  found                 771  equal       equal       equal       equal
+SK2020486710    vies    found                 335  found                 498  equal       equal       equal       equal
+LV90002128378   vatlas  found                16.9  found                1662  equal       onlyVies    neither     neither
+LU15843111      vies    found                 124  found                 112  equal       equal       neither     neither
+SK2020517895    vatlas  found                 488  found                 439  equal       equal       equal       equal
+LT100013933613  vies    found                 278  found                 272  equal       equal       neither     neither
+LV90002137506   vatlas  found                22.5  found                2103  equal       onlyVies    neither     neither
+LT106488917     vies    found                 465  found                 489  equal       equal       neither     neither
+SK2023160568    vatlas  found                 727  found                 246  equal       equal       equal       equal
+LV40003982628   vies    found                20.0  found                1827  equal       different   onlyVatlas  neither
+LT100014613615  vatlas  found                 684  found                 386  equal       equal       neither     neither
+LT100014389515  vies    found                 280  found                 290  equal       equal       neither     neither
+LT100012388011  vatlas  not-registered        588  not-registered        431  -           -           -           -
+LT100002835613  vies    found                 269  found                 473  equal       equal       neither     neither
+LV40003027238   vatlas  found                17.5  found                2634  equal       different   onlyVatlas  neither
+LU22985961      vies    found                 913  found                 680  equal       equal       neither     neither
+LT119552113     vatlas  found                1121  found                1313  equal       equal       neither     neither
+MT22216832      vies    found                 804  found                1192  equal       equal       neither     neither
+LV50103629321   vatlas  found                26.7  found                1607  equal       different   onlyVatlas  neither
+LV40008031742   vies    found                17.9  found                1588  equal       different   onlyVatlas  neither
+LV90002111761   vatlas  found                17.8  found                2596  equal       onlyVies    neither     neither
+LU18403067      vies    found                 182  found                 134  equal       equal       neither     neither
+MT14739304      vatlas  found                 207  found                 336  equal       equal       neither     neither
+MT12747722      vies    found                 338  found                 220  equal       equal       neither     neither
+LT235420610     vatlas  found                 246  found                 205  equal       equal       neither     neither
+MT26215733      vies    found                 204  found                 260  equal       equal       neither     neither
+LV40103758550   vatlas  found                17.6  found                2061  equal       different   onlyVatlas  neither
+MT16747706      vies    found                 290  found                 250  equal       equal       neither     neither
+MT20271036      vatlas  not-registered        193  not-registered        193  -           -           -           -
+MT22004702      vies    found                 192  found                 200  equal       equal       neither     neither
+MT22447737      vatlas  found                 438  found                 340  equal       equal       neither     neither
+LU32527973      vies    found                 143  found                 246  equal       equal       neither     neither
+LV40003021907   vatlas  found                20.9  found                3466  equal       different   onlyVatlas  neither
+LT119515314     vies    found                 339  found                 247  equal       equal       neither     neither
+LV40003619950   vatlas  found                99.7  found                2332  equal       different   onlyVatlas  neither
+LV50103129191   vies    found                 138  found                2503  equal       different   onlyVatlas  neither
+LU14925288      vatlas  found                 213  found                 112  equal       equal       neither     neither
+LU30575136      vies    found                 149  found                 116  equal       equal       neither     neither
+LU29998353      vatlas  not-registered        150  not-registered        196  -           -           -           -
+LV40203219413   vies    found                18.5  found                 904  equal       different   onlyVatlas  neither
+LT100012584918  vatlas  found                 276  found                 301  equal       equal       neither     neither
+LT100006155012  vies    found                 229  found                 373  equal       equal       neither     neither
+LV44103066863   vatlas  found                29.1  found                2307  equal       different   onlyVatlas  neither
+LT236153417     vies    found                 243  found                 218  equal       equal       neither     neither
+LT119502413     vatlas  found                 201  found                 311  equal       equal       neither     neither
+MT17916318      vies    found                 458  found                 204  equal       equal       neither     neither
+MT22766130      vatlas  found                 393  found                 208  equal       equal       neither     neither
+LV90002129621   vies    found                26.9  found                1799  equal       onlyVies    neither     neither
+LT254839716     vatlas  found                 222  found                 224  equal       equal       neither     neither
+LT100000876811  vies    found                 339  found                 242  equal       equal       neither     neither
+LU33590115      vatlas  found                 149  found                 132  equal       equal       neither     neither
+LU10284954      vies    found                 172  found                 108  equal       equal       neither     neither
+LU10061242      vatlas  found                 180  found                 129  equal       equal       neither     neither
+LU33027080      vies    found                 150  found                 158  equal       equal       neither     neither
+LU25176674      vatlas  found                 309  found                 111  equal       equal       neither     neither
+LV40003457128   vies    found                26.1  found                 948  equal       different   onlyVatlas  neither
+LV40203185808   vatlas  found                16.3  found                1276  equal       different   onlyVatlas  neither
+LU19382370      vies    found                 182  found                 283  equal       equal       neither     neither
+LU20769255      vatlas  found                 363  found                1080  equal       equal       neither     neither
+LV40203224679   vies    found                76.1  found                2863  equal       different   onlyVatlas  neither
+LU32269570      vatlas  found                 225  found                 111  equal       equal       neither     neither
+LV40003028055   vies    found                20.4  found                1803  equal       different   onlyVatlas  neither
+LU26290701      vatlas  found                 909  found                 112  equal       equal       neither     neither
+LU34019840      vies    found                 916  found                 950  equal       equal       neither     neither
+LV44103139724   vatlas  found                21.6  found                 738  equal       different   onlyVatlas  neither
+LV90000512408   vies    found                15.8  found                1952  equal       onlyVies    neither     neither
+LV40008160776   vatlas  found                16.5  found                1831  equal       different   onlyVatlas  neither
+LU32455460      vies    found                 575  found                 694  equal       equal       neither     neither
+MT25932213      vatlas  found                 575  found                 923  equal       equal       neither     neither
+MT16109936      vies    found                 228  found                 761  equal       equal       neither     neither
+LU34648003      vatlas  found                 213  found                1058  equal       equal       neither     neither
+LU29801341      vies    found                 140  found                 100  equal       equal       neither     neither
+MT18887829      vatlas  found                 214  found                1587  equal       equal       neither     neither
+MT11022401      vies    found                 339  found                 258  equal       equal       neither     neither
+MT15738436      vatlas  found                 247  found                1534  equal       equal       neither     neither
+MT24096908      vies    found                2378  found                 279  equal       equal       neither     neither
+MT25669501      vatlas  found                 542  found                 834  equal       equal       neither     neither
+MT24396526      vies    found                 500  found                 321  equal       equal       neither     neither
+MT19223733      vatlas  not-registered        550  not-registered        295  -           -           -           -
+MT27572019      vies    found                 759  found                 192  equal       equal       neither     neither
+MT27100708      vatlas  found                 224  found                 363  equal       equal       neither     neither
+MT19923728      vies    found                 310  found                 247  equal       equal       neither     neither
+MT29917427      vatlas  found                 274  found                 274  equal       equal       neither     neither
+MT12746201      vies    found                 462  found                 316  equal       equal       neither     neither
+MT25652308      vatlas  found                 225  found                 365  equal       equal       neither     neither
+MT26204219      vies    found                 264  found                 196  equal       equal       neither     neither
+MT19832425      vatlas  found                 368  found                 221  equal       equal       neither     neither
+MT15992703      vies    found                 334  found                 222  equal       equal       neither     neither
+MT12734807      vatlas  found                 222  found                 282  equal       equal       neither     neither
+
+Disagreements, 200 of 226 shown in full
+
+  BE0746474089
+    name         vatlas: European Innovation Marketplace
+                 vies:   ASBL European Innovation Marketplace
+    address      vatlas: Rue de Trèves 49
+                 vies:   Rue de Trèves 49/7
+
+  BE0325777171
+    name         vatlas: Patrimoine de l'Université de Liège
+                 vies:   ETSPUBLI Patrimoine de l'Université de Liège
+
+  BE0442397402
+    name         vatlas: European Citizen Action Service - Euro Citoyen Action et Services - Europa en Burger Actie en Service
+                 vies:   AISBL European Citizen Action Service - Euro Citoyen Action et Services - Europa en Burger Actie en Service
+
+  RO45151380
+    address      vatlas: Str. Ion Voinescu nr. 21
+                 vies:   MUNICIPIUL
+
+  BE0678485603
+    name         vatlas: Agence Bruxelloise pour l'Entrepreneuriat
+                 vies:   ETSPUBLI Brussels Agentschap voor Ondernemerschap
+
+  FI27256903
+    address      vatlas: Porkkalankatu 1
+                 vies:   PL 358
+    postalCode   vatlas: 00180
+                 vies:   00181
+
+  CZ86652079
+    city         vatlas: Brno
+                 vies:   BRNO 3
+
+  BE0449012406
+    name         vatlas: Vrije Universiteit Brussel
+                 vies:   AV Vrije Universiteit Brussel
+    address      vatlas: Boulevard de la Plaine 2
+                 vies:   Pleinlaan 2
+    city         vatlas: Ixelles
+                 vies:   Elsene
+
+  BE0465872192
+    name         vatlas: FRIENDS OF EUROPE
+                 vies:   ASBL FRIENDS OF EUROPE
+
+  BE0244195916
+    name         vatlas: VLAAMSE INSTELLING VOOR TECHNOLOGISCH ONDERZOEK
+                 vies:   NV OR VLAAMSE INSTELLING VOOR TECHNOLOGISCH ONDERZOEK
+
+  BE0471382683
+    name         vatlas: PNO Innovation
+                 vies:   NV PNO Innovation
+
+  BE0401574852
+    name         vatlas: UMICORE
+                 vies:   NV UMICORE
+    address      vatlas: Rue du Marais 31
+                 vies:   Broekstraat 31
+    city         vatlas: Bruxelles
+                 vies:   Brussel
+
+  BE0719311418
+    name         vatlas: AVESTA HOLDING
+                 vies:   BV AVESTA HOLDING
+
+  BE0692797754
+    name         vatlas: ZABALA BRUSSELS
+                 vies:   SRL ZABALA BRUSSELS
+
+  BE0791153081
+    name         vatlas: CLERENS
+                 vies:   NV CLERENS
+    address      vatlas: Avenue Adolphe Lacomblé 59
+                 vies:   Adolphe Lacomblélaan 59
+    city         vatlas: Schaerbeek
+                 vies:   Schaarbeek
+
+  BE0749652424
+    name         vatlas: Watt4ever
+                 vies:   BV Watt4ever
+
+  BE0427416939
+    name         vatlas: HYDROMETAL
+                 vies:   SA HYDROMETAL
+
+  FR76850572231
+    name         vatlas: TES SUSTAINABLE BATTERY SOLUTIONS FRANCE
+                 vies:   SAS TES SUSTAINABLE BATTERY SOLUTIONS FR
+
+  BE0835360733
+    name         vatlas: ENERGY EFFICIENCY IN INDUSTRIAL PROCESSES
+                 vies:   ASBL ENERGY EFFICIENCY IN INDUSTRIAL PROCESSES
+
+  BE0441571714
+    name         vatlas: TOYOTA MOTOR EUROPE
+                 vies:   NV TOYOTA MOTOR EUROPE
+    address      vatlas: Avenue du Bourget 60
+                 vies:   Bourgetlaan 60
+
+  FI10942595
+    address      vatlas: Rauhalanpuisto 9
+                 vies:   PL 1000
+    postalCode   vatlas: 02230
+                 vies:   02231
+
+  FR83542050315
+    name         vatlas: CEVA LOGISTICS EUROPE
+                 vies:   SA CEVA LOGISTICS EUROPE
+    address      vatlas: 7 ALLEE DE L'ARCHE
+                 vies:   7 ALL DE L ARCHE
+
+  FI22283574
+    address      vatlas: Otakaari 1
+                 vies:   PL 11000
+    postalCode   vatlas: 02150
+                 vies:   00076
+    city         vatlas: ESPOO
+                 vies:   AALTO
+
+  BE0641923036
+    name         vatlas: L'association des fabricants européens d'accumulateurs automobiles et industriels
+                 vies:   IVZW L'association des fabricants européens d'accumulateurs automobiles et industriels
+    address      vatlas: Avenue Adolphe Lacomblé 59
+                 vies:   Adolphe Lacomblélaan 59/8
+    city         vatlas: Schaerbeek
+                 vies:   Schaarbeek
+
+  BE0451884396
+    name         vatlas: KELLEN
+                 vies:   NV KELLEN
+    address      vatlas: Avenue de Tervueren 188 A
+                 vies:   Tervurenlaan 188 A/4
+    city         vatlas: Woluwe-Saint-Pierre
+                 vies:   Sint-Pieters-Woluwe
+
+  BE0508690863
+    name         vatlas: AliénorEU
+                 vies:   SRL AliénorEU
+
+  FI01162976
+    address      vatlas: MEIJERITIE 6
+                 vies:   PL 10
+    postalCode   vatlas: 00370
+                 vies:   00039
+    city         vatlas: HELSINKI
+                 vies:   VALIO
+
+  LV40203161388
+    address      vatlas: Rīga, Krustpils iela 17 k-1
+                 vies:   Krustpils iela 17 k-1, Rīga, LV-1073
+
+  BE0407626464
+    name         vatlas: Université Libre de Bruxelles
+                 vies:   AFJ Université Libre de Bruxelles
+
+  RO2788151
+    address      vatlas: Bld. Biruinţei nr. 178-184
+                 vies:   SAT. PANTELIMON - ORŞ. PANTELIMON 00000 BLD. BIRUINŢEI Nr. 178-184
+
+  CZ29199077
+    city         vatlas: Pardubice
+                 vies:   PARDUBICE 6
+
+  BE0434800025
+    address      vatlas: Allée de l'Innovation 1
+                 vies:   Allée de l'Innovation 1/B57
+
+  BE0406015373
+    name         vatlas: CENTRE DE RECHERCHES METALLURGIQUES - CENTRUM VOOR RESEARCH IN DE METALLURGIE
+                 vies:   ASBL CENTRE DE RECHERCHES METALLURGIQUES - CENTRUM VOOR RESEARCH IN DE METALLURGIE
+    address      vatlas: Rue Ravenstein 4
+                 vies:   Avenue du Bois SaintJean 21/B27-Quarti
+    postalCode   vatlas: 1000
+                 vies:   4000
+    city         vatlas: Bruxelles
+                 vies:   Liège
+
+  FR30130026081
+    address      vatlas: 621 AVENUE CENTRALE
+                 vies:   621 AV CENTRALE
+    city         vatlas: SAINT-MARTIN-D'HERES
+                 vies:   ST MARTIN D HERES
+
+  FR15922245931
+    address      vatlas: 122 B AVENUE DU GENERAL LECLERC
+                 vies:   122-122
+
+  FR46775729155
+    name         vatlas: IFP ENERGIES NOUVELLES
+                 vies:   ET P IFP ENERGIES NOUVELLES
+    address      vatlas: 1 AVENUE DE BOIS PREAU
+                 vies:   4 AV DE BOIS PREAU
+
+  EE100913275
+    address      vatlas: Harju maakond, Tallinn, Kesklinna linnaosa, Suur-Ameerika tn 1
+                 vies:   Suur-Ameerika tn 1
+    city         vatlas: Kesklinna linnaosa, Tallinn, Harju maakond
+                 vies:   Kesklinna linnaosa Tallinn
+
+  FR75784668717
+    name         vatlas: ASSOCIATION NATIONALE DE LA RECHERCHE ET DE LA TECHNOLOGIE - ANRT -
+                 vies:   ASS ASSOCIATION NATIONALE DE LA RECHERCH
+
+  FR15199115684
+    address      vatlas: ROUTE DE SACLAY
+                 vies:   RTE DE SACLAY
+
+  CZ00216208
+    city         vatlas: Praha
+                 vies:   PRAHA 1
+
+  BE0208359859
+    name         vatlas: Universiteit Hasselt
+                 vies:   OI Universiteit Hasselt
+
+  EE100030417
+    address      vatlas: Tartu maakond, Tartu linn, Tartu linn, Ülikooli tn 18
+                 vies:   Ülikooli tn 18
+    city         vatlas: Tartu linn, Tartu linn, Tartu maakond
+                 vies:   Tartu linn Tartu linn
+
+  BE0257216482
+    name         vatlas: Universiteit Antwerpen
+                 vies:   AV Universiteit Antwerpen
+
+  BE0248015142
+    name         vatlas: Universiteit Gent
+                 vies:   AV Universiteit Gent
+
+  BE0419052173
+    name         vatlas: Katholieke Universiteit te Leuven
+                 vies:   AV Katholieke Universiteit te Leuven
+
+  BE0473647634
+    name         vatlas: ORGANISATION OF EUROPEAN CANCER INSTITUTES
+                 vies:   EESV ORGANISATION OF EUROPEAN CANCER INSTITUTES
+    address      vatlas: Rue d'Egmont 11
+                 vies:   Egmontstraat 11
+    city         vatlas: Bruxelles
+                 vies:   Brussel
+
+  CZ00209805
+    city         vatlas: Brno
+                 vies:   BRNO 2
+
+  FR29434033619
+    name         vatlas: INSERM TRANSFERT
+                 vies:   SA INSERM TRANSFERT
+    address      vatlas: 10 RUE D'ORADOUR-SUR-GLANE
+                 vies:   CAMPUS
+
+  BE0818999605
+    name         vatlas: European Cancer Patient Coalition E.C.P.C
+                 vies:   AISBL European Cancer Patient Coalition E.C.P.C
+
+  BE0894176979
+    name         vatlas: SIOP Europe
+                 vies:   VZW SIOP Europe
+    address      vatlas: Clos Chapelle-aux-Champs 30
+                 vies:   Veldkapelgaarde 30/1.30
+    city         vatlas: Woluwe-Saint-Lambert
+                 vies:   Sint-Lambrechts-Woluwe
+
+  BE0456343923
+    name         vatlas: VLAAMS INSTITUUT VOOR BIOTECHNOLOGIE - FLANDERS INSTITUTE FOR BIOTECHNOLOGY
+                 vies:   VZW VLAAMS INSTITUUT VOOR BIOTECHNOLOGIE - FLANDERS INSTITUTE FOR BIOTECHNOLOGY
+
+  CZ61388963
+    city         vatlas: Praha
+                 vies:   PRAHA 6
+
+  PL5250012159
+    address      vatlas: JULIANA BARTOSZEWICZA 1B/17
+                 vies:   JULIANA BARTOSZEWICZA 1B M17
+
+  BE0425260668
+    name         vatlas: Interuniversitair Micro-Electronica Centrum
+                 vies:   VZW Interuniversitair Micro-Electronica Centrum
+
+  FI28445618
+    address      vatlas: Kalevantie 4
+                 vies:   c/oTampereen Yliopisto
+    postalCode   vatlas: 33100
+                 vies:   33014
+    city         vatlas: TAMPERE
+                 vies:   TAMPEREEN YLIOPISTO
+
+  CZ00216224
+    city         vatlas: Brno
+                 vies:   BRNO 2
+
+  BE0409530535
+    name         vatlas: Université de Namur
+                 vies:   ASBL Université de Namur
+
+  BE0750495334
+    name         vatlas: ExeVir Bio
+                 vies:   BV ExeVir Bio
+
+  RO1154
+    address      vatlas: STR. EROU IANCU NICOLAE nr. 126A
+                 vies:   SAT. VOLUNTARI - ORŞ. VOLUNTARI 00000
+
+  BE0454894069
+    name         vatlas: AVECOM
+                 vies:   NV AVECOM
+
+  BE0700470058
+    name         vatlas: META
+                 vies:   SRL META
+
+  CZ25246992
+    city         vatlas: Jáchymov
+                 vies:   JÁCHYMOV 1
+
+  BE0662391620
+    name         vatlas: Schaeffler Aerosint
+                 vies:   SA Schaeffler Aerosint
+
+  CZ28400020
+    city         vatlas: Praha
+                 vies:   PRAHA 411
+
+  PL7770002062
+    address      vatlas: ZYGMUNTA NOSKOWSKIEGO 12/14
+                 vies:   POZNAŃ
+
+  FI26473754
+    address      vatlas: Tekniikantie 21
+                 vies:   PL 1000
+    postalCode   vatlas: 02150
+                 vies:   02044
+    city         vatlas: ESPOO
+                 vies:   VTT
+
+  CZ68378271
+    city         vatlas: Praha
+                 vies:   PRAHA 82
+
+  CZ61989592
+    city         vatlas: Olomouc
+                 vies:   OLOMOUC 9
+
+  BE0466279196
+    name         vatlas: INSTITUT FLAMAND DE LA  MER
+                 vies:   VZW VLAAMS INSTITUUT VOOR DE ZEE
+
+  CZ00020681
+    city         vatlas: Brandýs nad Labem-Stará Boleslav
+                 vies:   BRANDÝS NAD LABEM-STARÁ BOLESLAV 1
+
+  BE0458036374
+    name         vatlas: European Landowners Organization
+                 vies:   ASBL European Landowners Organization
+    postalCode   vatlas: 1000
+                 vies:   1040
+
+  EE100901067
+    address      vatlas: Tartu maakond, Tartu linn, Tartu linn, Lai tn 30
+                 vies:   Lai tn 30
+    city         vatlas: Tartu linn, Tartu linn, Tartu maakond
+                 vies:   Tartu linn Tartu linn
+
+  EE100356955
+    address      vatlas: Harju maakond, Tallinn, Kesklinna linnaosa, Tuukri tn 5
+                 vies:   Tuukri tn 5
+
+  CZ00008648
+    city         vatlas: Děčín
+                 vies:   DĚČÍN 2
+
+  CZ27160572
+    city         vatlas: Praha
+                 vies:   PRAHA 86
+
+  BE0766541015
+    name         vatlas: DIGITAL INSTITUTE FOR CANCER OUTCOMES RESEARCH
+                 vies:   GEIE DIGITAL INSTITUTE FOR CANCER OUTCOMES RESEARCH
+
+  PL9462698560
+    address      vatlas: MEŁGIEWSKA 7-9/122
+                 vies:   MEŁGIEWSKA 7-9 M122
+
+  FI27951535
+    address      vatlas: Salomonkatu 17
+                 vies:   Salomonkatu 17 A
+
+  EE100251335
+    address      vatlas: Harju maakond, Tallinn, Kesklinna linnaosa, Narva mnt 25
+                 vies:   Narva mnt 25
+    city         vatlas: Kesklinna linnaosa, Tallinn, Harju maakond
+                 vies:   Kesklinna linnaosa Tallinn
+
+  CZ09639233
+    city         vatlas: Hradec Králové
+                 vies:   HRADEC KRÁLOVÉ 7
+
+  CZ08466068
+    city         vatlas: Praha
+                 vies:   PRAHA 616
+
+  FI25397673
+    address      vatlas: Kampusranta 11
+                 vies:   PL 412
+    postalCode   vatlas: 60320
+                 vies:   60101
+
+  EE101339803
+    address      vatlas: Harju maakond, Tallinn, Haabersti linnaosa, Paldiski mnt 81
+                 vies:   Paldiski mnt 81
+    city         vatlas: Haabersti linnaosa, Tallinn, Harju maakond
+                 vies:   Haabersti linnaosa Tallinn
+
+  EE102503683
+    address      vatlas: Pärnu maakond, Pärnu linn, Pärnu linn, Lõuna tn 2a
+                 vies:   Lõuna tn 2a
+    city         vatlas: Pärnu linn, Pärnu linn, Pärnu maakond
+                 vies:   Pärnu linn Pärnu linn
+
+  EE100875737
+    address      vatlas: Harju maakond, Tallinn, Mustamäe linnaosa, Mäealuse tn 4/1
+                 vies:   Mäealuse tn 4/1
+    city         vatlas: Mustamäe linnaosa, Tallinn, Harju maakond
+                 vies:   Mustamäe linnaosa Tallinn
+
+  CZ00159816
+    city         vatlas: Brno
+                 vies:   BRNO 2
+
+  RO14905506
+    address      vatlas: Str. Dakó nr. 2A
+                 vies:   MUN. SFÂNTU GHEORGHE
+    city         vatlas: Mun. Sfântu Gheorghe
+                 vies:   STR. DAKÓ Nr. 2A
+
+  EE100506239
+    address      vatlas: Tartu maakond, Tartu linn, Tartu linn, L. Puusepa tn 1a
+                 vies:   L. Puusepa tn 1a
+    city         vatlas: Tartu linn, Tartu linn, Tartu maakond
+                 vies:   Tartu linn Tartu linn
+
+  EE100714827
+    name         vatlas: Sihtasutus Raplamaa Haigla
+                 vies:   sihtasutus Põhja-Eesti Regionaalhaigla (Representative of VAT Group)
+    address      vatlas: Rapla maakond, Rapla vald, Rapla linn, Alu tee 1
+                 vies:   J. Sütiste tee 19
+    postalCode   vatlas: 79515
+                 vies:   13419
+    city         vatlas: Rapla linn, Rapla vald, Rapla maakond
+                 vies:   Mustamäe linnaosa Tallinn
+
+  CZ28488946
+    city         vatlas: Praha
+                 vies:   PRAHA 69
+
+  RO15595373
+    address      vatlas: Str. Vintilă Mihăilescu nr. 15
+                 vies:   MUNICIPIUL
+
+  FI23889244
+    address      vatlas: Satakunnankatu 23
+                 vies:   PL 1001
+    postalCode   vatlas: 28130
+                 vies:   28101
+
+  FI31367737
+    address      vatlas: 176
+                 vies:   PL 176
+
+  FI27853898
+    address      vatlas: Mesikämmenentie 10
+                 vies:   c/oBioSO4 Oy Mesikämmenentie 10
+
+  FI29285599
+    address      vatlas: Simonkatu 6
+                 vies:   Simonkatu 6 B
+
+  FI09893765
+    address      vatlas: Solistinkatu 4
+                 vies:   c/oOulun Energia PL 116
+    postalCode   vatlas: 90140
+                 vies:   90101
+
+  FI32751589
+    address      vatlas: Solistinkatu 4
+                 vies:   PL 116
+    postalCode   vatlas: 90140
+                 vies:   90101
+
+  FI07737443
+    address      vatlas: Teollisuuskatu 1
+                 vies:   PL 244
+    postalCode   vatlas: 65170
+                 vies:   65101
+
+  FI33966573
+    address      vatlas: Itäinen Pitkäkatu 4
+                 vies:   Itäinen Pitkäkatu 4 A
+
+  FI07720174
+    address      vatlas: Telakkakatu 1
+                 vies:   PL 666
+    postalCode   vatlas: 20240
+                 vies:   20101
+
+  RO32189146
+    address      vatlas: Str. Tudor Arghezi nr. 8-10
+                 vies:   MUNICIPIUL
+
+  RO6195017
+    address      vatlas: Str. Valea Oltului nr. 77-79
+                 vies:   MUNICIPIUL
+
+  FI18523029
+    address      vatlas: Keilaranta 21
+                 vies:   PL 95
+    postalCode   vatlas: 02150
+                 vies:   00095
+    city         vatlas: ESPOO
+                 vies:   NESTE
+
+  EE100435656
+    address      vatlas: Harju maakond, Harku vald, Kumna küla, Puusepa tee 4
+                 vies:   Puusepa tee 4
+    city         vatlas: Kumna küla, Harku vald, Harju maakond
+                 vies:   Kumna küla Harku vald
+
+  FI19623611
+    address      vatlas: Keilalahdentie 2-4
+                 vies:   PL 2
+    postalCode   vatlas: 02150
+                 vies:   02101
+
+  EE100077975
+    address      vatlas: Harju maakond, Rae vald, Lehmja küla, Põrguvälja tee 9
+                 vies:   Põrguvälja tee 9
+    city         vatlas: Lehmja küla, Rae vald, Harju maakond
+                 vies:   Lehmja küla Rae vald
+
+  RO36235547
+    address      vatlas: Str. Horea nr. 21
+                 vies:   MUN. ORADEA 00000 STR. HOREA Nr. 21
+
+  EE100224841
+    address      vatlas: Harju maakond, Tallinn, Mustamäe linnaosa, Ehitajate tee 5
+                 vies:   Ehitajate tee 5
+    city         vatlas: Mustamäe linnaosa, Tallinn, Harju maakond
+                 vies:   Mustamäe linnaosa Tallinn
+
+  PL5840152140
+    address      vatlas: BUDOWLANYCH 31/04
+                 vies:   BUDOWLANYCH 31 M04
+
+  CZ70883858
+    city         vatlas: Praha
+                 vies:   PRAHA 28
+
+  RO13091574
+    address      vatlas: Str. Constanţa nr. 19-21
+                 vies:   MUN. CLUJ-NAPOCA
+    city         vatlas: Mun. Cluj-Napoca
+                 vies:   STR. CONSTANŢA Nr. 19-21
+
+  EE102400317
+    address      vatlas: Harju maakond, Tallinn, Kesklinna linnaosa, Narva mnt 7
+                 vies:   Narva mnt 7
+    city         vatlas: Kesklinna linnaosa, Tallinn, Harju maakond
+                 vies:   Kesklinna linnaosa Tallinn
+
+  PL5223195397
+    address      vatlas: KOLEJOWA 45/147
+                 vies:   KOLEJOWA 45 M147
+
+  CZ61384399
+    city         vatlas: Praha
+                 vies:   PRAHA 3
+
+  CZ00216275
+    city         vatlas: Pardubice
+                 vies:   PARDUBICE 9
+
+  RO5194978
+    address      vatlas: Str. Dimitrie Onciul nr. 23-25
+                 vies:   MUNICIPIUL
+
+  EE100210813
+    address      vatlas: Harju maakond, Tallinn, Kesklinna linnaosa, Vabaduse väljak 7
+                 vies:   Vabaduse väljak 7
+    city         vatlas: Kesklinna linnaosa, Tallinn, Harju maakond
+                 vies:   Kesklinna linnaosa Tallinn
+
+  FI26896124
+    address      vatlas: Eteläranta 10
+                 vies:   PL 10
+    postalCode   vatlas: 00130
+                 vies:   00131
+
+  EE100670291
+    address      vatlas: Tartu maakond, Tartu linn, Tartu linn, Raekoja plats 1a
+                 vies:   Raekoja plats 1a
+    city         vatlas: Tartu linn, Tartu linn, Tartu maakond
+                 vies:   Tartu linn Tartu linn
+
+  PL7811365331
+    address      vatlas: JANA KOCHANOWSKIEGO 7/603
+                 vies:   JANA KOCHANOWSKIEGO 7 M603
+
+  PL5260205291
+    address      vatlas: LUDWIKA ZAMENHOFA 5/1B
+                 vies:   LUDWIKA ZAMENHOFA 5 M1B
+
+  RO37821331
+    address      vatlas: Str. Universităţii nr. 13
+                 vies:   MUN. SUCEAVA
+    city         vatlas: Mun. Suceava
+                 vies:   STR. UNIVERSITĂŢII Nr. 13
+
+  RO29600496
+    address      vatlas: Str. Constantin Noica nr. 24
+                 vies:   MUN. SIBIU
+    city         vatlas: Mun. Sibiu
+                 vies:   STR. CONSTANTIN NOICA Nr. 24
+
+  RO14871616
+    address      vatlas: Str. Ion Ghica nr. 13
+                 vies:   MUNICIPIUL
+
+  PL5130141977
+    address      vatlas: KOMANDOSÓW 3/1
+                 vies:   KOMANDOSÓW 3 M1
+
+  RO21524920
+    address      vatlas: Str. Mihail Kogălniceanu nr. 1
+                 vies:   MUN. CLUJ-NAPOCA
+    city         vatlas: Mun. Cluj-Napoca
+                 vies:   STR. MIHAIL KOGĂLNICEANU Nr. 1
+
+  RO22736939
+    address      vatlas: Str. Memorandumului nr. 28
+                 vies:   MUN. CLUJ-NAPOCA
+    city         vatlas: Mun. Cluj-Napoca
+                 vies:   STR. MEMORANDUMULUI Nr. 28
+
+  CZ25271121
+    city         vatlas: Holovousy
+                 vies:   HOŘICE V PODKRKONOŠÍ
+
+  CZ08884731
+    city         vatlas: Praha
+                 vies:   PRAHA 1
+
+  EE102339491
+    address      vatlas: Harju maakond, Tallinn, Kesklinna linnaosa, Veskiposti tn 2-1002
+                 vies:   Veskiposti tn 2 1002
+    city         vatlas: Kesklinna linnaosa, Tallinn, Harju maakond
+                 vies:   Kesklinna linnaosa Tallinn
+
+  CZ60460709
+    city         vatlas: Praha
+                 vies:   PRAHA 620
+
+  RO21881990
+    address      vatlas: Spl. Independenţei nr. 296
+                 vies:   MUNICIPIUL
+
+  CZ24839523
+    city         vatlas: Plzeň
+                 vies:   PLZEŇ 23
+
+  EE100943452
+    address      vatlas: Tartu maakond, Tartu linn, Tartu linn, Riia tn 24a
+                 vies:   Riia tn 24a
+    city         vatlas: Tartu linn, Tartu linn, Tartu maakond
+                 vies:   Tartu linn Tartu linn
+
+  LV40008042411
+    address      vatlas: Rīga, Republikas laukums 2
+                 vies:   Republikas laukums 2, Rīga, LV-1010
+
+  EE101960829
+    address      vatlas: Tartu maakond, Tartu linn, Tartu linn, Tiigi tn 61b
+                 vies:   Tiigi tn 61b
+    city         vatlas: Tartu linn, Tartu linn, Tartu maakond
+                 vies:   Tartu linn Tartu linn
+
+  EE102086346
+    address      vatlas: Harju maakond, Tallinn, Kesklinna linnaosa, Narva mnt 5
+                 vies:   Narva mnt 5
+    city         vatlas: Kesklinna linnaosa, Tallinn, Harju maakond
+                 vies:   Kesklinna linnaosa Tallinn
+
+  RO2646378
+    address      vatlas: Str. Babadag nr. 165
+                 vies:   MUN. TULCEA 00000 STR. BABADAG Nr. 165
+
+  RO23641900
+    address      vatlas: Bld. Vasile Parvan nr. 4
+                 vies:   MUN. TIMIŞOARA
+    city         vatlas: Mun. Timişoara
+                 vies:   BLD. VASILE PARVAN Nr. 4
+
+  CZ00216305
+    city         vatlas: Brno
+                 vies:   BRNO 2
+
+  RO29280537
+    address      vatlas: Şos. Colentina nr. 11
+                 vies:   MUNICIPIUL
+
+  RO9052135
+    address      vatlas: Str. ATOMISTILOR nr. 409
+                 vies:   ORŞ. MĂGURELE 00000 STR. ATOMISTILOR Nr. 409
+
+  RO9068280
+    address      vatlas: Str. Atomiştilor nr. 405A
+                 vies:   SAT. MĂGURELE - ORŞ. MĂGURELE 77125 STR. ATOMIŞTILOR Nr. 405A
+
+  RO3321234
+    address      vatlas: Str. REACTORULUI nr. 30
+                 vies:   ORŞ. MĂGURELE 77125 STR. REACTORULUI Nr. 30
+
+  RO21616390
+    address      vatlas: Cal. Mănăştur nr. 3-5
+                 vies:   MUN. CLUJ-NAPOCA
+    city         vatlas: Mun. Cluj-Napoca
+                 vies:   CAL. MĂNĂŞTUR Nr. 3-5
+
+  CZ61388971
+    city         vatlas: Praha
+                 vies:   PRAHA 411
+
+  RO10608391
+    address      vatlas: Calea TORONTALULUI DN 6, KM.5, 7
+                 vies:   MUN. TIMIŞOARA 1900 CAL. TORONTALULUI
+
+  EE101823966
+    address      vatlas: Harju maakond, Tallinn, Kesklinna linnaosa, Pärnu mnt 10
+                 vies:   Pärnu mnt 10
+    city         vatlas: Kesklinna linnaosa, Tallinn, Harju maakond
+                 vies:   Kesklinna linnaosa Tallinn
+
+  CZ70883521
+    city         vatlas: Zlín
+                 vies:   ZLÍN 1
+
+  CZ68407700
+    city         vatlas: Praha
+                 vies:   PRAHA 6
+
+  CZ47537256
+    city         vatlas: Praha
+                 vies:   PRAHA 5
+
+  RO7614474
+    address      vatlas: Str. Preciziei nr. 24
+                 vies:   MUNICIPIUL
+
+  RO40433259
+    address      vatlas: Str. Independenţei nr. 19A
+                 vies:   ORŞ. BUFTEA 70000 STR. INDEPENDENŢEI Nr. 19A
+
+  EE100018015
+    address      vatlas: Tartu maakond, Tartu linn, Tartu linn, F. R. Kreutzwaldi tn 1
+                 vies:   F. R. Kreutzwaldi tn 1
+    city         vatlas: Tartu linn, Tartu linn, Tartu maakond
+                 vies:   Tartu linn Tartu linn
+
+  RO42745273
+    address      vatlas: nr. 282A
+                 vies:   SAT. BUCOVĂŢ - COM. BUCOVĂŢ 307352
+
+  CZ22729674
+    city         vatlas: Brno
+                 vies:   BRNO 2
+
+  CZ62156489
+    city         vatlas: Brno
+                 vies:   BRNO 13
+
+  EE102160673
+    address      vatlas: Harju maakond, Tallinn, Mustamäe linnaosa, Mäealuse tn 2/1
+                 vies:   Mäealuse tn 2/1
+    city         vatlas: Mustamäe linnaosa, Tallinn, Harju maakond
+                 vies:   Mustamäe linnaosa Tallinn
+
+  CZ24779334
+    city         vatlas: Praha
+                 vies:   PRAHA 82
+
+  EE102098321
+    address      vatlas: Pärnu maakond, Pärnu linn, Pärnu linn, Aida tn 7
+                 vies:   Aida tn 7
+    city         vatlas: Pärnu linn, Pärnu linn, Pärnu maakond
+                 vies:   Pärnu linn Pärnu linn
+
+  EE102133189
+    address      vatlas: Harju maakond, Tallinn, Põhja-Tallinna linnaosa, Telliskivi tn 51b
+                 vies:   Telliskivi tn 51b
+    city         vatlas: Põhja-Tallinna linnaosa, Tallinn, Harju maakond
+                 vies:   Põhja-Tallinna linnaosa Tallinn
+
+  RO20571923
+    address      vatlas: FERMA FRASINU
+                 vies:   COM. ŢINTEŞTI 00000
+
+  EE100296086
+    address      vatlas: Tartu maakond, Tartu linn, Tartu linn, Riia tn 181a
+                 vies:   Riia tn 181a
+    city         vatlas: Tartu linn, Tartu linn, Tartu maakond
+                 vies:   Tartu linn Tartu linn
+
+  CZ63839172
+    city         vatlas: Praha
+                 vies:   PRAHA 6
+
+  CZ49777513
+    city         vatlas: Plzeň
+                 vies:   PLZEŇ 1
+
+  RO15076287
+    address      vatlas: Bld. Vasile Parvan nr. 4-6
+                 vies:   MUN. TIMIŞOARA
+    city         vatlas: Mun. Timişoara
+                 vies:   BLD. VASILE PARVAN Nr. 4-6
+
+  RO2785503
+    address      vatlas: Bld. Mareşal Alexandru Averescu nr. 8-10
+                 vies:   MUNICIPIUL
+
+  CZ28184564
+    city         vatlas: Mladá Boleslav
+                 vies:   MLADÁ BOLESLAV 1
+
+  CZ09054014
+    city         vatlas: Praha
+                 vies:   PRAHA 8
+
+  CZ68081731
+    city         vatlas: Brno
+                 vies:   BRNO 12
+
+  CZ00063703
+    city         vatlas: Praha
+                 vies:   PRAHA 6
+
+  RO1644670
+    address      vatlas: Str. Portului nr. 32
+                 vies:   MUN. GALAŢI
+    city         vatlas: Mun. Galaţi
+                 vies:   STR. PORTULUI Nr. 32
+
+  EE102038860
+    address      vatlas: Lääne-Viru maakond, Rakvere linn, F. R. Kreutzwaldi tn 5
+                 vies:   F. R. Kreutzwaldi tn 5
+    city         vatlas: Rakvere linn, Lääne-Viru maakond
+                 vies:   Rakvere linn
+
+  RO32356520
+    address      vatlas: Str EROU NICOLAE IANCU nr. 103
+                 vies:   ORŞ. VOLUNTARI 00000 STR EROU NICOLAE IANCU Nr. 103
+
+  LV50003050931
+    address      vatlas: Rīga, Ropažu iela 6
+                 vies:   Ropažu iela 6, Rīga, LV-1039
+
+  LV40003344207
+    address      vatlas: Rīga, Emīlijas Benjamiņas iela 3
+                 vies:   Emīlijas Benjamiņas iela 3, Rīga, LV-1050
+
+  EE100560275
+    address      vatlas: Tartu maakond, Tartu linn, Tartu linn, Lai tn 30
+                 vies:   Lai tn 30
+    city         vatlas: Tartu linn, Tartu linn, Tartu maakond
+                 vies:   Tartu linn Tartu linn
+
+  RO434670
+    address      vatlas: Bld. Iuliu Maniu nr. 220
+                 vies:   MUNICIPIUL
+
+  RO18923009
+    address      vatlas: Str. Fundăturii nr. 2
+                 vies:   MUN. BRAŞOV
+    city         vatlas: Mun. Braşov
+                 vies:   STR. FUNDĂTURII Nr. 2
+
+  RO14151658
+    address      vatlas: Bld. Eroilor nr. 29
+                 vies:   MUN. BRAŞOV
+    city         vatlas: Mun. Braşov
+                 vies:   BLD. EROILOR Nr. 29
+
+  RO9113623
+    address      vatlas: Str. Atomiştilor nr. 409
+                 vies:   SAT. MĂGURELE - ORŞ. MĂGURELE 00000 STR. ATOMIŞTILOR Nr. 409
+
+  LV40008009027
+    address      vatlas: Rīga, Mūkusalas iela 46
+                 vies:   Mūkusalas iela 46, Rīga, LV-1004
+
+  RO1572582
+    address      vatlas: Str. Peroni nr. 18-22
+                 vies:   MUNICIPIUL
+
+  EE101761497
+    address      vatlas: Harju maakond, Tallinn, Nõmme linnaosa, Sinirebase tn 9
+                 vies:   Sinirebase tn 9
+    city         vatlas: Nõmme linnaosa, Tallinn, Harju maakond
+                 vies:   Nõmme linnaosa Tallinn
+
+  EE100322358
+    address      vatlas: Harju maakond, Tallinn, Mustamäe linnaosa, Mäealuse tn 2/1
+                 vies:   Mäealuse tn 2/1
+    city         vatlas: Mustamäe linnaosa, Tallinn, Harju maakond
+                 vies:   Mustamäe linnaosa Tallinn
+
+  EE101339816
+    address      vatlas: Harju maakond, Tallinn, Kesklinna linnaosa, Pärnu mnt 139
+                 vies:   Pärnu mnt 139
+    city         vatlas: Kesklinna linnaosa, Tallinn, Harju maakond
+                 vies:   Kesklinna linnaosa Tallinn
+
+  RO29327770
+    address      vatlas: Cal. Floreasca nr. 246C
+                 vies:   MUNICIPIUL
+
+  EE101531148
+    address      vatlas: Harju maakond, Tallinn, Kesklinna linnaosa, Narva mnt 63/4
+                 vies:   Narva mnt 63/4
+    city         vatlas: Kesklinna linnaosa, Tallinn, Harju maakond
+                 vies:   Kesklinna linnaosa Tallinn
+
+  EE101952206
+    address      vatlas: Harju maakond, Tallinn, Põhja-Tallinna linnaosa, Vesilennuki tn 1
+                 vies:   Vesilennuki tn 1
+    city         vatlas: Põhja-Tallinna linnaosa, Tallinn, Harju maakond
+                 vies:   Põhja-Tallinna linnaosa Tallinn
+
+  EE101761552
+    address      vatlas: Harju maakond, Tallinn, Põhja-Tallinna linnaosa, Laevastiku tn 3
+                 vies:   Laevastiku tn 3
+    city         vatlas: Põhja-Tallinna linnaosa, Tallinn, Harju maakond
+                 vies:   Põhja-Tallinna linnaosa Tallinn
+
+  EE100113596
+    address      vatlas: Harju maakond, Tallinn, Kesklinna linnaosa, Suur-Ameerika tn 1
+                 vies:   Suur-Ameerika tn 1
+    city         vatlas: Kesklinna linnaosa, Tallinn, Harju maakond
+                 vies:   Kesklinna linnaosa Tallinn
+
+  LV40003347699
+    address      vatlas: Jelgavas nov., Ozolnieku pag., Ozolnieki, Rīgas iela 34
+                 vies:   Rīgas iela 34, Ozolnieki, Ozolnieku pag., Jelgavas nov., LV-3018
+
+  EE100388732
+    address      vatlas: Jõgeva maakond, Jõgeva vald, Jõgeva alevik, J. Aamisepa tn 1
+                 vies:   J. Aamisepa tn 1
+    city         vatlas: Jõgeva alevik, Jõgeva vald, Jõgeva maakond
+                 vies:   Jõgeva alevik Jõgeva vald
+
+  EE101834683
+    address      vatlas: Harju maakond, Tallinn, Mustamäe linnaosa, Akadeemia tee 21/4
+                 vies:   Akadeemia tee 21/4
+    city         vatlas: Mustamäe linnaosa, Tallinn, Harju maakond
+                 vies:   Mustamäe linnaosa Tallinn
+
+  EE100736494
+    address      vatlas: Tartu maakond, Tartu linn, Tartu linn, Filosoofi tn 31
+                 vies:   Filosoofi tn 31
+    city         vatlas: Tartu linn, Tartu linn, Tartu maakond
+                 vies:   Tartu linn Tartu linn
+
+  EE100518544
+    address      vatlas: Harju maakond, Tallinn, Mustamäe linnaosa, Akadeemia tee 23
+                 vies:   Akadeemia tee 23
+    city         vatlas: Mustamäe linnaosa, Tallinn, Harju maakond
+                 vies:   Mustamäe linnaosa Tallinn
+
+  LV50003888871
+    address      vatlas: Rīga, Katlakalna iela 11
+                 vies:   Katlakalna iela 11, Rīga, LV-1073
+
+  EE101114112
+    address      vatlas: Harju maakond, Tallinn, Kristiine linnaosa, A. H. Tammsaare tee 60
+                 vies:   A. H. Tammsaare tee 60
+    city         vatlas: Kristiine linnaosa, Tallinn, Harju maakond
+                 vies:   Kristiine linnaosa Tallinn
+
+  EE102316508
+    address      vatlas: Harju maakond, Tallinn, Lasnamäe linnaosa, Sepapaja tn 6
+                 vies:   Sepapaja tn 6
+    city         vatlas: Lasnamäe linnaosa, Tallinn, Harju maakond
+                 vies:   Lasnamäe linnaosa Tallinn
+
+  LV40203233262
+    address      vatlas: Mārupes nov., Mārupe, Malduguņu iela 2
+                 vies:   Malduguņu iela 2, Mārupe, Mārupes nov., LV-2167

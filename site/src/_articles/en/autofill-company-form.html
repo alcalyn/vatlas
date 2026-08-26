@@ -1,0 +1,285 @@
+<!-- @meta
+{
+  "title": "Autofill a company form from a VAT number",
+  "description": "One field instead of six. Fill a customer's legal name and address from the VAT number they type, and handle the case where no answer comes back.",
+  "h1": "Autofill a company form from a VAT number",
+  "articleType": "TechArticle",
+  "updated": "2026-09-21",
+  "video": {
+    "file": "prefill",
+    "name": "Autofilling a company block from a VAT number",
+    "description": "A VAT number is typed into a B2B checkout, verified against the register, and the company name, street, postal code, city and country fill themselves in.",
+    "duration": "PT8S"
+  }
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Guide · Onboarding</p>
+        <h1>Autofill a company form from a VAT number</h1>
+        <p class="section__lead">
+          A business customer signing up should type one thing: their VAT number. The name, the
+          legal form and the address are already in an official register. Asking them to retype it
+          is asking them to introduce mistakes.
+        </p>
+      </div>
+
+      <figure class="demo">
+        <video src="/demos/prefill.mp4" poster="/demos/prefill.jpg" width="1000" height="724"
+               autoplay loop muted playsinline
+               aria-label="A sign-up form: a VAT number is typed, and the company name, legal form and address fill themselves in."></video>
+        <figcaption>One field typed, the rest filled from the register.</figcaption>
+      </figure>
+
+      <h2 id="form">The company block</h2>
+      <p>
+        Every B2B sign-up, checkout and supplier form asks for the same six fields: company name,
+        legal form, street, postal code, city, VAT number. They are filled in by someone who wants
+        to be finished with them, often on a phone.
+      </p>
+      <p>
+        That block is where B2B forms lose people, and where the quality of the invoice, the CRM
+        record and the accounting export is decided.
+      </p>
+
+      <h2 id="benefits">What it changes</h2>
+      <p>
+        One field instead of six takes the step from about a minute to a few seconds. On a long
+        sign-up, that is the cheapest reduction in abandonment available.
+      </p>
+      <p>
+        The slower effect matters more. When the name and address come from the register rather
+        than a keyboard, the invoice reaches the right legal entity and the CRM stops holding the
+        same company four times because somebody wrote <em>SARL</em> three different ways.
+      </p>
+      <p>
+        The lookup also says something about the number itself. One that resolves to nothing is
+        worth flagging before the first zero-rated invoice rather than after.
+      </p>
+
+      <h2 id="hard">Where the difficulty is</h2>
+      <p>
+        There is no single method, only one per country. Some publish their whole company
+        repertory as open files of several gigabytes, names in one and addresses in another.
+        Some expose an API of their own, with its own request shape and its own way of saying
+        "not found". And in a few, no register will hand you the company behind a VAT number at
+        all. <a href="/en/guides/company-name-address-from-vat-number/">Getting a company's name
+        and address</a> works through that country by country.
+      </p>
+      <p>Multiply it by the countries you sell to, then add what is the same everywhere:</p>
+      <ul>
+        <li>
+          <strong>The VAT number is rarely the company number.</strong> Sometimes the same
+          identifier, sometimes derived from it, sometimes unrelated. There is no single join rule
+          to write.
+        </li>
+        <li>
+          <strong>The name is not always disclosed.</strong> A handful of member states publish
+          validity and nothing else, so the form has to work when the name comes back empty.
+        </li>
+        <li>
+          <strong>The address arrives as free text</strong>, in a different convention per
+          country. Turning that into <code>line1</code> / <code>postalCode</code> /
+          <code>city</code> is a job of its own.
+        </li>
+        <li>
+          <strong>The input is dirty.</strong> Spaces, dots, dashes, the country prefix typed or
+          omitted, lowercase.
+        </li>
+        <li>
+          <strong>A valid checksum proves nothing.</strong> The check digit of a struck-off company
+          is still correct. Offline validation says the number is well formed, and stops there.
+        </li>
+        <li>
+          <strong>Official sources go down.</strong> Not often, not never, not predictably. A form
+          that waits for an answer before letting anyone submit breaks during somebody else's
+          maintenance window.
+        </li>
+      </ul>
+
+      <h2 id="call">One call, every country</h2>
+      <p>
+        One endpoint, one envelope, the same field names, whichever country the number belongs to.
+        {{siteName}} answers the same way for every country it covers, and the
+        <a href="{{countryHubUrl}}">country pages</a> are the current list.
+      </p>
+      <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-str">&quot;{{apiBase}}/v1/lookup/FR68005420120&quot;</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">&quot;Authorization: Bearer $VATLAS_KEY&quot;</span></code></pre>
+      </div>
+      <p>Response:</p>
+      <p class="endpoint"><span class="status--2xx">200 OK</span></p>
+      <div class="code" data-copy>
+<pre><code>{
+  <span class="tok-key">"data"</span><span class="tok-punc">:</span> {
+    <span class="tok-key">"vatNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"FR68005420120"</span>,
+    <span class="tok-key">"countryCode"</span><span class="tok-punc">:</span> <span class="tok-str">"FR"</span>,
+    <span class="tok-key">"nationalNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"68005420120"</span>,
+    <span class="tok-key">"nationalId"</span><span class="tok-punc">:</span> <span class="tok-str">"005420120"</span>,
+    <span class="tok-key">"name"</span><span class="tok-punc">:</span> <span class="tok-str">"SOCIETE DES SUCRERIES DU MARQUENTERRE"</span>,
+    <span class="tok-key">"legalForm"</span><span class="tok-punc">:</span> <span class="tok-str">"Autre SA à conseil d'administration"</span>,
+    <span class="tok-key">"status"</span><span class="tok-punc">:</span> <span class="tok-str">"active"</span>,
+    <span class="tok-key">"address"</span><span class="tok-punc">:</span> {
+      <span class="tok-key">"line1"</span><span class="tok-punc">:</span> <span class="tok-str">"32 CHEMIN DES GARENNES"</span>,
+      <span class="tok-key">"line2"</span><span class="tok-punc">:</span> <span class="tok-null">null</span>,
+      <span class="tok-key">"postalCode"</span><span class="tok-punc">:</span> <span class="tok-str">"80120"</span>,
+      <span class="tok-key">"city"</span><span class="tok-punc">:</span> <span class="tok-str">"SAINT-QUENTIN-EN-TOURMONT"</span>,
+      <span class="tok-key">"country"</span><span class="tok-punc">:</span> <span class="tok-str">"FR"</span>
+    }
+  },
+  <span class="tok-key">"meta"</span><span class="tok-punc">:</span> {
+    <span class="tok-key">"source"</span><span class="tok-punc">:</span> <span class="tok-str">"SIRENE"</span>,
+    <span class="tok-key">"sourceDate"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-09-01"</span>,
+    <span class="tok-key">"sourceSince"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-06-01"</span>,
+    <span class="tok-key">"sourceUpdatedAt"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-02-13T11:07:03.000Z"</span>
+  }
+}</code></pre>
+      </div>
+      <p>
+        Everything the form needs is already separated: one response field per form field, nothing
+        to parse. The <code>meta</code> block names the register that answered and the date, which
+        is what you keep if the record ever has to be justified.
+      </p>
+
+      <h2 id="rules">Designing the form</h2>
+      <ul>
+        <li>
+          <strong>Normalise on the way in.</strong> Uppercase, strip spaces and punctuation, accept
+          the number with or without its country prefix. Once, so the rest of the code sees one
+          shape.
+        </li>
+        <li>
+          <strong>Call from your own server.</strong> The API key identifies your account and
+          belongs behind a route of your own, not in a front-end bundle. That route is also where
+          you debounce a field firing on every blur.
+        </li>
+        <li>
+          <strong>Fill the fields and leave them editable.</strong> Registers lag reality, and the
+          person at the keyboard knows their own company better than a file published last month.
+        </li>
+        <li>
+          <strong>Let the form submit either way.</strong> Short timeout, treat the lookup as an
+          assist. An empty name is not an error; in a few countries it is the complete answer.
+        </li>
+        <li>
+          <strong>Separate three outcomes on screen.</strong> Filled from the register, no company
+          found, and no answer right now. The second is a soft warning beside the field. The third
+          is your problem, not the customer's.
+        </li>
+        <li>
+          <strong>Store what the register said, and when.</strong> If the exemption is questioned
+          later, the answer is a dated record.
+        </li>
+      </ul>
+      <div class="callout">
+        <p>
+          <strong>Autofill is not verification.</strong> Filling a form is a convenience and can be
+          done from a stored answer. Deciding whether to charge VAT is a legal act, and deserves a
+          check made at that moment with the proof kept. Do both, and keep them separate.
+        </p>
+      </div>
+
+      <h2 id="after">After the form</h2>
+      <p>
+        A company record is true on the day it is captured and stops being true afterwards.
+        {{siteName}} can follow the companies you have onboarded and call back when a register
+        changes its mind, so the correction lands before an invoice goes to the wrong place: see
+        <a href="{{docsUrl}}#monitor">the monitor endpoint</a>. For what each register has said over
+        time, there is <a href="{{docsUrl}}#lookup-all">every source's answer</a>.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>What we do not promise.</strong> Some administrations disclose validity and no
+          name, so autofill cannot fill the name there. That is an outcome your form has to
+          handle, not an outage. Where an answer does not rest on an official register,
+          <code>status</code> and <code>meta</code> say so, rather than letting a field fill
+          itself as though nothing were different. And coverage is not the whole world: the
+          <a href="{{countryHubUrl}}">country pages</a> say what it is today, one country at a
+          time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>Autofill from a VAT number, in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Can I fill a company's name and address from just a VAT number?</summary>
+          <p>
+            In most countries, yes. An official register holds the legal name, the legal form and
+            the registered address, and the VAT number is enough to reach it. In a few member states
+            the administration publishes only whether the number is valid, so the name comes back
+            empty and the form has to be built for that case.
+          </p>
+        </details>
+        <details>
+          <summary>Why not call each country's register myself?</summary>
+          <p>
+            You can, and for one or two countries it is reasonable. Every country is then a
+            separate integration: its own API or multi-gigabyte files, its own field names, quotas
+            and outages, and a free-text address to parse. One envelope for every country is what
+            you are buying.
+          </p>
+        </details>
+        <details>
+          <summary>Does autofill also verify the number?</summary>
+          <p>
+            It tells you a company was found, which is a strong signal, and it is not a documented
+            check made at the moment you decide not to charge VAT. Do the lookup for the form, and
+            keep a dated record of the verification for the invoice.
+          </p>
+        </details>
+        <details>
+          <summary>Should the lookup run in the browser?</summary>
+          <p>
+            No. The API key identifies your account and must stay server-side. Put a small proxy
+            route in your own backend and let the browser call that; it is also where you debounce a
+            field that would otherwise fire on every keystroke.
+          </p>
+        </details>
+        <details>
+          <summary>What should the form do if the lookup fails?</summary>
+          <p>
+            Let the customer through. Fire the call on blur with a short timeout, and if no answer
+            comes, leave the fields empty and editable and allow submission. A sign-up blocked
+            because a third-party register is having a bad morning is worse than a manually typed
+            address.
+          </p>
+        </details>
+        <details>
+          <summary>Should the prefilled fields be read-only?</summary>
+          <p>
+            No. Registers lag reality, and the person in front of the form usually knows more about
+            their own company than a file published last month. Prefill, show where the value came
+            from, and let it be corrected.
+          </p>
+        </details>
+        <details>
+          <summary>How many countries does this work for?</summary>
+          <p>
+            One endpoint and one envelope, for every country {{siteName}} covers. What each
+            country discloses differs, and the <a href="{{countryHubUrl}}">country pages</a> are
+            the current list, one by one.
+          </p>
+        </details>
+      </div>
+
+      <h2>Keep reading</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/guides/company-name-address-from-vat-number/">Getting a company's name and address</a></li>
+        <li><a href="/en/guides/enrich-a-crm-from-vat-numbers/">Enriching a CRM from VAT numbers</a></li>
+        <li><a href="{{countryHubUrl}}">VAT numbers, country by country</a></li>
+        <li><a href="{{docsUrl}}">API documentation</a></li>
+        <li><a href="{{pricingUrl}}">Pricing</a></li>
+      </ul>
+      <p class="updated">Last updated 21 September 2026.</p>
+    </div>
+  </section>
+</main>

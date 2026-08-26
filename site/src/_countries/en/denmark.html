@@ -1,0 +1,103 @@
+<!-- @meta
+{
+  "title": "Danish VAT number: the CVR number, format and lookup",
+  "description": "DK plus eight digits, the CVR number itself. Why Denmark is one of the easiest countries to resolve, and how to find the company behind a number.",
+  "h1": "The Danish VAT number",
+  "term": "Danish VAT number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Denmark · DK</p>
+        <h1>The Danish VAT number</h1>
+        <p class="section__lead">The VAT number is the CVR number. One number, one register, and that register is available in full through an open distribution service.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>DK</code> + 8 digits (the CVR number)</p>
+        <p><strong>Example:</strong> <code>DK28118201</code>, CVR number <code>28118201</code></p>
+        <p><strong>Issued by:</strong> the Danish Business Authority; VAT registration is handled by the Tax Agency.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Danish VAT number is always <strong>ten characters</strong>: the country code and eight digits. Domestically the number is often written in pairs, but the spaces disappear in the VAT number.</p>
+      <ul class="breakdown">
+        <li><b>DK</b><span>The country code.</span></li>
+        <li><b>2811820</b><span>Seven digits of the CVR number.</span></li>
+        <li><b>1</b><span>The check digit.</span></li>
+      </ul>
+      <p>The check digit is computed modulus 11 with weights 2, 7, 6, 5, 4, 3, 2. A remainder of 1 means the number does not exist: that combination cannot be issued.</p>
+
+      <h2 id="cvr">CVR number, P-number and SE-number</h2>
+      <p>The <strong>CVR number</strong> is assigned by the Danish Business Authority to every legal entity at registration and never changes. The VAT number is exactly that number with <code>DK</code> in front.</p>
+      <p>The <strong>P-number</strong> is ten digits and identifies a production unit, an address, not a company. A business has one CVR number and one P-number per site. It is never a VAT number.</p>
+      <p>The <strong>SE-number</strong> is used when a business accounts for VAT separately per unit. It has the same format as a CVR number and can differ from it.</p>
+      <div class="callout"><p><strong>Having a CVR number is not the same as being VAT registered.</strong> Every business gets a CVR number, but VAT registration is a separate step with the Tax Agency. A holding company or an association with no economic activity appears in CVR and does not validate in VIES.</p></div>
+
+      <h2 id="find">Finding the company behind a number</h2>
+      <h3>The CVR register</h3>
+      <p><a href="https://datacvr.virk.dk/" rel="noopener">datacvr.virk.dk</a> offers free search by CVR number, name and address, with accounts and history. Because the VAT number <em>is</em> the CVR number, a VAT number leads straight to the right record.</p>
+      <h3>The distribution service</h3>
+      <p>The Business Authority also exposes the whole register through a <strong>distribution service</strong> with system access. It is free, but requires an agreement and a username granted on request. That is the route to take if you need the whole register rather than single lookups.</p>
+      <h3>VIES</h3>
+      <p>Denmark <strong>discloses both name and address</strong> through VIES. The address comes on two lines with the postcode and town on the last one.</p>
+
+      <h2 id="pitfalls">Denmark-specific pitfalls</h2>
+      <ul>
+        <li><strong>Remove the spaces.</strong> The CVR number is often written <code>28 11 82 01</code>, but a VAT number never contains spaces.</li>
+        <li><strong>A CVR number is not a VAT registration.</strong> Everyone gets the first; the second requires registering with the Tax Agency.</li>
+        <li><strong>The P-number is not a VAT number</strong>, even though it looks like one. It has ten digits and points at an address.</li>
+        <li><strong>The SE-number can differ from the CVR number</strong> when a business accounts for VAT unit by unit.</li>
+        <li><strong>The distribution service needs an agreement</strong>, free though it is: it cannot simply be downloaded anonymously.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Danish VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Danish VAT number have?</summary>
+          <p>Eight after the <code>DK</code> country code, ten characters in total.</p>
+        </details>
+        <details>
+          <summary>Are the CVR number and the VAT number the same?</summary>
+          <p>The digits are. The VAT number is the CVR number with <code>DK</code> in front, but it only applies if the business is actually VAT registered.</p>
+        </details>
+        <details>
+          <summary>What is the difference between a CVR number and a P-number?</summary>
+          <p>The CVR number identifies the legal entity and has eight digits. The P-number has ten and identifies a production unit, meaning a place of business. A P-number is never a VAT number.</p>
+        </details>
+        <details>
+          <summary>Why does VIES reject a company that exists in CVR?</summary>
+          <p>Because it is not VAT registered. Holding companies and associations with no economic activity appear in CVR without a valid VAT number.</p>
+        </details>
+        <details>
+          <summary>Can I download the whole CVR register?</summary>
+          <p>Yes, through the Business Authority’s distribution service. Access is free but requires an agreement and an assigned username.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/germany/">Germany</a></li>
+        <li><a href="/en/vat-number/italy/">Italy</a></li>
+        <li><a href="/en/vat-number/spain/">Spain</a></li>
+        <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+        <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

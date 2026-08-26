@@ -1,0 +1,103 @@
+<!-- @meta
+{
+  "title": "Momsregistreringsnummer: format, organisationsnummer och sökning",
+  "description": "SE plus organisationsnumret plus 01. Hur momsnumret byggs, varför det alltid slutar på 01, och hur du hittar företaget bakom numret.",
+  "h1": "Det svenska momsregistreringsnumret",
+  "term": "Momsregistreringsnummer",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Sverige · SE</p>
+        <h1>Det svenska momsregistreringsnumret</h1>
+        <p class="section__lead">Organisationsnumret, utan bindestreck, med SE före och 01 efter. Ingenting behöver slås upp för att bygga det, vilket också är hur man får fram ett välformat nummer för ett företag som aldrig varit momsregistrerat.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>SE</code> + 10 siffror (organisationsnumret) + <code>01</code></p>
+        <p><strong>Exempel:</strong> <code>SE202100293201</code>, organisationsnummer <code>202100-2932</code></p>
+        <p><strong>Utfärdas av:</strong> Skatteverket, vid momsregistrering.</p>
+      </div>
+
+      <h2 id="format">Uppbyggnaden</h2>
+      <p>Ett svenskt momsregistreringsnummer är alltid <strong>fjorton tecken</strong>: landskoden och tolv siffror.</p>
+      <ul class="breakdown">
+        <li><b>SE</b><span>Landskoden.</span></li>
+        <li><b>2021002932</b><span>Organisationsnumret, utan bindestreck.</span></li>
+        <li><b>01</b><span>Fast suffix, alltid 01.</span></li>
+      </ul>
+      <p>Suffixet <code>01</code> är inte en kontrollsiffra utan ett löpnummer för momsregistreringen. Kontrollsiffran finns redan inne i organisationsnumret, som sista siffra, och beräknas enligt Luhn-formeln.</p>
+      <p>Organisationsnumret skrivs nationellt med bindestreck före de fyra sista siffrorna (<code>202100-2932</code>) men bindestrecket försvinner i momsnumret. De två första siffrorna anger juridisk form: 16 för aktiebolag, 20 för statliga myndigheter, 26 för kommuner, 55 för handelsbolag.</p>
+
+      <h2 id="orgnr">Organisationsnummer och momsnummer</h2>
+      <p><strong>Organisationsnumret</strong> tilldelas av Bolagsverket eller Skatteverket när verksamheten registreras och följer företaget hela livet. <strong>Momsregistreringsnumret</strong> är samma nummer i annan förpackning, men det finns bara om företaget faktiskt är momsregistrerat.</p>
+      <p>Det är skillnaden som spelar roll: <strong>varje företag har ett organisationsnummer, alla är inte momsregistrerade.</strong> Ett vilande bolag, en ideell förening utan ekonomisk verksamhet eller ett företag under omsättningsgränsen har ett organisationsnummer och inget giltigt momsnummer i VIES.</p>
+      <p>För <strong>enskild firma</strong> är organisationsnumret personnumret. Momsnumret blir då <code>SE</code> + personnumret + <code>01</code>, vilket innebär att ett personnummer hamnar på fakturan, en välkänd och omdiskuterad följd av konstruktionen.</p>
+
+      <h2 id="sok">Hitta företaget bakom numret</h2>
+      <h3>Bolagsverket</h3>
+      <p>Bolagsverket för näringslivsregistret och publicerar sedan några år <strong>värdefulla datamängder fritt</strong> enligt EU:s öppna data-direktiv. Eftersom momsnumret är organisationsnumret plus <code>01</code> går varje rad att nå direkt från ett momsnummer, vilket gör att en egen uppslagstjänst faktiskt låter sig byggas här.</p>
+      <h3>Skatteverket</h3>
+      <p>Skatteverket bekräftar momsregistrering och erbjuder en kontroll av utländska momsnummer, men lämnar inte ut namn och adress till svenska nummer på det sättet.</p>
+      <h3>VIES</h3>
+      <p>Sverige <strong>lämnar ut både namn och adress</strong> via VIES. Adressen kommer ofta som en boxadress, och postnumret skrivs med mellanslag i mitten (<code>751 05</code>) vilket är värt att veta när adressen ska delas upp.</p>
+
+      <h2 id="fallgropar">Svenska särdrag</h2>
+      <ul>
+        <li><strong>Glöm inte <code>01</code>.</strong> <code>SE2021002932</code> är inte ett momsnummer; det saknar suffixet och underkänns.</li>
+        <li><strong>Bindestrecket ska bort.</strong> Organisationsnumret skrivs <code>202100-2932</code> nationellt, men momsnumret innehåller aldrig bindestreck.</li>
+        <li><strong>Organisationsnummer är inte samma sak som momsregistrering.</strong> Alla har det första, långt ifrån alla det andra.</li>
+        <li><strong>Enskild firma exponerar personnumret.</strong> Det är inbyggt i konstruktionen och går inte att undvika.</li>
+        <li><strong>Suffixet är alltid 01 i praktiken.</strong> Andra värden är teoretiskt möjliga men förekommer i princip inte.</li>
+      </ul>
+
+      <!-- @include partials/country/sv.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Vanliga frågor</p>
+        <h2>Momsnumret i korthet</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Hur många siffror har ett svenskt momsregistreringsnummer?</summary>
+          <p>Tolv siffror efter landskoden <code>SE</code>, alltså fjorton tecken totalt.</p>
+        </details>
+        <details>
+          <summary>Varför slutar alla svenska momsnummer på 01?</summary>
+          <p>Det är ett löpnummer för momsregistreringen, inte en kontrollsiffra. I praktiken är det alltid 01.</p>
+        </details>
+        <details>
+          <summary>Är organisationsnumret och momsnumret samma sak?</summary>
+          <p>Sifferföljden är densamma, men momsnumret har <code>SE</code> före och <code>01</code> efter, och det finns bara om företaget är momsregistrerat.</p>
+        </details>
+        <details>
+          <summary>Varför säger VIES att ett existerande svenskt nummer är ogiltigt?</summary>
+          <p>Nästan alltid för att företaget inte är momsregistrerat: vilande bolag, verksamhet under omsättningsgränsen eller en förening utan ekonomisk verksamhet.</p>
+        </details>
+        <details>
+          <summary>Får jag hämta hela företagsregistret gratis?</summary>
+          <p>Ja. Bolagsverket publicerar värdefulla datamängder fritt, och eftersom momsnumret bygger på organisationsnumret går raderna att nå direkt.</p>
+        </details>
+      </div>
+
+      <h2>Momsnumret i andra länder</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+            <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/" hreflang="en" lang="en">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/" hreflang="en" lang="en">Belgium</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Uppdaterad den 28 augusti 2026.</p>
+    </div>
+  </section>
+</main>

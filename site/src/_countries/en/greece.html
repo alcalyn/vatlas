@@ -1,0 +1,106 @@
+<!-- @meta
+{
+  "title": "Greek VAT number: AFM, why the prefix is EL, and how to look it up",
+  "description": "EL plus nine digits, the AFM. Why Greece is the only member state whose prefix is not its ISO code, and how to find the company behind a number.",
+  "h1": "The Greek VAT number",
+  "term": "Greek VAT identification number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Greece · EL</p>
+        <h1>The Greek VAT number</h1>
+        <p class="section__lead">The only country in the Union whose VAT prefix is not its ISO code: it is written EL, never GR.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>EL</code> + 9 digits (the AFM)</p>
+        <p><strong>Example:</strong> <code>EL090101655</code></p>
+        <p><strong>Issued by:</strong> the Independent Authority for Public Revenue (AADE).</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Greek VAT number is always <strong>eleven characters</strong>: the prefix and the nine digits of the AFM.</p>
+      <ul class="breakdown">
+        <li><b>EL</b><span>The VAT country prefix, not GR.</span></li>
+        <li><b>09010165</b><span>Eight digits.</span></li>
+        <li><b>5</b><span>The check digit.</span></li>
+      </ul>
+      <p>The check digit is computed with powers of 2 and a modulus 11 remainder; if the remainder is 10, the digit is 0. Numbers starting with 0 usually belong to legal persons registered long ago.</p>
+      <div class="callout"><p><strong>EL, not GR.</strong> Greece is the only member state whose VAT prefix differs from its ISO 3166 code. A system that sends <code>GR</code> to VIES gets an error back, even though the number is correct.</p></div>
+
+      <h2 id="afm">AFM, GEMI and the tax office</h2>
+      <p>The <strong>AFM</strong> is issued by AADE to every natural and legal person and never changes. The VAT number is exactly the AFM with an <code>EL</code> prefix.</p>
+      <p>The <strong>GEMI number</strong> comes from the General Commercial Registry and identifies the company commercially. It cannot be computed from the AFM, or the other way round: the registry has to be searched by AFM instead, which its open-data API allows.</p>
+      <p>The <strong>DOY</strong> is the competent tax office; it appears on documents but is not part of the number.</p>
+      <p>The distinction that matters: <strong>everyone has an AFM, not everyone is liable for VAT.</strong> And beyond that, registration in the VIES register for intra-community transactions is a separate step again.</p>
+
+      <h2 id="find">Finding the company</h2>
+      <h3>GEMI</h3>
+      <p>The <a href="https://www.businessregistry.gr/" rel="noopener">General Commercial Registry</a> offers public company search with basic details free; certificates are charged for. It also publishes an <a href="https://opendata.businessportal.gr/" rel="noopener">open-data API</a> whose key is granted to anyone who asks, and although the GEMI number cannot be derived from the AFM, the API is <strong>searchable by AFM</strong>, so the VAT number is enough to reach the record: registered name in Greek and Latin, seat address in separate fields, legal form and a dated status.</p>
+      <p>Three things to know about it: it allows <strong>8 requests a minute</strong>; its coverage is not total, some large companies being missing from it; and a <strong>search by AFM takes about two seconds</strong>, several times what VIES needs for the same number, so it is worth reaching for once the faster sources have come back empty, not before.</p>
+      <h3>AADE</h3>
+      <p>AADE offers <strong>RgWsPublic2</strong>, a SOAP service returning the legal name, the seat address in separate fields and the activity, more than VIES gives. It requires dedicated credentials, issued free through TAXISnet, which is to say to Greek taxpayers only.</p>
+      <p>Watch one trap: the deactivation flag comes back as <code>1</code> for active and <code>2</code> for deactivated, the opposite of what anyone would guess.</p>
+      <h3>VIES</h3>
+      <p>Greece <strong>discloses the name and the address</strong>. The address arrives on one line, using runs of spaces as separators and putting the postcode before the municipality, split off with a dash.</p>
+
+      <h2 id="pitfalls">Greece-specific pitfalls</h2>
+      <ul>
+        <li><strong>EL, not GR.</strong> It is the commonest mistake made about Greece and it causes correct numbers to be rejected.</li>
+        <li><strong>An AFM does not mean VIES registration.</strong> Intra-community registration is a separate step.</li>
+        <li><strong>The GEMI number is not the AFM</strong> and cannot be computed from it, though the GEMI open-data API can be searched by AFM, which is what makes the registry reachable from a VAT number at all.</li>
+        <li><strong>The AADE deactivation flag is inverted:</strong> 1 means active, 2 means deactivated.</li>
+        <li><strong>The address uses runs of spaces as separators</strong>, so collapsing whitespace destroys its structure.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Greek VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Greek VAT number have?</summary>
+          <p>Nine after the <code>EL</code> prefix, eleven characters in total.</p>
+        </details>
+        <details>
+          <summary>Why is the prefix EL and not GR?</summary>
+          <p>It is a historical convention of EU VAT legislation. Greece is the only member state whose VAT prefix differs from its ISO country code.</p>
+        </details>
+        <details>
+          <summary>Are the AFM and the VAT number the same?</summary>
+          <p>The digits are. The VAT number is the AFM with an <code>EL</code> prefix, but it is valid for intra-community trade only after registration in the VIES register.</p>
+        </details>
+        <details>
+          <summary>What is the GEMI number?</summary>
+          <p>The General Commercial Registry number, which identifies a company commercially. Nothing computable links it to the AFM, but the registry's open-data API can be searched by AFM, so a VAT number is enough to find the record.</p>
+        </details>
+        <details>
+          <summary>Why does VIES reject an AFM that exists?</summary>
+          <p>Either the person is not registered for intra-community transactions, or <code>GR</code> was sent instead of <code>EL</code>.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/">Germany</a></li>
+            <li><a href="/en/vat-number/italy/">Italy</a></li>
+            <li><a href="/en/vat-number/spain/">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

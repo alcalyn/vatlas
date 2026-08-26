@@ -1,0 +1,100 @@
+<!-- @meta
+{
+  "title": "RUC ecuatoriano: formato, qué dice el tercer dígito y consulta",
+  "description": "EC más trece dígitos. Cómo el RUC codifica la provincia y la clase de contribuyente, y qué publica el SRI sobre él de forma gratuita.",
+  "h1": "El RUC ecuatoriano",
+  "term": "RUC",
+  "updated": "2026-09-15"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Ecuador · EC</p>
+        <h1>El RUC ecuatoriano</h1>
+        <p class="section__lead">Ecuador tiene IVA, y el número que lleva una factura es el RUC, el Registro Único de Contribuyentes. El SRI lo confirma por el mismo servicio que usa su propio portal, sin clave alguna.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Formato:</strong> <code>EC</code> + 13 dígitos</p>
+        <p><strong>Ejemplo:</strong> <code>EC1790016919001</code></p>
+        <p><strong>Emitido por:</strong> el Servicio de Rentas Internas (SRI).</p>
+      </div>
+
+      <h2 id="format">El formato</h2>
+      <p>Un RUC son <strong>trece dígitos</strong>, y cada grupo dice algo.</p>
+      <ul class="breakdown">
+        <li><b>17</b><span>La provincia de inscripción: 17 es Pichincha, 09 Guayas. Van del 01 al 24, con el 30 para ecuatorianos inscritos en el exterior.</span></li>
+        <li><b>9</b><span>La clase de contribuyente. Menos de 6 es persona natural, 6 el sector público, 9 una sociedad privada.</span></li>
+        <li><b>001691</b><span>El secuencial, terminado en un dígito verificador.</span></li>
+        <li><b>001</b><span>El establecimiento. <code>001</code> es la matriz; una sucursal se numera a continuación.</span></li>
+      </ul>
+      <p>Hay un dígito verificador, pero la regla publicada no se sostiene: aplicada a <code>1790016919001</code> (Corporación Favorita, una de las mayores empresas del país) produce un dígito distinto. Por eso {{siteName}} no rechaza un RUC sin consultar: un error de tecleo cuesta una consulta, no un cliente rechazado por equivocación.</p>
+
+      <h2 id="status">Activo, suspendido, pasivo</h2>
+      <p>El SRI declara la situación del contribuyente en una palabra. <strong>ACTIVO</strong> es una inscripción vigente. <strong>SUSPENDIDO</strong> es la que la administración ha suspendido, y <strong>PASIVO</strong> la que el contribuyente ha cerrado. Las dos últimas son números que hoy no deberían aparecer en una factura, y ambas son frecuentes.</p>
+      <p>El registro publica además cuándo tocó el dato por última vez, y {{siteName}} lo transmite: se ve no solo lo que el SRI sostiene, sino desde cuándo.</p>
+
+      <h2 id="find">Encontrar la empresa detrás del número</h2>
+      <h3>El servicio del propio SRI</h3>
+      <p>El catastro se lee por el servicio REST que llama el portal en línea del SRI: abierto, sin cuenta y sin cupo. Responde con la razón social, la clase de contribuyente, la situación y la actividad económica principal.</p>
+      <h3>Dos puntos de entrada, una respuesta</h3>
+      <p>La dirección no está en esa respuesta. Ecuador guarda los establecimientos en un segundo punto de entrada, una fila por local, con la matriz señalada, de modo que una consulta completa son dos llamadas, y {{siteName}} hace ambas. Una empresa con centenares de locales devuelve centenares de filas; la matriz es la que responde dónde está la empresa.</p>
+      <h3>Cómo se escribe una dirección ecuatoriana</h3>
+      <p>Como una ruta: <code>PICHINCHA / RUMIÑAHUI / COTOGCHOA / AV. GENERAL ENRIQUEZ S/N</code>: provincia, cantón, parroquia y calle. El cantón es lo que la mayoría de los sistemas entiende por ciudad.</p>
+
+      <h2 id="pitfalls">Trampas propias de Ecuador</h2>
+      <ul>
+        <li><strong>Trece dígitos, siempre.</strong> Una cédula de diez dígitos no es un RUC; el RUC añade el establecimiento.</li>
+        <li><strong>Los tres últimos dígitos son el establecimiento.</strong> <code>001</code> es la matriz, y forman parte del número.</li>
+        <li><strong>No hay verificación fiable sin consultar.</strong> La regla publicada contradice empresas reales.</li>
+        <li><strong>SUSPENDIDO y PASIVO existen de verdad.</strong> Constar en el catastro no es estar inscrito hoy.</li>
+        <li><strong>Las direcciones acaban en S/N.</strong> <em>Sin número</em>, y es perfectamente normal.</li>
+      </ul>
+
+      <!-- @include partials/country/es.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2>El RUC en breve</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>¿Cuántos dígitos tiene un RUC ecuatoriano?</summary>
+          <p>Trece: dos de provincia, uno de clase de contribuyente, el secuencial con su verificador y tres del establecimiento.</p>
+        </details>
+        <details>
+          <summary>¿Qué significa el tercer dígito?</summary>
+          <p>Menos de 6, persona natural; 6, sector público; 9, sociedad privada.</p>
+        </details>
+        <details>
+          <summary>¿El RUC es lo mismo que la cédula?</summary>
+          <p>Para una persona natural, el RUC es su cédula de diez dígitos seguida de <code>001</code>. Una sociedad tiene número propio.</p>
+        </details>
+        <details>
+          <summary>¿Por qué un RUC válido aparece como suspendido?</summary>
+          <p>Porque el SRI suspendió la inscripción, o el contribuyente la cerró. Son estados que el registro publica.</p>
+        </details>
+        <details>
+          <summary>¿VIES cubre Ecuador?</summary>
+          <p>No. VIES responde únicamente por los Estados miembros de la Unión Europea.</p>
+        </details>
+      </div>
+
+      <h2>Números de empresa en otros países</h2>
+      <ul class="otherlinks">
+        <li><a href="/es/numero-iva-intracomunitario/espana/">España</a></li>
+        <li><a href="/en/vat-number/peru/">Perú</a></li>
+        <li><a href="/en/vat-number/costa-rica/">Costa Rica</a></li>
+        <li><a href="/en/vat-number/brazil/">Brasil</a></li>
+        <li><a href="/en/vat-number/">Todos los países</a></li>
+      </ul>
+      <p class="updated">Última actualización: 15 de septiembre de 2026.</p>
+    </div>
+  </section>
+</main>

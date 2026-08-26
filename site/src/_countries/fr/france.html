@@ -1,0 +1,237 @@
+<!-- @meta
+{
+  "title": "Numéro de TVA intracommunautaire français : format, SIREN et vérification",
+  "description": "FR + une clé de 2 caractères + le SIREN. Comment la clé se calcule, pourquoi elle ne figure dans aucun fichier public, et comment retrouver la société derrière un numéro.",
+  "h1": "Le numéro de TVA intracommunautaire français",
+  "term": "Numéro de TVA intracommunautaire français",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">France · FR</p>
+        <h1>Le numéro de TVA intracommunautaire français</h1>
+        <p class="section__lead">
+          Treize caractères qui ne contiennent qu’une seule information : le SIREN de
+          l’entreprise. Tout le reste est une clé de contrôle que l’on sait recalculer.
+        </p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format :</strong> <code>FR</code> + clé (2 caractères) + SIREN (9 chiffres)</p>
+        <p><strong>Exemple :</strong> <code>FR95884831538</code>, clé <code>95</code>, SIREN <code>884831538</code></p>
+        <p><strong>Attribué par :</strong> le service des impôts des entreprises (SIE) dont dépend la société.</p>
+      </div>
+
+      <h2 id="format">Le format en détail</h2>
+      <p>
+        Un numéro de TVA intracommunautaire français fait toujours <strong>13 caractères</strong>,
+        sans espace ni point. Il se décompose ainsi :
+      </p>
+      <ul class="breakdown">
+        <li><b>FR</b><span>Le code pays. Toujours FR, y compris pour Monaco.</span></li>
+        <li><b>95</b><span>La clé de contrôle, sur deux caractères.</span></li>
+        <li><b>884831538</b><span>Le SIREN, l’identifiant de l’entreprise à l’INSEE.</span></li>
+      </ul>
+      <p>
+        La clé est presque toujours numérique. Quelques numéros anciens portent une clé
+        alphabétique ou mixte (par exemple <code>FR2A123456789</code>) : ils restent valides, mais
+        aucune règle publique ne permet de les recalculer, donc rien ne peut les vérifier hors ligne.
+      </p>
+
+      <h2 id="cle">Comment se calcule la clé</h2>
+      <p>
+        La clé n’est pas tirée au sort : elle se déduit du SIREN par une formule publiée par
+        l’administration fiscale.
+      </p>
+      <div class="code" data-copy><pre><code>clé = (12 + 3 × (SIREN modulo 97)) modulo 97</code></pre></div>
+      <p>
+        Pour le SIREN <code>884831538</code> : <code>884831538 mod 97 = 60</code>, donc
+        <code>(12 + 3 × 60) mod 97 = 192 mod 97 = 95</code>. Le numéro complet est
+        <code>FR95884831538</code>. Le résultat est complété à deux chiffres :
+        le SIREN <code>000325175</code> donne la clé <code>08</code>.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>Une clé juste ne prouve rien.</strong> La vérification est syntaxique : elle
+          établit que le numéro est bien formé, jamais que l’entreprise existe, ni qu’elle est
+          encore assujettie à la TVA. Seule une consultation de VIES ou d’un registre le dit.
+        </p>
+      </div>
+
+      <h2 id="siren">Le SIREN, le SIRET et le reste</h2>
+      <p>
+        Le <strong>SIREN</strong> est un numéro à 9 chiffres attribué par l’INSEE à chaque unité
+        légale (société, association, entrepreneur individuel) au moment de son immatriculation.
+        Il ne change jamais et survit aux changements de nom, de forme juridique et d’adresse.
+      </p>
+      <p>
+        Le <strong>SIRET</strong> fait 14 chiffres : le SIREN suivi d’un NIC de 5 chiffres qui
+        désigne un établissement précis. Une entreprise a un seul SIREN et autant de SIRET que
+        d’établissements. Le numéro de TVA est construit sur le SIREN, jamais sur le SIRET.
+      </p>
+      <p>
+        Le <strong>numéro RCS</strong> est le SIREN précédé de la ville du greffe
+        (« RCS Paris 884 831 538 ») : même chiffres, présentation différente. Le
+        <strong>numéro de TVA</strong>, lui, est attribué par la DGFiP et non par l’INSEE, ce qui
+        explique qu’il n’apparaisse dans aucun fichier de l’INSEE.
+      </p>
+
+      <h2 id="retrouver">Retrouver la société derrière un numéro</h2>
+      <p>
+        Le SIREN étant les neuf derniers chiffres, on l’obtient sans rien interroger. Il faut
+        ensuite le chercher quelque part, car le numéro de TVA lui-même n’est publié nulle part.
+      </p>
+      <h3>La base SIRENE</h3>
+      <p>
+        L’INSEE publie l’intégralité de son répertoire en open data sous Licence Ouverte, sur
+        <a href="https://www.data.gouv.fr/" rel="noopener">data.gouv.fr</a>. Deux fichiers comptent :
+        <code>StockUniteLegale</code> (les entreprises : dénomination, forme juridique, activité,
+        état administratif) et <code>StockEtablissement</code> (les établissements, et donc les
+        adresses). Le second pèse plusieurs gigaoctets compressés, c’est de loin le plus long à
+        traiter, et c’est lui qui porte l’adresse du siège.
+      </p>
+      <p>
+        Pour une recherche ponctuelle,
+        <a href="https://annuaire-entreprises.data.gouv.fr/" rel="noopener">annuaire-entreprises.data.gouv.fr</a>
+        expose la même donnée dans une interface lisible.
+      </p>
+      <h3>VIES</h3>
+      <p>
+        Le service de la Commission européenne confirme qu’un numéro est bien enregistré pour les
+        échanges intracommunautaires, et la France fait partie des États membres qui acceptent de
+        divulguer le nom et l’adresse. C’est la seule source qui réponde à la question
+        « ce numéro est-il valide <em>aujourd’hui</em> ? ».
+      </p>
+      <p>
+        Ses limites sont réelles : pas d’identifiant national dans la réponse, pas de forme
+        juridique, une adresse en texte libre à découper soi-même, et une disponibilité qui dépend
+        de chaque administration nationale. Sur la France en particulier, VIES limite fortement le
+        nombre d’appels simultanés et répond régulièrement <code>MS_MAX_CONCURRENT_REQ</code>.
+      </p>
+
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Ce que chaque source apporte pour la France</caption>
+          <thead>
+            <tr><th scope="col">Source</th><th scope="col">Clé d’entrée</th><th scope="col">Ce qu’on obtient</th><th scope="col">Limite</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">SIRENE (open data)</th><td>SIREN</td>
+              <td>Dénomination, forme juridique, activité, état, adresse</td>
+              <td>Fichiers de plusieurs Go, mise à jour mensuelle, aucun numéro de TVA</td>
+            </tr>
+            <tr>
+              <th scope="row">Annuaire des entreprises</th><td>SIREN ou nom</td>
+              <td>La même donnée, à l’unité</td><td>Consultation humaine, pas un flux</td>
+            </tr>
+            <tr>
+              <th scope="row">VIES</th><td>Numéro de TVA</td>
+              <td>Validité, nom, adresse en texte libre</td>
+              <td>Lent, quotas serrés, indisponibilités fréquentes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="pieges">Les pièges propres à la France</h2>
+      <ul>
+        <li>
+          <strong>Le numéro de TVA n’est dans aucun fichier public.</strong> Il se calcule à partir
+          du SIREN ; l’inverse (retrouver le SIREN) se fait en prenant les neuf derniers chiffres.
+        </li>
+        <li>
+          <strong>Avoir un SIREN ne veut pas dire avoir un numéro de TVA actif.</strong> Une
+          entreprise en franchise en base, ou radiée, garde son SIREN et n’apparaît pas comme
+          valide dans VIES. Un numéro rejeté par VIES ne signifie donc pas que la société n’existe pas.
+        </li>
+        <li>
+          <strong>Les clés alphabétiques historiques</strong> ne sont pas recalculables : un
+          validateur strict les rejettera à tort.
+        </li>
+        <li>
+          <strong>L’adresse vient d’un autre fichier que le nom.</strong> Dans SIRENE, la
+          dénomination est dans les unités légales et l’adresse dans les établissements : une
+          reprise partielle donne des fiches sans adresse.
+        </li>
+        <li>
+          <strong>Monaco utilise le préfixe FR.</strong> Les entreprises monégasques sont traitées
+          comme françaises pour la TVA intracommunautaire.
+        </li>
+      </ul>
+
+      <!-- @include partials/country/fr.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2>Le numéro de TVA français en bref</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Comment trouver le numéro de TVA d’une entreprise à partir de son SIREN ?</summary>
+          <p>
+            En calculant la clé : <code>(12 + 3 × (SIREN mod 97)) mod 97</code>, complétée à deux
+            chiffres, puis préfixée de FR. Le SIREN 884831538 donne FR95884831538. Le calcul est
+            fiable, mais il ne dit pas si l’entreprise est effectivement assujettie.
+          </p>
+        </details>
+        <details>
+          <summary>Combien de chiffres compte un numéro de TVA français ?</summary>
+          <p>
+            Treize caractères en tout : les deux lettres FR, deux caractères de clé et les neuf
+            chiffres du SIREN.
+          </p>
+        </details>
+        <details>
+          <summary>Quelle différence entre SIREN, SIRET et numéro de TVA ?</summary>
+          <p>
+            Le SIREN (9 chiffres) identifie l’entreprise, le SIRET (14 chiffres) identifie un de ses
+            établissements, et le numéro de TVA intracommunautaire est le SIREN précédé d’une clé et
+            du code FR. Le SIREN et le SIRET viennent de l’INSEE, le numéro de TVA de la DGFiP.
+          </p>
+        </details>
+        <details>
+          <summary>Un numéro de TVA valide signifie-t-il que l’entreprise existe encore ?</summary>
+          <p>
+            Non. La clé se vérifie hors ligne et reste juste même pour une société radiée. Seule une
+            consultation de VIES atteste que le numéro est enregistré pour les échanges
+            intracommunautaires au moment de la requête.
+          </p>
+        </details>
+        <details>
+          <summary>Pourquoi VIES refuse-t-il un numéro que je sais valide ?</summary>
+          <p>
+            Trois causes possibles : l’entreprise n’est pas inscrite pour les opérations
+            intracommunautaires, elle a été radiée, ou le service français était momentanément
+            indisponible. Ce dernier cas est fréquent et se distingue par une erreur technique
+            plutôt que par une réponse « non enregistré ».
+          </p>
+        </details>
+        <details>
+          <summary>Existe-t-il un fichier public des numéros de TVA français ?</summary>
+          <p>
+            Non. L’INSEE publie SIRENE, qui contient les SIREN mais aucun numéro de TVA. Il faut donc
+            reconstruire le numéro à partir du SIREN, ou partir du numéro pour retrouver le SIREN.
+          </p>
+        </details>
+      </div>
+
+      <h2>Le numéro de TVA dans les autres pays</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+            <li><a href="/fr/numero-tva-intracommunautaire/belgique/">Belgique</a></li>
+        <li><a href="/fr/numero-tva-intracommunautaire/">Tous les pays</a></li>
+      </ul>
+      <p class="updated">Mis à jour le 28 août 2026.</p>
+    </div>
+  </section>
+</main>

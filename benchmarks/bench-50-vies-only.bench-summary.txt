@@ -1,0 +1,124 @@
+Benchmark - bench-50-vies-only.txt
+  2026-08-31T20:51:50.071Z
+
+Input
+  lines read           1350
+  VAT numbers          1350
+  malformed            0
+  duplicates           0
+  usable               1350
+
+Numbers per country
+  AT  Austria                50
+  BE  Belgium                50
+  BG  Bulgaria               50
+  CY  Cyprus                 50
+  CZ  Czechia                50
+  DE  Germany                50
+  DK  Denmark                50
+  EE  Estonia                50
+  EL  Greece                 50
+  ES  Spain                  50
+  FI  Finland                50
+  FR  France                 50
+  HR  Croatia                50
+  HU  Hungary                50
+  IE  Ireland                50
+  IT  Italy                  50
+  LT  Lithuania              50
+  LU  Luxembourg             50
+  LV  Latvia                 50
+  MT  Malta                  50
+  NL  Netherlands            50
+  PL  Poland                 50
+  PT  Portugal               50
+  RO  Romania                50
+  SE  Sweden                 50
+  SI  Slovenia               50
+  SK  Slovakia               50
+  XI  Northern Ireland        0
+
+Lookups - https://ec.europa.eu/taxation_customs/vies/services/checkVatService - concurrency 1 - run took 2354.7s
+  VIES ONLY - the API, the local database and the national registers are out of the path
+  vies_cache neither read nor written
+
+Outcomes
+  found                  1243  92.1%
+  not-registered           66  4.9%
+  unavailable              41  3.0%
+
+Latency, every lookup (ms)
+  p50      369
+  p95     7812
+  max    45614
+  avg     1744
+
+Completeness, over the 1243 answers found
+  name           93.9%  (1167/1243)
+  legal form      0.0%  (0/1243)
+  address        93.2%  (1159/1243)
+  postal code    65.5%  (814/1243)
+  city           65.5%  (814/1243)
+  source        100.0%  (1243/1243)
+
+  answered by          vies 1243
+  sources              VIES 1243
+
+Per country - latency over every lookup, completeness over the ones found
+  code       n   found      p50      p95     total     name     form     addr     post     city      src
+  AT        50  100.0%      244      383     11.4s   100.0%     0.0%   100.0%     0.0%     0.0%   100.0%
+  BE        50   96.0%     2704     5633    144.7s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  BG        50   82.0%      764     2709     57.0s   100.0%     0.0%   100.0%     0.0%     0.0%   100.0%
+  CY        50  100.0%      417      504     21.5s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  CZ        50   94.0%     2457     3687    128.6s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  DE        50   54.0%      246     6523    135.6s     0.0%     0.0%     0.0%     0.0%     0.0%   100.0%
+  DK        50   78.0%     9953    45610   1044.7s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  EE        50   94.0%      245      411     13.1s   100.0%     0.0%   100.0%    97.9%    97.9%   100.0%
+  EL        50   98.0%      490     1106     27.9s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  ES        50   98.0%      246      492     13.8s     0.0%     0.0%     0.0%     0.0%     0.0%   100.0%
+  FI        50   96.0%      368      643     20.0s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  FR        50   78.0%     7226     9955    376.7s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  HR        50   98.0%      381      738     21.4s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  HU        50   88.0%      245      383     12.8s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  IE        50   96.0%      244      367     12.0s   100.0%     0.0%    89.6%    10.4%    10.4%   100.0%
+  IT        50   98.0%      246      407     13.7s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  LT        50   96.0%      368      641     19.4s   100.0%     0.0%   100.0%     0.0%     0.0%   100.0%
+  LU        50   94.0%      193      366     10.2s   100.0%     0.0%   100.0%     0.0%     0.0%   100.0%
+  LV        50   92.0%      882     6638     74.3s   100.0%     0.0%   100.0%     0.0%     0.0%   100.0%
+  MT        50   96.0%      245      612     13.7s   100.0%     0.0%   100.0%     0.0%     0.0%   100.0%
+  NL        50  100.0%      370     1106     25.2s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  PL        50   96.0%      246      576     14.1s   100.0%     0.0%   100.0%    95.8%    95.8%   100.0%
+  PT        50   98.0%      247     1675     24.4s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  RO        50   78.0%      491      757     25.5s   100.0%     0.0%   100.0%    30.8%    30.8%   100.0%
+  SE        50   94.0%      657     3045     54.8s   100.0%     0.0%    93.6%   100.0%   100.0%   100.0%
+  SI        50   94.0%      246      377     13.3s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  SK        50  100.0%      411      992     24.7s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+
+Per country - where the answers came from
+  AT    vies 50
+  BE    vies 48, unavailable 1, not-registered 1
+  BG    vies 41, not-registered 9
+  CY    vies 50
+  CZ    vies 47, not-registered 3
+  DE    vies 27, unavailable 21, not-registered 2
+  DK    vies 39, unavailable 9, not-registered 2
+  EE    vies 47, not-registered 3
+  EL    vies 49, not-registered 1
+  ES    vies 49, not-registered 1
+  FI    vies 48, not-registered 2
+  FR    vies 39, unavailable 10, not-registered 1
+  HR    vies 49, not-registered 1
+  HU    vies 44, not-registered 6
+  IE    vies 48, not-registered 2
+  IT    vies 49, not-registered 1
+  LT    vies 48, not-registered 2
+  LU    vies 47, not-registered 3
+  LV    vies 46, not-registered 4
+  MT    vies 48, not-registered 2
+  NL    vies 50
+  PL    vies 48, not-registered 2
+  PT    vies 49, not-registered 1
+  RO    vies 39, not-registered 11
+  SE    vies 47, not-registered 3
+  SI    vies 47, not-registered 3
+  SK    vies 50

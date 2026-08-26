@@ -1,0 +1,145 @@
+<!-- @meta
+{
+  "title": "Enrich a CRM from VAT numbers",
+  "description": "Turn the VAT number on each account into the legal name, address and status the register holds. Enrich a CRM in bulk, and keep it accurate afterwards.",
+  "h1": "Enrich a CRM from VAT numbers",
+  "articleType": "TechArticle",
+  "updated": "2026-09-21",
+  "video": {
+    "file": "sheet",
+    "name": "Filling company details from a column of VAT numbers",
+    "description": "A column of VAT numbers is read row by row, and the legal name, address, country and register are written into the columns beside it.",
+    "duration": "PT17S"
+  }
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Guide · CRM</p>
+        <h1>Enrich a CRM from VAT numbers</h1>
+        <p class="section__lead">
+          Your accounts were typed by people in a hurry. Their VAT numbers are enough to replace
+          the guesswork with what the register actually holds.
+        </p>
+      </div>
+
+      <figure class="demo">
+        <video src="/demos/sheet.mp4" poster="/demos/sheet.jpg" width="1000" height="680"
+               autoplay loop muted playsinline
+               aria-label="A column of VAT numbers is read row by row, and the company name, address and register fill the columns beside it."></video>
+        <figcaption>One VAT column in, company columns out. Same call from any tool.</figcaption>
+      </figure>
+
+      <h2 id="why">What it fixes</h2>
+      <ul>
+        <li><strong>Duplicates.</strong> The same company sits in the base three times under three spellings. The register gives one name, so they collapse.</li>
+        <li><strong>Old addresses.</strong> An account captured in 2019 still bills where the company used to be.</li>
+        <li><strong>Dead accounts.</strong> <code>status</code> says which ones were struck off.</li>
+        <li><strong>Missing fields.</strong> Legal form, national company id, country, all blank in most bases.</li>
+      </ul>
+
+      <h2 id="how">How it runs</h2>
+      <p>
+        One call per account, against the same endpoint as everything else.
+      </p>
+      <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-str">&quot;{{apiBase}}/v1/lookup/FR68005420120&quot;</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">&quot;Authorization: Bearer $VATLAS_KEY&quot;</span></code></pre>
+      </div>
+      <p>
+        You get <code>name</code>, <code>legalForm</code>, <code>status</code>,
+        <code>nationalId</code> and an <code>address</code> already split into
+        <code>line1</code>, <code>postalCode</code>, <code>city</code> and <code>country</code>.
+        One field per CRM field, nothing to parse. The shape is identical for every country, so
+        one mapping covers the whole base.
+      </p>
+      <p>
+        Wherever your accounts live, the loop is the same: read the VAT number, call, write the
+        fields back. A scheduled job, an export, a workflow step in the CRM itself, or a macro in
+        whatever the sales team keeps on the side. For a first pass over an existing base, queue
+        it: the <a href="{{docsUrl}}#lookup-async">asynchronous endpoint</a> takes a batch and
+        calls you back when it is through.
+      </p>
+      <p>
+        Store the <code>meta</code> block on the record too. It names the register that answered
+        and the date, which is what tells a stale field from a field nobody ever filled.
+      </p>
+
+      <h2 id="fresh">Keeping it accurate</h2>
+      <p>
+        An enriched base is accurate on the day you enrich it. Rather than re-running everything
+        each quarter, let {{siteName}} watch the numbers you have already resolved and call back
+        when a register changes its mind: see
+        <a href="{{docsUrl}}#monitor">the monitor endpoint</a>.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>Enrichment is not verification.</strong> Filling a CRM field from a stored answer
+          is fine. Deciding whether to charge VAT is a check made at that moment, with the proof
+          kept: see
+          <a href="/en/guides/verify-a-vat-number-on-an-invoice/">verifying an invoice's VAT number</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>Enriching accounts from VAT numbers, in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Does this work with my CRM?</summary>
+          <p>
+            It is an HTTPS call returning JSON, so anything that can make one will do: a scheduled
+            script, a native workflow step, an integration platform, or a spreadsheet macro over an
+            export. There is nothing to install.
+          </p>
+        </details>
+        <details>
+          <summary>How many accounts can I do at once?</summary>
+          <p>
+            Loop for a few hundred. Beyond that, queue the batch through the
+            <a href="{{docsUrl}}#lookup-async">asynchronous endpoint</a> and collect the results
+            when it calls back.
+          </p>
+        </details>
+        <details>
+          <summary>What happens to accounts that resolve to nothing?</summary>
+          <p>
+            They come back empty rather than as an error, and that is a result worth keeping. A VAT
+            number in your base with no company behind it is exactly what you were looking for.
+          </p>
+        </details>
+        <details>
+          <summary>Do the numbers need cleaning first?</summary>
+          <p>
+            Barely. Spaces, dots, dashes, lowercase and a missing country prefix are handled. Mixed
+            countries in one field are fine.
+          </p>
+        </details>
+        <details>
+          <summary>Should I overwrite what a salesperson typed?</summary>
+          <p>
+            Fill empty fields outright. For fields that already hold something different, write the
+            register value into its own column and let a human decide. A trading name is often more
+            useful to sales than a legal one.
+          </p>
+        </details>
+      </div>
+
+      <h2>Keep reading</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/guides/verify-a-vat-number-on-an-invoice/">Verifying an invoice's VAT number</a></li>
+        <li><a href="/en/guides/company-name-address-from-vat-number/">Getting a company's name and address</a></li>
+        <li><a href="{{docsUrl}}">API documentation</a></li>
+        <li><a href="{{pricingUrl}}">Pricing</a></li>
+      </ul>
+      <p class="updated">Last updated 21 September 2026.</p>
+    </div>
+  </section>
+</main>

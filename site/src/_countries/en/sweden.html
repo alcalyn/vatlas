@@ -1,0 +1,103 @@
+<!-- @meta
+{
+  "title": "Swedish VAT number: format, organisationsnummer and lookup",
+  "description": "SE plus the organisation number plus 01. How the number is built, why it always ends in 01, and how to find the company behind it.",
+  "h1": "The Swedish VAT number",
+  "term": "Swedish VAT registration number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Sweden · SE</p>
+        <h1>The Swedish VAT number</h1>
+        <p class="section__lead">The organisation number, hyphen removed, with SE in front and 01 on the end. Nothing has to be looked up to build it, which is also how you end up with a well-formed number for a company that was never VAT registered.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>SE</code> + 10 digits (the organisation number) + <code>01</code></p>
+        <p><strong>Example:</strong> <code>SE202100293201</code>, organisation number <code>202100-2932</code></p>
+        <p><strong>Issued by:</strong> the Swedish Tax Agency, on VAT registration.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Swedish VAT number is always <strong>fourteen characters</strong>: the country code and twelve digits.</p>
+      <ul class="breakdown">
+        <li><b>SE</b><span>The country code.</span></li>
+        <li><b>2021002932</b><span>The organisation number, without its hyphen.</span></li>
+        <li><b>01</b><span>A fixed suffix, always 01.</span></li>
+      </ul>
+      <p>The <code>01</code> is a sequence number for the VAT registration, not a check digit. The check digit is already inside the organisation number, as its last digit, computed with the Luhn formula.</p>
+      <p>Domestically the organisation number is written with a hyphen before the last four digits (<code>202100-2932</code>) and the hyphen disappears in the VAT number. The first two digits indicate the legal form: 16 for limited companies, 20 for state agencies, 26 for municipalities, 55 for partnerships.</p>
+
+      <h2 id="orgnr">Organisation number and VAT number</h2>
+      <p>The <strong>organisation number</strong> is assigned by the Companies Registration Office or the Tax Agency when the business is registered, and stays with it for life. The <strong>VAT number</strong> is the same number in different packaging, but it only exists if the business is actually VAT registered.</p>
+      <p>That is the distinction that matters: <strong>every business has an organisation number, not every business is VAT registered.</strong> A dormant company, a non-profit with no economic activity or a business below the turnover threshold has an organisation number and no valid VAT number in VIES.</p>
+      <p>For a <strong>sole trader</strong> the organisation number is the personal identity number. The VAT number is then <code>SE</code> + that number + <code>01</code>, which puts a personal identity number on the invoice, a well-known and much-debated consequence of the design.</p>
+
+      <h2 id="find">Finding the company behind the number</h2>
+      <h3>Bolagsverket</h3>
+      <p>The Swedish Companies Registration Office keeps the business register and has for some years published its <strong>high-value datasets for free</strong> under the EU open data directive. Because the VAT number is the organisation number plus <code>01</code>, every row can be reached directly from a VAT number, which makes building your own lookup genuinely feasible here.</p>
+      <h3>The Tax Agency</h3>
+      <p>Skatteverket confirms VAT registration and offers a check on foreign VAT numbers, but does not release names and addresses for Swedish numbers that way.</p>
+      <h3>VIES</h3>
+      <p>Sweden <strong>discloses both name and address</strong> through VIES. The address often comes back as a PO box, and the postcode is written with a space in the middle (<code>751 05</code>) which is worth knowing when splitting the address.</p>
+
+      <h2 id="pitfalls">Sweden-specific pitfalls</h2>
+      <ul>
+        <li><strong>Do not forget the <code>01</code>.</strong> <code>SE2021002932</code> is not a VAT number; without the suffix it fails validation.</li>
+        <li><strong>The hyphen has to go.</strong> The organisation number is written <code>202100-2932</code> domestically, but a VAT number never contains a hyphen.</li>
+        <li><strong>An organisation number is not a VAT registration.</strong> Everyone has the first; far from everyone has the second.</li>
+        <li><strong>Sole traders expose a personal identity number.</strong> It is built into the design and cannot be avoided.</li>
+        <li><strong>The suffix is always 01 in practice.</strong> Other values are theoretically possible and essentially never seen.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Swedish VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Swedish VAT number have?</summary>
+          <p>Twelve after the <code>SE</code> country code, so fourteen characters in total.</p>
+        </details>
+        <details>
+          <summary>Why do all Swedish VAT numbers end in 01?</summary>
+          <p>It is a sequence number for the VAT registration rather than a check digit. In practice it is always 01.</p>
+        </details>
+        <details>
+          <summary>Are the organisation number and the VAT number the same?</summary>
+          <p>The digits are the same, but the VAT number adds <code>SE</code> in front and <code>01</code> on the end, and it only exists if the business is VAT registered.</p>
+        </details>
+        <details>
+          <summary>Why does VIES say an existing Swedish number is invalid?</summary>
+          <p>Almost always because the business is not VAT registered: a dormant company, activity below the turnover threshold, or a non-profit with no economic activity.</p>
+        </details>
+        <details>
+          <summary>Can I download the whole Swedish company register for free?</summary>
+          <p>Yes. Bolagsverket publishes high-value datasets openly, and because the VAT number is built on the organisation number the rows can be reached directly.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/germany/">Germany</a></li>
+        <li><a href="/en/vat-number/italy/">Italy</a></li>
+        <li><a href="/en/vat-number/spain/">Spain</a></li>
+        <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+        <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

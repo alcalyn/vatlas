@@ -1,0 +1,105 @@
+<!-- @meta
+{
+  "title": "Cyprus VAT number: format, the TIC and the HE registration number",
+  "description": "CY plus eight digits and a letter. Why the VAT number is neither the tax code nor the HE number, and how to find the company behind it.",
+  "h1": "The Cyprus VAT number",
+  "term": "Cyprus VAT registration number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Cyprus · CY</p>
+        <h1>The Cyprus VAT number</h1>
+        <p class="section__lead">Three numbers for one company (the VAT number, the tax code and the HE number), issued by two administrations, and none of them derived from another. Confusing them is the usual way a Cypriot lookup goes wrong.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>CY</code> + 8 digits + 1 uppercase letter</p>
+        <p><strong>Example:</strong> <code>CY10083353J</code></p>
+        <p><strong>Issued by:</strong> the Cyprus Tax Department.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Cyprus VAT number is always <strong>eleven characters</strong>: the prefix, eight digits and a trailing letter.</p>
+      <ul class="breakdown">
+        <li><b>CY</b><span>The country code.</span></li>
+        <li><b>1</b><span>The first digit: 0 or 9 historically, 6 for new registrations.</span></li>
+        <li><b>0083353</b><span>Seven digits.</span></li>
+        <li><b>J</b><span>The check character.</span></li>
+      </ul>
+      <p>The final letter is a check character derived from the eight digits and mapped onto a thirteen-letter alphabet. It is always uppercase and part of the number, never optional.</p>
+
+      <h2 id="numbers">VAT number, TIC and HE number</h2>
+      <p>Two administrations, three numbers, and nothing computable linking them.</p>
+      <p>The <strong>HE number</strong> is the Registrar of Companies’ number, written with an <code>HE</code> prefix. It identifies the company in corporate law.</p>
+      <p>The <strong>TIC</strong>, the tax identification code, is eight digits and a letter, and is used for income tax. Codes issued since March 2023 start with 6.</p>
+      <p>The <strong>VAT number</strong> has the same shape as the TIC, which is where the confusion starts. It comes from a separate registration in the VAT register, a different administrative act, and the two do not necessarily coincide.</p>
+      <div class="callout"><p><strong>None of them derives from another.</strong> The HE number does not give you the VAT number, and neither does the TIC. That is why, although the companies registry publishes open data, no record in it can be reached from a VAT number.</p></div>
+
+      <h2 id="find">Finding the company</h2>
+      <h3>Registrar of Companies</h3>
+      <p>The companies registry offers public search and publishes open data with the company name, HE number, type, status and address. It is searched by name or HE number, <strong>never by VAT number</strong>.</p>
+      <h3>The Tax Department</h3>
+      <p>The Tax Department confirms VAT registration but publishes no directory of names.</p>
+      <h3>VIES</h3>
+      <p>Cyprus <strong>discloses the name and the address</strong>, in Greek. The postcode comes before the municipality, as in Ireland and Malta, and unlike most member states.</p>
+
+      <h2 id="pitfalls">Cyprus-specific pitfalls</h2>
+      <ul>
+        <li><strong>The trailing letter is mandatory</strong> and always uppercase; it is not punctuation to be stripped.</li>
+        <li><strong>The VAT number is not the HE number</strong>, and cannot be derived from it.</li>
+        <li><strong>The TIC is not necessarily the VAT number</strong>, even though the two share a format.</li>
+        <li><strong>New codes start with 6</strong> since March 2023; older ones start with 0 or 9.</li>
+        <li><strong>The postcode precedes the municipality</strong> in the address VIES returns.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Cyprus VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many characters does a Cyprus VAT number have?</summary>
+          <p>Nine after the prefix: eight digits and one uppercase letter, eleven characters in total.</p>
+        </details>
+        <details>
+          <summary>What is the trailing letter?</summary>
+          <p>A check character computed from the eight digits. It is part of the number and must not be dropped.</p>
+        </details>
+        <details>
+          <summary>Is the HE number the VAT number?</summary>
+          <p>No. The HE number comes from the Registrar of Companies and the VAT number from the Tax Department; neither derives from the other.</p>
+        </details>
+        <details>
+          <summary>How does the TIC differ from the VAT number?</summary>
+          <p>The TIC is used for income tax, and VAT registration is a separate administrative act, even though the two numbers share a format.</p>
+        </details>
+        <details>
+          <summary>Can I search the Cyprus registry by VAT number?</summary>
+          <p>No. The companies registry is searchable by name or HE number only.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/germany/">Germany</a></li>
+        <li><a href="/en/vat-number/italy/">Italy</a></li>
+        <li><a href="/en/vat-number/spain/">Spain</a></li>
+        <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+        <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

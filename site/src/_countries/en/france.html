@@ -1,0 +1,232 @@
+<!-- @meta
+{
+  "title": "French VAT number: format, SIREN and how to verify it",
+  "description": "FR + a two-character key + the SIREN. How the key is derived, why the number appears in no public file, and how to find the company behind it.",
+  "h1": "The French intra-community VAT number",
+  "term": "French intra-community VAT number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">France · FR</p>
+        <h1>The French intra-community VAT number</h1>
+        <p class="section__lead">
+          Thirteen characters carrying exactly one piece of information: the company's SIREN.
+          Everything else is a check key that can be recomputed.
+        </p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>FR</code> + key (2 characters) + SIREN (9 digits)</p>
+        <p><strong>Example:</strong> <code>FR95884831538</code>, key <code>95</code>, SIREN <code>884831538</code></p>
+        <p><strong>Issued by:</strong> the company's local corporate tax office (SIE), part of the DGFiP.</p>
+      </div>
+
+      <h2 id="format">The format in detail</h2>
+      <p>
+        A French intra-community VAT number is always <strong>13 characters</strong>, with no spaces
+        or dots:
+      </p>
+      <ul class="breakdown">
+        <li><b>FR</b><span>The country code. Always FR, Monaco included.</span></li>
+        <li><b>95</b><span>The two-character check key.</span></li>
+        <li><b>884831538</b><span>The SIREN, the company's identifier at INSEE.</span></li>
+      </ul>
+      <p>
+        The key is almost always numeric. A handful of older numbers carry an alphabetic or mixed
+        key (<code>FR2A123456789</code>); they remain valid, but no published rule derives them, so
+        nothing can check them offline.
+      </p>
+
+      <h2 id="key">How the key is computed</h2>
+      <p>The key is not arbitrary: it follows from the SIREN:</p>
+      <div class="code" data-copy><pre><code>key = (12 + 3 × (SIREN modulo 97)) modulo 97</code></pre></div>
+      <p>
+        For SIREN <code>884831538</code>: <code>884831538 mod 97 = 60</code>, so
+        <code>(12 + 3 × 60) mod 97 = 192 mod 97 = 95</code>, giving <code>FR95884831538</code>. The
+        result is zero-padded to two digits: SIREN <code>000325175</code> yields key <code>08</code>.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>A correct key proves nothing.</strong> The check is syntactic: it establishes that
+          the number is well formed for its country, never that the company exists or is still VAT
+          registered. Only VIES or a register can say that.
+        </p>
+      </div>
+
+      <h2 id="siren">SIREN, SIRET and the rest</h2>
+      <p>
+        The <strong>SIREN</strong> is a 9-digit number INSEE assigns to every legal unit (company,
+        association, sole trader) at registration. It never changes, and survives changes of name,
+        legal form and address.
+      </p>
+      <p>
+        The <strong>SIRET</strong> is 14 digits: the SIREN plus a 5-digit NIC identifying one
+        establishment. A company has one SIREN and as many SIRETs as it has sites. The VAT number is
+        built on the SIREN, never on the SIRET.
+      </p>
+      <p>
+        The <strong>RCS number</strong> is the SIREN prefixed by the registry court's town
+        ("RCS Paris 884 831 538"), same digits, different presentation. The <strong>VAT
+        number</strong> is issued by the tax administration rather than by INSEE, which is precisely
+        why it appears in no INSEE file.
+      </p>
+
+      <h2 id="find">Finding the company behind a number</h2>
+      <p>
+        The SIREN is the last nine digits, so you get it without querying anything. You then have
+        to look it up somewhere, because the VAT number itself is published nowhere.
+      </p>
+      <h3>The SIRENE database</h3>
+      <p>
+        INSEE publishes its whole register as open data under the Licence Ouverte, on
+        <a href="https://www.data.gouv.fr/" rel="noopener">data.gouv.fr</a>. Two files matter:
+        <code>StockUniteLegale</code> (companies: name, legal form, activity, administrative status)
+        and <code>StockEtablissement</code> (establishments, and therefore addresses). The second is
+        several gigabytes compressed, by far the longer half of any import, and the only one that
+        carries the head-office address.
+      </p>
+      <p>
+        For one-off lookups,
+        <a href="https://annuaire-entreprises.data.gouv.fr/" rel="noopener">annuaire-entreprises.data.gouv.fr</a>
+        exposes the same data in a readable interface.
+      </p>
+      <h3>VIES</h3>
+      <p>
+        The European Commission's service confirms that a number is registered for intra-community
+        trade, and France is one of the member states that disclose the name and address. It is the
+        only source that answers "is this number valid <em>today</em>?".
+      </p>
+      <p>
+        Its limits are real: no national identifier in the response, no legal form, a free-text
+        address you have to split yourself, and availability that depends on each national
+        administration. France in particular caps concurrent calls tightly and regularly answers
+        <code>MS_MAX_CONCURRENT_REQ</code>.
+      </p>
+
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">What each source gives you for France</caption>
+          <thead>
+            <tr><th scope="col">Source</th><th scope="col">Keyed by</th><th scope="col">What you get</th><th scope="col">Limit</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">SIRENE open data</th><td>SIREN</td>
+              <td>Name, legal form, activity, status, address</td>
+              <td>Multi-gigabyte files, monthly refresh, no VAT number at all</td>
+            </tr>
+            <tr>
+              <th scope="row">Annuaire des entreprises</th><td>SIREN or name</td>
+              <td>The same data, one record at a time</td><td>A human interface, not a feed</td>
+            </tr>
+            <tr>
+              <th scope="row">VIES</th><td>VAT number</td>
+              <td>Validity, name, free-text address</td>
+              <td>Slow, tight quotas, frequent outages</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="pitfalls">France-specific pitfalls</h2>
+      <ul>
+        <li>
+          <strong>The VAT number is in no public file.</strong> It is computed from the SIREN; going
+          the other way is just taking the last nine digits.
+        </li>
+        <li>
+          <strong>Having a SIREN does not mean having an active VAT number.</strong> A company under
+          the small-business VAT exemption, or one that has been struck off, keeps its SIREN and will
+          not come back as valid from VIES. A number VIES rejects does not mean the company does not exist.
+        </li>
+        <li>
+          <strong>Historic alphabetic keys</strong> cannot be recomputed; a strict validator will
+          wrongly reject them.
+        </li>
+        <li>
+          <strong>The address lives in a different file from the name.</strong> In SIRENE the name is
+          in the legal units and the address in the establishments; a partial import produces records
+          with no address.
+        </li>
+        <li>
+          <strong>Monaco uses the FR prefix.</strong> Monegasque businesses are treated as French for
+          intra-community VAT.
+        </li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The French VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How do I find a company's VAT number from its SIREN?</summary>
+          <p>
+            Compute the key: <code>(12 + 3 × (SIREN mod 97)) mod 97</code>, zero-padded to two
+            digits, then prefix FR. SIREN 884831538 gives FR95884831538. The arithmetic is reliable,
+            but it does not tell you whether the company is actually VAT registered.
+          </p>
+        </details>
+        <details>
+          <summary>How many digits does a French VAT number have?</summary>
+          <p>
+            Thirteen characters in total: the letters FR, two key characters and the nine digits of
+            the SIREN.
+          </p>
+        </details>
+        <details>
+          <summary>What is the difference between SIREN, SIRET and the VAT number?</summary>
+          <p>
+            The SIREN (9 digits) identifies the company, the SIRET (14 digits) identifies one of its
+            establishments, and the intra-community VAT number is the SIREN preceded by a check key
+            and the FR code. SIREN and SIRET come from INSEE, the VAT number from the tax
+            administration.
+          </p>
+        </details>
+        <details>
+          <summary>Does a valid VAT number mean the company still exists?</summary>
+          <p>
+            No. The key checks out offline and stays correct even for a company that has been struck
+            off. Only a VIES lookup attests that the number is registered for intra-community trade
+            at the time of the request.
+          </p>
+        </details>
+        <details>
+          <summary>Why does VIES reject a number I know is valid?</summary>
+          <p>
+            Three possible causes: the company is not registered for intra-community operations, it
+            has been struck off, or the French service was briefly unavailable. The last case is
+            common and shows up as a technical error rather than a "not registered" answer.
+          </p>
+        </details>
+        <details>
+          <summary>Is there a public file of French VAT numbers?</summary>
+          <p>
+            No. INSEE publishes SIRENE, which holds SIRENs and no VAT numbers at all. You either
+            rebuild the number from the SIREN, or go from the number back to the SIREN.
+          </p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/germany/">Germany</a></li>
+            <li><a href="/en/vat-number/italy/">Italy</a></li>
+            <li><a href="/en/vat-number/spain/">Spain</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

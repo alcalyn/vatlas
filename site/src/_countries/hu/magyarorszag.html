@@ -1,0 +1,103 @@
+<!-- @meta
+{
+  "title": "Közösségi adószám: felépítés, adószám és cégkeresés",
+  "description": "HU és nyolc számjegy, pontosan a magyar adószám első nyolc jegye. Mit jelent a 9. és a 10-11. számjegy, és hogyan található meg a cég.",
+  "h1": "A magyar közösségi adószám",
+  "term": "Közösségi adószám",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Magyarország · HU</p>
+        <h1>A magyar közösségi adószám</h1>
+        <p class="section__lead">A közösségi adószám nem külön szám: a magyar adószám első nyolc jegye, HU előtaggal. A maradék három jegy itthon marad, és épp azok mondják a legtöbbet.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Formátum:</strong> <code>HU</code> + 8 számjegy</p>
+        <p><strong>Példa:</strong> <code>HU15309769</code>, adószám <code>15309769-1-42</code></p>
+        <p><strong>Kiadja:</strong> a Nemzeti Adó- és Vámhivatal (NAV).</p>
+      </div>
+
+      <h2 id="felepites">A felépítés</h2>
+      <p>A magyar <strong>adószám 11 jegyű</strong>, és <code>12345678-1-23</code> alakban írjuk. A közösségi adószám ebből csak az első nyolc jegyet viszi tovább.</p>
+      <ul class="breakdown">
+        <li><b>15309769</b><span>Az adótörzsszám: 7 jegy és egy ellenőrző szám. Ez lesz a közösségi adószám.</span></li>
+        <li><b>1</b><span>Az áfakód: 1 alanyi mentes, 2 általános szabály szerint adózó, 3 EVA, 4-5 csoportos adóalanyiság.</span></li>
+        <li><b>42</b><span>A megyekód: az illetékes adóigazgatóság.</span></li>
+      </ul>
+      <p>A kilencedik jegy ezért érdekes: <strong>a 2-es azt jelenti, hogy a cég ténylegesen áfaköteles</strong>, az 1-es azt, hogy alanyi mentes. Ez az információ a közösségi adószámból már hiányzik, mert azt levágjuk.</p>
+
+      <h2 id="szamok">Adószám, cégjegyzékszám, statisztikai számjel</h2>
+      <p>Az <strong>adószám</strong> a NAV-tól származik, és minden adóalanynak van. A <strong>közösségi adószám</strong> ugyanaz a törzsszám <code>HU</code> előtaggal, de csak akkor létezik, ha a cég kérte a közösségi adószám megállapítását.</p>
+      <p>A <strong>cégjegyzékszám</strong> a cégbíróságtól jön, <code>01-09-123456</code> alakban: megye, cégforma, sorszám. A <strong>statisztikai számjel</strong> 17 jegyű és a KSH adja. Egyik sem számítható át a másikba.</p>
+      <div class="callout"><p><strong>Ez a magyar buktató.</strong> Az adószám megléte nem jelenti azt, hogy a cég közösségi ügyleteket folytathat. A közösségi adószámot külön kell kérni, és a NAV vissza is vonhatja: a szám ilyenkor a VIES-ben egyszerűen érvénytelenné válik.</p></div>
+
+      <h2 id="kereses">Hogyan található meg a cég</h2>
+      <h3>A NAV adatbázisai</h3>
+      <p>A NAV nyilvános adószám-ellenőrzést kínál, valamint közzéteszi az <strong>adószám-felfüggesztéssel és -törléssel</strong> érintett adózók listáját. Az adószám alapján tehát ellenőrizhető a státusz, de a szolgáltatás nem cégnévjegyzék.</p>
+      <p>A gépi lekérdezéshez a NAV <code>queryTaxpayer</code> szolgáltatása áll rendelkezésre, ez azonban <strong>regisztrált technikai felhasználót és aláírt kérést</strong> igényel, lényegesen nehezebb belépő, mint egy egyszerű ingyenes fiók.</p>
+      <h3>Céginformációs Szolgálat</h3>
+      <p>Az e-cegjegyzek.hu alapadatokat ingyen ad, a részletes cégkivonat és a beszámolók viszont fizetősek. Keresni cégnév vagy cégjegyzékszám alapján lehet.</p>
+      <h3>VIES</h3>
+      <p>Magyarország a VIES-en keresztül <strong>a nevet és a címet is kiadja</strong>. A cím egyetlen sorban érkezik, a végén az irányítószámmal és a településsel.</p>
+
+      <h2 id="buktatok">Magyar sajátosságok</h2>
+      <ul>
+        <li><strong>Ne az egész 11 jegyet küldje.</strong> <code>HU153097691</code> hibás; a közösségi adószám csak az első nyolc jegy.</li>
+        <li><strong>A 9. jegy az áfakód</strong>, és 1-es érték esetén a cég alanyi mentes; a közösségi adószámból ez már nem derül ki.</li>
+        <li><strong>A közösségi adószámot külön kell kérni</strong>, és a NAV fel is függesztheti vagy törölheti.</li>
+        <li><strong>A cégjegyzékszám nem az adószám</strong>, és egyikből sem számítható ki a másik.</li>
+        <li><strong>Nincs ingyenes tömeges adatforrás</strong> a részletes cégadatokra.</li>
+      </ul>
+
+      <!-- @include partials/country/hu.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Gyakori kérdések</p>
+        <h2>A közösségi adószám dióhéjban</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Hány jegyű a magyar közösségi adószám?</summary>
+          <p>Nyolc jegy a <code>HU</code> előtag után, összesen tíz karakter.</p>
+        </details>
+        <details>
+          <summary>Mi a különbség az adószám és a közösségi adószám között?</summary>
+          <p>Az adószám 11 jegyű és minden adóalanynak van. A közösségi adószám ennek az első nyolc jegye <code>HU</code> előtaggal, és csak akkor létezik, ha a cég külön kérte.</p>
+        </details>
+        <details>
+          <summary>Mit jelent az adószám 9. számjegye?</summary>
+          <p>Az áfakódot: 1 alanyi mentes, 2 az általános szabályok szerint adózó, 3 EVA, 4 és 5 csoportos adóalanyiság. A közösségi adószámban ez a jegy már nem szerepel.</p>
+        </details>
+        <details>
+          <summary>Mit jelent az utolsó két számjegy?</summary>
+          <p>A megyekódot, vagyis az illetékes adóigazgatóságot. A székhely megváltozásakor ez a két jegy módosulhat.</p>
+        </details>
+        <details>
+          <summary>Miért érvénytelen a VIES-ben egy létező cég adószáma?</summary>
+          <p>Mert nincs közösségi adószáma, vagy a NAV felfüggesztette, illetve törölte azt. A cég ettől még működhet belföldön.</p>
+        </details>
+      </div>
+
+      <h2>A közösségi adószám más országokban</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+            <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/" hreflang="en" lang="en">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/" hreflang="en" lang="en">Belgium</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Frissítve: 2026. augusztus 28.</p>
+    </div>
+  </section>
+</main>

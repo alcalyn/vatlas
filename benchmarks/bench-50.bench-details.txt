@@ -1,0 +1,1351 @@
+vat                   ms  outcome         origin    source  name  form  addr  post  city  src
+ESB98896137          348  found           vies      VIES    no    no    no    no    no    yes
+BE0746474089        48.9  found           database  KBO     yes   yes   yes   yes   yes   yes
+ESB66340514          338  found           vies      VIES    no    no    no    no    no    yes
+ESG64946387          201  found           vies      VIES    no    no    no    no    no    yes
+ESQ7550001G          275  found           vies      VIES    no    no    no    no    no    yes
+IT02118311006        184  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE811335517          246  found           database  PEPPOL  yes   no    no    no    no    yes
+ESG48975767          204  found           vies      VIES    no    no    no    no    no    yes
+SE202100293201       469  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESB66161514          214  found           vies      VIES    no    no    no    no    no    yes
+ESV90486200          226  found           vies      VIES    no    no    no    no    no    yes
+NL003240782B01       250  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0325777171        22.5  found           database  KBO     yes   yes   yes   yes   yes   yes
+PL6340008825        19.7  found           database  MF_WL   yes   no    yes   no    no    yes
+ESB65886012          248  found           vies      VIES    no    no    no    no    no    yes
+BE0442397402        17.5  found           database  KBO     yes   yes   yes   yes   yes   yes
+PT503821012          217  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG000670602          490  found           vies      VIES    yes   no    yes   no    no    yes
+IE3602284DH         5946  unavailable     -         -       -     -     -     -     -     -       "IE3602284DH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+DE333288665         6258  unavailable     -         -       -     -     -     -     -     -       "DE333288665" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+RO45151380          73.3  found           database  ANAF    yes   no    yes   yes   yes   yes
+HR85799845149        268  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL002791250B01       479  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE122624631         16.7  found           database  PEPPOL  yes   no    yes   no    no    yes
+CY18000856L          486  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT03929151003        183  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0678485603        17.4  found           database  KBO     yes   yes   yes   yes   yes   yes
+EL090101655          345  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE9590828H          5910  unavailable     -         -       -     -     -     -     -     -       "IE9590828H" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+PT503024260          249  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI27256903          17.5  found           database  PRH     yes   yes   yes   yes   yes   yes
+PL7010073777        18.6  found           database  MF_WL   yes   no    yes   no    no    yes
+CZ86652079          27.4  found           database  ARES    yes   yes   yes   yes   yes   yes
+FR55379716764       14.8  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+ESB18732545          205  found           vies      VIES    no    no    no    no    no    yes
+BE0449012406        19.3  found           database  KBO     yes   yes   yes   yes   yes   yes
+HU15854946           243  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL851230106B01       187  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI86431340           169  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESG95532826          210  found           vies      VIES    no    no    no    no    no    yes
+BE0465872192        18.0  found           database  KBO     yes   yes   yes   yes   yes   yes
+IT13938821009        273  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK44541882          6040  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT06761700639        349  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU14703506          150  found           vies      VIES    yes   no    yes   no    no    yes
+FR43775685019       27.2  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+ESG01241876          204  found           vies      VIES    no    no    no    no    no    yes
+DE286308427         6081  unavailable     -         -       -     -     -     -     -     -       "DE286308427" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+IT02616760597        264  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE301387798         6208  unavailable     -         -       -     -     -     -     -     -       "DE301387798" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+DE266749428         6125  unavailable     -         -       -     -     -     -     -     -       "DE266749428" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+SI45266743           233  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR32319632790       21.7  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+DE344543307         6032  unavailable     -         -       -     -     -     -     -     -       "DE344543307" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+FR38971509070       68.0  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+DK41853816          5889  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR21383703873       48.3  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+ESG60037348          229  found           vies      VIES    no    no    no    no    no    yes
+ATU16285008          230  found           vies      VIES    yes   no    yes   no    no    yes
+FR40413939620       18.8  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+FI02459042           734  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR63490096591       20.4  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+BE0244195916        16.2  found           database  KBO     yes   yes   yes   yes   yes   yes
+EL099793475          352  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE129515865         6074  unavailable     -         -       -     -     -     -     -     -       "DE129515865" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+DE812334050         6143  unavailable     -         -       -     -     -     -     -     -       "DE812334050" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+EL800662857          380  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU66196868          153  found           vies      VIES    yes   no    yes   no    no    yes
+BE0471382683        19.0  found           database  KBO     yes   yes   yes   yes   yes   yes
+BE0401574852        20.9  found           database  KBO     yes   yes   yes   yes   yes   yes
+NL001569569B01       441  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR49501455448       15.9  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+BE0719311418        17.2  found           database  KBO     yes   yes   yes   yes   yes   yes
+IT07084560015        222  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE813228346         6064  unavailable     -         -       -     -     -     -     -     -       "DE813228346" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+SE556464687401       338  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU74739214          245  found           vies      VIES    yes   no    yes   no    no    yes
+DE152330858         6141  unavailable     -         -       -     -     -     -     -     -       "DE152330858" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+LV90002124925        127  found           database  UR_VID  yes   no    no    no    no    yes
+FR14310199146       18.5  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+SE559155067701       292  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESG20588588          182  found           vies      VIES    no    no    no    no    no    yes
+SE559123444701       363  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0692797754        17.2  found           database  KBO     yes   yes   yes   yes   yes   yes
+BE0791153081        16.5  found           database  KBO     yes   yes   yes   yes   yes   yes
+ESA31419773          384  found           vies      VIES    no    no    no    no    no    yes
+DE136782457         20.5  found           database  PEPPOL  yes   no    yes   no    no    yes
+IT04423980483        325  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL850004287B01       220  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT00985801000        246  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0841068588        19.4  found           database  KBO     yes   yes   yes   yes   yes   yes
+IT00518460019        173  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT12621570154        186  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0446408747        15.6  found           database  KBO     yes   yes   yes   yes   yes   yes
+SE556904925601       343  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT01937990560        350  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0749652424        77.1  found           database  KBO     yes   yes   yes   yes   yes   yes
+BE0427416939        17.2  found           database  KBO     yes   yes   yes   yes   yes   yes
+DE174051125         6247  unavailable     -         -       -     -     -     -     -     -       "DE174051125" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+FR76850572231       50.6  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+ESG08360232          199  found           vies      VIES    no    no    no    no    no    yes
+IT02133771002        309  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE556479559801       293  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT01593330036        208  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESG50556091          193  found           vies      VIES    no    no    no    no    no    yes
+EL099785242          415  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT03476550102        368  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT504040847          214  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESQ5018001G          274  found           vies      VIES    no    no    no    no    no    yes
+NL810587828B01       433  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI33840890           245  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL858186007B01       305  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESQ2818002D          245  found           vies      VIES    no    no    no    no    no    yes
+LU23662462           151  found           vies      VIES    yes   no    yes   no    no    yes
+BE0835360733        18.7  found           database  KBO     yes   yes   yes   yes   yes   yes
+DK30060946          6296  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT01131710376        539  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL858863406B01       363  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL813486105B01       496  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESQ4118001I          246  found           vies      VIES    no    no    no    no    no    yes
+FR22198013443       17.6  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+FI29064024          17.4  found           database  PRH     yes   yes   yes   yes   yes   yes
+PT501413197          208  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL863001968B01       211  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESQ4618002B          190  found           vies      VIES    no    no    no    no    no    yes
+FR40180089013       19.3  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+PT501814957          318  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI54162513           169  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESF20079828          194  found           vies      VIES    no    no    no    no    no    yes
+BE0441571714        17.9  found           database  KBO     yes   yes   yes   yes   yes   yes
+PT504041266          213  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT00952120012        184  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR24493635817       16.9  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+FR52519397442       17.8  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+IT00308780345        293  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR01448566182       20.7  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+DE213505511         6123  unavailable     -         -       -     -     -     -     -     -       "DE213505511" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+ESG70302427          246  found           vies      VIES    no    no    no    no    no    yes
+ESB87692166          183  found           vies      VIES    no    no    no    no    no    yes
+IT03365141203        226  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE254939909         6047  unavailable     -         -       -     -     -     -     -     -       "DE254939909" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+DE276793499         6095  unavailable     -         -       -     -     -     -     -     -       "DE276793499" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+DE123603033         6190  unavailable     -         -       -     -     -     -     -     -       "DE123603033" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+ATU16296407          211  found           vies      VIES    yes   no    yes   no    no    yes
+DE283990443         6074  unavailable     -         -       -     -     -     -     -     -       "DE283990443" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+EL800525457          512  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0678767990        19.0  found           database  KBO     yes   yes   yes   yes   yes   yes
+BE0883745026        18.5  found           database  KBO     yes   yes   yes   yes   yes   yes
+PL5250007307        20.7  found           database  MF_WL   yes   yes   yes   no    no    yes
+IT03873750750        197  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESA59503961          254  found           vies      VIES    no    no    no    no    no    yes
+ATU28752908          152  found           vies      VIES    yes   no    yes   no    no    yes
+DE126118759         6485  unavailable     -         -       -     -     -     -     -     -       "DE126118759" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+BE0455664329        55.1  found           database  KBO     yes   yes   yes   yes   yes   yes
+FI10942595          20.2  found           database  PRH     yes   yes   yes   yes   yes   yes
+FR83542050315       20.5  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+FI22283574          19.8  found           database  PRH     yes   yes   yes   yes   yes   yes
+FR60501493605       19.9  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+FR60452793300       23.3  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+ESG46714853          189  found           vies      VIES    no    no    no    no    no    yes
+BE0641923036        19.6  found           database  KBO     yes   yes   yes   yes   yes   yes
+ESG31667850          491  found           vies      VIES    no    no    no    no    no    yes
+IT02446681203        192  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR71491767257       18.8  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+BE0451884396        18.7  found           database  KBO     yes   yes   yes   yes   yes   yes
+IT02003000227        180  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT11277910961        222  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESA12011946          189  found           vies      VIES    no    no    no    no    no    yes
+ESB86428232          285  found           vies      VIES    no    no    no    no    no    yes
+IT04376620151        187  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0508690863        17.8  found           database  KBO     yes   yes   yes   yes   yes   yes
+ESG47565478          192  found           vies      VIES    no    no    no    no    no    yes
+ESG66210345          216  found           vies      VIES    no    no    no    no    no    yes
+ATU57511277          155  found           vies      VIES    yes   no    yes   no    no    yes
+IT11344540965        214  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE268792260         6144  unavailable     -         -       -     -     -     -     -     -       "DE268792260" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+BG175004782          408  found           vies      VIES    yes   no    yes   no    no    yes
+SE202100305401       318  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL9442248813        17.9  found           database  MF_WL   yes   yes   yes   no    no    yes
+SE559239855501       363  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESF79366878          258  found           vies      VIES    no    no    no    no    no    yes
+NL001798650B01       215  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL001956218B01       203  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI01162976          18.2  found           database  PRH     yes   yes   yes   yes   yes   yes
+IT00159560366        288  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE6609370G          6247  unavailable     -         -       -     -     -     -     -     -       "IE6609370G" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+ATU57326628          226  found           vies      VIES    yes   no    yes   no    no    yes
+DE121965658         19.2  found           database  PEPPOL  yes   no    yes   no    no    yes
+LV40203161388       21.2  found           database  UR_VID  yes   yes   yes   yes   no    yes
+DE150546536         6404  unavailable     -         -       -     -     -     -     -     -       "DE150546536" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+DE147839443         6130  unavailable     -         -       -     -     -     -     -     -       "DE147839443" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+PL7543349578        53.1  found           database  MF_WL   yes   yes   yes   no    no    yes
+DE330555487         6150  unavailable     -         -       -     -     -     -     -     -       "DE330555487" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+IE9851266Q          6201  unavailable     -         -       -     -     -     -     -     -       "IE9851266Q" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+PT500832498          374  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE210372698         6165  unavailable     -         -       -     -     -     -     -     -       "DE210372698" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+BE0407626464        88.5  found           database  KBO     yes   yes   yes   yes   yes   yes
+FR05811231497       18.1  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+PT501559094          246  found           vies      VIES    yes   no    yes   yes   yes   yes
+RO2788151           16.4  found           database  ANAF    yes   yes   yes   no    yes   yes
+FR37843591322       19.1  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+DE324863884         6055  unavailable     -         -       -     -     -     -     -     -       "DE324863884" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+ESB66488149          235  found           vies      VIES    no    no    no    no    no    yes
+ESA59377135          201  found           vies      VIES    no    no    no    no    no    yes
+IT00742430283        225  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESQ0818003F          187  found           vies      VIES    no    no    no    no    no    yes
+ESA61121752          187  found           vies      VIES    no    no    no    no    no    yes
+FR60790160949       19.7  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+CZ29199077          17.9  found           database  ARES    yes   yes   yes   yes   yes   yes
+FR01779555887       17.0  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+NL860777145B01       192  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR66780129987       21.9  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+FR05193819125       17.1  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+BE0434800025        19.9  found           database  KBO     yes   yes   yes   yes   yes   yes
+NL804987117B01       195  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESB01600105          210  found           vies      VIES    no    no    no    no    no    yes
+IT10757660013        191  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0406015373        17.2  found           database  KBO     yes   yes   yes   yes   yes   yes
+FR30130026081       16.8  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+ESG75067454          190  found           vies      VIES    no    no    no    no    no    yes
+FR15922245931       16.6  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+FR74421090051       18.4  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+SK2120595257         313  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL822888087B01       238  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESQ4818001B          196  found           vies      VIES    no    no    no    no    no    yes
+DE324947962         6079  unavailable     -         -       -     -     -     -     -     -       "DE324947962" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+NL002875718B01       311  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE121689807         16.5  found           database  PEPPOL  yes   no    no    no    no    yes
+FR66300960754       16.8  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+NL861125836B01       252  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE815231289         6241  unavailable     -         -       -     -     -     -     -     -       "DE815231289" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+IT00881841001        255  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR46775729155       20.9  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+SE202100500001       340  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU15831000           162  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG175467353          448  not-registered  -         -       -     -     -     -     -     -       VIES reports that "BG175467353" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+EE100913275         16.5  found           database  RIK     yes   yes   yes   yes   yes   yes
+ESG82999871          199  found           vies      VIES    no    no    no    no    no    yes
+PT517713233          214  not-registered  -         -       -     -     -     -     -     -       VIES reports that "PT517713233" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+FI05126964           538  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK29035695         30001  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+ESQ2802338J          406  not-registered  -         -       -     -     -     -     -     -       VIES reports that "ESQ2802338J" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+ATU39393704          368  found           vies      VIES    yes   no    yes   no    no    yes
+SE202100523201       492  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE202100521601       367  found           vies      VIES    yes   no    no    yes   yes   yes
+CZ72050365           984  not-registered  -         -       -     -     -     -     -     -       VIES reports that "CZ72050365" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+SE556605524901       288  found           vies      VIES    yes   no    yes   yes   yes   yes
+LV90000048222       1555  not-registered  -         -       -     -     -     -     -     -       VIES reports that "LV90000048222" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+NL851646839B01       369  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR75784668717       17.8  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+HU26231019           177  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0316380841        17.5  found           database  KBO     yes   yes   yes   yes   yes   yes
+PT600084965          648  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT600076610          224  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR94130018310       15.8  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+SI31434860           240  not-registered  -         -       -     -     -     -     -     -       VIES reports that "SI31434860" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+BE0880212840        16.1  found           database  KBO     yes   yes   yes   yes   yes   yes
+PT503904040         1008  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE815788583         6728  unavailable     -         -       -     -     -     -     -     -       "DE815788583" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+IT02484430232        982  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE811272995         7004  unavailable     -         -       -     -     -     -     -     -       "DE811272995" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+DE129517720         6144  unavailable     -         -       -     -     -     -     -     -       "DE129517720" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+PL7770006350        82.1  found           database  MF_WL   yes   no    yes   no    no    yes
+ESG84908987          287  found           vies      VIES    no    no    no    no    no    yes
+ESG20662292         1300  found           vies      VIES    no    no    no    no    no    yes
+IT04301530723        298  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESQ5850017D          245  found           vies      VIES    no    no    no    no    no    yes
+NL002968721B01       245  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI02458955           738  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE202100321101       331  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL6750001923        17.6  found           database  MF_WL   yes   no    yes   no    no    yes
+NL804735529B02      1856  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR15199115684       17.7  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+FR19938106564       18.4  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+IT00816350276       1814  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR75180006025       19.9  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+ESG62426937          224  found           vies      VIES    no    no    no    no    no    yes
+ATU57495455         1144  found           vies      VIES    yes   no    yes   no    no    yes
+CZ00216208          16.2  found           database  ARES    yes   yes   yes   yes   yes   yes
+NL001935549B01       181  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE262000112901      1865  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE202100306201      1463  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESQ3718001E          246  found           vies      VIES    no    no    no    no    no    yes
+DK29979812          6370  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE248558812         8309  unavailable     -         -       -     -     -     -     -     -       "DE248558812" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+DE115314015         8053  unavailable     -         -       -     -     -     -     -     -       "DE115314015" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+NL001932706B01      1966  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE811264317         6144  unavailable     -         -       -     -     -     -     -     -       "DE811264317" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+FR57180070039       48.8  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+FI02458947           565  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE154285400        22329  unavailable     -         -       -     -     -     -     -     -       "DE154285400" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+DE811193231        13309  unavailable     -         -       -     -     -     -     -     -       "DE811193231" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+DK31119103          5773  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT01118840501        294  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE811245527         6079  unavailable     -         -       -     -     -     -     -     -       "DE811245527" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+ATU57495437          257  found           vies      VIES    yes   no    yes   no    no    yes
+DE141510383         6149  unavailable     -         -       -     -     -     -     -     -       "DE141510383" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+DE811205325         6389  unavailable     -         -       -     -     -     -     -     -       "DE811205325" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+FR31180036048       46.5  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+IT03064870151        322  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0208359859        18.2  found           database  KBO     yes   yes   yes   yes   yes   yes
+CY10083353J          441  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT01541040232        279  found           vies      VIES    yes   no    yes   yes   yes   yes
+EE100030417         15.0  found           database  RIK     yes   yes   yes   yes   yes   yes
+BE0257216482        14.8  found           database  KBO     yes   yes   yes   yes   yes   yes
+IT04150680280        216  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESG83727016          188  found           vies      VIES    no    no    no    no    no    yes
+IT00206200289        256  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE308828276         6144  unavailable     -         -       -     -     -     -     -     -       "DE308828276" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+ESQ2801221I          293  found           vies      VIES    no    no    no    no    no    yes
+ESG83195305          245  found           vies      VIES    no    no    no    no    no    yes
+NL004205315B01       229  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT03256440284        182  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESG83727057          185  found           vies      VIES    no    no    no    no    no    yes
+IT02133971008        182  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT00273530527        206  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT08691440153        246  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE215420431         6266  unavailable     -         -       -     -     -     -     -     -       "DE215420431" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+PT507618319          369  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL8520006757        17.7  found           database  MF_WL   yes   no    yes   no    no    yes
+LT243645610          351  found           vies      VIES    yes   no    yes   no    no    yes
+SE202100297301       301  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT05080991002        189  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE812383453         6099  unavailable     -         -       -     -     -     -     -     -       "DE812383453" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+IT09321970965        256  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT00646640755        282  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT09950311002        228  found           vies      VIES    yes   no    yes   yes   yes   yes
+ESQ5855973C          256  found           vies      VIES    no    no    no    no    no    yes
+IT01984560662        252  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT09198791007        491  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE112591322         6143  unavailable     -         -       -     -     -     -     -     -       "DE112591322" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+PT501461108          239  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0248015142        15.7  found           database  KBO     yes   yes   yes   yes   yes   yes
+NL801427228B01       237  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR45180089047       17.8  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+NL861608884B01       351  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT03628350153        189  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR68775665789       17.7  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+DE811917555         6071  unavailable     -         -       -     -     -     -     -     -       "DE811917555" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+IE0006286E          6056  unavailable     -         -       -     -     -     -     -     -       "IE0006286E" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+FR52194508552       46.1  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+IT01279680480        189  found           vies      VIES    yes   no    yes   yes   yes   yes
+IT00876220633        175  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE122119125         6063  unavailable     -         -       -     -     -     -     -     -       "DE122119125" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+NL002958697B01       266  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE114110511         6040  unavailable     -         -       -     -     -     -     -     -       "DE114110511" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+BE0419052173         220  found           database  KBO     yes   yes   yes   yes   yes   yes
+PL5250011266        16.3  found           database  MF_WL   yes   no    yes   no    no    yes
+NL002882243B01       333  found           vies      VIES    yes   no    yes   yes   yes   yes
+DE138408327         6143  unavailable     -         -       -     -     -     -     -     -       "DE138408327" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+DE811304768         6297  unavailable     -         -       -     -     -     -     -     -       "DE811304768" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+DE123486767         6128  unavailable     -         -       -     -     -     -     -     -       "DE123486767" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+PL5250008057         111  found           database  MF_WL   yes   yes   yes   no    no    yes
+NL822165776B01       241  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU57469858          247  found           vies      VIES    yes   no    yes   no    no    yes
+MT12979127           243  found           vies      VIES    yes   no    yes   no    no    yes
+FI03134717           492  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE6517386K          6023  unavailable     -         -       -     -     -     -     -     -       "IE6517386K" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+LU14472612           238  found           vies      VIES    yes   no    yes   no    no    yes
+BE0473647634        21.3  found           database  KBO     yes   yes   yes   yes   yes   yes
+IT09127781004        230  not-registered  -         -       -     -     -     -     -     -       VIES reports that "IT09127781004" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+CZ00209805          23.7  found           database  ARES    yes   yes   yes   yes   yes   yes
+DK29190941          4008  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR29434033619       54.0  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+NL002562169B01       350  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0818999605        15.7  found           database  KBO     yes   yes   yes   yes   yes   yes
+FR53130026024       17.0  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+BE0894176979        18.9  found           database  KBO     yes   yes   yes   yes   yes   yes
+SK2120169865         427  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU15309769           245  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0693876830        17.1  found           database  KBO     yes   yes   yes   yes   yes   yes
+FI02463121           604  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL002946725B01       239  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT505722232          434  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR65775684897       19.7  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+FR25199411117       23.4  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+NL003475268B01       261  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT501617582          246  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR72197546922       19.9  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+FR24130015506       18.2  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+BE0419052272        18.7  found           database  KBO     yes   yes   yes   yes   yes   yes
+NL811383696B01       310  found           vies      VIES    yes   no    yes   yes   yes   yes
+FR84331596270       20.4  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+FR95190615633       24.9  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+PT505387271          215  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL003566213B01       231  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE202100315301       615  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0456343923        15.7  found           database  KBO     yes   yes   yes   yes   yes   yes
+ATU64938189          156  found           vies      VIES    yes   no    yes   no    no    yes
+CZ61388963          14.3  found           database  ARES    yes   yes   yes   yes   yes   yes
+PL6750002236        16.2  found           database  MF_WL   yes   no    yes   no    no    yes
+PT501510184          288  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT516155636          245  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ86652036          16.2  found           database  ARES    yes   yes   yes   yes   yes   yes
+PL5250012159        15.7  found           database  MF_WL   yes   no    yes   no    no    yes
+SE202100281701       288  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE9587715A          6076  unavailable     -         -       -     -     -     -     -     -       "IE9587715A" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+FR54197534597       85.4  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+FR06130025976       16.2  found           database  SIRENE  yes   yes   yes   yes   yes   yes
+BE0425260668        16.1  found           database  KBO     yes   yes   yes   yes   yes   yes
+PT514187808          245  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI28445618          20.6  found           database  PRH     yes   yes   yes   yes   yes   yes
+MT12894031           348  found           vies      VIES    yes   no    yes   no    no    yes
+SE202100309601      1228  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK29283958          4320  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU15854939           205  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE2200007U          5995  unavailable     -         -       -     -     -     -     -     -       "IE2200007U" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+ATU37586901          244  found           vies      VIES    yes   no    yes   no    no    yes
+ATU37116303          171  found           vies      VIES    yes   no    yes   no    no    yes
+PT500745684          246  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT517706156          330  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK29057753          4201  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU51438706          261  found           vies      VIES    yes   no    yes   no    no    yes
+CZ00216224          18.7  found           database  ARES    yes   yes   yes   yes   yes   yes
+HU19308650           148  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI22857339           449  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU37675002          138  found           vies      VIES    yes   no    yes   no    no    yes
+ATU14238608          351  found           vies      VIES    yes   no    yes   no    no    yes
+SI71633065           246  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0409530535        23.2  found           database  KBO     yes   yes   yes   yes   yes   yes
+DK29102384          5015  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL803595943B01       310  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT509830072          209  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE232100001601       340  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL855546670B01       368  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0750495334        17.6  found           database  KBO     yes   yes   yes   yes   yes   yes
+ATU78680526          155  found           vies      VIES    yes   no    yes   no    no    yes
+PT506506770          319  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL811087864B01       193  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT508424780          298  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2020719646         348  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU73499136          164  found           vies      VIES    yes   no    yes   no    no    yes
+DK33370873          4649  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL1231269116         127  found           database  MF_WL   yes   yes   yes   no    no    yes
+RO1154              16.4  found           database  ANAF    yes   yes   yes   no    yes   yes
+CY90001673W          469  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE9746930M          6023  unavailable     -         -       -     -     -     -     -     -       "IE9746930M" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+ATU58083139          446  found           vies      VIES    yes   no    yes   no    no    yes
+BE0454894069        18.4  found           database  KBO     yes   yes   yes   yes   yes   yes
+IE3793434QH         6047  unavailable     -         -       -     -     -     -     -     -       "IE3793434QH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+PT513010661          270  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT508633346          345  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL6310200736        16.4  found           database  MF_WL   yes   no    yes   no    no    yes
+ATU57477929          229  found           vies      VIES    yes   no    yes   no    no    yes
+PL6750001805        16.2  found           database  MF_WL   yes   no    yes   no    no    yes
+BE0700470058        17.5  found           database  KBO     yes   yes   yes   yes   yes   yes
+SI55560822           287  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE556777166101       351  not-registered  -         -       -     -     -     -     -     -       VIES reports that "SE556777166101" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+PL9512482142        16.8  found           database  MF_WL   yes   yes   yes   no    no    yes
+LU19805732           141  found           vies      VIES    yes   no    yes   no    no    yes
+EL090085651          521  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL800866393B01       245  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ25246992          14.4  found           database  ARES    yes   yes   yes   yes   yes   yes
+IE3341729NH         5991  unavailable     -         -       -     -     -     -     -     -       "IE3341729NH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+PL8960005851        66.1  found           database  MF_WL   yes   no    yes   no    no    yes
+PL5213212384        18.4  found           database  MF_WL   yes   yes   yes   no    no    yes
+ATU46981707          177  found           vies      VIES    yes   no    yes   no    no    yes
+NL852004436B01       177  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL820838445B01       314  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE0022578J          6437  unavailable     -         -       -     -     -     -     -     -       "IE0022578J" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+BE0662391620        80.8  found           database  KBO     yes   yes   yes   yes   yes   yes
+ATU28781306          921  found           vies      VIES    yes   no    yes   no    no    yes
+PT515769053         1779  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK64723413          7864  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT513776788         1966  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT514528648          230  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ28400020          17.8  found           database  ARES    yes   yes   yes   yes   yes   yes
+ATU79879525          243  found           vies      VIES    yes   no    yes   no    no    yes
+SI46635874           239  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL7770002062        18.6  found           database  MF_WL   yes   no    yes   no    no    yes
+PT502083514         1341  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL5272445658        16.5  found           database  MF_WL   yes   no    yes   no    no    yes
+NL863479121B01      2932  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU63185617          829  found           vies      VIES    yes   no    yes   no    no    yes
+FI35503038          18.5  found           database  PRH     yes   yes   yes   yes   yes   yes
+FI26473754          20.3  found           database  PRH     yes   yes   yes   yes   yes   yes
+CZ68378271          18.0  found           database  ARES    yes   yes   yes   yes   yes   yes
+FI29583465          19.2  found           database  PRH     yes   yes   yes   yes   yes   yes
+SK2020798395         692  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG130534477         1210  not-registered  -         -       -     -     -     -     -     -       VIES reports that "BG130534477" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+EL996844271         1001  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL858808730B01      2334  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ61989592          16.5  found           database  ARES    yes   yes   yes   yes   yes   yes
+SI14246821           793  not-registered  -         -       -     -     -     -     -     -       VIES reports that "SI14246821" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+DK19596915          9975  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL805612270B01      2028  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL002972499B01      2171  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL095775349          991  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG000662064          737  found           vies      VIES    yes   no    yes   no    no    yes
+EL090029284         6665  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI02446292          4040  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK18456834         25802  unavailable     -         -       -     -     -     -     -     -       "DK18456834" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+BE0466279196        48.2  found           database  KBO     yes   yes   yes   yes   yes   yes
+NL851029279B01      4779  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR13579392023        322  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE6420625M          6094  unavailable     -         -       -     -     -     -     -     -       "IE6420625M" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+CZ00020681           122  found           database  ARES    yes   yes   yes   yes   yes   yes
+BE0458036374        19.2  found           database  KBO     yes   yes   yes   yes   yes   yes
+FI02446647           477  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI37808052           291  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0867636096        18.6  found           database  KBO     yes   yes   yes   yes   yes   yes
+BE0716803967        19.6  found           database  KBO     yes   yes   yes   yes   yes   yes
+EE100901067         17.4  found           database  RIK     yes   yes   yes   yes   yes   yes
+EE100356955         17.7  found           database  RIK     yes   yes   yes   no    yes   yes
+SE559227058001       419  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ00008648          19.1  found           database  ARES    yes   yes   yes   yes   yes   yes
+NL806433413B01      2432  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ27160572          20.0  found           database  ARES    yes   yes   yes   yes   yes   yes
+DK26145260         30001  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+ATU76064134          462  found           vies      VIES    yes   no    yes   no    no    yes
+SK2020677824         612  found           vies      VIES    yes   no    yes   yes   yes   yes
+BE0766541015        20.0  found           database  KBO     yes   yes   yes   yes   yes   yes
+CZ00064203          18.0  found           database  ARES    yes   yes   yes   yes   yes   yes
+SE232100013101       330  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL9462698560        18.4  found           database  MF_WL   yes   yes   yes   no    no    yes
+FI27951535          17.9  found           database  PRH     yes   yes   yes   yes   yes   yes
+SE556487275101       307  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI10586439          15.5  found           database  PRH     yes   yes   yes   yes   yes   yes
+NL855342468B01      1771  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG200421236          451  found           vies      VIES    yes   no    yes   no    no    yes
+DK30113721         18966  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK46837428          7755  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL090052367          439  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK29190658          8353  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL090145420          737  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL856600957B01      1400  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL009607213B01      1280  found           vies      VIES    yes   no    yes   yes   yes   yes
+EE100251335         22.8  found           database  RIK     yes   yes   yes   yes   yes   yes
+IE3452010FH         6022  unavailable     -         -       -     -     -     -     -     -       "IE3452010FH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+IE3462843MH         6266  unavailable     -         -       -     -     -     -     -     -       "IE3462843MH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+ATU64723829          600  found           vies      VIES    yes   no    yes   no    no    yes
+MT24061713           374  found           vies      VIES    yes   no    yes   no    no    yes
+EL090186413          847  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI76530566           638  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE6369091R          6023  unavailable     -         -       -     -     -     -     -     -       "IE6369091R" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+NL809142272B01      2263  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE202100284101      1023  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI02446807           767  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ24211851          16.2  found           database  ARES    yes   yes   yes   yes   yes   yes
+FI24555385          16.3  found           database  PRH     yes   yes   yes   yes   yes   yes
+FI29143953          20.1  found           database  PRH     yes   yes   yes   yes   yes   yes
+SE559143238901       316  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI02458963          1098  found           vies      VIES    yes   no    yes   yes   yes   yes
+NL009807184B01       967  found           vies      VIES    yes   no    yes   yes   yes   yes
+LU10137807           445  found           vies      VIES    yes   no    yes   no    no    yes
+SE556116244601       438  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL801609104          368  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT500058580          369  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK29190909         30002  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+DK31908574         30001  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+DK41572760          9915  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE202100287401       492  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK18933144          8480  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI34052674           371  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU60955513          175  found           vies      VIES    yes   no    yes   no    no    yes
+IE6351814I          6046  unavailable     -         -       -     -     -     -     -     -       "IE6351814I" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+CZ09639233          71.2  found           database  ARES    yes   yes   yes   yes   yes   yes
+IE3379421UH         5992  unavailable     -         -       -     -     -     -     -     -       "IE3379421UH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+CZ08466068           113  found           database  ARES    yes   yes   yes   yes   yes   yes
+PT501082174          225  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI25397673          20.9  found           database  PRH     yes   yes   yes   yes   yes   yes
+DK30843126         30000  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+HU27749007           362  found           vies      VIES    yes   no    yes   yes   yes   yes
+EE101339803         20.2  found           database  RIK     yes   yes   yes   yes   yes   yes
+SE202100312001       593  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI15675350           491  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI18777694          19.6  found           database  PRH     yes   yes   yes   yes   yes   yes
+EE102503683         18.0  found           database  RIK     yes   yes   yes   yes   yes   yes
+EE100875737         18.7  found           database  RIK     yes   yes   yes   yes   yes   yes
+HU23383540           263  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE202100186801       295  found           vies      VIES    yes   no    no    yes   yes   yes
+EL090114189          614  found           vies      VIES    yes   no    yes   yes   yes   yes
+LV90000076669       23.0  found           database  UR_VID  yes   no    no    no    no    yes
+CZ00159816          15.0  found           database  ARES    yes   yes   yes   yes   yes   yes
+RO4283570           1313  not-registered  -         -       -     -     -     -     -     -       VIES reports that "RO4283570" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+PL5250009387        16.3  found           database  MF_WL   yes   yes   yes   no    no    yes
+IE3574697EH         5920  unavailable     -         -       -     -     -     -     -     -       "IE3574697EH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+BG831605813          454  found           vies      VIES    yes   no    yes   no    no    yes
+FI21958031          17.0  found           database  PRH     yes   yes   yes   yes   yes   yes
+ATU62615557          156  found           vies      VIES    yes   no    yes   no    no    yes
+HR45001686598        317  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT515743550          247  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE556818733901       400  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU48191102          139  found           vies      VIES    yes   no    yes   no    no    yes
+RO14905506          17.1  found           database  ANAF    yes   yes   yes   yes   yes   yes
+ATU66270867          178  found           vies      VIES    yes   no    yes   no    no    yes
+IE6421562T          5923  unavailable     -         -       -     -     -     -     -     -       "IE6421562T" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+IE3726417MH         6045  unavailable     -         -       -     -     -     -     -     -       "IE3726417MH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+IE3599141RH         6066  unavailable     -         -       -     -     -     -     -     -       "IE3599141RH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+PL5250005834         270  found           database  MF_WL   yes   no    yes   no    no    yes
+PL7240003125        14.6  found           database  MF_WL   yes   yes   yes   no    no    yes
+EL999161778          361  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2021157050         368  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI56644817           491  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL801330142          369  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT515232319          211  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE556011748201       303  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL090050626          344  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE3544554KH         6231  unavailable     -         -       -     -     -     -     -     -       "IE3544554KH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+PT516616242          404  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE3442644RH         6247  unavailable     -         -       -     -     -     -     -     -       "IE3442644RH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+FI19992126          53.4  found           database  PRH     yes   yes   yes   yes   yes   yes
+IE9829859T          6090  unavailable     -         -       -     -     -     -     -     -       "IE9829859T" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+LV40900041720        148  found           database  UR_VID  yes   no    no    no    no    yes
+EL090009802          363  not-registered  -         -       -     -     -     -     -     -       VIES reports that "EL090009802" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+IE3469709UH         6268  unavailable     -         -       -     -     -     -     -     -       "IE3469709UH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+EL998212331          389  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY10267434R          470  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL999252142          491  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE556459915601       369  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL998219694          613  found           vies      VIES    yes   no    yes   yes   yes   yes
+EE100506239         19.3  found           database  RIK     yes   yes   yes   yes   yes   yes
+EE100714827         20.3  found           database  RIK     yes   yes   yes   yes   yes   yes
+CZ28488946          18.6  found           database  ARES    yes   yes   yes   yes   yes   yes
+CZ27872963          2892  not-registered  -         -       -     -     -     -     -     -       VIES reports that "CZ27872963" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+LT100005517118       320  found           vies      VIES    yes   no    yes   no    no    yes
+IE9767830C          6049  unavailable     -         -       -     -     -     -     -     -       "IE9767830C" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+EL800722822          389  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL094027767          371  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL094079101          344  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU64690418          268  found           vies      VIES    yes   no    yes   no    no    yes
+DK62565314         30001  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+CY10312992T         1333  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL800512150          369  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE556351237401      2202  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE556142874801       747  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE3666331TH         5988  unavailable     -         -       -     -     -     -     -     -       "IE3666331TH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+PL5262278704        58.6  found           database  MF_WL   yes   no    yes   no    no    yes
+SE556826851901       342  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL090073178          369  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG000663694          983  found           vies      VIES    yes   no    yes   no    no    yes
+RO15595373          18.2  found           database  ANAF    yes   yes   yes   yes   yes   yes
+FI23889244          18.3  found           database  PRH     yes   yes   yes   yes   yes   yes
+FI31367737          24.8  found           database  PRH     yes   yes   yes   yes   yes   yes
+HR69715301002        332  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK53317812         30001  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+FI27853898          58.8  found           database  PRH     yes   yes   yes   yes   yes   yes
+FI28405026          19.3  found           database  PRH     yes   yes   yes   yes   yes   yes
+HR95862798984        492  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI26506624          24.2  found           database  PRH     yes   yes   yes   yes   yes   yes
+HR87425920265        253  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR72712746460        460  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR39982657045        495  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK34208115         30001  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+HR62612424147        473  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI43950019           182  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK37537314         30000  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+FI29285599          88.5  found           database  PRH     yes   yes   yes   yes   yes   yes
+FI09893765          17.1  found           database  PRH     yes   yes   yes   yes   yes   yes
+FI32751589          16.7  found           database  PRH     yes   yes   yes   yes   yes   yes
+HR62924153420        290  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK41357932         25802  unavailable     -         -       -     -     -     -     -     -       "DK41357932" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+PT510571514          274  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL800521378          691  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU70404458          152  found           vies      VIES    yes   no    yes   no    no    yes
+PL7120106911        17.7  found           database  MF_WL   yes   no    yes   no    no    yes
+CY10115315W          463  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI21706299          19.2  found           database  PRH     yes   yes   yes   yes   yes   yes
+FI19870727          17.9  found           database  PRH     yes   yes   yes   yes   yes   yes
+FI07737443          18.1  found           database  PRH     yes   yes   yes   yes   yes   yes
+PL6751381891        15.8  found           database  MF_WL   yes   yes   yes   no    no    yes
+EL999600130          420  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU19253055           194  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT501189408          297  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL997069118          369  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG121835150          414  not-registered  -         -       -     -     -     -     -     -       VIES reports that "BG121835150" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+DK39713756         30001  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+DK76486212         30002  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+EL090087411          428  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE663000107801       347  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL094250001          326  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI15917399          20.9  found           database  PRH     yes   yes   yes   yes   yes   yes
+EL094170559          346  found           vies      VIES    yes   no    yes   yes   yes   yes
+LU33080278           146  found           vies      VIES    yes   no    yes   no    no    yes
+EL996897528          326  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI06651672          16.7  found           database  PRH     yes   yes   yes   yes   yes   yes
+SK2022890012         509  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT501797173          275  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT502616695          245  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU52385100          146  found           vies      VIES    yes   no    yes   no    no    yes
+EL093877451         1403  found           vies      VIES    yes   no    yes   yes   yes   yes
+LU16853659           295  found           vies      VIES    yes   no    yes   no    no    yes
+SE559086174501       709  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE556865465001       642  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU63046279          246  found           vies      VIES    yes   no    yes   no    no    yes
+CZ75147653          3071  not-registered  -         -       -     -     -     -     -     -       VIES reports that "CZ75147653" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+FI33966573          15.7  found           database  PRH     yes   yes   yes   yes   yes   yes
+FI07720174          15.7  found           database  PRH     yes   yes   yes   yes   yes   yes
+PT504943782          370  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU57480504          336  found           vies      VIES    yes   no    yes   no    no    yes
+ATU72371523          245  found           vies      VIES    yes   no    yes   no    no    yes
+EL090049627          342  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU36897300          162  found           vies      VIES    yes   no    yes   no    no    yes
+HU18875906           233  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT504441361          368  found           vies      VIES    yes   no    yes   yes   yes   yes
+RO32189146          17.1  found           database  ANAF    yes   yes   yes   no    yes   yes
+PT514061944          228  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE3629141FH         6034  unavailable     -         -       -     -     -     -     -     -       "IE3629141FH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+ATU66357747          278  found           vies      VIES    yes   no    yes   no    no    yes
+RO6195017           18.5  found           database  ANAF    yes   yes   yes   no    yes   yes
+EL998751013          427  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU35822909          246  found           vies      VIES    yes   no    yes   no    no    yes
+ATU29236109          139  found           vies      VIES    yes   no    yes   no    no    yes
+EL095521165          351  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK31582229         30002  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+ATU41161602          303  found           vies      VIES    yes   no    yes   no    no    yes
+DK28669070         20322  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU16269507          204  found           vies      VIES    yes   no    yes   no    no    yes
+EL094346312          541  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK26696348          9012  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI30161096           318  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE3203139RH         5934  unavailable     -         -       -     -     -     -     -     -       "IE3203139RH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+IE9Y17894Q          6109  unavailable     -         -       -     -     -     -     -     -       "IE9Y17894Q" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+SI51207915           369  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI18523029          17.4  found           database  PRH     yes   yes   yes   yes   yes   yes
+LU15406203           150  found           vies      VIES    yes   no    yes   no    no    yes
+ATU66033936          200  found           vies      VIES    yes   no    yes   no    no    yes
+EE100435656         15.8  found           database  RIK     yes   yes   yes   yes   yes   yes
+FI19623611          16.3  found           database  PRH     yes   yes   yes   yes   yes   yes
+EE100077975         16.4  found           database  RIK     yes   yes   yes   yes   yes   yes
+RO36235547          16.6  found           database  ANAF    yes   yes   yes   no    yes   yes
+EE100224841         15.8  found           database  RIK     yes   yes   yes   yes   yes   yes
+SE556052746601       656  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE790830283401       424  found           vies      VIES    yes   no    yes   yes   yes   yes
+FI24740185          18.5  found           database  PRH     yes   yes   yes   yes   yes   yes
+SE556481007401       417  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI23064145           245  found           vies      VIES    yes   no    yes   yes   yes   yes
+LU16464079           134  not-registered  -         -       -     -     -     -     -     -       VIES reports that "LU16464079" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+PT502011378          357  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL5840152140        16.7  found           database  MF_WL   yes   yes   yes   no    no    yes
+BG200388925          352  found           vies      VIES    yes   no    yes   no    no    yes
+PT516564285          246  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ70883858          20.3  found           database  ARES    yes   yes   yes   yes   yes   yes
+PT506064433          324  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL5260204995        18.4  found           database  MF_WL   yes   yes   yes   no    no    yes
+PT500051070          374  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE556712402801       492  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT500064580          245  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU50447306          247  found           vies      VIES    yes   no    yes   no    no    yes
+RO13091574          17.0  found           database  ANAF    yes   yes   yes   yes   yes   yes
+EE102400317         15.4  found           database  RIK     yes   yes   yes   yes   yes   yes
+EL800419255          705  found           vies      VIES    yes   no    yes   yes   yes   yes
+ATU77153679          244  found           vies      VIES    yes   no    yes   no    no    yes
+EL094000362          492  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL5270207340        17.1  found           database  MF_WL   yes   yes   yes   no    no    yes
+PL5223185370        16.8  found           database  MF_WL   yes   yes   yes   no    no    yes
+ATU38420507          150  found           vies      VIES    yes   no    yes   no    no    yes
+ATU47390407          156  found           vies      VIES    yes   no    yes   no    no    yes
+IE8246185I          6210  unavailable     -         -       -     -     -     -     -     -       "IE8246185I" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+ATU53616207          577  found           vies      VIES    yes   no    yes   no    no    yes
+SI75860309           186  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI92211798           261  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL5223195397        15.8  found           database  MF_WL   yes   yes   yes   no    no    yes
+DK34577358         30001  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+PL9541300712        84.1  found           database  MF_WL   yes   yes   yes   no    no    yes
+SE556074308901       910  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE802410015101       310  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK47458714         30001  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+EL998688671          531  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK41803606          9340  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL7292712388        67.5  found           database  MF_WL   yes   yes   yes   no    no    yes
+SE559448537601       791  found           vies      VIES    yes   no    yes   yes   yes   yes
+SE556975865801       984  not-registered  -         -       -     -     -     -     -     -       VIES reports that "SE556975865801" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+MT27909426           245  found           vies      VIES    yes   no    yes   no    no    yes
+LU28149274           246  not-registered  -         -       -     -     -     -     -     -       VIES reports that "LU28149274" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+SE556057345201       492  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ61384399          18.9  found           database  ARES    yes   yes   yes   yes   yes   yes
+PT500140022          265  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT100008581015       328  found           vies      VIES    yes   no    yes   no    no    yes
+SK2020845255         370  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT100010607810       326  found           vies      VIES    yes   no    yes   no    no    yes
+LT100015429311       287  found           vies      VIES    yes   no    yes   no    no    yes
+BG117611755          282  found           vies      VIES    yes   no    yes   no    no    yes
+EL999152155          343  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT100668716          358  found           vies      VIES    yes   no    yes   no    no    yes
+EL099364171          614  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI48018830           183  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE8F53787S          6698  unavailable     -         -       -     -     -     -     -     -       "IE8F53787S" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+EL094014004          860  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG206280881          369  found           vies      VIES    yes   no    yes   no    no    yes
+DK14375597          9093  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL095444420          614  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK38151886          8724  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL801694299          738  found           vies      VIES    yes   no    yes   yes   yes   yes
+PT514840960          368  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL5833199407        20.6  found           database  MF_WL   yes   yes   yes   no    no    yes
+EL094316669          839  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL8522545056        14.6  found           database  MF_WL   yes   no    yes   no    no    yes
+CZ00216275          17.6  found           database  ARES    yes   yes   yes   yes   yes   yes
+EL090055634          379  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT119511515          288  found           vies      VIES    yes   no    yes   no    no    yes
+EL997604027          405  found           vies      VIES    yes   no    yes   yes   yes   yes
+EL800390337          358  found           vies      VIES    yes   no    yes   yes   yes   yes
+RO5194978           16.3  found           database  ANAF    yes   yes   yes   yes   yes   yes
+EE100210813         16.8  found           database  RIK     yes   yes   yes   yes   yes   yes
+SE559134669601       714  not-registered  -         -       -     -     -     -     -     -       VIES reports that "SE559134669601" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+FI21700292          19.1  found           database  PRH     yes   yes   yes   yes   yes   yes
+FI26896124          20.5  found           database  PRH     yes   yes   yes   yes   yes   yes
+FI02151945           697  found           vies      VIES    yes   no    yes   yes   yes   yes
+EE100670291         23.4  found           database  RIK     yes   yes   yes   yes   yes   yes
+PL6761687491        19.5  found           database  MF_WL   yes   no    yes   no    no    yes
+PL6772323982        1431  not-registered  -         -       -     -     -     -     -     -       VIES reports that "PL6772323982" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+PL5250009269        18.2  found           database  MF_WL   yes   no    yes   no    no    yes
+HU19253268           227  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2020486699         492  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU15598347           245  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL8361848508        17.9  found           database  MF_WL   yes   yes   yes   no    no    yes
+LV90000041898       19.7  found           database  UR_VID  yes   no    no    no    no    yes
+DK60997314          9792  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR36389528408        493  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI81079435           276  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI23887729           214  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL7861000583        40.5  found           database  MF_WL   yes   yes   yes   no    no    yes
+PL7861697911        21.8  found           database  MF_WL   yes   no    yes   no    no    yes
+PL7811365331        20.0  found           database  MF_WL   yes   yes   yes   no    no    yes
+SI46920226           410  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR01221346160        318  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU23393958           295  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE6600338L          5897  unavailable     -         -       -     -     -     -     -     -       "IE6600338L" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+RO4279685            615  not-registered  -         -       -     -     -     -     -     -       VIES reports that "RO4279685" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+PL5260205291        16.9  found           database  MF_WL   yes   yes   yes   no    no    yes
+IE8214173T          6127  unavailable     -         -       -     -     -     -     -     -       "IE8214173T" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+CY10166991A          456  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY10396180Z          707  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE0539918O          6087  unavailable     -         -       -     -     -     -     -     -       "IE0539918O" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+IE3926731JH         6166  unavailable     -         -       -     -     -     -     -     -       "IE3926731JH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+PL5250007425        79.7  found           database  MF_WL   yes   no    yes   no    no    yes
+SI94947333           267  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI51545535           246  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU18120141           247  found           vies      VIES    yes   no    yes   yes   yes   yes
+MT31108702           209  found           vies      VIES    yes   no    yes   no    no    yes
+SE202100070401       413  found           vies      VIES    yes   no    no    yes   yes   yes
+CZ60646594          16.5  found           database  ARES    yes   yes   yes   yes   yes   yes
+RO37821331          16.0  found           database  ANAF    yes   no    yes   yes   yes   yes
+RO29600496          14.8  found           database  ANAF    yes   yes   yes   yes   yes   yes
+HR57029260362        221  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK31597544          9429  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT100014004618       492  found           vies      VIES    yes   no    yes   no    no    yes
+DK61056416          9884  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK30560787         30001  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+HR38583303160        418  found           vies      VIES    yes   no    yes   yes   yes   yes
+RO14871616          17.7  found           database  ANAF    yes   yes   yes   yes   yes   yes
+DK42543799         25789  unavailable     -         -       -     -     -     -     -     -       "DK42543799" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+SI45597162           368  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR25385906011        245  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI54707218           180  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG1222030125         303  not-registered  -         -       -     -     -     -     -     -       VIES reports that "BG1222030125" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+HU15300337           180  not-registered  -         -       -     -     -     -     -     -       VIES reports that "HU15300337" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+HU19426237           196  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI38108674           369  found           vies      VIES    yes   no    yes   yes   yes   yes
+MT27045009           220  found           vies      VIES    yes   no    yes   no    no    yes
+LV90002121030       15.5  found           database  UR_VID  yes   no    no    no    no    yes
+CZ00883921          17.1  found           database  ARES    yes   yes   yes   yes   yes   yes
+IE6430759Q          6093  unavailable     -         -       -     -     -     -     -     -       "IE6430759Q" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+HR02588515194        433  found           vies      VIES    yes   no    yes   yes   yes   yes
+EE101014953          346  not-registered  -         -       -     -     -     -     -     -       VIES reports that "EE101014953" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+PL5730111401        17.0  found           database  MF_WL   yes   no    yes   no    no    yes
+PL5130141977        16.0  found           database  MF_WL   yes   yes   yes   no    no    yes
+HU24672393           214  not-registered  -         -       -     -     -     -     -     -       VIES reports that "HU24672393" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+HU24906917           190  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY10052927G          546  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY10421722Z          413  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU12638932           200  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE8288489Q          6035  unavailable     -         -       -     -     -     -     -     -       "IE8288489Q" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+PL1180183740         112  found           database  MF_WL   yes   no    yes   no    no    yes
+SI15779092           243  found           vies      VIES    yes   no    yes   yes   yes   yes
+PL7010366812        15.7  found           database  MF_WL   yes   yes   yes   no    no    yes
+PL8943032420        14.8  found           database  MF_WL   yes   yes   yes   no    no    yes
+HR40237608715        338  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE3699192SH         5986  unavailable     -         -       -     -     -     -     -     -       "IE3699192SH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+HR92278052107        269  found           vies      VIES    yes   no    yes   yes   yes   yes
+RO21524920           202  found           source    ANAF    yes   no    yes   yes   yes   yes
+RO22736939          78.8  found           source    ANAF    yes   no    yes   yes   yes   yes
+IE6517957E          5989  unavailable     -         -       -     -     -     -     -     -       "IE6517957E" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+HU18118463           500  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU10243231           276  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE0650202O          6102  unavailable     -         -       -     -     -     -     -     -       "IE0650202O" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+CZ25271121           502  found           source    ARES    yes   yes   yes   yes   yes   yes
+IE4853153T          5952  unavailable     -         -       -     -     -     -     -     -       "IE4853153T" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+RO4433775            808  not-registered  -         -       -     -     -     -     -     -       VIES reports that "RO4433775" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+SK2022385387        1126  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2021724804         968  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE3514077HH         6199  unavailable     -         -       -     -     -     -     -     -       "IE3514077HH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+HU25717002           306  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG000413725          369  found           vies      VIES    yes   no    yes   no    no    yes
+BG130455211          615  found           vies      VIES    yes   no    yes   no    no    yes
+BG000455471          491  found           vies      VIES    yes   no    yes   no    no    yes
+BG831385737          615  found           vies      VIES    yes   no    yes   no    no    yes
+BG000517346         1313  found           vies      VIES    yes   no    yes   no    no    yes
+BG000080612          653  found           vies      VIES    yes   no    yes   no    no    yes
+BG176648004          491  found           vies      VIES    yes   no    yes   no    no    yes
+BG148078636          492  found           vies      VIES    yes   no    yes   no    no    yes
+BG175905652          369  found           vies      VIES    yes   no    yes   no    no    yes
+BG203301249          429  found           vies      VIES    yes   no    yes   no    no    yes
+BG000670673          307  found           vies      VIES    yes   no    yes   no    no    yes
+BG000210319          493  found           vies      VIES    yes   no    yes   no    no    yes
+BG175905773          608  found           vies      VIES    yes   no    yes   no    no    yes
+BG000670616          498  found           vies      VIES    yes   no    yes   no    no    yes
+BG202099976          492  found           vies      VIES    yes   no    yes   no    no    yes
+BG831917834          501  found           vies      VIES    yes   no    yes   no    no    yes
+MT16515317           240  found           vies      VIES    yes   no    yes   no    no    yes
+MT13325115           341  found           vies      VIES    yes   no    yes   no    no    yes
+IE3626887TH         6107  unavailable     -         -       -     -     -     -     -     -       "IE3626887TH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+DK63407216          9945  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2022733834         931  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU19156972           242  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK29057559          6268  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ08884731           249  found           source    ARES    yes   yes   yes   yes   yes   yes
+SI12077941           366  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI96599944           245  found           vies      VIES    yes   no    yes   yes   yes   yes
+EE102339491         18.0  found           database  RIK     yes   yes   yes   yes   yes   yes
+HR61738073226        264  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR86235185568        557  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR29845096215        272  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR90884993104        486  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR70410022758        246  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR01338491514        343  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR10839679016        396  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR64218323816        304  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG123024538          464  found           vies      VIES    yes   no    yes   no    no    yes
+BG131575523          300  not-registered  -         -       -     -     -     -     -     -       VIES reports that "BG131575523" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+BG176055801          280  not-registered  -         -       -     -     -     -     -     -       VIES reports that "BG176055801" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+BG176937717          428  found           vies      VIES    yes   no    yes   no    no    yes
+BG000522685          556  found           vies      VIES    yes   no    yes   no    no    yes
+BG000665249          368  found           vies      VIES    yes   no    yes   no    no    yes
+BG115013887          348  not-registered  -         -       -     -     -     -     -     -       VIES reports that "BG115013887" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+DK38442813         30002  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+SI28187229           660  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI18845673           201  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK26138485         30001  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+DK10403782         30002  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+SI71345442           453  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI62166859           223  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI25290363           269  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI12235016           246  found           vies      VIES    yes   no    yes   yes   yes   yes
+DK34722293         30002  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+SI66742790           412  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ60460709           135  found           source    ARES    yes   yes   yes   yes   yes   yes
+SI19230052           278  found           vies      VIES    yes   no    yes   yes   yes   yes
+LU25610956           260  found           vies      VIES    yes   no    yes   no    no    yes
+HR17560201884        246  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG822106269          369  found           vies      VIES    yes   no    yes   no    no    yes
+HR99534693762        470  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG000665352          527  found           vies      VIES    yes   no    yes   no    no    yes
+HU12609596           232  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU21905955           246  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG130173429          492  not-registered  -         -       -     -     -     -     -     -       VIES reports that "BG130173429" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+DK25666070         30001  timeout         -         -       -     -     -     -     -     -       The operation was aborted due to timeout
+BG203824541          946  found           vies      VIES    yes   no    yes   no    no    yes
+CZ26296080           141  found           source    ARES    yes   yes   yes   yes   yes   yes
+SI29880068           188  found           vies      VIES    yes   no    yes   yes   yes   yes
+RO21881990           201  found           source    ANAF    yes   no    yes   yes   yes   yes
+CZ24839523          81.9  found           source    ARES    yes   yes   yes   yes   yes   yes
+HU15300540           194  not-registered  -         -       -     -     -     -     -     -       VIES reports that "HU15300540" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+IE3910261IH         6215  unavailable     -         -       -     -     -     -     -     -       "IE3910261IH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+BG000455464          471  found           vies      VIES    yes   no    yes   no    no    yes
+LU27327040           191  found           vies      VIES    yes   no    yes   no    no    yes
+HR77817939141        322  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT350214515          317  found           vies      VIES    yes   no    yes   no    no    yes
+SK2024121704        1438  found           vies      VIES    yes   no    yes   yes   yes   yes
+EE100943452         21.0  found           database  RIK     yes   yes   yes   yes   yes   yes
+HR37879152548        313  found           vies      VIES    yes   no    yes   yes   yes   yes
+LV40008042411       18.3  found           database  UR_VID  yes   yes   yes   yes   no    yes
+EE101960829         17.2  found           database  RIK     yes   yes   yes   yes   yes   yes
+IE3462972AH         6108  unavailable     -         -       -     -     -     -     -     -       "IE3462972AH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+HU19253086           369  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT100008277714       297  found           vies      VIES    yes   no    yes   no    no    yes
+HR27788012253        317  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY10238165W          510  found           vies      VIES    yes   no    yes   yes   yes   yes
+IE3955104SH         6003  unavailable     -         -       -     -     -     -     -     -       "IE3955104SH" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+SI69697205           334  found           vies      VIES    yes   no    yes   yes   yes   yes
+EE102086346         18.4  found           database  RIK     yes   yes   yes   yes   yes   yes
+SK2023677018        1078  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT119508113          412  found           vies      VIES    yes   no    yes   no    no    yes
+CY10137255O          418  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU26130396           181  found           vies      VIES    yes   no    yes   yes   yes   yes
+RO2646378            261  found           source    ANAF    yes   yes   yes   no    yes   yes
+RO23641900          81.5  found           source    ANAF    yes   no    yes   yes   yes   yes
+SI33925950           428  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI69655774           281  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR32475284418        314  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR10295005578        219  not-registered  -         -       -     -     -     -     -     -       VIES reports that "HR10295005578" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+LU23804761           290  found           vies      VIES    yes   no    yes   no    no    yes
+IE2199803V          6495  unavailable     -         -       -     -     -     -     -     -       "IE2199803V" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+HU18133844          1106  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU19002457           599  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU19308760           724  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU23417562           212  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU11687335           431  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ00216305           245  found           source    ARES    yes   yes   yes   yes   yes   yes
+SK2020845332         984  found           vies      VIES    yes   no    yes   yes   yes   yes
+RO29280537           245  found           source    ANAF    yes   yes   yes   yes   yes   yes
+BG000670723          983  found           vies      VIES    yes   no    yes   no    no    yes
+HR36948235505        259  found           vies      VIES    yes   no    yes   yes   yes   yes
+LV90000039164       16.5  found           database  UR_VID  yes   no    no    no    no    yes
+RO5495458            352  not-registered  -         -       -     -     -     -     -     -       VIES reports that "RO5495458" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+RO9052135           82.1  found           source    ANAF    yes   yes   yes   no    yes   yes
+RO3127522            398  not-registered  -         -       -     -     -     -     -     -       VIES reports that "RO3127522" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+RO9068280           76.1  found           source    ANAF    yes   yes   yes   yes   yes   yes
+RO3321234           84.6  found           source    ANAF    yes   yes   yes   yes   yes   yes
+RO21616390          72.0  found           source    ANAF    yes   no    yes   yes   yes   yes
+RO4701606            378  not-registered  -         -       -     -     -     -     -     -       VIES reports that "RO4701606" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+CY10331119U          384  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI13183109           477  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU15327040           246  not-registered  -         -       -     -     -     -     -     -       VIES reports that "HU15327040" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+SI65835794           368  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ61388971           139  found           source    ARES    yes   yes   yes   yes   yes   yes
+SI65332547           476  not-registered  -         -       -     -     -     -     -     -       VIES reports that "SI65332547" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+RO10608391          77.6  found           source    ANAF    yes   yes   yes   yes   yes   yes
+EE101823966         15.8  found           database  RIK     yes   yes   yes   yes   yes   yes
+CZ70883521          74.3  found           source    ARES    yes   yes   yes   yes   yes   yes
+LU32972064           131  found           vies      VIES    yes   no    yes   no    no    yes
+SK2820012096         382  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ68407700          70.6  found           source    ARES    yes   yes   yes   yes   yes   yes
+LT100003641116       353  found           vies      VIES    yes   no    yes   no    no    yes
+IE9692485U          6147  unavailable     -         -       -     -     -     -     -     -       "IE9692485U" is not in the local database and VIES did not answer. Member state services are regularly unavailable for short periods; retry later.
+CZ47537256           255  found           source    ARES    yes   yes   yes   yes   yes   yes
+SI37502417           210  found           vies      VIES    yes   no    yes   yes   yes   yes
+LU32157417           133  found           vies      VIES    yes   no    yes   no    no    yes
+RO7614474            261  found           source    ANAF    yes   yes   yes   yes   yes   yes
+RO40433259          78.5  found           source    ANAF    yes   yes   yes   yes   yes   yes
+CY10386967J          411  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG000670552          492  not-registered  -         -       -     -     -     -     -     -       VIES reports that "BG000670552" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+CY90002687H          336  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU18304433           255  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG206119839          268  found           vies      VIES    yes   no    yes   no    no    yes
+CY10298153Y          408  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY10435036M          338  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY60074439A          401  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY10167225J          450  found           vies      VIES    yes   no    yes   yes   yes   yes
+EE100018015         14.4  found           database  RIK     yes   yes   yes   yes   yes   yes
+RO42745273          74.4  found           source    ANAF    yes   yes   yes   yes   yes   yes
+LV90000065985       15.2  found           database  UR_VID  yes   no    no    no    no    yes
+HU19426268           149  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU15329499           187  not-registered  -         -       -     -     -     -     -     -       VIES reports that "HU15329499" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+CZ22729674           173  found           source    ARES    yes   yes   yes   yes   yes   yes
+MT22629723           265  found           vies      VIES    yes   no    yes   no    no    yes
+MT12435416           214  found           vies      VIES    yes   no    yes   no    no    yes
+CZ62156489          73.2  found           source    ARES    yes   yes   yes   yes   yes   yes
+LT100011863517       233  found           vies      VIES    yes   no    yes   no    no    yes
+EE102160673         19.9  found           database  RIK     yes   yes   yes   yes   yes   yes
+LT100012301611       248  found           vies      VIES    yes   no    yes   no    no    yes
+SK2022617421         667  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU10678970           369  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU17784234           246  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU23094817           245  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU13519027           246  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ24779334          99.2  found           source    ARES    yes   yes   yes   yes   yes   yes
+CY10392142H          388  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG205345397          256  found           vies      VIES    yes   no    yes   no    no    yes
+BG175905702          608  found           vies      VIES    yes   no    yes   no    no    yes
+CZ26482347          80.2  found           source    ARES    yes   yes   yes   yes   yes   yes
+CY10373773W          414  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY10166534L          489  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ60461373          70.7  found           source    ARES    yes   yes   yes   yes   yes   yes
+EE102098321         16.6  found           database  RIK     yes   yes   yes   yes   yes   yes
+EE102133189         16.4  found           database  RIK     yes   yes   yes   yes   yes   yes
+RO20571923           152  found           source    ANAF    yes   yes   yes   no    yes   yes
+LU28385130           167  found           vies      VIES    yes   no    yes   no    no    yes
+HU17782294           177  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI56124767           204  found           vies      VIES    yes   no    yes   yes   yes   yes
+RO11463302           301  not-registered  -         -       -     -     -     -     -     -       VIES reports that "RO11463302" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+EE100296086         16.0  found           database  RIK     yes   yes   yes   yes   yes   yes
+HU18984303           353  found           vies      VIES    yes   no    yes   yes   yes   yes
+LV90002135242       20.4  found           database  UR_VID  yes   no    no    no    no    yes
+SI44444656           272  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ00023752           101  found           source    ARES    yes   yes   yes   yes   yes   yes
+HU15308744           220  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT100011754612       516  found           vies      VIES    yes   no    yes   no    no    yes
+CZ63839172          74.6  found           source    ARES    yes   yes   yes   yes   yes   yes
+LU21621837           152  found           vies      VIES    yes   no    yes   no    no    yes
+HU28953409           171  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ49777513          77.6  found           source    ARES    yes   yes   yes   yes   yes   yes
+CY60072118L          524  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY10357733U          572  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY10358531S          369  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY90007817C          382  found           vies      VIES    yes   no    yes   yes   yes   yes
+MT12816435           354  found           vies      VIES    yes   no    yes   no    no    yes
+CY90004817U          388  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY90000457V          472  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY10016154J          553  found           vies      VIES    yes   no    yes   yes   yes   yes
+MT28802009           272  found           vies      VIES    yes   no    yes   no    no    yes
+CY10410610R          405  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY10077498G          384  found           vies      VIES    yes   no    yes   yes   yes   yes
+RO15076287           199  found           source    ANAF    yes   yes   yes   yes   yes   yes
+SK2121334391         769  found           vies      VIES    yes   no    yes   yes   yes   yes
+SI38048183           227  found           vies      VIES    yes   no    yes   yes   yes   yes
+RO2785503            263  found           source    ANAF    yes   yes   yes   no    yes   yes
+HR34016189309        283  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU14459249           175  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG000215630          349  found           vies      VIES    yes   no    yes   no    no    yes
+HU12796560           176  found           vies      VIES    yes   no    yes   yes   yes   yes
+HU20342850           246  found           vies      VIES    yes   no    yes   yes   yes   yes
+LU14471400           245  found           vies      VIES    yes   no    yes   no    no    yes
+HU21925221           177  not-registered  -         -       -     -     -     -     -     -       VIES reports that "HU21925221" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+CZ28184564           129  found           source    ARES    yes   yes   yes   yes   yes   yes
+BG130545438          677  found           vies      VIES    yes   no    yes   no    no    yes
+CZ09054014          98.9  found           source    ARES    yes   yes   yes   yes   yes   yes
+HU17783305           235  found           vies      VIES    yes   no    yes   yes   yes   yes
+CZ68081731          72.5  found           source    ARES    yes   yes   yes   yes   yes   yes
+LT119503917          333  found           vies      VIES    yes   no    yes   no    no    yes
+LU20415780           428  found           vies      VIES    yes   no    yes   no    no    yes
+LU35821781           185  found           vies      VIES    yes   no    yes   no    no    yes
+CZ00063703          92.4  found           source    ARES    yes   yes   yes   yes   yes   yes
+LV90001342592       15.7  found           database  UR_VID  yes   no    no    no    no    yes
+RO4269282            506  not-registered  -         -       -     -     -     -     -     -       VIES reports that "RO4269282" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+LT260168314          227  found           vies      VIES    yes   no    yes   no    no    yes
+CY99000222P          421  found           vies      VIES    yes   no    yes   yes   yes   yes
+MT27948534           223  found           vies      VIES    yes   no    yes   no    no    yes
+HR28011548575        358  found           vies      VIES    yes   no    yes   yes   yes   yes
+RO1644670           77.5  found           source    ANAF    yes   yes   yes   yes   yes   yes
+CY10365601I          466  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT119505811          317  found           vies      VIES    yes   no    yes   no    no    yes
+EE102038860         19.7  found           database  RIK     yes   yes   yes   yes   yes   yes
+HR74555862029        229  found           vies      VIES    yes   no    yes   yes   yes   yes
+BG205895028          253  found           vies      VIES    yes   no    yes   no    no    yes
+SK2120651368         602  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT100008958611       362  found           vies      VIES    yes   no    yes   no    no    yes
+SK2023440848         368  found           vies      VIES    yes   no    yes   yes   yes   yes
+MT26290535           254  found           vies      VIES    yes   no    yes   no    no    yes
+BG175370801          333  found           vies      VIES    yes   no    yes   no    no    yes
+RO32356520          80.7  found           source    ANAF    yes   yes   yes   no    yes   yes
+RO4480173            323  not-registered  -         -       -     -     -     -     -     -       VIES reports that "RO4480173" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+LU24083085           246  found           vies      VIES    yes   no    yes   no    no    yes
+EE102364408          239  not-registered  -         -       -     -     -     -     -     -       VIES reports that "EE102364408" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+HR75923203828        232  found           vies      VIES    yes   no    yes   yes   yes   yes
+LU32010056           512  found           vies      VIES    yes   no    yes   no    no    yes
+LV50003050931       19.9  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LV40003344207       19.2  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LU20829030           184  found           vies      VIES    yes   no    yes   no    no    yes
+LT100002802516       337  found           vies      VIES    yes   no    yes   no    no    yes
+EE100560275         20.3  found           database  RIK     yes   yes   yes   yes   yes   yes
+LT100007301614       379  found           vies      VIES    yes   no    yes   no    no    yes
+MT27736623           239  found           vies      VIES    yes   no    yes   no    no    yes
+CY10141459E          387  found           vies      VIES    yes   no    yes   yes   yes   yes
+RO434670            74.2  found           source    ANAF    yes   yes   yes   no    yes   yes
+HR27208467122        199  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2021109211        1322  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY18002749N          421  found           vies      VIES    yes   no    yes   yes   yes   yes
+RO18923009          89.3  found           source    ANAF    yes   yes   yes   yes   yes   yes
+RO14151658          92.8  found           source    ANAF    yes   no    yes   yes   yes   yes
+RO9113623            105  found           source    ANAF    yes   yes   yes   no    yes   yes
+CY10215243H          403  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR76722145702        243  found           vies      VIES    yes   no    yes   yes   yes   yes
+LV40008009027       40.3  found           database  UR_VID  yes   yes   yes   yes   no    yes
+HR78707119336        255  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2020795821         765  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY90001590W          407  found           vies      VIES    yes   no    yes   yes   yes   yes
+LU17535424           173  found           vies      VIES    yes   no    yes   no    no    yes
+CY10402900Y          383  found           vies      VIES    yes   no    yes   yes   yes   yes
+MT27298231           254  found           vies      VIES    yes   no    yes   no    no    yes
+RO1572582            101  found           source    ANAF    yes   yes   yes   no    yes   yes
+EE101761497         33.8  found           database  RIK     yes   yes   yes   yes   yes   yes
+EE100322358         44.5  found           database  RIK     yes   yes   yes   yes   yes   yes
+EE101339816         34.0  found           database  RIK     yes   yes   yes   yes   yes   yes
+RO15034095          91.7  found           source    ANAF    yes   yes   yes   yes   yes   yes
+CY10345472V          389  found           vies      VIES    yes   no    yes   yes   yes   yes
+RO15378153           444  not-registered  -         -       -     -     -     -     -     -       VIES reports that "RO15378153" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+RO29327770          81.8  found           source    ANAF    yes   yes   yes   no    yes   yes
+RO5037256            333  not-registered  -         -       -     -     -     -     -     -       VIES reports that "RO5037256" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+EE101531148         37.8  found           database  RIK     yes   yes   yes   yes   yes   yes
+SK2020383695         777  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY10164329G          414  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT100008923715       253  found           vies      VIES    yes   no    yes   no    no    yes
+SK2023599853         383  found           vies      VIES    yes   no    yes   yes   yes   yes
+LU25784916           401  found           vies      VIES    yes   no    yes   no    no    yes
+CY10378448C          396  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR31120185175        398  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY10379132T          357  found           vies      VIES    yes   no    yes   yes   yes   yes
+EE101952206         16.6  found           database  RIK     yes   yes   yes   yes   yes   yes
+EE101761552         16.7  found           database  RIK     yes   yes   yes   yes   yes   yes
+SK2020227770         468  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2022750686         494  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR48640028500        244  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR46675049527        368  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR25410051374        334  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR22910368449        403  found           vies      VIES    yes   no    yes   yes   yes   yes
+LV40203334748       2581  not-registered  -         -       -     -     -     -     -     -       VIES reports that "LV40203334748" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+CY10394150N          491  found           vies      VIES    yes   no    yes   yes   yes   yes
+EE100113596         14.5  found           database  RIK     yes   yes   yes   yes   yes   yes
+HR19370100881        232  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2021526188         369  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2023106679         958  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2020437738         515  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY90007241Z          422  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY10397700P          608  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2020316540         649  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR19904220725        291  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT100005122310       237  found           vies      VIES    yes   no    yes   no    no    yes
+CY10391439K          374  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY10015806E          492  found           vies      VIES    yes   no    yes   yes   yes   yes
+LU15420355           246  found           vies      VIES    yes   no    yes   no    no    yes
+LT100005579315       333  found           vies      VIES    yes   no    yes   no    no    yes
+LV40003347699       19.7  found           database  UR_VID  yes   yes   yes   yes   no    yes
+EE100388732         22.5  found           database  RIK     yes   yes   yes   yes   yes   yes
+SK2021786393         982  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT119517219          362  found           vies      VIES    yes   no    yes   no    no    yes
+CY10112301L          421  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR56658947772        239  found           vies      VIES    yes   no    yes   yes   yes   yes
+EE101834683         17.6  found           database  RIK     yes   yes   yes   yes   yes   yes
+LT100004103016       308  found           vies      VIES    yes   no    yes   no    no    yes
+LU20976581           242  found           vies      VIES    yes   no    yes   no    no    yes
+SK2021252827         246  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT100573314          476  found           vies      VIES    yes   no    yes   no    no    yes
+EE100736494         18.4  found           database  RIK     yes   yes   yes   yes   yes   yes
+CY10418185C          344  found           vies      VIES    yes   no    yes   yes   yes   yes
+HR68802103157        390  found           vies      VIES    yes   no    yes   yes   yes   yes
+CY10281020S          492  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2020223271         490  found           vies      VIES    yes   no    yes   yes   yes   yes
+LV90002111653       15.6  found           database  UR_VID  yes   no    no    no    no    yes
+EE100518544         16.8  found           database  RIK     yes   yes   yes   yes   yes   yes
+LV50003888871       17.4  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LT100005300110       442  found           vies      VIES    yes   no    yes   no    no    yes
+EE101114112         17.9  found           database  RIK     yes   yes   yes   yes   yes   yes
+SK2021328243         455  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2024180136         600  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT100006274618       236  found           vies      VIES    yes   no    yes   no    no    yes
+EE102316508         18.4  found           database  RIK     yes   yes   yes   yes   yes   yes
+LV40203233262       18.0  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LV50103237791       18.9  found           database  UR_VID  yes   yes   yes   yes   no    yes
+MT17981218           240  found           vies      VIES    yes   no    yes   no    no    yes
+LU22594664           130  found           vies      VIES    yes   no    yes   no    no    yes
+LV90000013771       16.6  found           database  UR_VID  yes   no    no    no    no    yes
+SK2120568714         514  found           vies      VIES    yes   no    yes   yes   yes   yes
+EE101946296         17.9  found           database  RIK     yes   yes   yes   yes   yes   yes
+EE101082406         17.1  found           database  RIK     yes   yes   yes   yes   yes   yes
+LU31633327           144  found           vies      VIES    yes   no    yes   no    no    yes
+LT351634917          505  found           vies      VIES    yes   no    yes   no    no    yes
+LV90000068977       17.7  found           database  UR_VID  yes   no    no    no    no    yes
+LV40003910687       18.0  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LT100001908917       224  found           vies      VIES    yes   no    yes   no    no    yes
+MT28860913           232  found           vies      VIES    yes   no    yes   no    no    yes
+MT15170707           332  found           vies      VIES    yes   no    yes   no    no    yes
+LV40203135154       14.9  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LV90000086008       16.6  found           database  UR_VID  yes   no    no    no    no    yes
+SK2021458197         496  found           vies      VIES    yes   no    yes   yes   yes   yes
+EE102280760         16.9  found           database  RIK     yes   yes   yes   yes   yes   yes
+EE100012613         17.1  found           database  RIK     yes   yes   yes   yes   yes   yes
+EE102214820          236  not-registered  -         -       -     -     -     -     -     -       VIES reports that "EE102214820" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+SK2020879245         345  found           vies      VIES    yes   no    yes   yes   yes   yes
+LU20686731           245  found           vies      VIES    yes   no    yes   no    no    yes
+MT21888809           227  found           vies      VIES    yes   no    yes   no    no    yes
+SK2020894678         510  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2021385861         737  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT100016003812       254  found           vies      VIES    yes   no    yes   no    no    yes
+EE102261873         18.9  found           database  RIK     yes   yes   yes   yes   yes   yes
+EE101509442         86.7  found           database  RIK     yes   yes   yes   yes   yes   yes
+SK2022540905         751  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT305135243         61.8  not-registered  -         -       -     -     -     -     -     -       VIES reports that "LT305135243" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+LV90011524360       17.8  found           database  UR_VID  yes   no    no    no    no    yes
+LU15852112           160  found           vies      VIES    yes   no    yes   no    no    yes
+MT16959526           246  found           vies      VIES    yes   no    yes   no    no    yes
+LT100007179012       369  found           vies      VIES    yes   no    yes   no    no    yes
+SK2020983261         880  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2121303140         717  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT100013828913       246  found           vies      VIES    yes   no    yes   no    no    yes
+SK2020066213         459  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2021125821         370  found           vies      VIES    yes   no    yes   yes   yes   yes
+LV40103528963       17.1  found           database  UR_VID  yes   yes   yes   yes   no    yes
+SK2022091027         777  found           vies      VIES    yes   no    yes   yes   yes   yes
+LV90002120158       17.0  found           database  UR_VID  yes   no    no    no    no    yes
+SK2020848368        1062  found           vies      VIES    yes   no    yes   yes   yes   yes
+SK2020486710         328  found           vies      VIES    yes   no    yes   yes   yes   yes
+LV90002128378       17.5  found           database  UR_VID  yes   no    no    no    no    yes
+LU15843111           269  found           vies      VIES    yes   no    yes   no    no    yes
+SK2020517895         737  found           vies      VIES    yes   no    yes   yes   yes   yes
+LT100013933613       737  found           vies      VIES    yes   no    yes   no    no    yes
+LV90002137506       18.4  found           database  UR_VID  yes   no    no    no    no    yes
+LT106488917          350  found           vies      VIES    yes   no    yes   no    no    yes
+SK2023160568         668  found           vies      VIES    yes   no    yes   yes   yes   yes
+LV40003982628       16.6  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LT100014613615       299  found           vies      VIES    yes   no    yes   no    no    yes
+LT100014389515       368  found           vies      VIES    yes   no    yes   no    no    yes
+LT100012388011       492  not-registered  -         -       -     -     -     -     -     -       VIES reports that "LT100012388011" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+LT100002835613       491  found           vies      VIES    yes   no    yes   no    no    yes
+LV40003027238       18.8  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LU22985961           152  found           vies      VIES    yes   no    yes   no    no    yes
+LT119552113          320  found           vies      VIES    yes   no    yes   no    no    yes
+MT22216832           368  found           vies      VIES    yes   no    yes   no    no    yes
+LV50103629321       17.2  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LV40008031742       15.9  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LV90002111761       17.6  found           database  UR_VID  yes   no    no    no    no    yes
+LU18403067           130  found           vies      VIES    yes   no    yes   no    no    yes
+MT14739304           312  found           vies      VIES    yes   no    yes   no    no    yes
+MT12747722           368  found           vies      VIES    yes   no    yes   no    no    yes
+LT235420610          245  found           vies      VIES    yes   no    yes   no    no    yes
+MT26215733           223  found           vies      VIES    yes   no    yes   no    no    yes
+LV40103758550       18.1  found           database  UR_VID  yes   yes   yes   yes   no    yes
+MT16747706           315  found           vies      VIES    yes   no    yes   no    no    yes
+MT20271036           304  not-registered  -         -       -     -     -     -     -     -       VIES reports that "MT20271036" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+MT22004702           356  found           vies      VIES    yes   no    yes   no    no    yes
+MT22447737           381  found           vies      VIES    yes   no    yes   no    no    yes
+LU32527973           245  found           vies      VIES    yes   no    yes   no    no    yes
+LV40003021907       22.4  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LT119515314          419  found           vies      VIES    yes   no    yes   no    no    yes
+LV40003619950       16.5  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LV50103129191       15.7  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LU14925288           263  found           vies      VIES    yes   no    yes   no    no    yes
+LU30575136           133  found           vies      VIES    yes   no    yes   no    no    yes
+LU29998353           235  not-registered  -         -       -     -     -     -     -     -       VIES reports that "LU29998353" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+LV40203219413       19.2  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LT100012584918       472  found           vies      VIES    yes   no    yes   no    no    yes
+LT100006155012       247  found           vies      VIES    yes   no    yes   no    no    yes
+LV44103066863       16.6  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LT236153417          475  found           vies      VIES    yes   no    yes   no    no    yes
+LT119502413          368  found           vies      VIES    yes   no    yes   no    no    yes
+MT17916318           368  found           vies      VIES    yes   no    yes   no    no    yes
+MT22766130           237  found           vies      VIES    yes   no    yes   no    no    yes
+LV90002129621       18.5  found           database  UR_VID  yes   no    no    no    no    yes
+LT254839716          359  found           vies      VIES    yes   no    yes   no    no    yes
+LT100000876811       493  found           vies      VIES    yes   no    yes   no    no    yes
+LU33590115           245  found           vies      VIES    yes   no    yes   no    no    yes
+LU10284954           159  found           vies      VIES    yes   no    yes   no    no    yes
+LU10061242           209  found           vies      VIES    yes   no    yes   no    no    yes
+LU33027080           246  found           vies      VIES    yes   no    yes   no    no    yes
+LU25176674           246  found           vies      VIES    yes   no    yes   no    no    yes
+LV40003457128       18.1  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LV40203185808       17.1  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LU19382370           158  found           vies      VIES    yes   no    yes   no    no    yes
+LU20769255           298  found           vies      VIES    yes   no    yes   no    no    yes
+LV40203224679        112  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LU32269570           380  found           vies      VIES    yes   no    yes   no    no    yes
+LV40003028055       17.6  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LU26290701           227  found           vies      VIES    yes   no    yes   no    no    yes
+LU34019840           246  found           vies      VIES    yes   no    yes   no    no    yes
+LV44103139724       17.0  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LV90000512408       18.0  found           database  UR_VID  yes   no    no    no    no    yes
+LV40008160776       16.9  found           database  UR_VID  yes   yes   yes   yes   no    yes
+LU32455460           128  found           vies      VIES    yes   no    yes   no    no    yes
+MT25932213           312  found           vies      VIES    yes   no    yes   no    no    yes
+MT16109936           613  found           vies      VIES    yes   no    yes   no    no    yes
+LU34648003           246  found           vies      VIES    yes   no    yes   no    no    yes
+LU29801341           245  found           vies      VIES    yes   no    yes   no    no    yes
+MT18887829           235  found           vies      VIES    yes   no    yes   no    no    yes
+MT11022401           380  found           vies      VIES    yes   no    yes   no    no    yes
+MT15738436           247  found           vies      VIES    yes   no    yes   no    no    yes
+MT24096908           366  found           vies      VIES    yes   no    yes   no    no    yes
+MT25669501           369  found           vies      VIES    yes   no    yes   no    no    yes
+MT24396526           245  found           vies      VIES    yes   no    yes   no    no    yes
+MT19223733           368  not-registered  -         -       -     -     -     -     -     -       VIES reports that "MT19223733" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there.
+MT27572019           331  found           vies      VIES    yes   no    yes   no    no    yes
+MT27100708           238  found           vies      VIES    yes   no    yes   no    no    yes
+MT19923728           292  found           vies      VIES    yes   no    yes   no    no    yes
+MT29917427           327  found           vies      VIES    yes   no    yes   no    no    yes
+MT12746201           293  found           vies      VIES    yes   no    yes   no    no    yes
+MT25652308           239  found           vies      VIES    yes   no    yes   no    no    yes
+MT26204219           368  found           vies      VIES    yes   no    yes   no    no    yes
+MT19832425           370  found           vies      VIES    yes   no    yes   no    no    yes
+MT15992703           244  found           vies      VIES    yes   no    yes   no    no    yes
+MT12734807           369  found           vies      VIES    yes   no    yes   no    no    yes

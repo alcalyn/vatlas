@@ -1,0 +1,23 @@
+{
+    "nombre": "COMP BELLA VISTA",
+    "tipoIdentificacion": "02",
+    "regimen": {
+        "codigo": 1,
+        "descripcion": "Régimen General"
+    },
+    "situacion": {
+        "moroso": "NO",
+        "omiso": "NO",
+        "estado": "Inscrito de Oficio",
+        "administracionTributaria": "",
+        "mensaje": "El emisor tiene condición diferente a “Inscrito”. Por favor verifique su “estado tributario” en:  https://atv.hacienda.go.cr/ATV/frmConsultaSituTributaria.aspx. Debe estar inscrito antes de enviar sus comprobantes electrónicos en formato XML para su validación."
+    },
+    "actividades": [
+        {
+            "estado": "A",
+            "tipo": "P",
+            "codigo": "960113",
+            "descripcion": "PERSONA JURIDICA LEGALMENTE CONSTITUIDAS"
+        }
+    ]
+}

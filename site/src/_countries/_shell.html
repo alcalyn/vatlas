@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="{{pageLang}}">
+  <head>
+    <!-- @include partials/head.html -->
+  </head>
+  <body>
+    <!-- @include partials/header.html -->
+
+    <nav class="breadcrumb" aria-label="{{breadcrumbLabel}}">
+      <div class="container">
+        <ol>
+          {{breadcrumbItems}}
+        </ol>
+      </div>
+    </nav>
+
+{{body}}
+
+    <!-- @include partials/cta.html -->
+    <!-- @include partials/footer.html -->
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

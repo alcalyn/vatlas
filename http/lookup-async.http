@@ -1,0 +1,164 @@
+# /v1/lookup-async - a lookup that retries until a source answers.
+#
+# When a source is down (503 SOURCE_UNAVAILABLE), this endpoint retries for you: on the next
+# pass, then with a delay that doubles from ten minutes. The answer is posted to your callback URL.
+#
+# It costs one unit at creation. After a week without an answer, a `lookup.failed` payload is sent
+# and the unit is refunded.
+#
+# Run with: VATLAS_KEY=vtl_live_... npx httpyac send http/lookup-async.http --all
+#
+# Every 202 here spends one unit. The file deletes what it creates.
+
+@host = http://localhost:3000
+@secretKey = {{$processEnv VATLAS_KEY}}
+@vat = FR68005420120
+
+###
+
+# @name queue
+# Queue a lookup. `nextAttemptAt` is now: the first attempt happens on the next pass.
+POST {{host}}/v1/lookup-async/{{vat}}
+Authorization: Bearer {{secretKey}}
+
+?? status == 202
+?? body data.status == pending
+?? header X-RateLimit-Remaining exists
+
+# Example response - 202 Accepted
+#
+# {
+#   "data": {
+#     "publicId": "01a0801b-0700-715f-b982-859f0d21da79",
+#     "vatNumber": "FR68005420120",
+#     "kind": "single",
+#     "url": null,
+#     "status": "pending",
+#     "attempts": 0,
+#     "nextAttemptAt": "2026-09-08T08:20:50.000Z",
+#     "expiresAt": "2026-09-15T08:20:50.000Z",
+#     "completedAt": null,
+#     "createdAt": "2026-09-08T08:20:50.000Z"
+#   }
+# }
+#
+# A company, a number reported as not registered, and a number nothing holds all end the loop.
+# Only an unreachable source is retried.
+
+###
+
+# @name queueProof
+# Queue one with a proof. The delivered payload is the same envelope as the synchronous call.
+POST {{host}}/v1/lookup-async/{{vat}}?prefer=proof
+Authorization: Bearer {{secretKey}}
+
+?? status == 202
+?? body data.kind == proof
+
+###
+
+# @name The account's lookups
+# `?status=pending|success|failed`, `?limit=` from 1 to 100, `?before=` takes `meta.nextBefore`.
+GET {{host}}/v1/lookup-async?limit=5
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? js response.parsedBody.data.length <= 5
+
+###
+
+# @name One lookup, with every attempt
+# Lists every attempt with its fault.
+GET {{host}}/v1/lookup-async/id/{{queue.data.publicId}}
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? js Array.isArray(response.parsedBody.data.attempts)
+
+###
+
+# @name Every source at once, asynchronously
+# Every source at once, like /v1/lookup-all. Also 202, also one unit.
+POST {{host}}/v1/lookup-async-all/{{vat}}
+Authorization: Bearer {{secretKey}}
+
+?? status == 202
+?? body data.kind == all
+
+###
+
+# @name A prefer that is neither of the two values
+# `?prefer` takes `completeness` or `proof`, anything else is refused. /v1/lookup-async-all does
+# not take it.
+POST {{host}}/v1/lookup-async/{{vat}}?prefer=maybe
+Authorization: Bearer {{secretKey}}
+
+?? status == 400
+?? body error.code == INVALID_QUERY
+
+###
+
+# @name A url that is not a string
+# `url` is the only field of the body and must be a string.
+POST {{host}}/v1/lookup-async/{{vat}}
+Authorization: Bearer {{secretKey}}
+Content-Type: application/json
+
+{ "url": 42 }
+
+?? status == 400
+?? body error.code == INVALID_BODY
+
+###
+
+# @name A number that is not a number
+# Rejected before charging, like a 400 on the synchronous endpoint.
+POST {{host}}/v1/lookup-async/NOTAVAT
+Authorization: Bearer {{secretKey}}
+
+?? status == 400
+?? body error.code == INVALID_VAT_FORMAT
+
+###
+
+# @name A status that is not one
+GET {{host}}/v1/lookup-async?status=whenever
+Authorization: Bearer {{secretKey}}
+
+?? status == 400
+?? body error.code == INVALID_QUERY
+
+###
+
+# @name Reading the list costs no quota
+# Not metered.
+GET {{host}}/v1/lookup-async?limit=1
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? header X-RateLimit-Limit exists
+
+###
+
+# @name Cancel one
+# No refund on cancellation.
+DELETE {{host}}/v1/lookup-async/id/{{queue.data.publicId}}
+Authorization: Bearer {{secretKey}}
+
+?? status == 204
+
+###
+
+DELETE {{host}}/v1/lookup-async/id/{{queueProof.data.publicId}}
+Authorization: Bearer {{secretKey}}
+
+?? status == 204
+
+###
+
+# @name Lookups need a key
+GET {{host}}/v1/lookup-async
+
+?? status == 401
+?? body error.code == MISSING_SECRET_KEY
+?? header WWW-Authenticate == Bearer

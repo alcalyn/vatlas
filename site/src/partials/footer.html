@@ -1,0 +1,56 @@
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="brand" href="{{homeUrl}}">
+        <img class="brand__mark" src="/favicon.svg" alt="" width="24" height="24" />
+        <span class="brand__name">{{siteName}}</span>
+      </a>
+      <p class="site-footer__tagline">{{t.meta.tagline}}. {{t.footer.tagline}}</p>
+    </div>
+
+    <nav class="site-footer__col" aria-label="{{t.footer.product}}">
+      <h2 class="site-footer__title">{{t.footer.product}}</h2>
+      <a href="{{homeUrl}}">{{t.nav.home}}</a>
+      <a href="{{tryUrl}}">{{t.footer.tryApi}}</a>
+      <a href="{{coverageUrl}}">{{t.footer.coverage}}</a>
+      <a href="{{countryHubUrl}}">{{t.footer.byCountry}}</a>
+      <a href="{{guidesUrl}}">{{t.footer.guides}}</a>
+      <a href="{{pricingUrl}}">{{t.nav.pricing}}</a>
+    </nav>
+
+    <nav class="site-footer__col" aria-label="{{t.footer.developers}}">
+      <h2 class="site-footer__title">{{t.footer.developers}}</h2>
+      <a href="{{docsUrl}}">{{t.nav.docs}}</a>
+      <a href="{{docsUrl}}#lookup">GET /v1/lookup</a>
+      <a href="{{docsUrl}}#lookup-all">GET /v1/lookup-all/…</a>
+      <a href="{{docsUrl}}#countries">GET /v1/countries</a>
+      <a href="{{docsUrl}}#errors">{{t.footer.errorCodes}}</a>
+      <a href="{{benchmarksUrl}}">{{t.footer.benchmarks}}</a>
+      <a href="{{versusUrl}}">{{t.footer.versus}}</a>
+    </nav>
+
+    <nav class="site-footer__col" aria-label="{{t.footer.company}}">
+      <h2 class="site-footer__title">{{t.footer.company}}</h2>
+      <a href="{{contactUrl}}">{{t.nav.contact}}</a>
+      <a href="{{discordUrl}}" rel="noopener">{{t.footer.discord}}</a>
+      <a href="{{faqUrl}}">{{t.footer.faq}}</a>
+    </nav>
+
+    <nav class="site-footer__col" aria-label="{{t.footer.legalTitle}}">
+      <h2 class="site-footer__title">{{t.footer.legalTitle}}</h2>
+      <a href="{{legalUrl}}">{{t.footer.legalNotice}}</a>
+      <a href="{{termsUrl}}">{{t.footer.terms}}</a>
+      <a href="{{privacyUrl}}">{{t.footer.privacy}}</a>
+      <a href="{{dpaUrl}}">{{t.footer.dpa}}</a>
+    </nav>
+  </div>
+
+  <div class="container site-footer__legal">
+    <p>{{t.footer.legal}}</p>
+    <p>{{t.footer.disclaimer}}</p>
+  </div>
+</footer>
+
+<script type="application/json" data-i18n>
+  { "copy": "{{t.docs.copy}}", "copied": "{{t.docs.copied}}", "copyFailed": "{{t.docs.copyFailed}}" }
+</script>

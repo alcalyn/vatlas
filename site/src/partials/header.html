@@ -1,0 +1,47 @@
+<a class="skip-link" href="#main">{{t.nav.skip}}</a>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="{{homeUrl}}" aria-label="{{t.nav.brandHome}}">
+      <img class="brand__mark" src="/favicon.svg" alt="" width="28" height="28" />
+      <span class="brand__name">{{siteName}}</span>
+    </a>
+
+    <div class="site-header__tools">
+      <button
+        class="iconbtn"
+        type="button"
+        data-theme-toggle
+        data-label-dark="{{t.nav.themeDark}}"
+        data-label-light="{{t.nav.themeLight}}"
+        data-label-template="{{t.nav.themeLabel}}"
+        aria-label="{{t.nav.themeLabel}}"
+      >
+        <span class="iconbtn__icon" data-theme-icon aria-hidden="true">◐</span>
+      </button>
+
+      <details class="langmenu">
+        <summary class="iconbtn iconbtn--wide" title="{{t.nav.langLabel}}">
+          <span class="sr-only">{{t.nav.langLabel}}</span>
+          <span class="langmenu__flag" aria-hidden="true">{{langCurrent}}</span>
+        </summary>
+        <nav class="langmenu__list" aria-label="{{t.nav.langLabel}}">
+        {{langSwitcher}}
+        </nav>
+      </details>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="nav-toggle__bar"></span>
+        <span class="sr-only">{{t.nav.menu}}</span>
+      </button>
+    </div>
+
+    <nav class="nav" id="site-nav" aria-label="{{t.nav.home}}">
+      <a href="{{homeUrl}}"{{nav_home}}>{{t.nav.home}}</a>
+      <a href="{{docsUrl}}"{{nav_docs}}>{{t.nav.docs}}</a>
+      <a href="{{pricingUrl}}"{{nav_pricing}}>{{t.nav.pricing}}</a>
+      <a href="{{contactUrl}}"{{nav_contact}}>{{t.nav.contact}}</a>
+      <a href="{{consoleUrl}}">{{t.nav.login}}</a>
+      <a class="btn btn--primary btn--sm nav__cta" href="{{signupUrl}}">{{t.nav.cta}}</a>
+    </nav>
+  </div>
+</header>

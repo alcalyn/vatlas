@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mentions légales · Vatlas</title>
+    <meta name="description" content="Mentions légales de Vatlas : identité de l'éditeur, hébergeur et coordonnées de contact, conformément à la loi française." />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="author" content="Vatlas" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://vatlas.dev/legal/fr/" />
+    <link rel="alternate" hreflang="en" href="https://vatlas.dev/legal/en/" />
+    <link rel="alternate" hreflang="fr" href="https://vatlas.dev/legal/fr/" />
+    <link rel="alternate" hreflang="x-default" href="https://vatlas.dev/legal/en/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta name="console-origin" content="https://console.vatlas.dev" />
+    <script>
+      try {
+        var url = new URLSearchParams(location.search).get('theme')
+        var stored = url === 'light' || url === 'dark' ? url : localStorage.getItem('vatlas-theme')
+        if (stored === 'light' || stored === 'dark') {
+          document.documentElement.dataset.theme = stored
+          localStorage.setItem('vatlas-theme', stored)
+        }
+      } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <!-- @include partials/header.html -->
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <p class="eyebrow">Légal</p>
+            <h1>Mentions légales</h1>
+            <p class="section__lead">
+              Mentions légales publiées conformément à l'article 6-III de la loi n° 2004-575 du 21 juin 2004 pour
+              la confiance dans l'économie numérique.
+            </p>
+            <p class="note">Dernière mise à jour le 27 août 2026.</p>
+          </div>
+
+          <div class="docs__content legal-content">
+            <section>
+              <h2>Éditeur</h2>
+              <p>
+                <strong>Vatlas</strong> est le nom commercial sous lequel le service est exploité. Le site,
+                l'API et la console développeur sont édités par :
+              </p>
+              <ul>
+                <li><strong>JULIEN MAULNY EURL</strong>, entreprise unipersonnelle à responsabilité limitée (EURL) au capital de 1 000 €</li>
+                <li>RCS Paris 884 831 538</li>
+                <li>SIREN : 884 831 538</li>
+                <li>SIRET (siège social) : 884 831 538 00027</li>
+                <li>Numéro de TVA intracommunautaire : FR95884831538</li>
+                <li>Activité (code NAF/APE) : 6202A, Conseil en systèmes et logiciels informatiques</li>
+                <li>Siège social : 9 Rue des Colonnes, 75002 Paris, France</li>
+                <li>Téléphone : <a href="tel:+33667379996">+33 6 67 37 99 96</a></li>
+                <li>Gérant et directeur de la publication : Julien Maulny</li>
+                <li>Contact : <a href="mailto:{{email}}">{{email}}</a></li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>Hébergeur</h2>
+              <p>
+                Le site, l'API et la console développeur sont hébergés sur un serveur privé virtuel fourni par :
+              </p>
+              <ul>
+                <li><strong>OVH SAS</strong></li>
+                <li>Siège social : 2 rue Kellermann, 59100 Roubaix, France</li>
+                <li>RCS Lille Métropole : 424 761 419</li>
+                <li>Téléphone : <a href="tel:+33972101007">1007</a> (depuis la France) ou +33 9 72 10 10 07</li>
+                <li>Site : <a href="https://www.ovhcloud.com" target="_blank" rel="noopener">www.ovhcloud.com</a></li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>Propriété intellectuelle</h2>
+              <p>
+                Sauf mention contraire, les éléments graphiques, les textes et les développements propres à
+                Vatlas sont protégés par les droits de propriété intellectuelle applicables et ne peuvent être
+                reproduits sans autorisation écrite préalable de JULIEN MAULNY EURL. Les composants tiers
+                utilisés par le site (bibliothèques open source, polices, icônes) restent régis par les licences
+                de leurs auteurs respectifs. Les données société renvoyées par l'API proviennent des registres
+                nationaux officiels et de VIES, le service de la Commission européenne, et restent soumises aux
+                conditions publiées par ces sources.
+              </p>
+            </section>
+
+            <section>
+              <h2>Contact</h2>
+              <p>
+                Pour toute question relative à ces mentions légales, écrivez à
+                <a href="mailto:{{email}}">{{email}}</a>.
+              </p>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include partials/footer.html -->
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

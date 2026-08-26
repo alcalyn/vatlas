@@ -1,0 +1,103 @@
+<!-- @meta
+{
+  "title": "Dansk momsnummer: CVR-nummer, format og opslag",
+  "description": "DK plus otte cifre, CVR-nummeret selv. Hvorfor Danmark er et af de nemmeste lande at slå op i, og hvordan du finder virksomheden bag et nummer.",
+  "h1": "Det danske momsnummer",
+  "term": "Dansk momsnummer",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Danmark · DK</p>
+        <h1>Det danske momsnummer</h1>
+        <p class="section__lead">Momsnummeret er CVR-nummeret. Ét nummer, ét register, og registret ligger frit tilgængeligt som distributionsdata.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>DK</code> + 8 cifre (CVR-nummeret)</p>
+        <p><strong>Eksempel:</strong> <code>DK28118201</code>, CVR-nummer <code>28118201</code></p>
+        <p><strong>Tildeles af:</strong> Erhvervsstyrelsen; momsregistreringen sker hos Skattestyrelsen.</p>
+      </div>
+
+      <h2 id="format">Opbygningen</h2>
+      <p>Et dansk momsnummer er altid <strong>ti tegn</strong>: landekoden og otte cifre. I Danmark skrives nummeret ofte med mellemrum efter hvert andet ciffer, men de forsvinder i momsnummeret.</p>
+      <ul class="breakdown">
+        <li><b>DK</b><span>Landekoden.</span></li>
+        <li><b>2811820</b><span>Syv cifre i CVR-nummeret.</span></li>
+        <li><b>1</b><span>Kontrolcifferet.</span></li>
+      </ul>
+      <p>Kontrolcifferet beregnes modulus 11 med vægtene 2, 7, 6, 5, 4, 3, 2. Hvis resten bliver 1, findes nummeret ikke: kombinationen kan ikke tildeles.</p>
+
+      <h2 id="cvr">CVR-nummer, P-nummer og SE-nummer</h2>
+      <p><strong>CVR-nummeret</strong> tildeles af Erhvervsstyrelsen til enhver juridisk enhed ved registrering, og det ændrer sig aldrig. Momsnummeret er præcis det samme nummer med <code>DK</code> foran.</p>
+      <p><strong>P-nummeret</strong> er ti cifre og identificerer en produktionsenhed, en adresse, ikke en virksomhed. En virksomhed har ét CVR-nummer og et P-nummer for hvert forretningssted. Det er aldrig et momsnummer.</p>
+      <p><strong>SE-nummeret</strong> bruges, når en virksomhed skal afregne moms for flere enheder hver for sig. Det har samme format som CVR-nummeret og kan afvige fra det.</p>
+      <div class="callout"><p><strong>At have et CVR-nummer er ikke det samme som at være momsregistreret.</strong> Enhver virksomhed får et CVR-nummer, men momsregistreringen er et selvstændigt skridt hos Skattestyrelsen. En holdingvirksomhed eller en forening uden økonomisk aktivitet står i CVR og validerer ikke i VIES.</p></div>
+
+      <h2 id="opslag">Find virksomheden bag et nummer</h2>
+      <h3>CVR-registret</h3>
+      <p><a href="https://datacvr.virk.dk/" rel="noopener">datacvr.virk.dk</a> giver fri søgning på CVR-nummer, navn og adresse, med regnskaber og historik. Fordi momsnummeret <em>er</em> CVR-nummeret, fører et momsnummer direkte til den rigtige post.</p>
+      <h3>Distributionsadgangen</h3>
+      <p>Erhvervsstyrelsen udstiller desuden hele registret via en <strong>distributionsløsning</strong> med systemadgang. Adgangen er gratis, men kræver en aftale og et brugernavn, som tildeles efter henvendelse. Det er den vej, man går, hvis man skal have hele registret og ikke enkeltopslag.</p>
+      <h3>VIES</h3>
+      <p>Danmark <strong>oplyser både navn og adresse</strong> via VIES. Adressen kommer på to linjer med postnummer og by på den sidste.</p>
+
+      <h2 id="faldgruber">Danske særtræk</h2>
+      <ul>
+        <li><strong>Mellemrum skal væk.</strong> CVR-nummeret skrives ofte <code>28 11 82 01</code>, men momsnummeret indeholder aldrig mellemrum.</li>
+        <li><strong>CVR-nummer er ikke momsregistrering.</strong> Alle får det første; det andet kræver en registrering hos Skattestyrelsen.</li>
+        <li><strong>P-nummeret er ikke et momsnummer</strong>, selv om det ligner et. Det har ti cifre og peger på en adresse.</li>
+        <li><strong>SE-nummeret kan afvige fra CVR-nummeret</strong>, når en virksomhed afregner moms enhedsvis.</li>
+        <li><strong>Distributionsadgangen kræver en aftale</strong>, selv om den er gratis: den kan ikke bare hentes anonymt.</li>
+      </ul>
+
+      <!-- @include partials/country/da.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Ofte stillede spørgsmål</p>
+        <h2>Det danske momsnummer kort fortalt</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Hvor mange cifre har et dansk momsnummer?</summary>
+          <p>Otte efter landekoden <code>DK</code>, altså ti tegn i alt.</p>
+        </details>
+        <details>
+          <summary>Er CVR-nummeret og momsnummeret det samme?</summary>
+          <p>Cifrene er de samme. Momsnummeret er CVR-nummeret med <code>DK</code> foran, men det gælder kun, hvis virksomheden faktisk er momsregistreret.</p>
+        </details>
+        <details>
+          <summary>Hvad er forskellen på CVR-nummer og P-nummer?</summary>
+          <p>CVR-nummeret identificerer den juridiske enhed og har otte cifre. P-nummeret har ti cifre og identificerer en produktionsenhed, altså et forretningssted. Et P-nummer er aldrig et momsnummer.</p>
+        </details>
+        <details>
+          <summary>Hvorfor afviser VIES en virksomhed, der findes i CVR?</summary>
+          <p>Fordi den ikke er momsregistreret. Holdingselskaber og foreninger uden økonomisk aktivitet står i CVR uden at have et gyldigt momsnummer.</p>
+        </details>
+        <details>
+          <summary>Kan jeg hente hele CVR-registret?</summary>
+          <p>Ja, via Erhvervsstyrelsens distributionsløsning. Adgangen er gratis, men kræver en aftale og et tildelt brugernavn.</p>
+        </details>
+      </div>
+
+      <h2>Momsnummeret i andre lande</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+            <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/" hreflang="en" lang="en">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/" hreflang="en" lang="en">Belgium</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Opdateret den 28. august 2026.</p>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,122 @@
+Benchmark - bench-50-paired.txt
+  2026-09-02T10:40:46.356Z
+
+Input
+  lines read           1350
+  VAT numbers          1350
+  malformed            0
+  duplicates           0
+  usable               1350
+
+Numbers per country
+  AT  Austria                50
+  BE  Belgium                50
+  BG  Bulgaria               50
+  CY  Cyprus                 50
+  CZ  Czechia                50
+  DE  Germany                50
+  DK  Denmark                50
+  EE  Estonia                50
+  EL  Greece                 50
+  ES  Spain                  50
+  FI  Finland                50
+  FR  France                 50
+  HR  Croatia                50
+  HU  Hungary                50
+  IE  Ireland                50
+  IT  Italy                  50
+  LT  Lithuania              50
+  LU  Luxembourg             50
+  LV  Latvia                 50
+  MT  Malta                  50
+  NL  Netherlands            50
+  PL  Poland                 50
+  PT  Portugal               50
+  RO  Romania                50
+  SE  Sweden                 50
+  SI  Slovenia               50
+  SK  Slovakia               50
+  XI  Northern Ireland        0
+
+Paired lookups - https://api.vatlas.dev against https://ec.europa.eu/taxation_customs/vies/services/checkVatService
+  concurrency 1 - run took 3117.0s
+  PAIRED - each number was asked of both sides within the same second, in an order that
+  alternates, so neither side is systematically second and neither sees a different VIES.
+  The baseline is a BARE VIES CALL: one attempt, no cache, no retry. vatlas retries a
+  member state that answers MS_MAX_CONCURRENT_REQ; that is code the caller would otherwise
+  write, and it is part of what is being compared, not a thumb on the scale.
+  The vatlas leg pays one network hop more (here -> vatlas -> VIES), which counts against it.
+
+Resolved
+  vatlas                 1252  92.7%
+  bare VIES              1181  87.5%
+
+Latency over every lookup (ms)
+                vatlas   bare VIES
+  p50              339         466
+  p95             2799        6984
+  max            16220       10012
+  avg              804        1354
+
+Latency over the lookups that found an answer (ms)
+                vatlas   bare VIES
+  p50              339         473
+  p95             2547        6120
+  max            11811        9960
+  avg              726        1243
+
+Field agreement, over the 1176 numbers both sides answered
+  field              equal   different  onlyVatlas    onlyVies     neither
+  name                1039          44           5           0          88
+  address              899         158           3          18          98
+  postalCode           714          18          42           0         402
+  city                 622         110          29           0         415
+
+Outcome pairs (vatlas / bare VIES)
+  found / found                         1176
+  found / unavailable                     71
+  not-registered / not-registered         57
+  unavailable / unavailable               33
+  found / not-registered                   5
+  unavailable / found                      5
+  not-registered / unavailable             3
+
+Order effect check - vatlas p50 by which side went first
+  VIES first         340  (675 numbers)
+  vatlas first       328  (675 numbers)
+
+Where vatlas answered from
+  vies 881, database 237, source 134
+  A run on numbers never looked up before shows no "database" for a VIES-served country;
+  anything else means the list was warm and the latencies are not a cold measurement.
+
+Per country - resolved, then vatlas p50 against bare VIES p50
+  code      n   vatlas    VIES  p50 vatlas   p50 VIES
+  AT       50   100.0%  100.0%         246        244
+  BE       50   100.0%   78.0%        52.1       3390
+  BG       50    82.0%   80.0%        1247       1229
+  CY       50   100.0%  100.0%         491        456
+  CZ       50    94.0%   86.0%         190       6757
+  DE       50    96.0%   96.0%         830        836
+  DK       50    30.0%   32.0%         208       9960
+  EE       50    94.0%   94.0%        19.0        272
+  EL       50    98.0%   98.0%         472        368
+  ES       50    92.0%   90.0%         369        548
+  FI       50   100.0%   96.0%        48.5        554
+  FR       50   100.0%   16.0%        21.6       36.2
+  HR       50    98.0%   98.0%         339        357
+  HU       50    88.0%   88.0%         215        205
+  IE       50    96.0%   96.0%         245        195
+  IT       50    98.0%   98.0%         607        831
+  LT       50    96.0%   96.0%         339        326
+  LU       50    94.0%   94.0%         248        167
+  LV       50    96.0%   92.0%        20.9       1957
+  MT       50    96.0%   96.0%         339        274
+  NL       50   100.0%   88.0%        2373       2287
+  PL       50    98.0%   96.0%         264        244
+  PT       50    94.0%   92.0%         341        334
+  RO       50    76.0%   76.0%         244        465
+  SE       50    94.0%   92.0%        1198        835
+  SI       50    94.0%   94.0%         308        274
+  SK       50   100.0%  100.0%         423        434
+

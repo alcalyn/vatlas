@@ -1,0 +1,103 @@
+<!-- @meta
+{
+  "title": "Cod de TVA: CUI, format și cum găsești firma prin ANAF",
+  "description": "RO plus CUI-ul firmei. De ce codul de TVA are lungime variabilă, ce înseamnă TVA la încasare și cum răspunde API-ul ANAF.",
+  "h1": "Codul de TVA românesc",
+  "term": "Cod de înregistrare în scopuri de TVA",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">România · RO</p>
+        <h1>Codul de TVA românesc</h1>
+        <p class="section__lead">Codul de TVA este CUI-ul cu RO în față, iar ANAF îl rezolvă gratuit și fără cont: o sută de coduri într-o singură cerere, și câteva lucruri pe care VIES nu le are.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>RO</code> + 2 până la 10 cifre (CUI)</p>
+        <p><strong>Exemplu:</strong> <code>RO14905506</code>, CUI <code>14905506</code></p>
+        <p><strong>Atribuit de:</strong> ANAF, la înregistrarea în scopuri de TVA.</p>
+      </div>
+
+      <h2 id="format">Structura</h2>
+      <p>Codul de TVA românesc are <strong>între 2 și 10 cifre</strong> după prefix. Lungimea variabilă surprinde, dar este corectă: firmele înregistrate devreme au CUI-uri foarte scurte, iar acestea rămân valabile.</p>
+      <ul class="breakdown">
+        <li><b>RO</b><span>Codul de țară.</span></li>
+        <li><b>1490550</b><span>Partea de identificare, de lungime variabilă.</span></li>
+        <li><b>6</b><span>Cifra de control.</span></li>
+      </ul>
+      <p>Cifra de control se calculează cu ponderile 7, 5, 3, 2, 1, 7, 5, 3, 2, aliniate la dreapta. Un cod precum <code>RO1154</code> este perfect valid: un validator care impune un minim de opt cifre respinge firme reale.</p>
+
+      <h2 id="cui">CUI, CIF și numărul de la registrul comerțului</h2>
+      <p><strong>CUI-ul</strong> (codul unic de înregistrare) este atribuit de ANAF fiecărei firme la înmatriculare. <strong>CIF</strong> este același lucru sub o denumire mai veche, folosită încă frecvent.</p>
+      <p><strong>Codul de TVA</strong> este CUI-ul cu <code>RO</code> în față, dar prefixul apare doar dacă firma este efectiv înregistrată în scopuri de TVA. Aceasta este distincția esențială: <strong>o firmă neplătitoare de TVA are CUI și nu are prefix</strong>. Documentele ei arată <code>14905506</code>, nu <code>RO14905506</code>.</p>
+      <p>Separat există <strong>numărul de ordine în registrul comerțului</strong>, în forma <code>J12/1234/2005</code>, județ, număr, an. Nu are nicio legătură calculabilă cu CUI-ul.</p>
+
+      <h2 id="cautare">Cum găsești firma</h2>
+      <h3>API-ul ANAF</h3>
+      <p>ANAF pune la dispoziție un serviciu public, <strong>gratuit și fără autentificare</strong>, care primește un CUI și returnează denumirea, adresa sediului în câmpuri separate, starea societății și perioadele de înregistrare în scopuri de TVA. Acceptă până la 100 de coduri într-o singură cerere, cu o limită de o cerere pe secundă.</p>
+      <p>Ce returnează trece mult dincolo de validitate: dacă firma este inactivă fiscal, dacă aplică <strong>TVA la încasare</strong>, și de când până când a fost înregistrată în scopuri de TVA.</p>
+      <h3>Registrul comerțului</h3>
+      <p>ONRC oferă căutare online, dar furnizarea de informații detaliate este contra cost. Căutarea se face după denumire sau după CUI.</p>
+      <h3>VIES</h3>
+      <p>România <strong>divulgă denumirea și adresa</strong>. Adresa vine pe un singur rând, începe cu tipul localității (<code>MUN.</code>, <code>ORȘ.</code>, <code>COM.</code>) și are codul poștal la mijloc, între localitate și stradă, o ordine neobișnuită.</p>
+
+      <h2 id="capcane">Particularități românești</h2>
+      <ul>
+        <li><strong>Lungimea variază.</strong> <code>RO1154</code> este valid; un validator care cere opt cifre respinge firme reale.</li>
+        <li><strong>Fără prefix <code>RO</code> înseamnă neplătitor de TVA.</strong> CUI-ul există, dar firma nu este înregistrată în scopuri de TVA.</li>
+        <li><strong>Firma inactivă fiscal</strong> apare ca atare la ANAF, iar VIES nu spune nimic despre asta.</li>
+        <li><strong>TVA la încasare</strong> schimbă momentul exigibilității pentru partener, informație pe care doar ANAF o oferă.</li>
+        <li><strong>Codul poștal stă la mijlocul adresei</strong>, între localitate și stradă.</li>
+      </ul>
+
+      <!-- @include partials/country/ro.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Întrebări frecvente</p>
+        <h2>Codul de TVA pe scurt</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Câte cifre are un cod de TVA românesc?</summary>
+          <p>Între 2 și 10 după prefixul <code>RO</code>. Firmele înregistrate devreme au coduri foarte scurte, care rămân valabile.</p>
+        </details>
+        <details>
+          <summary>Care este diferența dintre CUI și codul de TVA?</summary>
+          <p>CUI-ul este atribuit fiecărei firme la înmatriculare. Codul de TVA este același CUI cu <code>RO</code> în față, și există numai dacă firma este înregistrată în scopuri de TVA.</p>
+        </details>
+        <details>
+          <summary>Ce înseamnă că o firmă nu are prefixul RO?</summary>
+          <p>Că nu este plătitoare de TVA. Are CUI și funcționează legal, dar nu poate emite facturi cu TVA și nu apare în VIES.</p>
+        </details>
+        <details>
+          <summary>Ce este TVA la încasare?</summary>
+          <p>Un regim în care exigibilitatea TVA intervine la încasarea facturii, nu la emiterea ei. ANAF publică această informație; VIES nu.</p>
+        </details>
+        <details>
+          <summary>Cum verific gratuit o firmă românească?</summary>
+          <p>Prin serviciul public al ANAF, care primește un CUI și returnează denumirea, sediul, starea și perioadele de înregistrare în scopuri de TVA, fără cont și fără costuri.</p>
+        </details>
+      </div>
+
+      <h2>Codul de TVA în alte țări</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+            <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/" hreflang="en" lang="en">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/" hreflang="en" lang="en">Belgium</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Actualizat la 28 august 2026.</p>
+    </div>
+  </section>
+</main>

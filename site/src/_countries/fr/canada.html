@@ -1,0 +1,155 @@
+<!-- @meta
+{
+  "title": "Numéro de TPS/TVH canadien : format, clé de contrôle et recherche",
+  "description": "CA suivi de neuf chiffres, et RT0001 sur la facture. Ce qu’est un numéro d’entreprise, comment se calcule sa clé, et comment retrouver la société derrière.",
+  "h1": "Le numéro d’entreprise canadien",
+  "term": "Numéro d’entreprise / compte TPS-TVH",
+  "updated": "2026-09-15"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Canada · CA</p>
+        <h1>Le numéro d’entreprise canadien</h1>
+        <p class="section__lead">
+          Le Canada prélève la TPS/TVH, et le numéro qui figure sur une facture est un numéro
+          d’entreprise suivi de <code>RT0001</code>. Les neuf chiffres de tête désignent
+          l’entreprise ; ce qui suit désigne l’un de ses comptes auprès du fisc.
+        </p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format :</strong> <code>CA</code> + 9 chiffres, éventuellement suivis de <code>RT0001</code></p>
+        <p><strong>Exemple :</strong> <code>CA100768779RT0001</code></p>
+        <p><strong>Attribué par :</strong> l’Agence du revenu du Canada (ARC).</p>
+      </div>
+
+      <h2 id="format">Le format</h2>
+      <p>Un numéro fiscal canadien s’écrit en deux moitiés :</p>
+      <ul class="breakdown">
+        <li><b>123456789</b><span>Le <strong>numéro d’entreprise</strong> (NE) : neuf chiffres, un par entreprise, quelle que soit son activité.</span></li>
+        <li><b>RT0001</b><span>Le <strong>compte de programme</strong> : deux lettres qui disent de quelle taxe il s’agit, quatre chiffres qui disent lequel des comptes de ce type.</span></li>
+      </ul>
+      <p>Les lettres méritent d’être connues, car une seule correspond à la taxe de vente :</p>
+      <ul class="breakdown">
+        <li><b>RT</b><span>TPS/TVH, celle qui apparaît sur une facture.</span></li>
+        <li><b>RP</b><span>Retenues à la source.</span></li>
+        <li><b>RC</b><span>Impôt sur les sociétés.</span></li>
+        <li><b>RM</b><span>Importations et exportations.</span></li>
+      </ul>
+      <p>
+        Le neuvième chiffre est une <strong>clé de Luhn</strong>, la même règle qu’un numéro de
+        carte bancaire, de sorte qu’un numéro mal saisi se détecte avant tout appel réseau, comme
+        la clé française ou le NIP polonais.
+      </p>
+      <p>
+        {{siteName}} accepte les deux écritures. <code>CA100768779RT0001</code> et
+        <code>CA100768779</code> désignent la même société : le compte de programme est retiré
+        avant la recherche, et les deux renvoient la même fiche.
+      </p>
+
+      <h2 id="registration">Un numéro d’entreprise n’est pas une inscription à la TPS</h2>
+      <p>
+        C’est le piège canadien, et il n’a pas d’équivalent européen. Une entreprise peut avoir un
+        numéro d’entreprise sans être inscrite à la TPS/TVH : l’inscription n’est obligatoire
+        qu’au-delà de <strong>30 000 CAD</strong> de fournitures taxables, en dessous de quoi elle
+        est facultative. Les neuf chiffres identifient donc l’entreprise ; savoir s’il existe un
+        compte <code>RT</code> derrière est une autre question.
+      </p>
+      <p>
+        Le Québec ajoute un second numéro. La taxe de vente provinciale, la TVQ, est administrée
+        par Revenu Québec, et un fournisseur québécois indique son numéro de TVQ à côté du numéro
+        fédéral. Ce sont deux inscriptions, deux numéros, et aucun ne se déduit de l’autre.
+      </p>
+
+      <h2 id="find">Retrouver la société derrière le numéro</h2>
+      <h3>Corporations Canada</h3>
+      <p>
+        Corporations Canada, le registraire fédéral, publie l’intégralité de son registre en
+        données ouvertes : une archive, sans compte ni clé, sous licence du gouvernement ouvert.
+        Elle contient <strong>1,59 million de sociétés</strong>, dont <strong>1,47 million portent
+        un numéro d’entreprise</strong>, et c’est ce numéro qui rend le fichier atteignable par ce
+        qui est écrit sur une facture.
+      </p>
+      <p>
+        C’est ce que {{siteName}} importe : une recherche canadienne est donc une lecture en base,
+        et non un appel à Ottawa.
+      </p>
+      <h3>Ce que le registre contient, et ce qu’il ne contient pas</h3>
+      <p>
+        Il contient la dénomination en vigueur, le siège social, le statut de la société, la loi
+        sous laquelle elle existe (Loi canadienne sur les sociétés par actions, Loi sur les
+        organisations à but non lucratif, Loi sur les coopératives) et l’historique daté de chacun
+        de ces éléments.
+      </p>
+      <p>
+        Ce qu’il ne contient pas, c’est <strong>toute société non fédérale</strong>. Une société
+        constituée en Ontario, au Québec ou en Colombie-Britannique possède un numéro d’entreprise
+        comme les autres, mais elle est immatriculée auprès de sa province et non de Corporations
+        Canada : elle est absente de ce fichier. Les registres provinciaux publient leurs propres
+        numéros et ne se consultent pas par numéro d’entreprise, et rien ne comble donc ce manque.
+      </p>
+      <h3>Le registre de l’ARC</h3>
+      <p>
+        L’ARC tient un registre TPS/TVH, qui répond à une autre question que celle posée ici : on
+        lui fournit les neuf premiers chiffres, <em>la dénomination exacte</em> et une date de
+        transaction, et il confirme si le compte était inscrit ce jour-là. Il confirme ; il ne dit
+        pas à qui appartient le numéro, et il n’a pas d’API.
+      </p>
+
+      <h2 id="pitfalls">Pièges propres au Canada</h2>
+      <ul>
+        <li><strong>Un numéro d’entreprise ne prouve pas l’inscription à la TPS.</strong> En dessous de 30 000 CAD par an, s’inscrire est facultatif.</li>
+        <li><strong>Sociétés fédérales seulement.</strong> Les sociétés provinciales figurent au registre de leur province, pas dans celui-ci.</li>
+        <li><strong>Un fournisseur québécois a deux numéros.</strong> Le numéro de TVQ appartient à Revenu Québec et ne se déduit pas du numéro d’entreprise.</li>
+        <li><strong>Le compte de programme n’est pas la société.</strong> <code>RT0001</code>, <code>RP0001</code> et <code>RC0001</code> sont trois comptes d’une même entreprise.</li>
+        <li><strong>Une dissolution en cours reste une société active.</strong> Elle existe et facture toujours la taxe.</li>
+      </ul>
+
+      <!-- @include partials/country/fr.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2>Le numéro d’entreprise en bref</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Combien de chiffres compte un numéro d’entreprise ?</summary>
+          <p>Neuf, dont le dernier est une clé de Luhn. Le <code>RT0001</code> qui le suit sur une facture est le compte TPS/TVH, et non une partie du numéro d’entreprise.</p>
+        </details>
+        <details>
+          <summary>Que signifie RT0001 ?</summary>
+          <p><code>RT</code> désigne le programme TPS/TVH et <code>0001</code> le premier compte de ce type. <code>RP</code> correspond aux retenues à la source, <code>RC</code> à l’impôt sur les sociétés, <code>RM</code> aux douanes.</p>
+        </details>
+        <details>
+          <summary>Un numéro d’entreprise signifie-t-il que la société facture la TPS ?</summary>
+          <p>Non. L’inscription est obligatoire au-delà de 30 000 CAD de fournitures taxables et facultative en dessous : le numéro prouve l’identité, pas l’inscription.</p>
+        </details>
+        <details>
+          <summary>Les sociétés provinciales sont-elles couvertes ?</summary>
+          <p>Pas par le registre fédéral. Une société constituée en Ontario, au Québec ou en Colombie-Britannique relève du registre de sa province, lequel ne se consulte pas par numéro d’entreprise.</p>
+        </details>
+        <details>
+          <summary>Peut-on télécharger gratuitement le registre canadien ?</summary>
+          <p>Oui. Corporations Canada publie le registre fédéral en une archive ouverte, sans compte ni clé, sous licence du gouvernement ouvert.</p>
+        </details>
+      </div>
+
+      <h2>Les numéros d’entreprise ailleurs</h2>
+      <ul class="otherlinks">
+        <li><a href="/fr/numero-tva-intracommunautaire/france/">France</a></li>
+        <li><a href="/fr/numero-tva-intracommunautaire/belgique/">Belgique</a></li>
+        <li><a href="/en/vat-number/australia/" hreflang="en" lang="en">Australie</a></li>
+        <li><a href="/en/vat-number/japan/" hreflang="en" lang="en">Japon</a></li>
+        <li><a href="/fr/numero-tva-intracommunautaire/">Tous les pays</a></li>
+      </ul>
+      <p class="updated">Dernière mise à jour le 15 septembre 2026.</p>
+    </div>
+  </section>
+</main>

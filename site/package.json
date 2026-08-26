@@ -1,0 +1,21 @@
+{
+  "name": "vatlas-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Vatlas website (Vite multi-page build, outputs to ../docs)",
+  "license": "AGPL-3.0-or-later",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "dotenv": "^17.4.2",
+    "i18next": "^26.4.1",
+    "vite": "^7.1.5"
+  },
+  "dependencies": {
+    "jsvectormap": "^1.7.0"
+  }
+}

@@ -1,0 +1,97 @@
+<!-- @meta
+{
+  "title": "Swiss UID and MWST number: format, check digit and lookup",
+  "description": "CHE plus nine digits plus MWST, TVA or IVA. How the UID works, why the suffix matters, and what the Federal Statistical Office answers for free.",
+  "h1": "The Swiss UID",
+  "term": "UID",
+  "updated": "2026-09-15"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Switzerland · CHE</p>
+        <h1>The Swiss UID</h1>
+        <p class="section__lead">Switzerland is not in the Union, so a Swiss number is not an intra-community VAT number and VIES cannot confirm it. It is the UID, one number for every Swiss enterprise, and the Federal Statistical Office answers for it over a service open to anyone.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>CHE</code> + 9 digits + <code>MWST</code>, <code>TVA</code> or <code>IVA</code></p>
+        <p><strong>Example:</strong> <code>CHE-105.805.313 MWST</code></p>
+        <p><strong>Issued by:</strong> the Bundesamt für Statistik, which keeps the UID register.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A UID is <code>CHE</code> followed by <strong>nine digits</strong>, written in threes and separated by full stops: <code>CHE-105.805.313</code>. Since 2011 it has replaced every predecessor (the old six-digit MWST number, the commercial register number, the AHV employer number) with one identifier used across the whole administration.</p>
+      <p>The ninth digit is a <strong>check digit</strong>, modulo 11 over the first eight with the weights 5, 4, 3, 2, 7, 6, 5, 4. As in Norway, one remainder in eleven leaves no writable digit, and those numbers are simply never issued.</p>
+      <p>The <code>E</code> is part of the prefix, not of the number. Strip the punctuation from <code>CHE-105.805.313 MWST</code> and you get <code>CHE105805313MWST</code>, in which only the nine digits in the middle are the identifier, a detail worth getting right before storing anything, or one company ends up keyed under two spellings.</p>
+
+      <h2 id="status">What the suffix means</h2>
+      <p>A bare UID says the enterprise exists. The suffix says it is registered for VAT, and it is written in whichever of the three official languages the invoice is in: <strong>MWST</strong> in German, <strong>TVA</strong> in French, <strong>IVA</strong> in Italian. All three mean the same thing, and none of them changes the number.</p>
+      <p>The register keeps the two facts apart and publishes both, so Switzerland is one of the few countries outside the Union where a lookup can say, with a date on it, that a number exists and is <strong>not</strong> registered for VAT, or that its registration has since been struck off. {{siteName}} reads both codes, because either one ends a registration.</p>
+      <p>The obligation itself starts at CHF 100,000 of worldwide turnover. Below it, registration is voluntary, and plenty of live Swiss companies have a UID and no VAT entry.</p>
+
+      <h2 id="find">Finding the company behind the number</h2>
+      <h3>The UID register's public service</h3>
+      <p>The Federal Statistical Office exposes the register over a SOAP service at <code>uid-wse.admin.ch</code> whose public half (lookup by UID, search, validation of a VAT number) needs <strong>no account and no certificate</strong>. It answers with the legal name, the legal form, the registered seat and the VAT position together. The published ceiling is twenty calls a minute, which is the one real constraint on it.</p>
+      <h3>One number, sometimes two entries</h3>
+      <p>A UID can carry more than one entry: a group of companies filing VAT together appears as a <em>Mehrwertsteuergruppe</em> alongside the enterprise itself. The first entry is the unit the number belongs to.</p>
+      <h3>Zefix and the commercial register</h3>
+      <p>Zefix, the central business name index, publishes the commercial register entry and is where a Swiss company's articles and officers live. It is a different register from the UID one, and its API is not open in the way the UID service is.</p>
+
+      <h2 id="pitfalls">Switzerland-specific pitfalls</h2>
+      <ul>
+        <li><strong>VIES will not answer.</strong> Switzerland is not a member state, and there is no intra-community number to check.</li>
+        <li><strong>The <code>E</code> is prefix, the suffix is language.</strong> Nine digits is the whole number; everything else is spelling.</li>
+        <li><strong>Existing is not being VAT-registered.</strong> The threshold is CHF 100,000 and the register states the position explicitly.</li>
+        <li><strong>A struck-off VAT entry still has a UID.</strong> The enterprise remains; only its VAT registration ended.</li>
+        <li><strong>Twenty calls a minute.</strong> A bulk job against this register will be blocked; it is built for one question at a time.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The UID in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>What does a Swiss VAT number look like?</summary>
+          <p><code>CHE-123.456.789 MWST</code>: the letters CHE, nine digits, and a suffix in German, French or Italian.</p>
+        </details>
+        <details>
+          <summary>Is MWST different from TVA and IVA?</summary>
+          <p>No. They are the same suffix in the three official languages and mean the same registration.</p>
+        </details>
+        <details>
+          <summary>Can VIES check a Swiss number?</summary>
+          <p>No. Switzerland is outside the Union, so the number is national and VIES does not cover it.</p>
+        </details>
+        <details>
+          <summary>Why does a real company come back as not registered?</summary>
+          <p>Because it has a UID but no entry in the VAT register, usually because it is below the CHF 100,000 threshold.</p>
+        </details>
+        <details>
+          <summary>Does looking up a UID cost anything?</summary>
+          <p>Nothing at the source. The public half of the federal UID service is free and needs no account.</p>
+        </details>
+      </div>
+
+      <h2>Business numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/germany/">Germany</a></li>
+        <li><a href="/en/vat-number/austria/">Austria</a></li>
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/italy/">Italy</a></li>
+        <li><a href="/en/vat-number/norway/">Norway</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 15 September 2026.</p>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Conditions générales d'utilisation et de vente · Vatlas</title>
+    <meta name="description" content="Conditions générales d'utilisation et de vente applicables à la création d'un compte et à la souscription au forfait Pro de l'API Vatlas." />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="author" content="Vatlas" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://vatlas.dev/terms/fr/" />
+    <link rel="alternate" hreflang="en" href="https://vatlas.dev/terms/en/" />
+    <link rel="alternate" hreflang="fr" href="https://vatlas.dev/terms/fr/" />
+    <link rel="alternate" hreflang="x-default" href="https://vatlas.dev/terms/en/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta name="console-origin" content="https://console.vatlas.dev" />
+    <script>
+      try {
+        var url = new URLSearchParams(location.search).get('theme')
+        var stored = url === 'light' || url === 'dark' ? url : localStorage.getItem('vatlas-theme')
+        if (stored === 'light' || stored === 'dark') {
+          document.documentElement.dataset.theme = stored
+          localStorage.setItem('vatlas-theme', stored)
+        }
+      } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <!-- @include partials/header.html -->
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <p class="eyebrow">Légal</p>
+            <h1>Conditions générales d'utilisation et de vente</h1>
+            <p class="section__lead">
+              Les présentes conditions générales d'utilisation et de vente (« Conditions ») régissent l'accès à
+              l'API, à la console développeur et au site Vatlas, exploités par JULIEN MAULNY EURL. Elles valent
+              conditions générales de vente pour le forfait Pro. Créer un compte ou effectuer un appel à l'API
+              vaut acceptation des présentes Conditions et de la
+              <a href="/privacy/fr/">politique de confidentialité</a>.
+            </p>
+            <p class="note">Dernière mise à jour le 27 août 2026.</p>
+          </div>
+
+          <div class="docs__content legal-content">
+            <section>
+              <h2>1. Champ d'application</h2>
+              <p>
+                Le service est exclusivement réservé aux professionnels agissant à des fins professionnelles, à
+                l'exclusion de toute souscription par un consommateur au sens du droit de la consommation. En
+                créant un compte, vous déclarez agir en cette qualité ; cette déclaration ne suffit toutefois pas
+                à elle seule à écarter une qualification différente si les faits la contredisent, et nous veillons
+                à ce que notre parcours de souscription et notre communication ne s'adressent qu'à des
+                professionnels.
+              </p>
+              <p>
+                Dans les présentes Conditions, <strong>« Vatlas »</strong> et <strong>« nous »</strong> désignent
+                indifféremment JULIEN MAULNY EURL agissant en qualité de fournisseur du service ; le
+                <strong>« Service »</strong> désigne l'ensemble formé par l'API, la console développeur et le
+                site. Vatlas est le nom commercial sous lequel JULIEN MAULNY EURL exploite ce Service.
+              </p>
+              <p>
+                En créant un compte (gratuit ou payant) vous reconnaissez avoir pris connaissance des présentes
+                Conditions, accessibles depuis le formulaire d'inscription, et les accepter. Lors de la
+                souscription du forfait Pro, cette acceptation est en outre confirmée avant la validation de la
+                commande sur la page de paiement Stripe. La version des Conditions en vigueur au moment de votre
+                acceptation, ainsi que sa date, sont conservées et peuvent vous être communiquées sur demande.
+              </p>
+            </section>
+
+            <section>
+              <h2>2. Le service</h2>
+              <p>
+                Vatlas est une API B2B exploitée par JULIEN MAULNY EURL (« nous ») qui transforme un numéro de TVA
+                intracommunautaire européen en fiche société : raison sociale, identifiant national, forme
+                juridique, statut et adresse. Les données proviennent des registres nationaux officiels et de
+                VIES ; nous n'exploitons aucun de ces registres, et l'administration d'origine reste la source
+                faisant foi.
+              </p>
+            </section>
+
+            <section>
+              <h2>3. Comptes et clés API</h2>
+              <p>
+                Un compte par personne ou organisation. Vous êtes responsable de la confidentialité de vos
+                identifiants et clés API, ainsi que de toute activité effectuée avec ceux-ci. Révoquez
+                immédiatement une clé depuis la console si vous pensez qu'elle a été exposée ; une clé révoquée
+                peut continuer à répondre pendant soixante secondes au maximum.
+              </p>
+            </section>
+
+            <section>
+              <h2>4. Utilisation autorisée</h2>
+              <p>
+                Vous ne pouvez pas utiliser l'API pour contourner le comptage des requêtes ou l'authentification,
+                pour extraire massivement les données à des fins de revente en tant que produit concurrent, ni à
+                des fins illicites. Nous pouvons suspendre une clé dont l'usage menace le service pour les autres
+                clients.
+              </p>
+            </section>
+
+            <section>
+              <h2>5. Données que vous transmettez</h2>
+              <p>
+                La qualification s'apprécie traitement par traitement, au regard de qui en détermine réellement
+                les finalités et les moyens essentiels. Pour le service standard (constituer et exploiter notre
+                base issue des registres publics, puis résoudre un numéro que vous nous transmettez), ces
+                décisions sont les nôtres : Vatlas y agit en qualité de <strong>responsable de traitement</strong>,
+                et vous en qualité de responsable distinct pour l'usage que vous faites des résultats. Vous
+                répondez de la licéité de cet usage, y compris de la base légale applicable lorsqu'un résultat
+                concerne une personne physique, ce qui peut être le cas d'un entrepreneur individuel.
+              </p>
+              <p>
+                Si nous convenions en revanche de traiter des données pour votre compte, sur vos instructions et
+                sans en déterminer nous-mêmes les finalités, Vatlas agirait pour ce traitement en qualité de
+                <strong>sous-traitant</strong> et les stipulations de l'article 28 du RGPD figurant dans
+                l'addendum s'appliqueraient. Aucune de ces deux qualifications ne vaut par avance pour tout : elle
+                se déduit du traitement considéré.
+              </p>
+              <p>
+                Le numéro transmis est conservé dans nos journaux d'appels afin de calculer votre quota et de
+                produire votre historique d'utilisation ; il n'est pas réutilisé à d'autres fins ; voir la
+                <a href="/privacy/fr/">politique de confidentialité</a>. L'<a href="/dpa/fr/">addendum de
+                protection des données</a> détaille cette répartition des rôles, ce qu'elle implique pour votre
+                propre conformité, et les stipulations conformes à l'article 28 du RGPD qui s'appliqueraient si
+                un véritable rapport de sous-traitance venait à naître.
+              </p>
+            </section>
+
+            <section>
+              <h2>6. Forfaits et renouvellement</h2>
+              <p>
+                Le forfait Gratuit inclut 100 requêtes par mois sans frais. Le forfait Pro inclut 10 000
+                requêtes par mois pour 14 € hors taxes par mois, renouvelé automatiquement chaque mois à la date
+                anniversaire de la souscription. Le quota mensuel n'est pas cumulable d'une période à l'autre :
+                les requêtes non consommées au cours d'un mois sont perdues à son terme, sans report ni
+                remboursement. Une fois le quota atteint, l'API répond <code>429</code> jusqu'au renouvellement.
+              </p>
+              <p>
+                La résiliation d'un abonnement Pro ne met pas fin immédiatement au service : celui-ci reste
+                actif jusqu'à la fin de la période déjà payée, puis repasse au forfait Gratuit, sans
+                remboursement au prorata de la période en cours. Cette absence de remboursement vise la
+                résiliation à votre initiative : elle ne s'applique pas lorsque la résiliation résulte d'un
+                manquement de notre part, d'un arrêt définitif du Service, ou de votre refus d'une modification
+                substantielle au titre de l'article 14, ni dans les cas où la loi impose un remboursement. Le détail des forfaits est disponible sur la
+                <a href="/fr/pricing/">page tarifs</a>.
+              </p>
+            </section>
+
+            <section>
+              <h2>7. Prix et conditions de paiement</h2>
+              <p>
+                Les prix sont indiqués <strong>hors taxes</strong>. La TVA s'y ajoute au taux en vigueur à la date
+                de facturation, sauf lorsque l'autoliquidation s'applique, cas des clients assujettis établis
+                dans un autre État membre et ayant communiqué un numéro de TVA intracommunautaire valide, que
+                Stripe vérifie au moment de la souscription. Tout changement du régime fiscal applicable à
+                JULIEN MAULNY EURL ou du taux de TVA se répercute de plein droit sur les factures ultérieures,
+                sans que cela constitue une modification des présentes Conditions.
+              </p>
+              <p>
+                Le forfait Pro est payable <strong>comptant, par prélèvement automatique</strong> via Stripe sur
+                le moyen de paiement enregistré, mensuellement et par avance, à la date anniversaire de la
+                souscription qui constitue la date d'échéance. Aucun escompte n'est accordé pour paiement anticipé.
+                Une facture conforme est émise à chaque paiement.
+              </p>
+              <p>
+                La date d'échéance est celle figurant sur la facture. Conformément à l'article L441-10 du Code de
+                commerce, les pénalités de retard courent de plein droit dès le lendemain de cette date, sans
+                qu'un rappel soit nécessaire. Leur taux est fixé à trois fois le taux d'intérêt légal en vigueur,
+                sans pouvoir être inférieur à ce plancher légal. Une indemnité forfaitaire pour frais de
+                recouvrement de 40 € est en outre due pour chaque facture payée en retard, sans préjudice d'une
+                indemnisation complémentaire sur justification si les frais réellement engagés dépassent ce
+                montant.
+              </p>
+              <p>
+                En cas d'échec d'un prélèvement, Stripe le retente selon son propre calendrier. Ces relances sont
+                une tolérance commerciale et non un report de l'échéance : votre accès au forfait Pro est
+                maintenu pendant cette période et, en pratique, nous ne réclamons pas de pénalités sur une somme
+                réglée durant ces relances, mais le point de départ légal ci-dessus n'en est pas modifié. Si la
+                somme reste impayée à l'issue des relances, l'abonnement est suspendu puis résilié, et le compte
+                repasse au forfait Gratuit.
+              </p>
+              <p>
+                Ces dispositions du Code de commerce s'appliquent dans la mesure où le droit français régit
+                l'obligation de paiement, ce que prévoient les présentes Conditions. Lorsqu'une règle impérative
+                de votre propre juridiction y fait obstacle, cette règle prévaut.
+              </p>
+            </section>
+
+            <section>
+              <h2>8. Disponibilité et force majeure</h2>
+              <p>
+                Nous visons à maintenir le service disponible en permanence, sans garantie de disponibilité (pas
+                de SLA), et pouvons effectuer une maintenance avec ou sans préavis.
+              </p>
+              <p>
+                Aucune des parties ne pourra être tenue responsable d'un manquement à ses obligations lorsque
+                celui-ci résulte d'un cas de force majeure au sens de l'article 1218 du Code civil, c'est-à-dire
+                d'un événement échappant au contrôle de la partie concernée, qui ne pouvait être raisonnablement
+                prévu lors de la conclusion des présentes Conditions et dont les effets ne pouvaient être évités
+                par des mesures appropriées. Peuvent notamment être concernés, lorsqu'ils remplissent ces
+                conditions, une panne ou une indisponibilité prolongée d'un fournisseur tiers (hébergeur,
+                sous-traitant technique), un incident majeur de datacenter, une cyberattaque, une catastrophe
+                naturelle, une coupure de réseau, ou l'indisponibilité prolongée d'un registre national ou du
+                service VIES.
+              </p>
+            </section>
+
+            <section>
+              <h2>9. Exactitude des données</h2>
+              <p>
+                Les données renvoyées par l'API proviennent des registres nationaux officiels que nous importons,
+                des API officielles de certaines administrations interrogées à la demande, et de VIES, le service
+                de vérification de la Commission européenne, utilisé en dernier recours ; la liste à jour des
+                sources par pays est disponible via <code>GET /v1/countries</code>. La fréquence de mise à jour
+                dépend de chaque source et n'est pas garantie contractuellement : une donnée renvoyée peut donc
+                être obsolète au moment de sa consultation. En cas de divergence, seule l'administration ou le
+                registre d'origine fait foi. Nous ne garantissons ni l'exhaustivité, ni l'exactitude, ni la
+                disponibilité continue de ces données, et ne sommes pas responsables des erreurs, omissions ou
+                indisponibilités imputables à ces sources tierces. Vous vous engagez à n'utiliser les données
+                obtenues que dans les limites autorisées par les conditions de réutilisation publiées par chacune
+                de ces sources, notamment celles de VIES. Ces données ne constituent ni un conseil juridique, ni
+                fiscal, ni comptable ; il vous appartient de vérifier tout élément dont vous vous servez pour une
+                décision de conformité.
+              </p>
+            </section>
+
+            <section>
+              <h2>10. Ce que vous pouvez faire des données renvoyées</h2>
+              <p>
+                Vous pouvez utiliser les données renvoyées par l'API pour les besoins de votre propre activité
+                professionnelle : vérifier un assujettissement, pré-remplir un formulaire, enrichir votre base
+                clients, alimenter une facture ou un dossier de conformité. Vous pouvez les stocker dans vos
+                propres systèmes et les afficher à vos utilisateurs dans ce cadre.
+              </p>
+              <p>
+                Vous ne pouvez en revanche pas redistribuer ces données en tant que telles, les republier sous
+                forme de base de données, d'annuaire ou de jeu de données consultable par des tiers, ni les
+                revendre en tant que produit de données.
+              </p>
+              <p>
+                Ce qui fonde cette restriction diffère d'une source à l'autre, et nous ne prétendons pas que le
+                régime soit uniforme. Certains registres sont publiés sous une licence ouverte autorisant une
+                large réutilisation ; d'autres l'assortissent de conditions, et certains sont protégés par le
+                droit <em>sui generis</em> du producteur de base de données, qui appartient à l'organisme qui les
+                a constitués. Les règles nationales de réutilisation des informations du secteur public
+                s'appliquent à plusieurs d'entre eux, et VIES a ses propres conditions. Nous ne détenons aucun
+                droit sur ces bases sources et ne vous en concédons aucun : lorsqu'une source autorise davantage
+                que la présente clause, votre droit vient de la licence de cette source et non de nous, et il est
+                utile de la lire avant de s'en prévaloir. À l'inverse, vous ne devez pas faire de ce que vous
+                obtenez ici un usage qu'une source interdit.
+              </p>
+              <p>
+                Distincts de tout cela : l'API, son logiciel, sa documentation et la base que nous constituons
+                (les imports, les dérivations, les normalisations et les agrégations qui transforment des registres
+                épars en une fiche interrogeable), nous appartiennent. Les présentes Conditions vous concèdent un
+                droit d'usage du Service et de ses résultats dans les conditions ci-dessus, et ne vous transfèrent
+                aucun droit sur ces éléments.
+              </p>
+            </section>
+
+            <section>
+              <h2>11. Responsabilité</h2>
+              <p>
+                Dans les limites permises par la loi, notre responsabilité totale, tous préjudices confondus, est
+                limitée au montant des sommes versées au cours des douze mois précédant le fait générateur, et
+                nous ne sommes pas responsables des dommages indirects ou consécutifs (perte de chiffre
+                d'affaires, perte de données, perte d'exploitation, atteinte à l'image). Sont notamment exclus,
+                dans les mêmes limites, les préjudices résultant d'une erreur, d'une omission, d'une obsolescence
+                ou d'une indisponibilité imputable à un registre national ou à VIES, conformément à l'article 9.
+                Cette limitation ne s'applique ni en cas de faute lourde ou dolosive, ni en cas d'atteinte à
+                l'intégrité physique, ni aux responsabilités qu'il est légalement impossible d'exclure ou de
+                limiter. Elle est en outre sans effet sur les responsabilités découlant du RGPD, qui obéissent à
+                leur propre régime et qu'un contrat ne peut ni écarter ni plafonner.
+              </p>
+            </section>
+
+            <section>
+              <h2>12. Résiliation</h2>
+              <p>
+                Vous pouvez résilier votre abonnement à tout moment depuis la console, sans préavis ni frais. La
+                résiliation prend effet au terme de la période mensuelle en cours, déjà réglée : jusqu'à cette
+                date, l'API reste accessible avec le quota du forfait Pro, puis le compte repasse
+                automatiquement au forfait Gratuit sans remboursement au prorata. Vos clés API restent valides et
+                continuent de fonctionner dans la limite du quota du forfait Gratuit.
+              </p>
+              <p>
+                Résilier l'abonnement ne supprime pas le compte. La suppression du compte est une action
+                distincte, disponible depuis la page de facturation. Elle révoque immédiatement toutes vos clés
+                API, qui cessent de répondre en moins d'une minute, et retire vos données personnelles de la base
+                active. Elle n'emporte pas en revanche l'effacement de tout ce qui vous concerne au même instant :
+                les données dont la conservation reste nécessaire (journaux, dans la limite des durées publiées,
+                et factures et pièces comptables pendant leur durée légale) subsistent en archivage à accès
+                restreint jusqu'au terme de ces durées, puis sont détruites ; les sauvegardes techniques suivent
+                leur propre rotation de 30 jours. Le détail figure à la section 7 de la
+                <a href="/privacy/fr/">politique de confidentialité</a>.
+              </p>
+              <p>
+                La suppression en libre-service depuis la console est ouverte dès lors qu'aucun abonnement payant
+                n'est en cours, afin qu'un compte ne soit jamais effacé pendant que Stripe le facture encore :
+                résiliez d'abord, ou attendez le terme de la période. Il s'agit d'une contrainte du bouton, non
+                de vos droits : votre <strong>droit à l'effacement au titre de l'article 17 du RGPD s'exerce à
+                tout moment</strong>, abonnement en cours ou non, en écrivant à
+                <a href="mailto:{{email}}">{{email}}</a>. Nous résilions alors
+                l'abonnement et effaçons le compte nous-mêmes, sous la seule réserve des exceptions prévues à
+                l'article 17, paragraphe 3, principalement les pièces comptables que la loi nous impose de
+                conserver.
+              </p>
+              <p>
+                Nous pouvons suspendre ou résilier un compte qui enfreint les présentes Conditions ou la loi
+                applicable, ainsi qu'en cas de défaut de paiement persistant dans les conditions prévues à
+                l'article 7.
+              </p>
+            </section>
+
+            <section>
+              <h2>13. Droit applicable</h2>
+              <p>
+                Les présentes Conditions sont soumises au droit français. À défaut de résolution amiable, et dans
+                la mesure permise par le droit applicable, les tribunaux de Paris sont seuls compétents pour
+                connaître de tout litige né des présentes. Cette clause ne fait pas échec aux règles impératives
+                de compétence internationale ou nationale qui vous seraient applicables.
+              </p>
+            </section>
+
+            <section>
+              <h2>14. Modifications des présentes Conditions</h2>
+              <p>
+                Nous pouvons faire évoluer ces Conditions ; la date figurant en tête reflète la dernière
+                révision. Trois types de modification prennent effet dès leur publication, parce qu'aucune
+                n'altère ce que vous devez ni ce que vous recevez : une modification <strong>rédactionnelle</strong>
+                (clarification, lien corrigé) ; une modification <strong>technique ou de sécurité</strong> qui ne
+                réduit ni le service ni vos droits ; et une modification <strong>imposée par la loi ou par une
+                autorité</strong>, qui prend effet à la date que ce texte ou cette décision impose.
+              </p>
+              <p>
+                Une <strong>modification substantielle</strong> est celle qui affecte le prix, le quota mensuel,
+                le périmètre du Service ou vos obligations au titre des présentes. Elle vous est notifiée par
+                email au moins 30 jours avant sa date d'entrée en vigueur, indiquée dans la notification. Si vous n'acceptez pas cette modification,
+                vous pouvez résilier sans frais avant cette date, dans les conditions prévues à l'article 12.
+                Une modification substantielle n'est jamais appliquée rétroactivement à une période déjà réglée :
+                un nouveau tarif ne prend effet qu'au renouvellement suivant sa date d'entrée en vigueur.
+              </p>
+            </section>
+
+            <section>
+              <h2>15. Contact</h2>
+              <p>
+                Questions relatives à ces Conditions :
+                <a href="mailto:{{email}}">{{email}}</a>.
+              </p>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include partials/footer.html -->
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

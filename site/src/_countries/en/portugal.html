@@ -1,0 +1,106 @@
+<!-- @meta
+{
+  "title": "Portuguese VAT number: NIF, NIPC and how to identify the company",
+  "description": "PT plus nine digits, the company’s NIF. What the first digit tells you, how the check digit works, and how to find the company behind it.",
+  "h1": "The Portuguese VAT number",
+  "term": "Portuguese VAT identification number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Portugal · PT</p>
+        <h1>The Portuguese VAT number</h1>
+        <p class="section__lead">Nine digits that are the company’s tax number, and whose first digit already tells you what kind of entity is on the other side.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>PT</code> + 9 digits</p>
+        <p><strong>Example:</strong> <code>PT501413197</code></p>
+        <p><strong>Issued by:</strong> the Portuguese tax and customs authority.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Portuguese VAT number is always <strong>eleven characters</strong>: the prefix and the nine digits of the NIF, with no spaces and no letters.</p>
+      <ul class="breakdown">
+        <li><b>PT</b><span>The country code.</span></li>
+        <li><b>5</b><span>The first digit: 5 identifies a legal person.</span></li>
+        <li><b>0141319</b><span>Seven sequential digits.</span></li>
+        <li><b>7</b><span>The check digit.</span></li>
+      </ul>
+      <p>The check digit is computed modulus 11 with weights 9, 8, 7, 6, 5, 4, 3, 2. If the remainder is 0 or 1, the digit is 0.</p>
+      <p>The first digit classifies the entity: <strong>1, 2 and 3</strong> for individuals, <strong>5</strong> for companies, <strong>6</strong> for public administration bodies, <strong>7</strong> for undivided estates and similar, <strong>8</strong> for sole traders, <strong>9</strong> for irregular legal persons and non-residents.</p>
+
+      <h2 id="nif">NIF, NIPC and the registration number</h2>
+      <p>Portugal has already done the simplification: <strong>the NIF and the NIPC are the same number</strong>. The NIPC (the legal person identification number) is simply what the NIF is called when it belongs to a company, and since the introduction of the "company card" it is also the single number used for social security and the commercial register.</p>
+      <p>A company incorporated through the <em>Empresa na Hora</em> same-day procedure receives its NIPC immediately, and the VAT number is that NIPC with <code>PT</code> in front. There is nothing to compute.</p>
+      <div class="callout"><p><strong>Having a NIF is not being VAT registered.</strong> Every entity has a NIF; only those registered for intra-community transactions appear in VIES. A business exempt under article 53 exists, invoices, and does not validate.</p></div>
+
+      <h2 id="find">Identifying the company</h2>
+      <h3>The tax portal</h3>
+      <p>The tax authority offers a public check that confirms whether a NIF is registered and returns the name. It returns no address and is not meant for bulk querying.</p>
+      <h3>The commercial register</h3>
+      <p>The registries institute provides the <strong>certidão permanente</strong> online, carrying the full company record, objects, capital, directors, seat. It is <strong>paid</strong>, per certificate, and there is no open bulk download at all. That is exactly why Portugal has no free source usable at volume.</p>
+      <h3>RCBE</h3>
+      <p>The central register of beneficial ownership publishes some company information tied to the NIPC for free, but it exists for anti-money-laundering purposes and is not a company directory.</p>
+      <h3>VIES</h3>
+      <p>Portugal <strong>discloses the name and the address</strong>. The postcode comes in the form <code>4099-002</code>, with a hyphen, and the locality is often repeated, once on its own and again after the postcode.</p>
+
+      <h2 id="pitfalls">Portugal-specific pitfalls</h2>
+      <ul>
+        <li><strong>The first digit matters.</strong> A number starting 1, 2 or 3 belongs to an individual rather than a company.</li>
+        <li><strong>NIF and NIPC are the same number.</strong> There is no conversion to do between them.</li>
+        <li><strong>Having a NIF is not being VAT registered</strong>, and the article 53 exemption is common among small businesses.</li>
+        <li><strong>The permanent certificate is paid</strong> and there is no free bulk download of the commercial register.</li>
+        <li><strong>The postcode carries a hyphen</strong> and the locality is repeated in the address VIES returns.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Portuguese VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Portuguese VAT number have?</summary>
+          <p>Nine after the <code>PT</code> prefix, eleven characters in total.</p>
+        </details>
+        <details>
+          <summary>Are the NIF and the NIPC the same thing?</summary>
+          <p>Yes. The NIPC is what the NIF is called when it belongs to a legal person; the number is identical.</p>
+        </details>
+        <details>
+          <summary>What does the first digit mean?</summary>
+          <p>The type of entity: 1 to 3 for individuals, 5 for companies, 6 for public administration, 8 for sole traders, 9 for non-residents and irregular legal persons.</p>
+        </details>
+        <details>
+          <summary>Why does VIES reject a valid NIF?</summary>
+          <p>Almost always because the entity is not registered for intra-community transactions, or is exempt under article 53 of the Portuguese VAT code.</p>
+        </details>
+        <details>
+          <summary>Is there a free file of Portuguese companies?</summary>
+          <p>No. The permanent certificate is paid and the commercial register offers no bulk download.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/">Germany</a></li>
+            <li><a href="/en/vat-number/italy/">Italy</a></li>
+            <li><a href="/en/vat-number/spain/">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

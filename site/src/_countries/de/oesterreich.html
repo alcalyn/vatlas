@@ -1,0 +1,112 @@
+<!-- @meta
+{
+  "title": "UID-Nummer Österreich: Aufbau, Prüfziffer und Abfrage",
+  "description": "ATU plus acht Ziffern. Wie sich die UID von Steuernummer und Firmenbuchnummer unterscheidet, und warum das Firmenbuch nicht nach ihr durchsuchbar ist.",
+  "h1": "Die österreichische UID-Nummer",
+  "term": "UID-Nummer",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Österreich · AT</p>
+        <h1>Die österreichische UID-Nummer</h1>
+        <p class="section__lead">Elf Zeichen, von denen die drei ersten schon feststehen. Österreich ist das einzige Land der Union, dessen Kennung einen Buchstaben mitten im Präfix trägt.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>ATU</code> + 8 Ziffern</p>
+        <p><strong>Beispiel:</strong> <code>ATU14189108</code></p>
+        <p><strong>Vergeben von:</strong> dem zuständigen Finanzamt, auf Antrag (Formular U 15).</p>
+      </div>
+
+      <h2 id="format">Der Aufbau</h2>
+      <p>Eine österreichische UID-Nummer ist immer <strong>elf Zeichen</strong> lang. Der Buchstabe <code>U</code> gehört fest dazu und ist kein Tippfehler: Er steht für <em>Umsatzsteuer</em> und ist der einzige Buchstabe, den irgendein EU-Präfix nach dem Ländercode führt.</p>
+      <ul class="breakdown">
+        <li><b>AT</b><span>Der Ländercode.</span></li>
+        <li><b>U</b><span>Fester Bestandteil jeder österreichischen UID.</span></li>
+        <li><b>1418910</b><span>Sieben Ziffern zur Identifikation.</span></li>
+        <li><b>8</b><span>Die Prüfziffer.</span></li>
+      </ul>
+      <p>Die letzte Ziffer ist eine Prüfziffer über die sieben vorangehenden, sodass jeder einzelne Zahlendreher sofort auffällt. Sie sagt nichts darüber aus, ob die Nummer je vergeben wurde.</p>
+
+      <h2 id="abgrenzung">UID, Steuernummer, Firmenbuchnummer</h2>
+      <p>Österreich führt drei Nummern nebeneinander, und nur die erste zählt im innergemeinschaftlichen Handel.</p>
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Die österreichischen Unternehmenskennungen im Vergleich</caption>
+          <thead><tr><th scope="col">Nummer</th><th scope="col">Format</th><th scope="col">Vergeben von</th><th scope="col">Wofür</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">UID-Nummer</th><td><code>ATU</code> + 8 Ziffern</td><td>Finanzamt</td><td>Innergemeinschaftlicher Waren- und Dienstleistungsverkehr</td></tr>
+            <tr><th scope="row">Steuernummer</th><td>9 Ziffern (<code>FF-NNNNNNP</code>)</td><td>Finanzamt</td><td>Inländische Abgaben. Die ersten beiden Ziffern sind die Finanzamtsnummer</td></tr>
+            <tr><th scope="row">Firmenbuchnummer</th><td><code>FN</code> + Zahl + Prüfbuchstabe</td><td>Firmenbuchgericht</td><td>Gesellschaftsrechtliche Identifikation</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Die Steuernummer wird oft mit der UID verwechselt, weil beide vom Finanzamt kommen. Sie ist jedoch rein national und taugt für eine Rechnung ins EU-Ausland nicht.</p>
+
+      <h2 id="recherche">Das Unternehmen hinter einer Nummer finden</h2>
+      <h3>Das Firmenbuch</h3>
+      <p>Das österreichische Firmenbuch ist vollständig und verlässlich, und <strong>nicht frei zugänglich</strong>. Abfragen laufen über gewerbliche Verrechnungsstellen, jede einzelne kostet, und gesucht wird nach Firma oder Firmenbuchnummer, nie nach UID. Ein offener Massendatensatz existiert nicht.</p>
+      <h3>FinanzOnline und die Stufe-2-Abfrage</h3>
+      <p>Über FinanzOnline bietet das Finanzministerium eine Bestätigungsabfrage in zwei Stufen an. <strong>Stufe 1</strong> prüft nur, ob die UID gültig ist. <strong>Stufe 2</strong> vergleicht zusätzlich Name und Anschrift, die Sie selbst eingeben, mit den Daten des anderen Mitgliedstaats, sie gibt diese Daten also nicht heraus, sondern bestätigt sie. Für den Nachweis der Steuerfreiheit ist genau das gefordert.</p>
+      <h3>VIES</h3>
+      <p>Österreich gibt über VIES <strong>Name und Anschrift frei</strong>, was es von Deutschland unterscheidet. Damit ist VIES für österreichische Nummern die einzige kostenlose Quelle, die von der Nummer zum Unternehmen führt.</p>
+
+      <h2 id="fallstricke">Typisch österreichische Fallstricke</h2>
+      <ul>
+        <li><strong>Das <code>U</code> wird ständig vergessen.</strong> <code>AT14189108</code> ist keine gültige Nummer; ein Validator, der es stillschweigend ergänzt, verdeckt einen Eingabefehler.</li>
+        <li><strong>Kleinunternehmer erhalten keine UID automatisch.</strong> Wer unter der Grenze bleibt, muss sie eigens beantragen, sobald er innergemeinschaftlich einkauft.</li>
+        <li><strong>Das Firmenbuch ist kostenpflichtig.</strong> Anders als in Belgien oder Estland gibt es keine offene Massendatei, aus der sich ein Verzeichnis bauen ließe.</li>
+        <li><strong>Die UID ist nicht aus der Firmenbuchnummer ableitbar</strong> und umgekehrt ebenso wenig.</li>
+      </ul>
+
+      <!-- @include partials/country/de.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Häufige Fragen</p>
+        <h2>Die UID-Nummer kurz erklärt</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Wie viele Stellen hat eine österreichische UID-Nummer?</summary>
+          <p>Elf: das Präfix <code>ATU</code> und acht Ziffern, von denen die letzte eine Prüfziffer ist.</p>
+        </details>
+        <details>
+          <summary>Wofür steht das U in ATU?</summary>
+          <p>Für <em>Umsatzsteuer</em>. Es ist fester Bestandteil jeder österreichischen UID und darf nicht weggelassen werden.</p>
+        </details>
+        <details>
+          <summary>Was ist der Unterschied zwischen UID und Steuernummer?</summary>
+          <p>Die Steuernummer ist rein national und beginnt mit der Nummer des zuständigen Finanzamts. Die UID gilt für den innergemeinschaftlichen Handel und ist die einzige, die auf einer Rechnung ins EU-Ausland gehört.</p>
+        </details>
+        <details>
+          <summary>Was bringt die Stufe-2-Abfrage?</summary>
+          <p>Sie bestätigt Name und Anschrift, die Sie selbst eingeben, gegen die Daten des anderen Mitgliedstaats. Für den Nachweis der Steuerbefreiung bei innergemeinschaftlichen Lieferungen ist sie der geforderte Sorgfaltsbeweis.</p>
+        </details>
+        <details>
+          <summary>Kann ich das Firmenbuch kostenlos durchsuchen?</summary>
+          <p>Nein. Abfragen laufen über gewerbliche Verrechnungsstellen und sind kostenpflichtig; einen offenen Massendatensatz gibt es nicht.</p>
+        </details>
+      </div>
+
+      <h2>Die USt-IdNr in anderen Ländern</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+            <li><a href="/de/umsatzsteuer-identifikationsnummer/deutschland/">Deutschland</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/" hreflang="en" lang="en">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/" hreflang="en" lang="en">Belgium</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Aktualisiert am 28. August 2026.</p>
+    </div>
+  </section>
+</main>

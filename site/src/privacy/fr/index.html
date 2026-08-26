@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Politique de confidentialité · Vatlas</title>
+    <meta name="description" content="Comment Vatlas collecte, utilise et protège les données personnelles." />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="author" content="Vatlas" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://vatlas.dev/privacy/fr/" />
+    <link rel="alternate" hreflang="en" href="https://vatlas.dev/privacy/en/" />
+    <link rel="alternate" hreflang="fr" href="https://vatlas.dev/privacy/fr/" />
+    <link rel="alternate" hreflang="x-default" href="https://vatlas.dev/privacy/en/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta name="console-origin" content="https://console.vatlas.dev" />
+    <script>
+      try {
+        var url = new URLSearchParams(location.search).get('theme')
+        var stored = url === 'light' || url === 'dark' ? url : localStorage.getItem('vatlas-theme')
+        if (stored === 'light' || stored === 'dark') {
+          document.documentElement.dataset.theme = stored
+          localStorage.setItem('vatlas-theme', stored)
+        }
+      } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <!-- @include partials/header.html -->
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <p class="eyebrow">Légal</p>
+            <h1>Politique de confidentialité</h1>
+            <p class="section__lead">
+              Cette politique explique quelles données personnelles Vatlas traite, pourquoi, et les droits dont
+              vous disposez à leur égard en vertu du RGPD.
+            </p>
+            <p class="note">Dernière mise à jour le 28 août 2026.</p>
+          </div>
+
+          <div class="docs__content legal-content">
+            <section>
+              <h2>1. Responsable du traitement</h2>
+              <p>
+                JULIEN MAULNY EURL, 9 Rue des Colonnes, 75002 Paris, France,
+                <a href="mailto:{{email}}">{{email}}</a>.
+              </p>
+              <p>
+                Après analyse des critères de l'article 37 du RGPD, JULIEN MAULNY EURL considère qu'aucune
+                désignation obligatoire d'un délégué à la protection des données ne s'applique actuellement à ses
+                traitements, et n'en a pas désigné. Toute question relative à la
+                protection des données peut être adressée à l'adresse ci-dessus, qui est le point de contact pour
+                l'exercice de vos droits.
+              </p>
+            </section>
+
+            <section>
+              <h2>2. Ce que nous collectons</h2>
+              <p>
+                Une adresse email de compte, éventuellement un nom d'entreprise et une adresse de facturation ;
+                des journaux d'appels API (horodatage, endpoint, code de statut, numéro de TVA interrogé)
+                nécessaires pour faire respecter le quota mensuel et produire votre historique d'utilisation ;
+                des journaux techniques de connexion (adresse IP, user-agent, horodatage) à des fins de sécurité
+                et de prévention des abus ; un identifiant client Stripe et les données de facturation associées.
+                Les données de carte bancaire sont saisies directement dans les interfaces de paiement Stripe et
+                ne sont pas stockées par JULIEN MAULNY EURL.
+              </p>
+              <p>
+                <strong>Le bac à sable de la page d'accueil</strong> résout réellement un numéro de TVA, sans
+                compte. Pour compter les quelques recherches par semaine qu'il autorise depuis une même
+                connexion, l'adresse IP de la requête est enregistrée seule (sans compte, sans cookie, sans
+                aucun identifiant à côté) et rien d'autre de la requête n'est conservé. Le numéro que vous
+                saisissez est interrogé exactement comme l'API interroge le vôtre, et n'est pas rattaché à vous.
+              </p>
+              <p>
+                <strong>Vos identifiants d'accès</strong> sont conservés sous deux formes distinctes, pour deux
+                usages différents :
+              </p>
+              <ul>
+                <li>
+                  une <strong>empreinte non réversible</strong> (hachage à sens unique) de votre jeton de session
+                  et de chaque clé API : c'est la seule forme utilisée pour authentifier une requête, et elle ne
+                  permet pas de reconstituer la valeur d'origine ;
+                </li>
+                <li>
+                  pour les clés API uniquement, une <strong>copie chiffrée</strong> et réversible, dont l'unique
+                  fonction est de vous permettre de réafficher une clé active depuis la console. Elle n'est
+                  jamais lue lors de l'authentification d'un appel. La clé de déchiffrement est détenue dans
+                  l'environnement d'exécution du serveur et non en base de données, de sorte qu'une copie de la
+                  seule base ne permet pas d'ouvrir ces valeurs. Dès qu'une clé est révoquée, elle n'est plus
+                  jamais réaffichée : seule sa forme masquée reste visible.
+                </li>
+              </ul>
+              <p>
+                L'adresse email est nécessaire à la création et à la gestion du compte : sans elle, nous ne
+                pouvons pas créer de compte ni fournir le service.
+              </p>
+              <p>
+                Indépendamment de tout compte, et que vous en ayez un ou non, la simple consultation du site
+                public <strong>vatlas.dev</strong> donne lieu à une <strong>mesure d'audience</strong> : page
+                consultée, page d'origine et caractéristiques que votre navigateur annonce à tous les sites qu'il
+                visite. Rien n'est déposé sur votre appareil pour l'obtenir, et elle n'est jamais rattachée à un
+                compte. La section 5 détaille ce qui est mesuré et comment vous y opposer.
+              </p>
+            </section>
+
+            <section>
+              <h2>3. Pourquoi nous les traitons, et sur quelle base</h2>
+              <div class="table-wrap section--stack">
+                <table class="table">
+                  <caption class="sr-only">Finalités, données et bases légales des traitements</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Traitement</th>
+                      <th scope="col">Données concernées</th>
+                      <th scope="col">Finalité</th>
+                      <th scope="col">Base légale</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Création de compte</td>
+                      <td>Email, nom d'entreprise</td>
+                      <td>Créer et gérer le compte</td>
+                      <td>Exécution du contrat</td>
+                    </tr>
+                    <tr>
+                      <td>Authentification</td>
+                      <td>Session, clé API (hachées)</td>
+                      <td>Sécuriser l'accès au compte et à l'API</td>
+                      <td>Exécution du contrat</td>
+                    </tr>
+                    <tr>
+                      <td>Quota et usage</td>
+                      <td>Journaux d'appels API</td>
+                      <td>Faire respecter le forfait souscrit, produire l'historique d'utilisation</td>
+                      <td>Exécution du contrat</td>
+                    </tr>
+                    <tr>
+                      <td>Paiement</td>
+                      <td>Identifiant Stripe, moyen de paiement</td>
+                      <td>Prélever le montant dû pour le forfait Pro</td>
+                      <td>Exécution du contrat</td>
+                    </tr>
+                    <tr>
+                      <td>Facturation et comptabilité</td>
+                      <td>Factures, données de facturation</td>
+                      <td>Émettre des factures conformes, tenir la comptabilité</td>
+                      <td>Obligation légale</td>
+                    </tr>
+                    <tr>
+                      <td>Sécurité</td>
+                      <td>Adresse IP, user-agent, journaux techniques</td>
+                      <td>Prévenir la fraude et les abus, sécuriser le service</td>
+                      <td>Intérêt légitime</td>
+                    </tr>
+                    <tr>
+                      <td>Support (demande liée au compte)</td>
+                      <td>Email, contenu de la demande</td>
+                      <td>Répondre à une demande liée à l'exécution du service</td>
+                      <td>Exécution du contrat</td>
+                    </tr>
+                    <tr>
+                      <td>Support (autre demande)</td>
+                      <td>Email, contenu de la demande</td>
+                      <td>Répondre à une question générale, avant ou hors contrat</td>
+                      <td>Intérêt légitime</td>
+                    </tr>
+                    <tr>
+                      <td>Mesure d'audience</td>
+                      <td>Page consultée, page d'origine, pays approximatif, navigateur, système d'exploitation, type d'appareil</td>
+                      <td>Mesurer la fréquentation du site et l'améliorer</td>
+                      <td>Intérêt légitime</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="note">
+                Lorsque nous invoquons notre intérêt légitime, celui-ci repose sur un besoin réel (sécuriser le
+                service, prévenir les abus et connaître la fréquentation du site), mis en balance avec vos droits
+                et libertés, conformément aux recommandations de la CNIL. Pour la mesure d'audience, c'est cette
+                mise en balance qui rend le traitement licite sans votre consentement, et elle ne tient que parce
+                que la mesure se limite à ce que décrit la section 5 : aucun cookie, aucun identifiant qui survive
+                à la journée, aucun suivi d'un site à l'autre. Vous pouvez vous y opposer à tout moment, par les
+                moyens indiqués à la section 5.
+              </p>
+            </section>
+
+            <section>
+              <h2>4. Qui reçoit ces données</h2>
+              <p>Les données ci-dessus peuvent être communiquées aux catégories de destinataires suivantes :</p>
+              <ul>
+                <li>
+                  le <strong>personnel autorisé</strong> de JULIEN MAULNY EURL, dans la limite de ce qui est
+                  nécessaire à son rôle ;
+                </li>
+                <li>
+                  <strong>OVH SAS</strong>, notre hébergeur, qui exploite les serveurs sur lesquels ces données
+                  résident, en qualité de <em>sous-traitant</em>, agissant sur nos seules instructions ;
+                </li>
+                <li>
+                  <strong>Stripe</strong>, pour l'encaissement du forfait Pro. Sa qualité varie selon le
+                  traitement et le service utilisé : il agit en <em>sous-traitant</em> lorsqu'il exécute une
+                  opération de paiement pour notre compte et sur nos instructions, et en <em>responsable de
+                  traitement</em> pour ce qu'il fait pour son propre compte : lutte contre la fraude, conformité
+                  réglementaire et prudentielle, sécurité de son réseau. Aucune de ces deux qualités ne vaut pour
+                  l'ensemble de son intervention (voir la section 6) ;
+                </li>
+                <li>
+                  <strong>Umami Software, Inc.</strong>, qui exploite l'outil de mesure d'audience utilisé sur le
+                  site public, en qualité de <em>sous-traitant</em>, agissant sur nos seules instructions. Elle
+                  ne reçoit que les données de mesure décrites à la section 5 : aucune donnée de compte, aucune
+                  donnée de facturation et rien de ce que vous envoyez à l'API ne lui parvient, l'outil n'étant
+                  déployé que sur <strong>vatlas.dev</strong> et non sur la console (voir la section 6 pour le
+                  transfert) ;
+                </li>
+                <li>
+                  les <strong>autorités publiques ou judiciaires</strong>, lorsqu'une obligation légale nous y
+                  contraint : destinataires imposés, et non choisis par nous.
+                </li>
+              </ul>
+              <p>
+                Les emails transactionnels (vérification d'adresse, réinitialisation de mot de passe, avis de sécurité, factures) sont envoyés depuis notre propre serveur
+                de messagerie ; nous ne faisons appel à aucun prestataire d'emailing tiers. Nous n'utilisons aucun
+                réseau publicitaire, ni aucun outil d'analyse en dehors de la seule mesure d'audience sans cookie
+                exposée à la section 5.
+              </p>
+            </section>
+
+            <section>
+              <h2>5. Cookies et traceurs</h2>
+              <div class="table-wrap section--stack">
+                <table class="table">
+                  <caption class="sr-only">Cookies déposés par la console et le site</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Nom</th>
+                      <th scope="col">Émis par</th>
+                      <th scope="col">Finalité</th>
+                      <th scope="col">Durée</th>
+                      <th scope="col">Caractère</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>vatlas_session</code></td>
+                      <td>Console (console.vatlas.dev)</td>
+                      <td>Maintenir la session connectée</td>
+                      <td>30 jours</td>
+                      <td>Strictement nécessaire</td>
+                    </tr>
+                    <tr>
+                      <td><code>vatlas-locale</code></td>
+                      <td>Console (console.vatlas.dev)</td>
+                      <td>Mémoriser la langue choisie</td>
+                      <td>1 an</td>
+                      <td>Fonctionnel, exempté de consentement</td>
+                    </tr>
+                    <tr>
+                      <td><code>vatlas-theme</code> (stockage local)</td>
+                      <td>Site (vatlas.dev)</td>
+                      <td>Mémoriser le thème clair/sombre choisi</td>
+                      <td>Jusqu'à effacement par vos soins</td>
+                      <td>Fonctionnel, exempté de consentement</td>
+                    </tr>
+                    <tr>
+                      <td><code>vatlas.tryit.answers</code> (stockage local)</td>
+                      <td>Site (vatlas.dev)</td>
+                      <td>Conserver les dernières réponses obtenues dans le bac à sable de la page d'accueil</td>
+                      <td>Jusqu'à effacement par vos soins</td>
+                      <td>Fonctionnel, exempté de consentement</td>
+                    </tr>
+                    <tr>
+                      <td>Cookies Stripe</td>
+                      <td>Stripe, sur ses propres pages Checkout / Customer Portal</td>
+                      <td>Paiement, détection de fraude</td>
+                      <td>Selon la politique de Stripe</td>
+                      <td>Tiers, hors de notre contrôle</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                Le site <strong>vatlas.dev</strong> ne dépose aucun cookie. Il utilise en revanche le stockage
+                local de votre navigateur (<code>localStorage</code>) pour retenir votre choix de thème et les
+                réponses que le bac à sable de la page d'accueil vous a déjà données : cette technologie relève du
+                même régime que les cookies au sens de l'article 82 de la loi Informatique et Libertés, et ces
+                deux entrées figurent donc dans le tableau ci-dessus. Elles restent dans votre navigateur et ne
+                nous sont jamais transmises.
+              </p>
+              <p>
+                Les quatre traceurs que nous mettons en œuvre (<code>vatlas_session</code>,
+                <code>vatlas-locale</code>, <code>vatlas-theme</code> et <code>vatlas.tryit.answers</code>) sont
+                exemptés de consentement au titre des recommandations de la CNIL : le premier parce qu'il est
+                strictement nécessaire à l'authentification, les autres parce qu'ils se limitent à mémoriser ce
+                que vous avez explicitement demandé (votre langue, votre thème, la réponse que le bac à sable
+                vient de vous donner), ce qui constitue un élément intrinsèque et attendu du service. Aucun n'est utilisé à d'autres fins. Nous ne mettons en
+                œuvre aucun traceur publicitaire, ni aucun traceur pour la mesure d'audience décrite ci-dessous.
+              </p>
+              <p>
+                <strong>Une mesure d'audience sans traceur.</strong> Le site <strong>vatlas.dev</strong> utilise
+                <strong>Umami</strong> pour comptabiliser les pages vues. Il ne figure pas dans le tableau
+                ci-dessus, faute d'y avoir quoi que ce soit à inscrire : le script ne dépose aucun cookie et
+                n'écrit aucune entrée dans le stockage local. La seule chose qu'il lise sur votre appareil est son
+                propre indicateur d'opposition, décrit plus bas, si vous l'avez positionné.
+              </p>
+              <p>
+                C'est ce qui règle la question du consentement. L'article 82 de la loi Informatique et Libertés
+                encadre le fait <em>d'inscrire des informations dans votre équipement terminal, ou d'accéder à des
+                informations déjà stockées dans celui-ci</em>. Cette mesure ne fait ni l'un ni l'autre : l'article
+                82 ne lui est donc pas applicable, et aucun consentement (donc aucun bandeau cookies) n'est
+                requis. Elle reste un traitement de données personnelles au sens du RGPD, ce pourquoi elle figure à
+                la section 3 avec sa base légale, et ce pourquoi vous pouvez vous y opposer.
+              </p>
+              <p>
+                Ce qui nous est transmis est l'adresse de la page consultée, la page d'origine, et les
+                caractéristiques que votre navigateur annonce à tous les sites qu'il visite : sa langue, la taille
+                de l'écran, le navigateur, le système d'exploitation et le type d'appareil. Votre adresse IP est
+                utilisée <em>en transit</em> pour en déduire un pays approximatif et un identifiant de visiteur
+                haché au moyen d'un secret renouvelé chaque jour. L'adresse IP elle-même n'est pas conservée, et
+                l'identifiant qui s'y substitue est inutilisable dès le lendemain, ne permet pas de remonter jusqu'à
+                vous et n'est ni partagé ni suivi sur un autre site. Nous ne constituons aucun profil et ne relions
+                jamais ces données à votre compte.
+              </p>
+              <p>
+                <strong>Comment vous y opposer.</strong> La mesure est paramétrée pour respecter le signal
+                <a href="https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/DNT" target="_blank" rel="noopener">Do&nbsp;Not&nbsp;Track</a> :
+                l'activer dans votre navigateur suffit à l'interrompre sur ce site, sans autre démarche. Vous
+                pouvez également bloquer le script au moyen de n'importe quel bloqueur de contenu, ou placer la clé
+                <code>umami.disabled</code> à <code>1</code> dans le stockage local de ce site ; le script la
+                vérifie avant tout envoi. Vous pouvez enfin nous écrire à l'adresse figurant à la section 1, et
+                nous y donnerons suite. Vous opposer ne vous coûte rien : le site fonctionne à l'identique dans
+                les deux cas.
+              </p>
+              <p>
+                Les traceurs déposés lors d'un paiement le sont par <strong>Stripe</strong>, sur ses propres pages
+                Checkout et Customer Portal, pour ses besoins de paiement et de détection de fraude. Ils relèvent
+                de Stripe et de ses propres politiques : voir la
+                <a href="https://stripe.com/fr/privacy" target="_blank" rel="noopener">politique de confidentialité de Stripe</a>
+                pour leur détail et les choix qui vous y sont offerts.
+              </p>
+            </section>
+
+            <section>
+              <h2>6. Transferts internationaux</h2>
+              <p>
+                Nos serveurs et notre hébergeur sont situés en France, et aucune donnée de compte ne quitte
+                l'Espace économique européen de notre fait. Stripe peut en revanche traiter certaines données de
+                facturation dans des pays tiers, notamment les États-Unis.
+              </p>
+              <p>
+                La mesure d'audience évoquée à la section 5 est elle aussi exploitée depuis l'extérieur de l'Union
+                européenne : <strong>Umami Software, Inc.</strong> est établie aux États-Unis et exploite le
+                service depuis des centres de données situés dans l'Union européenne et aux États-Unis. La garantie
+                sur laquelle nous nous appuyons à ce titre est constituée par les <strong>clauses contractuelles
+                types</strong> de la Commission européenne, intégrées à l'accord de traitement des données conclu
+                avec cette société. Le transfert ne porte que sur les données de mesure : aucune donnée de compte,
+                de facturation ou d'API n'entre dans son périmètre, l'outil ne fonctionnant que sur le site public.
+              </p>
+              <p>
+                Il n'existe pas un mécanisme de transfert unique : celui qui s'applique dépend du traitement
+                considéré, du pays de destination et de l'entité du groupe Stripe concernée. Stripe indique
+                recourir, selon les cas, à une décision d'adéquation lorsque le pays en bénéficie, au cadre de
+                protection des données UE-États-Unis lorsque l'entité destinataire y est certifiée, et aux clauses
+                contractuelles types de la Commission européenne assorties de mesures supplémentaires dans les
+                autres cas. Nous ne reprenons pas ici une qualification figée qui pourrait cesser d'être exacte.
+                Stripe publie le mécanisme en vigueur, ainsi que l'entité du groupe qui contracte avec les clients
+                européens, dans ses propres conditions de traitement des données ; vous pouvez également nous
+                écrire : nous vous indiquerons quelle garantie couvre vos données de facturation et vous en
+                obtiendrons une copie. Voir la
+                <a href="https://stripe.com/fr/privacy" target="_blank" rel="noopener">politique de confidentialité de Stripe</a>
+                pour le détail des garanties applicables à chaque traitement.
+              </p>
+            </section>
+
+            <section>
+              <h2>7. Durée de conservation</h2>
+              <p>Chaque durée est déterminée par la finalité qui la justifie :</p>
+              <ul>
+                <li>
+                  Données de compte : tant que le compte existe. À la suppression, les champs identifiants (adresse email, informations de facturation) sont écrasés dans la base active
+                  <strong>immédiatement</strong>, et toute copie résiduelle hors de celle-ci est purgée sous
+                  30 jours. Un compte resté <strong>inactif pendant 3 ans</strong> (aucune connexion ni aucun
+                  appel API) est supprimé d'office, après un email d'avertissement envoyé un mois avant ;
+                </li>
+                <li>
+                  Journaux d'appels API détaillés (numéro de TVA interrogé, horodatage, code de statut) :
+                  <strong>90 jours</strong>. Le quota étant mensuel, cette durée couvre le mois en cours et le
+                  mois précédent, ce qui permet de traiter une contestation de facturation portant sur la période
+                  écoulée. Au-delà, seul le compteur agrégé est conservé ;
+                </li>
+                <li>
+                  Historique d'audit (la réponse renvoyée par l'API pour un numéro de TVA, avec le registre dont
+                  elle provient et sa date) : <strong>24 mois sur l'offre Pro ; sur l'offre Free, seules
+                  les 3 dernières réponses</strong> sont conservées, tout le reste étant supprimé chaque nuit. Il
+                  est consultable par vous, depuis la console comme via l'API. Sur l'offre Pro, cette durée
+                  est plus longue que celle des journaux d'appels ci-dessus, et elle est justifiée par une
+                  finalité différente : pouvoir établir a posteriori ce que le service vous a répondu au sujet
+                  d'un partenaire commercial le jour où vous vous en êtes remis à lui, ce qui correspond à la
+                  période pendant laquelle un litige de TVA peut encore utilement être soulevé. Il est supprimé
+                  purement et simplement à la suppression du compte, et n'est jamais conservé indéfiniment ;
+                </li>
+                <li>
+                  Surveillances, les numéros de TVA dont vous avez demandé à être prévenu en cas de changement,
+                  et l'adresse de rappel indiquée pour chacun : conservées <strong>tant que vous conservez la
+                  surveillance</strong>, et supprimées avec elle. Il s'agit d'une instruction permanente de votre
+                  part, non d'une trace d'activité : il n'y a donc pas de durée distincte à écouler. La
+                  suppression du compte les supprime toutes ;
+                </li>
+                <li>
+                  Traces des rappels que nous vous avons envoyés (adresse appelée, charge livrée, statut renvoyé
+                  par votre endpoint) : <strong>90 jours</strong>, la même durée que les journaux d'appels
+                  ci-dessus et pour la même raison : une charge contient la dénomination et l'adresse d'une
+                  entreprise. Leur finalité est de vous permettre de déboguer votre propre endpoint, et personne
+                  ne débogue à partir d'une requête de l'hiver dernier ;
+                </li>
+                <li>
+                  Lookups asynchrones une fois terminés, avec la trace de chaque tentative :
+                  <strong>90 jours</strong> à compter de leur fin. Un lookup encore en cours est conservé jusqu'à
+                  ce qu'il réponde ou soit abandonné, soit une semaine au plus ;
+                </li>
+                <li>Compteurs d'utilisation agrégés (nombre de requêtes par mois, sans le détail des numéros interrogés), affichés dans votre historique de consommation sur la console : conservés tant que le compte existe ;</li>
+                <li>Journaux techniques de sécurité (IP, user-agent) : 12 mois, durée usuelle pour investiguer un incident de sécurité ou un usage abusif détecté a posteriori ;</li>
+                <li>Tentatives de connexion échouées et limitation des inscriptions (une adresse IP, et le compte visé pour une connexion échouée) : <strong>30 jours</strong>. Elles ne comptent que sur un quart d'heure à une heure, et une connexion réussie supprime aussitôt les échecs du compte ;</li>
+                <li>Compteur du bac à sable de la page d'accueil (une adresse IP, seule) : <strong>30 jours</strong>. Il cesse de compter au bout d'une semaine (la fenêtre qu'il fait respecter) et est supprimé un mois plus tard, au même titre que les journaux de sécurité auxquels il se réduit alors ;</li>
+                <li>
+                  Données de mesure d'audience : <strong>25 mois</strong>, plafond retenu par la CNIL pour cette
+                  finalité, au terme desquels elles sont supprimées. L'identifiant quotidien de visiteur décrit à
+                  la section 5 a pour sa part une vie bien plus courte : il cesse d'être utilisable à la fin de
+                  chaque journée, lorsque le secret dont il dérive est renouvelé ;
+                </li>
+                <li>
+                  Demandes de support : 3 ans à compter du dernier échange, durée retenue pour pouvoir retrouver
+                  le contexte d'un incident qui se reproduit et justifier de la suite donnée à une réclamation,
+                  sans excéder le délai pendant lequel un différend contractuel peut encore être utilement discuté ;
+                </li>
+                <li>
+                  Sauvegardes techniques : 30 jours glissants. Une donnée supprimée subsiste donc au plus 30 jours
+                  dans une sauvegarde, dont elle disparaît par rotation ; une sauvegarde n'est jamais restaurée
+                  pour ressusciter une donnée supprimée, mais uniquement à la suite d'un incident affectant
+                  l'ensemble du service.
+                </li>
+              </ul>
+              <p>
+                <strong>Factures et pièces comptables.</strong> Chaque document comptable est conservé pendant la
+                durée légale qui lui est applicable, notamment dix ans à compter de la clôture de l'exercice
+                lorsque cette durée s'applique. Les données personnelles qu'ils contiennent (nom, adresse de facturation) suivent cette
+                même durée, mais sortent de la base active dès que la relation commerciale prend fin : elles
+                passent en <strong>archivage intermédiaire</strong>, avec un accès restreint aux seules personnes
+                chargées du suivi comptable et des éventuels contentieux, et ne sont plus utilisées pour faire
+                fonctionner le service.
+              </p>
+              <p>
+                Une clé API révoquée ou une session expirée est retirée de l'usage actif immédiatement, bien que
+                son hachage puisse subsister dans un journal jusqu'au terme des durées ci-dessus, à des fins
+                d'audit et de sécurité.
+              </p>
+              <p>
+                <strong>Supprimer n'est pas effacer partout au même instant.</strong> La suppression de votre
+                compte entraîne la suppression immédiate de vos données de la <em>base active</em> : votre adresse
+                email, vos informations de facturation et vos clés cessent d'exister en tant que telles et le
+                service ne peut plus vous identifier. Les données dont la conservation reste nécessaire (journaux
+                dans la limite des durées ci-dessus, pièces comptables pendant leur durée légale) subsistent en
+                archivage, à accès restreint, jusqu'au terme de ces durées, puis sont détruites. Les sauvegardes
+                techniques suivent leur propre cycle de 30 jours glissants.
+              </p>
+            </section>
+
+            <section>
+              <h2>8. Décision automatisée</h2>
+              <p>
+                Nous ne prenons aucune décision entièrement automatisée produisant des effets juridiques à votre
+                égard ou vous affectant de manière significative. Une clé API peut être suspendue automatiquement
+                par notre système de prévention des abus en cas d'usage anormal ; il s'agit d'une mesure
+                purement technique, réversible, que vous pouvez contester en nous contactant.
+              </p>
+            </section>
+
+            <section>
+              <h2>9. Vos droits</h2>
+              <p>
+                <strong>La plupart s'exercent seul, sans nous écrire.</strong> La console comporte une page
+                <a href="{{consoleOrigin}}/data?lang=fr">Données personnelles</a> qui liste ce que nous détenons
+                sur vous, lu dans la base au moment où vous l'ouvrez, en trois blocs : ce qui est une donnée
+                personnelle vous concernant, ce qui relève des données de compte et ne devient personnel que
+                parce que c'est rattaché à vous, et ce qui porte sur les sociétés que vous avez consultées, qui
+                sont les données d'autrui et non les vôtres. Chaque catégorie indique pourquoi nous la détenons,
+                sur quelle base légale, pendant combien de temps et ce que nous en faisons. Les deux exports qui
+                y sont proposés, l'un en JSON et l'autre en texte, sont le droit à la portabilité en pratique, et
+                ils contiennent davantage que ce que la page affiche. Sous chaque catégorie qui peut l'offrir
+                figure un bouton de suppression ; là où il n'y en a pas, la page nomme l'obligation qui s'y
+                oppose, et le paragraphe ci-dessous s'applique alors.
+              </p>
+              <p>
+                Dans les conditions prévues par le RGPD, vous disposez de droits d'accès, de rectification,
+                d'effacement et de limitation sur vos données, sous réserve des exceptions prévues par ces mêmes
+                textes, notamment lorsque la conservation est nécessaire au respect d'une obligation légale (par
+                exemple une facture pendant sa durée de conservation comptable). Le droit à la portabilité, prévu par
+                l'article 20 du RGPD, est plus étroit que les précédents : il porte sur les seules données que
+                vous nous avez vous-même fournies, traitées de manière automatisée sur le fondement du contrat ou
+                du consentement, indépendamment de quoi vous pouvez nous demander à tout moment un export de vos
+                données de compte et d'utilisation, ce que nous fournissons à titre contractuel. L'effacement
+                s'exerce qu'un abonnement soit en cours ou non : le bouton de suppression de la console vous
+                demande de résilier d'abord, mais une demande adressée à l'adresse ci-dessous est honorée dans
+                tous les cas, sous réserve des exceptions de l'article 17, paragraphe 3 ; le droit d'opposition s'applique aux traitements fondés sur notre
+                intérêt légitime (voir la section 3). Écrivez à
+                <a href="mailto:{{email}}">{{email}}</a> pour exercer l'un de ces droits :
+                nous répondons dans un délai d'un mois, prolongeable de deux mois supplémentaires si la demande
+                est complexe, conformément au RGPD. Vous pouvez également introduire une réclamation auprès de la
+                <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener">CNIL</a>, l'autorité
+                française de protection des données.
+              </p>
+            </section>
+
+            <section>
+              <h2>10. Sécurité</h2>
+              <p>
+                Les mots de passe, sessions et clés API ne sont jamais stockés en clair ; le trafic est chiffré en
+                transit ; l'accès aux données de production est limité à ce qui est nécessaire à l'exploitation du
+                service.
+              </p>
+            </section>
+
+            <section>
+              <h2>11. Données des entreprises interrogées via l'API</h2>
+              <p>
+                Les sections précédentes décrivent les données relatives à <em>votre compte</em>. La présente
+                section décrit les données des <em>entreprises interrogées</em>, qui ne nous sont pas fournies par
+                les personnes concernées elles-mêmes ; l'information prévue par l'article 14 du RGPD est donc
+                délivrée ici.
+              </p>
+              <p>
+                <strong>Qui est concerné.</strong> La très grande majorité des enregistrements renvoyés concerne
+                des personnes morales, qui ne relèvent pas du RGPD. Mais un numéro de TVA peut aussi identifier un
+                <strong>entrepreneur individuel</strong> (entreprise individuelle, micro-entrepreneur, profession
+                libérale, et leurs équivalents dans les autres États membres). Dans ce cas, la raison sociale peut
+                être le nom et le prénom de la personne, et l'adresse du siège peut être son domicile : ces
+                enregistrements constituent alors des données personnelles.
+              </p>
+              <p>
+                <strong>Catégories de données concernées.</strong> Numéro de TVA intracommunautaire, identifiant
+                national (SIREN, Business ID, registrikood…), raison sociale (susceptible d'être un nom de
+                personne physique), forme juridique, statut d'activité, et adresse de l'établissement (susceptible
+                d'être une adresse personnelle). Aucune donnée sensible au sens de l'article 9 du RGPD n'est
+                traitée.
+              </p>
+              <p>
+                <strong>Source.</strong> Exclusivement des <strong>registres publics officiels</strong>, dont la
+                publication et la réutilisation sont prévues par la réglementation applicable dans chaque État
+                membre : registres nationaux du commerce et des sociétés que nous importons (SIRENE pour la
+                France, PRH, RIK, registre letton…), API officielles de certaines administrations fiscales
+                interrogées à la demande, et VIES, le service de vérification de la Commission européenne. Nous ne
+                collectons ces données auprès d'aucune autre source, ne les enrichissons d'aucune donnée d'origine
+                privée, et ne pratiquons aucun profilage.
+              </p>
+              <p>
+                <strong>Finalité et base légale.</strong> Ces données ne sont traitées que pour répondre à une
+                requête de vérification émise par un client professionnel, sur la base de notre intérêt légitime
+                et de celui de nos clients professionnels à vérifier l'identité et le statut TVA d'un partenaire
+                commercial, sous réserve de la mise en balance de cet intérêt avec les intérêts, droits et
+                libertés des personnes concernées. Cette mise en balance a été effectuée et est documentée en
+                interne. Elles ne sont jamais utilisées à des fins de prospection,
+                de publicité ou de revente, et ne sont pas communiquées à d'autres destinataires que le client
+                ayant émis la requête.
+              </p>
+              <p>
+                <strong>Conservation.</strong> Les enregistrements issus d'un import de registre sont rafraîchis
+                à chaque import et conservés tant qu'ils figurent dans le registre source, dans la limite de
+                <strong>24 mois</strong> à compter du dernier import où ils étaient présents : un enregistrement
+                qui a disparu de sa source et n'a pas été revu depuis deux ans est purgé. Cette durée est celle
+                qui reste utile à la finalité de vérification : une entreprise radiée récemment doit encore
+                pouvoir être vérifiée par un client qui contrôle une facture ou un contrat de l'exercice
+                précédent, ce que 24 mois couvrent en tenant compte des exercices comptables en cours et clos ;
+                au-delà, la vérification n'a plus d'objet et l'enregistrement n'est plus conservé. Les réponses obtenues auprès de VIES sont mises en
+                cache 24 heures au maximum. Le numéro interrogé figure par
+                ailleurs dans nos journaux d'appels, dans les conditions et durées décrites à la section 7.
+              </p>
+              <p>
+                <strong>Comment vous êtes informé.</strong> L'article 14 du RGPD prévoit que la personne dont les
+                données n'ont pas été recueillies auprès d'elle soit informée dans un délai raisonnable, et admet
+                une exception lorsque cette information exigerait des efforts disproportionnés. Cette exception
+                n'est jamais acquise d'office : elle suppose une analyse, que nous avons menée, que nous tenons à
+                jour et que nous pouvons présenter à l'autorité de contrôle.
+              </p>
+              <p>
+                Cette analyse retient que nous importons plusieurs millions d'enregistrements issus de registres
+                publics ; que ces registres ne publient pas de coordonnées de contact et que nous n'aurions aucune
+                raison légitime d'en collecter à seule fin d'écrire à chaque personne ; et que les données ne
+                servent ni à vous contacter, ni à vous profiler, ni à fonder une décision à votre égard. Nous en
+                concluons qu'une information individuelle exigerait un effort disproportionné au sens de
+                l'article 14, paragraphe 5, point b), étant entendu que cette conclusion vaut pour la
+                réutilisation décrite ici et serait à revoir si l'usage de ces données changeait.
+              </p>
+              <p>
+                Le même texte impose alors des <strong>mesures appropriées</strong> pour protéger vos droits. Les
+                nôtres sont les suivantes : la présente information est publique, permanente, accessible sans
+                authentification depuis le pied de page de chaque page du site, publiée en français et en anglais
+                et indexée par les moteurs de recherche ; les sources exactes que nous utilisons sont énumérées
+                ci-dessus et la liste à jour est publiée par l'API elle-même ; et nous répondons individuellement
+                à toute personne qui nous saisit. Si ces mesures vous paraissent insuffisantes dans votre
+                situation, écrivez-nous : nous les réexaminerons.
+              </p>
+              <p>
+                <strong>Vos droits, si vous êtes une personne concernée.</strong> Vous disposez des droits
+                décrits à la section 9 (accès, rectification, effacement, limitation) et, ce traitement reposant
+                sur notre intérêt légitime, d'un <strong>droit d'opposition</strong> au titre de l'article 21 du
+                RGPD, que vous pouvez exercer à tout moment pour des raisons tenant à votre situation
+                particulière. Écrivez-nous à
+                <a href="mailto:{{email}}">{{email}}</a>.
+              </p>
+              <p>
+                Chaque demande est examinée individuellement, au regard des conditions et des exceptions prévues
+                par le RGPD. <strong>L'origine officielle d'une donnée n'écarte ni ne limite par elle-même vos
+                droits</strong> : elle emporte seulement une conséquence pratique, que nous préférons vous dire
+                d'emblée. Si nous corrigeons ou effaçons un enregistrement dans notre base sans que le registre
+                source soit modifié, un import ultérieur peut rétablir la version que ce registre publie. Une
+                correction à la source (auprès de l'INSEE ou du greffe compétent pour la France) est donc, dans
+                bien des cas, la voie la plus durable, et nous vous orienterons vers l'interlocuteur adéquat.
+                Cela ne nous dispense pas de traiter votre demande de notre côté, et nous la traitons.
+              </p>
+            </section>
+
+            <section>
+              <h2>12. Répartition des rôles avec nos clients</h2>
+              <p>
+                Les rôles de responsable du traitement et de sous-traitant ne se répartissent pas uniquement par
+                contrat : ils dépendent des traitements effectivement réalisés. Pour la constitution et
+                l'exploitation de notre base issue des registres publics, décrite à la section 11, nous agissons
+                en qualité de <strong>responsable du traitement</strong>. Lorsqu'un client nous transmet des
+                données personnelles relevant de son propre traitement et nous demande de les traiter pour son
+                compte, il peut agir en qualité de responsable du traitement et Vatlas en qualité de
+                <strong>sous-traitant</strong> pour cette opération : voir l'article 5 des
+                <a href="/terms/fr/">Conditions générales</a>. L'<a href="/dpa/fr/">addendum de protection des données</a> précise, traitement par traitement, la
+                qualification applicable et les stipulations qui en découlent.
+              </p>
+            </section>
+
+            <section>
+              <h2>13. Origine des données</h2>
+              <p>Selon la donnée concernée, elle provient :</p>
+              <ul>
+                <li>de vous directement, lorsque vous créez un compte ou nous contactez ;</li>
+                <li>de votre utilisation du service, pour les journaux d'appels et de connexion ;</li>
+                <li>de Stripe, pour l'identifiant client et le statut de vos paiements ;</li>
+                <li>des registres nationaux officiels et de VIES, pour les données société renvoyées par l'API, voir la section 11.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>14. Modifications de cette politique</h2>
+              <p>
+                Nous pouvons mettre à jour cette politique ; la date ci-dessus reflète la dernière révision.
+              </p>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include partials/footer.html -->
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

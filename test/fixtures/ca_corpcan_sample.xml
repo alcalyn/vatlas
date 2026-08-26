@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<cc:corpcan xmlns:cc="http://www.ic.gc.ca/corpcan" reportId="OPEN_DATA" date="2026-09-09T04:00:00.150-04:00">
+<corporations>
+<corporation corporationId="1007">
+   <annualReturns>
+      <annualReturn annualMeetingDate="2026-03-25T00:00:00" yearOfFiling="2026"/>
+      <annualReturn annualMeetingDate="2025-03-31T00:00:00" yearOfFiling="2025"/>
+      <annualReturn annualMeetingDate="2024-03-27T00:00:00" yearOfFiling="2024"/>
+   </annualReturns>
+   <acts>
+      <act code="8" effectiveDate="1947-01-09T23:59:59" expiryDate="1947-01-10T00:00:00"/>
+      <act code="8" current="true" effectiveDate="1947-01-10T00:00:00"/>
+   </acts>
+   <statuses>
+      <status code="1" current="true" effectiveDate="1947-01-10T00:00:00"/>
+   </statuses>
+   <activities>
+      <activity code="1" date="1947-01-10T00:00:00"/>
+      <activity code="114" date="2005-12-20T00:00:00"/>
+      <activity code="114" date="2007-03-20T00:00:00"/>
+      <activity code="114" date="2010-04-28T00:00:00"/>
+      <activity code="114" date="2011-02-04T00:00:00"/>
+      <activity code="114" date="2012-04-17T00:00:00"/>
+      <activity code="114" date="2022-07-05T00:00:00"/>
+   </activities>
+   <names>
+      <name code="1" effectiveDate="1991-12-27T00:00:00" expiryDate="1995-02-06T00:00:00">ABBOTSFORD-MATSQUI CHAMBER OF COMMERCE</name>
+      <name code="1" effectiveDate="1981-11-10T00:00:00" expiryDate="1991-12-27T00:00:00">ABBOTSFORD-CLEARBROOK CHAMBER OF COMMERCE</name>
+      <name code="1" effectiveDate="1947-01-10T00:00:00" expiryDate="1981-11-10T00:00:00">ABBOTSFORD AND DISTRICT CHAMBER OF COMMERCE</name>
+      <name code="1" current="true" effectiveDate="1995-02-06T00:00:00">Abbotsford Chamber of Commerce</name>
+   </names>
+   <addresses>
+      <address code="2" effectiveDate="1947-01-10T00:00:00" expiryDate="2007-03-20T13:11:00">
+         <addressLine>2462  MCCALLUM RD WERWERWER</addressLine>
+         <city>ABBOTSFORD</city>
+         <province code="BC"/>
+         <country code="CA"/>
+         <postalCode>V2S 3P9</postalCode>
+      </address>
+      <address code="2" current="true" effectiveDate="2007-03-20T13:11:00">
+         <addressLine>207 - 32900 SOUTH FRASER WAY</addressLine>
+         <city>ABBOTSFORD</city>
+         <province code="BC"/>
+         <country code="CA"/>
+         <postalCode>V2S 5A1</postalCode>
+      </address>
+   </addresses>
+   <directorLimits>
+      <directorLimit current="true" effectiveDate="1999-03-07T14:09:11">
+         <minimum>3</minimum>
+         <maximum>30</maximum>
+      </directorLimit>
+   </directorLimits>
+   <businessNumbers>
+      <businessNumber>106679285</businessNumber>
+   </businessNumbers>
+</corporation>
+<corporation corporationId="1538">
+   <annualReturns>
+      <annualReturn annualMeetingDate="2015-01-27T00:00:00" yearOfFiling="2015"/>
+      <annualReturn annualMeetingDate="2014-01-28T00:00:00" yearOfFiling="2014"/>
+      <annualReturn annualMeetingDate="2013-01-22T00:00:00" yearOfFiling="2013"/>
+   </annualReturns>
+   <acts>
+      <act code="7" effectiveDate="1909-04-12T23:59:59" expiryDate="1909-04-13T00:00:00"/>
+      <act code="7" current="true" effectiveDate="1909-04-13T00:00:00"/>
+   </acts>
+   <statuses>
+      <status code="1" effectiveDate="1909-04-13T00:00:00" expiryDate="2016-12-02T10:30:00"/>
+      <status code="11" current="true" effectiveDate="2016-12-02T10:30:00"/>
+   </statuses>
+   <activities>
+      <activity code="1" date="1909-04-13T00:00:00"/>
+      <activity code="101" date="2016-12-02T00:00:00"/>
+   </activities>
+   <names>
+      <name code="1" effectiveDate="1909-04-13T00:00:00" expiryDate="1959-01-27T00:00:00">Battleford Board of Trade</name>
+      <name code="1" current="true" effectiveDate="1959-01-27T00:00:00">Battleford Chamber of Commerce</name>
+   </names>
+   <addresses>
+      <address code="2" effectiveDate="1909-04-13T00:00:00" expiryDate="2000-06-15T00:00:00">
+         <careOf>HENRY N. BERGEN </careOf>
+         <addressLine>P.O.BOX 1000</addressLine>
+         <city>NORTH BATTLEFORD</city>
+         <province code="SK"/>
+         <country code="CA"/>
+         <postalCode>S9A3E6</postalCode>
+      </address>
+      <address code="2" effectiveDate="2000-06-15T15:33:00" expiryDate="2008-03-31T12:04:00">
+         <addressLine>P.O.BOX 1000</addressLine>
+         <city>NORTH BATTLEFORD</city>
+         <province code="SK"/>
+         <country code="CA"/>
+         <postalCode>S9A3E6</postalCode>
+      </address>
+      <address code="2" effectiveDate="2008-03-31T12:04:00" expiryDate="2013-03-31T13:18:00">
+         <addressLine>P.O.BOX 1000</addressLine>
+         <city>NORTH BATTLEFORD</city>
+         <province code="SK"/>
+         <country code="CA"/>
+         <postalCode>S9A 3E6</postalCode>
+      </address>
+      <address code="2" current="true" effectiveDate="2013-03-31T13:18:00">
+         <addressLine> P.O. Box: 1000</addressLine>
+         <city>NORTH BATTLEFORD</city>
+         <province code="SK"/>
+         <country code="CA"/>
+         <postalCode>S9A 3E6</postalCode>
+      </address>
+   </addresses>
+   <directorLimits>
+      <directorLimit current="true" effectiveDate="1999-03-07T14:09:12">
+         <minimum>21</minimum>
+         <maximum>21</maximum>
+      </directorLimit>
+   </directorLimits>
+   <businessNumbers>
+      <businessNumber>106775950</businessNumber>
+   </businessNumbers>
+</corporation>
+<corporation corporationId="1015">
+   <annualReturns>
+      <annualReturn annualMeetingDate="2025-02-19T00:00:00" yearOfFiling="2025"/>
+      <annualReturn annualMeetingDate="2024-03-20T00:00:00" yearOfFiling="2024"/>
+      <annualReturn annualMeetingDate="2020-02-20T00:00:00" yearOfFiling="2020"/>
+   </annualReturns>
+   <acts>
+      <act code="8" effectiveDate="1953-12-14T23:59:59" expiryDate="1953-12-15T00:00:00"/>
+      <act code="8" current="true" effectiveDate="1953-12-15T00:00:00"/>
+   </acts>
+   <statuses>
+      <status code="1" current="true" effectiveDate="1953-12-15T00:00:00"/>
+   </statuses>
+   <activities>
+      <activity code="1" date="1953-12-15T00:00:00"/>
+      <activity code="114" date="2016-03-23T00:00:00"/>
+   </activities>
+   <names>
+      <name code="1" effectiveDate="1953-12-15T00:00:00" expiryDate="1995-08-22T00:00:00">Chambre de Commerce d'Acton Vale</name>
+      <name code="1" current="true" effectiveDate="1995-08-22T00:00:00">Chambre de commerce de la Région d'Acton</name>
+   </names>
+   <addresses>
+      <address code="2" effectiveDate="1995-08-23T00:00:00" expiryDate="2007-03-31T13:43:00">
+         <addressLine>960  BOULAY</addressLine>
+         <city>ACTON VALE</city>
+         <province code="QC"/>
+         <country code="CA"/>
+         <postalCode>J0H 1A0</postalCode>
+      </address>
+      <address code="2" effectiveDate="2007-03-31T13:43:00" expiryDate="2018-03-31T09:58:00">
+         <addressLine>1053 ST-ANDRE</addressLine>
+         <city>ACTON VALE</city>
+         <province code="QC"/>
+         <country code="CA"/>
+         <postalCode>J0H 1A0</postalCode>
+      </address>
+      <address code="2" current="true" effectiveDate="2018-03-31T09:58:00">
+         <addressLine>980 RUE BOULAY</addressLine>
+         <city>ACTON VALE</city>
+         <province code="QC"/>
+         <country code="CA"/>
+         <postalCode>J0H 1A0</postalCode>
+      </address>
+   </addresses>
+   <directorLimits>
+      <directorLimit current="true" effectiveDate="1999-10-27T07:37:11">
+         <minimum>3</minimum>
+         <maximum>10</maximum>
+      </directorLimit>
+   </directorLimits>
+</corporation>
+<corporation corporationId="1503">
+   <annualReturns>
+      <annualReturn annualMeetingDate="2025-03-12T00:00:00" yearOfFiling="2025"/>
+      <annualReturn annualMeetingDate="2018-05-17T00:00:00" yearOfFiling="2019"/>
+      <annualReturn annualMeetingDate="2017-05-11T00:00:00" yearOfFiling="2018"/>
+   </annualReturns>
+   <acts>
+      <act code="7" effectiveDate="1913-06-04T23:59:59" expiryDate="1913-06-05T00:00:00"/>
+      <act code="7" current="true" effectiveDate="1913-06-05T00:00:00"/>
+   </acts>
+   <statuses>
+      <status code="1" current="true" effectiveDate="1913-06-05T00:00:00"/>
+   </statuses>
+   <activities>
+      <activity code="1" date="1913-06-05T00:00:00"/>
+      <activity code="21" date="1998-06-04T00:00:00" nameChanged="true"/>
+   </activities>
+   <names>
+      <name code="1" effectiveDate="1913-06-05T00:00:00" expiryDate="1998-06-04T00:00:00"> THE BATHURST BOARD OF TRADE</name>
+      <name code="1" current="true" effectiveDate="1998-06-04T10:24:00">Greater Bathurst Chamber of Commerce</name>
+      <name code="2" current="true" effectiveDate="1998-06-04T10:24:00">La Chambre de Commerce du Grand Bathurst</name>
+   </names>
+   <addresses>
+      <address code="2" effectiveDate="1913-06-05T00:00:00" expiryDate="2005-04-07T11:43:00">
+         <careOf>SECRETARY </careOf>
+         <addressLine>PO BOX 620</addressLine>
+         <city>BATHURST</city>
+         <province code="NB"/>
+         <country code="CA"/>
+         <postalCode>E2A 3Z6</postalCode>
+      </address>
+      <address code="2" effectiveDate="2005-04-07T11:43:00" expiryDate="2007-03-31T14:10:00">
+         <addressLine>360 PARKSIDE DR.</addressLine>
+         <city>BATHURST</city>
+         <province code="NB"/>
+         <country code="CA"/>
+         <postalCode>E2A 1N4</postalCode>
+      </address>
+      <address code="2" effectiveDate="2007-03-31T14:10:00" expiryDate="2015-03-31T07:27:00">
+         <addressLine>725 RUE DU COLLEGE</addressLine>
+         <addressLine>EDIFICE CEI</addressLine>
+         <city>BATHURST</city>
+         <province code="NB"/>
+         <country code="CA"/>
+         <postalCode>E2A 4B9</postalCode>
+      </address>
+      <address code="2" effectiveDate="2015-03-31T07:27:00" expiryDate="2019-03-13T10:48:19">
+         <addressLine>270 AV. DOUGLAS</addressLine>
+         <addressLine>SUITE 101</addressLine>
+         <city>BATHURST</city>
+         <province code="NB"/>
+         <country code="CA"/>
+         <postalCode>E2A 1M9</postalCode>
+      </address>
+      <address code="2" current="true" effectiveDate="2019-03-13T10:48:19">
+         <addressLine>270 AV. DOUGLAS</addressLine>
+         <addressLine>SUITE 500</addressLine>
+         <city>BATHURST</city>
+         <province code="NB"/>
+         <country code="CA"/>
+         <postalCode>E2A 1M9</postalCode>
+      </address>
+   </addresses>
+   <directorLimits>
+      <directorLimit current="true" effectiveDate="1999-03-07T14:09:12">
+         <minimum>8</minimum>
+         <maximum>8</maximum>
+      </directorLimit>
+   </directorLimits>
+   <businessNumbers>
+      <businessNumber>106775653</businessNumber>
+   </businessNumbers>
+</corporation>
+</corporations>
+</cc:corpcan>

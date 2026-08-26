@@ -1,0 +1,3976 @@
+{
+  "title": "Benchmark comparison",
+  "generatedAt": "2026-08-31T21:45:00.385Z",
+  "convention": "savedMs and deltaPoints are vatlas minus VIES: positive means vatlas is faster or more complete",
+  "sortedBy": "total",
+  "runs": {
+    "vatlas": {
+      "path": "benchmarks/bench-50.bench-summary.json",
+      "file": "bench-50.txt",
+      "startedAt": "2026-08-30T21:50:54.641Z",
+      "baseUrl": "https://api.vatlas.dev",
+      "mode": "api",
+      "concurrency": 1,
+      "measured": 1350
+    },
+    "viesOnly": {
+      "path": "benchmarks/bench-50-vies-only.bench-summary.json",
+      "file": "bench-50-vies-only.txt",
+      "startedAt": "2026-08-31T20:51:50.071Z",
+      "baseUrl": "https://ec.europa.eu/taxation_customs/vies/services/checkVatService",
+      "mode": "vies",
+      "cacheBypassed": true,
+      "concurrency": 1,
+      "measured": 1350
+    }
+  },
+  "warnings": [],
+  "overall": {
+    "measured": {
+      "vatlas": 1350,
+      "viesOnly": 1350
+    },
+    "elapsedMs": {
+      "vatlas": 1889515.521798,
+      "viesOnly": 2354734.2789,
+      "savedMs": 465218.7571019998,
+      "speedup": 1.2462106035833531
+    },
+    "latencyMs": {
+      "p50": {
+        "vatlas": 261.184104999993,
+        "viesOnly": 368.63690700009465,
+        "savedMs": 107.45280200010166,
+        "speedup": 1.4114063602764209
+      },
+      "p95": {
+        "vatlas": 6207.877832000006,
+        "viesOnly": 7811.910880999989,
+        "savedMs": 1604.0330489999833,
+        "speedup": 1.2583866970982591
+      },
+      "max": {
+        "vatlas": 30002.411141999997,
+        "viesOnly": 45614.413400000005,
+        "savedMs": 15612.002258000008,
+        "speedup": 1.5203582533453441
+      },
+      "avg": {
+        "vatlas": 1399.5325337185193,
+        "viesOnly": 1744.1350866348134,
+        "savedMs": 344.60255291629414,
+        "speedup": 1.2462268969201413
+      },
+      "total": {
+        "vatlas": 1889368.920520001,
+        "viesOnly": 2354582.366956998,
+        "savedMs": 465213.44643699704,
+        "speedup": 1.2462268969201413
+      }
+    },
+    "found": {
+      "vatlas": {
+        "count": 1179,
+        "of": 1350,
+        "rate": 0.8733333333333333
+      },
+      "viesOnly": {
+        "count": 1243,
+        "of": 1350,
+        "rate": 0.9207407407407407
+      },
+      "deltaPoints": -4.740740740740746
+    },
+    "completeness": {
+      "name": {
+        "vatlas": {
+          "count": 1130,
+          "of": 1179,
+          "rate": 0.9584393553859203
+        },
+        "viesOnly": {
+          "count": 1167,
+          "of": 1243,
+          "rate": 0.9388576025744167
+        },
+        "deltaPoints": 1.9581752811503539
+      },
+      "legalForm": {
+        "vatlas": {
+          "count": 316,
+          "of": 1179,
+          "rate": 0.2680237489397795
+        },
+        "viesOnly": {
+          "count": 0,
+          "of": 1243,
+          "rate": 0
+        },
+        "deltaPoints": 26.802374893977948
+      },
+      "address": {
+        "vatlas": {
+          "count": 1105,
+          "of": 1179,
+          "rate": 0.9372349448685326
+        },
+        "viesOnly": {
+          "count": 1159,
+          "of": 1243,
+          "rate": 0.9324215607401448
+        },
+        "deltaPoints": 0.4813384128387832
+      },
+      "postalCode": {
+        "vatlas": {
+          "count": 807,
+          "of": 1179,
+          "rate": 0.6844783715012722
+        },
+        "viesOnly": {
+          "count": 814,
+          "of": 1243,
+          "rate": 0.6548672566371682
+        },
+        "deltaPoints": 2.961111486410406
+      },
+      "city": {
+        "vatlas": {
+          "count": 794,
+          "of": 1179,
+          "rate": 0.6734520780322307
+        },
+        "viesOnly": {
+          "count": 814,
+          "of": 1243,
+          "rate": 0.6548672566371682
+        },
+        "deltaPoints": 1.8584821395062567
+      },
+      "source": {
+        "vatlas": {
+          "count": 1179,
+          "of": 1179,
+          "rate": 1
+        },
+        "viesOnly": {
+          "count": 1243,
+          "of": 1243,
+          "rate": 1
+        },
+        "deltaPoints": 0
+      }
+    },
+    "outcomes": {
+      "vatlas": {
+        "found": 1179,
+        "unavailable": 98,
+        "not-registered": 53,
+        "timeout": 20
+      },
+      "viesOnly": {
+        "found": 1243,
+        "unavailable": 41,
+        "not-registered": 66
+      }
+    },
+    "origins": {
+      "vatlas": {
+        "vies": 807,
+        "database": 324,
+        "source": 48
+      },
+      "viesOnly": {
+        "vies": 1243
+      }
+    },
+    "sources": {
+      "vatlas": {
+        "VIES": 807,
+        "KBO": 50,
+        "PEPPOL": 5,
+        "MF_WL": 49,
+        "ANAF": 39,
+        "PRH": 37,
+        "ARES": 47,
+        "SIRENE": 50,
+        "UR_VID": 48,
+        "RIK": 47
+      },
+      "viesOnly": {
+        "VIES": 1243
+      }
+    }
+  },
+  "countries": [
+    {
+      "code": "FR",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 19.07658100000117,
+          "viesOnly": 7225.657455999986,
+          "savedMs": 7206.580874999985,
+          "speedup": 378.77109404455354
+        },
+        "p95": {
+          "vatlas": 54.040411000023596,
+          "viesOnly": 9954.997510999994,
+          "savedMs": 9900.95709999997,
+          "speedup": 184.21394890937538
+        },
+        "total": {
+          "vatlas": 1247.072335000048,
+          "viesOnly": 376732.03571699985,
+          "savedMs": 375484.9633819998,
+          "speedup": 302.0931706555621
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 50,
+          "of": 50,
+          "rate": 1
+        },
+        "viesOnly": {
+          "count": 39,
+          "of": 50,
+          "rate": 0.78
+        },
+        "deltaPoints": 21.999999999999996
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 39,
+            "of": 39,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 39,
+            "rate": 0
+          },
+          "deltaPoints": 100
+        },
+        "address": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 39,
+            "of": 39,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 39,
+            "of": 39,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 39,
+            "of": 39,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 39,
+            "of": 39,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "database": 50
+        },
+        "viesOnly": {
+          "vies": 39,
+          "unavailable": 10,
+          "not-registered": 1
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 50
+        },
+        "viesOnly": {
+          "found": 39,
+          "unavailable": 10,
+          "not-registered": 1
+        }
+      }
+    },
+    {
+      "code": "IE",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 6056.49085100001,
+          "viesOnly": 244.0303970000241,
+          "savedMs": -5812.4604539999855,
+          "speedup": 0.040292374413433044
+        },
+        "p95": {
+          "vatlas": 6436.648367000045,
+          "viesOnly": 367.1740979999995,
+          "savedMs": -6069.474269000046,
+          "speedup": 0.057044299620662646
+        },
+        "total": {
+          "vatlas": 304914.8466970009,
+          "viesOnly": 11955.857858000367,
+          "savedMs": -292958.9888390005,
+          "speedup": 0.03921048118027886
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 0,
+          "of": 50,
+          "rate": 0
+        },
+        "viesOnly": {
+          "count": 48,
+          "of": 50,
+          "rate": 0.96
+        },
+        "deltaPoints": -96
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 0,
+            "of": 0,
+            "rate": null
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": null
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 0,
+            "rate": null
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 48,
+            "rate": 0
+          },
+          "deltaPoints": null
+        },
+        "address": {
+          "vatlas": {
+            "count": 0,
+            "of": 0,
+            "rate": null
+          },
+          "viesOnly": {
+            "count": 43,
+            "of": 48,
+            "rate": 0.8958333333333334
+          },
+          "deltaPoints": null
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 0,
+            "of": 0,
+            "rate": null
+          },
+          "viesOnly": {
+            "count": 5,
+            "of": 48,
+            "rate": 0.10416666666666667
+          },
+          "deltaPoints": null
+        },
+        "city": {
+          "vatlas": {
+            "count": 0,
+            "of": 0,
+            "rate": null
+          },
+          "viesOnly": {
+            "count": 5,
+            "of": 48,
+            "rate": 0.10416666666666667
+          },
+          "deltaPoints": null
+        },
+        "source": {
+          "vatlas": {
+            "count": 0,
+            "of": 0,
+            "rate": null
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": null
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "unavailable": 50
+        },
+        "viesOnly": {
+          "vies": 48,
+          "not-registered": 2
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "unavailable": 50
+        },
+        "viesOnly": {
+          "found": 48,
+          "not-registered": 2
+        }
+      }
+    },
+    {
+      "code": "DE",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 6142.557191,
+          "viesOnly": 245.80586999998195,
+          "savedMs": -5896.751321000018,
+          "speedup": 0.04001686306806125
+        },
+        "p95": {
+          "vatlas": 8309.239505000005,
+          "viesOnly": 6522.98053099995,
+          "savedMs": -1786.2589740000549,
+          "speedup": 0.7850273815160592
+        },
+        "total": {
+          "vatlas": 306105.01714099996,
+          "viesOnly": 135553.78041200025,
+          "savedMs": -170551.2367289997,
+          "speedup": 0.44283423276777145
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 5,
+          "of": 50,
+          "rate": 0.1
+        },
+        "viesOnly": {
+          "count": 27,
+          "of": 50,
+          "rate": 0.54
+        },
+        "deltaPoints": -44.00000000000001
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 5,
+            "of": 5,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 27,
+            "rate": 0
+          },
+          "deltaPoints": 100
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 5,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 27,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 3,
+            "of": 5,
+            "rate": 0.6
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 27,
+            "rate": 0
+          },
+          "deltaPoints": 60
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 0,
+            "of": 5,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 27,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 0,
+            "of": 5,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 27,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 5,
+            "of": 5,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 27,
+            "of": 27,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "database": 5,
+          "unavailable": 45
+        },
+        "viesOnly": {
+          "vies": 27,
+          "not-registered": 2,
+          "unavailable": 21
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 5,
+          "unavailable": 45
+        },
+        "viesOnly": {
+          "found": 27,
+          "not-registered": 2,
+          "unavailable": 21
+        }
+      }
+    },
+    {
+      "code": "BE",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 18.52560700001777,
+          "viesOnly": 2703.5193679999793,
+          "savedMs": 2684.9937609999615,
+          "speedup": 145.93418547621062
+        },
+        "p95": {
+          "vatlas": 80.7708059999859,
+          "viesOnly": 5632.812716000015,
+          "savedMs": 5552.041910000029,
+          "speedup": 69.73822591297403
+        },
+        "total": {
+          "vatlas": 1399.750414000152,
+          "viesOnly": 144738.7468970004,
+          "savedMs": 143338.99648300026,
+          "speedup": 103.40325350100929
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 50,
+          "of": 50,
+          "rate": 1
+        },
+        "viesOnly": {
+          "count": 48,
+          "of": 50,
+          "rate": 0.96
+        },
+        "deltaPoints": 4.0000000000000036
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 48,
+            "rate": 0
+          },
+          "deltaPoints": 100
+        },
+        "address": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "database": 50
+        },
+        "viesOnly": {
+          "vies": 48,
+          "unavailable": 1,
+          "not-registered": 1
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 50
+        },
+        "viesOnly": {
+          "found": 48,
+          "unavailable": 1,
+          "not-registered": 1
+        }
+      }
+    },
+    {
+      "code": "DK",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 9974.951283999952,
+          "viesOnly": 9953.40491500008,
+          "savedMs": -21.546368999872357,
+          "speedup": 0.9978399524582708
+        },
+        "p95": {
+          "vatlas": 30001.96017600014,
+          "viesOnly": 45609.62371000007,
+          "savedMs": 15607.663533999934,
+          "speedup": 1.5202214602792912
+        },
+        "total": {
+          "vatlas": 903096.4293469997,
+          "viesOnly": 1044685.3637739988,
+          "savedMs": 141588.93442699907,
+          "speedup": 1.156781634636046
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 27,
+          "of": 50,
+          "rate": 0.54
+        },
+        "viesOnly": {
+          "count": 39,
+          "of": 50,
+          "rate": 0.78
+        },
+        "deltaPoints": -24
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 27,
+            "of": 27,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 39,
+            "of": 39,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 27,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 39,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 27,
+            "of": 27,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 39,
+            "of": 39,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 27,
+            "of": 27,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 39,
+            "of": 39,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 27,
+            "of": 27,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 39,
+            "of": 39,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 27,
+            "of": 27,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 39,
+            "of": 39,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "vies": 27,
+          "timeout": 20,
+          "unavailable": 3
+        },
+        "viesOnly": {
+          "unavailable": 9,
+          "vies": 39,
+          "not-registered": 2
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 27,
+          "timeout": 20,
+          "unavailable": 3
+        },
+        "viesOnly": {
+          "unavailable": 9,
+          "found": 39,
+          "not-registered": 2
+        }
+      }
+    },
+    {
+      "code": "CZ",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 71.2406460000202,
+          "viesOnly": 2457.303791000042,
+          "savedMs": 2386.063145000022,
+          "speedup": 34.493002646261026
+        },
+        "p95": {
+          "vatlas": 983.8615500000014,
+          "viesOnly": 3687.361925999867,
+          "savedMs": 2703.5003759998654,
+          "speedup": 3.747846357040644
+        },
+        "total": {
+          "vatlas": 10687.840338999962,
+          "viesOnly": 128593.06930800088,
+          "savedMs": 117905.22896900092,
+          "speedup": 12.031716907181368
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 47,
+          "of": 50,
+          "rate": 0.94
+        },
+        "viesOnly": {
+          "count": 47,
+          "of": 50,
+          "rate": 0.94
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 47,
+            "rate": 0
+          },
+          "deltaPoints": 100
+        },
+        "address": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "database": 25,
+          "not-registered": 3,
+          "source": 22
+        },
+        "viesOnly": {
+          "vies": 47,
+          "not-registered": 3
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 47,
+          "not-registered": 3
+        },
+        "viesOnly": {
+          "found": 47,
+          "not-registered": 3
+        }
+      }
+    },
+    {
+      "code": "LV",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 17.840620000148192,
+          "viesOnly": 881.9677699999884,
+          "savedMs": 864.1271499998402,
+          "speedup": 49.435937203564805
+        },
+        "p95": {
+          "vatlas": 148.30718800006434,
+          "viesOnly": 6637.857837000163,
+          "savedMs": 6489.550649000099,
+          "speedup": 44.757492381268015
+        },
+        "total": {
+          "vatlas": 5346.126102000228,
+          "viesOnly": 74304.62616999939,
+          "savedMs": 68958.50006799916,
+          "speedup": 13.898779181845088
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 48,
+          "of": 50,
+          "rate": 0.96
+        },
+        "viesOnly": {
+          "count": 46,
+          "of": 50,
+          "rate": 0.92
+        },
+        "deltaPoints": 3.9999999999999925
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 46,
+            "of": 46,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 28,
+            "of": 48,
+            "rate": 0.5833333333333334
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 46,
+            "rate": 0
+          },
+          "deltaPoints": 58.333333333333336
+        },
+        "address": {
+          "vatlas": {
+            "count": 28,
+            "of": 48,
+            "rate": 0.5833333333333334
+          },
+          "viesOnly": {
+            "count": 46,
+            "of": 46,
+            "rate": 1
+          },
+          "deltaPoints": -41.666666666666664
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 28,
+            "of": 48,
+            "rate": 0.5833333333333334
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 46,
+            "rate": 0
+          },
+          "deltaPoints": 58.333333333333336
+        },
+        "city": {
+          "vatlas": {
+            "count": 0,
+            "of": 48,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 46,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 46,
+            "of": 46,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "database": 48,
+          "not-registered": 2
+        },
+        "viesOnly": {
+          "vies": 46,
+          "not-registered": 4
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 48,
+          "not-registered": 2
+        },
+        "viesOnly": {
+          "found": 46,
+          "not-registered": 4
+        }
+      }
+    },
+    {
+      "code": "BG",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 464.2177299999166,
+          "viesOnly": 763.8185440003872,
+          "savedMs": 299.60081400047056,
+          "speedup": 1.645388563682228
+        },
+        "p95": {
+          "vatlas": 983.4863700000569,
+          "viesOnly": 2709.1172869999427,
+          "savedMs": 1725.6309169998858,
+          "speedup": 2.7546058284465964
+        },
+        "total": {
+          "vatlas": 25401.53367399949,
+          "viesOnly": 56996.47482999983,
+          "savedMs": 31594.941156000343,
+          "speedup": 2.2438202181603035
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 41,
+          "of": 50,
+          "rate": 0.82
+        },
+        "viesOnly": {
+          "count": 41,
+          "of": 50,
+          "rate": 0.82
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 41,
+            "of": 41,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 41,
+            "of": 41,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 41,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 41,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 41,
+            "of": 41,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 41,
+            "of": 41,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 0,
+            "of": 41,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 41,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 0,
+            "of": 41,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 41,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 41,
+            "of": 41,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 41,
+            "of": 41,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "vies": 41,
+          "not-registered": 9
+        },
+        "viesOnly": {
+          "vies": 41,
+          "not-registered": 9
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 41,
+          "not-registered": 9
+        },
+        "viesOnly": {
+          "found": 41,
+          "not-registered": 9
+        }
+      }
+    },
+    {
+      "code": "SE",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 400.45068999996874,
+          "viesOnly": 656.5132750000339,
+          "savedMs": 256.06258500006516,
+          "speedup": 1.639435993979896
+        },
+        "p95": {
+          "vatlas": 1462.9102670000284,
+          "viesOnly": 3045.306631000014,
+          "savedMs": 1582.3963639999856,
+          "speedup": 2.0816769829943063
+        },
+        "total": {
+          "vatlas": 27925.780106999802,
+          "viesOnly": 54813.786176999856,
+          "savedMs": 26888.006070000054,
+          "speedup": 1.9628381361944613
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 47,
+          "of": 50,
+          "rate": 0.94
+        },
+        "viesOnly": {
+          "count": 47,
+          "of": 50,
+          "rate": 0.94
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 47,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 47,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 44,
+            "of": 47,
+            "rate": 0.9361702127659575
+          },
+          "viesOnly": {
+            "count": 44,
+            "of": 47,
+            "rate": 0.9361702127659575
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "vies": 47,
+          "not-registered": 3
+        },
+        "viesOnly": {
+          "vies": 47,
+          "not-registered": 3
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 47,
+          "not-registered": 3
+        },
+        "viesOnly": {
+          "found": 47,
+          "not-registered": 3
+        }
+      }
+    },
+    {
+      "code": "RO",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 82.08292199997231,
+          "viesOnly": 490.55901399999857,
+          "savedMs": 408.47609200002626,
+          "speedup": 5.976383418711191
+        },
+        "p95": {
+          "vatlas": 615.3494500000961,
+          "viesOnly": 757.1851929998957,
+          "savedMs": 141.83574299979955,
+          "speedup": 1.230496253794941
+        },
+        "total": {
+          "vatlas": 9331.864677000767,
+          "viesOnly": 25452.64917200023,
+          "savedMs": 16120.784494999463,
+          "speedup": 2.727498742532198
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 39,
+          "of": 50,
+          "rate": 0.78
+        },
+        "viesOnly": {
+          "count": 39,
+          "of": 50,
+          "rate": 0.78
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 39,
+            "of": 39,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 39,
+            "of": 39,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 31,
+            "of": 39,
+            "rate": 0.7948717948717948
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 39,
+            "rate": 0
+          },
+          "deltaPoints": 79.48717948717949
+        },
+        "address": {
+          "vatlas": {
+            "count": 39,
+            "of": 39,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 39,
+            "of": 39,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 25,
+            "of": 39,
+            "rate": 0.6410256410256411
+          },
+          "viesOnly": {
+            "count": 12,
+            "of": 39,
+            "rate": 0.3076923076923077
+          },
+          "deltaPoints": 33.333333333333336
+        },
+        "city": {
+          "vatlas": {
+            "count": 39,
+            "of": 39,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 12,
+            "of": 39,
+            "rate": 0.3076923076923077
+          },
+          "deltaPoints": 69.23076923076923
+        },
+        "source": {
+          "vatlas": {
+            "count": 39,
+            "of": 39,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 39,
+            "of": 39,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "database": 13,
+          "not-registered": 11,
+          "source": 26
+        },
+        "viesOnly": {
+          "vies": 39,
+          "not-registered": 11
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 39,
+          "not-registered": 11
+        },
+        "viesOnly": {
+          "found": 39,
+          "not-registered": 11
+        }
+      }
+    },
+    {
+      "code": "NL",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 310.37970900000073,
+          "viesOnly": 370.2973629999906,
+          "savedMs": 59.91765399998985,
+          "speedup": 1.1930462986547543
+        },
+        "p95": {
+          "vatlas": 2431.617726000026,
+          "viesOnly": 1106.416279,
+          "savedMs": -1325.2014470000258,
+          "speedup": 0.4550124253371183
+        },
+        "total": {
+          "vatlas": 38618.76604100031,
+          "viesOnly": 25188.992390999207,
+          "savedMs": -13429.773650001101,
+          "speedup": 0.652247468607797
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 50,
+          "of": 50,
+          "rate": 1
+        },
+        "viesOnly": {
+          "count": 50,
+          "of": 50,
+          "rate": 1
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 50,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 50,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "vies": 50
+        },
+        "viesOnly": {
+          "vies": 50
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 50
+        },
+        "viesOnly": {
+          "found": 50
+        }
+      }
+    },
+    {
+      "code": "EE",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 17.90894400002435,
+          "viesOnly": 245.32695199991576,
+          "savedMs": 227.41800799989142,
+          "speedup": 13.698571618716448
+        },
+        "p95": {
+          "vatlas": 236.03643499989994,
+          "viesOnly": 410.91493900027126,
+          "savedMs": 174.87850400037132,
+          "speedup": 1.740896226467941
+        },
+        "total": {
+          "vatlas": 1808.6523789999192,
+          "viesOnly": 13131.479461001058,
+          "savedMs": 11322.827082001138,
+          "speedup": 7.260366676023179
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 47,
+          "of": 50,
+          "rate": 0.94
+        },
+        "viesOnly": {
+          "count": 47,
+          "of": 50,
+          "rate": 0.94
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 47,
+            "rate": 0
+          },
+          "deltaPoints": 100
+        },
+        "address": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 46,
+            "of": 47,
+            "rate": 0.9787234042553191
+          },
+          "viesOnly": {
+            "count": 46,
+            "of": 47,
+            "rate": 0.9787234042553191
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 46,
+            "of": 47,
+            "rate": 0.9787234042553191
+          },
+          "deltaPoints": 2.127659574468088
+        },
+        "source": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "database": 47,
+          "not-registered": 3
+        },
+        "viesOnly": {
+          "vies": 47,
+          "not-registered": 3
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 47,
+          "not-registered": 3
+        },
+        "viesOnly": {
+          "found": 47,
+          "not-registered": 3
+        }
+      }
+    },
+    {
+      "code": "PL",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 17.87612299999455,
+          "viesOnly": 245.51471600006334,
+          "savedMs": 227.6385930000688,
+          "speedup": 13.73422615184166
+        },
+        "p95": {
+          "vatlas": 127.26721200003522,
+          "viesOnly": 575.5836249999702,
+          "savedMs": 448.316412999935,
+          "speedup": 4.52263875317557
+        },
+        "total": {
+          "vatlas": 3226.086887999303,
+          "viesOnly": 14148.84310099972,
+          "savedMs": 10922.756213000417,
+          "speedup": 4.385760084029942
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 49,
+          "of": 50,
+          "rate": 0.98
+        },
+        "viesOnly": {
+          "count": 48,
+          "of": 50,
+          "rate": 0.96
+        },
+        "deltaPoints": 2.0000000000000018
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 26,
+            "of": 49,
+            "rate": 0.5306122448979592
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 48,
+            "rate": 0
+          },
+          "deltaPoints": 53.06122448979592
+        },
+        "address": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 46,
+            "of": 48,
+            "rate": 0.9583333333333334
+          },
+          "deltaPoints": -95.83333333333334
+        },
+        "city": {
+          "vatlas": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 46,
+            "of": 48,
+            "rate": 0.9583333333333334
+          },
+          "deltaPoints": -95.83333333333334
+        },
+        "source": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "database": 49,
+          "not-registered": 1
+        },
+        "viesOnly": {
+          "vies": 48,
+          "not-registered": 2
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 49,
+          "not-registered": 1
+        },
+        "viesOnly": {
+          "found": 48,
+          "not-registered": 2
+        }
+      }
+    },
+    {
+      "code": "SK",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 599.9731659998652,
+          "viesOnly": 410.59567900002,
+          "savedMs": -189.37748699984513,
+          "speedup": 0.6843567383813833
+        },
+        "p95": {
+          "vatlas": 1126.4739629998803,
+          "viesOnly": 991.9118400001898,
+          "savedMs": -134.56212299969047,
+          "speedup": 0.8805457317083992
+        },
+        "total": {
+          "vatlas": 32268.38690500002,
+          "viesOnly": 24664.51835400163,
+          "savedMs": -7603.868550998392,
+          "speedup": 0.7643554797646187
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 50,
+          "of": 50,
+          "rate": 1
+        },
+        "viesOnly": {
+          "count": 50,
+          "of": 50,
+          "rate": 1
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 50,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 50,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "vies": 50
+        },
+        "viesOnly": {
+          "vies": 50
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 50
+        },
+        "viesOnly": {
+          "found": 50
+        }
+      }
+    },
+    {
+      "code": "FI",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 19.84277600000496,
+          "viesOnly": 368.11035800003447,
+          "savedMs": 348.2675820000295,
+          "speedup": 18.55135380250941
+        },
+        "p95": {
+          "vatlas": 766.7136480000336,
+          "viesOnly": 642.6370439999992,
+          "savedMs": -124.07660400003442,
+          "speedup": 0.8381708681935072
+        },
+        "total": {
+          "vatlas": 12525.687709000136,
+          "viesOnly": 20048.36386999927,
+          "savedMs": 7522.676160999134,
+          "speedup": 1.6005798911618907
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 50,
+          "of": 50,
+          "rate": 1
+        },
+        "viesOnly": {
+          "count": 48,
+          "of": 50,
+          "rate": 0.96
+        },
+        "deltaPoints": 4.0000000000000036
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 37,
+            "of": 50,
+            "rate": 0.74
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 48,
+            "rate": 0
+          },
+          "deltaPoints": 74
+        },
+        "address": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "database": 37,
+          "vies": 13
+        },
+        "viesOnly": {
+          "vies": 48,
+          "not-registered": 2
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 50
+        },
+        "viesOnly": {
+          "found": 48,
+          "not-registered": 2
+        }
+      }
+    },
+    {
+      "code": "PT",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 269.7562129999278,
+          "viesOnly": 246.897636000067,
+          "savedMs": -22.858576999860816,
+          "speedup": 0.9152620925922217
+        },
+        "p95": {
+          "vatlas": 1340.9161469999235,
+          "viesOnly": 1675.0136210000492,
+          "savedMs": 334.09747400012566,
+          "speedup": 1.2491561271356253
+        },
+        "total": {
+          "vatlas": 19440.381311999186,
+          "viesOnly": 24422.51328400074,
+          "savedMs": 4982.131972001553,
+          "speedup": 1.2562774820124762
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 49,
+          "of": 50,
+          "rate": 0.98
+        },
+        "viesOnly": {
+          "count": 49,
+          "of": 50,
+          "rate": 0.98
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "vies": 49,
+          "not-registered": 1
+        },
+        "viesOnly": {
+          "vies": 49,
+          "not-registered": 1
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 49,
+          "not-registered": 1
+        },
+        "viesOnly": {
+          "found": 49,
+          "not-registered": 1
+        }
+      }
+    },
+    {
+      "code": "HR",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 313.850419000024,
+          "viesOnly": 381.310870999936,
+          "savedMs": 67.46045199991204,
+          "speedup": 1.2149445975406101
+        },
+        "p95": {
+          "vatlas": 493.3729850000236,
+          "viesOnly": 738.465433999896,
+          "savedMs": 245.09244899987243,
+          "speedup": 1.4967690904273179
+        },
+        "total": {
+          "vatlas": 16463.361589000262,
+          "viesOnly": 21441.56219499934,
+          "savedMs": 4978.200605999078,
+          "speedup": 1.3023805666350172
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 49,
+          "of": 50,
+          "rate": 0.98
+        },
+        "viesOnly": {
+          "count": 49,
+          "of": 50,
+          "rate": 0.98
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "vies": 49,
+          "not-registered": 1
+        },
+        "viesOnly": {
+          "vies": 49,
+          "not-registered": 1
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 49,
+          "not-registered": 1
+        },
+        "viesOnly": {
+          "found": 49,
+          "not-registered": 1
+        }
+      }
+    },
+    {
+      "code": "EL",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 414.8778519999905,
+          "viesOnly": 489.82825699984096,
+          "savedMs": 74.95040499985043,
+          "speedup": 1.180656558643801
+        },
+        "p95": {
+          "vatlas": 1001.1800880000228,
+          "viesOnly": 1106.0143229998648,
+          "savedMs": 104.83423499984201,
+          "speedup": 1.1047106671980074
+        },
+        "total": {
+          "vatlas": 31806.514880000926,
+          "viesOnly": 27876.522939998777,
+          "savedMs": -3929.99194000215,
+          "speedup": 0.8764406614547631
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 49,
+          "of": 50,
+          "rate": 0.98
+        },
+        "viesOnly": {
+          "count": 49,
+          "of": 50,
+          "rate": 0.98
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "vies": 49,
+          "not-registered": 1
+        },
+        "viesOnly": {
+          "vies": 49,
+          "not-registered": 1
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 49,
+          "not-registered": 1
+        },
+        "viesOnly": {
+          "found": 49,
+          "not-registered": 1
+        }
+      }
+    },
+    {
+      "code": "AT",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 229.1204719999805,
+          "viesOnly": 243.92925899999682,
+          "savedMs": 14.80878700001631,
+          "speedup": 1.0646331900015358
+        },
+        "p95": {
+          "vatlas": 828.6588519999059,
+          "viesOnly": 383.28462499997113,
+          "savedMs": -445.37422699993476,
+          "speedup": 0.4625360895800998
+        },
+        "total": {
+          "vatlas": 14031.347183999751,
+          "viesOnly": 11423.00067699977,
+          "savedMs": -2608.34650699998,
+          "speedup": 0.8141057681208022
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 50,
+          "of": 50,
+          "rate": 1
+        },
+        "viesOnly": {
+          "count": 50,
+          "of": 50,
+          "rate": 1
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 50,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 50,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 0,
+            "of": 50,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 50,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 0,
+            "of": 50,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 50,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "vies": 50
+        },
+        "viesOnly": {
+          "vies": 50
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 50
+        },
+        "viesOnly": {
+          "found": 50
+        }
+      }
+    },
+    {
+      "code": "SI",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 266.5496970000677,
+          "viesOnly": 245.72060799994506,
+          "savedMs": -20.82908900012262,
+          "speedup": 0.9218566397390527
+        },
+        "p95": {
+          "vatlas": 637.7764139999636,
+          "viesOnly": 377.45472999988124,
+          "savedMs": -260.3216840000823,
+          "speedup": 0.5918292393921968
+        },
+        "total": {
+          "vatlas": 15544.809694001688,
+          "viesOnly": 13257.211082000467,
+          "savedMs": -2287.5986120012203,
+          "speedup": 0.8528384292228459
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 47,
+          "of": 50,
+          "rate": 0.94
+        },
+        "viesOnly": {
+          "count": 47,
+          "of": 50,
+          "rate": 0.94
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 47,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 47,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "vies": 47,
+          "not-registered": 3
+        },
+        "viesOnly": {
+          "vies": 47,
+          "not-registered": 3
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 47,
+          "not-registered": 3
+        },
+        "viesOnly": {
+          "found": 47,
+          "not-registered": 3
+        }
+      }
+    },
+    {
+      "code": "LT",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 333.08903899998404,
+          "viesOnly": 368.1603129999712,
+          "savedMs": 35.07127399998717,
+          "speedup": 1.1052909879751067
+        },
+        "p95": {
+          "vatlas": 505.11801599990577,
+          "viesOnly": 641.1513269999996,
+          "savedMs": 136.03331100009382,
+          "speedup": 1.2693099566658879
+        },
+        "total": {
+          "vatlas": 17523.579009999405,
+          "viesOnly": 19382.038590000942,
+          "savedMs": 1858.4595800015377,
+          "speedup": 1.106054795024524
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 48,
+          "of": 50,
+          "rate": 0.96
+        },
+        "viesOnly": {
+          "count": 48,
+          "of": 50,
+          "rate": 0.96
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 48,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 48,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 0,
+            "of": 48,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 48,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 0,
+            "of": 48,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 48,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "vies": 48,
+          "not-registered": 2
+        },
+        "viesOnly": {
+          "vies": 48,
+          "not-registered": 2
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 48,
+          "not-registered": 2
+        },
+        "viesOnly": {
+          "found": 48,
+          "not-registered": 2
+        }
+      }
+    },
+    {
+      "code": "CY",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 418.1800519998651,
+          "viesOnly": 416.6481540000532,
+          "savedMs": -1.5318979998119175,
+          "speedup": 0.9963367501809666
+        },
+        "p95": {
+          "vatlas": 608.0978210000321,
+          "viesOnly": 504.1047170003876,
+          "savedMs": -103.99310399964452,
+          "speedup": 0.8289862248994327
+        },
+        "total": {
+          "vatlas": 22866.723406999787,
+          "viesOnly": 21525.251902998607,
+          "savedMs": -1341.4715040011797,
+          "speedup": 0.9413352109908961
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 50,
+          "of": 50,
+          "rate": 1
+        },
+        "viesOnly": {
+          "count": 50,
+          "of": 50,
+          "rate": 1
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 50,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 50,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 50,
+            "of": 50,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "vies": 50
+        },
+        "viesOnly": {
+          "vies": 50
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 50
+        },
+        "viesOnly": {
+          "found": 50
+        }
+      }
+    },
+    {
+      "code": "MT",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 291.71698100003414,
+          "viesOnly": 245.18657300015911,
+          "savedMs": -46.530407999875024,
+          "speedup": 0.840494688240759
+        },
+        "p95": {
+          "vatlas": 380.2073059999384,
+          "viesOnly": 612.4723459999077,
+          "savedMs": 232.2650399999693,
+          "speedup": 1.6108905229717152
+        },
+        "total": {
+          "vatlas": 15012.268602999044,
+          "viesOnly": 13746.179196000448,
+          "savedMs": -1266.0894069985952,
+          "speedup": 0.9156630193290264
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 48,
+          "of": 50,
+          "rate": 0.96
+        },
+        "viesOnly": {
+          "count": 48,
+          "of": 50,
+          "rate": 0.96
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 48,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 48,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 0,
+            "of": 48,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 48,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 0,
+            "of": 48,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 48,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 48,
+            "of": 48,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "vies": 48,
+          "not-registered": 2
+        },
+        "viesOnly": {
+          "vies": 48,
+          "not-registered": 2
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 48,
+          "not-registered": 2
+        },
+        "viesOnly": {
+          "found": 48,
+          "not-registered": 2
+        }
+      }
+    },
+    {
+      "code": "LU",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 235.2747729998082,
+          "viesOnly": 193.23399799969047,
+          "savedMs": -42.04077500011772,
+          "speedup": 0.8213120154613772
+        },
+        "p95": {
+          "vatlas": 427.5572580001317,
+          "viesOnly": 365.9741980000399,
+          "savedMs": -61.58306000009179,
+          "speedup": 0.8559653500255331
+        },
+        "total": {
+          "vatlas": 11271.34656600008,
+          "viesOnly": 10163.736277998541,
+          "savedMs": -1107.6102880015387,
+          "speedup": 0.9017322126051349
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 47,
+          "of": 50,
+          "rate": 0.94
+        },
+        "viesOnly": {
+          "count": 47,
+          "of": 50,
+          "rate": 0.94
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 47,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 47,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 0,
+            "of": 47,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 47,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 0,
+            "of": 47,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 47,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 47,
+            "of": 47,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "vies": 47,
+          "not-registered": 3
+        },
+        "viesOnly": {
+          "vies": 47,
+          "not-registered": 3
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 47,
+          "not-registered": 3
+        },
+        "viesOnly": {
+          "found": 47,
+          "not-registered": 3
+        }
+      }
+    },
+    {
+      "code": "IT",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 228.36702900001546,
+          "viesOnly": 246.03014100000019,
+          "savedMs": 17.66311199998472,
+          "speedup": 1.0773452808723256
+        },
+        "p95": {
+          "vatlas": 538.9981829999888,
+          "viesOnly": 407.24142799992114,
+          "savedMs": -131.75675500006764,
+          "speedup": 0.7555525061944961
+        },
+        "total": {
+          "vatlas": 14793.215650999946,
+          "viesOnly": 13714.907969000167,
+          "savedMs": -1078.3076819997787,
+          "speedup": 0.9271079589834216
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 49,
+          "of": 50,
+          "rate": 0.98
+        },
+        "viesOnly": {
+          "count": 49,
+          "of": 50,
+          "rate": 0.98
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "vies": 49,
+          "not-registered": 1
+        },
+        "viesOnly": {
+          "vies": 49,
+          "not-registered": 1
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 49,
+          "not-registered": 1
+        },
+        "viesOnly": {
+          "found": 49,
+          "not-registered": 1
+        }
+      }
+    },
+    {
+      "code": "HU",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 235.09396199998446,
+          "viesOnly": 245.38289200002328,
+          "savedMs": 10.288930000038818,
+          "speedup": 1.0437651818554128
+        },
+        "p95": {
+          "vatlas": 599.0020479999948,
+          "viesOnly": 382.6269780001603,
+          "savedMs": -216.37506999983452,
+          "speedup": 0.6387740731066142
+        },
+        "total": {
+          "vatlas": 13718.664102000603,
+          "viesOnly": 12829.165015999504,
+          "savedMs": -889.4990860010985,
+          "speedup": 0.935161391853644
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 44,
+          "of": 50,
+          "rate": 0.88
+        },
+        "viesOnly": {
+          "count": 44,
+          "of": 50,
+          "rate": 0.88
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 44,
+            "of": 44,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 44,
+            "of": 44,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 44,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 44,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 44,
+            "of": 44,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 44,
+            "of": 44,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 44,
+            "of": 44,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 44,
+            "of": 44,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 44,
+            "of": 44,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 44,
+            "of": 44,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 44,
+            "of": 44,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 44,
+            "of": 44,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "vies": 44,
+          "not-registered": 6
+        },
+        "viesOnly": {
+          "vies": 44,
+          "not-registered": 6
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 44,
+          "not-registered": 6
+        },
+        "viesOnly": {
+          "found": 44,
+          "not-registered": 6
+        }
+      }
+    },
+    {
+      "code": "ES",
+      "n": {
+        "vatlas": 50,
+        "viesOnly": 50
+      },
+      "latencyMs": {
+        "p50": {
+          "vatlas": 215.67741500001284,
+          "viesOnly": 245.69053200000053,
+          "savedMs": 30.013116999987687,
+          "speedup": 1.1391574402910287
+        },
+        "p95": {
+          "vatlas": 405.76064600000973,
+          "viesOnly": 492.1216140000033,
+          "savedMs": 86.36096799999359,
+          "speedup": 1.2128372202956113
+        },
+        "total": {
+          "vatlas": 12992.86776700006,
+          "viesOnly": 13791.690335000141,
+          "savedMs": 798.8225680000814,
+          "speedup": 1.0614816207110929
+        }
+      },
+      "found": {
+        "vatlas": {
+          "count": 49,
+          "of": 50,
+          "rate": 0.98
+        },
+        "viesOnly": {
+          "count": 49,
+          "of": 50,
+          "rate": 0.98
+        },
+        "deltaPoints": 0
+      },
+      "completeness": {
+        "name": {
+          "vatlas": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "legalForm": {
+          "vatlas": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "address": {
+          "vatlas": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "postalCode": {
+          "vatlas": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "city": {
+          "vatlas": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "viesOnly": {
+            "count": 0,
+            "of": 49,
+            "rate": 0
+          },
+          "deltaPoints": 0
+        },
+        "source": {
+          "vatlas": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "viesOnly": {
+            "count": 49,
+            "of": 49,
+            "rate": 1
+          },
+          "deltaPoints": 0
+        }
+      },
+      "origins": {
+        "vatlas": {
+          "vies": 49,
+          "not-registered": 1
+        },
+        "viesOnly": {
+          "vies": 49,
+          "not-registered": 1
+        }
+      },
+      "outcomes": {
+        "vatlas": {
+          "found": 49,
+          "not-registered": 1
+        },
+        "viesOnly": {
+          "found": 49,
+          "not-registered": 1
+        }
+      }
+    }
+  ]
+}

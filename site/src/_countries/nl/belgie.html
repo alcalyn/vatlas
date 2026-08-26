@@ -1,0 +1,228 @@
+<!-- @meta
+{
+  "title": "Belgisch btw-nummer: opbouw, ondernemingsnummer en opzoeken",
+  "description": "BE plus tien cijfers, precies het ondernemingsnummer uit de KBO. Hoe het controlegetal werkt, en hoe u de onderneming achter een btw-nummer terugvindt.",
+  "h1": "Het Belgische btw-nummer",
+  "term": "Belgisch btw-nummer",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">België · BE</p>
+        <h1>Het Belgische btw-nummer</h1>
+        <p class="section__lead">
+          België heeft het eenvoudigste systeem van de hele Unie: het btw-nummer <em>is</em> het
+          ondernemingsnummer. Eén nummer, één register, en dat register is bovendien open data.
+        </p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Formaat:</strong> <code>BE</code> + 10 cijfers, beginnend met 0 of 1</p>
+        <p><strong>Voorbeeld:</strong> <code>BE0411905847</code>, ondernemingsnummer <code>0411.905.847</code></p>
+        <p><strong>Toegekend door:</strong> de Kruispuntbank van Ondernemingen (KBO); geactiveerd voor btw door de FOD Financiën.</p>
+      </div>
+
+      <h2 id="formaat">De opbouw</h2>
+      <p>
+        Een Belgisch btw-nummer telt altijd <strong>twaalf tekens</strong>: de landcode
+        <code>BE</code> en tien cijfers. In het binnenland wordt het geschreven met punten (<code>0411.905.847</code>) maar voor validatie en voor facturen naar het buitenland worden
+        die weggelaten.
+      </p>
+      <ul class="breakdown">
+        <li><b>BE</b><span>De landcode.</span></li>
+        <li><b>0</b><span>Het eerste cijfer: 0 of 1 voor een onderneming.</span></li>
+        <li><b>4119058</b><span>Het volgnummer.</span></li>
+        <li><b>47</b><span>Het controlegetal, modulo 97.</span></li>
+      </ul>
+      <p>
+        Tot 2003 telden Belgische btw-nummers negen cijfers; sinds de invoering van het
+        ondernemingsnummer op <strong>1 juli 2003</strong> is er een <code>0</code> vooraan
+        toegevoegd. Nummers die met <code>1</code> beginnen worden pas sinds enkele jaren uitgereikt,
+        nu de reeks met <code>0</code> uitgeput raakt. Een <strong>vestigingseenheidsnummer</strong>
+        heeft eveneens tien cijfers maar begint met <code>2</code>, en is <em>geen</em> btw-nummer.
+      </p>
+
+      <h2 id="controlegetal">Het controlegetal</h2>
+      <p>
+        De laatste twee cijfers volgen uit de eerste acht met één deling:
+      </p>
+      <div class="code" data-copy><pre><code>controlegetal = 97 − (eerste 8 cijfers modulo 97)</code></pre></div>
+      <p>
+        Voor <code>0411905847</code>: <code>04119058 mod 97 = 50</code>, en <code>97 − 50 = 47</code>.
+        Dat klopt met de laatste twee cijfers. De controle draait offline, in één regel code, zonder
+        enige netwerkoproep.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>Een correct controlegetal bewijst niets.</strong> Het toont enkel aan dat het
+          nummer correct is overgetikt. Of de onderneming bestaat, en of ze btw-plichtig is, zegt
+          alleen de KBO of het VIES.
+        </p>
+      </div>
+
+      <h2 id="ondernemingsnummer">Ondernemingsnummer, btw-nummer, RPR</h2>
+      <p>
+        Het <strong>ondernemingsnummer</strong> krijgt elke rechtspersoon en elke zelfstandige bij
+        inschrijving in de KBO. Het <strong>btw-nummer</strong> is exact hetzelfde nummer met
+        <code>BE</code> ervoor, maar het bestaat enkel wanneer de onderneming ook effectief
+        btw-plichtig is en haar btw-hoedanigheid werd geactiveerd.
+      </p>
+      <p>
+        Dat is het echte onderscheid: <strong>elke onderneming heeft een ondernemingsnummer, niet elke
+        onderneming heeft een actief btw-nummer.</strong> Een vrijgestelde kleine onderneming, een vzw
+        zonder economische activiteit of een holding zonder btw-plicht heeft wel een nummer in de KBO
+        en valideert niet in het VIES.
+      </p>
+      <p>
+        Het <strong>RPR-nummer</strong> (Rechtspersonenregister) is hetzelfde nummer, gevolgd door de
+        bevoegde ondernemingsrechtbank, «RPR Gent, afdeling Veurne». Geen nieuw nummer, wel een
+        andere schrijfwijze.
+      </p>
+
+      <h2 id="opzoeken">De onderneming achter een nummer vinden</h2>
+      <h3>KBO Public Search</h3>
+      <p>
+        <a href="https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html" rel="noopener">KBO Public Search</a>
+        is gratis, publiek en meteen doorzoekbaar op ondernemingsnummer. U krijgt de naam, de
+        rechtsvorm, de status, het adres van de maatschappelijke zetel, de vestigingseenheden en de
+        NACE-activiteitscodes. Voor een handmatige opzoeking is dit de beste bron van Europa.
+      </p>
+      <h3>KBO Open Data</h3>
+      <p>
+        De FOD Economie publiceert daarnaast het <strong>volledige uittreksel als open data</strong>:
+        ongeveer 1,9 miljoen entiteiten, elke dag, één maand lang bewaard. Een gratis account volstaat.
+        Omdat het btw-nummer het ondernemingsnummer is, is elke regel rechtstreeks te bereiken vanuit
+        een btw-nummer, een luxe die de meeste lidstaten niet bieden.
+      </p>
+      <p>
+        Twee dingen om te weten: de benamingen staan in een <em>ander</em> bestand dan de
+        ondernemingen zelf, en de taal van een benaming wordt in het ene bestand als cijfer en in het
+        andere als lettercode geschreven. Wie daar geen rekening mee houdt, krijgt een register dat
+        volledig in het Duits staat. De licentie verbiedt hergebruik voor direct marketing.
+      </p>
+      <h3>VIES</h3>
+      <p>
+        België geeft via het VIES <strong>zowel de naam als het volledige adres vrij</strong>, in de
+        taal van de onderneming. Het VIES beantwoordt bovendien de enige vraag die de KBO niet
+        beantwoordt: is dit nummer op dit ogenblik geldig voor intracommunautaire handel?
+      </p>
+
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Wat elke bron oplevert voor België</caption>
+          <thead>
+            <tr><th scope="col">Bron</th><th scope="col">Sleutel</th><th scope="col">Wat u krijgt</th><th scope="col">Beperking</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">KBO Public Search</th><td>Ondernemingsnummer</td>
+              <td>Naam, rechtsvorm, status, adres, activiteiten</td><td>Eén opzoeking per keer</td>
+            </tr>
+            <tr>
+              <th scope="row">KBO Open Data</th><td>Ondernemingsnummer</td>
+              <td>Het volledige register, dagelijks</td><td>Gratis account vereist; geen direct marketing</td>
+            </tr>
+            <tr>
+              <th scope="row">VIES</th><td>Btw-nummer</td>
+              <td>Intracommunautaire geldigheid, naam en adres</td><td>Traag, strikte quota</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="valkuilen">Belgische bijzonderheden</h2>
+      <ul>
+        <li>
+          <strong>In de KBO staan ≠ btw-plichtig zijn.</strong> Het nummer bestaat altijd, de
+          btw-hoedanigheid niet.
+        </li>
+        <li>
+          <strong>Een nummer beginnend met 2 is een vestigingseenheid</strong>, geen onderneming.
+          Het valideert nooit als btw-nummer.
+        </li>
+        <li>
+          <strong>Oude nummers van negen cijfers</strong> circuleren nog op documenten van voor 2003.
+          Er hoort een <code>0</code> voor.
+        </li>
+        <li>
+          <strong>De taal van de benaming hangt van de onderneming af</strong>, niet van de regio.
+          Een Brusselse onderneming kan haar Nederlandse, Franse of allebei de namen registreren.
+        </li>
+        <li>
+          <strong>Het nummer verandert nooit</strong>, ook niet bij naams-, adres- of
+          rechtsvormwijziging.
+        </li>
+      </ul>
+
+      <!-- @include partials/country/nl.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Veelgestelde vragen</p>
+        <h2>Het btw-nummer in het kort</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Hoeveel cijfers telt een Belgisch btw-nummer?</summary>
+          <p>
+            Tien cijfers, voorafgegaan door <code>BE</code>: twaalf tekens in totaal. Het eerste
+            cijfer is 0 of 1.
+          </p>
+        </details>
+        <details>
+          <summary>Zijn het ondernemingsnummer en het btw-nummer hetzelfde?</summary>
+          <p>
+            Het zijn dezelfde cijfers sinds 1 juli 2003. Het btw-nummer is het ondernemingsnummer met
+            <code>BE</code> ervoor, maar het bestaat enkel als de onderneming btw-plichtig is.
+          </p>
+        </details>
+        <details>
+          <summary>Hoe controleer ik een Belgisch btw-nummer zelf?</summary>
+          <p>
+            Met de modulo 97-regel: de laatste twee cijfers moeten gelijk zijn aan
+            <code>97 − (de eerste acht cijfers modulo 97)</code>. Dat werkt offline, maar het bewijst
+            enkel dat het nummer correct is overgetikt.
+          </p>
+        </details>
+        <details>
+          <summary>Waarom valideert een bestaand Belgisch nummer niet in het VIES?</summary>
+          <p>
+            Omdat de onderneming wel in de KBO staat maar geen actieve btw-hoedanigheid heeft: een
+            vrijgestelde kleine onderneming, een vzw zonder economische activiteit, of een stopgezette
+            onderneming.
+          </p>
+        </details>
+        <details>
+          <summary>Wat is een nummer dat met 2 begint?</summary>
+          <p>
+            Een vestigingseenheidsnummer: het identificeert een exploitatiezetel, niet de onderneming
+            zelf, en is nooit een btw-nummer.
+          </p>
+        </details>
+        <details>
+          <summary>Is er een gratis volledig bestand van Belgische ondernemingen?</summary>
+          <p>
+            Ja. KBO Open Data publiceert dagelijks het volledige uittreksel; een gratis account
+            volstaat. Hergebruik voor direct marketing is contractueel verboden.
+          </p>
+        </details>
+      </div>
+
+      <h2>Het btw-nummer in andere landen</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+            <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Bijgewerkt op 28 augustus 2026.</p>
+    </div>
+  </section>
+</main>

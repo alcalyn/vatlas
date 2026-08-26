@@ -1,0 +1,102 @@
+<!-- @meta
+{
+  "title": "Peruvian RUC: format, check digit and lookup",
+  "description": "PE plus eleven digits. How the RUC check digit works, what the 10 and 20 prefixes mean, and how to find the company behind one for free.",
+  "h1": "The Peruvian RUC",
+  "term": "Registro Único de Contribuyentes",
+  "updated": "2026-09-13"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Peru · PE</p>
+        <h1>The Peruvian RUC</h1>
+        <p class="section__lead">Peru has VAT, the IGV, and the number an invoice carries is the RUC. SUNAT republishes the entire taxpayer register every day, in one file, to anyone who asks.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>PE</code> + 11 digits</p>
+        <p><strong>Example:</strong> <code>PE20100113610</code></p>
+        <p><strong>Issued by:</strong> SUNAT, the national customs and tax administration.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A RUC, the Registro Único de Contribuyentes, is <strong>eleven digits</strong>. The first two say what kind of taxpayer it is:</p>
+      <ul class="breakdown">
+        <li><b>10</b><span>A natural person, the eight digits of their DNI in the middle.</span></li>
+        <li><b>20</b><span>A legal person: a company, an association, a public body.</span></li>
+        <li><b>15 · 17</b><span>Older natural-person ranges, still in use.</span></li>
+      </ul>
+      <p>The last digit is a modulus 11 check over the first ten, weighted 5, 4, 3, 2, 7, 6, 5, 4, 3, 2, so a mistyped RUC can be caught before any network call, like a French key or a Polish NIP.</p>
+      <p>If you are looking for a <strong>company</strong>, you are looking for a RUC beginning <code>20</code>. There are some 2.35 million of those against 15.5 million natural persons, and both live in the same file.</p>
+
+      <h2 id="status">Estado and condición</h2>
+      <p>SUNAT publishes two facts about a taxpayer, and they answer different questions.</p>
+      <p><strong>Estado del contribuyente</strong> is whether the registration is live: <code>ACTIVO</code>, or one of a dozen ways of having ended: <code>BAJA DEFINITIVA</code>, <code>BAJA DE OFICIO</code>, <code>ANULACIÓN</code>. <code>SUSPENSIÓN TEMPORAL</code> is a taxpayer who has stopped trading for a while without deregistering, and is still a live registration.</p>
+      <p><strong>Condición de domicilio</strong> is whether SUNAT can find them at the address they declared: <code>HABIDO</code> yes, <code>NO HABIDO</code> no. It is a real commercial signal in Peru, since invoices from a <em>no habido</em> supplier are treated differently, but it is a fact about their address, not about their identity.</p>
+
+      <h2 id="find">Finding the company behind the number</h2>
+      <h3>The padrón reducido</h3>
+      <p>SUNAT publishes the <strong>padrón reducido RUC</strong>: the whole register, <strong>rebuilt every day</strong>, as a single ZIP with no account and no key. Some 390 MB compressed, 1.5 GB unpacked, 18.4 million rows. It is what {{siteName}} imports, so a Peruvian lookup is a database read rather than a call to Lima.</p>
+      <p>Every API selling "RUC lookups" is replaying this file. It is worth knowing that the source is free.</p>
+      <h3>What the file does and does not contain</h3>
+      <p>It contains the name, the estado, the condición and a structured street address: road type, road name, number, interior, block, lot, apartment. {{siteName}} recomposes those into two address lines.</p>
+      <p>What it does not contain is a <strong>locality in words</strong>. The district is given as a six-digit <strong>UBIGEO</strong> code, and SUNAT ships no table to resolve it. The first two digits are the department, which is stable and worth having, so <code>address.city</code> holds the department (<em>Lima</em>, <em>Arequipa</em>, <em>Callao</em>) and the district behind the last four digits is left unresolved rather than guessed at. Peru's postal codes are not in the register at all.</p>
+
+      <h2 id="pitfalls">Peru-specific pitfalls</h2>
+      <ul>
+        <li><strong>A RUC beginning 10 is a person, not a company.</strong> Both are in the register and both are valid RUCs.</li>
+        <li><strong>The locality is a code, not a name.</strong> The department is resolvable; the district is not, from anything SUNAT publishes.</li>
+        <li><strong>Suspension is not deregistration.</strong> <code>SUSPENSIÓN TEMPORAL</code> is a live registration.</li>
+        <li><strong>No postal code.</strong> The padrón does not carry one.</li>
+        <li><strong>The legal form is in the name.</strong> S.A.C., S.R.L., E.I.R.L. The file publishes no separate field for it.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The RUC in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a RUC have?</summary>
+          <p>Eleven, the last of which is a modulus 11 check digit over the first ten.</p>
+        </details>
+        <details>
+          <summary>What is the difference between a RUC starting 10 and one starting 20?</summary>
+          <p>10 is a natural person, 20 a legal one. A company's RUC begins with 20.</p>
+        </details>
+        <details>
+          <summary>Does Peru have a VAT number?</summary>
+          <p>Peru has the IGV, and the number on an invoice is the RUC. There is no separate tax number.</p>
+        </details>
+        <details>
+          <summary>Can I download the whole Peruvian register for free?</summary>
+          <p>Yes. SUNAT publishes the padrón reducido daily as a single ZIP, with no account and no key.</p>
+        </details>
+        <details>
+          <summary>What does "no habido" mean?</summary>
+          <p>That SUNAT could not find the taxpayer at the address they declared. It is a fact about their address, not about whether their registration is live.</p>
+        </details>
+      </div>
+
+      <h2>Business numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/brazil/">Brazil</a></li>
+        <li><a href="/en/vat-number/costa-rica/">Costa Rica</a></li>
+        <li><a href="/en/vat-number/spain/">Spain</a></li>
+        <li><a href="/en/vat-number/australia/">Australia</a></li>
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 13 September 2026.</p>
+    </div>
+  </section>
+</main>

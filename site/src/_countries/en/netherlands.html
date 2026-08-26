@@ -1,0 +1,113 @@
+<!-- @meta
+{
+  "title": "Dutch VAT number: btw-id, RSIN and the KVK number",
+  "description": "NL plus nine digits, a B and two digits. Why the btw-id was decoupled from the RSIN in 2020, and how to find the company behind one.",
+  "h1": "The Dutch VAT number (btw-id)",
+  "term": "Dutch VAT identification number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Netherlands · NL</p>
+        <h1>The Dutch VAT number (btw-id)</h1>
+        <p class="section__lead">Fourteen characters with a B in the middle. Since 2020 there are also two of them: a btw-id for the outside world and a separate turnover-tax number for the tax office.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>NL</code> + 9 digits + <code>B</code> + 2 digits</p>
+        <p><strong>Example:</strong> <code>NL001631457B01</code></p>
+        <p><strong>Issued by:</strong> the Dutch tax administration (Belastingdienst).</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Dutch VAT identification number is always <strong>fourteen characters</strong>. The <code>B</code> is fixed; it is the only EU number with a letter in the middle of its national part.</p>
+      <ul class="breakdown">
+        <li><b>NL</b><span>The country code.</span></li>
+        <li><b>001631457</b><span>Nine digits: the RSIN, or a separately assigned number for a sole trader.</span></li>
+        <li><b>B</b><span>A fixed letter.</span></li>
+        <li><b>01</b><span>A sequence number, normally 01.</span></li>
+      </ul>
+      <p>The last two digits are a sequence number, not a checksum: they distinguish several VAT registrations of the same legal person. In practice it is almost always <code>01</code>.</p>
+
+      <h2 id="identifiers">Btw-id, turnover-tax number, RSIN and KVK</h2>
+      <p>The Netherlands generates more number confusion than any other member state, and 2020 made it worse.</p>
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Dutch business identifiers compared</caption>
+          <thead><tr><th scope="col">Number</th><th scope="col">Format</th><th scope="col">Issued by</th><th scope="col">Used for</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Btw-id</th><td><code>NL</code> + 9 digits + <code>B</code> + 2</td><td>Tax administration</td><td>Outward facing: invoices, website, EU trade</td></tr>
+            <tr><th scope="row">Turnover-tax number</th><td>9 digits + <code>B</code> + 2</td><td>Tax administration</td><td>Correspondence with the tax office only; never public</td></tr>
+            <tr><th scope="row">RSIN</th><td>9 digits</td><td>Chamber of Commerce</td><td>Links a legal entity across government registers. Sole traders have none</td></tr>
+            <tr><th scope="row">KVK number</th><td>8 digits</td><td>Chamber of Commerce</td><td>Registration in the trade register</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout"><p><strong>The 2020 split is the thing to understand.</strong> Until then a sole trader’s VAT number contained their citizen service number (BSN), which therefore appeared on every invoice and every website. The data protection authority called a halt; since then there is a public btw-id with no BSN in it, and a separate turnover-tax number for the tax office.</p></div>
+      <p>For legal entities the nine digits of the btw-id equal the RSIN. For sole traders they are assigned arbitrarily and cannot be derived from any other number.</p>
+
+      <h2 id="find">Finding the company behind a number</h2>
+      <h3>The KVK trade register</h3>
+      <p>The Chamber of Commerce keeps the complete trade register but <strong>sells its data</strong>: extracts cost money and there is no free full file. The register is searchable by name and KVK number, not by VAT number, and since the 2020 decoupling there is no reliable arithmetic bridge between the two either.</p>
+      <h3>VIES</h3>
+      <p>Here the news is good: the Netherlands <strong>does disclose both the name and the address</strong> through VIES. Checking <code>NL001631457B01</code> returns HEINEKEN N.V. with its street and postcode. For Dutch numbers VIES is the only free route from a number to a company.</p>
+      <p>Watch the address formatting: house numbers are zero-padded (<code>00021</code>) and the postcode is written without a space, run together with the town (<code>1017ZD AMSTERDAM</code>).</p>
+
+      <h2 id="pitfalls">Netherlands-specific pitfalls</h2>
+      <ul>
+        <li><strong>Never put the turnover-tax number on an invoice.</strong> That is the one that may contain a BSN; the btw-id is the public number.</li>
+        <li><strong>The <code>B</code> is mandatory.</strong> Nine digits without it is not a VAT number.</li>
+        <li><strong>The RSIN is not a VAT number</strong>, and a sole trader does not even have one.</li>
+        <li><strong>The Chamber of Commerce sells its register</strong>, so building your own directory is not free.</li>
+        <li><strong>The sequence is almost always 01</strong>, but 02 and above exist for VAT groups and re-registrations.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Dutch VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many characters does a Dutch VAT number have?</summary>
+          <p>Fourteen: <code>NL</code>, nine digits, the letter <code>B</code> and two digits.</p>
+        </details>
+        <details>
+          <summary>What is the difference between the btw-id and the turnover-tax number?</summary>
+          <p>The btw-id is the public number, meant for invoices, your website and EU trade. The turnover-tax number is used only with the tax office; it may contain a BSN and should never appear publicly.</p>
+        </details>
+        <details>
+          <summary>Is the RSIN the same as the VAT number?</summary>
+          <p>For legal entities the nine digits of the btw-id equal the RSIN, but the VAT number is not reachable from it without the <code>B01</code>. Sole traders have no RSIN at all.</p>
+        </details>
+        <details>
+          <summary>Why did Dutch VAT numbers change in 2020?</summary>
+          <p>Because a sole trader’s VAT number contained their citizen service number and therefore appeared on every invoice. The data protection authority ruled that unlawful, and the separate btw-id was introduced.</p>
+        </details>
+        <details>
+          <summary>Can I get a company name from a Dutch VAT number?</summary>
+          <p>Yes, through VIES: the Netherlands discloses name and address. The KVK register is not searchable by VAT number and its extracts are paid.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/">Germany</a></li>
+            <li><a href="/en/vat-number/italy/">Italy</a></li>
+            <li><a href="/en/vat-number/spain/">Spain</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

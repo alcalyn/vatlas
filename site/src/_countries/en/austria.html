@@ -1,0 +1,112 @@
+<!-- @meta
+{
+  "title": "Austrian VAT number (UID): format, check digit and lookup",
+  "description": "ATU plus eight digits. How the UID differs from the Steuernummer and the Firmenbuch number, and why the company register cannot be searched by it.",
+  "h1": "The Austrian VAT number (UID)",
+  "term": "Austrian VAT identification number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Austria · AT</p>
+        <h1>The Austrian VAT number (UID)</h1>
+        <p class="section__lead">Eleven characters, three of which are fixed before you start. Austria is the only member state whose prefix carries a letter of its own.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>ATU</code> + 8 digits</p>
+        <p><strong>Example:</strong> <code>ATU14189108</code></p>
+        <p><strong>Issued by:</strong> the competent tax office, on application (form U 15).</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>An Austrian VAT number (<em>Umsatzsteuer-Identifikationsnummer</em>, UID) is always <strong>eleven characters</strong>. The letter <code>U</code> is part of the number, not a typo: it stands for <em>Umsatzsteuer</em>, and it is the only letter any EU prefix carries after the country code.</p>
+      <ul class="breakdown">
+        <li><b>AT</b><span>The country code.</span></li>
+        <li><b>U</b><span>A fixed part of every Austrian UID.</span></li>
+        <li><b>1418910</b><span>Seven identifying digits.</span></li>
+        <li><b>8</b><span>The check digit.</span></li>
+      </ul>
+      <p>The last digit checks the seven before it, so any single transposition fails immediately. It says nothing about whether the number was ever issued.</p>
+
+      <h2 id="identifiers">UID, Steuernummer, Firmenbuchnummer</h2>
+      <p>Austria runs three numbers side by side, and only the first counts for intra-community trade.</p>
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Austrian company identifiers compared</caption>
+          <thead><tr><th scope="col">Number</th><th scope="col">Format</th><th scope="col">Issued by</th><th scope="col">Used for</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">UID number</th><td><code>ATU</code> + 8 digits</td><td>Tax office</td><td>Intra-community supplies of goods and services</td></tr>
+            <tr><th scope="row">Steuernummer</th><td>9 digits (<code>FF-NNNNNNP</code>)</td><td>Tax office</td><td>Domestic taxes. The first two digits identify the tax office</td></tr>
+            <tr><th scope="row">Firmenbuch number</th><td><code>FN</code> + number + check letter</td><td>Commercial court</td><td>Company law identification</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The Steuernummer is routinely mistaken for the UID because both come from the tax office. It is purely domestic and has no place on a cross-border invoice.</p>
+
+      <h2 id="find">Finding the company behind a number</h2>
+      <h3>The Firmenbuch</h3>
+      <p>Austria's commercial register is complete and reliable, and <strong>not freely accessible</strong>. Queries go through commercial clearing agencies, each one is charged for, and you search by company name or register number, never by VAT number. No open bulk dataset exists.</p>
+      <h3>FinanzOnline and the level-2 confirmation</h3>
+      <p>Through FinanzOnline the finance ministry offers a two-level confirmation. <strong>Level 1</strong> checks only that the UID is valid. <strong>Level 2</strong> additionally compares the name and address <em>you supply</em> against the other member state's records, so it confirms data rather than releasing it. That confirmation is exactly what the zero-rating evidence requires.</p>
+      <h3>VIES</h3>
+      <p>Austria <strong>does disclose the name and address</strong> through VIES, unlike Germany. That makes VIES the only free source that gets you from an Austrian number to a company.</p>
+
+      <h2 id="pitfalls">Austria-specific pitfalls</h2>
+      <ul>
+        <li><strong>The <code>U</code> gets dropped constantly.</strong> <code>AT14189108</code> is not a valid number, and a validator that silently inserts the letter hides a data-entry error.</li>
+        <li><strong>Small businesses get no UID automatically.</strong> Below the threshold it has to be applied for, which becomes necessary as soon as they buy from another member state.</li>
+        <li><strong>The Firmenbuch is paid.</strong> Unlike Belgium or Estonia there is no open bulk file to build a directory from.</li>
+        <li><strong>The UID cannot be derived from the Firmenbuch number</strong>, nor the other way round.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Austrian VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many characters does an Austrian VAT number have?</summary>
+          <p>Eleven: the <code>ATU</code> prefix and eight digits, the last of which is a check digit.</p>
+        </details>
+        <details>
+          <summary>What does the U in ATU stand for?</summary>
+          <p><em>Umsatzsteuer</em>, German for VAT. It is a fixed part of every Austrian UID and must never be omitted.</p>
+        </details>
+        <details>
+          <summary>What is the difference between the UID and the Steuernummer?</summary>
+          <p>The Steuernummer is purely domestic and starts with the code of the competent tax office. The UID is for intra-community trade and is the only one that belongs on an invoice to another member state.</p>
+        </details>
+        <details>
+          <summary>What is the level-2 confirmation for?</summary>
+          <p>It confirms the name and address you supply against the other member state’s records. For zero-rating an intra-community supply it is the due-diligence evidence the tax office expects.</p>
+        </details>
+        <details>
+          <summary>Can I search the Austrian company register for free?</summary>
+          <p>No. Queries run through commercial clearing agencies and are charged for, and there is no open bulk dataset.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/">Germany</a></li>
+            <li><a href="/en/vat-number/italy/">Italy</a></li>
+            <li><a href="/en/vat-number/spain/">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

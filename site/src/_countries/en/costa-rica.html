@@ -1,0 +1,100 @@
+<!-- @meta
+{
+  "title": "Costa Rican cédula jurídica: format, tax status and lookup",
+  "description": "CR plus ten digits. How a cédula jurídica encodes the legal form, what Hacienda's free API answers, and what it deliberately does not.",
+  "h1": "The Costa Rican cédula jurídica",
+  "term": "cédula jurídica",
+  "updated": "2026-09-13"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Costa Rica · CR</p>
+        <h1>The Costa Rican cédula jurídica</h1>
+        <p class="section__lead">Costa Rica has VAT, the IVA, since 2019, and the number an invoice carries is the cédula jurídica. The Ministry of Finance confirms it over an API open to anyone, in one call and with no key.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>CR</code> + 10 digits</p>
+        <p><strong>Example:</strong> <code>CR3101000109</code></p>
+        <p><strong>Issued by:</strong> the Registro Nacional; the tax status comes from the Ministerio de Hacienda.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A cédula jurídica is <strong>ten digits</strong>, written with hyphens on paper (<code>3-101-000109</code>) and stored without them. It is not a random serial: the groups mean something.</p>
+      <ul class="breakdown">
+        <li><b>3</b><span>A legal person. A <code>1</code> here would be a Costa Rican natural person, a <code>4</code> a public body.</span></li>
+        <li><b>101</b><span>The kind of body: 101 a sociedad anónima, 102 a sociedad de responsabilidad limitada, and so on.</span></li>
+        <li><b>000109</b><span>The serial within that class.</span></li>
+      </ul>
+      <p>So the <strong>legal form is in the number itself</strong>, which is unusual and useful: {{siteName}} reads the commercial forms out of the middle group and returns them, without a second call.</p>
+      <p>There is no check digit. A mistyped cédula jurídica cannot be caught offline; it has to be asked about.</p>
+
+      <h2 id="status">Registered, registered of office, deregistered</h2>
+      <p>Holding a cédula jurídica means existing. Charging IVA means being <strong>inscrito</strong> with Hacienda, which is a separate fact and the one an invoice depends on.</p>
+      <p>The API answers with a <code>situación</code>: <strong>Inscrito</strong> for a taxpayer who registered, <strong>Inscrito de oficio</strong> for one the administration registered on its own initiative, and <strong>Desinscrito</strong> for one whose registration has ended. It also publishes whether the taxpayer is <em>moroso</em> (in arrears) or <em>omiso</em> (has not filed): facts about their standing, not about their identity.</p>
+
+      <h2 id="find">Finding the company behind the number</h2>
+      <h3>Hacienda's invoicing API</h3>
+      <p>Costa Rica's electronic invoicing is mandatory, and the endpoint every invoicing system in the country calls to check who it is billing is <strong>public</strong>: <code>api.hacienda.go.cr/fe/ae</code>, keyed by the identification number, no account and no key. A number nobody holds answers with a plain 404.</p>
+      <h3>What the answer does not contain</h3>
+      <p>An address. Not a truncated one: <strong>none at all</strong>. The service exists to validate an invoice, not to publish a directory, and no address appears anywhere in the payload.</p>
+      <p>{{siteName}} says so rather than papering over it: a Costa Rican answer carries a name, a legal form and a status, and every address field is <code>null</code>. That is the register's whole content, and no free source will give you a Costa Rican street address from a cédula jurídica.</p>
+
+      <h2 id="pitfalls">Costa Rica-specific pitfalls</h2>
+      <ul>
+        <li><strong>No address, by design.</strong> Plan for it rather than treating it as a failed lookup.</li>
+        <li><strong>No check digit.</strong> A typo can only be caught by asking.</li>
+        <li><strong>Ten digits, not twelve.</strong> A NITE is quoted with two verification digits on the end; the lookup takes the first ten.</li>
+        <li><strong>Existing is not being registered for IVA.</strong> The <code>situación</code> is the field that answers that, and <em>Desinscrito</em> is a real and common state.</li>
+        <li><strong>A cédula beginning with 4 is a public body</strong>, not a company, and has no commercial legal form to report.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The cédula jurídica in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a cédula jurídica have?</summary>
+          <p>Ten, usually written 3-1NN-XXXXXX. There is no check digit.</p>
+        </details>
+        <details>
+          <summary>Does Costa Rica have a VAT number?</summary>
+          <p>Costa Rica has the IVA, and the number on an invoice is the cédula jurídica. There is no separate tax number.</p>
+        </details>
+        <details>
+          <summary>Why does the answer have no address?</summary>
+          <p>Because the register publishes none. Hacienda's API exists to validate invoices, and an address is not part of that.</p>
+        </details>
+        <details>
+          <summary>How do I know the legal form?</summary>
+          <p>It is in the number: 3-101 is a sociedad anónima, 3-102 a sociedad de responsabilidad limitada, and so on.</p>
+        </details>
+        <details>
+          <summary>What does "Inscrito de oficio" mean?</summary>
+          <p>That the administration registered the taxpayer on its own initiative rather than at their request. It is a live registration either way.</p>
+        </details>
+      </div>
+
+      <h2>Business numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/peru/">Peru</a></li>
+        <li><a href="/en/vat-number/brazil/">Brazil</a></li>
+        <li><a href="/en/vat-number/israel/">Israel</a></li>
+        <li><a href="/en/vat-number/spain/">Spain</a></li>
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 13 September 2026.</p>
+    </div>
+  </section>
+</main>

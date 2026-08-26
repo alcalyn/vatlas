@@ -1,0 +1,230 @@
+<!-- @meta
+{
+  "title": "Partita IVA: struttura delle 11 cifre e come risalire all’azienda",
+  "description": "IT più 11 cifre: progressivo, codice dell’ufficio provinciale e carattere di controllo. Differenza con il codice fiscale e come trovare la società dietro il numero.",
+  "h1": "La partita IVA italiana",
+  "term": "Partita IVA",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Italia · IT</p>
+        <h1>La partita IVA italiana</h1>
+        <p class="section__lead">
+          Undici cifre che non sono affatto casuali: dicono da quale ufficio provinciale
+          dell’Agenzia delle Entrate è stato attribuito il numero, e si controllano da sole.
+        </p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Formato:</strong> <code>IT</code> + 11 cifre</p>
+        <p><strong>Esempio:</strong> <code>IT00743110157</code></p>
+        <p><strong>Attribuita da:</strong> l’Agenzia delle Entrate, al momento dell’apertura dell’attività.</p>
+      </div>
+
+      <h2 id="formato">La struttura delle undici cifre</h2>
+      <p>
+        Nel formato nazionale la partita IVA si scrive con le sole undici cifre; il prefisso
+        <code>IT</code> si aggiunge quando il numero viene usato come identificativo
+        intracomunitario, per esempio in una fattura verso un altro Stato membro. Non contiene mai
+        lettere.
+      </p>
+      <ul class="breakdown">
+        <li><b>0074311</b><span>Numero progressivo attribuito al contribuente.</span></li>
+        <li><b>015</b><span>Codice dell’ufficio provinciale che l’ha attribuita.</span></li>
+        <li><b>7</b><span>Carattere di controllo, calcolato con la formula di Luhn.</span></li>
+      </ul>
+      <p>
+        Le tre cifre centrali corrispondono in genere al codice ISTAT della provincia (<code>015</code>
+        è Milano, <code>001</code> Torino, <code>058</code> Roma) con alcuni codici riservati
+        (<code>120</code>, <code>121</code>, <code>888</code>, <code>999</code>) per gli uffici
+        centrali e per i soggetti non residenti. Non indicano dove l’impresa opera oggi: indicano
+        dove è stata aperta la posizione, e restano invariate anche dopo un trasferimento.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>Il carattere di controllo non prova nulla sull’azienda.</strong> Verifica solo che
+          le prime dieci cifre siano state trascritte correttamente. Una partita IVA formalmente
+          corretta può non essere mai stata attribuita, oppure essere cessata da anni.
+        </p>
+      </div>
+
+      <h2 id="codice-fiscale">Partita IVA e codice fiscale</h2>
+      <p>
+        È la confusione più frequente, e la risposta dipende dal soggetto.
+      </p>
+      <ul>
+        <li>
+          <strong>Società di capitali ed enti</strong> (S.p.A., S.r.l., cooperative, associazioni con
+          attività commerciale): il codice fiscale è <em>numerico a 11 cifre</em> e coincide con la
+          partita IVA. Un solo numero per due funzioni.
+        </li>
+        <li>
+          <strong>Persone fisiche</strong>, liberi professionisti, ditte individuali: il codice
+          fiscale è alfanumerico a 16 caratteri, derivato da nome, data e luogo di nascita, e la
+          partita IVA è un numero a 11 cifre completamente distinto. Sulle fatture compaiono
+          entrambi.
+        </li>
+      </ul>
+      <p>
+        Esiste poi il <strong>numero REA</strong> (Repertorio Economico Amministrativo), formato dalla
+        sigla della provincia e da un progressivo, per esempio <code>MI-1234567</code>. Identifica
+        l’iscrizione alla Camera di commercio e non ha alcun legame calcolabile con la partita IVA.
+      </p>
+
+      <h2 id="ricerca">Risalire all’azienda da una partita IVA</h2>
+      <h3>Il servizio dell’Agenzia delle Entrate</h3>
+      <p>
+        L’Agenzia delle Entrate offre gratuitamente un servizio di
+        <a href="https://telematici.agenziaentrate.gov.it/VerificaPIVA/Scegli.do" rel="noopener">verifica della partita IVA</a>:
+        indica se il numero è valido, se è attivo o cessato e restituisce la denominazione. Non
+        restituisce l’indirizzo, e non è pensato per essere interrogato in modo massivo.
+      </p>
+      <h3>Il Registro delle Imprese</h3>
+      <p>
+        Il Registro delle Imprese, tenuto dalle Camere di commercio e consultabile su
+        <a href="https://www.registroimprese.it/" rel="noopener">registroimprese.it</a>, contiene
+        tutto: sede, forma giuridica, capitale, amministratori, bilanci. È interrogabile per partita
+        IVA, ma le visure sono <strong>a pagamento</strong> e non esiste un estratto massivo
+        gratuito. È la ragione per cui l’Italia, pur avendo un ottimo registro, non ha una fonte
+        aperta utilizzabile a volume.
+      </p>
+      <h3>VIES</h3>
+      <p>
+        Qui l’Italia si comporta bene: a differenza di Germania e Spagna,
+        <strong>rilascia tramite VIES sia la denominazione sia l’indirizzo completo</strong>. Una
+        risposta tipica è <code>LARGO FRANCESCO RICHINI 6</code> seguito da <code>20122 MILANO MI</code>,
+        con la sigla della provincia accodata al comune, un dettaglio che va gestito quando si
+        scompone l’indirizzo.
+      </p>
+      <p>
+        Attenzione però: essere titolari di partita IVA non basta per comparire nel VIES. Occorre
+        essere <strong>inclusi nell’archivio VIES</strong>, opzione che si esercita alla dichiarazione
+        di inizio attività o successivamente; senza di essa il numero risulta non valido per le
+        operazioni intracomunitarie pur essendo perfettamente attivo in Italia.
+      </p>
+
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Cosa offre ciascuna fonte per l’Italia</caption>
+          <thead>
+            <tr><th scope="col">Fonte</th><th scope="col">Chiave</th><th scope="col">Cosa restituisce</th><th scope="col">Limite</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Agenzia delle Entrate</th><td>Partita IVA</td>
+              <td>Validità, stato attivo/cessato, denominazione</td><td>Nessun indirizzo, uso puntuale</td>
+            </tr>
+            <tr>
+              <th scope="row">Registro delle Imprese</th><td>Partita IVA o denominazione</td>
+              <td>Anagrafica completa, cariche, bilanci</td><td>Visure a pagamento, nessun bulk gratuito</td>
+            </tr>
+            <tr>
+              <th scope="row">VIES</th><td>Partita IVA</td>
+              <td>Validità intracomunitaria, denominazione e indirizzo</td>
+              <td>Lento, quote strette, solo per chi è iscritto al VIES</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="trappole">Le particolarità italiane</h2>
+      <ul>
+        <li>
+          <strong>Attiva in Italia ≠ valida nel VIES.</strong> È la trappola più costosa: l’impresa
+          esiste, la partita IVA è attiva, ma non essendo iscritta all’archivio VIES il numero
+          risulta non valido per un cliente estero.
+        </li>
+        <li>
+          <strong>Per una S.r.l. partita IVA e codice fiscale sono lo stesso numero</strong>, per un
+          professionista no. Un modulo che accetta un solo campo produrrà dati sbagliati.
+        </li>
+        <li>
+          <strong>La sigla della provincia è attaccata al comune</strong> negli indirizzi restituiti
+          dal VIES: <code>MILANO MI</code>, <code>ROMA RM</code>. Va separata, altrimenti finisce nel
+          nome della città.
+        </li>
+        <li>
+          <strong>Le tre cifre dell’ufficio non dicono dove si trova l’azienda oggi</strong>, ma dove
+          è stata aperta la partita IVA.
+        </li>
+        <li>
+          <strong>Le partite IVA cessate restano nel registro.</strong> La cessazione è uno stato, non
+          una cancellazione: il numero non viene mai riassegnato.
+        </li>
+      </ul>
+
+      <!-- @include partials/country/it.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Domande frequenti</p>
+        <h2>La partita IVA in breve</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Quante cifre ha una partita IVA italiana?</summary>
+          <p>
+            Undici cifre. Con il prefisso <code>IT</code>, usato per le operazioni intracomunitarie,
+            diventano tredici caratteri in tutto.
+          </p>
+        </details>
+        <details>
+          <summary>Partita IVA e codice fiscale sono la stessa cosa?</summary>
+          <p>
+            Per le società di capitali sì: il codice fiscale è numerico a 11 cifre e coincide con la
+            partita IVA. Per una persona fisica no: il codice fiscale è alfanumerico a 16 caratteri e
+            la partita IVA è un numero distinto.
+          </p>
+        </details>
+        <details>
+          <summary>Cosa indicano le tre cifre centrali?</summary>
+          <p>
+            L’ufficio provinciale dell’Agenzia delle Entrate che ha attribuito il numero, di norma
+            secondo il codice ISTAT della provincia. Indicano dove è stata aperta la posizione, non
+            dove l’impresa opera oggi.
+          </p>
+        </details>
+        <details>
+          <summary>Come verifico se una partita IVA è attiva?</summary>
+          <p>
+            Con il servizio gratuito di verifica dell’Agenzia delle Entrate, che restituisce lo stato
+            e la denominazione. Per le operazioni con l’estero serve invece il VIES, che risponde
+            sulla validità intracomunitaria.
+          </p>
+        </details>
+        <details>
+          <summary>Perché il VIES dice che una partita IVA valida non è valida?</summary>
+          <p>
+            Quasi sempre perché il soggetto non è incluso nell’archivio VIES. L’inclusione si chiede
+            alla dichiarazione di inizio attività o in un momento successivo; senza di essa il numero
+            è attivo in Italia ma non utilizzabile per le operazioni intracomunitarie.
+          </p>
+        </details>
+        <details>
+          <summary>Esiste un elenco gratuito e scaricabile delle partite IVA?</summary>
+          <p>
+            No. Il Registro delle Imprese è completo ma le visure sono a pagamento, e l’Agenzia delle
+            Entrate offre solo una verifica puntuale. Non esiste un estratto massivo gratuito.
+          </p>
+        </details>
+      </div>
+
+      <h2>La partita IVA negli altri paesi</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+            <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+            <li><a href="/en/vat-number/belgium/" hreflang="en" lang="en">Belgium</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Aggiornato il 28 agosto 2026.</p>
+    </div>
+  </section>
+</main>

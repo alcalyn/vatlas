@@ -1,0 +1,105 @@
+<!-- @meta
+{
+  "title": "Greenland business number (CVR): format and lookup",
+  "description": "Greenland levies no VAT. Its companies carry a Danish CVR number, eight digits, because the GER was dissolved in 2018, and the seat is the only thing that tells a Greenlandic company from a Danish one.",
+  "h1": "The Greenlandic business number",
+  "term": "CVR number",
+  "updated": "2026-09-17"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Greenland · GL</p>
+        <h1>The Greenlandic business number</h1>
+        <p class="section__lead">Greenland has no VAT and, since 2018, no business register of its own. A Greenlandic company is registered in the Danish CVR and carries a CVR number like any company in Copenhagen, which is exactly why looking one up is not the same question as looking up a Danish one.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>GL</code> + 8 digits</p>
+        <p><strong>Example:</strong> <code>GL12608950</code></p>
+        <p><strong>Issued by:</strong> Erhvervsstyrelsen, the Danish Business Authority, through the CVR.</p>
+      </div>
+
+      <h2 id="no-vat">There is no Greenlandic VAT number</h2>
+      <p>This is the first thing to get right, because a great deal of invoicing software assumes otherwise. <strong>Greenland levies no value-added tax at all</strong>: no VAT, no GST, no sales tax of that shape. Public revenue comes from income tax and from duties on specific goods. So there is nothing for a VAT number to identify, and no Greenlandic authority issues one.</p>
+      <p>What a Greenlandic business does have is a <strong>registration number in the CVR</strong>, and that is the number this page is about. It is what appears on an invoice, what a counterparty is asked for, and what a buyer needs in order to establish who they are dealing with.</p>
+      <p>Greenland is also outside the European Union, so a Greenlandic number is not an intra-community VAT number and <strong>VIES has never heard of it</strong>. Asking VIES about one spends a call to be told the input is invalid.</p>
+
+      <h2 id="ger">The GER was dissolved, and its companies moved to Denmark</h2>
+      <p>Greenland used to keep its own register, the <em>Grønlands Erhvervsregister</em>, the GER. It was <strong>dissolved on 1 January 2018</strong>, and every company in it was transferred into the Danish CVR. New Greenlandic businesses have registered through <code>virk.dk</code> ever since.</p>
+      <p>So a GER number found on an old document is a historical identifier. The company still exists, but it is now reachable by its CVR number, and that is the only number any register will answer for.</p>
+
+      <h2 id="format">The format</h2>
+      <p>A CVR number is <strong>eight digits</strong>, usually written in pairs: <code>12 60 89 50</code>. There is no letter prefix in the register itself; <code>GL</code> is the country code used to say which country the holder sits in, in the same way <code>DK</code> is used for Denmark.</p>
+      <p>The shape is identical to a Danish number because it <em>is</em> a Danish number. <code>GL12608950</code> and <code>DK12608950</code> name the same legal person. Both spellings resolve here, and neither is wrong; they answer different questions.</p>
+
+      <h2 id="seat">The seat is what makes a company Greenlandic</h2>
+      <p>Because Denmark and Greenland share one register and one numbering space, nothing in the number itself says which country a company belongs to. The register's own answer is the <strong>registered seat</strong>: the address on the company's entry.</p>
+      <p>{{siteName}} uses exactly that. A number looked up under <code>GL</code> answers only if the company's registered address is in Greenland, either by its country code or by a postal code in the <strong>3900-3999</strong> block, which is Greenland's alone. A Danish company asked for under <code>GL</code> comes back as <strong>not found</strong> rather than as a company in Nuuk that it is not.</p>
+      <p>Roughly <strong>14,500</strong> companies are registered in Greenland on that basis.</p>
+
+      <h2 id="find">Finding the company behind the number</h2>
+      <h3>What comes back</h3>
+      <p>The CVR holds the legal name, the legal form, the registered address, the industry code and a composite status that says whether the company is still trading. All of it is available for a Greenlandic company on the same terms as for a Danish one.</p>
+      <h3>Addresses are not shaped like Danish ones</h3>
+      <p>Many Greenlandic entries have a postal code and a town and no street at all. Settlements are small, and a great many addresses are a box number. <code>Permagreen Grønland A/S</code>, in Nuuk, is one of them. An empty street line is the register's own answer, not a gap in the lookup.</p>
+      <p>Town names are Greenlandic: Nuuk (3900), Sisimiut (3911), Narsaq (3921), Ilulissat (3952). The municipalities are Sermersooq, Qeqqata, Qeqertalik, Avannaata and Kujalleq.</p>
+
+      <h2 id="pitfalls">Greenland-specific pitfalls</h2>
+      <ul>
+        <li><strong>Do not ask for a VAT number.</strong> There is none. A form that will not accept a counterparty without one cannot be satisfied by a Greenlandic company.</li>
+        <li><strong>Do not send the number to VIES.</strong> Greenland is outside the Union; the call is wasted.</li>
+        <li><strong>A CVR number alone does not tell you the country.</strong> Eight digits are eight digits. Only the registered address separates Greenland from Denmark.</li>
+        <li><strong>An old GER number will not resolve.</strong> It was retired in 2018; the CVR number replaced it.</li>
+        <li><strong>Expect an empty street line.</strong> It is normal here, and not a sign of a bad record.</li>
+        <li><strong>Greenland is not in the EU</strong>, despite Denmark being a member state. It left in 1985 and trade with it is trade with a third country.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Greenlandic number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Does Greenland have a VAT number?</summary>
+          <p>No. Greenland levies no VAT at all. Its businesses carry a CVR registration number instead, eight digits, issued through the Danish register.</p>
+        </details>
+        <details>
+          <summary>Is Greenland in the European Union?</summary>
+          <p>No. It left in 1985 and is an overseas country and territory associated with the Union, so VIES does not cover it and trade with it is trade with a third country.</p>
+        </details>
+        <details>
+          <summary>What happened to the GER number?</summary>
+          <p>The Greenlandic business register was dissolved on 1 January 2018 and its companies were moved into the Danish CVR. The CVR number is the one that resolves today.</p>
+        </details>
+        <details>
+          <summary>How do I tell a Greenlandic company from a Danish one?</summary>
+          <p>By the registered seat. The number cannot tell you: both countries share one register and one numbering space, and a postal code between 3900 and 3999 is Greenland.</p>
+        </details>
+        <details>
+          <summary>Why does the address have no street?</summary>
+          <p>Because many Greenlandic entries genuinely have none: a postal code, a town and often a box number is the whole address.</p>
+        </details>
+      </div>
+
+      <h2>Business numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/denmark/">Denmark</a></li>
+        <li><a href="/en/vat-number/norway/">Norway</a></li>
+        <li><a href="/en/vat-number/sweden/">Sweden</a></li>
+        <li><a href="/en/vat-number/finland/">Finland</a></li>
+        <li><a href="/en/vat-number/canada/">Canada</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 17 September 2026.</p>
+    </div>
+  </section>
+</main>

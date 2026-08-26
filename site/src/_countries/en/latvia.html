@@ -1,0 +1,105 @@
+<!-- @meta
+{
+  "title": "Latvian VAT number: format, registration number and lookup",
+  "description": "LV plus eleven digits, the registration number itself. How to find a company from a Latvian VAT number using the three free open registers.",
+  "h1": "The Latvian VAT number",
+  "term": "Latvian VAT number",
+  "updated": "2026-09-03"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Latvia · LV</p>
+        <h1>The Latvian VAT number</h1>
+        <p class="section__lead">Eleven digits that are the company registration number. Latvia publishes its registers for free, but there are three of them, and they have to be joined.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>LV</code> + 11 digits</p>
+        <p><strong>Example:</strong> <code>LV40002071224</code></p>
+        <p><strong>Issued by:</strong> the State Revenue Service (VID), on VAT registration.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Latvian VAT number is always <strong>thirteen characters</strong>: the country code and eleven digits. They are the company registration number, unchanged.</p>
+      <ul class="breakdown">
+        <li><b>LV</b><span>The country code.</span></li>
+        <li><b>4</b><span>The first digit: 4 or 5 for a legal person.</span></li>
+        <li><b>000207122</b><span>Nine digits.</span></li>
+        <li><b>4</b><span>The check digit.</span></li>
+      </ul>
+      <p>For a natural person (a sole trader) the first digit is between 0 and 3 and the number is built from the date of birth. For a legal person it starts with 4 or 5 and a different check calculation applies.</p>
+
+      <h2 id="registers">Registration number and VAT number</h2>
+      <p>The <strong>registration number</strong> is assigned by the Register of Enterprises when the company is registered. The <strong>VAT number</strong> is that same number with <code>LV</code> in front, but only if the company is registered as a VAT payer.</p>
+      <p>The distinction matters: <strong>everyone has a registration number, not everyone has VAT payer status.</strong> A company below the threshold does not appear in VIES even though it is perfectly lawfully in the register.</p>
+
+      <h2 id="find">Finding the company</h2>
+      <h3>Three open registers</h3>
+      <p>Latvia publishes three CSV files on <a href="https://data.gov.lv/" rel="noopener">data.gov.lv</a> under CC0: the <strong>Register of Enterprises data</strong> (name, address, legal form, status), the <strong>list of VAT payers</strong> (who is registered, and since when), and the <strong>list of public persons and institutions</strong>.</p>
+      <p>The first two do not work alone. One knows nothing about VAT, the other knows no names. They join on the registration number, and only together do they allow a lookup by VAT number. Both are small and download in seconds.</p>
+      <p>The third is the one everybody forgets, and it is why a lookup on a university or a state institute so often comes back without an address. A public body (a university, a research institute, a court, a ministry, a municipal authority) holds a registration number and a VAT number without ever being a company, so it is <strong>not in the Register of Enterprises at all</strong>. Its registration number usually starts with <code>90</code>. Around 6 300 of them are registered for VAT and the company register carries barely a thousand: the rest are only placed by this third file.</p>
+      <h3>VIES</h3>
+      <p>Latvia <strong>discloses name and address</strong>. The address arrives as one comma-separated line, and the postcode carries an <code>LV-</code> prefix (<code>LV-1003</code>) which has to be handled if you want to split it out.</p>
+      <p>The register publishes a territory code rather than a town name, so the town has to be read out of the address string itself. It is written largest unit first (<code>Rīga, Avotu iela 17</code>, or <code>Dundagas nov., Kolkas pag., Kolka, "Krastnieki"</code> out in the country) and everything before the locality is administrative: a <em>novads</em>, a <em>pagasts</em>, an old <em>rajons</em>. Skip those and the first remaining chunk is the town.</p>
+      <p><strong>The public institutions list writes it the other way round</strong>, <code>Ķengaraga iela 8, Rīga, LV-1063</code>, street first and postal code last, the same shape VIES answers with. Applying one file's rule to the other reads the street as the town, which is the single easiest way to get Latvian addresses wrong.</p>
+
+      <h2 id="pitfalls">Latvia-specific pitfalls</h2>
+      <ul>
+        <li><strong>The first digit indicates the type of person:</strong> 4 or 5 for a legal person, 0 to 3 for a sole trader.</li>
+        <li><strong>A registration number does not imply VAT payer status.</strong> They are two different registers.</li>
+        <li><strong>You need all three files.</strong> No single one allows a lookup by VAT number, and without the third every public body comes back with no address.</li>
+        <li><strong>The postcode carries an <code>LV-</code> prefix</strong> that has to be handled separately.</li>
+        <li><strong>A number starting with <code>90</code> is a public body</strong>, and it is not in the Register of Enterprises.</li>
+        <li><strong>The two files write an address in opposite orders</strong>: town first in the company register, street first in the institutions list.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Latvian VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Latvian VAT number have?</summary>
+          <p>Eleven after the <code>LV</code> country code, thirteen characters in total.</p>
+        </details>
+        <details>
+          <summary>Are the registration number and the VAT number the same?</summary>
+          <p>The digits are. The VAT number is the registration number with <code>LV</code> in front, but it only exists if the company is registered as a VAT payer.</p>
+        </details>
+        <details>
+          <summary>What does the first digit mean?</summary>
+          <p>The type of person: 4 or 5 for a legal person, 0 to 3 for a sole trader.</p>
+        </details>
+        <details>
+          <summary>Where can I get Latvian company data for free?</summary>
+          <p>On data.gov.lv, where the Register of Enterprises data, the list of VAT payers and the list of public persons and institutions are all published under CC0. A lookup by VAT number needs the first two, and the third for anything that is not a company.</p>
+        </details>
+        <details>
+          <summary>Why does VIES reject an existing company?</summary>
+          <p>Because it is not registered as a VAT payer. It has a registration number but no VAT status.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/germany/">Germany</a></li>
+        <li><a href="/en/vat-number/italy/">Italy</a></li>
+        <li><a href="/en/vat-number/spain/">Spain</a></li>
+        <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+        <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 3 September 2026.</p>
+    </div>
+  </section>
+</main>

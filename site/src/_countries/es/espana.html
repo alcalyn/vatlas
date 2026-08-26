@@ -1,0 +1,248 @@
+<!-- @meta
+{
+  "title": "NIF-IVA español: formato, letra del NIF y alta en el ROI",
+  "description": "ES más nueve caracteres. Qué significa la letra inicial, por qué tener NIF no basta para operar en la UE y cómo identificar a la empresa detrás del número.",
+  "h1": "El NIF-IVA español",
+  "term": "NIF-IVA",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">España · ES</p>
+        <h1>El NIF-IVA español</h1>
+        <p class="section__lead">
+          España no crea un número nuevo para el comercio intracomunitario: antepone
+          <code>ES</code> al NIF que la empresa ya tiene. Lo que sí exige es un trámite previo, y es
+          ahí donde falla casi todo el mundo.
+        </p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Formato:</strong> <code>ES</code> + 9 caracteres (letra o dígito + 7 dígitos + carácter de control)</p>
+        <p><strong>Ejemplo:</strong> <code>ESA78374725</code></p>
+        <p><strong>Asignado por:</strong> la Agencia Tributaria (AEAT), previa alta en el ROI.</p>
+      </div>
+
+      <h2 id="formato">El formato</h2>
+      <p>
+        El NIF-IVA tiene siempre <strong>once caracteres</strong> con el prefijo. El primero y el
+        último del bloque nacional pueden ser letra o dígito; los siete del medio son siempre
+        dígitos.
+      </p>
+      <ul class="breakdown">
+        <li><b>ES</b><span>El código de país, idéntico al código ISO.</span></li>
+        <li><b>A</b><span>La letra que identifica la naturaleza jurídica.</span></li>
+        <li><b>7837472</b><span>Siete dígitos: provincia de inscripción y número secuencial.</span></li>
+        <li><b>5</b><span>El carácter de control, dígito o letra según el tipo de entidad.</span></li>
+      </ul>
+      <p>
+        El carácter de control se calcula sobre los siete dígitos anteriores. Para unas entidades es
+        siempre numérico (A, B, E, H), para otras siempre una letra (N, P, Q, R, S, W) y para el
+        resto puede ser cualquiera de los dos. Cuando es letra se obtiene de la correspondencia
+        <code>J=0, A=1, B=2, C=3, D=4, E=5, F=6, G=7, H=8, I=9</code>.
+      </p>
+
+      <h2 id="letra">Lo que dice la primera letra</h2>
+      <p>
+        A diferencia de casi todos los demás países, el número español revela la forma jurídica de
+        un vistazo. Es la única información estructural que contiene, y es útil.
+      </p>
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Significado de la letra inicial del NIF de una entidad</caption>
+          <thead><tr><th scope="col">Letra</th><th scope="col">Tipo de entidad</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><code>A</code></th><td>Sociedades anónimas</td></tr>
+            <tr><th scope="row"><code>B</code></th><td>Sociedades de responsabilidad limitada</td></tr>
+            <tr><th scope="row"><code>C</code></th><td>Sociedades colectivas</td></tr>
+            <tr><th scope="row"><code>D</code></th><td>Sociedades comanditarias</td></tr>
+            <tr><th scope="row"><code>E</code></th><td>Comunidades de bienes y herencias yacentes</td></tr>
+            <tr><th scope="row"><code>F</code></th><td>Sociedades cooperativas</td></tr>
+            <tr><th scope="row"><code>G</code></th><td>Asociaciones y fundaciones</td></tr>
+            <tr><th scope="row"><code>H</code></th><td>Comunidades de propietarios</td></tr>
+            <tr><th scope="row"><code>J</code></th><td>Sociedades civiles</td></tr>
+            <tr><th scope="row"><code>N</code></th><td>Entidades no residentes</td></tr>
+            <tr><th scope="row"><code>P</code></th><td>Corporaciones locales</td></tr>
+            <tr><th scope="row"><code>Q</code></th><td>Organismos públicos</td></tr>
+            <tr><th scope="row"><code>R</code></th><td>Congregaciones e instituciones religiosas</td></tr>
+            <tr><th scope="row"><code>S</code></th><td>Órganos de la Administración</td></tr>
+            <tr><th scope="row"><code>U</code></th><td>Uniones temporales de empresas</td></tr>
+            <tr><th scope="row"><code>V</code></th><td>Otros tipos no definidos</td></tr>
+            <tr><th scope="row"><code>W</code></th><td>Establecimientos permanentes de entidades no residentes</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Las <strong>personas físicas</strong> no llevan letra inicial: su NIF es el DNI, ocho dígitos
+        seguidos de una letra de control, o el NIE para extranjeros, que empieza por
+        <code>X</code>, <code>Y</code> o <code>Z</code>.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>CIF y NIF son lo mismo desde 2008.</strong> El Real Decreto 1065/2007 suprimió el
+          CIF y lo integró en el NIF; el término sigue vivo en el lenguaje empresarial, pero el
+          número es idéntico y no hay nada que convertir.
+        </p>
+      </div>
+
+      <h2 id="roi">Tener NIF no basta: el ROI</h2>
+      <p>
+        Esta es la particularidad española que más facturas rechazadas provoca. Una empresa española
+        con NIF perfectamente válido <strong>no aparece en el VIES</strong> hasta que se da de alta
+        en el <strong>Registro de Operadores Intracomunitarios (ROI)</strong>.
+      </p>
+      <p>
+        El alta se solicita con el <strong>modelo 036</strong>, marcando la <strong>casilla 582</strong>.
+        La AEAT puede comprobar la actividad antes de concederla, y el proceso tarda de unos días a
+        tres meses. Hasta que se resuelve, cualquier cliente europeo que valide el número recibirá
+        un «no válido» y facturará con IVA.
+      </p>
+      <p>
+        La consecuencia práctica: <strong>un NIF-IVA rechazado por el VIES no significa que la
+        empresa no exista</strong>. Casi siempre significa que no está en el ROI, o que ha sido dada
+        de baja por inactividad.
+      </p>
+
+      <h2 id="buscar">Identificar a la empresa detrás del número</h2>
+      <h3>El VIES y la consulta de la AEAT</h3>
+      <p>
+        La AEAT ofrece una consulta de operadores intracomunitarios que se apoya en el VIES. Confirma
+        la validez del número, y poco más: <strong>España no divulga el nombre ni el domicilio a
+        través del VIES</strong>, esos campos vuelven como <code>---</code>. Junto con Alemania, España es uno de los dos Estados miembros donde solo la validez está
+        disponible a escala europea.
+      </p>
+      <h3>El Registro Mercantil</h3>
+      <p>
+        El Registro Mercantil, a través de
+        <a href="https://www.registradores.org/" rel="noopener">registradores.org</a>, contiene la
+        información completa: denominación, domicilio social, objeto, administradores y cuentas
+        anuales. Es consultable por denominación o por NIF, pero <strong>las notas y los informes son
+        de pago</strong> y no existe ningún volcado masivo gratuito. Es exactamente la razón por la
+        que España no tiene una fuente abierta explotable a volumen.
+      </p>
+      <h3>El BORME</h3>
+      <p>
+        El <strong>Boletín Oficial del Registro Mercantil</strong> publica gratuitamente los actos
+        inscritos (constituciones, ceses, nombramientos, disoluciones) y su formato estructurado es
+        descargable. Sirve para seguir cambios, no para consultar por NIF: no es un directorio.
+      </p>
+
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Qué aporta cada fuente en España</caption>
+          <thead>
+            <tr><th scope="col">Fuente</th><th scope="col">Clave</th><th scope="col">Qué devuelve</th><th scope="col">Límite</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">VIES / consulta AEAT</th><td>NIF-IVA</td>
+              <td>Validez intracomunitaria únicamente</td><td>Sin nombre ni domicilio</td>
+            </tr>
+            <tr>
+              <th scope="row">Registro Mercantil</th><td>NIF o denominación</td>
+              <td>Datos completos, administradores, cuentas</td><td>De pago, sin descarga masiva</td>
+            </tr>
+            <tr>
+              <th scope="row">BORME</th><td>Sin clave de búsqueda</td>
+              <td>Actos inscritos, en abierto</td><td>Flujo de novedades, no un directorio</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="trampas">Particularidades españolas</h2>
+      <ul>
+        <li>
+          <strong>Alta en Hacienda ≠ alta en el ROI.</strong> Es la causa número uno de que un
+          NIF-IVA español falle la validación europea.
+        </li>
+        <li>
+          <strong>Canarias, Ceuta y Melilla quedan fuera del territorio IVA de la UE.</strong> Una
+          empresa canaria tiene NIF español y tributa por el IGIC; sus operaciones no son
+          intracomunitarias a efectos de IVA.
+        </li>
+        <li>
+          <strong>La baja en el ROI es silenciosa.</strong> La AEAT puede excluir a un operador que no
+          presenta declaraciones recapitulativas; el número deja de validar sin que nadie avise.
+        </li>
+        <li>
+          <strong>España no publica nombre ni domicilio en el VIES</strong>, así que no hay ninguna
+          vía oficial y gratuita para pasar del número a la empresa.
+        </li>
+        <li>
+          <strong>El NIF no cambia nunca</strong>, ni al trasladar el domicilio social ni al cambiar
+          de denominación. La letra inicial, en cambio, sí puede cambiar si la sociedad se transforma.
+        </li>
+      </ul>
+
+      <!-- @include partials/country/es.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2>El NIF-IVA en breve</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>¿Cuántos caracteres tiene un NIF-IVA español?</summary>
+          <p>
+            Once con el prefijo: <code>ES</code> más nueve caracteres, de los cuales el primero y el
+            último pueden ser letra o dígito y los siete intermedios son siempre dígitos.
+          </p>
+        </details>
+        <details>
+          <summary>¿El CIF y el NIF son lo mismo?</summary>
+          <p>
+            Sí. El CIF desapareció legalmente en 2008 y quedó integrado en el NIF. El número es
+            idéntico; solo cambió el nombre del trámite.
+          </p>
+        </details>
+        <details>
+          <summary>¿Por qué el VIES dice que mi NIF no es válido?</summary>
+          <p>
+            Casi siempre porque la empresa no está dada de alta en el Registro de Operadores
+            Intracomunitarios. Se solicita con el modelo 036, casilla 582, y la AEAT puede tardar
+            hasta tres meses en concederla.
+          </p>
+        </details>
+        <details>
+          <summary>¿Qué significa la letra inicial del NIF?</summary>
+          <p>
+            La naturaleza jurídica de la entidad: A sociedad anónima, B sociedad limitada, F
+            cooperativa, G asociación o fundación, Q organismo público, entre otras.
+          </p>
+        </details>
+        <details>
+          <summary>¿Puedo saber el nombre de una empresa a partir de su NIF-IVA?</summary>
+          <p>
+            No por una vía oficial y gratuita: España no divulga nombre ni domicilio a través del
+            VIES, y el Registro Mercantil cobra por sus notas informativas.
+          </p>
+        </details>
+        <details>
+          <summary>¿Las empresas canarias tienen NIF-IVA?</summary>
+          <p>
+            Tienen NIF español, pero Canarias queda fuera del territorio IVA de la Unión y tributa por
+            el IGIC, de modo que sus operaciones no son intracomunitarias a efectos de IVA.
+          </p>
+        </details>
+      </div>
+
+      <h2>El número de IVA en otros países</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+            <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/belgium/" hreflang="en" lang="en">Belgium</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Actualizado el 28 de agosto de 2026.</p>
+    </div>
+  </section>
+</main>

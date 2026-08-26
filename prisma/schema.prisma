@@ -1,0 +1,699 @@
+// Database schema. Apply with `npm run db:setup` (prisma migrate deploy), change it with
+// `npm run db:migrate`.
+//
+// Every DateTime column is UTC. The mysql2 pool used by the importers sets `time_zone = '+00:00'`.
+//
+// Tables and columns are snake_case in MySQL and camelCase in the client (@map / @@map).
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+/// What one source said about one VAT number, and for how long.
+///
+/// A row is a plateau: a period during which a source said exactly the same thing. The primary key
+/// is `(vat_number, source, date_start)`:
+///
+///  - `vat_number` is the full number with its prefix (`FR95884831538`).
+///  - `source` is the register (SIRENE, KBO, PRH, PEPPOL, VIES...). Sources keep separate
+///    histories, since registers often disagree.
+///  - `date_start` is the first day the source was seen saying this.
+///
+/// An unchanged company costs an `UPDATE date_end`, not a new row. See `src/db/companyHistory.ts`.
+model Company {
+  vatNumber String   @map("vat_number") @db.VarChar(20)
+  source    String   @db.VarChar(32)
+  /// First day this source was seen saying this. Only moves back when an older edition is imported.
+  dateStart DateTime @map("date_start") @db.Date
+  /// Last day the source was seen saying this. Updated by every import that confirms the plateau.
+  ///
+  /// Not part of the primary key: updating a key column in InnoDB rewrites the clustered index entry
+  /// and every secondary index, which measured about 6x slower. This column is updated on every row
+  /// of every import.
+  ///
+  /// Freshness (`LIVE_MAX_AGE_DAYS`) is judged on this column.
+  dateEnd   DateTime @map("date_end") @db.Date
+
+  /// `not_registered` is a dated answer (VIES saying the number is not registered), worth keeping.
+  status         CompanyStatus @default(unknown)
+  nationalId     String?       @map("national_id") @db.VarChar(32)
+  /// Null when the row carries no identity, which only happens for `not_registered`.
+  name           String?       @db.VarChar(255)
+  legalForm      String?       @map("legal_form") @db.VarChar(128)
+  /// 512 because Japanese addresses in full-width characters exceed 400 characters. Values are
+  /// truncated by `fitCompanyRecord()` before writing.
+  addressLine1   String?       @map("address_line1") @db.VarChar(512)
+  addressLine2   String?       @map("address_line2") @db.VarChar(512)
+  postalCode     String?       @map("postal_code") @db.VarChar(16)
+  city           String?       @db.VarChar(128)
+  /// Country of the address, not always the country of the VAT number.
+  addressCountry String?       @map("address_country") @db.Char(2)
+
+  /// When the source itself last updated the record, if it publishes that (SIRENE and the Polish
+  /// White List do).
+  ///
+  /// Not hashed, so it never opens a plateau on its own: registers reprocess records in bulk without
+  /// the company changing. Refreshed when a plateau is extended.
+  companyLastUpdatedAt DateTime? @map("company_last_updated_at") @db.DateTime(0)
+
+  /// The file that opened this plateau. Null for live answers. The file that last confirmed it can
+  /// be found by joining `bulk` on `(source, date)` against `date_end`.
+  bulkId BigInt? @map("bulk_id") @db.UnsignedBigInt
+
+  /// Verification code issued for a consultation (the VIES consultation number). Null for every
+  /// other source. 255 because the format has changed before without notice.
+  proof String? @db.VarChar(255)
+
+  /// Hash of the data columns only (status, identity, address). Not the dates, `proof`, `bulk_id` or
+  /// `company_last_updated_at`. Two equal hashes mean nothing changed. Computed by `payloadHash()`
+  /// in TypeScript, so the bulk and live paths agree. Truncated to 128 bits.
+  payloadHash Bytes @map("payload_hash") @db.Binary(16)
+
+  bulk Bulk? @relation(fields: [bulkId], references: [id])
+
+  @@id([vatNumber, source, dateStart])
+  /// Required by the foreign key above.
+  @@index([bulkId], map: "idx_company_bulk")
+  @@map("company")
+}
+
+/// One row per bulk file ever imported, the file a `company` row comes from.
+model Bulk {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  /// The register, same values as `company.source`.
+  source     String    @db.VarChar(32)
+  /// Where the file can be downloaded again, or the open-data page when the download URL changes.
+  url        String    @db.VarChar(1024)
+  /// The file name as the publisher writes it: `KboOpenData_0142_2026_08_29_Full.zip`.
+  fileName   String    @map("file_name") @db.VarChar(255)
+  /// The edition date of the file (its publication date, not the download date).
+  date       DateTime  @db.Date
+  /// When this file was first seen. A re-import of the same file resolves to this row.
+  createdAt  DateTime  @default(now()) @map("created_at") @db.DateTime(0)
+  /// When this edition was last read to the end, null if never. Lets a run skip an edition already
+  /// imported. Reset to null when `date` changes, which is how publishers that overwrite the same
+  /// file name announce a new edition.
+  importedAt DateTime? @map("imported_at") @db.DateTime(0)
+
+  companies Company[]
+
+  @@unique([source, fileName], map: "uq_bulk_source_file")
+  @@map("bulk")
+}
+
+/// Temporary storage for the Brazilian import, empty between runs. No lookup reads it.
+///
+/// The Receita Federal splits companies (`Empresas`, sorted by CNPJ) from establishments
+/// (`Estabelecimentos`, unsorted). Names have to be staged before establishments can be read, and
+/// 55 million names do not fit in memory.
+///
+/// Truncated at the start of every edition and at the end of the run.
+model BrazilCompany {
+  /// The eight-digit root of the CNPJ, the join key of establishments.
+  cnpjBasico       String  @id @map("cnpj_basico") @db.Char(8)
+  razaoSocial      String  @map("razao_social") @db.VarChar(255)
+  /// Code of the natureza jurídica, resolved to its label from the edition's own table.
+  naturezaJuridica String? @map("natureza_juridica") @db.Char(4)
+
+  @@map("br_empresa")
+}
+
+/// One row per importer run, so a cron job can detect a stale or failed import.
+model ImportRun {
+  id          BigInt          @id @default(autoincrement()) @db.UnsignedBigInt
+  countryCode String          @map("country_code") @db.Char(2)
+  source      String          @db.VarChar(32)
+  startedAt   DateTime        @map("started_at") @db.DateTime(0)
+  finishedAt  DateTime?       @map("finished_at") @db.DateTime(0)
+  status      ImportRunStatus @default(running)
+  /// The file this run read and its edition date. Written as soon as the file is known, so a running
+  /// or failed run says which file it was on. A `--history` run ends on the newest edition, and
+  /// `counters` lists all of them.
+  fileName    String?         @map("file_name") @db.VarChar(255)
+  fileDate    DateTime?       @map("file_date") @db.Date
+  counters    Json?
+  error       String?         @db.Text
+
+  @@index([countryCode, startedAt], map: "idx_import_runs_country")
+  @@map("log_import")
+}
+
+/// One row per call made to a live source, retries included. `log_lookup` has one row per lookup;
+/// this table shows every attempt.
+///
+/// Written from the `LiveSource` base class, so every live call is recorded, CLI included. Writes
+/// are not awaited but kept in `pendingCallLogs` (`db/companyRepository.ts`) and flushed at
+/// shutdown by `flushSourceCalls()`.
+///
+/// Used to see which sources are slow or fail, when, and how complete their answers are.
+/// `outcome` and `error` are separate because "not found" is a valid answer, not a failure.
+///
+/// No `country_code`: use `LEFT(vat_number, 2)`.
+model SourceCallLog {
+  id        BigInt  @id @default(autoincrement()) @db.UnsignedBigInt
+  /// The register called (VIES, MF_WL, ARES, AADE...). Same values as `company.source`.
+  source    String  @db.VarChar(32)
+  /// The full number, prefix included.
+  vatNumber String  @map("vat_number") @db.VarChar(20)
+  /// The source operation when there are several. VIES has `checkVatApprox` (with a requester) and
+  /// `checkVat`, with different response times. Null for other sources.
+  operation String? @db.VarChar(32)
+  /// Attempt number in the retry ladder, starting at 1.
+  attempt   Int     @db.UnsignedTinyInt
+
+  /// When the request was sent, with millisecond precision so attempts sort correctly.
+  calledAt   DateTime @map("called_at") @db.DateTime(3)
+  /// Duration of the exchange, body included. A timed-out attempt records the time it waited.
+  durationMs Int      @map("duration_ms")
+
+  /// What came back:
+  ///
+  ///  - `valid` - the number is registered;
+  ///  - `not-registered` - the number is not registered (an answer, not a failure);
+  ///  - `not-found` - the source has no record of the number;
+  ///  - `fault` - a protocol-level refusal, see `fault`;
+  ///  - `timeout` - the attempt hit its timeout;
+  ///  - `network-error` - the request never completed;
+  ///  - `malformed` - HTTP 200 with an unreadable body.
+  outcome    String  @db.VarChar(32)
+  /// Whether the source failed to answer. A column rather than a `WHERE outcome IN (...)` so queries
+  /// stay correct when an outcome is added.
+  error      Boolean
+  /// The fault, on one line. Null unless the call faulted or the answer was unreadable.
+  fault      String? @db.VarChar(255)
+  /// HTTP status. VIES answers its faults with 200, and a gateway 5xx is a different incident from a
+  /// service refusal. Null when nothing came back.
+  httpStatus Int?    @map("http_status") @db.UnsignedSmallInt
+
+  /// Completeness of the answer, without storing it. Several sources return a valid number and
+  /// nothing else. All null when there was no answer.
+  hasName    Boolean? @map("has_name")
+  hasAddress Boolean? @map("has_address")
+  /// Whether a verification code came back. Only VIES issues one.
+  hasProof   Boolean? @map("has_proof")
+
+  /// By time window, by source, and by number.
+  @@index([calledAt], map: "idx_log_source_call_called_at")
+  @@index([source, calledAt], map: "idx_log_source_call_source")
+  @@index([vatNumber, calledAt], map: "idx_log_source_call_vat_number")
+  @@map("log_source_call")
+}
+
+/// One row per lookup, for monitoring which countries are slow or unreliable. Not an audit log:
+/// failed and invalid lookups are recorded too, with a null number when the input did not parse.
+///
+/// No `country_code`: use `LEFT(vat_number, 2)`.
+model LookupLog {
+  id          BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  vatNumber   String?   @map("vat_number") @db.VarChar(20)
+  status      String    @db.VarChar(32)
+  success     Boolean
+  durationMs  Int       @map("duration_ms")
+  /// Time spent per source, by name.
+  timings     Json
+  /// Which register answered and the date of its statement. Copied from the answering row, null
+  /// when no company was found.
+  source      String?   @db.VarChar(32)
+  sourceDate  DateTime? @map("source_date") @db.Date
+  /// Why a lookup ended unavailable: the fault and the number of calls. Null otherwise.
+  fault       String?   @db.VarChar(255)
+  attempts    Int?      @db.UnsignedTinyInt
+  /// Which call produced this row: `single` (/v1/lookup), `proof` (/v1/lookup?prefer=proof) or
+  /// `all` (/v1/lookup-all).
+  ///
+  /// Coverage statistics only read `single`: `all` asks every source including VIES, and `proof`
+  /// skips the national registers, so both would skew them.
+  ///
+  /// Rows written before the endpoint was renamed say `full` instead of `all`.
+  kind        String    @default("single") @db.VarChar(8)
+  createdAt   DateTime  @default(now()) @map("created_at") @db.DateTime(0)
+  /// Who made the call. Plain columns without foreign keys, to keep inserts cheap. Null for requests
+  /// rejected before authentication.
+  userId      BigInt?   @map("user_id") @db.UnsignedBigInt
+  secretKeyId BigInt?   @map("secret_key_id") @db.UnsignedBigInt
+
+  @@index([vatNumber, createdAt], map: "idx_lookup_logs_vat_number")
+  @@index([secretKeyId, createdAt], map: "idx_lookup_logs_secret_key")
+  @@map("log_lookup")
+}
+
+/// The audit trail: what the API answered, kept so the customer can look it up again.
+///
+/// Separate from `log_lookup`, which is technical, holds no answer and is purged after 90 days.
+/// This table stores the response envelope exactly as it was sent, for as long as the plan allows.
+///
+/// Only 200, 404 and 503 answers are recorded.
+model AuditLookup {
+  id          BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  /// Public identifier, a UUIDv7. `id` is never exposed since it would reveal the row count. UUIDv7
+  /// is time-ordered, so it works as the page cursor. A cursor is resolved to `id` within the
+  /// calling account only.
+  publicId    String    @unique(map: "uq_audit_lookups_public_id") @default(uuid(7)) @map("public_id") @db.Char(36)
+  /// Who made the call. No foreign key, to keep inserts cheap. `deleteAccount()` deletes these rows.
+  userId      BigInt    @map("user_id") @db.UnsignedBigInt
+  secretKeyId BigInt?   @map("secret_key_id") @db.UnsignedBigInt
+  /// The normalized number, prefix included.
+  vatNumber   String    @map("vat_number") @db.VarChar(20)
+  /// Status and error code as the caller saw them: 200, 404 VAT_NOT_REGISTERED / COMPANY_NOT_FOUND,
+  /// or 503 SOURCE_UNAVAILABLE.
+  httpStatus  Int       @map("http_status") @db.UnsignedSmallInt
+  errorCode   String?   @map("error_code") @db.VarChar(32)
+  /// Company name copied from `response`, so listings do not parse JSON.
+  companyName String?   @map("company_name") @db.VarChar(255)
+  /// Which register answered and its date, as on `log_lookup`. Null for a lookup-all.
+  source      String?   @db.VarChar(32)
+  sourceDate  DateTime? @map("source_date") @db.Date
+  /// Every source the answer was built from, as a JSON array of names.
+  sources     Json
+  /// Verification code of this answer, copied from `response.meta.proof` so it can be searched.
+  /// Null when the source issues none.
+  proof       String?   @db.VarChar(255)
+  /// `single`, `proof` or `all` (`full` on rows written before the endpoint was renamed). Copied
+  /// from `response` so listings do not parse JSON.
+  kind        String    @default("single") @db.VarChar(8)
+  /// The whole envelope as it was sent, success or error. MySQL stores JSON parsed, so key order is
+  /// not preserved.
+  response    Json
+  fetchedAt   DateTime  @default(now()) @map("fetched_at") @db.DateTime(0)
+
+  /// History of one number, and recent calls of one account (also used by the retention job).
+  @@index([userId, vatNumber, fetchedAt], map: "idx_audit_lookups_user_vat")
+  @@index([userId, fetchedAt], map: "idx_audit_lookups_user_fetched")
+  @@map("user_audit")
+}
+
+/// A developer account: one email address, one plan, one monthly quota.
+model Account {
+  id     BigInt        @id @default(autoincrement()) @db.UnsignedBigInt
+  /// Always stored lowercase.
+  email  String        @unique(map: "uq_accounts_email") @db.VarChar(255)
+  plan   AccountPlan   @default(free)
+  /// Language of the console and emails, matches locales/.
+  locale String        @default("en") @db.Char(2)
+  status AccountStatus @default(active)
+
+  stripeCustomerId     String?   @unique(map: "uq_accounts_stripe_customer") @map("stripe_customer_id") @db.VarChar(64)
+  stripeSubscriptionId String?   @map("stripe_subscription_id") @db.VarChar(64)
+  subscriptionStatus   String?   @map("subscription_status") @db.VarChar(32)
+  currentPeriodEnd     DateTime? @map("current_period_end") @db.DateTime(0)
+  /// Set when the subscription is cancelled from the Customer Portal: it stays `active` until this
+  /// date. Null means it renews.
+  cancelAt             DateTime? @map("cancel_at") @db.DateTime(0)
+
+  /// Which version of the Terms was accepted at sign-up, when, and from which IP. The Terms promise
+  /// to keep this record. `termsVersion` is the date of the document (see `src/console/legal.ts`).
+  ///
+  /// Null for accounts created before the consent checkbox existed.
+  termsVersion    String?   @map("terms_version") @db.VarChar(32)
+  termsAcceptedAt DateTime? @map("terms_accepted_at") @db.DateTime(0)
+  termsAcceptedIp String?   @map("terms_accepted_ip") @db.VarChar(45)
+
+  /// Set when the account holder asks for erasure. The row stays (logs and invoices reference it)
+  /// but its personal data is overwritten. See `deleteAccount()`.
+  deletedAt DateTime? @map("deleted_at") @db.DateTime(0)
+
+  /// When the dormant account warning was sent. The retention job waits a month after it before
+  /// erasing. Cleared on sign-in. See `enforceDormantAccounts()`.
+  inactivityWarnedAt DateTime? @map("inactivity_warned_at") @db.DateTime(0)
+
+  /// Password hash from `hashPassword()` in `src/services/passwords.ts`: scrypt with its parameters
+  /// and salt inline. Null for old magic-link accounts until they set a password.
+  passwordHash          String?   @map("password_hash") @db.VarChar(255)
+  passwordChangedAt     DateTime? @map("password_changed_at") @db.DateTime(0)
+  /// When the email address was verified (verification link or password reset). Null means
+  /// unverified: the account works but the console keeps asking.
+  emailVerifiedAt       DateTime? @map("email_verified_at") @db.DateTime(0)
+  /// "Don't show again" on the dashboard's first-steps panel.
+  onboardingDismissedAt DateTime? @map("onboarding_dismissed_at") @db.DateTime(0)
+
+  /// Default callback URL for monitors.
+  monitorUrl           String? @map("monitor_url") @db.VarChar(2048)
+  /// Default callback URL for async lookups, separate from the monitor one.
+  lookupAsyncUrl       String? @map("lookup_async_url") @db.VarChar(2048)
+  /// Secret used to sign callbacks, one per account. Encrypted like API keys
+  /// (`sealSecret`/`openSecret` in `src/services/secretKeys.ts`) so the console can show it again.
+  ///
+  /// Created on first use (first delivery or first visit to the monitors page).
+  callbackSecretSealed String? @map("callback_secret_sealed") @db.VarChar(255)
+
+  createdAt DateTime @default(now()) @map("created_at") @db.DateTime(0)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.DateTime(0)
+
+  loginTokens    LoginToken[]
+  sessions       Session[]
+  secretKeys     SecretKey[]
+  usagePeriods   UsagePeriod[]
+  billingProfile BillingProfile?
+  monitors       Monitor[]
+  asyncLookups   AsyncLookup[]
+
+  @@map("user")
+}
+
+/// A link sent by email: address verification or password reset (old `login` magic links are
+/// purged by the retention job). Single use: `consumedAt` is set when it is used.
+model LoginToken {
+  id         BigInt            @id @default(autoincrement()) @db.UnsignedBigInt
+  userId     BigInt            @map("user_id") @db.UnsignedBigInt
+  purpose    EmailTokenPurpose @default(login)
+  tokenHash  String            @unique(map: "uq_login_tokens_hash") @map("token_hash") @db.Char(64)
+  expiresAt  DateTime          @map("expires_at") @db.DateTime(0)
+  consumedAt DateTime?         @map("consumed_at") @db.DateTime(0)
+  requestIp  String?           @map("request_ip") @db.VarChar(45)
+  createdAt  DateTime          @default(now()) @map("created_at") @db.DateTime(0)
+
+  account Account @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  /// For the per-address throttle.
+  @@index([userId, purpose, createdAt], map: "idx_login_tokens_user")
+  @@map("auth_login_token")
+}
+
+/// Throttles the console's unauthenticated VAT autofill lookup: 3 per IP per day.
+model ConsoleVatLookup {
+  id        BigInt   @id @default(autoincrement()) @db.UnsignedBigInt
+  ip        String   @db.VarChar(45)
+  createdAt DateTime @default(now()) @map("created_at") @db.DateTime(0)
+
+  /// For the per-IP throttle.
+  @@index([ip, createdAt], map: "idx_console_vat_lookups_ip")
+  @@map("rate_limit_console_lookup")
+}
+
+/// Throttles the public demo lookup used by the website: 5 per IP per week. Separate from
+/// `rate_limit_console_lookup` since the budgets differ.
+model SiteVatLookup {
+  id        BigInt   @id @default(autoincrement()) @db.UnsignedBigInt
+  ip        String   @db.VarChar(45)
+  createdAt DateTime @default(now()) @map("created_at") @db.DateTime(0)
+
+  /// For the per-IP throttle.
+  @@index([ip, createdAt], map: "idx_site_vat_lookups_ip")
+  @@map("rate_limit_site_lookup")
+}
+
+/// Throttles the console's auth forms per IP: sign-ups and failed sign-ins. `kind` says which.
+model AuthAttempt {
+  id        BigInt   @id @default(autoincrement()) @db.UnsignedBigInt
+  kind      String   @db.VarChar(16)
+  ip        String   @db.VarChar(45)
+  /// The account a failed sign-in targeted, for the per-account limit.
+  userId    BigInt?  @map("user_id") @db.UnsignedBigInt
+  createdAt DateTime @default(now()) @map("created_at") @db.DateTime(0)
+
+  @@index([kind, ip, createdAt], map: "idx_auth_attempts_ip")
+  @@index([kind, userId, createdAt], map: "idx_auth_attempts_user")
+  @@map("rate_limit_auth")
+}
+
+/// A console session, identified by a cookie. Only the hash is stored.
+model Session {
+  id         BigInt   @id @default(autoincrement()) @db.UnsignedBigInt
+  userId     BigInt   @map("user_id") @db.UnsignedBigInt
+  tokenHash  String   @unique(map: "uq_sessions_hash") @map("token_hash") @db.Char(64)
+  expiresAt  DateTime @map("expires_at") @db.DateTime(0)
+  lastSeenAt DateTime @map("last_seen_at") @db.DateTime(0)
+  userAgent  String?  @map("user_agent") @db.VarChar(255)
+  ip         String?  @db.VarChar(45)
+  createdAt  DateTime @default(now()) @map("created_at") @db.DateTime(0)
+
+  account Account @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId], map: "idx_sessions_user")
+  @@map("auth_session")
+}
+
+/// An API key. Only its hash is stored, plus what the console needs to display it. The quota
+/// belongs to the account, not the key.
+model SecretKey {
+  id           BigInt  @id @default(autoincrement()) @db.UnsignedBigInt
+  userId       BigInt  @map("user_id") @db.UnsignedBigInt
+  name         String  @db.VarChar(64)
+  /// `vtl_live`. A column so another key type can be added without a migration.
+  prefix       String  @db.VarChar(16)
+  last4        String  @db.Char(4)
+  /// Lookup key used on every request.
+  keyHash      String  @unique(map: "uq_secret_keys_hash") @map("key_hash") @db.Char(64)
+  /// The secret, encrypted with AES-256-GCM under a key derived from `TOKEN_PEPPER`, so the console
+  /// can show it again.
+  ///
+  /// This is weaker than a one-way hash: a database dump alone yields nothing, but an attacker with
+  /// the dump and the pepper can read every key. Null means the key can only be shown masked.
+  secretSealed String? @map("secret_sealed") @db.VarChar(255)
+
+  lastUsedAt DateTime? @map("last_used_at") @db.DateTime(0)
+  /// Revocation is a soft delete, so past usage keeps its key name.
+  revokedAt  DateTime? @map("revoked_at") @db.DateTime(0)
+  createdAt  DateTime  @default(now()) @map("created_at") @db.DateTime(0)
+
+  account Account @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId], map: "idx_secret_keys_user")
+  @@map("user_api_secret_token")
+}
+
+/// One row per account per month, never purged: both the live counter and the usage history.
+/// `plan` and `quota` are copied when the period opens, so past months stay correct after a plan
+/// or configuration change.
+model UsagePeriod {
+  id          BigInt      @id @default(autoincrement()) @db.UnsignedBigInt
+  userId      BigInt      @map("user_id") @db.UnsignedBigInt
+  periodStart DateTime    @map("period_start") @db.DateTime(0)
+  periodEnd   DateTime    @map("period_end") @db.DateTime(0)
+  plan        AccountPlan
+  quota       Int
+  used        Int         @default(0)
+  createdAt   DateTime    @default(now()) @map("created_at") @db.DateTime(0)
+
+  account Account @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, periodStart], map: "uq_usage_periods_user_start")
+  @@map("user_usage_period")
+}
+
+/// Billing details for Stripe invoices. `vatNumber` enables the reverse charge.
+model BillingProfile {
+  userId      BigInt   @id @map("user_id") @db.UnsignedBigInt
+  companyName String   @map("company_name") @db.VarChar(255)
+  vatNumber   String?  @map("vat_number") @db.VarChar(20)
+  line1       String   @db.VarChar(255)
+  line2       String?  @db.VarChar(255)
+  postalCode  String   @map("postal_code") @db.VarChar(16)
+  city        String   @db.VarChar(128)
+  country     String   @db.Char(2)
+  createdAt   DateTime @default(now()) @map("created_at") @db.DateTime(0)
+  updatedAt   DateTime @updatedAt @map("updated_at") @db.DateTime(0)
+
+  account Account @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_company")
+}
+
+/// Every processed Stripe event, keyed by its id. Stripe may send an event more than once.
+model StripeEvent {
+  id         String   @id @db.VarChar(64)
+  type       String   @db.VarChar(64)
+  receivedAt DateTime @default(now()) @map("received_at") @db.DateTime(0)
+
+  @@map("stripe_event")
+}
+
+/// A company followed by an account, identified by its VAT number.
+///
+/// The nightly check compares `last_payload_hash` with the current `company.payload_hash`.
+model Monitor {
+  id        BigInt  @id @default(autoincrement()) @db.UnsignedBigInt
+  /// Public identifier, a UUIDv7. `id` is never exposed.
+  publicId  String  @unique(map: "uq_user_monitor_public_id") @default(uuid(7)) @map("public_id") @db.Char(36)
+  userId    BigInt  @map("user_id") @db.UnsignedBigInt
+  /// The number normalized by `parseVatNumber`.
+  vatNumber String  @map("vat_number") @db.VarChar(20)
+  /// Callback URL of this monitor. Null uses `user.monitor_url`.
+  url       String? @db.VarChar(2048)
+
+  /// `payloadHash()` of the last statement sent to the account. Null until the first check, which
+  /// records the state and sends nothing.
+  lastPayloadHash Bytes?    @map("last_payload_hash") @db.Binary(16)
+  /// The last statement sent, as it went out. Sent as `previous` in the next event.
+  lastPayload     Json?     @map("last_payload")
+  /// Source of the last statement, copied from `last_payload` for listings.
+  lastSource      String?   @map("last_source") @db.VarChar(32)
+  /// Last check, whatever the result, including when every source was down.
+  lastCheckedAt   DateTime? @map("last_checked_at") @db.DateTime(0)
+  /// Last change. Set even if the delivery failed.
+  lastChangedAt   DateTime? @map("last_changed_at") @db.DateTime(0)
+  /// When a change event was last accepted by the receiver. Older than `last_changed_at` (or null
+  /// while it is set) means the last change was never delivered.
+  lastDeliveredAt DateTime? @map("last_delivered_at") @db.DateTime(0)
+
+  createdAt DateTime @default(now()) @map("created_at") @db.DateTime(0)
+
+  account    Account    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  deliveries Delivery[]
+
+  /// An account follows a number once.
+  @@unique([userId, vatNumber], map: "uq_user_monitor_user_vat")
+  /// Console listing and plan limit count.
+  @@index([userId, createdAt], map: "idx_user_monitor_user")
+  @@map("user_monitor")
+}
+
+/// A lookup that is retried until a source answers.
+///
+/// When a source is down (503 SOURCE_UNAVAILABLE), a cron retries the row every ten minutes or
+/// more and posts the answer to a callback URL.
+model AsyncLookup {
+  id        BigInt  @id @default(autoincrement()) @db.UnsignedBigInt
+  publicId  String  @unique(map: "uq_user_async_lookup_public_id") @default(uuid(7)) @map("public_id") @db.Char(36)
+  userId    BigInt  @map("user_id") @db.UnsignedBigInt
+  vatNumber String  @map("vat_number") @db.VarChar(20)
+  /// `single`, `proof` or `all`, as in `log_lookup.kind`. The delivered payload is the envelope of
+  /// that synchronous call.
+  kind      String  @default("single") @db.VarChar(8)
+  /// Null uses `user.lookup_async_url`.
+  url       String? @db.VarChar(2048)
+
+  status      AsyncLookupStatus @default(pending)
+  attempts    Int               @default(0) @db.UnsignedSmallInt
+  /// When the cron may try again. Set to now at creation so the first attempt is on the next pass.
+  retryAfter  DateTime          @map("retry_after") @db.DateTime(0)
+  /// After this date the lookup fails: a failure payload is sent and the credit is refunded.
+  expiresAt   DateTime          @map("expires_at") @db.DateTime(0)
+  completedAt DateTime?         @map("completed_at") @db.DateTime(0)
+  /// When the result was accepted by the receiver. Null on a finished lookup means it was never
+  /// delivered.
+  deliveredAt DateTime?         @map("delivered_at") @db.DateTime(0)
+  /// The envelope as it would have been sent synchronously, success or error.
+  response    Json?
+
+  createdAt DateTime @default(now()) @map("created_at") @db.DateTime(0)
+
+  account    Account              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attemptLog AsyncLookupAttempt[]
+  deliveries Delivery[]
+
+  /// The cron's query: pending rows whose retry date has passed.
+  @@index([status, retryAfter], map: "idx_user_async_lookup_due")
+  /// Console listing.
+  @@index([userId, createdAt], map: "idx_user_async_lookup_user")
+  @@map("user_async_lookup")
+}
+
+/// One attempt of an async lookup: when, and with what result.
+model AsyncLookupAttempt {
+  id            BigInt   @id @default(autoincrement()) @db.UnsignedBigInt
+  asyncLookupId BigInt   @map("async_lookup_id") @db.UnsignedBigInt
+  attemptedAt   DateTime @default(now()) @map("attempted_at") @db.DateTime(0)
+  /// `found`, `not-registered`, `not-found`, `unavailable`, plus `error` for an exception and
+  /// `incomplete` for a lookup-all where every source failed.
+  outcome       String   @db.VarChar(16)
+  /// The HTTP status this attempt would have answered with.
+  httpStatus    Int?     @map("http_status") @db.UnsignedSmallInt
+  errorCode     String?  @map("error_code") @db.VarChar(32)
+  /// How the source failed, same values as `log_lookup.fault`.
+  fault         String?  @db.VarChar(32)
+  durationMs    Int?     @map("duration_ms") @db.UnsignedInt
+
+  asyncLookup AsyncLookup @relation(fields: [asyncLookupId], references: [id], onDelete: Cascade)
+
+  @@index([asyncLookupId, attemptedAt], map: "idx_user_async_lookup_attempt_parent")
+  @@map("user_async_lookup_attempt")
+}
+
+/// One attempt at delivering one callback, from a monitor or an async lookup.
+///
+/// One row per attempt so customers can debug their receiver. Exactly one of the two parents is
+/// set.
+model Delivery {
+  id       BigInt @id @default(autoincrement()) @db.UnsignedBigInt
+  publicId String @unique(map: "uq_user_delivery_public_id") @default(uuid(7)) @map("public_id") @db.Char(36)
+  /// Owner account. No foreign key, used by the retention job and `deleteAccount()`.
+  userId   BigInt @map("user_id") @db.UnsignedBigInt
+
+  monitorId     BigInt? @map("monitor_id") @db.UnsignedBigInt
+  asyncLookupId BigInt? @map("async_lookup_id") @db.UnsignedBigInt
+
+  /// `company.changed`, `monitor.test`, `lookup.completed` or `lookup.failed`, as in the
+  /// `X-Vatlas-Event` header.
+  event   String @db.VarChar(24)
+  /// The URL used at the time of sending.
+  url     String @db.VarChar(2048)
+  /// The body exactly as signed and sent.
+  payload Json
+  /// Attempt number, starting at 1.
+  attempt Int    @db.UnsignedTinyInt
+
+  /// HTTP status of the receiver, null when nothing answered. `error` then says what went wrong.
+  httpStatus Int?     @map("http_status") @db.UnsignedSmallInt
+  error      String?  @db.VarChar(255)
+  durationMs Int?     @map("duration_ms") @db.UnsignedInt
+  sentAt     DateTime @default(now()) @map("sent_at") @db.DateTime(0)
+
+  monitor     Monitor?     @relation(fields: [monitorId], references: [id], onDelete: Cascade)
+  asyncLookup AsyncLookup? @relation(fields: [asyncLookupId], references: [id], onDelete: Cascade)
+
+  @@index([monitorId, sentAt], map: "idx_user_delivery_monitor")
+  @@index([asyncLookupId, sentAt], map: "idx_user_delivery_async")
+  /// Retention job and account erasure.
+  @@index([userId, sentAt], map: "idx_user_delivery_user")
+  @@map("user_delivery")
+}
+
+enum AccountPlan {
+  free
+  pro
+
+  @@map("user_plan")
+}
+
+enum EmailTokenPurpose {
+  /// Old magic link, no longer issued.
+  login
+  verify_email
+  reset_password
+
+  @@map("auth_login_token_purpose")
+}
+
+enum AccountStatus {
+  active
+  suspended
+  deleted
+
+  @@map("user_status")
+}
+
+enum CompanyStatus {
+  active
+  inactive
+  /// The source says the number is not registered for intra-community transactions.
+  not_registered
+  unknown
+
+  @@map("company_status")
+}
+
+enum ImportRunStatus {
+  running
+  success
+  failed
+
+  @@map("log_import_status")
+}
+
+/// Status of an async lookup. Deleting one removes the row, so there is no `cancelled`.
+enum AsyncLookupStatus {
+  /// Still being retried. The only status the cron reads.
+  pending
+  /// A source answered, including "not registered".
+  success
+  /// No answer after a week. A failure payload was sent and the credit refunded.
+  failed
+
+  @@map("user_async_lookup_status")
+}

@@ -1,0 +1,497 @@
+# GET /v1/lookup/:vatNumber - resolve a VAT number to a company.
+#
+# The envelope is the same whatever the source. `meta` says which register answered and when:
+#   meta.source          SIRENE | MF_WL | PRH | RIK | UR_VID | ARES | GEMI | VIES...
+#   meta.sourceDate      last day the source was seen saying it (file date or call date)
+#   meta.sourceSince     first day it said it
+#   meta.sourceUpdatedAt when the source itself last updated the record, if it publishes that.
+#                        Null for VIES
+#   meta.proof           VIES answers only: { "type": "vies_consultation_number", "value": "..." }
+#
+# Lookup order: the stored history first, then the country's live sources in order. Bulk
+# statements never expire, live ones are refreshed after LIVE_MAX_AGE_DAYS. The walk stops at the
+# first source that returns a name (VIES often answers `valid` without one for Germany and Spain).
+# `?prefer=proof` only accepts answers with `meta.proof`. `?history` adds the answering source's
+# history. On a miss, the error code says how far the lookup got.
+#
+# Run with: VATLAS_KEY=vtl_live_... npx httpyac send http/lookup.http --all
+#
+# Wait a minute between runs: several requests below ask VIES for the same French number, and
+# France often answers MS_MAX_CONCURRENT_REQ. The member state is then skipped for
+# VIES_MS_COOLDOWN_MS and those requests answer 503 SOURCE_UNAVAILABLE.
+#
+# Every request here is metered. Create a key in the console (`npm run console:dev`, then
+# http://localhost:3001) and export it as VATLAS_KEY.
+
+@host = http://localhost:3000
+@secretKey = {{$processEnv VATLAS_KEY}}
+
+# The number used below must:
+#
+#  1. be in the SIRENE import (one of the first 100 SIREN, so `npm run import -- fr --limit 100`
+#     is enough);
+#  2. be registered for intra-community trade in VIES, so `?prefer=proof` has something to prove.
+#
+# A number that VIES reports as not registered answers 404 VAT_NOT_REGISTERED even if SIRENE
+# holds it, because the recent live answer wins.
+@vat = FR68005420120
+
+###
+
+# @name Look up a VAT number
+# Input is normalized, so case and punctuation do not matter.
+GET {{host}}/v1/lookup/{{vat}}
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? body data.countryCode == FR
+
+# Example response - 200 OK
+#
+# {
+#   "data": {
+#     "vatNumber": "FR68005420120",
+#     "countryCode": "FR",
+#     "nationalNumber": "68005420120",
+#     "nationalId": "005420120",
+#     "name": "SOCIETE DES SUCRERIES DU MARQUENTERRE",
+#     "legalForm": "Autre SA à conseil d'administration",
+#     "status": "active",
+#     "address": {
+#       "line1": "32 CHEMIN DES GARENNES",
+#       "line2": null,
+#       "postalCode": "80120",
+#       "city": "SAINT-QUENTIN-EN-TOURMONT",
+#       "country": "FR"
+#     }
+#   },
+#   "meta": {
+#     "source": "SIRENE",
+#     "sourceDate": "2026-09-01",
+#     "sourceSince": "2026-06-01",
+#     "sourceUpdatedAt": "2026-02-13T11:07:03.000Z"
+#   }
+# }
+
+###
+# -- Input handling --
+###
+
+# @name Accept a messy input
+# Lower case, spaces, dots and dashes are accepted. `data.vatNumber` is always canonical.
+GET {{host}}/v1/lookup/fr%2068%20005.420-120
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? body data.vatNumber == FR68005420120
+
+###
+
+# @name Accept the ISO prefix for Greece
+# Greece is GR in ISO 3166 but EL for VAT. Both are accepted, EL is returned.
+GET {{host}}/v1/lookup/GR094014201
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? body data.countryCode == EL
+?? body data.vatNumber == EL094014201
+
+###
+# -- Served from an imported register --
+###
+
+# @name Latvia - Business Register joined with the VAT payers file
+# The register ships one address string and no city, so the whole address is in `line1`.
+GET {{host}}/v1/lookup/LV40001000084
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? body meta.source == UR_VID
+
+###
+
+# @name Estonia - e-Business Register daily dump
+# The registry code differs from the VAT number, so `nationalId` is not `nationalNumber`.
+GET {{host}}/v1/lookup/EE101335276
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? body meta.source == RIK
+
+###
+
+# @name Finland - PRH bulk dump
+# The Business ID is the VAT number with a hyphen before the check digit.
+GET {{host}}/v1/lookup/FI01000045
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? body meta.source == PRH
+
+###
+# -- Resolved live, then stored --
+###
+
+# @name Poland - resolved through the White List API
+# Poland is resolved live through the Ministry of Finance and the answer is stored. A second call
+# is served from storage with the same `meta`.
+GET {{host}}/v1/lookup/PL7342867148
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? body meta.source == MF_WL
+
+###
+
+# @name Finland - a company the dump does not cover
+# The Finnish dump only holds registered and pending companies, so a ceased one goes to the PRH API.
+GET {{host}}/v1/lookup/FI01000029
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? body meta.source == PRH
+
+###
+
+# @name A French number outside the imported sample - VIES fallback
+# France is bulk only, so numbers missing from the import go to VIES. VIES returns the French
+# address on two lines, so `postalCode` and `city` are split.
+GET {{host}}/v1/lookup/FR95884831538
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? body meta.source == VIES
+?? body data.address.postalCode == 75002
+?? body data.address.city == PARIS
+
+# Example response - 200 OK (data only)
+#
+# "data": {
+#   "name": "SARL JULIEN MAULNY EURL",
+#   "address": {
+#     "line1": "9 RUE DES COLONNES",
+#     "line2": null,
+#     "postalCode": "75002",
+#     "city": "PARIS",
+#     "country": "FR"
+#   }
+# }
+
+###
+
+# @name Germany - the Peppol directory, then VIES
+# VIES returns no name or address for Germany, so the answer comes from the Peppol directory.
+# The name there is self-declared, hence `status: unknown`.
+GET {{host}}/v1/lookup/DE122624631
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? body meta.source == PEPPOL
+?? body data.status == unknown
+
+# Example response - 200 OK
+#
+# {
+#   "data": {
+#     "vatNumber": "DE122624631",
+#     "countryCode": "DE",
+#     "nationalNumber": "122624631",
+#     "nationalId": null,
+#     "name": "Forschungszentrum Jülich GmbH",
+#     "legalForm": null,
+#     "status": "unknown",
+#     "address": { "line1": "Jülich", "line2": null, "postalCode": null, "city": null, "country": "DE" }
+#   },
+#   "meta": {
+#     "source": "PEPPOL",
+#     "sourceUpdatedAt": "2020-03-20T00:00:00.000Z"
+#   }
+# }
+
+###
+
+# @name Germany - a number Peppol does not carry, answered by VIES alone
+# Most German numbers are not in Peppol. VIES confirms the registration with `---` for the name,
+# returned as an empty string.
+GET {{host}}/v1/lookup/DE333288665
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? body meta.source == VIES
+
+# Example response - 200 OK
+#
+# {
+#   "data": {
+#     "vatNumber": "DE333288665",
+#     "countryCode": "DE",
+#     "nationalNumber": "333288665",
+#     "nationalId": null,
+#     "name": "",
+#     "legalForm": null,
+#     "status": "active",
+#     "address": { "line1": null, "line2": null, "postalCode": null, "city": null, "country": "DE" }
+#   },
+#   "meta": {
+#     "source": "VIES",
+#     "sourceDate": "2026-09-05",
+#     "sourceSince": "2026-08-28",
+#     "sourceUpdatedAt": null,
+#     "proof": { "type": "vies_consultation_number", "value": "908a3b38-e0dc-4502-8b06-d057eeac6861" }
+#   }
+# }
+#
+# `proof` is present on VIES answers that carry a consultation number. An answer without one is
+# still served, and only refused under `?prefer=proof`.
+
+###
+# -- Preferring a proof --
+#
+# `?prefer=proof` skips the stored history and the national registers, which issue no proof.
+# It costs one unit, like the plain lookup.
+###
+
+# @name The same number, with and without a proof
+# Answered by SIRENE without a preference, by VIES with `prefer=proof`.
+GET {{host}}/v1/lookup/{{vat}}
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+# Absent, not null. `== null` would not work: httpyac compares against the string "null".
+?? js Object.keys(response.parsedBody.meta).indexOf('proof') == -1
+
+###
+
+GET {{host}}/v1/lookup/{{vat}}?prefer=proof
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? body meta.source == VIES
+# Unquoted on the right: httpyac compares both sides as written.
+?? js response.parsedBody.meta.proof.type == vies_consultation_number
+
+# Example response - 200 OK (meta only)
+#
+# "meta": {
+#   "source": "VIES",
+#   "sourceDate": "2026-09-05",
+#   "sourceSince": "2026-09-02",
+#   "sourceUpdatedAt": null,
+#   "proof": { "type": "vies_consultation_number", "value": "908a3b38-e0dc-4502-8b06-d057eeac6861" }
+# }
+
+###
+
+# @name The default, written out
+# `?prefer=completeness` is the default.
+GET {{host}}/v1/lookup/{{vat}}?prefer=completeness
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+
+###
+
+# @name Anything else is rejected, never silently ignored
+# Any other value is rejected, so a caller never gets an answer without the proof they asked for.
+GET {{host}}/v1/lookup/{{vat}}?prefer=1
+Authorization: Bearer {{secretKey}}
+
+?? status == 400
+?? body error.code == INVALID_QUERY
+
+###
+
+# @name The parameter that used to say this is gone
+# The old `?requireProof` flag is rejected, not treated as a synonym.
+GET {{host}}/v1/lookup/{{vat}}?requireProof
+Authorization: Bearer {{secretKey}}
+
+?? status == 400
+?? body error.code == INVALID_QUERY
+
+###
+# -- History --
+###
+
+# @name ?history publishes what the source that answered has said
+# Only the answering source's history. Use /v1/lookup-all for every source.
+GET {{host}}/v1/lookup/{{vat}}?history
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? js response.parsedBody.history.length > 0
+?? js Object.keys(response.parsedBody.history[0]).indexOf('from') > -1
+
+###
+
+GET {{host}}/v1/lookup/{{vat}}
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? js Object.keys(response.parsedBody).indexOf('history') == -1
+
+###
+
+# @name ?history=1 is refused like any other malformed flag
+GET {{host}}/v1/lookup/{{vat}}?history=1
+Authorization: Bearer {{secretKey}}
+
+?? status == 400
+?? body error.code == INVALID_QUERY
+
+###
+
+# A proof that could not be produced - 503 PROOF_UNAVAILABLE.
+#
+# VIES answered without a consultation number, which it does for most unregistered numbers.
+# Not reproducible on demand, and not billed:
+#
+# {
+#   "error": {
+#     "code": "PROOF_UNAVAILABLE",
+#     "message": "The check on \"FR11999999998\" could not be proved: VIES issued no consultation number for it. Retry later, or ask for \"prefer=completeness\" to take the answer without a proof."
+#   }
+# }
+#
+# `log_lookup.fault` is NO_CONSULTATION_NUMBER here, or VIES_DISABLED when VIES_ENABLED=false.
+
+###
+# -- Rejected input --
+###
+
+# @name Unknown country prefix
+GET {{host}}/v1/lookup/XX123456789
+Authorization: Bearer {{secretKey}}
+
+?? status == 400
+?? body error.code == INVALID_VAT_FORMAT
+?? body error.reason == UNKNOWN_COUNTRY
+
+# Example response - 400 Bad Request
+#
+# {
+#   "error": {
+#     "code": "INVALID_VAT_FORMAT",
+#     "message": "Unknown VAT country prefix \"XX\"",
+#     "reason": "UNKNOWN_COUNTRY"
+#   }
+# }
+#
+# Rejected input never reaches a source, so there is no `meta`.
+
+###
+
+# @name Malformed national part
+# Known prefix, but the rest does not match the country's syntax.
+GET {{host}}/v1/lookup/FR123
+Authorization: Bearer {{secretKey}}
+
+?? status == 400
+?? body error.reason == BAD_FORMAT
+
+###
+
+# @name Broken checksum
+# Well formed, but the French check digits do not match the SIREN.
+GET {{host}}/v1/lookup/FR01884831538
+Authorization: Bearer {{secretKey}}
+
+?? status == 400
+?? body error.reason == BAD_CHECKSUM
+
+###
+# -- Misses --
+#
+# Three different misses, each with its own code.
+###
+
+# @name Not registered for intra-community trade
+# VIES says the number is not registered. The company may still exist in its national register,
+# which is why the code is not COMPANY_NOT_FOUND.
+GET {{host}}/v1/lookup/FR11999999998
+Authorization: Bearer {{secretKey}}
+
+?? status == 404
+?? body error.code == VAT_NOT_REGISTERED
+?? js response.parsedBody.meta.checkedAt != null
+
+# No `meta.proof`: VIES issues no consultation number for an unregistered number. Only
+# `?prefer=proof` turns that into a 503.
+
+# Example response - 404 Not Found
+#
+# {
+#   "error": {
+#     "code": "VAT_NOT_REGISTERED",
+#     "message": "VIES reports that \"FR11999999998\" is not registered for intra-community transactions. The company may well exist in its national register without being VAT registered there."
+#   },
+#   "meta": {
+#     "checkedAt": "2026-08-26T12:42:53.581Z"
+#   }
+# }
+#
+# `checkedAt` is the time of the call when this request made it, or a date ("2026-08-26") when
+# the answer came from storage.
+
+###
+
+# VIES did not answer - 503 SOURCE_UNAVAILABLE.
+#
+# Not a negative answer, worth retrying. Not reproducible on demand:
+#
+# {
+#   "error": {
+#     "code": "SOURCE_UNAVAILABLE",
+#     "message": "Nothing stored answers for \"DE333288665\", and no live source could be reached. Member state services are regularly unavailable for short periods; retry later."
+#   }
+# }
+#
+# Under `?prefer=proof` the message differs, since storage was not read.
+#
+# Different from PROOF_UNAVAILABLE, where VIES answered without a consultation number.
+# `log_lookup.fault` is MS_UNAVAILABLE or NO_RESPONSE here.
+
+###
+
+# Nothing left to ask - 404 COMPANY_NOT_FOUND.
+#
+# Only with VIES_ENABLED=false, for a country without a live source:
+#
+# {
+#   "error": {
+#     "code": "COMPANY_NOT_FOUND",
+#     "message": "No company found for VAT number \"FR11999999998\""
+#   }
+# }
+
+###
+# -- Authentication --
+###
+
+# @name No credential at all
+# 401 with a WWW-Authenticate header (RFC 6750). Costs no quota.
+GET {{host}}/v1/lookup/{{vat}}
+
+?? status == 401
+?? body error.code == MISSING_SECRET_KEY
+?? header WWW-Authenticate == Bearer
+
+###
+
+# @name A key that is not ours
+# Unknown, revoked and malformed keys get the same answer, so keys cannot be probed.
+GET {{host}}/v1/lookup/{{vat}}
+Authorization: Bearer vtl_live_00000000000000000000000000000000
+
+?? status == 401
+?? body error.code == INVALID_SECRET_KEY
+
+###
+
+# @name Another scheme is not a credential
+# Basic auth is not accepted: same 401.
+GET {{host}}/v1/lookup/{{vat}}
+Authorization: Basic dXNlcjpwYXNz
+
+?? status == 401
+?? body error.code == MISSING_SECRET_KEY

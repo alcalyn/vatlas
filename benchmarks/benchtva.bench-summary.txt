@@ -1,0 +1,123 @@
+Benchmark - benchtva-sanitized.txt
+  2026-08-28T22:13:00.503Z
+
+Input
+  lines read           23816
+  VAT numbers          1000
+  malformed            0
+  duplicates           0
+  to look up           1000
+
+Numbers per country
+  AT  Austria                33
+  BE  Belgium                67
+  BG  Bulgaria                8
+  CY  Cyprus                  5
+  CZ  Czechia                22
+  DE  Germany               167
+  DK  Denmark                24
+  EE  Estonia                10
+  EL  Greece                 26
+  ES  Spain                 138
+  FI  Finland                31
+  FR  France                113
+  HR  Croatia                 4
+  HU  Hungary                 8
+  IE  Ireland                28
+  IT  Italy                 115
+  LT  Lithuania               2
+  LU  Luxembourg              4
+  LV  Latvia                  5
+  MT  Malta                   3
+  NL  Netherlands            65
+  PL  Poland                 25
+  PT  Portugal               36
+  RO  Romania                 6
+  SE  Sweden                 36
+  SI  Slovenia               13
+  SK  Slovakia                6
+  XI  Northern Ireland        0
+
+Lookups - https://api.vatlas.dev - concurrency 1 - run took 1835.7s
+
+Outcomes
+  found                   796  79.6%
+  unavailable             167  16.7%
+  not-registered           25  2.5%
+  timeout                  12  1.2%
+
+Latency, every lookup (ms)
+  p50      288
+  p95     6461
+  max    30002
+  avg     1836
+
+Completeness, over the 796 answers found
+  name           83.4%  (664/796)
+  legal form     30.7%  (244/796)
+  address        82.3%  (655/796)
+  postal code    70.5%  (561/796)
+  city           70.7%  (563/796)
+  source        100.0%  (796/796)
+
+  answered by          vies 533, database 213, source 50
+  sources              VIES 533, SIRENE 113, KBO 67, MF_WL 25, ARES 20, PRH 19, RIK 10, ANAF 5, UR_VID 4
+
+Per country - latency over every lookup, completeness over the ones found
+  code       n   found      p50      p95     name     form     addr     post     city      src
+  AT        33  100.0%      224      367   100.0%     0.0%   100.0%     0.0%     0.0%   100.0%
+  BE        67  100.0%     19.9     87.7   100.0%   100.0%   100.0%   100.0%   100.0%   100.0%
+  BG         8   75.0%      369      982   100.0%     0.0%   100.0%     0.0%     0.0%   100.0%
+  CY         5  100.0%      492      579   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  CZ        22   90.9%      245     2580   100.0%   100.0%   100.0%   100.0%   100.0%   100.0%
+  DE       167    0.0%     6181     6636        -        -        -        -        -        -
+  DK        24   45.8%    20367    30002   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  EE        10  100.0%     19.2     80.8   100.0%   100.0%   100.0%    90.0%   100.0%   100.0%
+  EL        26   96.2%      366      614   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  ES       138   95.7%      246      380     0.0%     0.0%     0.0%     0.0%     0.0%   100.0%
+  FI        31  100.0%     24.4      860   100.0%    61.3%   100.0%   100.0%   100.0%   100.0%
+  FR       113  100.0%     19.0     96.4   100.0%   100.0%   100.0%   100.0%   100.0%   100.0%
+  HR         4  100.0%      355      492   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  HU         8  100.0%      245      370   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  IE        28  100.0%      236      498   100.0%     0.0%    85.7%    14.3%    14.3%   100.0%
+  IT       115   96.5%      256      384   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  LT         2  100.0%      359      367   100.0%     0.0%   100.0%     0.0%     0.0%   100.0%
+  LU         4  100.0%      175      249   100.0%     0.0%   100.0%     0.0%     0.0%   100.0%
+  LV         5   80.0%     83.9     9371   100.0%    25.0%    25.0%    25.0%     0.0%   100.0%
+  MT         3  100.0%      342      373   100.0%     0.0%   100.0%     0.0%     0.0%   100.0%
+  NL        65   95.4%      737     1597   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  PL        25  100.0%      436     1161   100.0%    40.0%   100.0%     0.0%     0.0%   100.0%
+  PT        36   97.2%      347      489   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  RO         6   83.3%      306      861   100.0%    80.0%   100.0%    60.0%   100.0%   100.0%
+  SE        36   97.2%      464     2060   100.0%     0.0%    94.3%   100.0%   100.0%   100.0%
+  SI        13   84.6%      245      397   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  SK         6  100.0%      434     1107   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+
+Per country - where the answers came from
+  AT    vies 33
+  BE    database 67
+  BG    vies 6, not-registered 2
+  CY    vies 5
+  CZ    source 20, not-registered 2
+  DE    unavailable 167
+  DK    timeout 12, vies 11, not-registered 1
+  EE    database 10
+  EL    vies 25, not-registered 1
+  ES    vies 132, not-registered 6
+  FI    database 19, vies 12
+  FR    database 113
+  HR    vies 4
+  HU    vies 8
+  IE    vies 28
+  IT    vies 111, not-registered 4
+  LT    vies 2
+  LU    vies 4
+  LV    database 4, not-registered 1
+  MT    vies 3
+  NL    vies 62, not-registered 3
+  PL    source 25
+  PT    vies 35, not-registered 1
+  RO    source 5, not-registered 1
+  SE    vies 35, not-registered 1
+  SI    vies 11, not-registered 2
+  SK    vies 6

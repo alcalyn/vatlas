@@ -1,0 +1,146 @@
+<!-- @meta
+{
+  "title": "Enrichir un CRM à partir des numéros de TVA",
+  "description": "Transformer le numéro de TVA de chaque compte en raison sociale, adresse et statut officiels. Enrichir un CRM en masse et le garder à jour.",
+  "h1": "Enrichir un CRM à partir des numéros de TVA",
+  "articleType": "TechArticle",
+  "updated": "2026-09-21",
+  "video": {
+    "file": "sheet",
+    "name": "Remplir les données société depuis une colonne de numéros de TVA",
+    "description": "Une colonne de numéros de TVA est lue ligne par ligne, et la raison sociale, l’adresse, le pays et le registre s’écrivent dans les colonnes voisines.",
+    "duration": "PT17S"
+  }
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Guide · CRM</p>
+        <h1>Enrichir un CRM à partir des numéros de TVA</h1>
+        <p class="section__lead">
+          Vos comptes ont été saisis par des gens pressés. Leurs numéros de TVA suffisent à
+          remplacer les approximations par ce que le registre dit vraiment.
+        </p>
+      </div>
+
+      <figure class="demo">
+        <video src="/demos/sheet.mp4" poster="/demos/sheet.jpg" width="1000" height="680"
+               autoplay loop muted playsinline
+               aria-label="Une colonne de numéros de TVA est lue ligne par ligne, et le nom de la société, son adresse et son registre remplissent les colonnes voisines."></video>
+        <figcaption>Une colonne TVA en entrée, les colonnes société en sortie. Même appel depuis n’importe quel outil.</figcaption>
+      </figure>
+
+      <h2 id="pourquoi">Ce que ça corrige</h2>
+      <ul>
+        <li><strong>Les doublons.</strong> La même société figure trois fois sous trois orthographes. Le registre n’en donne qu’une, et elles fusionnent.</li>
+        <li><strong>Les vieilles adresses.</strong> Un compte saisi en 2019 facture encore là où la société n’est plus.</li>
+        <li><strong>Les comptes morts.</strong> <code>status</code> dit lesquels ont été radiés.</li>
+        <li><strong>Les champs vides.</strong> Forme juridique, identifiant national, pays : absents de la plupart des bases.</li>
+      </ul>
+
+      <h2 id="comment">Comment ça tourne</h2>
+      <p>
+        Un appel par compte, sur le même point d’entrée que le reste.
+      </p>
+      <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-str">&quot;{{apiBase}}/v1/lookup/FR68005420120&quot;</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">&quot;Authorization: Bearer $VATLAS_KEY&quot;</span></code></pre>
+      </div>
+      <p>
+        Vous récupérez <code>name</code>, <code>legalForm</code>, <code>status</code>,
+        <code>nationalId</code> et une <code>address</code> déjà découpée en <code>line1</code>,
+        <code>postalCode</code>, <code>city</code> et <code>country</code>. Un champ par champ de
+        CRM, rien à parser. La forme est identique pour tous les pays, donc un seul mapping couvre
+        toute la base.
+      </p>
+      <p>
+        Où que vivent vos comptes, la boucle est la même : lire le numéro de TVA, appeler,
+        réécrire les champs. Une tâche planifiée, un export, une étape de workflow dans le CRM
+        lui-même, ou une macro sur le fichier que l’équipe commerciale garde à côté. Pour une
+        première passe sur une base existante, mettez-la en file : le
+        <a href="{{docsUrl}}#lookup-async">point d’entrée asynchrone</a> prend un lot et vous
+        rappelle quand il a fini.
+      </p>
+      <p>
+        Stockez aussi le bloc <code>meta</code> sur la fiche. Il nomme le registre qui a répondu et
+        la date, ce qui distingue un champ périmé d’un champ que personne n’a jamais rempli.
+      </p>
+
+      <h2 id="fraicheur">Le garder à jour</h2>
+      <p>
+        Une base enrichie est exacte le jour où vous l’enrichissez. Plutôt que de tout refaire
+        chaque trimestre, laissez {{siteName}} surveiller les numéros déjà résolus et vous rappeler
+        quand un registre change d’avis : voir
+        <a href="{{docsUrl}}#monitor">le point d’entrée de surveillance</a>.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>Enrichir n’est pas vérifier.</strong> Remplir un champ de CRM depuis une réponse
+          conservée, très bien. Décider de facturer ou non la TVA est un contrôle fait à cet
+          instant, preuve gardée : voir
+          <a href="/fr/guides/verifier-numero-tva-facture/">vérifier le numéro de TVA d’une facture</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2>Enrichir ses comptes à partir des numéros de TVA, en bref</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Est-ce que ça marche avec mon CRM ?</summary>
+          <p>
+            C’est un appel HTTPS qui renvoie du JSON : tout ce qui sait en faire un convient. Une
+            tâche planifiée, une étape de workflow native, une plateforme d’intégration, ou une
+            macro sur un export. Il n’y a rien à installer.
+          </p>
+        </details>
+        <details>
+          <summary>Combien de comptes d’un coup ?</summary>
+          <p>
+            Bouclez jusqu’à quelques centaines. Au-delà, mettez le lot en file par le
+            <a href="{{docsUrl}}#lookup-async">point d’entrée asynchrone</a> et récupérez les
+            résultats au rappel.
+          </p>
+        </details>
+        <details>
+          <summary>Que deviennent les comptes qui ne résolvent rien ?</summary>
+          <p>
+            Ils reviennent vides, pas en erreur, et c’est un résultat à garder. Un numéro de TVA
+            sans société derrière, dans votre base, c’est précisément ce que vous cherchiez.
+          </p>
+        </details>
+        <details>
+          <summary>Faut-il nettoyer les numéros avant ?</summary>
+          <p>
+            À peine. Espaces, points, tirets, minuscules et préfixe pays absent sont pris en
+            charge. Plusieurs pays dans le même champ ne posent pas de problème.
+          </p>
+        </details>
+        <details>
+          <summary>Faut-il écraser ce qu’un commercial a saisi ?</summary>
+          <p>
+            Remplissez d’office les champs vides. Pour ceux qui contiennent déjà autre chose,
+            écrivez la valeur du registre dans une colonne à part et laissez un humain trancher.
+            Un nom commercial sert souvent mieux les commerciaux qu’une raison sociale.
+          </p>
+        </details>
+      </div>
+
+      <h2>À lire ensuite</h2>
+      <ul class="otherlinks">
+        <li><a href="/fr/guides/verifier-numero-tva-facture/">Vérifier le numéro de TVA d’une facture</a></li>
+        <li><a href="/fr/guides/nom-adresse-entreprise-numero-tva/">Obtenir le nom et l’adresse d’une entreprise</a></li>
+        <li><a href="{{docsUrl}}">Documentation de l’API</a></li>
+        <li><a href="{{pricingUrl}}">Tarifs</a></li>
+      </ul>
+      <p class="updated">Mis à jour le 21 septembre 2026.</p>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,100 @@
+<!-- @meta
+{
+  "title": "Taiwan Unified Business Number: format, checksum and lookup",
+  "description": "TW plus eight digits. How the 統一編號 check digit works, why the rule changed in 2023, and how to find the company behind one for free.",
+  "h1": "The Taiwanese Unified Business Number",
+  "term": "Unified Business Number",
+  "updated": "2026-09-13"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Taiwan · TW</p>
+        <h1>The Taiwanese Unified Business Number</h1>
+        <p class="section__lead">Taiwan has a business tax, and the number every invoice carries is the 統一編號: eight digits with a checksum, backed by the most openly published company register on this site.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>TW</code> + 8 digits</p>
+        <p><strong>Example:</strong> <code>TW22099131</code></p>
+        <p><strong>Issued by:</strong> the Ministry of Economic Affairs, through its Commerce Development Department.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Unified Business Number, 統一編號, usually shortened to 統編, is <strong>eight digits</strong> and nothing else. No letters, no prefix on the number itself, no separators. It identifies the business for company registration, for the business tax, and for the government-uniform invoice (統一發票) system all at once, which is why it is the single number a Taiwanese counterparty will give you.</p>
+      <p>It carries a check digit, and the rule is public:</p>
+      <ul class="breakdown">
+        <li><b>×</b><span>Multiply the eight digits by 1, 2, 1, 2, 1, 2, 4, 1.</span></li>
+        <li><b>Σ</b><span>Add the <em>digits</em> of each product, not the product itself.</span></li>
+        <li><b>mod 5</b><span>The total divides by 5 exactly.</span></li>
+      </ul>
+      <p>Two things about that rule catch people out. The sum is over the digits of each product, so <code>2 × 9 = 18</code> contributes 9 and not 18, the same idea as a Luhn check. And <strong>the modulus is 5, not 10</strong>: the Ministry relaxed it in 2023 to widen a range that was running out, and a validator still using the old modulus 10 rejects every number issued since. If the seventh digit is a 7 the number may satisfy the sum either way, which is the one survivor of the older rule.</p>
+
+      <h2 id="what">What the number is, and is not</h2>
+      <p>Being allocated a 統一編號 is being registered as a business in Taiwan. It is not, on its own, proof that a business is currently trading: a dissolved company keeps its number, marked as dissolved, in the same way a cancelled ABN stays in the Australian file.</p>
+      <p>Taiwan also keeps <strong>two registers side by side</strong>, and a number belongs to exactly one of them: <strong>公司登記</strong> for companies, and <strong>商業登記</strong> for sole traders and partnerships. They are published as separate datasets with different field names, so a lookup that checks only the first will report a perfectly valid sole trader as unknown. {{siteName}} asks both.</p>
+
+      <h2 id="find">Finding the company behind the number</h2>
+      <h3>The open data platform</h3>
+      <p>The Ministry publishes the registers on <code>data.gcis.nat.gov.tw</code> as a JSON API filtered by the number itself, with <strong>no key, no quota and no registration</strong>. It returns the registered name, the registration status, the responsible person, the capital and the seat address in one call.</p>
+      <h3>What the answer contains</h3>
+      <p>A Taiwanese address is published as <strong>one string, written largest unit first</strong> (city, district, road, number), with no postal code anywhere in the payload and nothing to split it on. {{siteName}} passes it through whole rather than cutting it on a guess, so <code>address.line1</code> holds the full address and <code>postalCode</code> and <code>city</code> are <code>null</code>.</p>
+      <p>There is no legal form field either. In Chinese the form is the tail of the name: 股份有限公司 for a company limited by shares, 有限公司 for a limited company. So it is already in <code>name</code>.</p>
+
+      <h2 id="pitfalls">Taiwan-specific pitfalls</h2>
+      <ul>
+        <li><strong>The checksum changed in 2023.</strong> Modulus 5, not 10. Libraries that have not been updated reject valid recent numbers.</li>
+        <li><strong>Two registers, one number space.</strong> A number missing from the company register may be a sole trader in the business register.</li>
+        <li><strong>Dates are in the Minguo calendar.</strong> <code>0760221</code> is 21 February 1987: the year is 1911 behind the Gregorian one. {{siteName}} converts them.</li>
+        <li><strong>A miss is an empty answer, not a 404.</strong> The platform returns HTTP 200 with an empty body for a number it does not hold, which naive clients report as an outage.</li>
+        <li><strong>No postal code, ever.</strong> The register does not publish one.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The 統一編號 in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Taiwanese business number have?</summary>
+          <p>Eight, the last of which participates in a checksum over all of them.</p>
+        </details>
+        <details>
+          <summary>Does Taiwan have a VAT number?</summary>
+          <p>Taiwan has a business tax, and the number on an invoice is the Unified Business Number. There is no separate tax number.</p>
+        </details>
+        <details>
+          <summary>Why does my validator reject a valid Taiwanese number?</summary>
+          <p>Almost certainly because it still uses the pre-2023 modulus 10. The Ministry relaxed the rule to modulus 5, and numbers issued since then fail the old check.</p>
+        </details>
+        <details>
+          <summary>Is the register free to query?</summary>
+          <p>Yes. The Ministry's open data platform answers by Unified Business Number with no key and no quota.</p>
+        </details>
+        <details>
+          <summary>Why is there no postal code in the answer?</summary>
+          <p>The register does not publish one. The address is a single string, and inventing a split for it would be guesswork.</p>
+        </details>
+      </div>
+
+      <h2>Business numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/japan/">Japan</a></li>
+        <li><a href="/en/vat-number/singapore/">Singapore</a></li>
+        <li><a href="/en/vat-number/israel/">Israel</a></li>
+        <li><a href="/en/vat-number/australia/">Australia</a></li>
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 13 September 2026.</p>
+    </div>
+  </section>
+</main>

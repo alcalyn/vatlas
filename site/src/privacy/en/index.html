@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy · Vatlas</title>
+    <meta name="description" content="How Vatlas collects, uses and protects personal data." />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="author" content="Vatlas" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://vatlas.dev/privacy/en/" />
+    <link rel="alternate" hreflang="en" href="https://vatlas.dev/privacy/en/" />
+    <link rel="alternate" hreflang="fr" href="https://vatlas.dev/privacy/fr/" />
+    <link rel="alternate" hreflang="x-default" href="https://vatlas.dev/privacy/en/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta name="console-origin" content="https://console.vatlas.dev" />
+    <script>
+      try {
+        var url = new URLSearchParams(location.search).get('theme')
+        var stored = url === 'light' || url === 'dark' ? url : localStorage.getItem('vatlas-theme')
+        if (stored === 'light' || stored === 'dark') {
+          document.documentElement.dataset.theme = stored
+          localStorage.setItem('vatlas-theme', stored)
+        }
+      } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <!-- @include partials/header.html -->
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <p class="eyebrow">Legal</p>
+            <h1>Privacy Policy</h1>
+            <p class="section__lead">
+              This policy explains what personal data Vatlas processes, why, and the rights you have over it
+              under the GDPR.
+            </p>
+            <p class="note">Last updated 28 August 2026.</p>
+          </div>
+
+          <div class="docs__content legal-content">
+            <section>
+              <h2>1. Data controller</h2>
+              <p>
+                JULIEN MAULNY EURL, 9 Rue des Colonnes, 75002 Paris, France,
+                <a href="mailto:{{email}}">{{email}}</a>.
+              </p>
+              <p>
+                Having assessed the criteria in Article 37 of the GDPR, JULIEN MAULNY EURL considers that no
+                mandatory designation of a data protection officer currently applies to its processing, and has
+                not appointed one. Any question about data protection can be sent to
+                the address above, which is the contact point for exercising your rights.
+              </p>
+            </section>
+
+            <section>
+              <h2>2. What we collect</h2>
+              <p>
+                An account email address, and optionally a company name and billing address; API call logs
+                (timestamp, endpoint, status code, the VAT number looked up) needed to enforce the monthly quota
+                and produce your usage history; technical connection logs (IP address, user agent, timestamp) for
+                security and abuse prevention; a Stripe customer identifier and associated billing data. Card
+                details are entered directly into Stripe's own payment interfaces and are not stored by JULIEN
+                MAULNY EURL.
+              </p>
+              <p>
+                <strong>The sandbox on the home page</strong> resolves a VAT number for real, without an account.
+                To count the few lookups a week it allows from one connection, the IP address of the request is
+                recorded on its own (no account, no cookie, no identifier of any kind alongside it) and nothing
+                else about the request is kept. The number you type is looked up exactly as the API looks one up,
+                and is not attached to you.
+              </p>
+              <p>
+                <strong>Your access credentials</strong> are kept in two distinct forms, for two different
+                purposes:
+              </p>
+              <ul>
+                <li>
+                  a <strong>non-reversible fingerprint</strong> (one-way hash) of your session token and of every
+                  API key: this is the only form used to authenticate a request, and it cannot be used to
+                  reconstruct the original value;
+                </li>
+                <li>
+                  for API keys only, a separate <strong>encrypted, reversible copy</strong>, whose sole function
+                  is to let you redisplay an active key from the console. It is never read when authenticating a
+                  call. The decryption key is held in the server's runtime environment rather than in the
+                  database, so a copy of the database alone cannot open these values. As soon as a key is
+                  revoked, it is never redisplayed again: only its masked form remains visible.
+                </li>
+              </ul>
+              <p>
+                Your email address is required to create and manage your account: without it, we cannot create an
+                account or provide the service.
+              </p>
+              <p>
+                Separately from your account, and whether or not you have one, simply browsing the public
+                <strong>vatlas.dev</strong> site produces <strong>audience measurement</strong> data: the page
+                viewed, the page you came from, and the characteristics your browser announces to every site it
+                visits. Nothing is stored on your device to obtain it and it is never linked to an account.
+                Section 5 sets out exactly what is measured and how to object to it.
+              </p>
+            </section>
+
+            <section>
+              <h2>3. Why we process it, and on what basis</h2>
+              <div class="table-wrap section--stack">
+                <table class="table">
+                  <caption class="sr-only">Purposes, data and legal bases of our processing</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Processing</th>
+                      <th scope="col">Data involved</th>
+                      <th scope="col">Purpose</th>
+                      <th scope="col">Legal basis</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Account creation</td>
+                      <td>Email, company name</td>
+                      <td>Create and manage the account</td>
+                      <td>Performance of the contract</td>
+                    </tr>
+                    <tr>
+                      <td>Authentication</td>
+                      <td>Session, API key (hashed)</td>
+                      <td>Secure access to the account and the API</td>
+                      <td>Performance of the contract</td>
+                    </tr>
+                    <tr>
+                      <td>Quota and usage</td>
+                      <td>API call logs</td>
+                      <td>Enforce the subscribed plan, produce usage history</td>
+                      <td>Performance of the contract</td>
+                    </tr>
+                    <tr>
+                      <td>Payment</td>
+                      <td>Stripe identifier, payment method</td>
+                      <td>Charge the amount due for the Pro plan</td>
+                      <td>Performance of the contract</td>
+                    </tr>
+                    <tr>
+                      <td>Billing and accounting</td>
+                      <td>Invoices, billing data</td>
+                      <td>Issue compliant invoices, keep accounting records</td>
+                      <td>Legal obligation</td>
+                    </tr>
+                    <tr>
+                      <td>Security</td>
+                      <td>IP address, user agent, technical logs</td>
+                      <td>Prevent fraud and abuse, secure the service</td>
+                      <td>Legitimate interest</td>
+                    </tr>
+                    <tr>
+                      <td>Support (account-related request)</td>
+                      <td>Email, request content</td>
+                      <td>Answer a request related to performing the service</td>
+                      <td>Performance of the contract</td>
+                    </tr>
+                    <tr>
+                      <td>Support (other request)</td>
+                      <td>Email, request content</td>
+                      <td>Answer a general question, before or outside any contract</td>
+                      <td>Legitimate interest</td>
+                    </tr>
+                    <tr>
+                      <td>Audience measurement</td>
+                      <td>Page viewed, referring page, approximate country, browser, operating system, device type</td>
+                      <td>Measure how the site is used and improve it</td>
+                      <td>Legitimate interest</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="note">
+                Where we rely on legitimate interest, it rests on a genuine need (securing the service,
+                preventing abuse, and knowing how the site is used), balanced against your rights and freedoms.
+                For audience measurement that balance is what makes the processing lawful without your consent,
+                and it is only tenable because the measurement is limited to what section 5 describes: no
+                cookie, no identifier that outlives the day, and no tracking from one site to another. You may
+                object to it at any time, by the means given in section 5.
+              </p>
+            </section>
+
+            <section>
+              <h2>4. Who receives it</h2>
+              <p>The data above may be shared with the following categories of recipients:</p>
+              <ul>
+                <li>
+                  <strong>authorised JULIEN MAULNY EURL personnel</strong>, limited to what their role requires;
+                </li>
+                <li>
+                  <strong>OVH SAS</strong>, our hosting provider, which runs the servers this data lives on, as
+                  our <em>processor</em>, acting on our instructions alone;
+                </li>
+                <li>
+                  <strong>Stripe</strong>, for collecting payment of the Pro plan. Its role varies with the
+                  processing and the service involved: it acts as our <em>processor</em> when carrying out a
+                  payment operation on our behalf and on our instructions, and as a <em>controller</em> for what
+                  it does for its own purposes: fraud prevention, regulatory and prudential compliance, security
+                  of its network. Neither role covers the whole of what it does (see section 6);
+                </li>
+                <li>
+                  <strong>Umami Software, Inc.</strong>, which operates the audience measurement used on the
+                  public site, as our <em>processor</em>, acting on our instructions alone. It receives only the
+                  measurement data described in section 5: no account data, no billing data and nothing you send
+                  to the API ever reaches it, since the tool is deployed on <strong>vatlas.dev</strong> only and
+                  not on the console (see section 6 for the transfer);
+                </li>
+                <li>
+                  <strong>public or judicial authorities</strong>, where a legal obligation requires it:
+                  recipients imposed on us, not chosen by us.
+                </li>
+              </ul>
+              <p>
+                Transactional emails (address verification, password resets, security notices, invoices) are sent from our own mail server; we use no
+                third-party email provider. We use no advertising network, and no analytics beyond the single
+                cookieless audience measurement set out in section 5.
+              </p>
+            </section>
+
+            <section>
+              <h2>5. Cookies and trackers</h2>
+              <div class="table-wrap section--stack">
+                <table class="table">
+                  <caption class="sr-only">Cookies set by the console and the site</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Set by</th>
+                      <th scope="col">Purpose</th>
+                      <th scope="col">Duration</th>
+                      <th scope="col">Nature</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>vatlas_session</code></td>
+                      <td>Console (console.vatlas.dev)</td>
+                      <td>Keep you signed in</td>
+                      <td>30 days</td>
+                      <td>Strictly necessary</td>
+                    </tr>
+                    <tr>
+                      <td><code>vatlas-locale</code></td>
+                      <td>Console (console.vatlas.dev)</td>
+                      <td>Remember your chosen language</td>
+                      <td>1 year</td>
+                      <td>Functional, exempt from consent</td>
+                    </tr>
+                    <tr>
+                      <td><code>vatlas-theme</code> (local storage)</td>
+                      <td>Site (vatlas.dev)</td>
+                      <td>Remember your light/dark theme choice</td>
+                      <td>Until you clear it</td>
+                      <td>Functional, exempt from consent</td>
+                    </tr>
+                    <tr>
+                      <td><code>vatlas.tryit.answers</code> (local storage)</td>
+                      <td>Site (vatlas.dev)</td>
+                      <td>Keep the last few answers the home page sandbox gave you</td>
+                      <td>Until you clear it</td>
+                      <td>Functional, exempt from consent</td>
+                    </tr>
+                    <tr>
+                      <td>Stripe cookies</td>
+                      <td>Stripe, on its own Checkout / Customer Portal pages</td>
+                      <td>Payment, fraud detection</td>
+                      <td>Per Stripe's policy</td>
+                      <td>Third-party, outside our control</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                The <strong>vatlas.dev</strong> site sets no cookie. It does use your browser's local storage
+                (<code>localStorage</code>) to remember your theme choice and to keep the answers the home page
+                sandbox has already given you: that technology falls under the same regime as cookies, so both
+                appear in the table above. Those values stay in your browser and are never sent to us.
+              </p>
+              <p>
+                The four trackers we use (<code>vatlas_session</code>, <code>vatlas-locale</code>,
+                <code>vatlas-theme</code> and <code>vatlas.tryit.answers</code>) are all exempt from consent: the
+                first because it is strictly necessary for authentication, the others because they merely
+                remember something you explicitly asked for (your language, your theme, the answer the sandbox
+                has just given you), which is an intrinsic and expected part of the service. None is used for
+                anything else. We use no advertising tracker, and no tracker at all for the audience measurement
+                described just below.
+              </p>
+              <p>
+                <strong>Audience measurement, without a tracker.</strong> The <strong>vatlas.dev</strong> site
+                uses <strong>Umami</strong> to count page views. It is not in the table above, because it puts
+                nothing there to list: the script sets no cookie and writes no local storage entry. The one thing
+                it reads on your device is its own opt-out flag, described below, if you have set one.
+              </p>
+              <p>
+                That is what settles the consent question. Article 82 of the French Data Protection Act governs
+                <em>storing information on, or gaining access to information already stored in,</em> your terminal
+                equipment. This measurement does neither, so article 82 does not apply to it and no consent (and
+                so no cookie banner) is required. It remains a processing of personal data under the GDPR, which
+                is why it is listed in section 3 with its legal basis, and why you can object to it.
+              </p>
+              <p>
+                What is sent to us is the address of the page viewed, the page you came from, and characteristics
+                your browser announces to every site it visits: its language, the screen size, the browser, the
+                operating system and the device type. Your IP address is used <em>in transit</em> to derive an
+                approximate country and a visitor identifier hashed with a secret that is rotated every day. The
+                IP address itself is not stored, and the identifier that replaces it is unusable the next day,
+                cannot be reversed to reach you, and is never shared with or followed onto another site. We build
+                no profile, and we never connect any of it to your account.
+              </p>
+              <p>
+                <strong>How to object.</strong> The measurement is set to honour the
+                <a href="https://developer.mozilla.org/docs/Web/HTTP/Headers/DNT" target="_blank" rel="noopener">Do&nbsp;Not&nbsp;Track</a>
+                preference: turning it on in your browser stops the measurement on this site, with nothing further
+                to do. You can also block the script with any content blocker, or set the key
+                <code>umami.disabled</code> to <code>1</code> in this site's local storage; the script checks it
+                before sending anything. And you may always write to us at the address in section 1, which we will
+                act on. Objecting costs you nothing: every part of the site works identically either way.
+              </p>
+              <p>
+                Any tracker set during a payment is set by <strong>Stripe</strong>, on its own Checkout and
+                Customer Portal pages, for its payment and fraud-detection purposes. Those are governed by Stripe
+                and its own policies: see
+                <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe's privacy policy</a>
+                for their detail and the choices offered to you there.
+              </p>
+            </section>
+
+            <section>
+              <h2>6. International transfers</h2>
+              <p>
+                Our servers and hosting provider are located in France, and no account data leaves the European
+                Economic Area through any act of ours. Stripe, however, may process some billing data in third
+                countries, including the United States.
+              </p>
+              <p>
+                The audience measurement in section 5 is likewise operated from outside the European Union:
+                <strong>Umami Software, Inc.</strong> is established in the United States and runs the service
+                from data centres in the European Union and the United States. The safeguard we rely on for it is
+                the European Commission's <strong>standard contractual clauses</strong>, incorporated into the
+                data processing agreement we have entered into with that company. The transfer covers the
+                measurement data alone: no account, billing or API data is in scope, since the tool runs on the
+                public site only.
+              </p>
+              <p>
+                There is no single transfer mechanism: which one applies depends on the processing in question,
+                the destination country and the Stripe group entity involved. Stripe states that it relies, as the
+                case may be, on an adequacy decision where the country benefits from one, on the EU-U.S. Data
+                Privacy Framework where the receiving entity is certified under it, and on the European
+                Commission's standard contractual clauses together with supplementary measures otherwise. We do
+                not restate a fixed qualification here that could stop being accurate. Stripe publishes the
+                mechanism in force, together with the group entity that contracts with European customers, in its
+                own data processing terms; you can also write to us and we will tell you which safeguard covers
+                your billing data and obtain a copy of it for you. See
+                <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe's privacy policy</a>
+                for the safeguards that apply to each processing activity.
+              </p>
+            </section>
+
+            <section>
+              <h2>7. Retention</h2>
+              <p>Each duration is set by the purpose that justifies it:</p>
+              <ul>
+                <li>
+                  Account data: for as long as the account exists. On deletion, the identifying fields (email
+                  address, billing details) are overwritten in the active database <strong>immediately</strong>,
+                  and any residual copy outside it is purged within 30 days. An account left
+                  <strong>inactive for 3 years</strong> (no sign-in and no API call) is deleted automatically,
+                  after a warning email a month beforehand;
+                </li>
+                <li>
+                  Detailed API call logs (the VAT number looked up, timestamp, status code):
+                  <strong>90 days</strong>. Since the quota is monthly, this covers the current and the previous
+                  month, which is what handling a billing dispute over the elapsed period requires. Beyond that,
+                  only the aggregate counter is kept;
+                </li>
+                <li>
+                  Audit trail (the answer the API returned for a VAT number, with the register it came from and
+                  the date): <strong>24 months on the Pro plan; on the Free plan only the last 3 answers</strong>
+                  are kept, everything older being deleted every night. It is yours to consult, on the console
+                  and through the API. On the Pro plan this is a longer period than the call logs above, and it
+                  is justified by a different purpose: proving, after the fact, what the service told you about a
+                  business partner on the day you relied on it, which is the period over which a VAT dispute can
+                  still usefully be raised. It is deleted outright when the account is deleted, and never kept
+                  indefinitely;
+                </li>
+                <li>
+                  Monitors, the VAT numbers you have asked to be told about when they change, and the callback
+                  address you gave for each: kept <strong>for as long as you keep the monitor</strong>, and
+                  deleted with it. They are a standing instruction from you, not a record of activity, so there is
+                  no separate period to run down; deleting the account deletes them all;
+                </li>
+                <li>
+                  Records of callbacks we sent you (the address called, the payload delivered, the status your
+                  endpoint answered): <strong>90 days</strong>, the same period as the call logs above and for the
+                  same reason: a payload carries a business's name and address. Their purpose is letting you
+                  debug your own endpoint, and nobody debugs against a request from last winter;
+                </li>
+                <li>
+                  Asynchronous lookups once they have finished, with the record of each attempt:
+                  <strong>90 days</strong> from the day they finished. One still being retried is kept until it
+                  answers or is given up on, which is at most a week;
+                </li>
+                <li>Aggregate usage counters (requests per month, without the detail of which numbers were looked up), shown in your usage history on the console: kept for as long as the account exists;</li>
+                <li>Technical security logs (IP, user agent): 12 months, the usual period for investigating a security incident or abusive use detected after the fact;</li>
+                <li>Failed sign-in attempts and the sign-up throttle (an IP address, and the account aimed at for a failed sign-in): <strong>30 days</strong>. They only count over a quarter of an hour to an hour, and a successful sign-in deletes that account's failures at once;</li>
+                <li>The home page sandbox's counter (an IP address, alone): <strong>30 days</strong>. It stops counting after a week (the window it enforces) and is deleted a month later, on the same terms as the security logs it then amounts to;</li>
+                <li>
+                  Audience measurement data: <strong>25 months</strong>, the ceiling the CNIL sets for this
+                  purpose, after which it is deleted. The daily visitor identifier described in section 5 has a
+                  far shorter life of its own: it stops being usable at the end of each day, when the secret it is
+                  derived from is rotated;
+                </li>
+                <li>
+                  Support requests: 3 years from the last exchange, long enough to retrieve the context of a
+                  recurring incident and to show how a complaint was handled, without exceeding the period during
+                  which a contractual dispute can still usefully be discussed;
+                </li>
+                <li>
+                  Technical backups: a rolling 30 days. Deleted data therefore survives at most 30 days in a
+                  backup, from which it disappears by rotation; a backup is never restored in order to bring back
+                  deleted data, only following an incident affecting the service as a whole.
+                </li>
+              </ul>
+              <p>
+                <strong>Invoices and accounting records.</strong> Each accounting document is kept for the legal
+                period that applies to it, ten years from the close of the financial year where that period
+                applies. The
+                personal data they contain (name, billing address) follows that same period, but leaves the
+                active database as soon as the commercial relationship ends: it moves to
+                <strong>intermediate archiving</strong>, with access restricted to the people responsible for
+                accounting follow-up and any disputes, and is no longer used to operate the service.
+              </p>
+              <p>
+                A revoked API key or an expired session is purged from active use immediately, though its hash
+                may remain in a log until the periods above expire, for audit and security purposes.
+              </p>
+              <p>
+                <strong>Deleting is not erasing everywhere at once.</strong> Deleting your account removes your
+                data from the <em>active database</em> immediately: your email address, billing details and keys
+                stop existing as such, and the service can no longer identify you. Data whose retention remains
+                necessary (logs, within the periods above, and accounting records for their legal period)
+                survives in restricted archive until those periods end, and is then destroyed. Technical backups
+                follow their own rolling 30-day cycle.
+              </p>
+            </section>
+
+            <section>
+              <h2>8. Automated decision-making</h2>
+              <p>
+                We make no fully automated decision that produces legal effects concerning you or significantly
+                affects you. An API key may be automatically suspended by our abuse-prevention system in case of
+                anomalous use; this is a purely technical, reversible measure that you can contest by contacting
+                us.
+              </p>
+            </section>
+
+            <section>
+              <h2>9. Your rights</h2>
+              <p>
+                <strong>Most of them are exercisable on your own, without writing to us.</strong> The console
+                has a
+                <a href="{{consoleOrigin}}/data?lang=en">Personal data</a> page which lists what we hold about
+                you, read from the live database at the moment you open it, in three blocks: what is personal
+                data about you, what is account data that only becomes personal by being attached to you, and
+                what concerns the companies you looked up, which are other people's data and not yours. Each
+                category states why we hold it, on what legal basis, for how long, and what we do with it. The
+                two exports offered there, one JSON and one plain text, are the portability right in practice,
+                and they carry more than the page displays. Under each category that can offer it there is a
+                delete button; where there is none, the page names the obligation that stands in the way, and
+                the paragraph below applies instead.
+              </p>
+              <p>
+                Within the conditions set by the GDPR, you have rights of access, rectification, erasure and
+                restriction over your data, subject to the exceptions those same rules provide, in particular
+                where retention is required by a legal obligation (for example an invoice, for its accounting
+                retention period). The right to portability, under Article 20 of the GDPR, is narrower
+                than the rights above: it covers only data you yourself provided, processed by automated means on
+                the basis of the contract or of consent, separately from which you may ask us at any time for an
+                export of your account and usage data, which we provide as a contractual matter. Erasure is
+                exercisable whether or not a subscription is running: the console's delete button asks you to
+                cancel first, but a request sent to the address below is honoured either way, subject to the
+                exceptions in Article 17(3). The right to object applies to processing based on our legitimate
+                interest (see section 3). Write to
+                <a href="mailto:{{email}}">{{email}}</a> to exercise any of these rights:
+                we respond within one month, extendable by a further two months for a complex request, as
+                provided by the GDPR. You may also lodge a complaint with the
+                <a href="https://www.cnil.fr/en/plaintes" target="_blank" rel="noopener">CNIL</a>, the French data
+                protection authority.
+              </p>
+            </section>
+
+            <section>
+              <h2>10. Security</h2>
+              <p>
+                Passwords, sessions and API keys are never stored in clear text; traffic is encrypted in transit;
+                access to production data is limited to what is needed to operate the service.
+              </p>
+            </section>
+
+            <section>
+              <h2>11. Data about the companies looked up through the API</h2>
+              <p>
+                The sections above describe data relating to <em>your account</em>. This section describes data
+                about the <em>companies looked up</em>, which is not provided to us by the data subjects
+                themselves; the information required by Article 14 of the GDPR is therefore given here.
+              </p>
+              <p>
+                <strong>Who is concerned.</strong> The vast majority of records returned concern legal persons,
+                which fall outside the GDPR. But a VAT number can also identify a <strong>sole trader</strong> (a
+                sole proprietorship, micro-entrepreneur, self-employed professional, and their equivalents in
+                other member states). In that case the legal name may be the person's first and last name, and
+                the registered address may be their home address: such records are then personal data.
+              </p>
+              <p>
+                <strong>Categories of data concerned.</strong> Intra-community VAT number, national identifier
+                (SIREN, Business ID, registrikood…), legal name (which may be a natural person's name), legal
+                form, activity status, and establishment address, which may be a home address. No special
+                category of data within the meaning of Article 9 of the GDPR is processed.
+              </p>
+              <p>
+                <strong>Source.</strong> Exclusively <strong>official public registers</strong>, whose publication
+                and reuse are provided for by the applicable regulations in each member state: national trade and
+                company registers that we import (SIRENE for France, PRH, RIK, the Latvian register…), official
+                APIs of certain tax administrations queried on demand, and VIES, the European Commission's
+                verification service. We collect this data from no other source, enrich it with no privately
+                sourced data, and carry out no profiling.
+              </p>
+              <p>
+                <strong>Purpose and legal basis.</strong> This data is processed only to answer a verification
+                request issued by a business customer, on the basis of our legitimate interest and that of our business
+                customers in verifying the identity and VAT status of a trading partner, subject to that interest
+                being balanced against the interests, rights and freedoms of the people concerned. That balancing
+                has been carried out and is documented internally. It is never used for prospecting, advertising or resale, and is not disclosed to any
+                recipient other than the customer who issued the request.
+              </p>
+              <p>
+                <strong>Retention.</strong> Records from a register import are refreshed at each import and kept
+                for as long as they appear in the source register, up to a limit of <strong>24 months</strong>
+                from the last import in which they appeared: a record that has vanished from its source and has
+                not been seen for two years is purged. That period is what remains useful to the verification
+                purpose: a recently struck-off company must still be verifiable by a customer checking an invoice
+                or a contract from the previous financial year, which 24 months covers across the current and
+                closed accounting periods; beyond that, the verification has no object and the record is not
+                kept. Responses obtained from VIES are cached for at most 24 hours. The number looked up also appears in our call logs, under the conditions and
+                durations described in section 7.
+              </p>
+              <p>
+                <strong>How you are informed.</strong> Article 14 of the GDPR requires that someone whose data
+                was not collected from them be informed within a reasonable period, and allows an exception where
+                that information would involve a disproportionate effort. That exception is never automatic: it
+                calls for an assessment, which we have carried out, keep current, and can put before the
+                supervisory authority.
+              </p>
+              <p>
+                That assessment finds that we import several million records from public registers; that those
+                registers publish no contact details and that we would have no legitimate reason to collect any
+                for the sole purpose of writing to each person; and that the data is used neither to contact you,
+                nor to profile you, nor to ground a decision about you. We conclude that informing each person
+                individually would involve a disproportionate effort within the meaning of Article 14(5)(b),
+                on the understanding that this conclusion covers the reuse described here, and would have to be
+                revisited if the use of this data changed.
+              </p>
+              <p>
+                The same provision then requires <strong>appropriate measures</strong> to protect your rights.
+                Ours are these: this information is public, permanent, reachable without signing in from the
+                footer of every page on this site, published in English and French, and indexed by search
+                engines; the exact sources we use are listed above and the current list is published by the API
+                itself; and we answer individually anyone who contacts us. If these measures seem insufficient in
+                your situation, write to us and we will reconsider them.
+              </p>
+              <p>
+                <strong>Your rights, if you are a data subject.</strong> You have the rights described in
+                section 9 (access, rectification, erasure, restriction) and, since this processing rests on our
+                legitimate interest, a <strong>right to object</strong> under Article 21 of the GDPR, which you
+                may exercise at any time on grounds relating to your particular situation. Write to us at
+                <a href="mailto:{{email}}">{{email}}</a>.
+              </p>
+              <p>
+                Every request is examined individually, against the conditions and exceptions the GDPR provides.
+                <strong>The official origin of a record neither removes nor limits your rights</strong>: it
+                carries only a practical consequence, which we would rather tell you up front. If we correct or
+                erase a record in our database without the source register being changed, a later import may
+                restore the version that register publishes. A correction at the source (with INSEE or the
+                competent registry for France) is therefore often the more durable route, and we will point you
+                to the right contact. That does not relieve us of handling your request on our side, and we do
+                handle it.
+              </p>
+            </section>
+
+            <section>
+              <h2>12. How roles are allocated with our customers</h2>
+              <p>
+                The roles of data controller and processor are not assigned by contract alone: they depend on the
+                processing actually carried out. For building and operating our database sourced from public
+                registers, described in section 11, we act as <strong>data controller</strong>. Where a customer
+                sends us personal data that belongs to their own processing and asks us to process it on their
+                behalf, they may act as controller and Vatlas as <strong>processor</strong> for that operation:
+                see section 5 of the <a href="/terms/en/">Terms of Service and Sale</a>. The <a href="/dpa/en/">Data protection (DPA)</a> sets out, processing by
+                processing, which qualification applies and what follows from it.
+              </p>
+            </section>
+
+            <section>
+              <h2>13. Where this data comes from</h2>
+              <p>Depending on the data, it comes from:</p>
+              <ul>
+                <li>you directly, when you create an account or contact us;</li>
+                <li>your use of the service, for call and connection logs;</li>
+                <li>Stripe, for your customer identifier and payment status;</li>
+                <li>official national registers and VIES, for the company data returned by the API, see section 11.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>14. Changes to this policy</h2>
+              <p>
+                We may update this policy from time to time; the date above reflects the latest revision.
+              </p>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include partials/footer.html -->
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

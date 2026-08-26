@@ -1,0 +1,101 @@
+<!-- @meta
+{
+  "title": "Ecuadorian RUC: format, what the third digit means, and lookup",
+  "description": "EC plus thirteen digits. How the RUC encodes the province and the kind of taxpayer, and what the SRI publishes about it for free.",
+  "h1": "The Ecuadorian RUC",
+  "term": "RUC",
+  "updated": "2026-09-15"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Ecuador · EC</p>
+        <h1>The Ecuadorian RUC</h1>
+        <p class="section__lead">Ecuador has VAT, the IVA, and the number an invoice carries is the RUC, the Registro Único de Contribuyentes. The tax administration confirms it over the same service its own portal uses, with no key.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>EC</code> + 13 digits</p>
+        <p><strong>Example:</strong> <code>EC1790016919001</code></p>
+        <p><strong>Issued by:</strong> the Servicio de Rentas Internas (SRI).</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A RUC is <strong>thirteen digits</strong>, and every group of them means something.</p>
+      <ul class="breakdown">
+        <li><b>17</b><span>The province the taxpayer was registered in: 17 is Pichincha, 09 Guayas. It runs 01 to 24, with 30 for Ecuadorians registered abroad.</span></li>
+        <li><b>9</b><span>The kind of taxpayer. Under 6 is a natural person, 6 the public sector, 9 a private company.</span></li>
+        <li><b>001691</b><span>The serial, ending on a check digit.</span></li>
+        <li><b>001</b><span>The establishment. <code>001</code> is the head office; a branch is numbered after it.</span></li>
+      </ul>
+      <p>There is a check digit, but its published rule does not hold: applied to <code>1790016919001</code> (Corporación Favorita, one of the largest companies in the country) it produces the wrong digit. {{siteName}} therefore does not reject an Ecuadorian number offline. A typo costs one lookup rather than a wrongly refused customer.</p>
+
+      <h2 id="status">Active, suspended, closed</h2>
+      <p>The SRI states the taxpayer's standing in one word. <strong>ACTIVO</strong> is a live registration. <strong>SUSPENDIDO</strong> is one the administration has suspended, and <strong>PASIVO</strong> one the taxpayer has closed. The last two are numbers that should not be on an invoice today, and both are common.</p>
+      <p>The register also publishes when it last touched the record, which {{siteName}} passes through, so you can see not only what the SRI holds but when it last changed its mind.</p>
+
+      <h2 id="find">Finding the company behind the number</h2>
+      <h3>The SRI's own service</h3>
+      <p>The catastro is readable over the REST service the SRI's online portal calls: open, no account, no quota. It answers with the razón social, the taxpayer class, the standing and the principal economic activity.</p>
+      <h3>Two endpoints, one answer</h3>
+      <p>The address is not in that answer. Ecuador keeps the premises in a second endpoint, one row per establishment, with the head office flagged, so a full lookup is two calls, and {{siteName}} makes both. A company with several hundred branches returns several hundred rows; the head office is the one that answers "where is this company".</p>
+      <h3>How an Ecuadorian address is written</h3>
+      <p>As a path: <code>PICHINCHA / RUMIÑAHUI / COTOGCHOA / AV. GENERAL ENRIQUEZ S/N</code>: province, cantón, parroquia, then the street. The cantón is what most systems mean by the city.</p>
+
+      <h2 id="pitfalls">Ecuador-specific pitfalls</h2>
+      <ul>
+        <li><strong>Thirteen digits, always.</strong> A ten-digit cédula is not a RUC; the RUC adds the establishment number.</li>
+        <li><strong>The last three digits are the establishment.</strong> <code>001</code> is the head office, and they are part of the number.</li>
+        <li><strong>No reliable offline check.</strong> The published check-digit rule contradicts real companies, so nothing is rejected before asking.</li>
+        <li><strong>SUSPENDIDO and PASIVO are real states.</strong> Existing in the catastro is not being registered today.</li>
+        <li><strong>Addresses end in S/N.</strong> <em>Sin número</em>: an address without a street number, and perfectly normal.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The RUC in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits is an Ecuadorian RUC?</summary>
+          <p>Thirteen: two for the province, one for the kind of taxpayer, the serial with its check digit, and three for the establishment.</p>
+        </details>
+        <details>
+          <summary>What does the third digit mean?</summary>
+          <p>Under 6 a natural person, 6 the public sector, 9 a private company.</p>
+        </details>
+        <details>
+          <summary>Is the RUC the same as the cédula?</summary>
+          <p>For a natural person the RUC is their ten-digit cédula followed by <code>001</code>. For a company it is its own number.</p>
+        </details>
+        <details>
+          <summary>Why does a valid RUC come back suspended?</summary>
+          <p>Because the SRI suspended the registration, or the taxpayer closed it. Both are states the register publishes.</p>
+        </details>
+        <details>
+          <summary>Does VIES cover Ecuador?</summary>
+          <p>No. VIES answers for member states of the European Union only.</p>
+        </details>
+      </div>
+
+      <h2>Business numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/peru/">Peru</a></li>
+        <li><a href="/en/vat-number/costa-rica/">Costa Rica</a></li>
+        <li><a href="/en/vat-number/brazil/">Brazil</a></li>
+        <li><a href="/en/vat-number/spain/">Spain</a></li>
+        <li><a href="/en/vat-number/vietnam/">Vietnam</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 15 September 2026.</p>
+    </div>
+  </section>
+</main>

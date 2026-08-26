@@ -1,0 +1,34 @@
+[
+  {
+    "nombreFantasiaComercial": "SUPERMAXI IÑAQUITO",
+    "tipoEstablecimiento": "OFI",
+    "direccionCompleta": "PICHINCHA / QUITO / LA CONCEPCIÓN / AV. AMAZONAS N36-152 Y AV. NACIONES UNIDAS",
+    "estado": "ABIERTO",
+    "numeroEstablecimiento": "002",
+    "matriz": "NO"
+  },
+  {
+    "nombreFantasiaComercial": "SUPERMAXI AMERICA",
+    "tipoEstablecimiento": "OFI",
+    "direccionCompleta": "PICHINCHA / QUITO / SAN JUAN / CARVAJAL N24-52 Y AV. LA GASCA",
+    "estado": "ABIERTO",
+    "numeroEstablecimiento": "003",
+    "matriz": "NO"
+  },
+  {
+    "nombreFantasiaComercial": "CORPORACION FAVORITA C.A.",
+    "tipoEstablecimiento": "MAT",
+    "direccionCompleta": "PICHINCHA / RUMIÑAHUI / COTOGCHOA / AV. GENERAL ENRIQUEZ S/N",
+    "estado": "ABIERTO",
+    "numeroEstablecimiento": "001",
+    "matriz": "SI"
+  },
+  {
+    "nombreFantasiaComercial": "SUPERMAXI SUR",
+    "tipoEstablecimiento": "OFI",
+    "direccionCompleta": "PICHINCHA / QUITO / LA MAGDALENA / AV. CINCO DE JUNIO S/N Y NECOCHEA",
+    "estado": "CERRADO",
+    "numeroEstablecimiento": "004",
+    "matriz": "NO"
+  }
+]

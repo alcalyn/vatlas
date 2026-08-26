@@ -1,0 +1,37 @@
+# GET /health - liveness probe.
+#
+# Answers only after a MySQL round trip, so it also works as a readiness check.
+#
+# Run with: npx httpyac send http/health.http --all
+
+@host = http://localhost:3000
+
+###
+
+# @name Health check
+# The generic call: no parameters, no body.
+GET {{host}}/health
+
+?? status == 200
+?? body status == ok
+
+# Example response - 200 OK
+#
+# {
+#   "status": "ok"
+# }
+
+###
+# -- Other cases --
+###
+
+# With MySQL down the same call answers 500:
+#
+# Example response - 500 Internal Server Error
+#
+# {
+#   "error": {
+#     "code": "INTERNAL_ERROR",
+#     "message": "Unexpected server error"
+#   }
+# }

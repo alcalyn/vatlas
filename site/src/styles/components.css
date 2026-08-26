@@ -1,0 +1,1057 @@
+/* -- Header / nav -- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  min-height: 68px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.brand__name {
+  font-size: 1.15rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+}
+
+.nav a:not(.btn) {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: var(--step--1);
+  font-weight: 500;
+  padding-block: var(--sp-2);
+}
+
+.nav a:not(.btn):hover {
+  color: var(--text);
+}
+
+.nav a.is-active {
+  color: var(--text);
+  box-shadow: inset 0 -2px 0 0 var(--accent);
+}
+
+/* Theme toggle and language menu, right of the nav. */
+.site-header__tools {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  order: 3;
+}
+
+.iconbtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-width: 38px;
+  height: 38px;
+  padding: 0 0.55rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: var(--step--1);
+  font-family: var(--font-mono);
+  cursor: pointer;
+  list-style: none;
+}
+
+.iconbtn::-webkit-details-marker {
+  display: none;
+}
+
+.iconbtn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.iconbtn__icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.langmenu {
+  position: relative;
+}
+
+.langmenu__list {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  z-index: 60;
+  min-width: 168px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-1);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+}
+
+.langmenu__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: var(--step--1);
+}
+
+.langmenu__item:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.langmenu__item.is-current {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Flag emoji in the menu and its button. System UI fonts have no glyph for regional indicator
+   pairs, so emoji fonts are listed. Windows has no flag glyphs and shows the two letters. */
+.langmenu__flag,
+.langmenu__code {
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-toggle__bar,
+.nav-toggle__bar::before,
+.nav-toggle__bar::after {
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+  width: 18px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  content: '';
+}
+
+.nav-toggle__bar {
+  top: 50%;
+  margin-top: -1px;
+}
+.nav-toggle__bar::before {
+  top: -6px;
+  left: 0;
+  translate: 0 0;
+}
+.nav-toggle__bar::after {
+  top: 6px;
+  left: 0;
+  translate: 0 0;
+}
+
+@media (max-width: 940px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    inset: 68px 0 auto 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--sp-3) max(1.25rem, calc((100vw - var(--container)) / 2));
+    background: var(--bg-soft);
+    border-bottom: 1px solid var(--border);
+    display: none;
+  }
+
+  .nav.is-open {
+    display: flex;
+  }
+
+  .nav a:not(.btn) {
+    padding: var(--sp-3) 0;
+    border-bottom: 1px solid var(--border);
+    font-size: var(--step-0);
+  }
+
+  .nav__cta {
+    margin-top: var(--sp-4);
+    justify-content: center;
+  }
+}
+
+/* -- Buttons -- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: var(--step-0);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn--sm {
+  padding: 0.45rem 0.9rem;
+  font-size: var(--step--1);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* -- Cards, badges, pills -- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--sp-5);
+  transition: border-color 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+}
+
+.card h3,
+.step h3 {
+  margin-bottom: var(--sp-2);
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: var(--step--1);
+}
+
+.card__link {
+  margin-top: var(--sp-4);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  padding: 0.18rem 0.45rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  color: var(--text-muted);
+  background: var(--surface-2);
+}
+
+.badge--bulk {
+  color: var(--success);
+  border-color: color-mix(in srgb, var(--success) 45%, transparent);
+  background: var(--success-soft);
+}
+
+.badge--vies {
+  color: var(--text-muted);
+  border-color: var(--border-strong);
+  background: var(--surface-2);
+}
+
+/* The three verdict tones as badges. `src/lib/lookupHtml.ts` renders the same markup on the site
+   and in the console, so these class names must match `src/console/styles.ts`. */
+.badge--ok {
+  color: var(--success);
+  border-color: color-mix(in srgb, var(--success) 45%, transparent);
+  background: var(--success-soft);
+}
+
+.badge--warn {
+  color: var(--warning);
+  border-color: color-mix(in srgb, var(--warning) 45%, transparent);
+  background: var(--surface-2);
+}
+
+.badge--danger {
+  color: var(--danger);
+  border-color: color-mix(in srgb, var(--danger) 45%, transparent);
+  background: var(--surface-2);
+}
+
+/* -- Code blocks and terminal chrome -- */
+.terminal {
+  position: relative;
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* The request line, larger than the response, with the verb colored like an HTTP client does. */
+.terminal__bar {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  padding: 0.7rem 0.9rem;
+  background: var(--code-surface);
+  border-bottom: 1px solid var(--code-border);
+  font-family: var(--font-mono);
+  font-size: var(--step-0);
+}
+
+.terminal__verb {
+  color: var(--code-str);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.terminal__url {
+  color: var(--code-text);
+  word-break: break-all;
+}
+
+.terminal__param {
+  color: var(--code-key);
+}
+
+.terminal__body {
+  padding: var(--sp-4);
+  overflow-x: auto;
+}
+
+pre {
+  margin: 0;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  tab-size: 2;
+}
+
+.code {
+  position: relative;
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius);
+  padding: var(--sp-4);
+  overflow-x: auto;
+}
+
+.terminal pre,
+.code pre {
+  color: var(--code-text);
+}
+
+.copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--code-surface);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-sm);
+  color: var(--code-dim);
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  padding: 0.25rem 0.55rem;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  color: var(--code-str);
+  border-color: var(--code-str);
+}
+
+/* Token colors, applied by JS or written inline in static samples. */
+.tok-key {
+  color: var(--code-key);
+}
+.tok-str {
+  color: var(--code-str);
+}
+.tok-num {
+  color: var(--code-num);
+}
+.tok-bool,
+.tok-null {
+  color: var(--code-bool);
+}
+.tok-punc {
+  color: var(--code-dim);
+}
+.tok-cmd {
+  color: var(--code-cmd);
+}
+.tok-flag {
+  color: var(--code-num);
+}
+.tok-comment {
+  color: var(--code-dim);
+  font-style: italic;
+}
+
+/* -- Tables -- */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.table {
+  min-width: 560px;
+  font-size: var(--step--1);
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.table thead th {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: var(--surface-2);
+}
+
+.table tbody tr:last-child td,
+.table tbody tr:last-child th {
+  border-bottom: 0;
+}
+
+.table td code {
+  color: var(--text);
+}
+
+.table td .status {
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.status--4xx {
+  color: var(--warning);
+}
+.status--5xx {
+  color: var(--danger);
+}
+.status--2xx {
+  color: var(--success);
+}
+
+/* -- Tabs -- */
+.tabs__list {
+  display: flex;
+  gap: var(--sp-1);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-3);
+}
+
+.tabs__tab {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.8rem;
+  font-size: var(--step--1);
+  font-family: var(--font-mono);
+  cursor: pointer;
+}
+
+.tabs__tab[aria-selected='true'] {
+  color: var(--accent-contrast);
+  background: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* -- CTA band -- */
+.cta {
+  padding-block: var(--sp-7);
+}
+
+.cta__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  padding: var(--sp-6);
+  border-radius: var(--radius-lg);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+}
+
+.cta__title {
+  font-size: var(--step-2);
+}
+
+.cta__text {
+  color: var(--text-muted);
+  margin-top: var(--sp-2);
+}
+
+.cta__actions {
+  display: flex;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+/* -- Footer -- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg-soft);
+  padding-block: var(--sp-7) var(--sp-5);
+  margin-top: var(--sp-6);
+}
+
+/* Brand block plus four link columns. The column count is set per breakpoint because the brand's
+   tagline needs about 34ch. Each step divides the four link columns evenly. */
+.site-footer__inner {
+  display: grid;
+  gap: var(--sp-6);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 560px) {
+  .site-footer__inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Full width above the links on narrow screens. */
+  .site-footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 860px) {
+  .site-footer__inner {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Wide enough for everything on one line. */
+@media (min-width: 1080px) {
+  .site-footer__inner {
+    grid-template-columns: 2fr repeat(4, minmax(0, 1fr));
+  }
+
+  .site-footer__brand {
+    grid-column: auto;
+  }
+}
+
+.site-footer__tagline {
+  color: var(--text-muted);
+  font-size: var(--step--1);
+  margin-top: var(--sp-3);
+  max-width: 34ch;
+}
+
+.site-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.site-footer__title {
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--text-dim);
+  margin-bottom: var(--sp-1);
+}
+
+.site-footer__col a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: var(--step--1);
+}
+
+.site-footer__col a:hover {
+  color: var(--accent);
+}
+
+.site-footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.78rem;
+}
+
+/* Breadcrumb, on content pages only. Mirrors the BreadcrumbList structured data. */
+.breadcrumb {
+  padding: var(--sp-5) 0 0;
+  font-size: var(--step--1);
+  color: var(--text-muted);
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb li + li::before {
+  content: '›';
+  margin-right: var(--sp-2);
+  color: var(--text-muted);
+}
+
+.breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.breadcrumb [aria-current='page'] {
+  color: var(--text-dim);
+}
+
+/* Long-form prose of the content pages. `.content` limits the line length without touching
+   `.container`. The base reset is `* { margin: 0 }`, so all vertical spacing is set here, on the
+   same scale as `.docs__content`. The child combinator leaves `.callout`, `.keyfact` and FAQ
+   `<details>` paragraphs alone. */
+.content {
+  max-width: 74ch;
+}
+
+.content > h2 {
+  margin: var(--sp-8) 0 var(--sp-4);
+}
+
+.content > h3 {
+  margin: var(--sp-6) 0 var(--sp-3);
+}
+
+/* Unclassed lists only: `.breakdown`, `.otherlinks`, `.updated` and `.endpoint` style themselves.
+
+   Body copy uses --text-muted. --text-dim is for captions (see tokens.css). */
+.content > p:not([class]),
+.content > ul:not([class]),
+.content > ol:not([class]) {
+  color: var(--text-muted);
+  margin-bottom: var(--sp-4);
+}
+
+.content > ul:not([class]),
+.content > ol:not([class]) {
+  padding-left: 1.25rem;
+}
+
+.content > ul:not([class]) > li,
+.content > ol:not([class]) > li {
+  margin-bottom: var(--sp-2);
+}
+
+/* `.section` already has padding. */
+.content > :first-child {
+  margin-top: 0;
+}
+
+.content > .code {
+  margin-bottom: var(--sp-5);
+}
+
+/* The status pill stays close to the response panel it labels. */
+.content > .endpoint {
+  margin-bottom: var(--sp-3);
+}
+
+/* A callout after a table or code panel, which have no bottom margin. */
+.content > .callout {
+  margin-top: var(--sp-5);
+}
+
+/* Two calls to action side by side. */
+.content > p > .btn + .btn {
+  margin-left: var(--sp-3);
+}
+
+.content code:not(pre code) {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.1em 0.4em;
+  color: var(--text);
+}
+
+/* The one-line answer above the fold: the format of the number. */
+.keyfact {
+  margin: var(--sp-5) 0 var(--sp-7);
+  padding: var(--sp-5);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: var(--surface-2);
+}
+
+.keyfact p {
+  margin: 0 0 var(--sp-2);
+}
+
+.keyfact p:last-child {
+  margin-bottom: 0;
+}
+
+.keyfact code {
+  font-size: var(--step-1);
+  font-weight: 600;
+}
+
+/* Character by character breakdown of a number. */
+.breakdown {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: var(--sp-5) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breakdown li {
+  flex: 1 1 8rem;
+  padding: var(--sp-3) var(--sp-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.breakdown b {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--step-1);
+  letter-spacing: 0.04em;
+}
+
+.breakdown span {
+  display: block;
+  margin-top: var(--sp-1);
+  font-size: var(--step--1);
+  color: var(--text-muted);
+}
+
+/* "Updated on ...", matching dateModified in the structured data. */
+.updated {
+  margin-top: var(--sp-7);
+  font-size: var(--step--1);
+  color: var(--text-muted);
+}
+
+/* Links to the other countries, at the bottom of every content page. */
+.otherlinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: var(--sp-4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.otherlinks a {
+  display: inline-block;
+  padding: var(--sp-2) var(--sp-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: var(--step--1);
+  text-decoration: none;
+}
+
+.otherlinks a:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-2);
+}
+
+/* -- World map --
+   The home page coverage map, drawn by jsvectormap (src/js/worldmap.js). The library's own
+   stylesheet (tooltips, zoom buttons, legend) is not used.
+
+   Colors are set from JavaScript on the elements, from the --map-covered and --map-land tokens. */
+.worldmap {
+  /* The library fits its 900x441 viewport to the container, so keep that ratio. */
+  aspect-ratio: 900 / 441;
+  width: 100%;
+  /* Without JavaScript, collapse the box. */
+  min-height: 0;
+}
+
+/* Without JavaScript, hide the legend too. */
+.worldmap:empty {
+  aspect-ratio: auto;
+}
+
+.worldmap:empty + .worldmap__legend {
+  display: none;
+}
+
+/* jsvectormap measures its element, so the injected container must fill it. */
+.worldmap .jvm-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+/* The bubble over a covered country. The library appends it to <body> and moves it with the
+   pointer. `.active` is the library's switch to show it. */
+.jvm-tooltip {
+  position: absolute;
+  display: none;
+  z-index: 20;
+  padding: var(--sp-2) var(--sp-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  font-size: var(--step--1);
+  line-height: 1.45;
+  max-width: min(18rem, 80vw);
+}
+
+.jvm-tooltip.active {
+  display: block;
+}
+
+/* With a mouse, the bubble must not catch the pointer. On touch screens, tapping it closes it. */
+@media (hover: hover) {
+  .jvm-tooltip {
+    pointer-events: none;
+  }
+}
+
+/* The "example" label. */
+.jvm-tooltip__label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* The VAT number, slightly larger. */
+.jvm-tooltip__vat {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--step-0);
+  color: var(--text);
+}
+
+.jvm-tooltip__name {
+  display: block;
+  color: var(--text-muted);
+}
+
+/* No company name (Spain, where VIES only confirms the number). */
+.jvm-tooltip__name--none {
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.worldmap__legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-2) var(--sp-5);
+  margin: var(--sp-3) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}
+
+.worldmap__legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.worldmap__key {
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 2px;
+  background: var(--map-land);
+}
+
+.worldmap__key--covered {
+  background: var(--map-covered);
+}
+
+/* -- Demo video -- */
+
+/* A screen recording: looped, muted, no controls. `playsinline` stops iOS from going fullscreen. */
+.demo {
+  margin: 0 0 var(--sp-5);
+}
+
+.demo video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface-2);
+}
+
+.demo figcaption {
+  margin-top: var(--sp-2);
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}
+
+/* -- Guide cards -- */
+
+/* The guides hub: just the list of guides, no hero. */
+.pagetitle {
+  font-size: var(--step-2);
+  margin-bottom: var(--sp-6);
+}
+
+.guidecards {
+  display: grid;
+  gap: var(--sp-5);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 760px) {
+  .guidecards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.guidecard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-5);
+  transition: border-color 0.15s ease;
+}
+
+.guidecard:hover {
+  border-color: var(--border-strong);
+}
+
+.guidecard__title {
+  font-size: var(--step-1);
+  margin: 0 0 var(--sp-4);
+}
+
+/* The whole card is clickable. `position: static` on the ancestors scopes the pseudo-element. */
+.guidecard__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.guidecard__title a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+/* A frame of the guide's recording. Fixed height since the screenshots have different shapes,
+   anchored to the top. */
+.guidecard__thumb {
+  display: block;
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+
+.guidecard__text {
+  color: var(--text-muted);
+  margin: var(--sp-4) 0 var(--sp-5);
+}
+
+/* Pushed to the bottom so buttons align, and above the stretched link so the button keeps its own
+   hover and click. */
+.guidecard__cta {
+  position: relative;
+  margin: auto 0 0;
+}

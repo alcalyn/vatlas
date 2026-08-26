@@ -1,0 +1,250 @@
+<!-- @meta
+{
+  "title": "Spanish VAT number (NIF-IVA): format, NIF letter and the ROI",
+  "description": "ES plus nine characters. What the leading letter means, why holding a NIF is not enough to trade in the EU, and how to identify the company behind the number.",
+  "h1": "The Spanish VAT number (NIF-IVA)",
+  "term": "Spanish VAT identification number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Spain · ES</p>
+        <h1>The Spanish VAT number (NIF-IVA)</h1>
+        <p class="section__lead">
+          Spain does not mint a new number for intra-community trade: it puts <code>ES</code> in
+          front of the NIF the company already has. What it does require is a prior registration,
+          and that is where almost everyone trips.
+        </p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>ES</code> + 9 characters (letter or digit + 7 digits + check character)</p>
+        <p><strong>Example:</strong> <code>ESA78374725</code></p>
+        <p><strong>Issued by:</strong> the Spanish tax agency (AEAT), after registration in the ROI.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>
+        A Spanish VAT number is always <strong>eleven characters</strong> including the prefix. The
+        first and last characters of the national block may be a letter or a digit; the seven in
+        between are always digits.
+      </p>
+      <ul class="breakdown">
+        <li><b>ES</b><span>The country code, identical to the ISO code.</span></li>
+        <li><b>A</b><span>The letter identifying the legal nature of the entity.</span></li>
+        <li><b>7837472</b><span>Seven digits: province of registration and a sequence.</span></li>
+        <li><b>5</b><span>The check character: a digit or a letter, depending on the entity type.</span></li>
+      </ul>
+      <p>
+        The check character is computed over the preceding seven digits. For some entities it is
+        always numeric (A, B, E, H), for others always a letter (N, P, Q, R, S, W), and for the rest
+        it can be either. When it is a letter it follows the mapping
+        <code>J=0, A=1, B=2, C=3, D=4, E=5, F=6, G=7, H=8, I=9</code>.
+      </p>
+
+      <h2 id="letter">What the leading letter tells you</h2>
+      <p>
+        Unlike almost every other country, the Spanish number reveals the legal form at a glance. It
+        is the only structural information it carries, and it is genuinely useful.
+      </p>
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Meaning of the leading letter of a Spanish entity's NIF</caption>
+          <thead><tr><th scope="col">Letter</th><th scope="col">Entity type</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><code>A</code></th><td>Public limited companies (sociedad anónima)</td></tr>
+            <tr><th scope="row"><code>B</code></th><td>Private limited companies (sociedad limitada)</td></tr>
+            <tr><th scope="row"><code>C</code></th><td>General partnerships</td></tr>
+            <tr><th scope="row"><code>D</code></th><td>Limited partnerships</td></tr>
+            <tr><th scope="row"><code>E</code></th><td>Co-ownerships and undivided estates</td></tr>
+            <tr><th scope="row"><code>F</code></th><td>Cooperatives</td></tr>
+            <tr><th scope="row"><code>G</code></th><td>Associations and foundations</td></tr>
+            <tr><th scope="row"><code>H</code></th><td>Commonholds</td></tr>
+            <tr><th scope="row"><code>J</code></th><td>Civil-law partnerships</td></tr>
+            <tr><th scope="row"><code>N</code></th><td>Non-resident entities</td></tr>
+            <tr><th scope="row"><code>P</code></th><td>Local authorities</td></tr>
+            <tr><th scope="row"><code>Q</code></th><td>Public bodies</td></tr>
+            <tr><th scope="row"><code>R</code></th><td>Religious congregations and institutions</td></tr>
+            <tr><th scope="row"><code>S</code></th><td>Organs of the administration</td></tr>
+            <tr><th scope="row"><code>U</code></th><td>Temporary business consortia</td></tr>
+            <tr><th scope="row"><code>V</code></th><td>Other, undefined types</td></tr>
+            <tr><th scope="row"><code>W</code></th><td>Permanent establishments of non-resident entities</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        <strong>Individuals</strong> carry no leading letter: their NIF is the DNI, eight digits
+        followed by a check letter, or the NIE for foreign nationals, which starts with
+        <code>X</code>, <code>Y</code> or <code>Z</code>.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>CIF and NIF have been the same thing since 2008.</strong> Royal Decree 1065/2007
+          abolished the CIF and folded it into the NIF. The term survives in business language, but
+          the number is identical and there is nothing to convert.
+        </p>
+      </div>
+
+      <h2 id="roi">Holding a NIF is not enough: the ROI</h2>
+      <p>
+        This is the Spanish quirk that causes the most rejected invoices. A Spanish company with a
+        perfectly valid NIF <strong>does not appear in VIES</strong> until it registers in the
+        <strong>Register of Intra-Community Operators (ROI)</strong>.
+      </p>
+      <p>
+        Registration is requested on <strong>form 036</strong>, ticking <strong>box 582</strong>. The
+        tax agency may verify the business activity before granting it, and the process takes
+        anywhere from a few days to three months. Until it clears, any European customer validating
+        the number gets "invalid" and will charge VAT.
+      </p>
+      <p>
+        The practical consequence: <strong>a Spanish VAT number rejected by VIES does not mean the
+        company does not exist.</strong> Nearly always it means the company is not in the ROI, or has
+        been removed from it for inactivity.
+      </p>
+
+      <h2 id="find">Identifying the company behind the number</h2>
+      <h3>VIES and the AEAT lookup</h3>
+      <p>
+        The AEAT offers an intra-community operator lookup built on VIES. It confirms the number is
+        valid, and little else: <strong>Spain discloses neither the name nor the address through
+        VIES</strong>, those fields come back as <code>---</code>. With Germany, Spain is one of the
+        two member states where validity is all Europe offers.
+      </p>
+      <h3>The Registro Mercantil</h3>
+      <p>
+        The commercial register, at
+        <a href="https://www.registradores.org/" rel="noopener">registradores.org</a>, holds the full
+        record: company name, registered office, objects, directors and annual accounts. It can be
+        searched by name or NIF, but <strong>the extracts are paid</strong> and there is no free bulk
+        download. That is exactly why Spain has no open source usable at volume.
+      </p>
+      <h3>The BORME</h3>
+      <p>
+        The <strong>Official Gazette of the Commercial Register</strong> publishes registered acts (incorporations, appointments, resignations, dissolutions) for free, in a structured,
+        downloadable format. It is a way to track changes, not to look a company up by NIF: it is not
+        a directory.
+      </p>
+
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">What each source gives you for Spain</caption>
+          <thead>
+            <tr><th scope="col">Source</th><th scope="col">Keyed by</th><th scope="col">What you get</th><th scope="col">Limit</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">VIES / AEAT lookup</th><td>VAT number</td>
+              <td>Intra-community validity only</td><td>No name, no address</td>
+            </tr>
+            <tr>
+              <th scope="row">Registro Mercantil</th><td>NIF or company name</td>
+              <td>Full record, directors, accounts</td><td>Paid, no bulk download</td>
+            </tr>
+            <tr>
+              <th scope="row">BORME</th><td>No search key</td>
+              <td>Registered acts, openly published</td><td>A change feed, not a directory</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="pitfalls">Spain-specific pitfalls</h2>
+      <ul>
+        <li>
+          <strong>Registered with the tax agency ≠ registered in the ROI.</strong> The number one
+          reason a Spanish VAT number fails European validation.
+        </li>
+        <li>
+          <strong>The Canary Islands, Ceuta and Melilla are outside the EU VAT territory.</strong> A
+          Canarian company has a Spanish NIF and pays IGIC instead; its supplies are not
+          intra-community for VAT purposes.
+        </li>
+        <li>
+          <strong>Removal from the ROI is silent.</strong> The tax agency can strike off an operator
+          that stops filing recapitulative statements; the number simply stops validating, with no
+          notice.
+        </li>
+        <li>
+          <strong>Spain publishes no name or address in VIES</strong>, so there is no official, free
+          route from a number to a company.
+        </li>
+        <li>
+          <strong>The NIF never changes</strong>, not when the registered office moves, not when the
+          company is renamed. The leading letter can change if the company converts to another legal
+          form.
+        </li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Spanish VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many characters does a Spanish VAT number have?</summary>
+          <p>
+            Eleven with the prefix: <code>ES</code> plus nine characters, of which the first and last
+            may be a letter or a digit and the seven in between are always digits.
+          </p>
+        </details>
+        <details>
+          <summary>Are the CIF and the NIF the same thing?</summary>
+          <p>
+            Yes. The CIF was legally abolished in 2008 and absorbed into the NIF. The number is
+            identical; only the name of the procedure changed.
+          </p>
+        </details>
+        <details>
+          <summary>Why does VIES say my Spanish VAT number is invalid?</summary>
+          <p>
+            Almost always because the company is not registered in the Register of Intra-Community
+            Operators. Registration is requested on form 036, box 582, and the tax agency can take up
+            to three months to grant it.
+          </p>
+        </details>
+        <details>
+          <summary>What does the leading letter of a NIF mean?</summary>
+          <p>
+            The legal nature of the entity: A for a public limited company, B for a private limited
+            company, F for a cooperative, G for an association or foundation, Q for a public body,
+            among others.
+          </p>
+        </details>
+        <details>
+          <summary>Can I get a company name from a Spanish VAT number?</summary>
+          <p>
+            Not through an official free route: Spain discloses neither name nor address via VIES, and
+            the commercial register charges for its extracts.
+          </p>
+        </details>
+        <details>
+          <summary>Do companies in the Canary Islands have an EU VAT number?</summary>
+          <p>
+            They have a Spanish NIF, but the Canaries sit outside the EU VAT territory and are subject
+            to IGIC instead, so their supplies are not intra-community for VAT purposes.
+          </p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/">Germany</a></li>
+            <li><a href="/en/vat-number/italy/">Italy</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

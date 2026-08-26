@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0b0d12"/>
+  <rect x="0" y="0" width="1200" height="6" fill="#83aee0"/>
+
+  <g transform="translate(80,74)">
+    <rect width="52" height="52" rx="10" fill="#14171f" stroke="#353c4d"/>
+    <path d="M11 14h7.8l6.8 18.1L32.4 14H40L29.1 40.8h-7.5L11 14Z" fill="#83aee0"/>
+    <circle cx="26" cy="20" r="3.4" fill="#eef1f7"/>
+    <text x="70" y="36" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="700" fill="#eef1f7">Vatlas</text>
+    <text x="215" y="36" font-family="DejaVu Sans Mono, monospace" font-size="19" fill="#7b8497">vatlas.dev</text>
+  </g>
+
+  <text x="80" y="272" font-family="DejaVu Sans, sans-serif" font-size="72" font-weight="700" fill="#eef1f7">@@LINE1@@</text>
+  <text x="80" y="358" font-family="DejaVu Sans, sans-serif" font-size="72" font-weight="700" fill="#83aee0">@@LINE2@@</text>
+  <text x="80" y="444" font-family="DejaVu Sans, sans-serif" font-size="72" font-weight="700" fill="#eef1f7">@@LINE3@@</text>
+
+  <text x="80" y="510" font-family="DejaVu Sans, sans-serif" font-size="26" fill="#a4acbe">@@LEAD@@</text>
+
+  <g transform="translate(80,548)">
+    <rect width="@@W1@@" height="42" rx="6" fill="#14171f" stroke="#353c4d"/>
+    <circle cx="24" cy="21" r="6" fill="#a7e34a"/>
+    <text x="42" y="28" font-family="DejaVu Sans Mono, monospace" font-size="17" fill="#a7e34a">@@PILL1@@</text>
+
+    <rect x="@@X2@@" width="@@W2@@" height="42" rx="6" fill="#14171f" stroke="#353c4d"/>
+    <text x="@@T2@@" y="28" font-family="DejaVu Sans Mono, monospace" font-size="17" fill="#4fd6f2">@@PILL2@@</text>
+
+    <rect x="@@X3@@" width="@@W3@@" height="42" rx="6" fill="#14171f" stroke="#353c4d"/>
+    <text x="@@T3@@" y="28" font-family="DejaVu Sans Mono, monospace" font-size="17" fill="#83aee0">@@PILL3@@</text>
+  </g>
+</svg>

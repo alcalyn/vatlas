@@ -1,0 +1,99 @@
+<!-- @meta
+{
+  "title": "インボイス登録番号：形式・法人番号との違い・検索方法",
+  "description": "T＋13桁。適格請求書発行事業者登録番号の構造、法人番号との関係、そして番号から事業者を調べる方法。",
+  "h1": "インボイス登録番号",
+  "term": "適格請求書発行事業者登録番号",
+  "updated": "2026-09-08"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">日本 · JP</p>
+        <h1>インボイス登録番号</h1>
+        <p class="section__lead">当サイトが扱う番号のなかで、消費税の課税事業者であることをそのまま示す唯一のものです。登録簿に載っていること自体が答えになります。</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>形式：</strong><code>JP</code> + <code>T</code> + 13桁</p>
+        <p><strong>例：</strong><code>JPT1010001001359</code></p>
+        <p><strong>付番機関：</strong>国税庁。適格請求書発行事業者の登録を受けたときに通知されます。</p>
+      </div>
+
+      <h2 id="format">番号の構造</h2>
+      <p>登録番号は <code>T</code> に続く<strong>13桁</strong>です。法人の場合、この13桁はその法人の<strong>法人番号</strong>そのもので、行政機関がすでに使っている識別子と同じです。個人事業者や人格のない社団等には、この登録のために新しい13桁が付番されます。</p>
+      <ul class="breakdown">
+        <li><b>T</b><span>固定の接頭辞。装飾ではなく番号の一部です。</span></li>
+        <li><b>1</b><span>検査用数字。<em>末尾ではなく先頭</em>に置かれます。</span></li>
+        <li><b>010001001359</b><span>検査の対象となる12桁。</span></li>
+      </ul>
+      <p>検査用数字は残り12桁から計算します。右から数えて奇数桁を1倍、偶数桁を2倍して合計し、その合計を9で割った余りを9から引いた値が先頭の数字になります。通信なしで、手元だけで確かめられます。</p>
+
+      <h2 id="invoice">登録簿がある理由</h2>
+      <p>2023年10月に<strong>インボイス制度</strong>（適格請求書等保存方式）が始まりました。以後、仕入税額控除を受けるには、請求書に売手の登録番号が記載され、かつ売手が<strong>適格請求書発行事業者として登録されている</strong>ことが必要です。</p>
+      <p>そのため、この登録簿は他国の商業登記簿とは性質が違います。<strong>載っているかどうかが、そのまま答えになります。</strong>登録簿にない番号は登録事業者の番号ではなく、その番号を書いた請求書では控除を受けられません。</p>
+
+      <h2 id="find">番号から事業者を調べる</h2>
+      <h3>公表データ</h3>
+      <p>国税庁は<strong>全件データを毎月</strong>、前月末時点の内容で公表しています。CSV・XML・JSONの三形式、ZIP圧縮と署名付き、利用登録は不要です。月次の間を埋める日次の差分ファイルもあります。無償で、完全で、しかも手元の番号がそのまま検索キーになります。</p>
+      <h3>公表されるもの、されないもの</h3>
+      <p><strong>法人</strong>は、名称・本店所在地・登録年月日・（あれば）取消年月日や失効年月日が公表されます。<strong>個人事業者</strong>は、本人が公表に同意した項目だけで、番号と日付以外は何もない場合が少なくありません。これは欠損ではなく、制度上の取り扱いです。個人の番号を照会したとき、登録の事実は確認できても氏名が返らないのはこのためです。</p>
+      <p>住所は<strong>一つの文字列</strong>として公表され、都道府県と市区町村はコードで別に示されます。郵便番号はありません。分解できる要素がないため、{{siteName}} は公表されたままの形で返します。</p>
+
+      <h2 id="pitfalls">日本ならではの注意点</h2>
+      <ul>
+        <li><strong><code>T</code> を落とさないこと。</strong>13桁だけでは法人番号であって、登録番号ではありません。</li>
+        <li><strong>失効年月日は未来の日付であることが多い。</strong>失効年月日は登録が終わる<em>予定日</em>で、その日までは有効です。</li>
+        <li><strong>データは履歴です。</strong>同じ番号が事象ごとに複数行現れます。現在の状態は「最新」の行だけが示します。</li>
+        <li><strong>個人事業者の多くは匿名です。</strong>氏名の公表は同意した場合に限られます。</li>
+        <li><strong>法人番号があること＝登録ではない。</strong>法人番号はすべての法人にありますが、この登録簿にいるのは登録した事業者だけです。</li>
+      </ul>
+
+      <!-- @include partials/country/ja.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">よくある質問</p>
+        <h2>インボイス登録番号のポイント</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>先頭の T にはどんな意味がありますか。</summary>
+          <p>インボイス登録番号であることを示す記号です。番号の一部であり、請求書にも <code>T</code> を含めて記載します。</p>
+        </details>
+        <details>
+          <summary>登録番号と法人番号は同じものですか。</summary>
+          <p>法人の場合、13桁の部分が法人番号です。登録番号はその前に <code>T</code> が付いたもので、適格請求書発行事業者として登録した場合にのみ存在します。</p>
+        </details>
+        <details>
+          <summary>有効な番号なのに名称が出てこないのはなぜですか。</summary>
+          <p>個人事業者の氏名は、本人が公表に同意した場合にだけ公表されます。登録自体は実在し、氏名だけが非公表です。</p>
+        </details>
+        <details>
+          <summary>失効年月日が入っています。まだ有効ですか。</summary>
+          <p>その日付が将来であれば有効です。失効年月日はあらかじめ設定されるもので、その日が来るまで登録は続きます。</p>
+        </details>
+        <details>
+          <summary>登録簿の全件データは無料で入手できますか。</summary>
+          <p>できます。国税庁が全件データを毎月、日次の差分を毎営業日、CSV・XML・JSONで公表しています。利用登録は不要です。</p>
+        </details>
+      </div>
+
+      <h2>他の国の事業者番号</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/japan/" hreflang="en" lang="en">Japan (English)</a></li>
+        <li><a href="/en/vat-number/australia/" hreflang="en" lang="en">Australia</a></li>
+        <li><a href="/en/vat-number/singapore/" hreflang="en" lang="en">Singapore</a></li>
+        <li><a href="/en/vat-number/brazil/" hreflang="en" lang="en">Brazil</a></li>
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">最終更新：2026年9月8日</p>
+    </div>
+  </section>
+</main>

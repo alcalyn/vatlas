@@ -1,0 +1,321 @@
+{
+    "help": "https://data.gov.il/api/3/action/help_show?name=datastore_search",
+    "success": true,
+    "result": {
+        "filters": {
+            "מספר חברה": 520000472
+        },
+        "include_total": true,
+        "limit": 1,
+        "records_format": "objects",
+        "resource_id": "f004176c-b85f-4542-8901-7b3176f9a054",
+        "total_estimation_threshold": null,
+        "records": [
+            {
+                "_id": 493477,
+                "מספר חברה": 520000472,
+                "שם חברה": "חברת החשמל לישראל בעמ",
+                "שם באנגלית": "",
+                "סוג תאגיד": "ישראלית חברה ציבורית",
+                "סטטוס חברה": "פעילה",
+                "תאור חברה": "",
+                "מטרת החברה": "לעסוק בסוגי עיסוק שפורטו בתקנון",
+                "תאריך התאגדות": "29/03/1923",
+                "חברה ממשלתית": "כן",
+                "מגבלות": "מוגבלת",
+                "מפרה": "",
+                "שנה אחרונה של דוח שנתי (שהוגש)": 2002,
+                "שם עיר": "חיפה",
+                "שם רחוב": "נתיב האור",
+                "מספר בית": "1",
+                "מיקוד": 3508510,
+                "ת.ד.": "",
+                "מדינה": "ישראל",
+                "אצל": "היועץ המשפטי ומזכיר החברה",
+                "תת סטטוס": "",
+                "קוד סטטוס חברה": 0,
+                "קוד סוג חברה": 1,
+                "קוד סיווג חברה": 62,
+                "קוד מטרת החברה": 3,
+                "קוד מגבלה": 1,
+                "קוד חברה מפרה": null,
+                "קוד ישוב": 4000,
+                "קוד רחוב": 1204,
+                "קוד מדינה": 376
+            }
+        ],
+        "fields": [
+            {
+                "id": "_id",
+                "type": "int"
+            },
+            {
+                "id": "מספר חברה",
+                "type": "numeric",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "שם חברה",
+                "type": "text",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "שם באנגלית",
+                "type": "text",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "סוג תאגיד",
+                "type": "text",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "סטטוס חברה",
+                "type": "text",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "תאור חברה",
+                "type": "text",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "מטרת החברה",
+                "type": "text",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "תאריך התאגדות",
+                "type": "text",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": "text"
+                }
+            },
+            {
+                "id": "חברה ממשלתית",
+                "type": "text",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "מגבלות",
+                "type": "text",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "מפרה",
+                "type": "text",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "שנה אחרונה של דוח שנתי (שהוגש)",
+                "type": "numeric",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "שם עיר",
+                "type": "text",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "שם רחוב",
+                "type": "text",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "מספר בית",
+                "type": "text",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "מיקוד",
+                "type": "numeric",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "ת.ד.",
+                "type": "text",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "מדינה",
+                "type": "text",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "אצל",
+                "type": "text",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "תת סטטוס",
+                "type": "text",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "קוד סטטוס חברה",
+                "type": "numeric",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "קוד סוג חברה",
+                "type": "numeric",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "קוד סיווג חברה",
+                "type": "numeric",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "קוד מטרת החברה",
+                "type": "numeric",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "קוד מגבלה",
+                "type": "numeric",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "קוד חברה מפרה",
+                "type": "numeric",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "קוד ישוב",
+                "type": "numeric",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "קוד רחוב",
+                "type": "numeric",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            },
+            {
+                "id": "קוד מדינה",
+                "type": "numeric",
+                "info": {
+                    "label": "",
+                    "notes": "",
+                    "type_override": ""
+                }
+            }
+        ],
+        "_links": {
+            "start": "/api/3/action/datastore_search?resource_id=f004176c-b85f-4542-8901-7b3176f9a054&filters=%7B%22%D7%9E%D7%A1%D7%A4%D7%A8+%D7%97%D7%91%D7%A8%D7%94%22%3A520000472%7D&limit=1",
+            "next": "/api/3/action/datastore_search?resource_id=f004176c-b85f-4542-8901-7b3176f9a054&filters=%7B%22%D7%9E%D7%A1%D7%A4%D7%A8+%D7%97%D7%91%D7%A8%D7%94%22%3A520000472%7D&limit=1&offset=1"
+        },
+        "total": 1,
+        "total_was_estimated": false
+    }
+}

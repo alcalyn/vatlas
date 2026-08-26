@@ -1,0 +1,94 @@
+<!-- @meta
+{
+  "title": "Vietnamese tax code (mã số thuế): format, branches and lookup",
+  "description": "VN plus ten digits, or thirteen for a branch. How the mã số thuế is built, why the tax authority's own lookup cannot be automated, and what is reachable instead.",
+  "h1": "The Vietnamese mã số thuế",
+  "term": "mã số thuế",
+  "updated": "2026-09-15"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Vietnam · VN</p>
+        <h1>The Vietnamese mã số thuế</h1>
+        <p class="section__lead">Vietnam has VAT, thuế giá trị gia tăng, and one number carries it: the mã số thuế, which is also the enterprise registration number. It is the number every Vietnamese invoice is issued against.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>VN</code> + 10 digits, or 13 for a branch</p>
+        <p><strong>Example:</strong> <code>VN0100109106</code></p>
+        <p><strong>Issued by:</strong> the Tổng cục Thuế, the General Department of Taxation.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A mã số thuế is <strong>ten digits</strong>. Since the merger of tax and business registration, it is the same number as the enterprise registration number on the certificate: one identifier, not two, which spares Vietnam the Irish problem of a company register that cannot be reached by tax number.</p>
+      <p>A branch or dependent unit carries the parent's ten digits followed by three of its own, written with a hyphen: <code>0100109106-001</code>. Thirteen digits is therefore a valid number and not a typo; it identifies the branch, and the register answers for it under that number.</p>
+      <p>The tenth digit is a check digit, but the algorithm is not published in a form that can be relied on, so {{siteName}} does not reject a Vietnamese number offline; a mistyped one has to be asked about.</p>
+
+      <h2 id="status">What the register states</h2>
+      <p>The tax administration publishes a status in words rather than as a code. <strong>NNT đang hoạt động</strong>, the taxpayer is operating, is the live one; the several ways of having stopped are written out too, from <em>ngừng hoạt động</em> to a closed tax code. {{siteName}} maps the live wording and the stopped wordings, and reports anything it has not seen before as unknown rather than guessing at it.</p>
+
+      <h2 id="find">Finding the company behind the number</h2>
+      <h3>The official lookup, and why it cannot be automated</h3>
+      <p>The Tổng cục Thuế publishes the taxpayer file at <code>tracuunnt.gdt.gov.vn</code> and the national business registration portal publishes the companies. Both are free, both are authoritative, and <strong>both put a captcha in front of every query</strong>. Neither publishes a downloadable file. There is, in short, no way for a program to ask the Vietnamese register anything.</p>
+      <h3>What is reachable instead</h3>
+      <p>The tax administration's data is republished openly by VietQR, keyed by tax code, as JSON and with no key. That is what {{siteName}} calls, and it says so: a Vietnamese answer names <strong>VietQR</strong> as its source, not the register. It is an aggregator, and treating it as the tax authority's own word would be a claim we are not in a position to make.</p>
+      <p>Expect a hit in about a second and a miss in eight to fourteen: the service goes upstream before it will tell you a number does not exist.</p>
+
+      <h2 id="pitfalls">Vietnam-specific pitfalls</h2>
+      <ul>
+        <li><strong>Thirteen digits is normal.</strong> It is a branch, not a bad number. Keep the whole thing.</li>
+        <li><strong>No offline validation.</strong> The check digit cannot be verified reliably, so a typo costs one lookup.</li>
+        <li><strong>The source is an aggregator.</strong> Authoritative data, republished. Where that matters for evidence, it matters.</li>
+        <li><strong>A miss is slow.</strong> Budget for ten seconds or more on a number that does not exist.</li>
+        <li><strong>One number for two purposes.</strong> The tax code is the registration number; there is no second identifier to reconcile.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The mã số thuế in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits is a Vietnamese tax code?</summary>
+          <p>Ten for a company, thirteen for one of its branches: the parent's ten plus a three-digit suffix.</p>
+        </details>
+        <details>
+          <summary>Is the tax code the same as the business registration number?</summary>
+          <p>Yes. Vietnam merged the two, so one number serves both.</p>
+        </details>
+        <details>
+          <summary>Can I check a Vietnamese number on the tax authority's site?</summary>
+          <p>By hand, yes. Not from a program: every query on the official portals is behind a captcha.</p>
+        </details>
+        <details>
+          <summary>Where does the data come from, then?</summary>
+          <p>From VietQR, which republishes the tax administration's data openly. We name it as the source rather than implying the register answered.</p>
+        </details>
+        <details>
+          <summary>Does VIES cover Vietnam?</summary>
+          <p>No. VIES answers for member states of the European Union only.</p>
+        </details>
+      </div>
+
+      <h2>Business numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/singapore/">Singapore</a></li>
+        <li><a href="/en/vat-number/taiwan/">Taiwan</a></li>
+        <li><a href="/en/vat-number/japan/">Japan</a></li>
+        <li><a href="/en/vat-number/australia/">Australia</a></li>
+        <li><a href="/en/vat-number/brazil/">Brazil</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 15 September 2026.</p>
+    </div>
+  </section>
+</main>

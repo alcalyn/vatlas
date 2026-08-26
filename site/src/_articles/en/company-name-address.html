@@ -1,0 +1,273 @@
+<!-- @meta
+{
+  "title": "How to get a company's name and address from a VAT number",
+  "description": "What a VAT number tells you about a company, why every country publishes that data differently, and three ways to get the name and address behind one.",
+  "h1": "Getting a company's name and address from a VAT number",
+  "updated": "2026-09-21"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Guide · Company data</p>
+        <h1>Getting a company's name and address from a VAT number</h1>
+        <p class="section__lead">
+          The one identifier a business customer always has to hand. Turning it into a legal name
+          and a registered address is a simple question whose answer changes at every border.
+        </p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>What comes back:</strong> legal name, legal form, national company identifier, status, registered address.</p>
+        <p><strong>Coverage:</strong> each country served by its own official register. The <a href="{{countryHubUrl}}">country pages</a> are the current list.</p>
+      </div>
+
+      <h2 id="answer">The short answer</h2>
+      <p>
+        One call, one company record, whatever country the number belongs to.
+      </p>
+      <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-str">&quot;{{apiBase}}/v1/lookup/FR68005420120&quot;</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">&quot;Authorization: Bearer $VATLAS_KEY&quot;</span></code></pre>
+      </div>
+      <p class="endpoint"><span class="status--2xx">200 OK</span></p>
+      <div class="code" data-copy>
+<pre><code>{
+  <span class="tok-key">"data"</span><span class="tok-punc">:</span> {
+    <span class="tok-key">"vatNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"FR68005420120"</span>,
+    <span class="tok-key">"countryCode"</span><span class="tok-punc">:</span> <span class="tok-str">"FR"</span>,
+    <span class="tok-key">"nationalNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"68005420120"</span>,
+    <span class="tok-key">"nationalId"</span><span class="tok-punc">:</span> <span class="tok-str">"005420120"</span>,
+    <span class="tok-key">"name"</span><span class="tok-punc">:</span> <span class="tok-str">"SOCIETE DES SUCRERIES DU MARQUENTERRE"</span>,
+    <span class="tok-key">"legalForm"</span><span class="tok-punc">:</span> <span class="tok-str">"Autre SA à conseil d'administration"</span>,
+    <span class="tok-key">"status"</span><span class="tok-punc">:</span> <span class="tok-str">"active"</span>,
+    <span class="tok-key">"address"</span><span class="tok-punc">:</span> {
+      <span class="tok-key">"line1"</span><span class="tok-punc">:</span> <span class="tok-str">"32 CHEMIN DES GARENNES"</span>,
+      <span class="tok-key">"line2"</span><span class="tok-punc">:</span> <span class="tok-null">null</span>,
+      <span class="tok-key">"postalCode"</span><span class="tok-punc">:</span> <span class="tok-str">"80120"</span>,
+      <span class="tok-key">"city"</span><span class="tok-punc">:</span> <span class="tok-str">"SAINT-QUENTIN-EN-TOURMONT"</span>,
+      <span class="tok-key">"country"</span><span class="tok-punc">:</span> <span class="tok-str">"FR"</span>
+    }
+  },
+  <span class="tok-key">"meta"</span><span class="tok-punc">:</span> {
+    <span class="tok-key">"source"</span><span class="tok-punc">:</span> <span class="tok-str">"SIRENE"</span>,
+    <span class="tok-key">"sourceDate"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-09-01"</span>,
+    <span class="tok-key">"sourceSince"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-06-01"</span>,
+    <span class="tok-key">"sourceUpdatedAt"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-02-13T11:07:03.000Z"</span>
+  }
+}</code></pre>
+      </div>
+      <p>
+        The address is already split into fields. <code>nationalId</code> is the national company
+        identifier, the SIREN here and a registration number elsewhere. <code>meta</code> names the
+        register that answered and the date it said so.
+      </p>
+
+      <h2 id="contains">What a VAT number contains</h2>
+      <p>
+        Two letters for the country, then a national number. That number is sometimes the company's
+        registration number unchanged, sometimes derived from it by a published formula, sometimes
+        an identifier with no relationship to the company register at all.
+      </p>
+      <p>
+        Every difficulty below follows from that. There is one rule per country, and a few of them
+        are "you cannot".
+      </p>
+      <div class="callout">
+        <p>
+          <strong>A well-formed number is not a real company.</strong> Most countries build a check
+          digit into the number, so a typo can be caught offline. That check stays correct for a
+          company struck off ten years ago. Only a register can say whether anybody is behind it
+          today.
+        </p>
+      </div>
+
+      <h2 id="sources">One country, one method</h2>
+      <ul>
+        <li>
+          <strong>Open data files.</strong> Some countries publish their whole company repertory:
+          complete, free, several gigabytes per edition, names in one file and addresses in another.
+          To answer one question you first load all the answers, then keep them fresh.
+        </li>
+        <li>
+          <strong>A national API.</strong> Some tax administrations expose their own service,
+          each with its own request shape, throttling and way of saying "not found". One
+          integration per country, sharing nothing but the intent.
+        </li>
+        <li>
+          <strong>Nothing at all.</strong> In some countries no register returns the company
+          behind a VAT number. Coverage there comes from weaker sources, and reads as an indication
+          rather than a register entry.
+        </li>
+      </ul>
+      <p>
+        The <a href="{{countryHubUrl}}">country pages</a> take this one country at a time.
+      </p>
+
+      <h2 id="shape">The shape of what comes back</h2>
+      <ul>
+        <li>
+          <strong>The address is free text.</strong> Postal code before the town in most of Europe
+          and after it in Ireland and Malta, the province appended in Italy, house numbers mixed
+          into the street line in the Netherlands. Splitting that reliably is a parser, not a regex.
+        </li>
+        <li>
+          <strong>The legal form is not harmonised.</strong> It comes back in the country's own
+          language and vocabulary, with no European enum to map it onto.
+        </li>
+        <li>
+          <strong>Fields are missing, legitimately.</strong> Some registers publish no city, only a
+          territory code; some publish no street. An empty field is usually the register's answer.
+        </li>
+        <li>
+          <strong>Freshness varies by an order of magnitude.</strong> One register republishes
+          daily, another monthly, another answers live. An undated record cannot be reasoned about.
+        </li>
+      </ul>
+
+      <h2 id="noname">What "no name" means</h2>
+      <p>
+        Some member states publish whether a number is registered and nothing else. There, an empty
+        name is the complete and correct answer, and no service can do better. Anyone promising a
+        name for every country in Europe is guessing.
+      </p>
+      <p>
+        The empty case is a normal outcome in a predictable set of countries. Design for it from the
+        start.
+      </p>
+
+      <h2 id="licensing">Consulting a register is not redistributing it</h2>
+      <p>
+        Public registers are public in the sense that you may look things up in them. Republishing
+        their contents is a different permission, and selling a permanent derived database is a
+        third. The terms differ per country, and some are explicit about it.
+      </p>
+      <p>
+        If you plan to ingest registers yourself, read each source's terms before the data reaches a
+        customer. No technical difficulty, real consequences.
+      </p>
+
+      <h2 id="ways">Three ways to get there</h2>
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Three approaches to resolving a VAT number to a company</caption>
+          <thead>
+            <tr><th scope="col">Approach</th><th scope="col">Good for</th><th scope="col">What it costs</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">By hand, one number at a time</th>
+              <td>A handful of checks a month</td>
+              <td>Time; not repeatable, nothing recorded</td>
+            </tr>
+            <tr>
+              <th scope="row">Integrate the registers yourself</th>
+              <td>One or two countries, high volume, full control</td>
+              <td>One integration per country, storage and refresh for the bulk files, an address parser, and the licence reading above</td>
+            </tr>
+            <tr>
+              <th scope="row">One API across countries</th>
+              <td>Selling across borders</td>
+              <td>A per-call price, and a dependency you should be able to leave</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        {{siteName}} is the third. One endpoint and one envelope for every country, input
+        normalised whatever the punctuation, address already split into fields, and every answer
+        carrying the register it came from and its date. The free plan is {{quotaFree}} calls a
+        month, enough to try it against your own list;
+        <a href="{{pricingUrl}}">Pro is {{pricePro}} €</a> for {{quotaPro}}.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>Where the limits are.</strong> Some administrations disclose no name, and no
+          API changes that. Where an answer rests on something weaker than an official register, it
+          says so in <code>status</code> and in <code>meta</code> rather than pretending otherwise.
+          Coverage is not the whole world: the <a href="{{countryHubUrl}}">country pages</a> say
+          what it is today.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>Name and address from a VAT number, in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Can you find a company's address from its VAT number?</summary>
+          <p>
+            In most countries, yes. The registered address is held by an official register that the
+            VAT number can reach, directly or through the national company identifier. A few member
+            states publish validity only, and there the address is not available.
+          </p>
+        </details>
+        <details>
+          <summary>Is there a single European database of companies?</summary>
+          <p>
+            No. There is one national register per country, each with its own scope, format,
+            publication rhythm and licence. Anything that looks like a single database has
+            integrated them one by one.
+          </p>
+        </details>
+        <details>
+          <summary>Is the VAT number the same as the company registration number?</summary>
+          <p>
+            Sometimes. In some countries they are the same digits, in others the VAT number is
+            derived from the registration number by a published formula, in others they are
+            unrelated identifiers issued by different administrations. The
+            <a href="{{countryHubUrl}}">country pages</a> say which is which.
+          </p>
+        </details>
+        <details>
+          <summary>Why does the name come back empty for some numbers?</summary>
+          <p>
+            Because that country's administration has chosen to disclose whether the number is
+            registered and nothing more. It is the correct answer for that country.
+          </p>
+        </details>
+        <details>
+          <summary>Is the data free?</summary>
+          <p>
+            The underlying registers are largely free to consult, and some publish open data files.
+            What costs money is reaching them reliably: one integration per country, gigabytes to
+            ingest and refresh, an address parser, and the licence terms to read before any of it
+            reaches a customer.
+          </p>
+        </details>
+        <details>
+          <summary>How fresh is the answer?</summary>
+          <p>
+            It depends on the register: daily for some, monthly for others, live for those with an
+            API. Every answer we return carries the source that gave it and the date it said so,
+            rather than an undated fact.
+          </p>
+        </details>
+        <details>
+          <summary>Can I store the results?</summary>
+          <p>
+            For your own records, such as an invoice, a customer file or an audit trail, this is
+            ordinary. Building and redistributing a derived database of a national register is
+            governed by that register's licence, and worth reading before you start.
+          </p>
+        </details>
+      </div>
+
+      <h2>Keep reading</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/guides/autofill-company-form-from-vat-number/">Autofilling a company form</a></li>
+        <li><a href="/en/guides/enrich-a-crm-from-vat-numbers/">Enriching a CRM from VAT numbers</a></li>
+        <li><a href="{{countryHubUrl}}">VAT numbers, country by country</a></li>
+        <li><a href="{{docsUrl}}">API documentation</a></li>
+        <li><a href="{{pricingUrl}}">Pricing</a></li>
+      </ul>
+      <p class="updated">Last updated 21 September 2026.</p>
+    </div>
+  </section>
+</main>

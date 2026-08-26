@@ -1,0 +1,102 @@
+<!-- @meta
+{
+  "title": "XI VAT number: Northern Ireland, the Windsor Framework and lookups",
+  "description": "XI plus nine digits, issued by HMRC. When an XI number is required, how it relates to a GB number, and why it cannot be looked up automatically.",
+  "h1": "The XI VAT number (Northern Ireland)",
+  "term": "Northern Ireland VAT number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Northern Ireland · XI</p>
+        <h1>The XI VAT number (Northern Ireland)</h1>
+        <p class="section__lead">The only prefix in VIES that does not belong to a member state. Northern Ireland left the EU with the rest of the United Kingdom and stayed inside the EU VAT regime, for goods, and only for goods.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>XI</code> + 9 digits (also 12 digits, or <code>GD</code>/<code>HA</code> + 3)</p>
+        <p><strong>Applies to:</strong> goods only. Services follow UK rules.</p>
+        <p><strong>Issued by:</strong> HMRC, normally alongside an existing GB registration.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>An XI number has the same shape as a UK VAT number, with a different prefix.</p>
+      <ul class="breakdown">
+        <li><b>XI + 9 digits</b><span>The standard form.</span></li>
+        <li><b>XI + 12 digits</b><span>A branch registration: the 9-digit number plus a 3-digit branch code.</span></li>
+        <li><b>XIGD / XIHA + 3</b><span>Government departments and health authorities.</span></li>
+      </ul>
+      <p>The nine digits carry a modulus 97 check. They are normally <strong>the same digits as the business’s GB VAT number</strong>: the XI registration is an add-on to it, not a separate registration.</p>
+
+      <h2 id="when">When an XI number is required</h2>
+      <p>Under the Windsor Framework, Northern Ireland runs a dual VAT regime: <strong>goods follow EU rules, services follow UK rules</strong>. The prefix is what tells a counterparty which regime applies.</p>
+      <p>An XI number is used when selling goods located in Northern Ireland to a customer in the EU, when receiving goods in Northern Ireland from an EU supplier, and when moving goods between Northern Ireland and a member state. For a service (consultancy, software, licensing) the GB number applies and the EU reverse charge for services does not run through XI at all.</p>
+      <div class="callout"><p><strong>A GB number is not an XI number.</strong> Replacing <code>GB</code> with <code>XI</code> on a number that was never enrolled produces something VIES rejects. HMRC issued XI numbers automatically to traders it identified under the Protocol, mostly those with BT postcodes; everyone else has to notify HMRC and be assessed.</p></div>
+
+      <h2 id="find">Finding the business behind a number</h2>
+      <h3>Companies House</h3>
+      <p>Companies House covers Northern Irish companies and is free and complete, and, as everywhere, it is keyed by company number, not by VAT number. The XI number is issued by HMRC, and nothing connects the two.</p>
+      <h3>HMRC</h3>
+      <p>HMRC ran a public VAT number lookup that returned the registered name and address. <strong>It was withdrawn in February 2025</strong>, and the replacement sits behind OAuth application credentials. The convenient free route that existed until recently no longer does.</p>
+      <h3>VIES</h3>
+      <p>XI numbers are listed in VIES like any member state’s. Validity comes back reliably; name and address are not disclosed.</p>
+
+      <h2 id="pitfalls">Northern Ireland pitfalls</h2>
+      <ul>
+        <li><strong>Do not derive XI from GB.</strong> The digits usually match, but the enrolment is what makes the number valid, and most GB registrations have none.</li>
+        <li><strong>XI covers goods only.</strong> Using it on a services invoice is wrong even when the number itself is valid.</li>
+        <li><strong>A rejected XI number often means "not enrolled", not "not a business".</strong> The company may be trading perfectly legally under its GB number.</li>
+        <li><strong>The HMRC public lookup is gone.</strong> Anything built on it before February 2025 has stopped working.</li>
+        <li><strong>XI is not a country code.</strong> It exists only for VAT, and no ISO list will resolve it.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The XI VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>What is an XI VAT number?</summary>
+          <p>A UK VAT number enrolled under the Windsor Framework so that it works for goods moving between Northern Ireland and the EU. It carries the <code>XI</code> prefix instead of <code>GB</code>.</p>
+        </details>
+        <details>
+          <summary>Can I turn a GB number into an XI number?</summary>
+          <p>No. The digits are usually the same, but the number is only valid if HMRC has enrolled the business, and most GB registrations are not enrolled.</p>
+        </details>
+        <details>
+          <summary>Does an XI number cover services?</summary>
+          <p>No. Under the Windsor Framework the EU VAT rules apply to goods only; services follow UK rules and the GB number.</p>
+        </details>
+        <details>
+          <summary>Why can I no longer look up a UK VAT number for free?</summary>
+          <p>HMRC withdrew its public VAT lookup service in February 2025. The replacement requires registered application credentials.</p>
+        </details>
+        <details>
+          <summary>Is XI a country code?</summary>
+          <p>No. It exists for VAT purposes only and appears in no ISO country list.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/">Germany</a></li>
+            <li><a href="/en/vat-number/italy/">Italy</a></li>
+            <li><a href="/en/vat-number/spain/">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,35 @@
+# Any unknown path.
+#
+# Same error envelope as every other failure.
+#
+# Run with: npx httpyac send http/not-found.http --all
+
+@host = http://localhost:3000
+
+###
+
+# @name Unknown endpoint
+GET {{host}}/v1/does-not-exist
+
+?? status == 404
+?? body error.code == NOT_FOUND
+
+# Example response - 404 Not Found
+#
+# {
+#   "error": {
+#     "code": "NOT_FOUND",
+#     "message": "Unknown endpoint"
+#   }
+# }
+
+###
+# -- Other cases --
+###
+
+# @name Wrong method on an existing path
+# Only GET is mounted, so other methods fall through to the same 404.
+POST {{host}}/v1/countries
+
+?? status == 404
+?? body error.code == NOT_FOUND

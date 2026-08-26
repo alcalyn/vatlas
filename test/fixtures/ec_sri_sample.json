@@ -1,0 +1,23 @@
+[
+  {
+    "numeroRuc": "1790016919001",
+    "razonSocial": "CORPORACION FAVORITA C.A.",
+    "estadoContribuyenteRuc": "ACTIVO",
+    "actividadEconomicaPrincipal": "VENTA AL POR MAYOR DE OTROS PRODUCTOS DIVERSOS PARA EL CONSUMIDOR.",
+    "tipoContribuyente": "SOCIEDAD",
+    "regimen": "GENERAL",
+    "categoria": null,
+    "obligadoLlevarContabilidad": "SI",
+    "agenteRetencion": "SI",
+    "contribuyenteEspecial": "SI",
+    "informacionFechasContribuyente": {
+      "fechaInicioActividades": "1957-11-30 00:00:00.0",
+      "fechaCese": "",
+      "fechaReinicioActividades": "",
+      "fechaActualizacion": "2026-09-10 16:11:00.0"
+    },
+    "motivoCancelacionSuspension": null,
+    "contribuyenteFantasma": "NO",
+    "transaccionesInexistente": "NO"
+  }
+]

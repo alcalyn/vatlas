@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vatlas">
+  <rect width="64" height="64" rx="12" fill="#0A0B0F" />
+  <path d="M14 17h9.6l8.4 22.3L40.4 17H50L36.6 50h-9.2L14 17Z" fill="#83AEE0" />
+  <circle cx="32" cy="24" r="4.2" fill="#EEF1F7" />
+</svg>

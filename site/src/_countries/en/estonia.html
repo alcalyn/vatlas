@@ -1,0 +1,103 @@
+<!-- @meta
+{
+  "title": "Estonian VAT number (KMKR): format, registry code and lookup",
+  "description": "EE plus nine digits. Why the VAT number is not the registry code, and why Estonia is the easiest member state in the Union to resolve.",
+  "h1": "The Estonian VAT number (KMKR)",
+  "term": "Estonian VAT number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Estonia · EE</p>
+        <h1>The Estonian VAT number (KMKR)</h1>
+        <p class="section__lead">Estonia is the only member state whose open data file contains the VAT number itself. No derivation, no join, just a column.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>EE</code> + 9 digits</p>
+        <p><strong>Example:</strong> <code>EE100031827</code></p>
+        <p><strong>Issued by:</strong> the Tax and Customs Board, on VAT registration.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>An Estonian VAT number is always <strong>eleven characters</strong>: the country code and nine digits. It almost always begins <code>100</code>.</p>
+      <ul class="breakdown">
+        <li><b>EE</b><span>The country code.</span></li>
+        <li><b>10003182</b><span>Eight digits.</span></li>
+        <li><b>7</b><span>The check digit.</span></li>
+      </ul>
+      <p>The check digit is computed modulus 10 with weights 3, 7, 1, 3, 7, 1, 3, 7. As everywhere, a correct check digit proves only that the number was copied correctly.</p>
+
+      <h2 id="registry">VAT number and registry code</h2>
+      <p>This is the distinction that matters most about Estonia, and it runs against the logic of most of its neighbours.</p>
+      <p>The <strong>registry code</strong> is an eight-digit number the business register assigns to every legal person at incorporation. The <strong>VAT number</strong> is nine digits and is assigned by the Tax and Customs Board on VAT registration. <strong>They are different numbers</strong>: one cannot be computed from the other.</p>
+      <p>In the example below the registry code is <code>10022256</code> while the VAT number is <code>EE100031827</code>. Anyone assuming that prefixing the registry code with <code>EE</code> is enough gets a number that does not exist.</p>
+
+      <h2 id="find">Finding the company</h2>
+      <h3>Business register open data</h3>
+      <p>The Centre of Registers and Information Systems publishes the register’s core data file as <strong>free open data, every day</strong>. It carries the name, registry code, legal form, address, status, and a <code>kmkr_nr</code> column holding <strong>the VAT number itself</strong>.</p>
+      <p>That makes Estonia the exception. Elsewhere the number has to be derived, joined from a second register or asked of VIES; in Estonia it is simply there, a hundred thousand rows in seconds.</p>
+      <h3>e-Business Register</h3>
+      <p><a href="https://ariregister.rik.ee/" rel="noopener">ariregister.rik.ee</a> serves the same information one company at a time, with annual reports and related persons.</p>
+      <h3>VIES</h3>
+      <p>Estonia <strong>discloses both name and address</strong>. The address arrives on one line in which the municipality name is often repeated twice (<code>Tartu linn Tartu linn</code>); that is the real data structure, not a bug.</p>
+
+      <h2 id="pitfalls">Estonia-specific pitfalls</h2>
+      <ul>
+        <li><strong>The registry code is not the VAT number.</strong> One is eight digits, the other nine, and neither derives from the other.</li>
+        <li><strong>Prefixing the registry code with <code>EE</code> gives a wrong number.</strong> This is the commonest mistake made about Estonia.</li>
+        <li><strong>Everyone has a registry code, not everyone has a VAT number.</strong> VAT registration is a separate step.</li>
+        <li><strong>The open data file includes deleted companies</strong>, so the status has to be checked separately.</li>
+        <li><strong>The municipality is repeated in the address</strong>, which confuses automatic splitting.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Estonian VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does an Estonian VAT number have?</summary>
+          <p>Nine after the <code>EE</code> country code, eleven characters in total.</p>
+        </details>
+        <details>
+          <summary>Are the registry code and the VAT number the same?</summary>
+          <p>No. The registry code is eight digits and comes from the business register; the VAT number is nine digits and comes from the Tax and Customs Board. Neither can be computed from the other.</p>
+        </details>
+        <details>
+          <summary>Can I just put EE in front of the registry code?</summary>
+          <p>No, and it is the most frequent mistake. The result is a number that does not exist.</p>
+        </details>
+        <details>
+          <summary>Where can I get Estonian VAT numbers for free?</summary>
+          <p>From the business register’s core data open file, published daily, which contains a <code>kmkr_nr</code> column.</p>
+        </details>
+        <details>
+          <summary>Why does VIES not know an existing company?</summary>
+          <p>Because it is not registered for VAT. It has a registry code but no VAT number.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/">Germany</a></li>
+            <li><a href="/en/vat-number/italy/">Italy</a></li>
+            <li><a href="/en/vat-number/spain/">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

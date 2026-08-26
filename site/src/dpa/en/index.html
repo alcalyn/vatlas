@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Protection Addendum · Vatlas</title>
+    <meta name="description" content="How data protection responsibilities are allocated between Vatlas and its customers, and what your compliance team needs on record." />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="author" content="Vatlas" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://vatlas.dev/dpa/en/" />
+    <link rel="alternate" hreflang="en" href="https://vatlas.dev/dpa/en/" />
+    <link rel="alternate" hreflang="fr" href="https://vatlas.dev/dpa/fr/" />
+    <link rel="alternate" hreflang="x-default" href="https://vatlas.dev/dpa/en/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta name="console-origin" content="https://console.vatlas.dev" />
+    <script>
+      try {
+        var url = new URLSearchParams(location.search).get('theme')
+        var stored = url === 'light' || url === 'dark' ? url : localStorage.getItem('vatlas-theme')
+        if (stored === 'light' || stored === 'dark') {
+          document.documentElement.dataset.theme = stored
+          localStorage.setItem('vatlas-theme', stored)
+        }
+      } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <!-- @include partials/header.html -->
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <p class="eyebrow">Legal</p>
+            <h1>Data Protection Addendum</h1>
+            <p class="section__lead">
+              This addendum sets out how data protection responsibilities are allocated between you and Vatlas,
+              and gives your compliance team what it needs on record. It forms part of the
+              <a href="/terms/en/">Terms of Service and Sale</a> and applies automatically, with nothing to sign.
+            </p>
+            <p class="note">Last updated 27 August 2026.</p>
+          </div>
+
+          <div class="docs__content legal-content">
+            <div class="callout">
+              <p>
+                <strong>The short version.</strong> For the standard lookup service, Vatlas determines the
+                purposes and the essential means (which sources to use, how to resolve a number, what to store
+                and for how long) and therefore acts as a controller rather than as your processor. Where that
+                is not the case, and we process data on your instructions, the Article 28 terms in section 5
+                apply to that processing. Section 1 explains how the line is drawn.
+              </p>
+            </div>
+
+            <section>
+              <h2>1. How the roles are allocated</h2>
+              <p>
+                A processor processes personal data <em>on the documented instructions</em> of a controller,
+                without determining the purposes or the essential means itself. Whether that describes us depends
+                on the processing, and roles follow what is actually done rather than the label a contract puts
+                on it.
+              </p>
+              <p>
+                <strong>For the standard service, we are a controller.</strong> You send a VAT number; we decide
+                which national register or which API answers it, whether to fall back to VIES, what to keep in our
+                own database, how long to keep it, and when to refresh it. Those are decisions about the purposes
+                and the essential means, and making them is what puts us in that role. You are a controller too,
+                separately from us, for what you do with the results.
+              </p>
+              <p>
+                <strong>Where we act on your instructions, we are a processor.</strong> If we agree to process
+                personal data for you without determining the purposes ourselves, that processing is governed by
+                the Article 28 terms in section 5, which apply to it as of right. We do not ask you to accept one
+                blanket qualification for everything, because one would not be accurate.
+              </p>
+            </section>
+
+            <section>
+              <h2>2. What we are the controller of</h2>
+              <ul>
+                <li>the database of company records we build from official public registers, and its refresh cycle;</li>
+                <li>the resolution of a VAT number against those registers, the national APIs and VIES;</li>
+                <li>the call logs that enforce your quota and produce your usage history;</li>
+                <li>the audit trail of the answers we returned to you, which the console lets you look up again;</li>
+                <li>your account, its credentials, and the billing data attached to it.</li>
+              </ul>
+              <p>
+                Each of these is described, with its purpose, legal basis and retention period, in the
+                <a href="/privacy/en/">Privacy Policy</a>, sections 3 and 7 for your account, and section 11 for
+                the company records, which is also where the Article 14 information for the people concerned
+                lives.
+              </p>
+            </section>
+
+            <section>
+              <h2>3. What this means for your own compliance</h2>
+              <p>
+                How you document us in your own record of processing is your call, and depends on the
+                qualification that applies to what you actually do. Where you use the standard service, we are
+                generally a separate controller receiving the VAT numbers you send us rather than a processor
+                acting on your behalf, and your record would normally reflect that. Where the Article 28 terms in
+                section 5 apply to a given processing, that processing would be documented accordingly. We are
+                happy to confirm in writing which analysis we consider applicable to your use.
+              </p>
+              <p>
+                What remains yours in any case: your own legal basis for looking a company up, your own
+                information notice to the people concerned where one is required, and your own retention decision
+                on the records you store. We cannot take those on, and this addendum does not purport to.
+              </p>
+            </section>
+
+            <section>
+              <h2>4. What you need for your records</h2>
+              <p>
+                <strong>Who we are.</strong> JULIEN MAULNY EURL, 9 Rue des Colonnes, 75002 Paris, France,
+                <a href="mailto:{{email}}">{{email}}</a>. No data protection officer is
+                designated; see section 1 of the <a href="/privacy/en/">Privacy Policy</a>.
+              </p>
+              <p>
+                <strong>What we receive from you.</strong> The VAT numbers you submit, and the account and
+                billing data of the people in your organisation who hold credentials.
+              </p>
+              <p>
+                <strong>Who else is involved.</strong> OVH SAS hosts our servers and database in France. It is
+                <em>our</em> processor: for the standard service, where we are the controller, OVH is not a
+                subprocessor of yours, and it only becomes one (under section 5) for a processing in which we
+                act as your processor. Stripe handles payment for the Pro plan; its role varies with the
+                processing, as set out in section 4 of the <a href="/privacy/en/">Privacy Policy</a>. We use no
+                analytics provider and no advertising network, and send transactional email from our own mail
+                server.
+              </p>
+              <p>
+                <strong>Transfers.</strong> Our infrastructure is in France. Stripe may process data outside the
+                EEA under the mechanisms described in section 6 of the
+                <a href="/privacy/en/">Privacy Policy</a>. We make no other transfer outside the EEA.
+              </p>
+              <p>
+                <strong>Security.</strong> Traffic is encrypted in transit; credentials are never stored in clear
+                and are authenticated against a one-way hash; a revoked key stops working within a minute;
+                session cookies are <code>HttpOnly</code>, host-only and <code>SameSite=Lax</code>, backed by an
+                origin check; card data never reaches our infrastructure; access to production data is limited to
+                what operating the service requires; and the published retention windows are enforced
+                automatically rather than by hand. These measures are reviewed as the service evolves, taking
+                into account the state of the art, the cost of implementation and the risks involved, as Article
+                32 requires. A fuller description is available on request under NDA.
+              </p>
+              <p>
+                <strong>Breach notification.</strong> What we owe depends on our role for the processing
+                concerned. Where we act as your processor, Article 33(2) requires us to notify you
+                <em>without undue delay</em>: that is our obligation, and the 72-hour deadline is not ours: it
+                runs against you, as controller, for notifying your own supervisory authority. Where we act as
+                controller, the Article 33 notification to our supervisory authority is ours to make. In either
+                case, if a breach affects data you have sent us we will inform you without undue delay once we
+                become aware of it, with the information then available and completed as the investigation
+                progresses.
+              </p>
+              <p>
+                <strong>Deletion.</strong> You can delete your account at any time from the console. What that
+                removes and what is retained, and for how long, is set out in section 7 of the
+                <a href="/privacy/en/">Privacy Policy</a>. You may ask for a copy of your account and usage data
+                in a structured, machine-readable format before deleting.
+              </p>
+            </section>
+
+            <section>
+              <h2>5. Terms applying where we act as your processor</h2>
+              <p>
+                Where we process personal data on your documented instructions without determining the purposes
+                ourselves (which the standard service described in section 1 does not involve), the following
+                terms apply to that processing as of right, and constitute the agreement required by
+                Article 28(3) of the GDPR. They are set out here so that no gap arises if that situation occurs.
+              </p>
+              <p>For any such processing we undertake to:</p>
+              <ul>
+                <li>
+                  process the data only on your documented instructions, including as regards transfers to a
+                  third country, unless required otherwise by EU or member-state law, in which case we
+                  inform you before processing unless that law prohibits it;
+                </li>
+                <li>ensure that everyone authorised to process the data is bound by an appropriate duty of confidentiality;</li>
+                <li>implement the technical and organisational measures required by Article 32;</li>
+                <li>
+                  engage another processor only with your general written authorisation, informing you at least
+                  30 days before adding or replacing one so that you can object on reasonable data protection
+                  grounds, and remaining fully liable to you for its performance;
+                </li>
+                <li>
+                  assist you, by appropriate technical and organisational measures and insofar as possible, in
+                  responding to requests to exercise data subject rights, and refer any data subject who
+                  contacted us directly back to you rather than answering on the substance;
+                </li>
+                <li>
+                  assist you in complying with Articles 32 to 36, taking into account the nature of the
+                  processing and the information available to us, and notify you of any personal data breach
+                  without undue delay after becoming aware of it, so that you can meet the deadline Article 33
+                  places on you as controller;
+                </li>
+                <li>at your choice, delete or return the data at the end of the service, subject to any retention the law imposes on us;</li>
+                <li>
+                  make available the information necessary to demonstrate compliance with Article 28, and allow
+                  for and contribute to an audit, once a year on 30 days' notice at your expense in the ordinary
+                  course, and without those limits following a security incident affecting your data, a
+                  supervisory authority's request, or serious evidence of non-compliance. An equivalent
+                  third-party report may be offered in place of an on-site audit;
+                </li>
+                <li>inform you immediately if, in our opinion, an instruction infringes the GDPR or another data protection provision.</li>
+              </ul>
+              <p>
+                Article 28(3) requires the subject matter, duration, nature and purpose of the processing, and
+                the categories of personal data and of data subjects, to be determined. For a processing of this
+                kind they are agreed in a written statement of work (exchanged by email is enough), which we
+                confirm before the processing begins and which, once confirmed, forms your documented
+                instructions and an annex to this addendum. Absent such a confirmed statement, we do not process
+                data on your behalf and there is nothing for these terms to attach to. The processing lasts only
+                as long as we carry it out for you.
+              </p>
+            </section>
+
+            <section>
+              <h2>6. Precedence, changes and contact</h2>
+              <p>
+                Where this addendum conflicts with the Terms on a data protection matter, this addendum prevails.
+                Nothing in the Terms limits either party's liability under the GDPR, which has its own regime.
+                Substantial changes to this addendum are notified in the same way as changes to the Terms, under
+                section 14 of the <a href="/terms/en/">Terms of Service and Sale</a>.
+              </p>
+              <p>
+                For anything relating to this addendum, whether a security questionnaire, an incident, or a document
+                your compliance process needs on your own paper:
+                <a href="mailto:{{email}}">{{email}}</a>.
+              </p>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include partials/footer.html -->
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

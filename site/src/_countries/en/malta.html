@@ -1,0 +1,100 @@
+<!-- @meta
+{
+  "title": "Maltese VAT number: format, MBR registration number and lookup",
+  "description": "MT plus eight digits, issued by the Commissioner for Revenue. Why it is not the company registration number, and how to find the business behind it.",
+  "h1": "The Maltese VAT number",
+  "term": "Maltese VAT registration number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Malta · MT</p>
+        <h1>The Maltese VAT number</h1>
+        <p class="section__lead">Eight plain digits, and no public way to search for them. Malta is the smallest register in the Union and one of the hardest to query in bulk.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>MT</code> + 8 digits</p>
+        <p><strong>Example:</strong> <code>MT12894031</code></p>
+        <p><strong>Issued by:</strong> the Commissioner for Revenue.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Maltese VAT number is <strong>ten characters</strong>: the country code and eight digits, with no letters and no separators.</p>
+      <ul class="breakdown">
+        <li><b>MT</b><span>The country code.</span></li>
+        <li><b>128940</b><span>Six identifying digits.</span></li>
+        <li><b>31</b><span>Two check digits.</span></li>
+      </ul>
+      <p>The last two digits are a modulus 37 check over the first six. As always, a number that checks out arithmetically may still never have been issued.</p>
+
+      <h2 id="identifiers">VAT number and company registration number</h2>
+      <p>Maltese companies carry a <strong>registration number from the Malta Business Registry</strong>, written with a letter prefix (<code>C</code> for a limited liability company) followed by a sequence. That number identifies the company in corporate law.</p>
+      <p>The <strong>VAT number</strong> is separate, issued by the Commissioner for Revenue on VAT registration, and there is no arithmetic relationship between the two. A company can hold a registration number and never be VAT registered; a sole trader can be VAT registered without appearing in the business registry at all.</p>
+      <p>Malta also issues three VAT registration types under articles 10, 11 and 12 of the VAT Act. Only an <strong>article 10</strong> registration produces a number valid for intra-community trade, a distinction that catches out plenty of foreign suppliers.</p>
+
+      <h2 id="find">Finding the business behind a number</h2>
+      <h3>The Malta Business Registry</h3>
+      <p>The <a href="https://registry.mbr.mt/" rel="noopener">MBR</a> offers online search by company name or registration number, with documents and filings behind a fee. There is no free bulk extract, and (the decisive point) <strong>no way to search by VAT number</strong>.</p>
+      <h3>VIES</h3>
+      <p>Malta <strong>discloses the name and the address</strong> through VIES. The address arrives on several lines, sometimes broken mid-word, and the postcode is written before the locality (<code>MSD 06</code>, then <code>Msida</code>) rather than after it, the opposite of most member states, and worth handling explicitly.</p>
+
+      <h2 id="pitfalls">Malta-specific pitfalls</h2>
+      <ul>
+        <li><strong>Article 11 and article 12 registrations are not valid for intra-community supplies.</strong> Only an article 10 number validates in VIES; the others exist for exempt small undertakings and for acquisitions only.</li>
+        <li><strong>The VAT number is not the MBR registration number</strong>, and neither derives from the other.</li>
+        <li><strong>The postcode comes before the town</strong> in VIES addresses, unlike almost everywhere else.</li>
+        <li><strong>There is no open bulk file.</strong> The registry is searchable but not downloadable.</li>
+        <li><strong>Maltese VAT numbers are only eight digits</strong>, which makes them easy to confuse with Hungarian or Danish numbers when the prefix is lost.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Maltese VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Maltese VAT number have?</summary>
+          <p>Eight, preceded by the <code>MT</code> country code, ten characters in total.</p>
+        </details>
+        <details>
+          <summary>Is the VAT number the same as the company registration number?</summary>
+          <p>No. The registration number comes from the Malta Business Registry and usually starts with <code>C</code>; the VAT number comes from the Commissioner for Revenue and is purely numeric.</p>
+        </details>
+        <details>
+          <summary>Why does a Maltese VAT number fail in VIES?</summary>
+          <p>Most often because it is an article 11 or article 12 registration. Only an article 10 registration is valid for intra-community trade.</p>
+        </details>
+        <details>
+          <summary>Can I search the Maltese registry by VAT number?</summary>
+          <p>No. The Malta Business Registry is searchable by company name or registration number only.</p>
+        </details>
+        <details>
+          <summary>Where does the postcode sit in a Maltese address?</summary>
+          <p>Before the locality, not after it, the reverse of most member states.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/">Germany</a></li>
+            <li><a href="/en/vat-number/italy/">Italy</a></li>
+            <li><a href="/en/vat-number/spain/">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,235 @@
+# GET /v1/lookup-all/:vatNumber - everything every source has said about a number.
+#
+# Unlike /v1/lookup, it does not stop at the first answer: it returns each source's history and
+# calls every live source whose last statement is older than LIVE_MAX_AGE_DAYS.
+#
+# The status is 200 as soon as the number parses, even when every source failed. The result of
+# each source is in `data.sources`, in the same shape as /v1/lookup:
+#
+#   data      the source's current statement
+#   error     instead of `data`: VAT_NOT_REGISTERED, SOURCE_UNAVAILABLE (with `fault` and
+#             `attempts`) or COMPANY_NOT_FOUND (the source never said anything)
+#   meta      as on /v1/lookup, plus:
+#     source      SIRENE | ARES | MF_WL | PEPPOL | CVR | PRH | GEMI | VIES...
+#     name        the register's name
+#     kind        bulk | live | both
+#     call        only when this request made a live call. `status` is found | not-registered |
+#                 not-found | unavailable. An unavailable call has `error.fault` and
+#                 `error.attempts`.
+#   history   oldest first, one entry per period during which the source said the same thing.
+#             `?history=false` removes it.
+#     from        first day seen (file date for bulk, call date for live)
+#     to          last day seen
+#     file        the file that opened the entry (bulk only)
+#     proof       on positive VIES entries only
+#
+#             A gap between two entries means nothing was read in between.
+#
+# Sources that do not apply are absent: no live register for France, no bulk source for
+# Bulgaria, registers without credentials, VIES when VIES_ENABLED=false.
+#
+# There is no summary: deciding which register is right is up to the caller.
+# Costs one unit of quota.
+#
+# Run with: VATLAS_KEY=vtl_live_... npx httpyac send http/lookup-all.http --all
+#
+# httpyac splits `?? js` assertions on `==`, so a `===` inside the expression breaks parsing, and
+# an expression without a comparison is silently ignored. Hence `indexOf(...) > -1`.
+
+@host = http://localhost:3000
+@secretKey = {{$processEnv VATLAS_KEY}}
+
+###
+
+# @name The complete report for a bulk country
+# France has no live national register: SIRENE (imported) and VIES (called) answer.
+GET {{host}}/v1/lookup-all/FR95884831538
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? body data.vatNumber == FR95884831538
+?? js response.parsedBody.data.sources.length > 0
+?? js response.parsedBody.data.sources.map(s => s.meta.source).indexOf('SIRENE') > -1
+?? js response.parsedBody.data.sources.map(s => s.meta.source).indexOf('VIES') > -1
+?? js response.parsedBody.data.sources.map(s => s.meta.kind).indexOf('bulk') > -1
+
+# Example response - 200 OK
+#
+# {
+#   "data": {
+#     "vatNumber": "FR95884831538",
+#     "countryCode": "FR",
+#     "nationalNumber": "884831538",
+#     "sources": [
+#       {
+#         "data": {
+#           "vatNumber": "FR95884831538", "countryCode": "FR", "nationalNumber": "884831538",
+#           "nationalId": "884831538", "name": "SARL JULIEN MAULNY EURL",
+#           "legalForm": "Autre société à responsabilité limitée", "status": "active",
+#           "address": { "line1": "9 RUE DES COLONNES", "line2": null, "postalCode": "75002", "city": "PARIS", "country": "FR" }
+#         },
+#         "meta": {
+#           "source": "SIRENE", "name": "SIRENE (INSEE)", "kind": "bulk",
+#           "sourceDate": "2026-09-01", "sourceSince": "2026-01-05",
+#           "sourceUpdatedAt": "2026-01-05T10:00:00.000Z"
+#         },
+#         "history": [
+#           {
+#             "from": "2026-01-05",
+#             "to": "2026-09-01",
+#             "status": "active",
+#             "nationalId": "884831538",
+#             "name": "SARL JULIEN MAULNY EURL",
+#             "legalForm": "Autre société à responsabilité limitée",
+#             "address": { "line1": "9 RUE DES COLONNES", "line2": null, "postalCode": "75002", "city": "PARIS", "country": "FR" },
+#             "sourceUpdatedAt": "2026-01-05T10:00:00.000Z",
+#             "file": { "name": "StockUniteLegale_utf8.zip", "url": "https://www.data.gouv.fr/..." }
+#           }
+#         ]
+#       },
+#       {
+#         "data": { "vatNumber": "FR95884831538", "name": "SARL JULIEN MAULNY EURL", "...": "..." },
+#         "meta": {
+#           "source": "VIES", "name": "VIES (European Commission)", "kind": "live",
+#           "sourceDate": "2026-09-04", "sourceSince": "2026-09-04", "sourceUpdatedAt": null,
+#           "proof": { "type": "vies_consultation_number", "value": "908a3b38-e0dc-4502-8b06-d057eeac6861" },
+#           "call": {
+#             "status": "found",
+#             "checkedAt": "2026-09-04T22:01:59.219Z",
+#             "proof": { "type": "vies_consultation_number", "value": "908a3b38-e0dc-4502-8b06-d057eeac6861" }
+#           }
+#         },
+#         "history": [
+#           {
+#             "from": "2026-09-04",
+#             "to": "2026-09-04",
+#             "status": "active",
+#             "name": "SARL JULIEN MAULNY EURL",
+#             "address": { "...": "..." },
+#             "proof": { "type": "vies_consultation_number", "value": "908a3b38-e0dc-4502-8b06-d057eeac6861" }
+#           }
+#         ]
+#       }
+#     ]
+#   }
+# }
+
+###
+
+# @name A country with a live register of its own
+# Czechia answers from ARES and VIES, each with its own history.
+GET {{host}}/v1/lookup-all/CZ27074358
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? js response.parsedBody.data.sources.map(s => s.meta.source).indexOf('ARES') > -1
+?? js response.parsedBody.data.sources.map(s => s.meta.source).indexOf('VIES') > -1
+?? js response.parsedBody.data.sources.filter(s => s.meta.kind.indexOf('live') > -1).length > 1
+?? js response.parsedBody.data.sources.length == 2
+
+###
+
+# @name A country with no bulk source
+# Bulgaria imports nothing, so there is no bulk entry.
+GET {{host}}/v1/lookup-all/BG000670602
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? js response.parsedBody.data.sources.length < 2
+?? js response.parsedBody.data.sources.map(s => s.meta.source).indexOf('VIES') > -1
+
+###
+
+# @name A source that exists and holds nothing is still listed
+# SIRENE is imported but does not hold this number: the entry is kept with COMPANY_NOT_FOUND and
+# an empty history. The SIREN is high so it stays outside any `--limit` sample.
+GET {{host}}/v1/lookup-all/FR95884831538
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? js response.parsedBody.data.sources.map(s => s.meta.source).indexOf('SIRENE') > -1
+?? js response.parsedBody.data.sources.filter(s => s.history.length > 0).length > 0
+
+###
+
+# @name The same report without the history
+# `?history=false` drops the history from every entry.
+GET {{host}}/v1/lookup-all/FR95884831538?history=false
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? js response.parsedBody.data.sources.filter(s => s.history != null).length < 1
+?? js response.parsedBody.data.sources.map(s => s.meta.source).indexOf('SIRENE') > -1
+
+# Example entry - a source that has never said anything about this number
+#
+# {
+#   "error": { "code": "COMPANY_NOT_FOUND", "message": "SIRENE holds nothing for \"FR95884831538\"" },
+#   "meta": { "source": "SIRENE", "name": "SIRENE (INSEE)", "kind": "bulk" },
+#   "history": []
+# }
+#
+# A live source that did not answer. `fault` and `attempts` tell an outage from a rate limit:
+#
+# {
+#   "error": {
+#     "code": "SOURCE_UNAVAILABLE",
+#     "message": "The source did not answer. Registers are regularly unavailable for short periods.",
+#     "fault": "MS_UNAVAILABLE",
+#     "attempts": 4
+#   },
+#   "meta": {
+#     "source": "VIES",
+#     "name": "VIES (European Commission)",
+#     "kind": "live",
+#     "call": { "status": "unavailable", "error": { "...": "..." } }
+#   },
+#   "history": []
+# }
+#
+# This is still a 200.
+
+###
+
+# @name A second call inside the freshness window makes no call at all
+# The live sources were asked by the request above, so this one is served from storage: no `call`.
+GET {{host}}/v1/lookup-all/BG000670602
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? js response.parsedBody.data.sources.filter(s => s.meta.call != null).length < 1
+
+###
+# -- Rejected input --
+###
+
+# @name A malformed number costs nothing
+# The only non-200 status of this endpoint. Not billed.
+GET {{host}}/v1/lookup-all/FR123
+Authorization: Bearer {{secretKey}}
+
+?? status == 400
+?? body error.code == INVALID_VAT_FORMAT
+?? body error.reason == BAD_FORMAT
+
+###
+# -- Quota and authentication --
+###
+
+# @name Metered like every other private endpoint
+# Remaining drops by one on an answered call.
+GET {{host}}/v1/lookup-all/FR95884831538
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? js response.headers['x-ratelimit-limit'] != null
+?? js response.headers['x-ratelimit-remaining'] != null
+
+###
+
+# @name No credential at all
+GET {{host}}/v1/lookup-all/FR95884831538
+
+?? status == 401
+?? body error.code == MISSING_SECRET_KEY
+?? header WWW-Authenticate == Bearer

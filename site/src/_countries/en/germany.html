@@ -1,0 +1,243 @@
+<!-- @meta
+{
+  "title": "German VAT number (USt-IdNr): format, check digit and lookup",
+  "description": "DE plus nine digits. How the USt-IdNr differs from the Steuernummer, the Steuer-ID and the Handelsregister number, why no register can be searched by it, and the one free source that can.",
+  "h1": "The German VAT number (USt-IdNr)",
+  "term": "German VAT identification number",
+  "updated": "2026-08-29"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Germany · DE</p>
+        <h1>The German VAT number (USt-IdNr)</h1>
+        <p class="section__lead">
+          Eleven characters that deliberately reveal nothing. The German VAT number is decoupled
+          from every other German company identifier, which is what makes looking one up so hard.
+        </p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>DE</code> + 9 digits (8 digits + 1 check digit)</p>
+        <p><strong>Example:</strong> <code>DE811907980</code></p>
+        <p><strong>Issued by:</strong> the Federal Central Tax Office (BZSt), on application, free of charge.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>
+        A German VAT number (<em>Umsatzsteuer-Identifikationsnummer</em>, USt-IdNr) is always
+        <strong>eleven characters</strong>: the prefix <code>DE</code> and nine digits. The national
+        part never contains letters, spaces or dashes.
+      </p>
+      <ul class="breakdown">
+        <li><b>DE</b><span>The country prefix, identical to the ISO code.</span></li>
+        <li><b>81190798</b><span>Eight digits identifying the taxable person.</span></li>
+        <li><b>0</b><span>The check digit.</span></li>
+      </ul>
+      <p>
+        The check digit follows <strong>ISO/IEC 7064, MOD 11,10</strong>. It catches every
+        single-digit error and most transpositions, and nothing more. A number that checks out
+        arithmetically may never have been issued, or may have been withdrawn years ago.
+      </p>
+
+      <h2 id="identifiers">USt-IdNr, Steuernummer, Steuer-ID, W-IdNr</h2>
+      <p>
+        Germany issues several numbers side by side, and they are routinely confused. Only the first
+        one works for intra-community trade.
+      </p>
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">German tax and company identifiers compared</caption>
+          <thead>
+            <tr><th scope="col">Number</th><th scope="col">Format</th><th scope="col">Issued by</th><th scope="col">Used for</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">USt-IdNr</th><td><code>DE</code> + 9 digits</td><td>BZSt</td>
+              <td>Intra-community supplies of goods and services</td>
+            </tr>
+            <tr>
+              <th scope="row">Steuernummer</th><td>10-13 digits, often with slashes</td><td>The local tax office</td>
+              <td>Domestic tax filings. Changes when the company moves to another tax office</td>
+            </tr>
+            <tr>
+              <th scope="row">Steuer-ID (IdNr)</th><td>11 digits</td><td>BZSt</td>
+              <td>Natural persons, for life. Not a company identifier</td>
+            </tr>
+            <tr>
+              <th scope="row">W-IdNr</th><td><code>DE</code> + 9 digits + a 5-digit suffix</td><td>BZSt, since November 2024</td>
+              <td>Economically active parties. A business that already has a USt-IdNr gets the same nine digits</td>
+            </tr>
+            <tr>
+              <th scope="row">Handelsregister number</th><td><code>HRB</code>/<code>HRA</code> + number + court</td><td>The local court</td>
+              <td>Company law identification. Bears no relation to the USt-IdNr</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <p>
+          <strong>The W-IdNr is the change worth watching.</strong> Since November 2024 every
+          economically active party is issued a business identification number, and for a company
+          that already has a USt-IdNr it is built on the same nine digits: the first credible
+          bridge between the tax world and the company world. It has not reached the public
+          registers yet.
+        </p>
+      </div>
+
+      <h2 id="find">Finding the company behind a number</h2>
+      <p>
+        This is the German problem in one sentence: <strong>no directory can be searched by VAT
+        number.</strong> Neither the Handelsregister nor the Unternehmensregister records it, and it
+        cannot be derived from the HRB number.
+      </p>
+      <h3>Handelsregister and Unternehmensregister</h3>
+      <p>
+        <a href="https://www.handelsregister.de/" rel="noopener">handelsregister.de</a> has been free
+        since August 2022 and returns the company name, legal form, seat, representatives and filed
+        documents. You search by name or registration number, never by VAT number. The same holds
+        for the Unternehmensregister and the Bundesanzeiger.
+      </p>
+      <h3>The BZSt qualified confirmation</h3>
+      <p>
+        Under § 18e UStG the BZSt offers a confirmation request that is, in practice, indispensable
+        for zero-rating an intra-community supply. It works the opposite way round from what you
+        would expect: <strong>it hands out no data.</strong> You supply the name, legal form, town
+        and postcode, and it answers, field by field, only "matches" or "does not match".
+      </p>
+      <p>
+        If you do not already know the name, it gets you nowhere. If you do, it gives you a record
+        you can keep, and for tax purposes that is the point.
+      </p>
+      <h3>VIES</h3>
+      <p>
+        The European Commission's service confirms whether any German number is registered for
+        intra-community trade. <strong>Germany does not disclose the name or the address through
+        VIES</strong>, those fields come back as <code>---</code>. Together with Spain, Germany is one
+        of the two member states where validity is all Europe offers.
+      </p>
+      <h3>The Peppol Directory</h3>
+      <p>
+        One free source is keyed by the USt-IdNr, and it is not a register. In the
+        <strong>Peppol</strong> e-invoicing network, participant scheme <code>9930</code>
+        <em>is</em> the German VAT number, and the whole directory is exported every night. Roughly
+        <strong>10 000 German companies</strong> can be reached by their number that way, a small
+        share of the country, growing as the German e-invoicing mandate phases in through 2028, and
+        the only free path there is from a German VAT number to a company name.
+      </p>
+      <p>
+        Two caveats decide what it is worth. The name is <strong>declared by the participant
+        itself</strong>, not certified by a register, and being reachable on Peppol says nothing
+        about the VAT registration still being live. Treat it as a lead; the BZSt confirmation
+        above is what a tax audit asks for.
+      </p>
+
+      <h2 id="pitfalls">Germany-specific pitfalls</h2>
+      <ul>
+        <li>
+          <strong>A VAT number is not automatic.</strong> It has to be applied for at the BZSt,
+          either during tax registration or later online. A registered German company with no
+          USt-IdNr is entirely normal.
+        </li>
+        <li>
+          <strong>Small businesses under § 19 UStG</strong> can hold a USt-IdNr without charging
+          VAT. Valid does not mean VAT-charging.
+        </li>
+        <li>
+          <strong>The Steuernummer changes, the USt-IdNr does not.</strong> Moving to another tax
+          office district issues a new Steuernummer and leaves the VAT number untouched.
+        </li>
+        <li>
+          <strong>No official path leads from the number to the name.</strong> Not through VIES,
+          not through the confirmation service, not through the registers. The Peppol directory is
+          the practical exception, and it covers a few thousand companies out of millions.
+        </li>
+        <li>
+          <strong>The Impressum is the most practical source.</strong> German law requires
+          commercial websites to publish their VAT number, which is often the only public place
+          where the number and the company name sit side by side.
+        </li>
+      </ul>
+
+            <p>
+        That shows in the answer itself: a name that comes from the Peppol directory is a
+        self-declared business card, so <code>status</code> stays <code>unknown</code> rather than
+        claiming a registration nobody has verified. And a German number that is not in the
+        directory comes back with an empty <code>name</code> and
+        <code>meta.source: &quot;VIES&quot;</code>, empty because saying so beats inventing it.
+      </p>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The German VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a German VAT number have?</summary>
+          <p>
+            Eleven characters: the DE prefix and nine digits, the last of which is a check digit
+            computed under ISO/IEC 7064, MOD 11,10.
+          </p>
+        </details>
+        <details>
+          <summary>What is the difference between the Steuernummer and the USt-IdNr?</summary>
+          <p>
+            The Steuernummer is issued by the local tax office for domestic purposes and changes if
+            the company moves to another tax office. The USt-IdNr is issued by the Federal Central
+            Tax Office for intra-community trade and stays with the business.
+          </p>
+        </details>
+        <details>
+          <summary>Can I find a company name from a German VAT number?</summary>
+          <p>
+            Not from any official German source: Germany discloses neither name nor address
+            through VIES, the qualified confirmation only confirms details you supply yourself, and
+            the registers cannot be searched by VAT number. The one free exception is the Peppol
+            e-invoicing directory, where the German VAT number is itself the participant identifier:
+            some 10 000 companies, self-declared rather than certified.
+          </p>
+        </details>
+        <details>
+          <summary>Where do I apply for a German VAT number?</summary>
+          <p>
+            At the Bundeszentralamt für Steuern, online or as part of registering with the local tax
+            office. It is free.
+          </p>
+        </details>
+        <details>
+          <summary>What is the new Wirtschafts-Identifikationsnummer?</summary>
+          <p>
+            The W-IdNr has been issued since November 2024 to every economically active party. Its
+            format is DE + 9 digits plus a five-digit suffix per activity, and a business that
+            already holds a USt-IdNr receives those same digits.
+          </p>
+        </details>
+        <details>
+          <summary>Why does VIES return no address for Germany?</summary>
+          <p>
+            Because each member state decides whether to disclose the name and address. Germany and
+            Spain do not, and return <code>---</code> in those fields.
+          </p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+            <li><a href="/en/vat-number/italy/">Italy</a></li>
+            <li><a href="/en/vat-number/spain/">Spain</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 29 August 2026.</p>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,15 @@
+<h2 id="vatlas">One API, one response shape</h2>
+<p>
+  {{siteName}} turns a business tax number into a company record: legal name, national
+  identifier, legal form, status and address. {{countryName}}: the same call and the same
+  response as for every other country covered.
+</p>
+{{example}}
+<p><code>meta.source</code> names the register that answered (<code>SIRENE</code>, <code>ARES</code>, <code>VIES</code>…) and <code>meta.sourceDate</code> the day it said so: the publication date of the file for a register we import, the day of the call for one we query live. The shape of the response never changes from one country to the next.</p>
+<div class="callout">
+  <p><strong>Try it on your own numbers.</strong> An email address is all it takes to create an account, with <strong>{{quotaFree}} requests a month</strong> and a working key in about a minute.</p>
+</div>
+<p>
+  <a class="btn btn--primary" href="{{signupUrl}}">Get a free key</a>
+  <a class="btn btn--ghost" href="{{docsUrl}}">Read the documentation</a>
+</p>

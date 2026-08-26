@@ -1,0 +1,129 @@
+# GET /v1/audit - the account's audit trail: what the API answered, and when.
+#
+# Authenticated with the secret key, not metered.
+#
+#   ?vatNumber=   one number's history, or omit for the most recent calls
+#   ?limit=       1 to 100, default 25
+#   ?before=      cursor, meta.nextBefore from the previous page
+#
+# The free plan keeps only the last few answers, the paid plan two years.
+#
+# Run with: VATLAS_KEY=vtl_live_... npx httpyac send http/audit.http --all
+#
+# These assertions expect at least one recorded call, so run http/lookup.http first.
+
+@host = http://localhost:3000
+@secretKey = {{$processEnv VATLAS_KEY}}
+@vat = FR68005420120
+
+###
+
+# @name Recent calls
+# No filter: the account's own history, newest first.
+GET {{host}}/v1/audit?limit=5
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? js response.parsedBody.data.length <= 5
+
+# Example response - 200 OK
+#
+# {
+#   "data": [
+#     {
+#       "publicId": "01a0570f-5f96-77a0-9bf3-b990b0368c0c",
+#       "vatNumber": "FR68005420120",
+#       "fetchedAt": "2026-06-14T09:12:03.000Z",
+#       "httpStatus": 200,
+#       "errorCode": null,
+#       "companyName": "SOCIETE DES SUCRERIES DU MARQUENTERRE",
+#       "kind": "single",
+#       "source": "SIRENE",
+#       "sourceDate": "2026-06-01",
+#       "sources": ["SIRENE"],
+#       "response": { "data": { ... }, "meta": { ... } }
+#     }
+#   ],
+#   "meta": { "count": 1, "nextBefore": null }
+# }
+#
+# `publicId` is a time-ordered UUIDv7, used as the `?before=` cursor. The internal `id` is never
+# exposed.
+#
+# `sources` lists every register the answer was built from.
+#
+# `proof` is copied from the envelope's `meta.proof` so it can be searched. It is absent here
+# because national registers issue no proof.
+#
+# `response` is the envelope exactly as it was sent, error bodies included.
+
+###
+
+# @name One number's history
+# Input is normalized, so case and punctuation do not matter.
+GET {{host}}/v1/audit?vatNumber={{vat}}
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+
+###
+
+# @name Reading it costs no quota
+# X-RateLimit-Remaining is reported but nothing is consumed. A spent quota never blocks access to
+# the audit trail.
+GET {{host}}/v1/audit?limit=1
+Authorization: Bearer {{secretKey}}
+
+?? status == 200
+?? header X-RateLimit-Limit exists
+
+###
+
+# @name A number that is not a number
+# Same error code as the lookup endpoint.
+GET {{host}}/v1/audit?vatNumber=NOTAVAT
+Authorization: Bearer {{secretKey}}
+
+?? status == 400
+?? body error.code == INVALID_VAT_FORMAT
+
+###
+
+# @name A limit nobody meant to type
+# Rejected rather than clamped.
+GET {{host}}/v1/audit?limit=500
+Authorization: Bearer {{secretKey}}
+
+?? status == 400
+?? body error.code == INVALID_QUERY
+
+###
+
+# @name A cursor that is not one
+# Not a `publicId`, rejected before reaching the database.
+GET {{host}}/v1/audit?before=yesterday
+Authorization: Bearer {{secretKey}}
+
+?? status == 400
+?? body error.code == INVALID_QUERY
+
+###
+
+# @name The trail needs a key
+# Requires the secret key like every private endpoint.
+GET {{host}}/v1/audit
+
+?? status == 401
+?? body error.code == MISSING_SECRET_KEY
+?? header WWW-Authenticate == Bearer
+
+###
+
+# @name A cursor that is not yours
+# A well-formed id that belongs to no row of this account is a bad cursor. The answer is the same
+# as for an id that does not exist, so it cannot be used to probe other accounts.
+GET {{host}}/v1/audit?before=00000000-0000-7000-8000-000000000000
+Authorization: Bearer {{secretKey}}
+
+?? status == 400
+?? body error.code == INVALID_QUERY

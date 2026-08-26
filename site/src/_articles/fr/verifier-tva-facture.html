@@ -1,0 +1,163 @@
+<!-- @meta
+{
+  "title": "Vérifier le numéro de TVA d’une facture avant de la payer",
+  "description": "Contrôler que le numéro de TVA d’une facture correspond à une société réelle, active, et à celle qui y est nommée, avant de payer. Trace datée gardée.",
+  "h1": "Vérifier le numéro de TVA d’une facture avant de la payer",
+  "articleType": "TechArticle",
+  "updated": "2026-09-21",
+  "video": {
+    "file": "invoice",
+    "name": "Contrôler le numéro de TVA d’une facture fournisseur",
+    "description": "Le numéro de TVA imprimé sur une facture est interrogé, la société derrière lui s’affiche avec le registre qui a répondu, et un contrôle certifié est classé avec la facture.",
+    "duration": "PT14S"
+  }
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Guide · Comptabilité fournisseurs</p>
+        <h1>Vérifier le numéro de TVA d’une facture avant de la payer</h1>
+        <p class="section__lead">
+          Une facture arrive avec un numéro de TVA dessus. Avant que le paiement soit validé, ce
+          numéro devrait correspondre à une société réelle, et à celle qui est nommée en haut de
+          la page.
+        </p>
+      </div>
+
+      <figure class="demo">
+        <video src="/demos/invoice.mp4" poster="/demos/invoice.jpg" width="1000" height="680"
+               autoplay loop muted playsinline
+               aria-label="Une facture portant un numéro de TVA ; le numéro est interrogé et la société derrière lui s’affiche, avec le registre qui a répondu."></video>
+        <figcaption>Le numéro de la facture, résolu en société avant validation.</figcaption>
+      </figure>
+
+      <h2 id="pourquoi">Ce que le contrôle attrape</h2>
+      <ul>
+        <li><strong>Un numéro qui n’appartient à personne.</strong> Inventé, mal saisi, ou repris d’une société radiée depuis des années.</li>
+        <li><strong>Un numéro qui appartient à quelqu’un d’autre.</strong> Un vrai numéro, valide, recopié depuis un fournisseur légitime sur une facture émise par quelqu’un qui l’usurpe.</li>
+        <li><strong>Une société qui n’est plus active.</strong> Le registre la dit fermée. La facture, non.</li>
+        <li><strong>Une facture exonérée qu’il faudra justifier.</strong> L’exonération intracommunautaire repose sur la validité du numéro au jour de l’opération.</li>
+      </ul>
+      <p>
+        Une clé de contrôle n’attrape rien de tout cela. La clé d’une société dissoute reste
+        correcte, et celle d’un numéro appartenant à une autre société que celle de l’en-tête
+        aussi.
+      </p>
+
+      <h2 id="appel">Un appel</h2>
+      <p>
+        Prenez le numéro sur la facture, interrogez-le, comparez ce qui revient à ce qui est
+        imprimé.
+      </p>
+      <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-str">&quot;{{apiBase}}/v1/lookup/FR68005420120&quot;</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">&quot;Authorization: Bearer $VATLAS_KEY&quot;</span></code></pre>
+      </div>
+      <p>
+        La réponse porte <code>name</code>, <code>legalForm</code>, <code>address</code> et
+        <code>status</code>, plus un bloc <code>meta</code> qui nomme le registre ayant répondu et
+        la date à laquelle il l’a dit.
+      </p>
+      <p>
+        Trois issues méritent d’être distinguées à l’écran : le numéro résout et le nom
+        correspond, il résout vers une autre société, ou il ne résout pas. Seule la première peut
+        se valider toute seule.
+      </p>
+      <p>
+        Les noms correspondent rarement caractère pour caractère. <em>SARL</em> face à
+        <em>S.A.R.L.</em>, un nom commercial face à une raison sociale. Comparez souplement,
+        envoyez les quasi-correspondances à un humain, et ne bloquez que sur un écart net.
+      </p>
+
+      <h2 id="preuve">Garder la preuve</h2>
+      <p>
+        Accepter une facture qui ne facture pas de TVA est une décision qu’il faudra peut-être
+        justifier des années plus tard. Demandez un contrôle documenté au moment où vous la
+        prenez :
+      </p>
+      <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-str">&quot;{{apiBase}}/v1/lookup/FR68005420120?prefer=proof&quot;</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">&quot;Authorization: Bearer $VATLAS_KEY&quot;</span></code></pre>
+      </div>
+      <p>
+        Chaque appel est aussi conservé sur votre compte avec sa date et sa réponse brute, relisible
+        par <a href="{{docsUrl}}#audit">le point d’entrée d’audit</a>. C’est la trace datée qu’un
+        contrôleur réclame, sans avoir à construire votre propre journal.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>Vérifiez au moment de la décision.</strong> Une réponse mise en cache le
+          trimestre dernier est un confort, pas un contrôle. Des sociétés ferment entre la commande
+          et la facture.
+        </p>
+      </div>
+
+      <h2 id="recurrent">Les fournisseurs payés tous les mois</h2>
+      <p>
+        Un fournisseur vérifié une fois ne le reste pas. {{siteName}} peut surveiller les sociétés
+        que vous connaissez déjà et vous rappeler quand un registre change d’avis sur l’une
+        d’elles : voir <a href="{{docsUrl}}#monitor">le point d’entrée de surveillance</a>. La
+        correction tombe alors avant la prochaine campagne de paiement, et pas pendant un contrôle.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2>Contrôler le numéro de TVA d’une facture, en bref</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Une clé de contrôle valide ne suffit-elle pas ?</summary>
+          <p>
+            Non. Une clé de contrôle dit que le numéro est bien formé. Elle ne dit pas si une
+            société existe derrière, si elle est encore active, ni si c’est celle de la facture.
+          </p>
+        </details>
+        <details>
+          <summary>Et si le nom revient vide ?</summary>
+          <p>
+            Quelques États membres publient la validité et pas le nom. Le numéro est confirmé, la
+            comparaison ne peut pas se faire, et la facture demande un humain. C’est une issue à
+            part entière, pas un échec.
+          </p>
+        </details>
+        <details>
+          <summary>Est-ce que cela prouve que la facture est authentique ?</summary>
+          <p>
+            Cela prouve que le numéro correspond à une société, et dit laquelle. Cela écarte toute
+            une famille de fausses factures. Cela ne dit pas que la marchandise a été livrée ni que
+            le RIB est celui du fournisseur.
+          </p>
+        </details>
+        <details>
+          <summary>Puis-je contrôler les numéros de mes clients pareillement ?</summary>
+          <p>
+            Oui, et l’enjeu y est plus grand. Si vous exonérez une vente vers un numéro qui se
+            révèle invalide, la TVA est à votre charge. Même appel, preuve gardée de la même façon.
+          </p>
+        </details>
+        <details>
+          <summary>Jusqu’où remonte la trace ?</summary>
+          <p>
+            Vos interrogations sont conservées sur votre compte avec leur date et leur réponse
+            brute, et se relisent par <a href="{{docsUrl}}#audit">le point d’entrée d’audit</a>.
+          </p>
+        </details>
+      </div>
+
+      <h2>À lire ensuite</h2>
+      <ul class="otherlinks">
+        <li><a href="/fr/guides/enrichir-un-crm-avec-les-numeros-tva/">Enrichir un CRM avec les numéros de TVA</a></li>
+        <li><a href="/fr/guides/pre-remplir-formulaire-societe-numero-tva/">Pré-remplir un formulaire société</a></li>
+        <li><a href="{{docsUrl}}">Documentation de l’API</a></li>
+        <li><a href="{{pricingUrl}}">Tarifs</a></li>
+      </ul>
+      <p class="updated">Mis à jour le 21 septembre 2026.</p>
+    </div>
+  </section>
+</main>

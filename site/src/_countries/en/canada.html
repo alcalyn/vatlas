@@ -1,0 +1,109 @@
+<!-- @meta
+{
+  "title": "Canadian GST/HST number: format, check digit and lookup",
+  "description": "CA plus nine digits, and RT0001 on the invoice. What a business number is, how its check digit works, and how to find the company behind one.",
+  "h1": "The Canadian business number",
+  "term": "Business Number / GST/HST account",
+  "updated": "2026-09-15"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Canada · CA</p>
+        <h1>The Canadian business number</h1>
+        <p class="section__lead">Canada charges GST/HST, and the number on an invoice is a business number followed by <code>RT0001</code>. The nine digits in front of it are the business; the rest is one of its accounts with the tax authority.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>CA</code> + 9 digits, optionally + <code>RT0001</code></p>
+        <p><strong>Example:</strong> <code>CA100768779RT0001</code></p>
+        <p><strong>Issued by:</strong> the Canada Revenue Agency (CRA).</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Canadian tax number on an invoice is written in two halves:</p>
+      <ul class="breakdown">
+        <li><b>123456789</b><span>The <strong>business number</strong> (BN): nine digits, one per business, whatever it does and wherever it does it.</span></li>
+        <li><b>RT0001</b><span>The <strong>program account</strong>: two letters saying which tax, four digits saying which account of that kind.</span></li>
+      </ul>
+      <p>The letters are worth knowing, because only one of them is the sales tax:</p>
+      <ul class="breakdown">
+        <li><b>RT</b><span>GST/HST, the one that appears on an invoice.</span></li>
+        <li><b>RP</b><span>Payroll deductions.</span></li>
+        <li><b>RC</b><span>Corporate income tax.</span></li>
+        <li><b>RM</b><span>Import/export.</span></li>
+      </ul>
+      <p>The ninth digit is a <strong>Luhn check</strong>, the same rule a bank card number follows, so a mistyped business number can be caught before any network call, like a French key or a Polish NIP.</p>
+      <p>{{siteName}} accepts either spelling. <code>CA100768779RT0001</code> and <code>CA100768779</code> are the same company, and the program account is dropped before the number is looked up, so both return the same record.</p>
+
+      <h2 id="registration">A business number is not a GST registration</h2>
+      <p>This is the Canadian trap, and it has no European equivalent. A business can hold a business number and not be registered for GST/HST at all: registration is only compulsory above <strong>30,000 CAD</strong> of taxable supplies, and a smaller supplier may register voluntarily or not at all. So the nine digits identify the business; whether an <code>RT</code> account exists behind them is a separate fact.</p>
+      <p>Quebec adds a second number. The provincial sales tax there, the QST, is administered by Revenu Québec, and a Quebec supplier quotes a QST number of its own alongside the federal one. They are two registrations, with two numbers, and neither is derivable from the other.</p>
+
+      <h2 id="find">Finding the company behind the number</h2>
+      <h3>Corporations Canada</h3>
+      <p>Corporations Canada, the federal registrar, publishes its whole register as open data: one archive, no account, no key, under the Open Government Licence. It holds <strong>1.59 million corporations</strong>, of which <strong>1.47 million carry a business number</strong>, and that number is what makes the file reachable by what is written on an invoice.</p>
+      <p>It is what {{siteName}} imports, so a Canadian lookup is a database read rather than a call to Ottawa.</p>
+      <h3>What the register does and does not contain</h3>
+      <p>It contains the corporate name in force, the registered office, the corporation's status, the statute it exists under (the Canada Business Corporations Act, the Not-for-profit Corporations Act, the Cooperatives Act) and the whole history of each of those, dated.</p>
+      <p>What it does not contain is <strong>any corporation that is not federal</strong>. A company incorporated in Ontario, Quebec or British Columbia holds a business number like any other and is registered with its province, not with Corporations Canada, so it is absent from this file. The provincial registries publish their own numbers and cannot be keyed by a business number, which is why nothing fills that gap here.</p>
+      <h3>The CRA's own registry</h3>
+      <p>The CRA runs a GST/HST Registry, and it answers a different question from the one asked here: you supply the first nine digits, <em>the exact legal name</em> and a transaction date, and it confirms whether that account was registered on that day. It confirms; it does not tell you who the number belongs to, and it has no API.</p>
+
+      <h2 id="pitfalls">Canada-specific pitfalls</h2>
+      <ul>
+        <li><strong>A business number is not proof of GST registration.</strong> Below 30,000 CAD a year, registering is optional.</li>
+        <li><strong>Federal corporations only.</strong> Provincially incorporated companies are in their province's register, not in this one.</li>
+        <li><strong>Quebec suppliers have two numbers.</strong> The QST number is Revenu Québec's and is not built from the business number.</li>
+        <li><strong>The program account is not the company.</strong> <code>RT0001</code>, <code>RP0001</code> and <code>RC0001</code> are three accounts of one business.</li>
+        <li><strong>"Intent to dissolve" is still active.</strong> A corporation with a dissolution pending exists and still charges tax.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The business number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a business number have?</summary>
+          <p>Nine, the last of which is a Luhn check digit. The <code>RT0001</code> that follows it on an invoice is the GST/HST account, not part of the business number.</p>
+        </details>
+        <details>
+          <summary>What does RT0001 mean?</summary>
+          <p><code>RT</code> is the GST/HST program and <code>0001</code> is the first account of that kind. <code>RP</code> is payroll, <code>RC</code> corporate income tax, <code>RM</code> import/export.</p>
+        </details>
+        <details>
+          <summary>Does a business number mean the company charges GST?</summary>
+          <p>No. Registration is compulsory above 30,000 CAD of taxable supplies and optional below it, so a business number on its own proves identity, not registration.</p>
+        </details>
+        <details>
+          <summary>Are provincial companies covered?</summary>
+          <p>Not by the federal register. A company incorporated in Ontario, Quebec or British Columbia is registered with its province, and its provincial registry cannot be searched by business number.</p>
+        </details>
+        <details>
+          <summary>Can I download the Canadian register for free?</summary>
+          <p>Yes. Corporations Canada publishes the federal register as one open archive, with no account and no key, under the Open Government Licence.</p>
+        </details>
+      </div>
+
+      <h2>Business numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/australia/">Australia</a></li>
+        <li><a href="/en/vat-number/brazil/">Brazil</a></li>
+        <li><a href="/en/vat-number/japan/">Japan</a></li>
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/peru/">Peru</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 15 September 2026.</p>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,113 @@
+<!-- @meta
+{
+  "title": "Nederlands btw-nummer: btw-id, RSIN en het KVK-nummer",
+  "description": "NL plus negen cijfers, een B en twee cijfers. Waarom het btw-id sinds 2020 losgekoppeld is van het RSIN, en hoe u de onderneming erachter vindt.",
+  "h1": "Het Nederlandse btw-nummer",
+  "term": "Nederlands btw-identificatienummer",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Nederland · NL</p>
+        <h1>Het Nederlandse btw-nummer</h1>
+        <p class="section__lead">Veertien tekens met een B in het midden. Sinds 2020 zijn het er bovendien twee: een btw-id voor de buitenwereld en een omzetbelastingnummer voor de Belastingdienst.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Formaat:</strong> <code>NL</code> + 9 cijfers + <code>B</code> + 2 cijfers</p>
+        <p><strong>Voorbeeld:</strong> <code>NL001631457B01</code></p>
+        <p><strong>Toegekend door:</strong> de Belastingdienst.</p>
+      </div>
+
+      <h2 id="formaat">De opbouw</h2>
+      <p>Een Nederlands btw-identificatienummer telt altijd <strong>veertien tekens</strong>. De <code>B</code> staat vast; het is het enige EU-nummer met een letter midden in het nationale deel.</p>
+      <ul class="breakdown">
+        <li><b>NL</b><span>De landcode.</span></li>
+        <li><b>001631457</b><span>Negen cijfers: het RSIN, of bij eenmanszaken een apart toegekend nummer.</span></li>
+        <li><b>B</b><span>Vaste letter.</span></li>
+        <li><b>01</b><span>Volgnummer, doorgaans 01.</span></li>
+      </ul>
+      <p>De laatste twee cijfers zijn een volgnummer, geen controlegetal: ze onderscheiden meerdere btw-registraties van dezelfde rechtspersoon. In de praktijk staat er vrijwel altijd <code>01</code>.</p>
+
+      <h2 id="btw-id">Btw-id, omzetbelastingnummer, RSIN en KVK</h2>
+      <p>Nederland is het land met de meeste verwarring rond nummers, en dat is sinds 2020 alleen maar toegenomen.</p>
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">De Nederlandse ondernemingsnummers vergeleken</caption>
+          <thead><tr><th scope="col">Nummer</th><th scope="col">Formaat</th><th scope="col">Uitgegeven door</th><th scope="col">Waarvoor</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Btw-id</th><td><code>NL</code> + 9 cijfers + <code>B</code> + 2</td><td>Belastingdienst</td><td>Naar buiten: facturen, website, EU-handel</td></tr>
+            <tr><th scope="row">Omzetbelastingnummer</th><td>9 cijfers + <code>B</code> + 2</td><td>Belastingdienst</td><td>Alleen richting de Belastingdienst; nooit publiek</td></tr>
+            <tr><th scope="row">RSIN</th><td>9 cijfers</td><td>KVK</td><td>Koppelt de rechtspersoon tussen overheidsregisters. Eenmanszaken hebben er geen</td></tr>
+            <tr><th scope="row">KVK-nummer</th><td>8 cijfers</td><td>KVK</td><td>Inschrijving in het Handelsregister</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout"><p><strong>De splitsing van 2020 is de kern.</strong> Tot dan bevatte het btw-nummer van een eenmanszaak het burgerservicenummer van de ondernemer, dat daarmee op elke factuur en elke website stond. De Autoriteit Persoonsgegevens greep in; sindsdien is er een publiek btw-id zonder BSN, en een apart omzetbelastingnummer voor de Belastingdienst.</p></div>
+      <p>Voor rechtspersonen zijn de negen cijfers van het btw-id gelijk aan het RSIN. Voor eenmanszaken zijn ze willekeurig toegekend en niet uit enig ander nummer af te leiden.</p>
+
+      <h2 id="opzoeken">De onderneming achter een nummer vinden</h2>
+      <h3>Het Handelsregister van de KVK</h3>
+      <p>De KVK houdt het volledige Handelsregister bij, maar <strong>verkoopt haar gegevens</strong>: uittreksels kosten geld en er is geen gratis volledig bestand. Bovendien is het register doorzoekbaar op naam en KVK-nummer, niet op btw-nummer, en sinds de ontkoppeling van 2020 is er ook geen betrouwbare rekenkundige brug meer tussen beide.</p>
+      <h3>VIES</h3>
+      <p>Hier valt het mee: Nederland <strong>geeft via VIES zowel de naam als het adres vrij</strong>. Een controle van <code>NL001631457B01</code> levert HEINEKEN N.V. op, met straat en postcode. Daarmee is VIES voor Nederlandse nummers de enige gratis weg van nummer naar onderneming.</p>
+      <p>Let op de schrijfwijze van het adres: het huisnummer wordt met nullen opgevuld (<code>00021</code>) en de postcode staat zonder spatie aan de plaatsnaam vast (<code>1017ZD AMSTERDAM</code>).</p>
+
+      <h2 id="valkuilen">Nederlandse bijzonderheden</h2>
+      <ul>
+        <li><strong>Zet nooit het omzetbelastingnummer op een factuur.</strong> Het is het nummer dat het BSN kan bevatten; het btw-id is het publieke nummer.</li>
+        <li><strong>De <code>B</code> is verplicht.</strong> Negen cijfers zonder B is geen btw-nummer.</li>
+        <li><strong>Het RSIN is geen btw-nummer</strong> en een eenmanszaak heeft er zelfs helemaal geen.</li>
+        <li><strong>De KVK verkoopt haar register</strong>, dus een eigen bestand opbouwen kan niet gratis.</li>
+        <li><strong>Het volgnummer is bijna altijd 01</strong>, maar 02 en hoger bestaan bij fiscale eenheden en herregistraties.</li>
+      </ul>
+
+      <!-- @include partials/country/nl.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Veelgestelde vragen</p>
+        <h2>Het btw-nummer in het kort</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Hoeveel tekens telt een Nederlands btw-nummer?</summary>
+          <p>Veertien: <code>NL</code>, negen cijfers, de letter <code>B</code> en twee cijfers.</p>
+        </details>
+        <details>
+          <summary>Wat is het verschil tussen btw-id en omzetbelastingnummer?</summary>
+          <p>Het btw-id is het publieke nummer, bedoeld voor facturen, uw website en EU-handel. Het omzetbelastingnummer gebruikt u uitsluitend in contact met de Belastingdienst; het kan uw BSN bevatten en hoort nergens publiek te staan.</p>
+        </details>
+        <details>
+          <summary>Is het RSIN hetzelfde als het btw-nummer?</summary>
+          <p>Voor rechtspersonen zijn de negen cijfers van het btw-id gelijk aan het RSIN, maar het btw-nummer is er niet toe te herleiden zonder de <code>B01</code>. Eenmanszaken hebben helemaal geen RSIN.</p>
+        </details>
+        <details>
+          <summary>Waarom is het btw-nummer in 2020 gewijzigd?</summary>
+          <p>Omdat het btw-nummer van een eenmanszaak het burgerservicenummer bevatte en daarmee op elke factuur stond. De Autoriteit Persoonsgegevens noemde dat onrechtmatig; sindsdien bestaat het aparte btw-id.</p>
+        </details>
+        <details>
+          <summary>Kan ik de naam van een bedrijf achterhalen via het btw-nummer?</summary>
+          <p>Ja, via VIES: Nederland geeft naam en adres vrij. Het Handelsregister van de KVK is niet op btw-nummer doorzoekbaar en de uittreksels zijn betaald.</p>
+        </details>
+      </div>
+
+      <h2>Het btw-nummer in andere landen</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+            <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+            <li><a href="/nl/btw-nummer/belgie/">België</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Bijgewerkt op 28 augustus 2026.</p>
+    </div>
+  </section>
+</main>

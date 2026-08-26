@@ -1,0 +1,115 @@
+<!-- @meta
+{
+  "title": "Polish VAT number: NIP, REGON, KRS and the White List",
+  "description": "PL plus the ten-digit NIP. How it differs from REGON and KRS, how the check digit works, and how the Ministry of Finance White List resolves it.",
+  "h1": "The Polish VAT number (NIP)",
+  "term": "Polish VAT identification number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Poland · PL</p>
+        <h1>The Polish VAT number (NIP)</h1>
+        <p class="section__lead">The NIP with a PL in front, and behind it the White List: a free API keyed by that number which answers with the company, its VAT status, and the bank accounts it declared to the tax office.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>PL</code> + 10 digits (the NIP)</p>
+        <p><strong>Example:</strong> <code>PL5250007307</code>, NIP <code>525-000-73-07</code></p>
+        <p><strong>Issued by:</strong> the National Revenue Administration.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Polish EU VAT number is always <strong>twelve characters</strong>: the prefix and the ten digits of the NIP, with the hyphens removed.</p>
+      <ul class="breakdown">
+        <li><b>PL</b><span>The country code.</span></li>
+        <li><b>525</b><span>The first three digits: the historic tax office code.</span></li>
+        <li><b>000730</b><span>The taxpayer part.</span></li>
+        <li><b>7</b><span>The check digit.</span></li>
+      </ul>
+      <p>The check digit is computed modulus 11 with weights 6, 5, 7, 2, 3, 4, 5, 6, 7. A remainder of 10 makes the number invalid: such a NIP cannot exist. The first three digits used to identify the tax office; they no longer mean much in practice, because the NIP does not change when a business moves.</p>
+
+      <h2 id="numbers">NIP, REGON and KRS</h2>
+      <p>Poland runs three numbers, each from a different register.</p>
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Polish identifiers compared</caption>
+          <thead><tr><th scope="col">Number</th><th scope="col">Format</th><th scope="col">Issued by</th><th scope="col">Used for</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">NIP</th><td>10 digits</td><td>Revenue administration</td><td>Tax, VAT included. The only one that belongs on an EU invoice</td></tr>
+            <tr><th scope="row">REGON</th><td>9 or 14 digits</td><td>Central Statistical Office</td><td>Official statistics; 14 digits for a local unit</td></tr>
+            <tr><th scope="row">KRS</th><td>10 digits</td><td>Registry court</td><td>Entry in the National Court Register. Sole traders have none</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>None converts into another. The EU VAT number is built only on the NIP, and every taxpayer has a NIP, including one that is not an active VAT payer.</p>
+
+      <h2 id="find">Finding the company</h2>
+      <h3>The White List of VAT taxpayers</h3>
+      <p>This is Poland’s great strength. The Ministry of Finance runs a <strong>free, public API</strong> keyed by NIP that returns the name, address, VAT status, REGON, KRS and the bank accounts declared to the tax office. The answer is registry-grade, reliable enough to be worth storing.</p>
+      <p>The bank accounts carry legal weight: a payment above the threshold to an account not on the White List costs the buyer the deduction and can make them jointly liable. Checking the list is not a formality.</p>
+      <p>Watch the trap: <strong>the published flat file contains only hashes of NIP-account pairs</strong>, with no name and no address. It is useless for building your own directory; the API is what counts.</p>
+      <h3>KRS and CEIDG</h3>
+      <p>KRS offers a free API for companies, CEIDG for sole traders. Both search by their own number or by NIP.</p>
+      <h3>VIES</h3>
+      <p>Poland <strong>discloses name and address</strong> through VIES, but the address arrives as one unsplit string, with no separate postcode or city.</p>
+
+      <h2 id="pitfalls">Poland-specific pitfalls</h2>
+      <ul>
+        <li><strong>Strip the hyphens.</strong> The NIP is written <code>525-000-73-07</code>, but an EU VAT number never contains them.</li>
+        <li><strong>Holding a NIP is not the same as being an active VAT payer.</strong> Every taxpayer has a NIP; only active payers registered for intra-community transactions reach VIES.</li>
+        <li><strong>EU VAT registration is a separate step.</strong> An active VAT payer who has not filed the VAT-UE registration will not validate.</li>
+        <li><strong>The White List flat file is useless for lookup</strong>: it holds nothing but hashes.</li>
+        <li><strong>The VIES address is one string</strong>, so postcode and city cannot be split out of it with confidence.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Polish VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Polish VAT number have?</summary>
+          <p>Ten after the <code>PL</code> prefix, twelve characters in total.</p>
+        </details>
+        <details>
+          <summary>Are the NIP and the EU VAT number the same?</summary>
+          <p>The digits are. The EU VAT number is the NIP with <code>PL</code> in front, but it exists only once the business has registered for intra-community transactions.</p>
+        </details>
+        <details>
+          <summary>How do NIP, REGON and KRS differ?</summary>
+          <p>The NIP comes from the revenue administration and is for tax. REGON comes from the Central Statistical Office and is for statistics. KRS is the court register entry number, which sole traders do not have at all.</p>
+        </details>
+        <details>
+          <summary>What is the White List of VAT taxpayers?</summary>
+          <p>A public register published by the Ministry of Finance with a free API. Keyed by NIP, it returns the name, address, VAT status and declared bank accounts, and paying an account that is not on the list has real tax consequences.</p>
+        </details>
+        <details>
+          <summary>Why does VIES reject an active Polish VAT payer?</summary>
+          <p>Because domestic VAT registration and EU VAT registration are two different things. Without the second, the number does not appear in VIES.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/germany/">Germany</a></li>
+        <li><a href="/en/vat-number/italy/">Italy</a></li>
+        <li><a href="/en/vat-number/spain/">Spain</a></li>
+        <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+        <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

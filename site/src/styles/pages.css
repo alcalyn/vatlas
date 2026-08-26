@@ -1,0 +1,1501 @@
+/* -- Hero -- */
+.hero {
+  position: relative;
+  padding-block: var(--sp-8) var(--sp-7);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero__inner {
+  display: grid;
+  gap: var(--sp-7);
+  align-items: center;
+}
+
+@media (min-width: 980px) {
+  .hero__inner {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+}
+
+.hero__title span {
+  display: block;
+}
+
+.hero__lead {
+  color: var(--text-muted);
+  font-size: var(--step-1);
+  margin-top: var(--sp-5);
+  max-width: 52ch;
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  margin-top: var(--sp-6);
+}
+
+/* Stats strip */
+.stats {
+  display: grid;
+  gap: var(--sp-5) var(--sp-6);
+  grid-template-columns: repeat(2, 1fr);
+  padding-block: var(--sp-5);
+  border-block: 1px solid var(--border);
+}
+
+/* No borders on the home strip. The benchmark tables keep theirs to separate runs. */
+.stats--home {
+  border-block: 0;
+}
+
+@media (min-width: 860px) {
+  .stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stats--home {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Five tiles in two columns: the last one takes the full width. */
+.stats--home .stat:last-child {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 860px) {
+  .stats--home .stat:last-child {
+    grid-column: auto;
+  }
+}
+
+.stat__value {
+  font-size: var(--step-2);
+  font-weight: 600;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.stat__label {
+  font-size: var(--step--1);
+  color: var(--text-muted);
+  max-width: 26ch;
+}
+
+/* -- Try it -- */
+.tryit {
+  background: var(--bg-soft);
+}
+
+.tryit__panel {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.tryit__form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  padding: var(--sp-5);
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+
+.tryit__input {
+  flex: 1 1 240px;
+  min-width: 0;
+  height: 2.6rem;
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: var(--step-0);
+  padding: 0 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+.tryit__form .btn {
+  height: 2.6rem;
+  padding-block: 0;
+}
+
+/* The panel shows one call at a time, so the button that made it stays highlighted. All three are
+   ghost buttons and the active one is filled. */
+.tryit__form .btn[aria-pressed='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.tryit__form .btn[aria-pressed='true']:hover {
+  background: var(--accent-hover);
+  color: var(--accent-contrast);
+}
+
+.tryit__input::placeholder {
+  color: var(--text-dim);
+}
+
+.tryit__input:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.tryit__samples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  padding: var(--sp-4) var(--sp-5) var(--sp-5);
+  align-items: center;
+}
+
+/* Filled by tryit.js from demo-data.js. */
+.tryit__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.tryit__samples-label {
+  font-size: var(--step--1);
+  color: var(--text-dim);
+  margin-right: var(--sp-1);
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 0.28rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.chip:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.tryit__result {
+  border-top: 1px solid var(--border);
+}
+
+.tryit__status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-5);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+/* The tabs sit between the status bar and the panes, so switching does not move the status bar. */
+.tryit__tabs .tabs__list {
+  margin: 0;
+  /* Space below the tabs too, so the dark JSON pane does not touch them. */
+  padding: var(--sp-3) var(--sp-5);
+}
+
+/* The raw JSON keeps the dark code palette in both themes. The formatted answer follows the theme. */
+.tryit__output {
+  padding: var(--sp-5);
+  overflow-x: auto;
+  margin: 0;
+  min-height: 180px;
+  background: var(--code-bg);
+  color: var(--code-text);
+}
+
+.tryit__answer {
+  padding: 0 var(--sp-5) var(--sp-5);
+  min-height: 180px;
+}
+
+.tryit__error,
+.answer__error {
+  margin: 0;
+  color: var(--danger);
+}
+
+/* -- Formatted answer -- */
+
+/* The verdict band: green with a check mark for active. A neutral verdict gets no color.
+
+   The register's badge is on the same line as the verdict. */
+.verdict {
+  padding: var(--sp-3) var(--sp-4);
+  margin-bottom: var(--sp-4);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+
+.verdict__line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.verdict__mark {
+  display: flex;
+  color: var(--text-dim);
+}
+
+.verdict__label {
+  font-weight: 600;
+  font-size: var(--step-1);
+}
+
+.verdict__why {
+  margin: var(--sp-2) 0 0;
+  color: var(--text-muted);
+  font-size: var(--step--1);
+}
+
+.verdict--ok {
+  border-color: var(--success);
+}
+.verdict--ok .verdict__mark,
+.verdict--ok .verdict__label {
+  color: var(--success);
+}
+
+.verdict--bad {
+  border-color: var(--danger);
+}
+.verdict--bad .verdict__mark,
+.verdict--bad .verdict__label {
+  color: var(--danger);
+}
+
+.verdict--warn {
+  border-color: var(--warning);
+}
+.verdict--warn .verdict__mark,
+.verdict--warn .verdict__label {
+  color: var(--warning);
+}
+
+/* The company record: name as heading, legal form below, then identifiers, then the address as
+   written on an envelope. */
+.card__name {
+  font-size: var(--step-2);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.card__name--none {
+  font-size: var(--step-0);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-dim);
+}
+
+.card__form {
+  margin: 0.15rem 0 0;
+  color: var(--text-muted);
+  font-size: var(--step--1);
+}
+
+.card__ids {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2) var(--sp-5);
+  margin-top: var(--sp-3);
+  font-size: var(--step--1);
+}
+
+.card__id b {
+  color: var(--text-dim);
+  font-weight: 600;
+  margin-right: 0.3rem;
+}
+
+.card__id code {
+  font-family: var(--font-mono);
+}
+
+.card__block {
+  margin-top: var(--sp-4);
+}
+
+.card__block h4,
+.card__meta h4 {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-dim);
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+}
+
+.card__block address {
+  font-style: normal;
+  line-height: 1.6;
+}
+
+/* The consultation number, set apart with the accent color (the one hue not used by the verdict
+   tones), so it does not read as a fourth status. */
+.proof {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+  padding: var(--sp-4);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+}
+
+.proof__mark {
+  display: flex;
+  color: var(--accent);
+}
+
+.proof__body {
+  min-width: 0;
+}
+
+.proof__label {
+  margin: 0;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Long values wrap instead of widening the panel, and select in one gesture. */
+.proof__value {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--step-0);
+  word-break: break-all;
+  user-select: all;
+}
+
+.proof__hint {
+  margin: var(--sp-2) 0 0;
+  font-size: var(--step--1);
+  color: var(--text-muted);
+}
+
+.card__meta {
+  margin-top: var(--sp-5);
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--border);
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2) var(--sp-4);
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}
+
+.facts b {
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-right: 0.3rem;
+}
+
+/* One panel per register. */
+.sources {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.source {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--sp-4);
+}
+
+/* The register name first and largest, with a small prefix caption. */
+.source__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-2);
+}
+
+.source__prefix {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.source__id {
+  font-family: var(--font-mono);
+  font-size: var(--step-1);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.source__name {
+  font-size: var(--step--1);
+}
+
+/* The timeline rail.
+
+   Each item draws its own segment below its node, and the last item draws none, so the line runs
+   from the first dot to the last. A border on the <ol> would overshoot at both ends.
+
+   Every offset is derived from --tl-dot and --tl-gutter. */
+.timeline {
+  --tl-dot: 12px;
+  --tl-gutter: var(--sp-5);
+  --tl-head: 1.25rem;
+  list-style: none;
+  margin: var(--sp-3) 0 0;
+  padding: 0;
+}
+
+.timeline__item {
+  position: relative;
+  padding: 0 0 var(--sp-5) var(--tl-gutter);
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+/* The node, centered on the first line of the entry head and colored by the plateau's status. */
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: calc((var(--tl-head) - var(--tl-dot)) / 2);
+  width: var(--tl-dot);
+  height: var(--tl-dot);
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--border-strong);
+}
+
+/* The segment from this node to the next. */
+.timeline__item::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: var(--border);
+  left: calc(var(--tl-dot) / 2 - 1px);
+  top: calc((var(--tl-head) - var(--tl-dot)) / 2 + var(--tl-dot));
+  bottom: 0;
+}
+
+.timeline__item:last-child::after {
+  display: none;
+}
+
+/* The current entry: filled instead of hollow. */
+.timeline__item--latest::before {
+  background: var(--border-strong);
+}
+.timeline__item--latest.timeline__item--ok::before {
+  background: var(--success);
+}
+.timeline__item--latest.timeline__item--bad::before {
+  background: var(--danger);
+}
+.timeline__item--latest.timeline__item--warn::before {
+  background: var(--warning);
+}
+
+.timeline__item--ok::before {
+  border-color: var(--success);
+}
+.timeline__item--bad::before {
+  border-color: var(--danger);
+}
+.timeline__item--warn::before {
+  border-color: var(--warning);
+}
+
+.timeline__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: var(--tl-head);
+  margin-bottom: var(--sp-2);
+}
+
+.timeline__when {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* The file a plateau was read from, as a small footnote. One row per part, and long URLs may
+   break. */
+.plateau__file {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.1rem var(--sp-2);
+  margin: var(--sp-4) 0 0;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+.plateau__file dt {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.plateau__file dt::after {
+  content: ' :';
+}
+
+.plateau__file dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* What changed, shown as a diff. The margin separates it from the card above on the current
+   entry. */
+.diffs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-top: var(--sp-5);
+}
+
+.diffs__head {
+  margin: 0 0 0.1rem;
+  font-size: var(--step--1);
+  color: var(--text-muted);
+}
+
+.diffs__head b {
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Entries that are only a diff keep their top edge. */
+.timeline__body > .diffs:first-child {
+  margin-top: 0;
+}
+
+.diff__field {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  font-weight: 700;
+}
+
+.diff__values {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-size: var(--step--1);
+  align-items: flex-start;
+}
+
+.diff del,
+.diff ins {
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.diff del::before,
+.diff ins::before {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  margin-right: 0.4rem;
+  opacity: 0.7;
+}
+
+.diff del {
+  color: var(--danger);
+  background: color-mix(in srgb, var(--danger) 10%, transparent);
+  text-decoration: line-through;
+}
+
+.diff del::before {
+  content: '−';
+}
+
+.diff ins {
+  color: var(--success);
+  background: color-mix(in srgb, var(--success) 12%, transparent);
+}
+
+.diff ins::before {
+  content: '+';
+}
+
+/* A field that was removed: not colored as an addition. */
+.diff ins.diff--none {
+  color: var(--text-dim);
+  background: none;
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .card__ids,
+  .facts {
+    gap: var(--sp-2) var(--sp-3);
+  }
+}
+
+/* The line under the panel: the cost of the answer, or that it was a recorded sample. */
+.tryit__hint {
+  padding: var(--sp-4) var(--sp-5) var(--sp-5);
+  font-size: var(--step--1);
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.tryit__hint a {
+  color: var(--accent);
+}
+
+/* -- Use cases -- */
+/* One row per use case. From 860px the title has its own column, so the paragraphs align. */
+.usecases {
+  border-top: 1px solid var(--border);
+}
+
+.usecase {
+  display: grid;
+  gap: var(--sp-3);
+  padding-block: var(--sp-5);
+  border-bottom: 1px solid var(--border);
+}
+
+@media (min-width: 860px) {
+  .usecase {
+    grid-template-columns: minmax(0, 20ch) minmax(0, 62ch);
+    gap: var(--sp-6);
+    align-items: baseline;
+    padding-block: var(--sp-6);
+  }
+}
+
+.usecase__title {
+  font-size: var(--step-1);
+}
+
+.usecase__text {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* -- Coverage table -- */
+/* The detail column is secondary: width capped in `ch` and dimmed. Below the table's min-width,
+   `.table-wrap` scrolls. */
+.table--coverage {
+  min-width: 640px;
+}
+
+.table--coverage td:last-child {
+  max-width: 34ch;
+  color: var(--text-muted);
+}
+
+/* The flag is decorative (aria-hidden). Windows shows the two letters instead. */
+.table--coverage .flag {
+  margin-right: 0.55rem;
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+/* -- Pricing -- */
+/* The plan comparison, only with the lines that differ. Free and Pro columns have the same width,
+   the label column is narrower. */
+.table--compare {
+  table-layout: fixed;
+}
+
+.table--compare th[scope='row'] {
+  width: 30%;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+
+.table--compare thead th:not(:first-child),
+.table--compare td {
+  width: 35%;
+}
+
+.table--compare td {
+  font-size: var(--step-0);
+}
+
+/* Same accent as the featured card. */
+.table--compare .is-pro {
+  color: var(--accent);
+}
+
+.plans {
+  display: grid;
+  gap: var(--sp-5);
+  align-items: stretch;
+}
+
+@media (min-width: 860px) {
+  .plans {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  padding: var(--sp-6);
+}
+
+/* The recommended plan: a darker top border. */
+.plan--featured {
+  border-top: 3px solid var(--accent);
+}
+
+.plan__tag {
+  display: inline-block;
+  margin-left: var(--sp-3);
+  color: var(--accent);
+  font-size: var(--step--1);
+  font-weight: 600;
+}
+
+.plan__name {
+  display: inline-block;
+  font-size: var(--step-1);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.plan__price {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin: var(--sp-3) 0 var(--sp-2);
+}
+
+.plan__amount {
+  font-size: var(--step-3);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.plan__period {
+  color: var(--text-dim);
+  font-size: var(--step--1);
+}
+
+.plan__pitch {
+  color: var(--text-muted);
+  font-size: var(--step--1);
+}
+
+.plan__list {
+  list-style: none;
+  padding: 0;
+  margin: var(--sp-5) 0;
+  display: grid;
+  gap: var(--sp-3);
+}
+
+.plan__list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: var(--step--1);
+  color: var(--text-muted);
+}
+
+.plan__list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--success);
+  font-weight: 700;
+}
+
+.plan__list li.is-off {
+  color: var(--text-dim);
+}
+
+.plan__list li.is-off::before {
+  content: '×';
+  color: var(--danger);
+}
+
+.plan__cta {
+  margin-top: auto;
+}
+
+.plan__foot {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-top: var(--sp-3);
+}
+
+/* FAQ */
+.faq {
+  display: grid;
+  gap: var(--sp-3);
+  max-width: 78ch;
+}
+
+.faq details {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: var(--sp-4) var(--sp-5);
+}
+
+.faq details[open] {
+  border-color: var(--border-strong);
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-4);
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: '';
+  flex: none;
+  align-self: center;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 1.5px solid var(--text-dim);
+  border-bottom: 1.5px solid var(--text-dim);
+  rotate: 45deg;
+  translate: 0 -2px;
+}
+
+.faq details[open] summary::after {
+  rotate: 225deg;
+  translate: 0 2px;
+}
+
+.faq p {
+  color: var(--text-muted);
+  font-size: var(--step--1);
+  margin-top: var(--sp-3);
+}
+
+/* -- Docs -- */
+.docs {
+  display: grid;
+  gap: var(--sp-6);
+  padding-block: var(--sp-7);
+  align-items: start;
+}
+
+@media (min-width: 980px) {
+  .docs {
+    grid-template-columns: 268px minmax(0, 1fr);
+    gap: var(--sp-8);
+  }
+}
+
+.docs__nav {
+  font-size: var(--step--1);
+}
+
+@media (min-width: 980px) {
+  .docs__nav {
+    position: sticky;
+    top: 96px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+}
+
+.docs__nav-title {
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--text-dim);
+  margin-bottom: var(--sp-3);
+}
+
+.docs__nav a {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  padding: 0.3rem 0 0.3rem var(--sp-3);
+  border-left: 2px solid var(--border);
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+/* Same verb colors as the endpoints. No box at this size. */
+.docs__nav-verb {
+  flex: none;
+  min-width: 3.4em;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--verb, var(--text-dim));
+}
+
+.docs__nav a:hover {
+  color: var(--text);
+}
+
+.docs__nav a.is-current {
+  color: var(--accent);
+  border-left-color: var(--accent);
+}
+
+/* Group headings in the sidebar, keeping the left border across the gap. */
+.docs__nav-group {
+  margin: var(--sp-4) 0 var(--sp-2);
+  padding-left: var(--sp-3);
+  border-left: 2px solid transparent;
+  font-size: var(--step--2);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.docs__h1 {
+  margin-bottom: var(--sp-4);
+}
+
+.docs__content > section {
+  padding-bottom: var(--sp-7);
+  scroll-margin-top: 96px;
+}
+
+.docs__content h2 {
+  font-size: var(--step-2);
+  margin-bottom: var(--sp-4);
+  padding-bottom: var(--sp-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.docs__content h3 {
+  margin: var(--sp-5) 0 var(--sp-3);
+}
+
+.docs__content p,
+.docs__content ul {
+  color: var(--text-muted);
+  margin-bottom: var(--sp-4);
+}
+
+.docs__content ul {
+  padding-left: 1.25rem;
+}
+
+.docs__content li {
+  margin-bottom: var(--sp-2);
+}
+
+.docs__content code:not(pre code) {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.1em 0.4em;
+  color: var(--text);
+}
+
+/* Legal notice, terms, privacy: same prose rules as the docs, without the sidebar. */
+.legal-content {
+  max-width: 72ch;
+  padding-block: var(--sp-6) var(--sp-8);
+}
+
+.endpoint {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-family: var(--font-mono);
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.7rem;
+  margin-bottom: var(--sp-4);
+  font-size: var(--step--1);
+}
+
+/* Verb colors: green reads, orange writes, red deletes. They use the status tokens so they follow
+   the theme. */
+/* Shared by the endpoint badges and the sidebar. */
+[data-method='GET'] {
+  --verb: var(--success);
+}
+
+[data-method='POST'] {
+  --verb: var(--warning);
+}
+
+[data-method='PUT'],
+[data-method='PATCH'] {
+  --verb: var(--info);
+}
+
+[data-method='DELETE'] {
+  --verb: var(--danger);
+}
+
+.endpoint__verb {
+  color: var(--verb, var(--accent));
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.callout {
+  border-left: 3px solid var(--accent);
+  background: var(--surface-2);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: var(--sp-4) var(--sp-5);
+  margin-bottom: var(--sp-5);
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+.callout strong {
+  color: var(--text);
+}
+
+/* -- Contact -- */
+.mailcard {
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6);
+}
+
+/* The email card, without the accent border: Discord is the main channel. */
+.mailcard--soft {
+  border-top: 1px solid var(--border);
+}
+
+.mailcard--soft .mailcard__address {
+  color: var(--text);
+}
+
+.mailcard__address {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--step-1);
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  word-break: break-all;
+  margin-block: var(--sp-3);
+}
+
+.mailcard__actions {
+  display: flex;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  margin-top: var(--sp-4);
+}
+
+.copy-feedback {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--success);
+  min-height: 1.5em;
+  display: block;
+  margin-top: var(--sp-3);
+}
+
+/* -- 404 -- */
+.error-page {
+  padding-block: var(--sp-8);
+}
+
+.error-page__code {
+  font-family: var(--font-mono);
+  font-size: var(--step-2);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--text-dim);
+}
+
+.error-page__lead {
+  max-width: 52ch;
+}
+
+/* -- Benchmarks --
+   One benchmark run, rendered from JSON at load time. Reuses .stats and .table. */
+
+.bench-run {
+  margin-top: var(--sp-4);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}
+
+/* One row of tiles. */
+@media (min-width: 720px) {
+  .stats--bench {
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  }
+}
+
+.bench-empty {
+  grid-column: 1 / -1;
+  color: var(--text-dim);
+}
+
+/* Good, middling, bad. Thresholds are GOOD/FAIR for percentages and FAST/SLOW for latency, in
+   js/benchmarks.js. */
+.bench-pct {
+  font-variant-numeric: tabular-nums;
+}
+
+.bench-pct--good {
+  color: var(--success);
+}
+
+.bench-pct--fair {
+  color: var(--warning);
+}
+
+.bench-pct--poor {
+  color: var(--danger);
+}
+
+.table--bench {
+  min-width: 820px;
+}
+
+.table--bench td {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Two header rows: group labels, then columns. */
+.table--bench .table__group {
+  text-align: center;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
+/* Columns spanning both header rows are centered. */
+.table--bench thead th[rowspan] {
+  vertical-align: middle;
+}
+
+/* The notes column holds a reference like [1]. */
+.table--bench .bench-note {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+}
+
+.bench-notes {
+  margin-top: var(--sp-4);
+  padding-left: var(--sp-5);
+  display: grid;
+  gap: var(--sp-2);
+  max-width: 90ch;
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}
+
+.bench-notes__code {
+  font-family: var(--font-mono);
+  color: var(--text);
+}
+
+/* Field labels and country notes, read by src/js/benchmarks.js, never displayed. [hidden] alone
+   loses to the .table display rules. */
+.bench-i18n {
+  display: none;
+}
+
+/* -- Vatlas vs VIES --
+   The paired benchmark page: two stacked bars (VIES in red on top, Vatlas in green below) and the
+   gap as one colored figure. Built by src/js/versus.js. */
+
+/* A tinted band to separate sections. */
+.section--alt {
+  background: var(--bg-soft);
+  border-block: 1px solid var(--border);
+}
+
+.vs-invalid {
+  margin-top: var(--sp-5);
+  padding: var(--sp-4) var(--sp-5);
+  border: 1px solid var(--danger);
+  border-radius: var(--radius-sm);
+  color: var(--danger);
+  max-width: 90ch;
+}
+
+.vs-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3) var(--sp-5);
+  list-style: none;
+  padding: 0;
+  font-size: var(--step--1);
+  color: var(--text-muted);
+}
+
+.vs-legend__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.vs-swatch {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 3px;
+}
+
+.vs-swatch--vies {
+  background: var(--danger);
+}
+
+.vs-swatch--vatlas {
+  background: var(--success);
+}
+
+/* -- Pair of bars --
+   Two thick rows separated by a hairline. Slight rounding only, so small values stay visible. */
+
+.vs-pair {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: var(--sp-3);
+  row-gap: 4px;
+}
+
+.vs-pair__track {
+  display: block;
+  height: 1.15rem;
+  border-radius: 3px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.vs-pair__fill {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.vs-pair__track--vies .vs-pair__fill {
+  background: var(--danger);
+}
+
+.vs-pair__track--vatlas .vs-pair__fill {
+  background: var(--success);
+}
+
+.vs-pair__value {
+  min-width: 5rem;
+  text-align: right;
+  font-size: var(--step--1);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15rem;
+}
+
+.vs-pair__value--vies {
+  color: var(--text-muted);
+}
+
+/* Vatlas is read first even though it is drawn second. */
+.vs-pair__value--vatlas {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* -- Gap figure -- */
+
+.vs-delta {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.vs-delta--good {
+  color: var(--success);
+}
+
+.vs-delta--poor {
+  color: var(--danger);
+}
+
+.vs-delta--flat {
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+/* -- Headline readings --
+   A label, the bars without values, and the values as one sentence below. */
+
+.vs-lines {
+  margin-top: var(--sp-6);
+  display: grid;
+  gap: var(--sp-5);
+}
+
+@media (min-width: 760px) {
+  .vs-lines {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-6);
+  }
+}
+
+.vs-line {
+  display: grid;
+  gap: var(--sp-3);
+  align-content: start;
+  padding: var(--sp-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.vs-line__label {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Without values the pair is one column. */
+.vs-pair--bare {
+  grid-template-columns: 1fr;
+}
+
+.vs-move {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  font-size: var(--step-2);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.vs-move__from {
+  color: var(--text-dim);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+.vs-move__arrow {
+  color: var(--text-dim);
+  font-size: var(--step-0);
+}
+
+.vs-move__to {
+  font-weight: 700;
+}
+
+.vs-move--good .vs-move__to {
+  color: var(--success);
+}
+
+.vs-move--poor .vs-move__to {
+  color: var(--danger);
+}
+
+/* -- Tables -- */
+
+.table--vs {
+  min-width: 700px;
+}
+
+.table--vs th,
+.table--vs td {
+  padding-block: var(--sp-3);
+  vertical-align: middle;
+}
+
+.table--vs th[scope='row'] {
+  white-space: nowrap;
+}
+
+.table--vs th[scope='row'] code {
+  font-weight: 600;
+}
+
+.vs-delta-col {
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Error rate and completeness columns. When both sides are equal or close, one muted figure
+   replaces the pair. */
+.vs-figure-col {
+  white-space: nowrap;
+}
+
+.vs-same {
+  color: var(--text-dim);
+  font-size: var(--step--1);
+  font-variant-numeric: tabular-nums;
+}
+
+.table--vs .vs-move {
+  font-size: var(--step--1);
+  gap: var(--sp-1);
+}
+
+.table--vs .vs-move__arrow {
+  font-size: var(--step--1);
+}
+
+/* -- Method list -- */
+
+.vs-method {
+  display: grid;
+  gap: var(--sp-5);
+  max-width: 80ch;
+  padding-left: var(--sp-5);
+}
+
+.vs-method h3 {
+  font-size: var(--step-0);
+  margin-bottom: var(--sp-2);
+}
+
+.vs-method p {
+  color: var(--text-muted);
+}

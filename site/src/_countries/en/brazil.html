@@ -1,0 +1,98 @@
+<!-- @meta
+{
+  "title": "Brazilian CNPJ: format, check digits and lookup",
+  "description": "BR plus fourteen digits. How the CNPJ is built from a root, a branch and two check digits, and how to find the company behind one.",
+  "h1": "The Brazilian CNPJ",
+  "term": "Cadastro Nacional da Pessoa Jurídica",
+  "updated": "2026-09-08"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Brazil · BR</p>
+        <h1>The Brazilian CNPJ</h1>
+        <p class="section__lead">Fourteen digits that name not a company but an establishment, and behind them one of the largest genuinely open business registers in the world.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>BR</code> + 14 digits</p>
+        <p><strong>Example:</strong> <code>BR00000001000136</code>, written <code>00.000.001/0001-36</code></p>
+        <p><strong>Issued by:</strong> the Receita Federal do Brasil.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A CNPJ is <strong>fourteen digits in three parts</strong>, and the parts matter:</p>
+      <ul class="breakdown">
+        <li><b>00000001</b><span>The root, the company itself. Eight digits, shared by every one of its establishments.</span></li>
+        <li><b>0001</b><span>The establishment. <code>0001</code> is the head office (<em>matriz</em>); everything above it is a branch.</span></li>
+        <li><b>36</b><span>Two check digits, modulus 11, over everything before them.</span></li>
+      </ul>
+      <p>So <strong>a CNPJ identifies an establishment, not a legal person</strong>. A company with forty branches has forty CNPJs sharing one root, one name and forty addresses. <code>00000000461911</code> and <code>00000000570885</code> are both Banco do Brasil, one branch in Paraná and one in São Paulo. That is unusual enough to catch people out: two different CNPJs can be the same company.</p>
+
+      <h2 id="taxes">Brazil has no single VAT</h2>
+      <p>It has several consumption taxes at once (ICMS at state level, ISS at municipal level, IPI, PIS and COFINS federally) and a reform phasing in a federal-plus-subnational VAT over the second half of this decade. There is no one "Brazilian VAT number".</p>
+      <p>What there is, on every invoice and in every contract, is the <strong>CNPJ</strong>. It is the number a counterparty is identified by, and it is what {{siteName}} resolves. A state tax registration (<em>inscrição estadual</em>) is a separate number and is not published in the federal open data.</p>
+
+      <h2 id="find">Finding the company behind the number</h2>
+      <h3>The open CNPJ data</h3>
+      <p>The Receita Federal publishes the <strong>entire register every month</strong>, free and without an account: every company, every establishment, every partner. It is around 6.7 GB compressed and some hundred and eighteen million rows an edition, and every monthly edition since May 2023 is still online, which makes Brazil one of only two registers on this site with a real archive to walk.</p>
+      <h3>Two files, one answer</h3>
+      <p>The catch is that the data is split. <em>Empresas</em> holds the razão social; <em>Estabelecimentos</em> holds the address and the situação cadastral. Neither is usable alone: a lookup needs the name from one and the address from the other, joined on the eight-digit root. {{siteName}} does that join at import time, so every answer is complete on the day it was recorded.</p>
+
+      <h2 id="pitfalls">Brazil-specific pitfalls</h2>
+      <ul>
+        <li><strong>A CNPJ is an establishment.</strong> Same company, different branch, different number. Compare roots, not full numbers, to tell whether two CNPJs belong together.</li>
+        <li><strong>Leading zeros are part of it.</strong> <code>00000001000136</code> is not <code>1000136</code>. Stored as a number, a CNPJ silently loses its first digits.</li>
+        <li><strong>Situação cadastral has five values.</strong> Only <code>02</code> (ATIVA) means trading; nula, suspensa, inapta and baixada all do not.</li>
+        <li><strong>The nome fantasia is not the razão social.</strong> The trading name is often empty and never the legal one.</li>
+        <li><strong>No state tax registration.</strong> The <em>inscrição estadual</em> is issued by each state and is not in the federal data.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The CNPJ in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a CNPJ have?</summary>
+          <p>Fourteen: eight for the company, four for the establishment, two check digits.</p>
+        </details>
+        <details>
+          <summary>Why do two CNPJs look almost identical?</summary>
+          <p>They are two establishments of the same company. The first eight digits are shared; <code>0001</code> is the head office and the rest are branches.</p>
+        </details>
+        <details>
+          <summary>Does Brazil have a VAT number?</summary>
+          <p>Not a single one. Consumption is taxed by several taxes at three levels of government, and the number that identifies a business is the CNPJ.</p>
+        </details>
+        <details>
+          <summary>What is the inscrição estadual?</summary>
+          <p>A state-level tax registration, separate from the CNPJ and not published in the federal open data.</p>
+        </details>
+        <details>
+          <summary>Can I download the whole Brazilian register for free?</summary>
+          <p>Yes, and its history: the Receita Federal publishes every company and establishment monthly, with no account, and keeps the past editions online.</p>
+        </details>
+      </div>
+
+      <h2>Business numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/australia/">Australia</a></li>
+        <li><a href="/en/vat-number/japan/">Japan</a></li>
+        <li><a href="/en/vat-number/singapore/">Singapore</a></li>
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/portugal/">Portugal</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 8 September 2026.</p>
+    </div>
+  </section>
+</main>

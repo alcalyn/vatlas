@@ -1,0 +1,101 @@
+<!-- @meta
+{
+  "title": "Australian ABN: format, GST registration and lookup",
+  "description": "AU plus eleven digits. How the ABN check digit works, why an ABN is not a GST registration, and how to find the entity behind one.",
+  "h1": "The Australian Business Number",
+  "term": "Australian Business Number",
+  "updated": "2026-09-08"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Australia · AU</p>
+        <h1>The Australian Business Number</h1>
+        <p class="section__lead">Australia has no VAT. It has the GST, and the number an invoice carries is the ABN: eleven digits with a checksum you can verify without asking anyone.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>AU</code> + 11 digits</p>
+        <p><strong>Example:</strong> <code>AU11000000948</code></p>
+        <p><strong>Issued by:</strong> the Australian Business Register, run by the Australian Taxation Office.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>An ABN is <strong>eleven digits</strong>, written in groups of 2-3-3-3 on paper and stored without spaces. The first two digits are a check on the other nine, and the rule is public:</p>
+      <ul class="breakdown">
+        <li><b>−1</b><span>Subtract 1 from the leading digit.</span></li>
+        <li><b>×</b><span>Multiply the eleven digits by 10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19.</span></li>
+        <li><b>mod 89</b><span>The sum divides by 89 exactly.</span></li>
+      </ul>
+      <p>That makes Australia one of the few countries where a typo can be caught before any network call is made, the same class of offline check as the French key or the Polish NIP.</p>
+
+      <h2 id="gst">An ABN is not a GST registration</h2>
+      <p>This is the distinction to get right, and it is the Australian equivalent of "an organisation number is not a VAT number".</p>
+      <p>An ABN identifies an entity carrying on an enterprise. <strong>GST registration is separate</strong>, compulsory above a turnover threshold and optional below it. A sole trader under the threshold, a self-managed superannuation fund, a dormant company: all hold an active ABN, none charges GST.</p>
+      <p>The register publishes both, as two fields with two dates, and {{siteName}} keeps them apart. An entity with an active ABN and no GST registration comes back as <code>not_registered</code>: named, addressed, and explicitly not charging GST. Reporting it as inactive would say the opposite of what the register says.</p>
+
+      <h2 id="acn">ABN, ACN and ARBN</h2>
+      <p>A company registered with ASIC also has a nine-digit <strong>ACN</strong>, and its ABN is usually those nine digits with two more in front. A foreign company registered in Australia has an <strong>ARBN</strong> instead. Entities that are not companies (sole traders, partnerships, trusts, government bodies) have an ABN and nothing else, which is then the only identifier there is.</p>
+
+      <h2 id="find">Finding the entity behind the number</h2>
+      <h3>The ABN Lookup bulk extract</h3>
+      <p>The ABR publishes the whole public register <strong>weekly, in XML, on data.gov.au, under CC-BY</strong>, with no account and no key. Twenty files of some 630 MB, keyed by the ABN itself. It is one of the cleanest open registers of any country on this site, and it is what {{siteName}} imports.</p>
+      <h3>What the extract does not contain</h3>
+      <p>An address, in the sense most countries mean it. The ABR publishes the <strong>state and the postcode</strong> of the main business location and no street at all. That is a deliberate limit of the register and not of the import: no source will give you an Australian street address from an ABN for free.</p>
+
+      <h2 id="pitfalls">Australia-specific pitfalls</h2>
+      <ul>
+        <li><strong>An active ABN does not mean GST is charged.</strong> The two statuses are independent and both are published.</li>
+        <li><strong>No street address.</strong> State and postcode is all the register holds.</li>
+        <li><strong>The legal name is not the trading name.</strong> An entity can carry a dozen registered business names; the extract lists them all and only one of them is its name.</li>
+        <li><strong>Cancelled ABNs stay in the file.</strong> They are marked <code>CAN</code>, with the date, rather than removed.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The ABN in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does an ABN have?</summary>
+          <p>Eleven, the first two of which are a check on the other nine.</p>
+        </details>
+        <details>
+          <summary>Does Australia have a VAT number?</summary>
+          <p>No. It has the GST, and the number that appears on an invoice is the ABN. There is no separate GST number.</p>
+        </details>
+        <details>
+          <summary>How do I know whether a business charges GST?</summary>
+          <p>The register publishes a GST status and the date it started, separately from the ABN status. An active ABN with no GST registration is a real and common case.</p>
+        </details>
+        <details>
+          <summary>Is the ABN the same as the ACN?</summary>
+          <p>For a company, the ABN usually contains the nine-digit ACN with two check digits in front. Entities that are not companies have no ACN at all.</p>
+        </details>
+        <details>
+          <summary>Can I download the whole Australian register for free?</summary>
+          <p>Yes. The ABN Lookup bulk extract is published weekly on data.gov.au under CC-BY, with no account.</p>
+        </details>
+      </div>
+
+      <h2>Business numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/japan/">Japan</a></li>
+        <li><a href="/en/vat-number/singapore/">Singapore</a></li>
+        <li><a href="/en/vat-number/brazil/">Brazil</a></li>
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/germany/">Germany</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 8 September 2026.</p>
+    </div>
+  </section>
+</main>

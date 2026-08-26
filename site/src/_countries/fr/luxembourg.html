@@ -1,0 +1,103 @@
+<!-- @meta
+{
+  "title": "Numéro de TVA luxembourgeois : format, matricule et RCS",
+  "description": "LU suivi de huit chiffres. Pourquoi le numéro de TVA n’est ni le matricule national ni le numéro RCS, et comment retrouver la société.",
+  "h1": "Le numéro de TVA luxembourgeois",
+  "term": "Numéro de TVA luxembourgeois",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Luxembourg · LU</p>
+        <h1>Le numéro de TVA luxembourgeois</h1>
+        <p class="section__lead">Trois identifiants pour une même société, tous attribués par des administrations différentes, et aucun ne se déduit d’un autre.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format :</strong> <code>LU</code> + 8 chiffres</p>
+        <p><strong>Exemple :</strong> <code>LU10137807</code></p>
+        <p><strong>Attribué par :</strong> l’Administration de l’enregistrement, des domaines et de la TVA (AED).</p>
+      </div>
+
+      <h2 id="format">Le format</h2>
+      <p>Un numéro de TVA luxembourgeois fait toujours <strong>dix caractères</strong> : le code pays et huit chiffres, sans lettre ni séparateur.</p>
+      <ul class="breakdown">
+        <li><b>LU</b><span>Le code pays.</span></li>
+        <li><b>101378</b><span>Six chiffres d’identification.</span></li>
+        <li><b>07</b><span>Les deux chiffres de contrôle.</span></li>
+      </ul>
+      <p>Les deux derniers chiffres sont une clé modulo 89 calculée sur les six premiers. C’est l’un des rares contrôles de la zone à ne pas reposer sur un modulo 11 ou 97.</p>
+
+      <h2 id="identifiants">Numéro de TVA, matricule et RCS</h2>
+      <p>Le Luxembourg fait coexister trois identifiants, ce qui pour un pays de cette taille surprend.</p>
+      <p>Le <strong>matricule national</strong> (l’identifiant national d’une entreprise) compte onze chiffres et commence par l’année de constitution. Il sert auprès de la sécurité sociale et de l’administration en général.</p>
+      <p>Le <strong>numéro RCS</strong> est délivré par le Registre de commerce et des sociétés sous la forme <code>B 123456</code> pour une société commerciale, <code>A 123456</code> pour un commerçant ou un artisan. Il figure sur la correspondance et les factures, mais ce n’est pas un identifiant fiscal.</p>
+      <p>Le <strong>numéro de TVA</strong>, enfin, vient de l’AED et n’a de rapport calculable ni avec le matricule ni avec le RCS.</p>
+
+      <h2 id="rechercher">Retrouver la société</h2>
+      <h3>Le RCS</h3>
+      <p>Le <a href="https://www.lbr.lu/" rel="noopener">Registre de commerce et des sociétés</a> est consultable gratuitement : dénomination, forme juridique, siège, gérants, comptes annuels déposés. La recherche se fait par dénomination ou par numéro RCS (<strong>jamais par numéro de TVA</strong>) et il n’existe pas de fichier ouvert téléchargeable en bloc.</p>
+      <h3>L’AED</h3>
+      <p>L’administration de la TVA propose une vérification de numéro, qui confirme la validité sans livrer la dénomination.</p>
+      <h3>VIES</h3>
+      <p>Le Luxembourg <strong>divulgue la dénomination et l’adresse</strong>. Le code postal est précédé de <code>L-</code> (<code>L-8232</code>) et la dénomination porte souvent la forme juridique après une virgule, comme dans <code>CERATIZIT LUXEMBOURG, SARL</code>.</p>
+
+      <h2 id="pieges">Particularités luxembourgeoises</h2>
+      <ul>
+        <li><strong>Le numéro de TVA n’est pas le matricule national.</strong> Celui-ci compte onze chiffres et commence par l’année de constitution.</li>
+        <li><strong>Le numéro RCS n’est pas un identifiant fiscal</strong>, malgré sa présence sur les factures.</li>
+        <li><strong>Le code postal porte le préfixe <code>L-</code></strong>, qu’il faut traiter séparément.</li>
+        <li><strong>Aucun fichier ouvert n’est publié</strong> : le RCS se consulte à l’unité.</li>
+        <li><strong>Le pays compte beaucoup de holdings</strong> dont l’activité réelle ne se lit pas dans le registre.</li>
+      </ul>
+
+      <!-- @include partials/country/fr.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2>Le numéro de TVA luxembourgeois en bref</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Combien de chiffres compte un numéro de TVA luxembourgeois ?</summary>
+          <p>Huit après le préfixe <code>LU</code>, soit dix caractères en tout.</p>
+        </details>
+        <details>
+          <summary>Le numéro de TVA est-il le matricule national ?</summary>
+          <p>Non. Le matricule compte onze chiffres et commence par l’année de constitution ; le numéro de TVA en compte huit et vient d’une autre administration.</p>
+        </details>
+        <details>
+          <summary>Le numéro RCS est-il un identifiant fiscal ?</summary>
+          <p>Non. Il identifie l’inscription au Registre de commerce et des sociétés, sous la forme <code>B 123456</code>, et n’a aucun lien calculable avec le numéro de TVA.</p>
+        </details>
+        <details>
+          <summary>Peut-on chercher une société par son numéro de TVA au RCS ?</summary>
+          <p>Non. Le registre se consulte par dénomination ou par numéro RCS uniquement.</p>
+        </details>
+        <details>
+          <summary>Comment est calculée la clé de contrôle ?</summary>
+          <p>Les deux derniers chiffres forment une clé modulo 89 sur les six premiers, un contrôle inhabituel dans l’Union.</p>
+        </details>
+      </div>
+
+      <h2>Le numéro de TVA dans les autres pays</h2>
+      <ul class="otherlinks">
+        <li><a href="/fr/numero-tva-intracommunautaire/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/" hreflang="en" lang="en">Netherlands</a></li>
+            <li><a href="/fr/numero-tva-intracommunautaire/belgique/">Belgique</a></li>
+        <li><a href="/fr/numero-tva-intracommunautaire/">Tous les pays</a></li>
+      </ul>
+      <p class="updated">Mis à jour le 28 août 2026.</p>
+    </div>
+  </section>
+</main>

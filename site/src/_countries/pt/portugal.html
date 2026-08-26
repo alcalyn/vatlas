@@ -1,0 +1,106 @@
+<!-- @meta
+{
+  "title": "Número de IVA português: NIF, NIPC e como identificar a empresa",
+  "description": "PT mais nove dígitos, o NIF da empresa. O que diz o primeiro dígito, como funciona o dígito de controlo e como encontrar a empresa.",
+  "h1": "O número de IVA português",
+  "term": "Número de identificação fiscal",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Portugal · PT</p>
+        <h1>O número de IVA português</h1>
+        <p class="section__lead">Nove dígitos que são o NIF da empresa, e cujo primeiro dígito já diz que tipo de entidade está do outro lado.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Formato:</strong> <code>PT</code> + 9 dígitos</p>
+        <p><strong>Exemplo:</strong> <code>PT501413197</code></p>
+        <p><strong>Atribuído por:</strong> a Autoridade Tributária e Aduaneira.</p>
+      </div>
+
+      <h2 id="formato">A estrutura</h2>
+      <p>Um número de IVA português tem sempre <strong>onze caracteres</strong>: o prefixo e os nove dígitos do NIF, sem espaços nem letras.</p>
+      <ul class="breakdown">
+        <li><b>PT</b><span>O código do país.</span></li>
+        <li><b>5</b><span>O primeiro dígito: 5 identifica uma pessoa coletiva.</span></li>
+        <li><b>0141319</b><span>Sete dígitos sequenciais.</span></li>
+        <li><b>7</b><span>O dígito de controlo.</span></li>
+      </ul>
+      <p>O dígito de controlo é calculado módulo 11 com os pesos 9, 8, 7, 6, 5, 4, 3, 2. Se o resto for 0 ou 1, o dígito é 0.</p>
+      <p>O primeiro dígito classifica a entidade: <strong>1, 2 e 3</strong> para pessoas singulares, <strong>5</strong> para pessoas coletivas, <strong>6</strong> para serviços da administração pública, <strong>7</strong> para heranças indivisas e outras entidades equiparadas, <strong>8</strong> para empresários em nome individual, <strong>9</strong> para pessoas coletivas irregulares e não residentes.</p>
+
+      <h2 id="nif">NIF, NIPC e número de matrícula</h2>
+      <p>Em Portugal a simplificação já foi feita: <strong>o NIF e o NIPC são o mesmo número</strong>. O NIPC (número de identificação de pessoa coletiva) é apenas o nome que o NIF recebe quando pertence a uma empresa, e desde a criação do «cartão da empresa» é também o número único que serve para a segurança social e para o registo comercial.</p>
+      <p>Quando uma empresa é constituída pela via da <em>Empresa na Hora</em>, recebe o NIPC de imediato, e o número de IVA é esse mesmo NIPC com <code>PT</code> à frente. Não há nada a calcular.</p>
+      <div class="callout"><p><strong>Ter NIF não é estar registado para o IVA.</strong> Todas as entidades têm NIF; só as que estão registadas para operações intracomunitárias aparecem no VIES. Uma empresa isenta ao abrigo do artigo 53.º existe, fatura e não valida.</p></div>
+
+      <h2 id="procurar">Como identificar a empresa</h2>
+      <h3>Portal das Finanças</h3>
+      <p>A Autoridade Tributária disponibiliza uma consulta pública que confirma se um NIF está registado e devolve a designação. Não devolve morada e não se destina a consultas em massa.</p>
+      <h3>Registo Comercial</h3>
+      <p>O Instituto dos Registos e do Notariado disponibiliza a <strong>certidão permanente</strong> online, com toda a informação da empresa, objeto, capital, gerência, sede. É <strong>paga</strong>, por certidão, e não existe qualquer ficheiro aberto de descarga integral. É esta a razão pela qual Portugal não tem uma fonte gratuita utilizável em volume.</p>
+      <h3>RCBE</h3>
+      <p>O Registo Central do Beneficiário Efetivo publica gratuitamente uma parte da informação societária associada ao NIPC, mas destina-se ao combate ao branqueamento e não é um diretório de empresas.</p>
+      <h3>VIES</h3>
+      <p>Portugal <strong>divulga a designação e a morada</strong>. O código postal vem no formato <code>4099-002</code>, com hífen, e a localidade é frequentemente repetida, uma vez sozinha e outra depois do código postal.</p>
+
+      <h2 id="armadilhas">Particularidades portuguesas</h2>
+      <ul>
+        <li><strong>O primeiro dígito não é decorativo.</strong> Um número começado por 1, 2 ou 3 é de uma pessoa singular, não de uma empresa.</li>
+        <li><strong>NIF e NIPC são o mesmo número.</strong> Não há conversão a fazer entre eles.</li>
+        <li><strong>Ter NIF não é estar registado para o IVA</strong>, e a isenção do artigo 53.º é comum entre pequenas empresas.</li>
+        <li><strong>A certidão permanente é paga</strong> e não existe descarga integral gratuita do registo comercial.</li>
+        <li><strong>O código postal tem hífen</strong> e a localidade repete-se na morada devolvida pelo VIES.</li>
+      </ul>
+
+      <!-- @include partials/country/pt.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Perguntas frequentes</p>
+        <h2>O número de IVA português em resumo</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Quantos dígitos tem um número de IVA português?</summary>
+          <p>Nove depois do prefixo <code>PT</code>, ou seja, onze caracteres no total.</p>
+        </details>
+        <details>
+          <summary>O NIF e o NIPC são a mesma coisa?</summary>
+          <p>Sim. O NIPC é o nome que o NIF recebe quando pertence a uma pessoa coletiva; o número é idêntico.</p>
+        </details>
+        <details>
+          <summary>O que significa o primeiro dígito?</summary>
+          <p>O tipo de entidade: 1 a 3 pessoas singulares, 5 pessoas coletivas, 6 administração pública, 8 empresários em nome individual, 9 não residentes e entidades irregulares.</p>
+        </details>
+        <details>
+          <summary>Porque é que o VIES rejeita um NIF válido?</summary>
+          <p>Quase sempre porque a entidade não está registada para operações intracomunitárias, ou está isenta ao abrigo do artigo 53.º do Código do IVA.</p>
+        </details>
+        <details>
+          <summary>Existe um ficheiro gratuito com as empresas portuguesas?</summary>
+          <p>Não. A certidão permanente é paga e o registo comercial não disponibiliza descarga integral.</p>
+        </details>
+      </div>
+
+      <h2>O número de IVA noutros países</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+            <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/" hreflang="en" lang="en">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/" hreflang="en" lang="en">Belgium</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Atualizado a 28 de agosto de 2026.</p>
+    </div>
+  </section>
+</main>

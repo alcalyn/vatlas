@@ -1,0 +1,104 @@
+<!-- @meta
+{
+  "title": "Czech VAT number (DIČ): format, IČO and how to look it up",
+  "description": "CZ plus the IČO. Why the Czech VAT number is one of the few in the EU derivable from the company number, and how ARES resolves it in one free call.",
+  "h1": "The Czech VAT number (DIČ)",
+  "term": "Czech VAT identification number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Czechia · CZ</p>
+        <h1>The Czech VAT number (DIČ)</h1>
+        <p class="section__lead">For a legal person the VAT number is the company number with CZ in front, and ARES hands back the company for free, over a REST API with no account and no key. The catch is that not every Czech number is a legal person.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>CZ</code> + 8 to 10 digits</p>
+        <p><strong>Example:</strong> <code>CZ00177041</code>, IČO <code>00177041</code></p>
+        <p><strong>Issued by:</strong> the tax office, on VAT registration.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Czech VAT number carries <strong>eight to ten digits</strong> after the prefix, and which one depends on who the taxpayer is.</p>
+      <ul class="breakdown">
+        <li><b>CZ + 8 digits</b><span>A legal person: the digits are its IČO, the company number.</span></li>
+        <li><b>CZ + 9 or 10 digits</b><span>A natural person: the birth number, or a special number.</span></li>
+      </ul>
+      <p>The eight-digit IČO carries a check digit in last position, computed modulus 11 with weights 8, 7, 6, 5, 4, 3, 2. Short IČOs are left-padded with zeros, <code>00177041</code>, never <code>177041</code>.</p>
+
+      <h2 id="ico">IČO, DIČ and the file number</h2>
+      <p>The <strong>IČO</strong> is assigned by the Czech Statistical Office to every business entity at formation and never changes. The <strong>DIČ</strong> comes into existence only on tax registration; for a legal person it is the same digits with <code>CZ</code> in front.</p>
+      <p>The distinction that matters: <strong>every entity has an IČO, only a registered taxpayer has a DIČ.</strong> A non-registered business has a valid IČO and does not exist in VIES.</p>
+      <p>Third, there is the <strong>file number</strong> in the commercial register, <code>B 332</code> at the Municipal Court in Prague, for instance. It has nothing to do with the VAT number.</p>
+
+      <h2 id="find">Finding the company</h2>
+      <h3>ARES</h3>
+      <p><a href="https://ares.gov.cz/" rel="noopener">ARES</a>, the finance ministry’s register of economic subjects, is what makes Czechia easy: it is <strong>public, free and unauthenticated</strong>, has a modern REST API, and returns the trade name, seat, legal form, status and (the decisive part) <strong>the DIČ itself, alongside the IČO</strong>.</p>
+      <p>Because the VAT number is the company number with the prefix removed, one request resolves it.</p>
+      <h3>The commercial register</h3>
+      <p>justice.cz holds the full public registers including filed documents and annual accounts, free of charge. It is searched by name or IČO.</p>
+      <h3>The register of VAT payers</h3>
+      <p>The Financial Administration publishes a register of VAT payers where you can check whether an entity is registered and whether it is flagged as an <strong>unreliable payer</strong>, a status ARES does not carry and which has direct tax consequences for a Czech customer.</p>
+      <h3>VIES</h3>
+      <p>Czechia <strong>discloses both name and address</strong> through VIES. The address arrives on several lines, the middle one often carrying a city district and the last one the postal district.</p>
+
+      <h2 id="pitfalls">Czechia-specific pitfalls</h2>
+      <ul>
+        <li><strong>Pad with leading zeros.</strong> The IČO is always eight digits; <code>CZ177041</code> is a mangled <code>CZ00177041</code>.</li>
+        <li><strong>An IČO does not imply VAT registration.</strong> Every entity has one; only registered payers have a DIČ.</li>
+        <li><strong>A natural person’s DIČ is longer</strong> and derived from the birth number, giving nine or ten digits.</li>
+        <li><strong>"Unreliable payer" is a Czech speciality.</strong> The number stays valid, but a Czech customer can become liable for the unpaid tax, and VIES says nothing about it.</li>
+        <li><strong>ARES is unusual.</strong> Most member states do not publish the link between the company number and the tax number at all.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Czech VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Czech VAT number have?</summary>
+          <p>Eight to ten after the <code>CZ</code> prefix. Legal persons have eight, identical to their IČO; natural persons have nine or ten.</p>
+        </details>
+        <details>
+          <summary>Is the DIČ the same as the IČO?</summary>
+          <p>For a legal person the digits are identical and the DIČ just adds <code>CZ</code>. But every entity has an IČO, while a DIČ exists only after tax registration.</p>
+        </details>
+        <details>
+          <summary>How do I find a company from a Czech VAT number?</summary>
+          <p>Strip the <code>CZ</code> prefix and put the remaining IČO into ARES. It is free, public and returns the name, seat and legal form.</p>
+        </details>
+        <details>
+          <summary>What is an unreliable payer?</summary>
+          <p>A taxpayer the Financial Administration has found in serious breach of its obligations. The VAT number stays valid, but a Czech customer can be held liable for the unpaid tax.</p>
+        </details>
+        <details>
+          <summary>Why does VIES reject a valid IČO?</summary>
+          <p>Because an IČO is not a VAT number. The entity exists but is not registered for VAT, so it is not in VIES.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/germany/">Germany</a></li>
+        <li><a href="/en/vat-number/italy/">Italy</a></li>
+        <li><a href="/en/vat-number/spain/">Spain</a></li>
+        <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+        <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

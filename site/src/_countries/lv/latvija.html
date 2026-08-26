@@ -1,0 +1,105 @@
+<!-- @meta
+{
+  "title": "PVN numurs: uzbūve, reģistrācijas numurs un uzņēmuma meklēšana",
+  "description": "LV un vienpadsmit cipari, reģistrācijas numurs pats. Kā atrast uzņēmumu pēc PVN numura, izmantojot trīs atvērtos reģistrus.",
+  "h1": "Latvijas PVN maksātāja numurs",
+  "term": "PVN numurs",
+  "updated": "2026-09-03"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Latvija · LV</p>
+        <h1>Latvijas PVN maksātāja numurs</h1>
+        <p class="section__lead">Vienpadsmit cipari, kas ir pats uzņēmuma reģistrācijas numurs. Latvija savus reģistrus publicē bez maksas, bet tie ir trīs, un tie ir jāsavieno.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Formāts:</strong> <code>LV</code> + 11 cipari</p>
+        <p><strong>Piemērs:</strong> <code>LV40002071224</code></p>
+        <p><strong>Piešķir:</strong> Valsts ieņēmumu dienests (VID), reģistrējot PVN maksātāju.</p>
+      </div>
+
+      <h2 id="formats">Uzbūve</h2>
+      <p>Latvijas PVN numurs vienmēr ir <strong>trīspadsmit zīmes</strong>: valsts kods un vienpadsmit cipari. Tie ir uzņēmuma reģistrācijas numurs bez izmaiņām.</p>
+      <ul class="breakdown">
+        <li><b>LV</b><span>Valsts kods.</span></li>
+        <li><b>4</b><span>Pirmais cipars: juridiskai personai tas ir 4 vai 5.</span></li>
+        <li><b>000207122</b><span>Deviņi cipari.</span></li>
+        <li><b>4</b><span>Kontrolcipars.</span></li>
+      </ul>
+      <p>Fiziskai personai (individuālajam komersantam) pirmais cipars ir robežās no 0 līdz 3, un numurs veidots no dzimšanas datuma. Juridiskai personai tas sākas ar 4 vai 5, un kontroles aprēķins ir cits.</p>
+
+      <h2 id="registri">Reģistrācijas numurs un PVN numurs</h2>
+      <p><strong>Reģistrācijas numuru</strong> piešķir Uzņēmumu reģistrs, kad uzņēmums tiek reģistrēts. <strong>PVN numurs</strong> ir tas pats numurs ar <code>LV</code> priekšā, bet tikai tad, ja uzņēmums ir reģistrēts kā PVN maksātājs.</p>
+      <p>Atšķirība ir svarīga: <strong>reģistrācijas numurs ir visiem, PVN maksātāja statuss ne.</strong> Uzņēmums, kas nesasniedz slieksni, VIES sistēmā neparādās, lai gan reģistrā tas ir pilnīgi likumīgi.</p>
+
+      <h2 id="meklesana">Kā atrast uzņēmumu</h2>
+      <h3>Trīs atvērtie reģistri</h3>
+      <p>Latvija publicē <a href="https://data.gov.lv/" rel="noopener">data.gov.lv</a> portālā trīs CSV failus ar CC0 licenci: <strong>Uzņēmumu reģistra datus</strong> (nosaukums, adrese, juridiskā forma, statuss), <strong>PVN maksātāju sarakstu</strong> (kurš ir reģistrēts un kad) un <strong>Publisko personu un iestāžu sarakstu</strong>.</p>
+      <p>Pirmie divi atsevišķi neder. Viens nezina neko par PVN, otrs nezina nosaukumu. Tos savieno pēc reģistrācijas numura, un tikai kopā tie ļauj meklēt pēc PVN numura. Abi ir mazi un lejupielādējami sekundēs.</p>
+      <p>Trešo parasti aizmirst, un tieši tāpēc meklējums pēc universitātes vai valsts institūta tik bieži atgriežas bez adreses. Publiska persona (universitāte, zinātniskais institūts, tiesa, ministrija, pašvaldības iestāde) ir reģistrācijas numurs un PVN numurs, taču tā nekad nav uzņēmums, tāpēc <strong>Uzņēmumu reģistrā tās nav vispār</strong>. Tās reģistrācijas numurs parasti sākas ar <code>90</code>. Ap 6 300 no tām ir PVN maksātāji, bet uzņēmumu reģistrā ir tikai ap tūkstoti: pārējās atrod vienīgi šis trešais fails.</p>
+      <h3>VIES</h3>
+      <p>Latvija <strong>izpauž nosaukumu un adresi</strong>. Adrese pienāk kā viena rinda ar komatiem, un pasta indekss ir formā <code>LV-1003</code>, ar prefiksu, kas jāņem vērā, ja adresi vēlas sadalīt.</p>
+      <p>Reģistrs norāda teritorijas kodu, nevis pilsētas nosaukumu, tāpēc pilsēta jālasa no pašas adreses rindas. Tā rakstīta no lielākās vienības uz mazāko (<code>Rīga, Avotu iela 17</code> vai <code>Dundagas nov., Kolkas pag., Kolka, "Krastnieki"</code> laukos) un viss pirms apdzīvotās vietas ir administratīvs: novads, pagasts, vecais rajons. Tos izlaižot, pirmais atlikušais posms ir pilsēta vai ciems.</p>
+      <p><strong>Publisko personu un iestāžu saraksts to raksta otrādi</strong>, <code>Ķengaraga iela 8, Rīga, LV-1063</code>, vispirms iela un beigās pasta indekss, tieši tāpat kā atbild VIES. Piemērojot viena faila likumu otram, ielu nolasa kā pilsētu; tā ir visvienkāršākā kļūda ar Latvijas adresēm.</p>
+
+      <h2 id="slazdi">Latvijas īpatnības</h2>
+      <ul>
+        <li><strong>Pirmais cipars norāda personas veidu:</strong> 4 vai 5 juridiskai personai, 0-3 individuālajam komersantam.</li>
+        <li><strong>Reģistrācijas numurs nenozīmē PVN maksātāja statusu.</strong> Tie ir divi dažādi reģistri.</li>
+        <li><strong>Vajadzīgi visi trīs faili.</strong> Ar vienu pašu meklēšana pēc PVN numura nav iespējama, un bez trešā katra publiskā iestāde atgriežas bez adreses.</li>
+        <li><strong>Pasta indeksam ir <code>LV-</code> prefikss</strong>, kas jāapstrādā atsevišķi.</li>
+        <li><strong>Numurs, kas sākas ar <code>90</code>, ir publiska iestāde</strong>, un Uzņēmumu reģistrā tās nav.</li>
+        <li><strong>Abi faili adresi raksta pretējā secībā</strong>: uzņēmumu reģistrā vispirms pilsēta, iestāžu sarakstā vispirms iela.</li>
+      </ul>
+
+      <!-- @include partials/country/lv.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Biežāk uzdotie jautājumi</p>
+        <h2>PVN numurs īsumā</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Cik ciparu ir Latvijas PVN numuram?</summary>
+          <p>Vienpadsmit pēc valsts koda <code>LV</code>, kopā trīspadsmit zīmes.</p>
+        </details>
+        <details>
+          <summary>Vai reģistrācijas numurs un PVN numurs ir viens un tas pats?</summary>
+          <p>Cipari ir vienādi. PVN numurs ir reģistrācijas numurs ar <code>LV</code> priekšā, bet tas pastāv tikai tad, ja uzņēmums ir reģistrēts kā PVN maksātājs.</p>
+        </details>
+        <details>
+          <summary>Ko nozīmē pirmais cipars?</summary>
+          <p>Personas veidu: 4 vai 5 juridiskai personai, no 0 līdz 3 individuālajam komersantam.</p>
+        </details>
+        <details>
+          <summary>Kur bez maksas iegūt Latvijas uzņēmumu datus?</summary>
+          <p>Portālā data.gov.lv, kur ar CC0 licenci publicēti Uzņēmumu reģistra dati, PVN maksātāju saraksts un Publisko personu un iestāžu saraksts. Meklēšanai pēc PVN numura vajadzīgi pirmie divi, bet trešais ir vajadzīgs visam, kas nav uzņēmums.</p>
+        </details>
+        <details>
+          <summary>Kāpēc VIES noraida esošu uzņēmumu?</summary>
+          <p>Tāpēc, ka tas nav reģistrēts kā PVN maksātājs. Reģistrācijas numurs tam ir, PVN maksātāja statusa nav.</p>
+        </details>
+      </div>
+
+      <h2>PVN numurs citās valstīs</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+        <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+        <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+        <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+        <li><a href="/en/vat-number/netherlands/" hreflang="en" lang="en">Netherlands</a></li>
+        <li><a href="/en/vat-number/belgium/" hreflang="en" lang="en">Belgium</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Atjaunināts 2026. gada 3. septembrī.</p>
+    </div>
+  </section>
+</main>

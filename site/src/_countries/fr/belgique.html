@@ -1,0 +1,226 @@
+<!-- @meta
+{
+  "title": "Numéro de TVA belge : format, numéro d’entreprise BCE et recherche",
+  "description": "BE suivi de dix chiffres, exactement le numéro d’entreprise de la BCE. Le calcul de la clé modulo 97, et comment retrouver la société derrière un numéro.",
+  "h1": "Le numéro de TVA belge",
+  "term": "Numéro de TVA belge",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Belgique · BE</p>
+        <h1>Le numéro de TVA belge</h1>
+        <p class="section__lead">
+          La Belgique a le système le plus simple de toute l’Union : le numéro de TVA <em>est</em> le
+          numéro d’entreprise. Un seul numéro, un seul registre, en open data.
+        </p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format :</strong> <code>BE</code> + 10 chiffres, commençant par 0 ou 1</p>
+        <p><strong>Exemple :</strong> <code>BE0325777171</code>, numéro d’entreprise <code>0325.777.171</code></p>
+        <p><strong>Attribué par :</strong> la Banque-Carrefour des Entreprises (BCE) ; activé pour la TVA par le SPF Finances.</p>
+      </div>
+
+      <h2 id="format">Le format</h2>
+      <p>
+        Un numéro de TVA belge fait toujours <strong>douze caractères</strong> : le code pays
+        <code>BE</code> et dix chiffres. En Belgique il s’écrit avec des points (<code>0325.777.171</code>) mais ceux-ci disparaissent lors d’une validation ou sur une
+        facture intracommunautaire.
+      </p>
+      <ul class="breakdown">
+        <li><b>BE</b><span>Le code pays.</span></li>
+        <li><b>0</b><span>Le premier chiffre : 0 ou 1 pour une entreprise.</span></li>
+        <li><b>3257771</b><span>Le numéro d’ordre.</span></li>
+        <li><b>71</b><span>La clé de contrôle, modulo 97.</span></li>
+      </ul>
+      <p>
+        Jusqu’en 2003, les numéros de TVA belges comptaient neuf chiffres ; depuis l’introduction du
+        numéro d’entreprise le <strong>1<sup>er</sup> juillet 2003</strong>, un <code>0</code> a été
+        ajouté en tête. Les numéros commençant par <code>1</code> ne sont attribués que depuis
+        quelques années, la série en <code>0</code> arrivant à épuisement. Un <strong>numéro d’unité
+        d’établissement</strong> compte lui aussi dix chiffres mais commence par <code>2</code> : ce
+        n’est <em>pas</em> un numéro de TVA.
+      </p>
+
+      <h2 id="cle">La clé de contrôle</h2>
+      <p>Les deux derniers chiffres se déduisent des huit premiers par une seule division :</p>
+      <div class="code" data-copy><pre><code>clé = 97 − (les 8 premiers chiffres modulo 97)</code></pre></div>
+      <p>
+        Pour <code>0325777171</code> : <code>03257771 mod 97 = 26</code>, et
+        <code>97 − 26 = 71</code>, ce qui correspond bien aux deux derniers chiffres. La vérification
+        se fait hors ligne, en une ligne de code, sans le moindre appel réseau.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>Une clé correcte ne prouve rien.</strong> Elle atteste seulement que le numéro a été
+          recopié sans erreur. L’existence de l’entreprise et son assujettissement à la TVA ne sont
+          établis que par la BCE ou par VIES.
+        </p>
+      </div>
+
+      <h2 id="numero-entreprise">Numéro d’entreprise, numéro de TVA, RPM</h2>
+      <p>
+        Le <strong>numéro d’entreprise</strong> est attribué à chaque personne morale et à chaque
+        indépendant lors de son inscription à la BCE. Le <strong>numéro de TVA</strong> est
+        exactement le même numéro précédé de <code>BE</code>, mais il n’existe que si l’entreprise
+        est effectivement assujettie et si sa qualité d’assujetti a été activée.
+      </p>
+      <p>
+        C’est la vraie distinction : <strong>toute entreprise a un numéro d’entreprise, toutes n’ont
+        pas un numéro de TVA actif.</strong> Une petite entreprise exemptée, une ASBL sans activité
+        économique ou un holding non assujetti figurent bien à la BCE et ne valident pas dans VIES.
+      </p>
+      <p>
+        Le <strong>numéro RPM</strong> (Registre des Personnes Morales) est le même numéro, suivi du
+        tribunal de l’entreprise compétent (« RPM Liège »).
+      </p>
+
+      <h2 id="rechercher">Retrouver la société derrière un numéro</h2>
+      <h3>BCE Public Search</h3>
+      <p>
+        <a href="https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?lang=fr" rel="noopener">BCE Public Search</a>
+        est gratuit, public et directement interrogeable par numéro d’entreprise. On y obtient la
+        dénomination, la forme juridique, le statut, l’adresse du siège, les unités d’établissement
+        et les codes d’activité NACE. Pour une recherche manuelle, c’est la meilleure source
+        d’Europe.
+      </p>
+      <h3>BCE Open Data</h3>
+      <p>
+        Le SPF Économie publie par ailleurs <strong>l’extrait complet en open data</strong> : environ
+        1,9 million d’entités, chaque jour, conservées un mois. Un compte gratuit suffit. Comme le
+        numéro de TVA <em>est</em> le numéro d’entreprise, chaque ligne est directement atteignable
+        depuis un numéro de TVA, ce que la plupart des États membres ne permettent pas.
+      </p>
+      <p>
+        Deux choses à savoir : les dénominations se trouvent dans un fichier <em>différent</em> de
+        celui des entreprises, et la langue d’une dénomination est écrite en chiffre dans l’un et en
+        code lettre dans l’autre. Qui l’ignore obtient un registre entièrement en allemand. La
+        licence interdit la réutilisation à des fins de marketing direct.
+      </p>
+      <h3>VIES</h3>
+      <p>
+        La Belgique divulgue via VIES <strong>la dénomination et l’adresse complète</strong>, dans la
+        langue de l’entreprise. VIES répond en outre à la seule question à laquelle la BCE ne répond
+        pas : ce numéro est-il valide, à cet instant, pour les échanges intracommunautaires ?
+      </p>
+
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Ce que chaque source apporte pour la Belgique</caption>
+          <thead>
+            <tr><th scope="col">Source</th><th scope="col">Clé d’entrée</th><th scope="col">Ce qu’on obtient</th><th scope="col">Limite</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">BCE Public Search</th><td>Numéro d’entreprise</td>
+              <td>Dénomination, forme juridique, statut, adresse, activités</td><td>Une recherche à la fois</td>
+            </tr>
+            <tr>
+              <th scope="row">BCE Open Data</th><td>Numéro d’entreprise</td>
+              <td>Le registre complet, chaque jour</td><td>Compte gratuit requis ; pas de marketing direct</td>
+            </tr>
+            <tr>
+              <th scope="row">VIES</th><td>Numéro de TVA</td>
+              <td>Validité intracommunautaire, nom et adresse</td><td>Lent, quotas serrés</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="pieges">Les particularités belges</h2>
+      <ul>
+        <li>
+          <strong>Être à la BCE ≠ être assujetti.</strong> Le numéro existe toujours, la qualité
+          d’assujetti non.
+        </li>
+        <li>
+          <strong>Un numéro commençant par 2 est une unité d’établissement</strong>, pas une
+          entreprise. Il ne validera jamais comme numéro de TVA.
+        </li>
+        <li>
+          <strong>Les anciens numéros à neuf chiffres</strong> circulent encore sur des documents
+          antérieurs à 2003. Il faut leur ajouter un <code>0</code> en tête.
+        </li>
+        <li>
+          <strong>La langue de la dénomination dépend de l’entreprise</strong>, pas de la région. Une
+          société bruxelloise peut enregistrer son nom en français, en néerlandais, ou les deux.
+        </li>
+        <li>
+          <strong>Le numéro ne change jamais</strong>, même en cas de changement de nom, d’adresse ou
+          de forme juridique.
+        </li>
+      </ul>
+
+      <!-- @include partials/country/fr.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2>Le numéro de TVA belge en bref</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Combien de chiffres compte un numéro de TVA belge ?</summary>
+          <p>
+            Dix chiffres précédés de <code>BE</code>, soit douze caractères en tout. Le premier
+            chiffre est 0 ou 1.
+          </p>
+        </details>
+        <details>
+          <summary>Le numéro d’entreprise et le numéro de TVA sont-ils identiques ?</summary>
+          <p>
+            Ce sont les mêmes chiffres depuis le 1<sup>er</sup> juillet 2003. Le numéro de TVA est le
+            numéro d’entreprise précédé de <code>BE</code>, mais il n’existe que si l’entreprise est
+            assujettie.
+          </p>
+        </details>
+        <details>
+          <summary>Comment vérifier soi-même un numéro de TVA belge ?</summary>
+          <p>
+            Avec la règle modulo 97 : les deux derniers chiffres doivent valoir
+            <code>97 − (les huit premiers chiffres modulo 97)</code>. Le calcul est hors ligne, mais
+            il n’atteste que de la bonne recopie du numéro.
+          </p>
+        </details>
+        <details>
+          <summary>Pourquoi un numéro belge existant est-il refusé par VIES ?</summary>
+          <p>
+            Parce que l’entreprise figure bien à la BCE mais n’a pas de qualité d’assujetti active :
+            petite entreprise exemptée, ASBL sans activité économique, ou entreprise cessée.
+          </p>
+        </details>
+        <details>
+          <summary>Qu’est-ce qu’un numéro commençant par 2 ?</summary>
+          <p>
+            Un numéro d’unité d’établissement : il identifie un siège d’exploitation et non
+            l’entreprise elle-même, et n’est jamais un numéro de TVA.
+          </p>
+        </details>
+        <details>
+          <summary>Existe-t-il un fichier complet et gratuit des entreprises belges ?</summary>
+          <p>
+            Oui. La BCE publie chaque jour l’extrait complet en open data ; un compte gratuit suffit.
+            La réutilisation à des fins de marketing direct est contractuellement interdite.
+          </p>
+        </details>
+      </div>
+
+      <h2>Le numéro de TVA dans les autres pays</h2>
+      <ul class="otherlinks">
+        <li><a href="/fr/numero-tva-intracommunautaire/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+        <li><a href="/fr/numero-tva-intracommunautaire/">Tous les pays</a></li>
+      </ul>
+      <p class="updated">Mis à jour le 28 août 2026.</p>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,818 @@
+{
+  "title": "Benchmark",
+  "file": "bench-50-paired.txt",
+  "startedAt": "2026-09-02T10:40:46.356Z",
+  "input": {
+    "linesRead": 1350,
+    "vatNumbers": 1350,
+    "malformed": 0,
+    "malformedByReason": {},
+    "duplicates": 0,
+    "repeatedNumbers": 0,
+    "usable": 1350
+  },
+  "perCountry": {
+    "AT": 50,
+    "BE": 50,
+    "BG": 50,
+    "CY": 50,
+    "CZ": 50,
+    "DE": 50,
+    "DK": 50,
+    "EE": 50,
+    "EL": 50,
+    "ES": 50,
+    "FI": 50,
+    "FR": 50,
+    "HR": 50,
+    "HU": 50,
+    "IE": 50,
+    "IT": 50,
+    "LT": 50,
+    "LU": 50,
+    "LV": 50,
+    "MT": 50,
+    "NL": 50,
+    "PL": 50,
+    "PT": 50,
+    "RO": 50,
+    "SE": 50,
+    "SI": 50,
+    "SK": 50,
+    "XI": 0
+  },
+  "unknownPrefix": 0,
+  "lookups": {
+    "baseUrl": "https://api.vatlas.dev",
+    "mode": "api",
+    "derivedFrom": {
+      "mode": "paired",
+      "path": "site/public/data/benchmark.bench-compare.json",
+      "viesEndpoint": "https://ec.europa.eu/taxation_customs/vies/services/checkVatService",
+      "note": "the vatlas leg of a --paired run; elapsedMs covers both legs, and sources and per-country origins were not recorded per pair"
+    },
+    "concurrency": 1,
+    "elapsedMs": 3116954.450468,
+    "planned": 1350,
+    "measured": 1350,
+    "stoppedEarly": null,
+    "outcomes": {
+      "found": 1252,
+      "not-registered": 60,
+      "unavailable": 38
+    },
+    "latencyMs": {
+      "p50": 339.3975420000497,
+      "p95": 2798.953035000013,
+      "max": 16220.144182000076,
+      "avg": 804.265935693332,
+      "total": 1085759.0131859982
+    },
+    "found": 1252,
+    "completeness": {
+      "name": 1163,
+      "legalForm": 307,
+      "address": 1133,
+      "postalCode": 846,
+      "city": 833,
+      "source": 1252
+    },
+    "usable": {
+      "name": 1163,
+      "address": 1141,
+      "of": 1252
+    },
+    "origins": {
+      "vies": 881,
+      "database": 237,
+      "source": 134
+    },
+    "countries": [
+      {
+        "code": "AT",
+        "n": 50,
+        "found": 50,
+        "latencyMs": {
+          "p50": 245.926085999934,
+          "p95": 1847.2869620000129,
+          "total": 27530.579266000263
+        },
+        "completeness": {
+          "name": 50,
+          "legalForm": 0,
+          "address": 50,
+          "postalCode": 0,
+          "city": 0,
+          "source": 50
+        },
+        "usable": {
+          "name": 50,
+          "address": 50,
+          "of": 50
+        },
+        "outcomes": {
+          "found": 50
+        }
+      },
+      {
+        "code": "BE",
+        "n": 50,
+        "found": 50,
+        "latencyMs": {
+          "p50": 52.118223999859765,
+          "p95": 112.84442399977706,
+          "total": 2529.3110859997096
+        },
+        "completeness": {
+          "name": 50,
+          "legalForm": 50,
+          "address": 50,
+          "postalCode": 50,
+          "city": 50,
+          "source": 50
+        },
+        "usable": {
+          "name": 50,
+          "address": 50,
+          "of": 50
+        },
+        "outcomes": {
+          "found": 50
+        }
+      },
+      {
+        "code": "BG",
+        "n": 50,
+        "found": 41,
+        "latencyMs": {
+          "p50": 1247.1257110000588,
+          "p95": 4227.1082999999635,
+          "total": 81114.8244829985
+        },
+        "completeness": {
+          "name": 41,
+          "legalForm": 0,
+          "address": 41,
+          "postalCode": 0,
+          "city": 0,
+          "source": 41
+        },
+        "usable": {
+          "name": 41,
+          "address": 41,
+          "of": 41
+        },
+        "outcomes": {
+          "found": 41,
+          "not-registered": 9
+        }
+      },
+      {
+        "code": "CY",
+        "n": 50,
+        "found": 50,
+        "latencyMs": {
+          "p50": 491.3917060000822,
+          "p95": 1841.9939959999174,
+          "total": 35971.46404599997
+        },
+        "completeness": {
+          "name": 50,
+          "legalForm": 0,
+          "address": 50,
+          "postalCode": 50,
+          "city": 50,
+          "source": 50
+        },
+        "usable": {
+          "name": 50,
+          "address": 50,
+          "of": 50
+        },
+        "outcomes": {
+          "found": 50
+        }
+      },
+      {
+        "code": "CZ",
+        "n": 50,
+        "found": 47,
+        "latencyMs": {
+          "p50": 189.72753100004047,
+          "p95": 6266.78686800017,
+          "total": 33666.50101400196
+        },
+        "completeness": {
+          "name": 47,
+          "legalForm": 47,
+          "address": 47,
+          "postalCode": 47,
+          "city": 47,
+          "source": 47
+        },
+        "usable": {
+          "name": 47,
+          "address": 47,
+          "of": 47
+        },
+        "outcomes": {
+          "found": 47,
+          "not-registered": 3
+        }
+      },
+      {
+        "code": "DE",
+        "n": 50,
+        "found": 48,
+        "latencyMs": {
+          "p50": 829.7118709999486,
+          "p95": 2060.803630999988,
+          "total": 48434.55935999966
+        },
+        "completeness": {
+          "name": 5,
+          "legalForm": 0,
+          "address": 3,
+          "postalCode": 0,
+          "city": 0,
+          "source": 48
+        },
+        "usable": {
+          "name": 5,
+          "address": 3,
+          "of": 48
+        },
+        "outcomes": {
+          "found": 48,
+          "not-registered": 2
+        }
+      },
+      {
+        "code": "DK",
+        "n": 50,
+        "found": 15,
+        "latencyMs": {
+          "p50": 207.64859199989587,
+          "p95": 12065.781711000018,
+          "total": 225222.34220600053
+        },
+        "completeness": {
+          "name": 15,
+          "legalForm": 0,
+          "address": 15,
+          "postalCode": 15,
+          "city": 15,
+          "source": 15
+        },
+        "usable": {
+          "name": 15,
+          "address": 15,
+          "of": 15
+        },
+        "outcomes": {
+          "found": 15,
+          "unavailable": 33,
+          "not-registered": 2
+        }
+      },
+      {
+        "code": "EE",
+        "n": 50,
+        "found": 47,
+        "latencyMs": {
+          "p50": 19.031281999778003,
+          "p95": 257.18853399995714,
+          "total": 2344.8304039996583
+        },
+        "completeness": {
+          "name": 47,
+          "legalForm": 47,
+          "address": 47,
+          "postalCode": 46,
+          "city": 47,
+          "source": 47
+        },
+        "usable": {
+          "name": 47,
+          "address": 47,
+          "of": 47
+        },
+        "outcomes": {
+          "found": 47,
+          "not-registered": 3
+        }
+      },
+      {
+        "code": "EL",
+        "n": 50,
+        "found": 49,
+        "latencyMs": {
+          "p50": 471.5516149997711,
+          "p95": 2242.4935300000943,
+          "total": 38109.8731140002
+        },
+        "completeness": {
+          "name": 49,
+          "legalForm": 0,
+          "address": 49,
+          "postalCode": 49,
+          "city": 49,
+          "source": 49
+        },
+        "usable": {
+          "name": 49,
+          "address": 49,
+          "of": 49
+        },
+        "outcomes": {
+          "found": 49,
+          "not-registered": 1
+        }
+      },
+      {
+        "code": "ES",
+        "n": 50,
+        "found": 46,
+        "latencyMs": {
+          "p50": 368.98067299998365,
+          "p95": 2909.799583,
+          "total": 44003.90790100003
+        },
+        "completeness": {
+          "name": 0,
+          "legalForm": 0,
+          "address": 0,
+          "postalCode": 0,
+          "city": 0,
+          "source": 46
+        },
+        "usable": {
+          "name": 0,
+          "address": 0,
+          "of": 46
+        },
+        "outcomes": {
+          "found": 46,
+          "unavailable": 3,
+          "not-registered": 1
+        }
+      },
+      {
+        "code": "FI",
+        "n": 50,
+        "found": 50,
+        "latencyMs": {
+          "p50": 48.503077999921516,
+          "p95": 1262.9943990000756,
+          "total": 18030.14020700049
+        },
+        "completeness": {
+          "name": 50,
+          "legalForm": 37,
+          "address": 50,
+          "postalCode": 50,
+          "city": 50,
+          "source": 50
+        },
+        "usable": {
+          "name": 50,
+          "address": 50,
+          "of": 50
+        },
+        "outcomes": {
+          "found": 50
+        }
+      },
+      {
+        "code": "FR",
+        "n": 50,
+        "found": 50,
+        "latencyMs": {
+          "p50": 21.641639000037685,
+          "p95": 102.02357399999164,
+          "total": 2139.933614999609
+        },
+        "completeness": {
+          "name": 50,
+          "legalForm": 50,
+          "address": 50,
+          "postalCode": 50,
+          "city": 50,
+          "source": 50
+        },
+        "usable": {
+          "name": 50,
+          "address": 50,
+          "of": 50
+        },
+        "outcomes": {
+          "found": 50
+        }
+      },
+      {
+        "code": "HR",
+        "n": 50,
+        "found": 49,
+        "latencyMs": {
+          "p50": 339.39972200011835,
+          "p95": 1550.4353200001642,
+          "total": 26615.701987999266
+        },
+        "completeness": {
+          "name": 49,
+          "legalForm": 0,
+          "address": 49,
+          "postalCode": 49,
+          "city": 49,
+          "source": 49
+        },
+        "usable": {
+          "name": 49,
+          "address": 49,
+          "of": 49
+        },
+        "outcomes": {
+          "found": 49,
+          "not-registered": 1
+        }
+      },
+      {
+        "code": "HU",
+        "n": 50,
+        "found": 44,
+        "latencyMs": {
+          "p50": 215.05148799996823,
+          "p95": 1228.2767459999304,
+          "total": 15767.445605999921
+        },
+        "completeness": {
+          "name": 44,
+          "legalForm": 0,
+          "address": 44,
+          "postalCode": 44,
+          "city": 44,
+          "source": 44
+        },
+        "usable": {
+          "name": 44,
+          "address": 44,
+          "of": 44
+        },
+        "outcomes": {
+          "found": 44,
+          "not-registered": 6
+        }
+      },
+      {
+        "code": "IE",
+        "n": 50,
+        "found": 48,
+        "latencyMs": {
+          "p50": 245.32683299999917,
+          "p95": 1670.115320000099,
+          "total": 22006.157205000578
+        },
+        "completeness": {
+          "name": 48,
+          "legalForm": 0,
+          "address": 43,
+          "postalCode": 5,
+          "city": 5,
+          "source": 48
+        },
+        "usable": {
+          "name": 48,
+          "address": 48,
+          "of": 48
+        },
+        "outcomes": {
+          "found": 48,
+          "not-registered": 2
+        }
+      },
+      {
+        "code": "IT",
+        "n": 50,
+        "found": 49,
+        "latencyMs": {
+          "p50": 607.0485289999051,
+          "p95": 2163.1629490000196,
+          "total": 46727.676113999914
+        },
+        "completeness": {
+          "name": 49,
+          "legalForm": 0,
+          "address": 49,
+          "postalCode": 49,
+          "city": 49,
+          "source": 49
+        },
+        "usable": {
+          "name": 49,
+          "address": 49,
+          "of": 49
+        },
+        "outcomes": {
+          "found": 49,
+          "not-registered": 1
+        }
+      },
+      {
+        "code": "LT",
+        "n": 50,
+        "found": 48,
+        "latencyMs": {
+          "p50": 338.6344029996544,
+          "p95": 1205.2635229998268,
+          "total": 23456.908845001017
+        },
+        "completeness": {
+          "name": 48,
+          "legalForm": 0,
+          "address": 48,
+          "postalCode": 0,
+          "city": 0,
+          "source": 48
+        },
+        "usable": {
+          "name": 48,
+          "address": 48,
+          "of": 48
+        },
+        "outcomes": {
+          "found": 48,
+          "not-registered": 2
+        }
+      },
+      {
+        "code": "LU",
+        "n": 50,
+        "found": 47,
+        "latencyMs": {
+          "p50": 247.89926200010814,
+          "p95": 1821.641254000133,
+          "total": 26367.483893000754
+        },
+        "completeness": {
+          "name": 47,
+          "legalForm": 0,
+          "address": 47,
+          "postalCode": 0,
+          "city": 0,
+          "source": 47
+        },
+        "usable": {
+          "name": 47,
+          "address": 47,
+          "of": 47
+        },
+        "outcomes": {
+          "found": 47,
+          "not-registered": 3
+        }
+      },
+      {
+        "code": "LV",
+        "n": 50,
+        "found": 48,
+        "latencyMs": {
+          "p50": 20.87944100005552,
+          "p95": 138.2953750002198,
+          "total": 6533.55464600047
+        },
+        "completeness": {
+          "name": 48,
+          "legalForm": 28,
+          "address": 28,
+          "postalCode": 28,
+          "city": 0,
+          "source": 48
+        },
+        "usable": {
+          "name": 48,
+          "address": 28,
+          "of": 48
+        },
+        "outcomes": {
+          "found": 48,
+          "not-registered": 2
+        }
+      },
+      {
+        "code": "MT",
+        "n": 50,
+        "found": 48,
+        "latencyMs": {
+          "p50": 339.048088000156,
+          "p95": 1620.518403999973,
+          "total": 25525.999170000083
+        },
+        "completeness": {
+          "name": 48,
+          "legalForm": 0,
+          "address": 48,
+          "postalCode": 0,
+          "city": 0,
+          "source": 48
+        },
+        "usable": {
+          "name": 48,
+          "address": 48,
+          "of": 48
+        },
+        "outcomes": {
+          "found": 48,
+          "not-registered": 2
+        }
+      },
+      {
+        "code": "NL",
+        "n": 50,
+        "found": 50,
+        "latencyMs": {
+          "p50": 2372.612601000117,
+          "p95": 4024.793718000001,
+          "total": 128337.1542029999
+        },
+        "completeness": {
+          "name": 50,
+          "legalForm": 0,
+          "address": 50,
+          "postalCode": 50,
+          "city": 50,
+          "source": 50
+        },
+        "usable": {
+          "name": 50,
+          "address": 50,
+          "of": 50
+        },
+        "outcomes": {
+          "found": 50
+        }
+      },
+      {
+        "code": "PL",
+        "n": 50,
+        "found": 49,
+        "latencyMs": {
+          "p50": 263.88967399997637,
+          "p95": 1178.97876800003,
+          "total": 19485.665178999974
+        },
+        "completeness": {
+          "name": 49,
+          "legalForm": 18,
+          "address": 49,
+          "postalCode": 49,
+          "city": 49,
+          "source": 49
+        },
+        "usable": {
+          "name": 49,
+          "address": 49,
+          "of": 49
+        },
+        "outcomes": {
+          "found": 49,
+          "not-registered": 1
+        }
+      },
+      {
+        "code": "PT",
+        "n": 50,
+        "found": 47,
+        "latencyMs": {
+          "p50": 340.61001699999906,
+          "p95": 2087.6633579999907,
+          "total": 40227.86345599921
+        },
+        "completeness": {
+          "name": 47,
+          "legalForm": 0,
+          "address": 47,
+          "postalCode": 47,
+          "city": 47,
+          "source": 47
+        },
+        "usable": {
+          "name": 47,
+          "address": 47,
+          "of": 47
+        },
+        "outcomes": {
+          "found": 47,
+          "not-registered": 1,
+          "unavailable": 2
+        }
+      },
+      {
+        "code": "RO",
+        "n": 50,
+        "found": 38,
+        "latencyMs": {
+          "p50": 243.78196799987927,
+          "p95": 849.6828540000133,
+          "total": 16731.67214899925
+        },
+        "completeness": {
+          "name": 38,
+          "legalForm": 30,
+          "address": 38,
+          "postalCode": 24,
+          "city": 38,
+          "source": 38
+        },
+        "usable": {
+          "name": 38,
+          "address": 38,
+          "of": 38
+        },
+        "outcomes": {
+          "found": 38,
+          "not-registered": 12
+        }
+      },
+      {
+        "code": "SE",
+        "n": 50,
+        "found": 47,
+        "latencyMs": {
+          "p50": 1198.0254519999726,
+          "p95": 3852.338728999981,
+          "total": 70600.35567100065
+        },
+        "completeness": {
+          "name": 47,
+          "legalForm": 0,
+          "address": 44,
+          "postalCode": 47,
+          "city": 47,
+          "source": 47
+        },
+        "usable": {
+          "name": 47,
+          "address": 47,
+          "of": 47
+        },
+        "outcomes": {
+          "found": 47,
+          "not-registered": 3
+        }
+      },
+      {
+        "code": "SI",
+        "n": 50,
+        "found": 47,
+        "latencyMs": {
+          "p50": 307.8984530000016,
+          "p95": 1930.772309999913,
+          "total": 28411.115064997488
+        },
+        "completeness": {
+          "name": 47,
+          "legalForm": 0,
+          "address": 47,
+          "postalCode": 47,
+          "city": 47,
+          "source": 47
+        },
+        "usable": {
+          "name": 47,
+          "address": 47,
+          "of": 47
+        },
+        "outcomes": {
+          "found": 47,
+          "not-registered": 3
+        }
+      },
+      {
+        "code": "SK",
+        "n": 50,
+        "found": 50,
+        "latencyMs": {
+          "p50": 423.36940400023013,
+          "p95": 1319.8567949999124,
+          "total": 29865.99329399946
+        },
+        "completeness": {
+          "name": 50,
+          "legalForm": 0,
+          "address": 50,
+          "postalCode": 50,
+          "city": 50,
+          "source": 50
+        },
+        "usable": {
+          "name": 50,
+          "address": 50,
+          "of": 50
+        },
+        "outcomes": {
+          "found": 50
+        }
+      }
+    ]
+  }
+}

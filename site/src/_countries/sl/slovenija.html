@@ -1,0 +1,103 @@
+<!-- @meta
+{
+  "title": "Identifikacijska številka za DDV: davčna številka, matična številka in iskanje",
+  "description": "SI in osem številk davčne številke. Zakaj matična številka ni davčna, kaj objavlja AJPES in kako najti podjetje za številko.",
+  "h1": "Slovenska identifikacijska številka za DDV",
+  "term": "Identifikacijska številka za DDV",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Slovenija · SI</p>
+        <h1>Slovenska identifikacijska številka za DDV</h1>
+        <p class="section__lead">Osem številk, ki so davčna številka podjetja, in ki jih ni mogoče izpeljati iz matične številke, čeprav AJPES brezplačno objavlja celoten poslovni register.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Oblika:</strong> <code>SI</code> + 8 številk</p>
+        <p><strong>Primer:</strong> <code>SI33840890</code></p>
+        <p><strong>Dodeli:</strong> Finančna uprava (FURS) ob identifikaciji za DDV.</p>
+      </div>
+
+      <h2 id="oblika">Sestava</h2>
+      <p>Slovenska identifikacijska številka za DDV ima vedno <strong>osem številk</strong> za predpono. To je davčna številka podjetja, brez sprememb.</p>
+      <ul class="breakdown">
+        <li><b>SI</b><span>Oznaka države.</span></li>
+        <li><b>3384089</b><span>Sedem številk davčne številke.</span></li>
+        <li><b>0</b><span>Kontrolna številka.</span></li>
+      </ul>
+      <p>Kontrolna številka se izračuna po modulu 11 z utežmi 8, 7, 6, 5, 4, 3, 2. Prva številka nikoli ni 0 in ne 1: davčne številke se začnejo pri 10000000.</p>
+
+      <h2 id="stevilke">Davčna številka, matična številka, ID za DDV</h2>
+      <p>Slovenija vodi dve številki, ki se pogosto zamenjujeta.</p>
+      <p><strong>Matična številka</strong> je 7-mestna (za poslovno enoto 10-mestna) in jo dodeli AJPES ob vpisu v poslovni register. <strong>Davčna številka</strong> je 8-mestna in jo dodeli FURS. Med njima ni nobene izračunljive povezave.</p>
+      <p><strong>Identifikacijska številka za DDV</strong> je davčna številka s predpono <code>SI</code>, vendar obstaja le, če je zavezanec identificiran za namene DDV. Vsako podjetje ima davčno številko; vsako podjetje ni zavezanec za DDV.</p>
+      <div class="callout"><p><strong>To je slovenska ovira.</strong> AJPES objavlja celoten poslovni register brezplačno in odprto, a izpis nosi matično številko, ne davčne. Vrstice torej po številki za DDV ni mogoče najti, dokler se ne pridruži še seznam zavezancev za DDV, ki ga vodi FURS.</p></div>
+
+      <h2 id="iskanje">Kako najti podjetje</h2>
+      <h3>AJPES</h3>
+      <p><a href="https://www.ajpes.si/" rel="noopener">AJPES</a> vodi poslovni register in ga objavlja kot odprte podatke: naziv, sedež, pravnoorganizacijska oblika, dejavnost, letna poročila. Iskanje poteka po nazivu ali matični številki.</p>
+      <h3>FURS</h3>
+      <p>FURS objavlja <strong>seznam davčnih zavezancev, identificiranih za DDV</strong>. Šele ta seznam poveže davčno številko s podjetjem, in šele oba vira skupaj omogočata iskanje po številki za DDV.</p>
+      <h3>VIES</h3>
+      <p>Slovenija prek VIES <strong>razkrije naziv in naslov</strong>. Naslov pride v eni vrstici, s poštno številko in krajem na koncu; naziv je včasih zelo kratek, saj se objavi registrirana kratica in ne polno ime.</p>
+
+      <h2 id="pasti">Slovenske posebnosti</h2>
+      <ul>
+        <li><strong>Matična številka ni davčna številka.</strong> Ena je iz AJPES, druga iz FURS, in med njima ni izračuna.</li>
+        <li><strong>Davčna številka še ni ID za DDV.</strong> Ima jo vsak zavezanec; identifikacija za DDV je ločen korak.</li>
+        <li><strong>Predpone <code>SI</code> ni v davčni številki.</strong> Na domačem računu je osem številk, na računu v EU pa <code>SI</code> in osem številk.</li>
+        <li><strong>Naziv iz VIES je lahko okrajšava.</strong> Iskanje po njem v AJPES zato pogosto ne uspe.</li>
+        <li><strong>Odprti podatki AJPES sami po sebi ne zadoščajo</strong> za iskanje po številki za DDV.</li>
+      </ul>
+
+      <!-- @include partials/country/sl.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Pogosta vprašanja</p>
+        <h2>Številka za DDV na kratko</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Koliko številk ima slovenska identifikacijska številka za DDV?</summary>
+          <p>Osem za predpono <code>SI</code>, torej deset znakov skupaj.</p>
+        </details>
+        <details>
+          <summary>Ali sta davčna številka in ID za DDV isto?</summary>
+          <p>Številke so iste. ID za DDV je davčna številka s predpono <code>SI</code>, a obstaja šele, ko je zavezanec identificiran za namene DDV.</p>
+        </details>
+        <details>
+          <summary>Kakšna je razlika med matično in davčno številko?</summary>
+          <p>Matično številko dodeli AJPES ob vpisu v poslovni register in ima sedem mest. Davčno številko dodeli FURS in ima osem mest. Ena iz druge ni izračunljiva.</p>
+        </details>
+        <details>
+          <summary>Zakaj VIES zavrne obstoječe slovensko podjetje?</summary>
+          <p>Ker ni identificirano za namene DDV. Davčno številko ima, identifikacije za DDV pa ne.</p>
+        </details>
+        <details>
+          <summary>Ali lahko brezplačno prenesem celoten poslovni register?</summary>
+          <p>Da, AJPES ga objavlja kot odprte podatke, vendar z matično in ne z davčno številko, zato po številki za DDV v njem ni mogoče iskati.</p>
+        </details>
+      </div>
+
+      <h2>Identifikacijska številka za DDV v drugih državah</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+            <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/" hreflang="en" lang="en">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/" hreflang="en" lang="en">Belgium</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Posodobljeno 28. avgusta 2026.</p>
+    </div>
+  </section>
+</main>

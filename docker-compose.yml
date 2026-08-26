@@ -1,0 +1,46 @@
+# Local development stack, not for production.
+#
+#   docker compose up -d
+#
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: vatlas-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: vatlas
+      MYSQL_DATABASE: vatlas
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql-data:/var/lib/mysql
+    # Named volume, so `docker compose down` keeps the imported data.
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost', '-p$$MYSQL_ROOT_PASSWORD']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  adminer:
+    image: adminer
+    container_name: vatlas-adminer
+    restart: unless-stopped
+    ports:
+      - '8081:8080'
+    environment:
+      ADMINER_DEFAULT_SERVER: mysql
+    depends_on:
+      - mysql
+
+  # Catches every email the app sends and shows it in a web UI.
+  mailpit:
+    image: axllent/mailpit
+    container_name: vatlas-mailpit
+    restart: unless-stopped
+    ports:
+      - '1025:1025' # SMTP, what SMTP_HOST/SMTP_PORT point at
+      - '8025:8025' # web UI
+
+volumes:
+  mysql-data:

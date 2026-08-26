@@ -1,0 +1,112 @@
+<!-- @meta
+{
+  "title": "Slovak VAT number (IČ DPH): format, IČO, DIČ and lookup",
+  "description": "SK plus ten digits. Why the Slovak VAT number cannot be derived from the company number, how the three Slovak identifiers differ, and how to find the company.",
+  "h1": "The Slovak VAT number (IČ DPH)",
+  "term": "Slovak VAT identification number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Slovakia · SK</p>
+        <h1>The Slovak VAT number (IČ DPH)</h1>
+        <p class="section__lead">Three numbers that get confused constantly (IČO, DIČ and IČ DPH) and only the last belongs on an invoice to another member state.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>SK</code> + 10 digits</p>
+        <p><strong>Example:</strong> <code>SK2020677824</code></p>
+        <p><strong>Issued by:</strong> the Financial Administration, on VAT registration.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Slovak VAT number always carries <strong>ten digits</strong> after the prefix, and the first two say what kind of taxpayer it is.</p>
+      <ul class="breakdown">
+        <li><b>SK</b><span>The country code.</span></li>
+        <li><b>20</b><span>A legal person. Natural persons start 10, foreign entities 40.</span></li>
+        <li><b>20677824</b><span>The remainder, including the check digit.</span></li>
+      </ul>
+      <p>Those ten digits are the <strong>DIČ</strong>, the tax identification number. The whole number is divisible by eleven, which gives a cheap offline check against typing errors.</p>
+
+      <h2 id="numbers">IČO, DIČ and IČ DPH</h2>
+      <p>This is the one table worth knowing about Slovakia.</p>
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Slovak identifiers compared</caption>
+          <thead><tr><th scope="col">Number</th><th scope="col">Format</th><th scope="col">Issued by</th><th scope="col">Who has one</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">IČO</th><td>8 digits</td><td>Statistical Office</td><td>Every business</td></tr>
+            <tr><th scope="row">DIČ</th><td>10 digits (starting 10 / 20 / 40)</td><td>Financial Administration</td><td>Every taxpayer</td></tr>
+            <tr><th scope="row">IČ DPH</th><td><code>SK</code> + the same 10 digits</td><td>Financial Administration</td><td>Only VAT-registered businesses</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The crucial point is that <strong>the VAT number cannot be derived from the company number</strong>. It comes from the DIČ, which the tax office assigns independently of the register. That is what makes Slovakia a harder case than neighbouring Czechia, where the VAT number is simply <code>CZ</code> + IČO.</p>
+
+      <h2 id="find">Finding the company</h2>
+      <h3>The registers</h3>
+      <p><a href="https://rpo.statistics.sk/" rel="noopener">RPO</a>, the Statistical Office’s register of legal persons, is free, has an open API and carries the name, seat, legal form and status; <a href="https://www.orsr.sk/" rel="noopener">ORSR</a> does the same for the commercial register. Both are searched <strong>by IČO or by name, not by VAT number</strong>, and since one does not derive from the other, a VAT number gets you nowhere near a record.</p>
+      <h3>Financial Administration lists</h3>
+      <p>The Financial Administration publishes a list of VAT payers and, more usefully, a <strong>list of risky entities</strong>. You can therefore confirm that a number belongs to a registered payer; you cannot get an address out of it.</p>
+      <h3>VIES</h3>
+      <p>Slovakia <strong>discloses both name and address</strong> through VIES, which makes it the only free route from a Slovak VAT number to a company. The address comes on three lines and the last one is often the word <code>Slovensko</code>, the country, not a town.</p>
+
+      <h2 id="pitfalls">Slovakia-specific pitfalls</h2>
+      <ul>
+        <li><strong>The VAT number is not the IČO with a prefix.</strong> That is the commonest wrong assumption; it holds in Czechia and not in Slovakia.</li>
+        <li><strong>IČ DPH is not the same thing as DIČ.</strong> The digits match, but every taxpayer has a DIČ and only VAT-registered businesses have an IČ DPH.</li>
+        <li><strong>The first two digits are meaningful:</strong> 10 for a natural person, 20 for a legal person, 40 for a foreign entity registered in Slovakia.</li>
+        <li><strong>The registers are keyed by IČO</strong>, so there is no direct path into them from a VAT number.</li>
+        <li><strong>The last address line in VIES is often "Slovensko"</strong>, the country, and not a city.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Slovak VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Slovak VAT number have?</summary>
+          <p>Ten after the <code>SK</code> prefix, twelve characters in total.</p>
+        </details>
+        <details>
+          <summary>What is the difference between IČO, DIČ and IČ DPH?</summary>
+          <p>The IČO comes from the Statistical Office and every business has one. The DIČ comes from the Financial Administration and every taxpayer has one. The IČ DPH is that same ten-digit number with <code>SK</code> in front, and only VAT-registered businesses have it.</p>
+        </details>
+        <details>
+          <summary>Can I compute the VAT number from the IČO?</summary>
+          <p>No. It comes from the DIČ, which the tax office assigns independently of the company register, and no calculation links the two.</p>
+        </details>
+        <details>
+          <summary>What do the first two digits mean?</summary>
+          <p>The type of taxpayer: 10 for a natural person, 20 for a legal person, 40 for a foreign entity registered in Slovakia.</p>
+        </details>
+        <details>
+          <summary>Why does VIES reject an existing Slovak company?</summary>
+          <p>Because it is not VAT registered. It has an IČO and a DIČ, but no IČ DPH has been issued to it.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/">Germany</a></li>
+            <li><a href="/en/vat-number/italy/">Italy</a></li>
+            <li><a href="/en/vat-number/spain/">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

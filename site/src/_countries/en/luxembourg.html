@@ -1,0 +1,103 @@
+<!-- @meta
+{
+  "title": "Luxembourg VAT number: format, the matricule and the RCS number",
+  "description": "LU plus eight digits. Why the VAT number is neither the national business identifier nor the RCS number, and how to find the company.",
+  "h1": "The Luxembourg VAT number",
+  "term": "Luxembourg VAT number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Luxembourg · LU</p>
+        <h1>The Luxembourg VAT number</h1>
+        <p class="section__lead">Three identifiers for one company, each from a different administration, and none derivable from another.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>LU</code> + 8 digits</p>
+        <p><strong>Example:</strong> <code>LU10137807</code></p>
+        <p><strong>Issued by:</strong> the registration duties, estates and VAT authority (AED).</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Luxembourg VAT number is always <strong>ten characters</strong>: the country code and eight digits, with no letters and no separators.</p>
+      <ul class="breakdown">
+        <li><b>LU</b><span>The country code.</span></li>
+        <li><b>101378</b><span>Six identifying digits.</span></li>
+        <li><b>07</b><span>Two check digits.</span></li>
+      </ul>
+      <p>The last two digits are a modulus 89 check over the first six, one of the few checks in the Union that rests on neither modulus 11 nor modulus 97.</p>
+
+      <h2 id="identifiers">VAT number, matricule and RCS</h2>
+      <p>Luxembourg runs three identifiers side by side, which is surprising for a country of its size.</p>
+      <p>The <strong>matricule</strong> (the national business identifier) is eleven digits and begins with the year of incorporation. It is used with social security and the administration generally.</p>
+      <p>The <strong>RCS number</strong> is issued by the trade and companies register in the form <code>B 123456</code> for a commercial company, <code>A 123456</code> for a trader or craftsman. It appears on correspondence and invoices but is not a tax identifier.</p>
+      <p>The <strong>VAT number</strong> comes from the AED and bears no computable relation to either the matricule or the RCS number.</p>
+
+      <h2 id="find">Finding the company</h2>
+      <h3>The RCS</h3>
+      <p>The <a href="https://www.lbr.lu/" rel="noopener">trade and companies register</a> can be consulted free of charge: name, legal form, seat, managers and filed annual accounts. It is searched by name or RCS number (<strong>never by VAT number</strong>) and there is no open bulk file to download.</p>
+      <h3>The AED</h3>
+      <p>The VAT authority offers a number check that confirms validity without returning the company name.</p>
+      <h3>VIES</h3>
+      <p>Luxembourg <strong>discloses the name and the address</strong>. The postcode carries an <code>L-</code> prefix (<code>L-8232</code>) and the name often has the legal form appended after a comma, as in <code>CERATIZIT LUXEMBOURG, SARL</code>.</p>
+
+      <h2 id="pitfalls">Luxembourg-specific pitfalls</h2>
+      <ul>
+        <li><strong>The VAT number is not the matricule.</strong> That is eleven digits and starts with the year of incorporation.</li>
+        <li><strong>The RCS number is not a tax identifier</strong>, despite appearing on invoices.</li>
+        <li><strong>The postcode carries an <code>L-</code> prefix</strong> that has to be handled separately.</li>
+        <li><strong>No open bulk file is published</strong>: the RCS is consulted one company at a time.</li>
+        <li><strong>The country holds a great many holding companies</strong> whose real activity cannot be read from the register.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Luxembourg VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Luxembourg VAT number have?</summary>
+          <p>Eight after the <code>LU</code> prefix, ten characters in total.</p>
+        </details>
+        <details>
+          <summary>Is the VAT number the national business identifier?</summary>
+          <p>No. The matricule is eleven digits and starts with the year of incorporation; the VAT number is eight digits and comes from a different administration.</p>
+        </details>
+        <details>
+          <summary>Is the RCS number a tax identifier?</summary>
+          <p>No. It records the entry in the trade and companies register, in the form <code>B 123456</code>, and has no computable link to the VAT number.</p>
+        </details>
+        <details>
+          <summary>Can I search the RCS by VAT number?</summary>
+          <p>No. The register is searchable by company name or RCS number only.</p>
+        </details>
+        <details>
+          <summary>How is the check computed?</summary>
+          <p>The last two digits form a modulus 89 check over the first six, an unusual scheme in the Union.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/">Germany</a></li>
+            <li><a href="/en/vat-number/italy/">Italy</a></li>
+            <li><a href="/en/vat-number/spain/">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

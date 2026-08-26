@@ -1,0 +1,105 @@
+<!-- @meta
+{
+  "title": "Russian INN: format, check digit and company lookup",
+  "description": "RU plus ten digits for a company, twelve for a sole trader. What the ИНН is, how its modulus 11 check works, what КПП and ОГРН add to it, and how to find the company behind one.",
+  "h1": "The Russian ИНН",
+  "term": "ИНН (Taxpayer Identification Number)",
+  "updated": "2026-09-15"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Russia · RU</p>
+        <h1>The Russian ИНН</h1>
+        <p class="section__lead">Russia charges VAT, the НДС, and issues no separate VAT number for it. The number on an invoice is the <strong>ИНН</strong>, the taxpayer identification number the Federal Tax Service gives every company and every person, usually written with a second number, the КПП, beside it.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>RU</code> + 10 digits (company) or 12 digits (sole trader)</p>
+        <p><strong>Example:</strong> <code>RU7451269247</code></p>
+        <p><strong>Issued by:</strong> the Federal Tax Service (ФНС России).</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>The ИНН has two lengths, and the length says what kind of taxpayer it is:</p>
+      <ul class="breakdown">
+        <li><b>10 digits</b><span>A <strong>legal person</strong>, that is, a company. The first four are the tax office that issued it, the next five a serial number, the last a check digit.</span></li>
+        <li><b>12 digits</b><span>A <strong>natural person</strong>, which includes an individual entrepreneur (ИП) trading under their own name. Four digits of tax office, six of serial number, then two check digits.</span></li>
+      </ul>
+      <p>The check is a <strong>modulus 11</strong> over the digits in front of it, weighted <code>2,4,10,3,5,9,4,6,8</code> for a ten-digit number, with the remainder taken modulo 10 so that it is always a single digit. A twelve-digit number runs the same rule twice, once for each of its two check digits. {{siteName}} applies it before any lookup, so a mistyped ИНН is caught without a network call.</p>
+
+      <h2 id="kpp">ИНН, КПП and ОГРН: three numbers, one company</h2>
+      <p>A Russian invoice usually shows two numbers separated by a slash, and a third one appears in the register. They are not interchangeable:</p>
+      <ul class="breakdown">
+        <li><b>ИНН</b><span>The taxpayer. One per company, for its whole life, and the key everything else is found by.</span></li>
+        <li><b>КПП</b><span>Nine digits saying <em>why</em> that taxpayer is registered at a given tax office. A company with branches has one ИНН and <strong>several КПП</strong>, one per place it is registered, so a КПП identifies an establishment, never a company.</span></li>
+        <li><b>ОГРН</b><span>Thirteen digits, the number the state register files the company under (fifteen, as an ОГРНИП, for an individual entrepreneur). {{siteName}} returns it as <code>nationalId</code>.</span></li>
+      </ul>
+      <p>There is no separate VAT registration number to look for: a Russian company either applies the general tax regime and charges НДС, or is on a simplified regime (УСН) and does not, and either way its ИНН is unchanged.</p>
+
+      <h2 id="find">Finding the company behind the number</h2>
+      <h3>What the ФНС publishes for free</h3>
+      <p>The full register of legal entities, the <strong>ЕГРЮЛ</strong>, holds every Russian company with its complete address, directors and share capital. It is <strong>sold</strong>, not published: the ФНС licenses it as XML archives for 150,000 ₽ a year, there is no free bulk copy, and <code>egrul.nalog.ru</code> answers one ИНН at a time from behind a captcha.</p>
+      <p>What is free, monthly and reachable by the number on an invoice is the <strong>unified register of small and medium-sized businesses</strong> (Единый реестр субъектов МСП). It is what {{siteName}} imports: a 2.1 GB archive a month, with every monthly edition since the register opened still online, so an answer can be dated rather than merely current.</p>
+      <h3>What that register does and does not contain</h3>
+      <p>It contains the full legal name, which in Russian spells the legal form out in front of it («ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ …»), the ОГРН, the date the company entered the register, and where it is: town, district and region.</p>
+      <p>It does not contain <strong>large companies</strong>. The register is, by definition, of small and medium-sized businesses, so a company above the thresholds (Gazprom, Sberbank, any major Russian firm) is not in the file at all, and a lookup for it comes back empty. Nor does it contain <strong>a street</strong>: the finest address it publishes is the town. Individual entrepreneurs make up about half the file and are deliberately not imported here: they are private individuals, named with their patronymic and their personal ИНН, and holding several million of them to answer a question nobody asks would be indefensible.</p>
+
+      <h2 id="pitfalls">Russia-specific pitfalls</h2>
+      <ul>
+        <li><strong>Ten digits is a company, twelve is a person.</strong> A twelve-digit ИНН on an invoice is a sole trader, not a firm.</li>
+        <li><strong>The КПП is not part of the ИНН.</strong> <code>7451269247/745101001</code> is one taxpayer and one of its registrations; only the first half identifies the company.</li>
+        <li><strong>An ИНН is not proof that НДС is charged.</strong> A company on the simplified regime has the same number and adds no VAT.</li>
+        <li><strong>Large companies are absent.</strong> The only free register keyed by the ИНН covers small and medium-sized businesses.</li>
+        <li><strong>No street address.</strong> Region, district and town are everything this source publishes.</li>
+        <li><strong>Sanctions are your call, not the register's.</strong> A lookup says who a number belongs to; whether you may trade with them is a separate check against your own lists.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The ИНН in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does an ИНН have?</summary>
+          <p>Ten for a company, twelve for a natural person, including an individual entrepreneur. The last digit, or the last two at twelve digits, is a modulus 11 check.</p>
+        </details>
+        <details>
+          <summary>Does Russia have a VAT number?</summary>
+          <p>Not a separate one. Russia charges НДС, and the number that identifies the taxpayer on an invoice is the ИНН, issued whether or not the company charges the tax.</p>
+        </details>
+        <details>
+          <summary>What is the КПП next to the ИНН?</summary>
+          <p>The reason-for-registration code: nine digits saying at which tax office and on what ground the taxpayer is registered. One company can have several, one per branch, so it identifies a place rather than a company.</p>
+        </details>
+        <details>
+          <summary>Why does a well-known Russian company return nothing?</summary>
+          <p>Because the only free register keyed by the ИНН holds small and medium-sized businesses. Large companies are not in it, and the full register, the ЕГРЮЛ, is sold by the ФНС rather than published.</p>
+        </details>
+        <details>
+          <summary>Can I get the street address?</summary>
+          <p>Not from this source. It publishes the region, the district and the town of the place of business and nothing finer; the street is in the ЕГРЮЛ, which is not free.</p>
+        </details>
+      </div>
+
+      <h2>Business tax numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/canada/">Canada</a></li>
+        <li><a href="/en/vat-number/japan/">Japan</a></li>
+        <li><a href="/en/vat-number/brazil/">Brazil</a></li>
+        <li><a href="/en/vat-number/poland/">Poland</a></li>
+        <li><a href="/en/vat-number/finland/">Finland</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 15 September 2026.</p>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,102 @@
+<!-- @meta
+{
+  "title": "Irish VAT number: format, Tax Reference Number and CRO lookup",
+  "description": "IE plus seven digits and one or two letters. Why the Irish VAT number cannot be derived from the CRO number, and how to find the company behind it.",
+  "h1": "The Irish VAT number",
+  "term": "Irish VAT registration number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Ireland · IE</p>
+        <h1>The Irish VAT number</h1>
+        <p class="section__lead">Ireland publishes its entire company register daily, for free, under an open licence, and it is of no help at all in finding a company from its VAT number.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>IE</code> + 7 digits + 1 letter, or + 2 letters</p>
+        <p><strong>Example:</strong> <code>IE0006286E</code></p>
+        <p><strong>Issued by:</strong> Revenue, the Irish tax authority.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>Irish VAT numbers come in three shapes, all eight or nine characters after the prefix, and all still in circulation.</p>
+      <ul class="breakdown">
+        <li><b>1234567T</b><span>The classic form: seven digits and one letter.</span></li>
+        <li><b>1234567FA</b><span>Issued since 2013: seven digits and two letters.</span></li>
+        <li><b>1X23456T</b><span>An older form with a letter, <code>+</code> or <code>*</code> in second position.</span></li>
+      </ul>
+      <p>The trailing letter is a check character, computed over the digits with a weighted modulus 23 and mapped onto the alphabet. The older <code>+</code> and <code>*</code> forms date from before 2013 and are gradually disappearing, but a validator that rejects them is wrong.</p>
+
+      <h2 id="trn">The VAT number and the Tax Reference Number</h2>
+      <p>The Irish VAT number is the company’s <strong>Tax Reference Number</strong> with <code>IE</code> in front. That same number is used for corporation tax and PAYE, so a business has one identifier at Revenue and uses it everywhere.</p>
+      <p>What it is <em>not</em> is the <strong>CRO number</strong>, the sequence the Companies Registration Office assigns on incorporation. The two are issued by different bodies at different times, and nothing connects them arithmetically. A company can be incorporated with a CRO number and never register for VAT at all.</p>
+      <div class="callout"><p><strong>This is the Irish problem in one sentence.</strong> The CRO publishes the whole register daily under CC BY 4.0, free, complete, well documented, exemplary open data. And it is keyed by CRO number, so no row in it can be reached from a VAT number. A register that publishes everything except the key buys you nothing.</p></div>
+
+      <h2 id="find">Finding the company behind a number</h2>
+      <h3>The CRO register</h3>
+      <p><a href="https://core.cro.ie/" rel="noopener">core.cro.ie</a> gives free company search and free daily bulk files. Use it when you have a company name or a CRO number; it cannot help you from a VAT number.</p>
+      <h3>Revenue</h3>
+      <p>Revenue does not publish a directory of VAT numbers and does not offer a public lookup that returns a trader’s name.</p>
+      <h3>VIES</h3>
+      <p>Ireland <strong>discloses the name and the address</strong> through VIES, which makes it the only route from an Irish VAT number to a company. The address comes back as one long free-text line rather than in separate fields (often with a <code>C/O</code> and a contact name in it, as in the example below) so nothing can be split out of it reliably.</p>
+
+      <h2 id="pitfalls">Ireland-specific pitfalls</h2>
+      <ul>
+        <li><strong>The VAT number is not the CRO number</strong>, and neither can be computed from the other. This is the single most common wrong assumption about Ireland.</li>
+        <li><strong>Three formats coexist.</strong> A regular expression written for the post-2013 shape alone will reject perfectly valid older numbers.</li>
+        <li><strong>Older numbers can contain <code>+</code> or <code>*</code></strong> in second position, characters most validators strip as punctuation.</li>
+        <li><strong>Addresses arrive as one unsplit line.</strong> Ireland has no uniform postcode in VIES output, and Eircode rarely appears, so postcode and city cannot be separated with confidence.</li>
+        <li><strong>Being registered with the CRO says nothing about VAT.</strong> Many Irish companies never register for VAT at all.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Irish VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many characters does an Irish VAT number have?</summary>
+          <p>Eight or nine after the <code>IE</code> prefix: seven digits followed by one or two letters.</p>
+        </details>
+        <details>
+          <summary>Is the Irish VAT number the same as the CRO number?</summary>
+          <p>No, and one cannot be derived from the other. The CRO number comes from the Companies Registration Office on incorporation; the VAT number comes from Revenue on VAT registration.</p>
+        </details>
+        <details>
+          <summary>What does the letter at the end mean?</summary>
+          <p>It is a check character computed from the digits with a weighted modulus 23. It catches typing errors and nothing more.</p>
+        </details>
+        <details>
+          <summary>Why do some Irish VAT numbers contain + or *?</summary>
+          <p>They are pre-2013 numbers. The characters are part of the number and must not be stripped as punctuation.</p>
+        </details>
+        <details>
+          <summary>Can I download a list of Irish VAT numbers?</summary>
+          <p>No. The CRO publishes the company register daily for free, but it holds CRO numbers, not VAT numbers, and Revenue publishes no directory.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/">Germany</a></li>
+            <li><a href="/en/vat-number/italy/">Italy</a></li>
+            <li><a href="/en/vat-number/spain/">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

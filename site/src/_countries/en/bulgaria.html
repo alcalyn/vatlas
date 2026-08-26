@@ -1,0 +1,102 @@
+<!-- @meta
+{
+  "title": "Bulgarian VAT number: the EIK, format and how to find the company",
+  "description": "BG plus nine or thirteen digits, the EIK itself. How the EIK differs from VAT registration, and where to look the company up for free.",
+  "h1": "The Bulgarian VAT number",
+  "term": "Bulgarian VAT number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Bulgaria · BG</p>
+        <h1>The Bulgarian VAT number</h1>
+        <p class="section__lead">The VAT number is the company number with a BG in front. Nothing has to be derived and nothing has to be joined: the number on the invoice is the key the trade register is indexed by, and that register is free and republished daily.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>BG</code> + 9 or 13 digits (the EIK)</p>
+        <p><strong>Example:</strong> <code>BG000662064</code></p>
+        <p><strong>Issued by:</strong> the National Revenue Agency, on VAT registration.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Bulgarian VAT number carries <strong>nine or thirteen digits</strong> after the prefix.</p>
+      <ul class="breakdown">
+        <li><b>BG + 9 digits</b><span>A legal person: this is its EIK, the unified identification code.</span></li>
+        <li><b>BG + 13 digits</b><span>A branch or sub-unit: the EIK plus four more digits.</span></li>
+      </ul>
+      <p>The nine-digit EIK carries a check digit computed modulus 11 with weights 1 to 8; if the remainder is 10, a second set of weights applies. The thirteen-digit form adds a further check digit for the sub-unit.</p>
+      <p>VAT-registered individuals use their personal or official number, also with the <code>BG</code> prefix.</p>
+
+      <h2 id="eik">EIK, BULSTAT and VAT registration</h2>
+      <p>The <strong>EIK</strong> is assigned by the Registry Agency when an entity is entered in the Commercial Register. It replaced the older <strong>BULSTAT</strong> code for traders; the BULSTAT register still exists for non-traders.</p>
+      <p>The <strong>VAT number</strong> is the EIK with <code>BG</code> in front, but it exists only after VAT registration. The distinction matters: <strong>every company has an EIK, not every company is VAT registered.</strong> A business below the threshold exists lawfully and does not validate in VIES.</p>
+
+      <h2 id="find">Finding the company</h2>
+      <h3>The Commercial Register</h3>
+      <p>The Registry Agency runs the <a href="https://portal.registryagency.bg/" rel="noopener">Commercial Register</a>, which is <strong>public, free and published daily in an open format</strong>. It holds the name, seat, legal form, directors, capital and annual financial statements, and is searched by EIK or by name.</p>
+      <p>Because the VAT number is the EIK with a prefix, the number printed on an invoice is already the search key: strip the <code>BG</code> and the record is there.</p>
+      <h3>The revenue agency</h3>
+      <p>The National Revenue Agency confirms VAT registration but does not publish names and addresses that way.</p>
+      <h3>VIES</h3>
+      <p>Bulgaria <strong>discloses the name and the address</strong>, in Cyrillic. The address arrives on one line with the region and city carrying the prefixes <code>обл.</code> and <code>гр.</code>, and the postcode at the end.</p>
+
+      <h2 id="pitfalls">Bulgaria-specific pitfalls</h2>
+      <ul>
+        <li><strong>An EIK does not imply VAT registration.</strong> Every company has one; VAT registration is a separate step.</li>
+        <li><strong>Thirteen digits means a sub-unit</strong>, not a typing error.</li>
+        <li><strong>The data is in Cyrillic.</strong> A name from VIES will rarely match a Latin transliteration held in your own database.</li>
+        <li><strong>BULSTAT and EIK are not the same thing</strong> for non-traders.</li>
+        <li><strong>The address carries <code>обл.</code> and <code>гр.</code> prefixes</strong>, which are not part of the place name.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Bulgarian VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Bulgarian VAT number have?</summary>
+          <p>Nine or thirteen after the <code>BG</code> prefix. Thirteen is used for branches and sub-units.</p>
+        </details>
+        <details>
+          <summary>Are the EIK and the VAT number the same?</summary>
+          <p>The digits are. The VAT number is the EIK with <code>BG</code> in front, but it exists only after VAT registration.</p>
+        </details>
+        <details>
+          <summary>What is the difference between EIK and BULSTAT?</summary>
+          <p>The EIK is assigned by the Commercial Register to traders. The BULSTAT register still serves entities that are not traders.</p>
+        </details>
+        <details>
+          <summary>Why does VIES reject an existing company?</summary>
+          <p>Because it is not VAT registered. It has an EIK and trades lawfully, but is not in the VAT register.</p>
+        </details>
+        <details>
+          <summary>Can the Bulgarian trade register be downloaded for free?</summary>
+          <p>Yes. The Registry Agency publishes the data daily in an open format, and because the VAT number is the EIK the records are directly reachable.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/germany/">Germany</a></li>
+        <li><a href="/en/vat-number/italy/">Italy</a></li>
+        <li><a href="/en/vat-number/spain/">Spain</a></li>
+        <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+        <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

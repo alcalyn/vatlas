@@ -1,0 +1,103 @@
+<!-- @meta
+{
+  "title": "ALV-numero: Y-tunnus, muoto ja yrityksen haku",
+  "description": "FI ja kahdeksan numeroa, Y-tunnus ilman väliviivaa. Miten ALV-numero muodostetaan, ja miten löydät yrityksen numeron takaa.",
+  "h1": "Suomalainen ALV-numero",
+  "term": "ALV-numero",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Suomi · FI</p>
+        <h1>Suomalainen ALV-numero</h1>
+        <p class="section__lead">ALV-numero on Y-tunnus, josta on poistettu väliviiva. Mitään ei tarvitse johtaa eikä päätellä, ja koko kaupparekisteri latautuu yhtenä tiedostona.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Muoto:</strong> <code>FI</code> + 8 numeroa (Y-tunnus ilman väliviivaa)</p>
+        <p><strong>Esimerkki:</strong> <code>FI04805519</code>, Y-tunnus <code>0480551-9</code></p>
+        <p><strong>Antaja:</strong> Patentti- ja rekisterihallitus (PRH) ja Verohallinto yhdessä.</p>
+      </div>
+
+      <h2 id="muoto">Rakenne</h2>
+      <p>Suomalainen ALV-numero on aina <strong>kymmenen merkkiä</strong>: maatunnus ja kahdeksan numeroa.</p>
+      <ul class="breakdown">
+        <li><b>FI</b><span>Maatunnus.</span></li>
+        <li><b>0480551</b><span>Y-tunnuksen seitsemän numeroa.</span></li>
+        <li><b>9</b><span>Tarkistusnumero.</span></li>
+      </ul>
+      <p>Tarkistusnumero lasketaan modulo 11 painoilla 7, 9, 10, 5, 8, 4, 2. Jos jakojäännös on 1, tunnusta ei ole olemassa. Kotimaassa Y-tunnus kirjoitetaan väliviivalla ennen tarkistusnumeroa (<code>0480551-9</code>) ja väliviiva poistetaan ALV-numerosta.</p>
+
+      <h2 id="ytunnus">Y-tunnus ja ALV-numero</h2>
+      <p><strong>Y-tunnus</strong> annetaan jokaiselle yritykselle ja yhteisölle, kun se merkitään yritys- ja yhteisötietojärjestelmään. Se ei muutu koskaan.</p>
+      <p><strong>ALV-numero</strong> on sama tunnus <code>FI</code>-etuliitteellä, mutta se on olemassa vain, jos yritys on merkitty <strong>arvonlisäverovelvollisten rekisteriin</strong>. Ero on olennainen: Y-tunnus on kaikilla, arvonlisäverovelvollisuus ei.</p>
+      <p>Yritys voi lisäksi kuulua ennakkoperintärekisteriin ja työnantajarekisteriin toisistaan riippumatta. Ne eivät vaikuta ALV-numeroon mitenkään.</p>
+
+      <h2 id="haku">Yrityksen löytäminen</h2>
+      <h3>PRH:n avoin data</h3>
+      <p>Patentti- ja rekisterihallitus julkaisee kaupparekisterin <strong>avoimena datana ilman rekisteröitymistä</strong>. Yksittäisiä yrityksiä voi hakea rajapinnasta, mutta oleellinen on <code>/all_companies</code>-päätepiste: se palauttaa koko rekisterin yhtenä pakattuna JSON-tiedostona, satojatuhansia yrityksiä muutamassa kymmenessä sekunnissa. Sivutettuna sama työ vaatisi tuhansia pyyntöjä ja tunteja.</p>
+      <p>Yksi varaus: kaupparekisteri ei ole arvonlisäverorekisteri. Kaikki tiedostossa olevat yritykset eivät ole arvonlisäverovelvollisia, ja lakanneet yritykset pysyvät rekisterissä tilamerkinnällä.</p>
+      <h3>YTJ</h3>
+      <p><a href="https://tietopalvelu.ytj.fi/" rel="noopener">ytj.fi</a> on ihmisille tarkoitettu käyttöliittymä samaan tietoon: nimi, toimiala, osoite sekä rekisterimerkinnät, arvonlisäverovelvollisuus mukaan luettuna.</p>
+      <h3>VIES</h3>
+      <p>Suomi <strong>luovuttaa nimen ja osoitteen</strong> VIES-palvelun kautta. Osoitteessa esiintyy toisinaan <code>c/o</code>-merkintä ilman välilyöntiä seuraavaan sanaan, mikä kannattaa ottaa huomioon jäsentelyssä.</p>
+
+      <h2 id="sudenkuopat">Suomalaiset erityispiirteet</h2>
+      <ul>
+        <li><strong>Väliviiva pois.</strong> <code>FI0480551-9</code> ei kelpaa; ALV-numerossa on pelkät numerot.</li>
+        <li><strong>Y-tunnus ei tarkoita arvonlisäverovelvollisuutta.</strong> Kaupparekisteri ja ALV-rekisteri ovat eri rekistereitä.</li>
+        <li><strong>Lakanneet yritykset säilyvät avoimessa datassa</strong>, joten tila on tarkistettava erikseen.</li>
+        <li><strong>Älä sivuta rajapintaa.</strong> Koko rekisteri on saatavissa yhdellä pyynnöllä; sivuttaminen kestää tunteja.</li>
+        <li><strong>Osoitteessa voi olla c/o-merkintä</strong> kiinni seuraavassa sanassa.</li>
+      </ul>
+
+      <!-- @include partials/country/fi.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Usein kysyttyä</p>
+        <h2>ALV-numero lyhyesti</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Montako numeroa suomalaisessa ALV-numerossa on?</summary>
+          <p>Kahdeksan maatunnuksen <code>FI</code> jälkeen, eli kymmenen merkkiä yhteensä.</p>
+        </details>
+        <details>
+          <summary>Onko Y-tunnus ja ALV-numero sama asia?</summary>
+          <p>Numerot ovat samat. ALV-numero on Y-tunnus ilman väliviivaa ja <code>FI</code>-etuliitteellä, mutta se on olemassa vain arvonlisäverovelvollisilla.</p>
+        </details>
+        <details>
+          <summary>Miksi VIES ei hyväksy olemassa olevaa Y-tunnusta?</summary>
+          <p>Koska yritys ei ole arvonlisäverovelvollisten rekisterissä. Y-tunnus on kaikilla, arvonlisäverovelvollisuutta ei.</p>
+        </details>
+        <details>
+          <summary>Voiko koko kaupparekisterin ladata ilmaiseksi?</summary>
+          <p>Kyllä. PRH julkaisee sen avoimena datana ilman rekisteröitymistä, ja koko rekisteri saadaan yhtenä pakattuna tiedostona.</p>
+        </details>
+        <details>
+          <summary>Näkyvätkö lakanneet yritykset rekisterissä?</summary>
+          <p>Kyllä, tilamerkinnällä. Tila on siis tarkistettava erikseen, sillä pelkkä rekisterissä oleminen ei kerro yrityksen olevan toiminnassa.</p>
+        </details>
+      </div>
+
+      <h2>ALV-numero muissa maissa</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+            <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/" hreflang="en" lang="en">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/" hreflang="en" lang="en">Belgium</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Päivitetty 28. elokuuta 2026.</p>
+    </div>
+  </section>
+</main>

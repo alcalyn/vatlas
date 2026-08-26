@@ -1,0 +1,107 @@
+<!-- @meta
+{
+  "title": "Ukrainian EDRPOU and IPN: format, check digit and company lookup",
+  "description": "UA plus eight digits for the ЄДРПОУ, twelve for the ІПН on an invoice. What each number is, how the one reduces to the other, and how to find the company behind it.",
+  "h1": "The Ukrainian ЄДРПОУ",
+  "term": "ЄДРПОУ (state register code)",
+  "updated": "2026-09-15"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Ukraine · UA</p>
+        <h1>The Ukrainian ЄДРПОУ</h1>
+        <p class="section__lead">Ukraine charges VAT, the ПДВ, and a registered payer gets an <strong>ІПН</strong>, twelve digits, which is what a Ukrainian tax invoice carries. The number the state register is keyed by is shorter: the <strong>ЄДРПОУ</strong>, eight digits, which every legal entity has whether or not it charges the tax. They are not two numbers, and that is the useful part.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>UA</code> + 8 digits (ЄДРПОУ) or 12 digits (ІПН)</p>
+        <p><strong>Example:</strong> <code>UA33444728</code></p>
+        <p><strong>Issued by:</strong> the state registrar (ЄДРПОУ) and the State Tax Service (ІПН).</p>
+      </div>
+
+      <h2 id="format">One company, two numbers, seven shared digits</h2>
+      <p>The ІПН is built from the ЄДРПОУ. Its <strong>first seven digits are the first seven of the ЄДРПОУ</strong>; the remaining five are a serial and the code of the tax office. The eighth digit of the ЄДРПОУ, the one the ІПН leaves out, is a check digit, so it can be computed back:</p>
+      <ul class="breakdown">
+        <li><b>ЄДРПОУ</b><span>Eight digits: seven of sequence and a <strong>modulus 11</strong> check. Issued on registration, kept for the company's whole life, and the key the state register files it under.</span></li>
+        <li><b>ІПН</b><span>Twelve digits, issued only on registration for ПДВ: the first seven of the ЄДРПОУ, a serial, then the tax office. Cancelled if the registration is.</span></li>
+      </ul>
+      <p>So <code>UA037771118081</code> and <code>UA03777114</code> are the same company, and {{siteName}} treats them as one: the twelve-digit form is reduced to the eight-digit one before anything is looked up, so both spellings return the same record and build one history.</p>
+
+      <h2 id="pdv">ЄДРПОУ, ІПН and РНОКПП: which is which</h2>
+      <ul class="breakdown">
+        <li><b>ЄДРПОУ</b><span>The legal entity. Eight digits, on every contract and every invoice.</span></li>
+        <li><b>ІПН</b><span>The VAT registration. Twelve digits, and a company that is not registered for ПДВ simply has none.</span></li>
+        <li><b>РНОКПП</b><span>Ten digits, the personal tax number of an individual, what a sole trader (ФОП) trades under. It is not published anywhere, for reasons below.</span></li>
+      </ul>
+
+      <h2 id="find">Finding the company behind the number</h2>
+      <h3>What the Ministry of Justice publishes</h3>
+      <p>The <strong>ЄДР</strong>, Єдиний державний реєстр юридичних осіб, фізичних осіб-підприємців та громадських формувань, is published in full, every week, as open data under Creative Commons Attribution, with no account and no key. It is what {{siteName}} imports: a 319 MB archive a week, holding the name, the short name, the organisational-legal form, the state of the entity and its registration dates, keyed by the ЄДРПОУ.</p>
+      <h3>What the register does not contain</h3>
+      <p>Two things, and both are the war rather than an oversight.</p>
+      <p><strong>There is no address.</strong> Not a truncated one, not a town: місцезнаходження was withheld from the published dataset under martial law, and there is no address field in the schema at all. A Ukrainian lookup returns a name, a legal form and a status, and stops there.</p>
+      <p><strong>There is no ПДВ status.</strong> The register that says whether a company's VAT registration is live is the State Tax Service's own, and it is closed: its open-data publication stopped on 23 February 2022, the day before the invasion, and the tax service's public register search now answers with a single sentence: access to the public electronic registers is restricted for the duration of martial law. So a lookup can tell you <em>which company</em> an ІПН belongs to; it cannot tell you whether that registration is still in force.</p>
+
+      <h2 id="pitfalls">Ukraine-specific pitfalls</h2>
+      <ul>
+        <li><strong>Eight digits and twelve digits are one company.</strong> The twelve-digit ІПН reduces to the eight-digit ЄДРПОУ; do not key two records to them.</li>
+        <li><strong>An ІПН is a VAT registration, a ЄДРПОУ is not.</strong> Every company has the second; only a registered payer has the first.</li>
+        <li><strong>Sole traders cannot be looked up.</strong> The ФОП half of the register publishes no identifier at all, only a name, a status and dates, so there is no number to find them by.</li>
+        <li><strong>No address, from any free source.</strong> This is the register's published content under martial law, not a gap in the lookup.</li>
+        <li><strong>A company in <em>в стані припинення</em> is still trading.</strong> Winding up is not struck off; {{siteName}} reports it active, because it can still invoice you.</li>
+        <li><strong>Sanctions are your call, not the register's.</strong> A lookup says who a number belongs to; whether you may trade with them is a separate check against your own lists.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The ЄДРПОУ in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Ukrainian company number have?</summary>
+          <p>Eight for the ЄДРПОУ, which every legal entity has. The last digit is a modulus 11 check over the seven before it, so a mistyped code is usually caught without a lookup.</p>
+        </details>
+        <details>
+          <summary>Is the ІПН a VAT number?</summary>
+          <p>Yes. It is the number a Ukrainian ПДВ payer is registered under and the one written on a tax invoice. A company that is not registered for ПДВ has no ІПН at all, only a ЄДРПОУ.</p>
+        </details>
+        <details>
+          <summary>Can I get a company's ЄДРПОУ from its ІПН?</summary>
+          <p>Yes, and offline. The first seven digits are shared, and the eighth of the ЄДРПОУ is a check digit computed from them. {{siteName}} does it for you: both spellings return the same company.</p>
+        </details>
+        <details>
+          <summary>Why is there no address in the answer?</summary>
+          <p>Because the register no longer publishes one. Company addresses were withheld from the open dataset under martial law, and no free Ukrainian source carries them.</p>
+        </details>
+        <details>
+          <summary>Can I check whether a Ukrainian company is registered for ПДВ?</summary>
+          <p>Not from open data. The tax service's VAT payer register has not been published since 23 February 2022 and its live search is restricted for the duration of martial law.</p>
+        </details>
+        <details>
+          <summary>Why does a sole trader return nothing?</summary>
+          <p>Because the register publishes no number for one. The ФОП file carries a name, a status and dates and no identifier, so there is nothing to look a sole trader up by.</p>
+        </details>
+      </div>
+
+      <h2>Business tax numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/poland/">Poland</a></li>
+        <li><a href="/en/vat-number/romania/">Romania</a></li>
+        <li><a href="/en/vat-number/russia/">Russia</a></li>
+        <li><a href="/en/vat-number/germany/">Germany</a></li>
+        <li><a href="/en/vat-number/lithuania/">Lithuania</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 15 September 2026.</p>
+    </div>
+  </section>
+</main>

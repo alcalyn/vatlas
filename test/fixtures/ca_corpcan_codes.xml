@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ccc:codes xmlns:ccc="http://www.ic.gc.ca/corpcan/codes">
+<code name="act">
+    <key value="1">
+      <full lang="en">Canada Corporations Act Part I - Private</full>
+      <full lang="fr">Loi sur les corporations canadiennes partie I - corporations privées</full>
+      <short lang="en">CCA - Part I</short>
+      <short lang="fr">LCC - Partie I</short>
+    </key>
+    <key value="2">
+      <full lang="en">Canada Corporations Act Part I - Public</full>
+      <full lang="fr">Loi sur les corporations canadiennes partie I - corporations publiques</full>
+      <short lang="en">CCA - Part I</short>
+      <short lang="fr">LCC - Partie I</short>
+    </key>
+    <key value="3">
+      <full lang="en">Canada Corporations Act - Part II</full>
+      <full lang="fr">Loi sur les corporations canadiennes - partie II</full>
+      <short lang="en">CCA - Part II</short>
+      <short lang="fr">LCC - Partie II</short>
+    </key>
+    <key value="4">
+      <full lang="en">Canada Cooperative Associations Act</full>
+      <full lang="fr">Loi sur les associations coopératives du Canada</full>
+      <short lang="en">CCAA</short>
+      <short lang="fr">LACC</short>
+    </key>
+    <key value="5">
+      <full lang="en">Pension Fund Societies Act</full>
+      <full lang="fr">Loi sur les sociétés de caisse de retraite</full>
+      <short lang="en">PFSA</short>
+      <short lang="fr">LSCR</short>
+    </key>
+    <key value="6">
+      <full lang="en">Canada Business Corporations Act</full>
+      <full lang="fr">Loi canadienne sur les sociétés par actions</full>
+      <short lang="en">CBCA</short>
+      <short lang="fr">LCSA</short>
+    </key>
+    <key value="7">
+      <full lang="en">Boards of Trade Act - Part I</full>
+      <full lang="fr">Loi sur les chambres de commerce - partie I</full>
+      <short lang="en">BOTA - Part I</short>
+      <short lang="fr">LCH - Partie I</short>
+    </key>
+    <key value="8">
+      <full lang="en">Boards of Trade Act - Part II</full>
+      <full lang="fr">Loi sur les chambres de commerce - partie II</full>
+      <short lang="en">BOTA - Part II</short>
+      <short lang="fr">LCH - Partie II</short>
+    </key>
+    <key value="9">
+      <full lang="en">Special Act of Parliament</full>
+      <full lang="fr">Loi spéciale du Parlement</full>
+      <short lang="en">SAOP</short>
+      <short lang="fr">LSP</short>
+    </key>
+    <key value="10">
+      <full lang="en">More than 1 Act Applicable</full>
+      <full lang="fr">Plus d'une loi applicable</full>
+    </key>
+    <key value="11">
+      <full lang="en">Bank Act</full>
+      <full lang="fr">Loi sur les banques</full>
+    </key>
+    <key value="12">
+      <full lang="en">Canada Cooperatives Act</full>
+      <full lang="fr">Loi canadienne sur les coopératives</full>
+      <short lang="en">Coop Act</short>
+      <short lang="fr">LCOOP</short>
+    </key>
+    <key value="13">
+      <full lang="en">Other</full>
+      <full lang="fr">Autres lois</full>
+      <short lang="en">Other</short>
+      <short lang="fr">Autre</short>
+    </key>
+    <key value="14">
+      <full lang="en">Canada Not-for-profit Corporations Act</full>
+      <full lang="fr">Loi canadienne sur les organisations à but non lucratif</full>
+      <short lang="en">NFP Act</short>
+      <short lang="fr">Loi BNL</short>
+    </key>
+  </code>
+</ccc:codes>

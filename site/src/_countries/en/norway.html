@@ -1,0 +1,101 @@
+<!-- @meta
+{
+  "title": "Norwegian organisasjonsnummer and MVA number: format and lookup",
+  "description": "NO plus nine digits plus MVA. How the organisasjonsnummer works, why being registered and being liable for VAT are two different registers, and what Brønnøysund answers for free.",
+  "h1": "The Norwegian organisasjonsnummer",
+  "term": "organisasjonsnummer",
+  "updated": "2026-09-15"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Norway · NO</p>
+        <h1>The Norwegian organisasjonsnummer</h1>
+        <p class="section__lead">Norway is in the EEA and not in the Union, so a Norwegian number is not an intra-community VAT number and VIES has never heard of it. It is the organisasjonsnummer, and the Brønnøysund registers answer for it in under a second, for nothing, with no key.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>NO</code> + 9 digits + <code>MVA</code></p>
+        <p><strong>Example:</strong> <code>NO923609016MVA</code></p>
+        <p><strong>Issued by:</strong> Brønnøysundregistrene, the registers of Brønnøysund.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>An organisasjonsnummer is <strong>nine digits</strong>, usually written in threes: <code>923 609 016</code>. On an invoice it is followed by <strong>MVA</strong>, the Norwegian for VAT, and often preceded by <code>NO</code>: <code>NO 923 609 016 MVA</code>. The suffix is not part of the number; it says that the holder is in the VAT register.</p>
+      <p>The ninth digit is a <strong>check digit</strong>, computed modulo 11 over the first eight with the weights 3, 2, 7, 6, 5, 4, 3, 2. A mistyped number is caught before anyone is asked, which is why {{siteName}} rejects it offline.</p>
+      <p>The arithmetic leaves no digit for one remainder in eleven, and Brønnøysund simply skips those numbers rather than encoding them. So roughly nine per cent of the nine-digit space is not a valid organisasjonsnummer at all.</p>
+
+      <h2 id="status">Two registers, and only one of them is about VAT</h2>
+      <p>This is the distinction Norway turns on, and the one most integrations get wrong.</p>
+      <ul class="breakdown">
+        <li><b>Enhetsregisteret</b><span>The register of units. Every legal entity in Norway is in it (companies, associations, public bodies, sole traders) and that is where the organisasjonsnummer comes from.</span></li>
+        <li><b>Merverdiavgiftsregisteret</b><span>The VAT register. An entity enters it only once its taxable turnover passes NOK 50,000, and it is that entry which earns the MVA suffix.</span></li>
+      </ul>
+      <p>So a Norwegian company can exist, trade, employ people and still not be registered for VAT. Enhetsregisteret publishes the second register's verdict as a flag on every row, which means the question can be answered in one call.</p>
+      <p>{{siteName}} passes that through rather than flattening it: a number that exists and is not in the VAT register comes back as <strong>not registered</strong>, with the date the register was asked. An answer, not a failure, and one no other source outside the Union is in a position to give.</p>
+
+      <h2 id="find">Finding the company behind the number</h2>
+      <h3>Enhetsregisteret's open API</h3>
+      <p>Brønnøysund publishes the whole register over <code>data.brreg.no</code>: REST, JSON, an open licence, and <strong>no key of any kind</strong>. A number nobody holds answers with a plain 404. It is among the most usable public registers anywhere, and it returns the legal name, the legal form, the registered seat, the industry code and the VAT flag together.</p>
+      <h3>Units and sub-units</h3>
+      <p>A Norwegian branch or establishment, an <em>underenhet</em>, has an organisasjonsnummer of its own, kept in a second collection. Both are the same number space, so a number missing from one is a question for the other rather than an answer; {{siteName}} asks both before concluding anything. A sub-unit carries no VAT flag: its parent's registration covers it.</p>
+      <h3>Whether the company still exists</h3>
+      <p>The register states four ways of having stopped, independently: <em>konkurs</em> (bankruptcy), <em>under avvikling</em> (winding up), compulsory winding-up, and a deletion date. Any one of them is a company that is no longer trading.</p>
+
+      <h2 id="pitfalls">Norway-specific pitfalls</h2>
+      <ul>
+        <li><strong>VIES will not answer.</strong> Norway is in the EEA, not the Union. Asking VIES about a Norwegian number spends a call to be told the input is invalid.</li>
+        <li><strong>MVA is a suffix, not part of the number.</strong> Strip it before storing, or the same company ends up keyed twice.</li>
+        <li><strong>Existing is not being VAT-registered.</strong> The threshold is real and plenty of live companies sit below it.</li>
+        <li><strong>The number belongs to the entity, not to the business.</strong> Associations, foundations and public bodies all have one; a nine-digit number is not proof of a company.</li>
+        <li><strong>A branch has its own number.</strong> If a lookup misses, it may be a sub-unit rather than a bad number.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The organisasjonsnummer in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Norwegian VAT number have?</summary>
+          <p>Nine, the last of which is a check digit, followed by the letters MVA on an invoice.</p>
+        </details>
+        <details>
+          <summary>Is a Norwegian number valid for intra-community trade?</summary>
+          <p>No. Norway is outside the Union, so there is no intra-community VAT number and VIES does not cover it.</p>
+        </details>
+        <details>
+          <summary>Why does a valid company come back as not registered?</summary>
+          <p>Because it is in Enhetsregisteret but not in the VAT register, most often because its turnover is below NOK 50,000.</p>
+        </details>
+        <details>
+          <summary>Does the lookup cost anything?</summary>
+          <p>Nothing at the source: Brønnøysund publishes the register under an open licence with no key and no quota.</p>
+        </details>
+        <details>
+          <summary>What is an underenhet?</summary>
+          <p>A branch or establishment. It has an organisasjonsnummer of its own and lives in a second collection of the same register.</p>
+        </details>
+      </div>
+
+      <h2>Business numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/sweden/">Sweden</a></li>
+        <li><a href="/en/vat-number/denmark/">Denmark</a></li>
+        <li><a href="/en/vat-number/finland/">Finland</a></li>
+        <li><a href="/en/vat-number/switzerland/">Switzerland</a></li>
+        <li><a href="/en/vat-number/germany/">Germany</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 15 September 2026.</p>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,5 @@
+/* Single entry point: Vite inlines these imports into one stylesheet. */
+@import './tokens.css';
+@import './base.css';
+@import './components.css';
+@import './pages.css';

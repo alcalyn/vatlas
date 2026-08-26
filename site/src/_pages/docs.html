@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="{{lang}}">
+  <head>
+    <!-- @include partials/head.html -->
+  </head>
+  <body>
+    <!-- @include partials/header.html -->
+
+    <main id="main">
+      <div class="container docs">
+        <nav class="docs__nav" aria-label="{{t.docs.navTitle}}" data-scrollspy>
+          <p class="docs__nav-title">{{t.docs.navTitle}}</p>
+          <a href="#introduction">{{t.docsToc.intro}}</a>
+          <a href="#auth">{{t.docsToc.auth}}</a>
+          <a href="#envelope">{{t.docsToc.envelope}}</a>
+
+          <p class="docs__nav-group">{{t.docsToc.groupLookup}}</p>
+          <a href="#lookup"><span class="docs__nav-verb" data-method="GET">GET</span>{{t.docsToc.lookup}}</a>
+          <a href="#lookup-proof">{{t.docsToc.lookupProof}}</a>
+          <a href="#lookup-all"><span class="docs__nav-verb" data-method="GET">GET</span>{{t.docsToc.lookupAll}}</a>
+          <a href="#fields">{{t.docsToc.fields}}</a>
+
+          <p class="docs__nav-group">{{t.docsToc.groupLookupAsync}}</p>
+          <a href="#lookup-async">{{t.docsToc.lookupAsync}}</a>
+          <a href="#lookup-async-queue"><span class="docs__nav-verb" data-method="POST">POST</span>{{t.docsToc.lookupAsyncQueue}}</a>
+          <a href="#lookup-async-queue-all"><span class="docs__nav-verb" data-method="POST">POST</span>{{t.docsToc.lookupAsyncQueueAll}}</a>
+          <a href="#lookup-async-list"><span class="docs__nav-verb" data-method="GET">GET</span>{{t.docsToc.lookupAsyncList}}</a>
+          <a href="#lookup-async-get"><span class="docs__nav-verb" data-method="GET">GET</span>{{t.docsToc.lookupAsyncGet}}</a>
+          <a href="#lookup-async-cancel"><span class="docs__nav-verb" data-method="DELETE">DELETE</span>{{t.docsToc.lookupAsyncCancel}}</a>
+          <a href="#lookup-async-result">{{t.docsToc.lookupAsyncResult}}</a>
+
+          <p class="docs__nav-group">{{t.docsToc.groupMonitor}}</p>
+          <a href="#monitor">{{t.docsToc.monitor}}</a>
+          <a href="#monitor-list"><span class="docs__nav-verb" data-method="GET">GET</span>{{t.docsToc.monitorList}}</a>
+          <a href="#monitor-add"><span class="docs__nav-verb" data-method="POST">POST</span>{{t.docsToc.monitorAdd}}</a>
+          <a href="#monitor-get"><span class="docs__nav-verb" data-method="GET">GET</span>{{t.docsToc.monitorGet}}</a>
+          <a href="#monitor-delete"><span class="docs__nav-verb" data-method="DELETE">DELETE</span>{{t.docsToc.monitorDelete}}</a>
+          <a href="#monitor-event">{{t.docsToc.monitorEvent}}</a>
+
+          <p class="docs__nav-group">{{t.docsToc.groupCallbacks}}</p>
+          <a href="#callbacks">{{t.docsToc.callbacks}}</a>
+          <a href="#callbacks-request">{{t.docsToc.callbacksRequest}}</a>
+          <a href="#callbacks-signature">{{t.docsToc.callbacksSignature}}</a>
+          <a href="#callbacks-retries">{{t.docsToc.callbacksRetries}}</a>
+
+          <p class="docs__nav-group">{{t.docsToc.groupReference}}</p>
+          <a href="#audit"><span class="docs__nav-verb" data-method="GET">GET</span>{{t.docsToc.audit}}</a>
+          <a href="#countries"><span class="docs__nav-verb" data-method="GET">GET</span>{{t.docsToc.countries}}</a>
+          <a href="#health"><span class="docs__nav-verb" data-method="GET">GET</span>{{t.docsToc.health}}</a>
+          <a href="#errors">{{t.docsToc.errors}}</a>
+          <a href="#quotas">{{t.docsToc.quotas}}</a>
+          <a href="#samples">{{t.docsToc.samples}}</a>
+        </nav>
+
+        <div class="docs__content">
+          <section id="introduction">
+            <p class="eyebrow">{{t.docs.eyebrow}}</p>
+            <h1 class="docs__h1">{{t.docs.h1}}</h1>
+            <p>{{t.docsIntro.text}}</p>
+
+            <h3>{{t.docsIntro.baseUrlTitle}}</h3>
+            <div class="code" data-copy><pre><code>{{apiBase}}</code></pre></div>
+            <p>{{t.docsIntro.baseUrlText}}</p>
+          </section>
+
+          <section id="auth">
+            <h2>{{t.docsAuth.title}}</h2>
+            <p>{{t.docsAuth.text}}</p>
+            <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-str">"{{apiBase}}/v1/lookup/FR08000325175"</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">"Authorization: Bearer vtl_live_xxxxxxxxxxxxxxxxxxxx"</span></code></pre>
+            </div>
+            <div class="callout">
+              <p><strong>{{t.docsAuth.calloutTitle}}</strong> {{t.docsAuth.calloutText}}</p>
+            </div>
+            <p>{{t.docsAuth.after}}</p>
+          </section>
+
+          <section id="envelope">
+            <h2>{{t.docsEnvelope.title}}</h2>
+            <p>{{t.docsEnvelope.text}}</p>
+            <ul>
+              <li>{{t.docsEnvelope.l1}}</li>
+              <li>{{t.docsEnvelope.l2}}</li>
+              <li>{{t.docsEnvelope.l3}}</li>
+              <li>{{t.docsEnvelope.l4}}</li>
+              <li>{{t.docsEnvelope.l5}}</li>
+            </ul>
+          </section>
+
+          <section id="lookup">
+            <h2>{{t.docsLookup.title}}</h2>
+            <p class="endpoint">
+              <span class="endpoint__verb" data-method="GET">GET</span> <span>/v1/lookup/{vatNumber}</span>
+            </p>
+            <p>{{t.docsLookup.text}}</p>
+
+            <div class="table-wrap section--stack">
+              <table class="table">
+                <caption class="sr-only">{{t.docsLookup.paramsCaption}}</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">{{t.docsLookup.thParam}}</th>
+                    <th scope="col">{{t.docsLookup.thType}}</th>
+                    <th scope="col">{{t.docsLookup.thDesc}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>vatNumber</code></th>
+                    <td>{{t.docsLookup.paramType}}</td>
+                    <td>{{t.docsLookup.paramDesc}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>prefer</code></th>
+                    <td>{{t.docsLookup.preferParamType}}</td>
+                    <td>{{t.docsLookup.preferParamDesc}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>history</code></th>
+                    <td>{{t.docsLookup.historyParamType}}</td>
+                    <td>{{t.docsLookup.historyParamDesc}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>{{t.docsLookup.requestTitle}}</h3>
+            <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-str">"{{apiBase}}/v1/lookup/FR08000325175"</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">"Authorization: Bearer $VATLAS_KEY"</span></code></pre>
+            </div>
+
+            <h3>{{t.docsLookup.responseTitle}}</h3>
+            <div class="code" data-copy>
+<pre><code><span class="tok-punc">{</span>
+  <span class="tok-key">"data"</span><span class="tok-punc">: {</span>
+    <span class="tok-key">"vatNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"FR08000325175"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"countryCode"</span><span class="tok-punc">:</span> <span class="tok-str">"FR"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"nationalNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"08000325175"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"nationalId"</span><span class="tok-punc">:</span> <span class="tok-str">"000325175"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"name"</span><span class="tok-punc">:</span> <span class="tok-str">"THIERRY JANOYER"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"legalForm"</span><span class="tok-punc">:</span> <span class="tok-str">"Personne physique"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"status"</span><span class="tok-punc">:</span> <span class="tok-str">"active"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"address"</span><span class="tok-punc">: {</span>
+      <span class="tok-key">"line1"</span><span class="tok-punc">:</span> <span class="tok-str">"51 RUE MARX DORMOY"</span><span class="tok-punc">,</span>
+      <span class="tok-key">"line2"</span><span class="tok-punc">:</span> <span class="tok-null">null</span><span class="tok-punc">,</span>
+      <span class="tok-key">"postalCode"</span><span class="tok-punc">:</span> <span class="tok-str">"13004"</span><span class="tok-punc">,</span>
+      <span class="tok-key">"city"</span><span class="tok-punc">:</span> <span class="tok-str">"MARSEILLE"</span><span class="tok-punc">,</span>
+      <span class="tok-key">"country"</span><span class="tok-punc">:</span> <span class="tok-str">"FR"</span>
+    <span class="tok-punc">}</span>
+  <span class="tok-punc">},</span>
+  <span class="tok-key">"meta"</span><span class="tok-punc">: {</span>
+    <span class="tok-key">"source"</span><span class="tok-punc">:</span> <span class="tok-str">"SIRENE"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"sourceDate"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-09-01"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"sourceSince"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-01-05"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"sourceUpdatedAt"</span><span class="tok-punc">:</span> <span class="tok-str">"2025-12-06T09:43:55.000Z"</span>
+  <span class="tok-punc">}</span>
+<span class="tok-punc">}</span></code></pre>
+            </div>
+
+            <h3>{{t.docsLookup.proofTitle}}</h3>
+            <p>{{t.docsLookup.proofText}}</p>
+            <div class="code" data-copy>
+<pre><code>  <span class="tok-key">"meta"</span><span class="tok-punc">: {</span>
+    <span class="tok-key">"source"</span><span class="tok-punc">:</span> <span class="tok-str">"VIES"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"sourceDate"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-08-28"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"sourceSince"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-08-28"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"sourceUpdatedAt"</span><span class="tok-punc">:</span> <span class="tok-punc">null</span><span class="tok-punc">,</span>
+    <span class="tok-key">"proof"</span><span class="tok-punc">: {</span>
+      <span class="tok-key">"type"</span><span class="tok-punc">:</span> <span class="tok-str">"vies_consultation_number"</span><span class="tok-punc">,</span>
+      <span class="tok-key">"value"</span><span class="tok-punc">:</span> <span class="tok-str">"908a3b38-e0dc-4502-8b06-d057eeac6861"</span>
+    <span class="tok-punc">}</span>
+  <span class="tok-punc">}</span></code></pre>
+            </div>
+
+            <h3 id="lookup-proof">{{t.docsLookup.requireTitle}}</h3>
+            <p>{{t.docsLookup.requireText}}</p>
+            <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-str">"{{apiBase}}/v1/lookup/FR08000325175?prefer=proof"</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">"Authorization: Bearer $VATLAS_KEY"</span></code></pre>
+            </div>
+            <p>{{t.docsLookup.requireCost}}</p>
+
+            <div class="callout">
+              <p><strong>{{t.docsLookup.calloutTitle}}</strong> {{t.docsLookup.calloutText}}</p>
+            </div>
+          </section>
+
+
+          <section id="lookup-all">
+            <h2>{{t.docsLookupAll.title}}</h2>
+            <p class="endpoint">
+              <span class="endpoint__verb" data-method="GET">GET</span> <span>/v1/lookup-all/{vatNumber}</span>
+            </p>
+            <p>{{t.docsLookupAll.text}}</p>
+
+            <div class="table-wrap section--stack">
+              <table class="table">
+                <caption class="sr-only">{{t.docsLookup.paramsCaption}}</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">{{t.docsLookup.thParam}}</th>
+                    <th scope="col">{{t.docsLookup.thType}}</th>
+                    <th scope="col">{{t.docsLookup.thDesc}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>vatNumber</code></th>
+                    <td>{{t.docsLookup.paramType}}</td>
+                    <td>{{t.docsLookupAll.paramDesc}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>history</code></th>
+                    <td>{{t.docsLookupAll.historyParamType}}</td>
+                    <td>{{t.docsLookupAll.historyParamDesc}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>{{t.docsLookupAll.statusTitle}}</h3>
+            <p>{{t.docsLookupAll.statusText}}</p>
+
+            <h3>{{t.docsLookupAll.requestTitle}}</h3>
+            <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-str">"{{apiBase}}/v1/lookup-all/CZ27074358"</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">"Authorization: Bearer $VATLAS_KEY"</span></code></pre>
+            </div>
+
+            <h3>{{t.docsLookupAll.responseTitle}}</h3>
+            <div class="code" data-copy>
+<pre><code><span class="tok-punc">{</span>
+  <span class="tok-key">"data"</span><span class="tok-punc">: {</span>
+    <span class="tok-key">"vatNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"CZ27074358"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"countryCode"</span><span class="tok-punc">:</span> <span class="tok-str">"CZ"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"nationalNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"27074358"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"sources"</span><span class="tok-punc">: [</span>
+      <span class="tok-punc">{</span>
+        <span class="tok-key">"data"</span><span class="tok-punc">:</span> <span class="tok-punc">{</span>
+          <span class="tok-key">"vatNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"CZ27074358"</span><span class="tok-punc">,</span> <span class="tok-key">"name"</span><span class="tok-punc">:</span> <span class="tok-str">"ACME s.r.o."</span><span class="tok-punc">,</span> <span class="tok-comment">/* the same company shape as above */</span>
+        <span class="tok-punc">},</span>
+        <span class="tok-key">"meta"</span><span class="tok-punc">:</span> <span class="tok-punc">{</span>
+          <span class="tok-key">"source"</span><span class="tok-punc">:</span> <span class="tok-str">"ARES"</span><span class="tok-punc">,</span> <span class="tok-key">"name"</span><span class="tok-punc">:</span> <span class="tok-str">"ARES (Ministerstvo financí)"</span><span class="tok-punc">,</span> <span class="tok-key">"kind"</span><span class="tok-punc">:</span> <span class="tok-str">"live"</span><span class="tok-punc">,</span>
+          <span class="tok-key">"sourceDate"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-09-04"</span><span class="tok-punc">,</span> <span class="tok-key">"sourceSince"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-09-04"</span><span class="tok-punc">,</span>
+          <span class="tok-key">"call"</span><span class="tok-punc">:</span> <span class="tok-punc">{</span> <span class="tok-key">"status"</span><span class="tok-punc">:</span> <span class="tok-str">"found"</span><span class="tok-punc">,</span> <span class="tok-key">"checkedAt"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-09-04T22:03:00.505Z"</span> <span class="tok-punc">}</span>
+        <span class="tok-punc">},</span>
+        <span class="tok-key">"history"</span><span class="tok-punc">:</span> <span class="tok-punc">[</span>
+          <span class="tok-punc">{</span> <span class="tok-key">"from"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-06-14"</span><span class="tok-punc">,</span> <span class="tok-key">"to"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-08-30"</span><span class="tok-punc">,</span> <span class="tok-key">"status"</span><span class="tok-punc">:</span> <span class="tok-str">"active"</span><span class="tok-punc">,</span> <span class="tok-comment">/* … */</span> <span class="tok-punc">},</span>
+          <span class="tok-punc">{</span> <span class="tok-key">"from"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-09-04"</span><span class="tok-punc">,</span> <span class="tok-key">"to"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-09-04"</span><span class="tok-punc">,</span> <span class="tok-key">"status"</span><span class="tok-punc">:</span> <span class="tok-str">"active"</span><span class="tok-punc">,</span> <span class="tok-comment">/* … */</span> <span class="tok-punc">}</span>
+        <span class="tok-punc">]</span>
+      <span class="tok-punc">},</span>
+      <span class="tok-punc">{</span>
+        <span class="tok-key">"error"</span><span class="tok-punc">:</span> <span class="tok-punc">{</span>
+          <span class="tok-key">"code"</span><span class="tok-punc">:</span> <span class="tok-str">"SOURCE_UNAVAILABLE"</span><span class="tok-punc">,</span> <span class="tok-key">"message"</span><span class="tok-punc">:</span> <span class="tok-str">"The source did not answer."</span><span class="tok-punc">,</span>
+          <span class="tok-key">"fault"</span><span class="tok-punc">:</span> <span class="tok-str">"MS_UNAVAILABLE"</span><span class="tok-punc">,</span> <span class="tok-key">"attempts"</span><span class="tok-punc">:</span> <span class="tok-num">4</span>
+        <span class="tok-punc">},</span>
+        <span class="tok-key">"meta"</span><span class="tok-punc">:</span> <span class="tok-punc">{</span>
+          <span class="tok-key">"source"</span><span class="tok-punc">:</span> <span class="tok-str">"VIES"</span><span class="tok-punc">,</span> <span class="tok-key">"name"</span><span class="tok-punc">:</span> <span class="tok-str">"VIES (European Commission)"</span><span class="tok-punc">,</span> <span class="tok-key">"kind"</span><span class="tok-punc">:</span> <span class="tok-str">"live"</span><span class="tok-punc">,</span>
+          <span class="tok-key">"call"</span><span class="tok-punc">:</span> <span class="tok-punc">{</span> <span class="tok-key">"status"</span><span class="tok-punc">:</span> <span class="tok-str">"unavailable"</span><span class="tok-punc">,</span> <span class="tok-comment">/* … */</span> <span class="tok-punc">}</span>
+        <span class="tok-punc">},</span>
+        <span class="tok-key">"history"</span><span class="tok-punc">:</span> <span class="tok-punc">[]</span>
+      <span class="tok-punc">}</span>
+    <span class="tok-punc">]</span>
+  <span class="tok-punc">}</span>
+<span class="tok-punc">}</span></code></pre>
+            </div>
+
+            <h3>{{t.docsLookupAll.fieldsTitle}}</h3>
+            <div class="table-wrap">
+              <table class="table">
+                <caption class="sr-only">{{t.docsLookupAll.fieldsCaption}}</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">{{t.docsFields.thField}}</th>
+                    <th scope="col">{{t.docsLookup.thType}}</th>
+                    <th scope="col">{{t.docsLookup.thDesc}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row"><code>data</code></th><td>object</td><td>{{t.docsLookupAll.fData}}</td></tr>
+                  <tr><th scope="row"><code>error</code></th><td>object</td><td>{{t.docsLookupAll.fError}}</td></tr>
+                  <tr><th scope="row"><code>meta</code></th><td>object</td><td>{{t.docsLookupAll.fMeta}}</td></tr>
+                  <tr><th scope="row"><code>meta.source</code></th><td>string</td><td>{{t.docsLookupAll.fSource}}</td></tr>
+                  <tr><th scope="row"><code>meta.kind</code></th><td>enum</td><td>{{t.docsLookupAll.fKind}}</td></tr>
+                  <tr><th scope="row"><code>meta.call</code></th><td>object</td><td>{{t.docsLookupAll.fCall}}</td></tr>
+                  <tr><th scope="row"><code>history</code></th><td>array</td><td>{{t.docsLookupAll.fHistory}}</td></tr>
+                  <tr><th scope="row"><code>history[]</code></th><td>object</td><td>{{t.docsLookupAll.fStatement}}</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="callout section--stack">
+              <p><strong>{{t.docsLookupAll.countTitle}}</strong> {{t.docsLookupAll.countText}}</p>
+            </div>
+          </section>
+
+          <section id="fields">
+            <h2>{{t.docsFields.title}}</h2>
+            <div class="table-wrap">
+              <table class="table">
+                <caption class="sr-only">{{t.docsFields.caption}}</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">{{t.docsFields.thField}}</th>
+                    <th scope="col">{{t.docsLookup.thType}}</th>
+                    <th scope="col">{{t.docsLookup.thDesc}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row"><code>vatNumber</code></th><td>string</td><td>{{t.docsFields.vatNumber}}</td></tr>
+                  <tr><th scope="row"><code>countryCode</code></th><td>string</td><td>{{t.docsFields.countryCode}}</td></tr>
+                  <tr><th scope="row"><code>nationalNumber</code></th><td>string</td><td>{{t.docsFields.nationalNumber}}</td></tr>
+                  <tr><th scope="row"><code>nationalId</code></th><td>string | null</td><td>{{t.docsFields.nationalId}}</td></tr>
+                  <tr><th scope="row"><code>name</code></th><td>string</td><td>{{t.docsFields.name}}</td></tr>
+                  <tr><th scope="row"><code>legalForm</code></th><td>string | null</td><td>{{t.docsFields.legalForm}}</td></tr>
+                  <tr><th scope="row"><code>status</code></th><td>enum</td><td>{{t.docsFields.status}}</td></tr>
+                  <tr><th scope="row"><code>address.line1</code></th><td>string | null</td><td>{{t.docsFields.line1}}</td></tr>
+                  <tr><th scope="row"><code>address.line2</code></th><td>string | null</td><td>{{t.docsFields.line2}}</td></tr>
+                  <tr><th scope="row"><code>address.postalCode</code></th><td>string | null</td><td>{{t.docsFields.postalCode}}</td></tr>
+                  <tr><th scope="row"><code>address.city</code></th><td>string | null</td><td>{{t.docsFields.city}}</td></tr>
+                  <tr><th scope="row"><code>address.country</code></th><td>string</td><td>{{t.docsFields.country}}</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="monitor">
+            <h2>{{t.docsMonitor.title}}</h2>
+            <p>{{t.docsMonitor.text}}</p>
+
+            <h3 id="monitor-list">{{t.docsMonitor.listTitle}}</h3>
+            <p class="endpoint"><span class="endpoint__verb" data-method="GET">GET</span> <span>/v1/monitor</span></p>
+            <p>{{t.docsMonitor.listText}}</p>
+
+            <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-str">"{{apiBase}}/v1/monitor"</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">"Authorization: Bearer $VATLAS_KEY"</span></code></pre>
+            </div>
+
+            <h3 id="monitor-add">{{t.docsMonitor.addTitle}}</h3>
+            <p class="endpoint"><span class="endpoint__verb" data-method="POST">POST</span> <span>/v1/monitor/{vatNumber}</span></p>
+            <p>{{t.docsMonitor.addText}}</p>
+
+            <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-flag">-X</span> POST <span class="tok-str">"{{apiBase}}/v1/monitor/FR95884831538"</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">"Authorization: Bearer $VATLAS_KEY"</span></code></pre>
+            </div>
+
+            <p>{{t.docsMonitor.addUrl}}</p>
+
+            <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-flag">-X</span> POST <span class="tok-str">"{{apiBase}}/v1/monitor/FR95884831538"</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">"Authorization: Bearer $VATLAS_KEY"</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">"Content-Type: application/json"</span> \
+  <span class="tok-flag">-d</span> <span class="tok-str">'{"url": "https://example.com/hooks/vatlas"}'</span></code></pre>
+            </div>
+
+            <h3 id="monitor-get">{{t.docsMonitor.getTitle}}</h3>
+            <p class="endpoint"><span class="endpoint__verb" data-method="GET">GET</span> <span>/v1/monitor/{vatNumber}</span></p>
+            <p>{{t.docsMonitor.getText}}</p>
+
+            <h3 id="monitor-delete">{{t.docsMonitor.deleteTitle}}</h3>
+            <p class="endpoint"><span class="endpoint__verb" data-method="DELETE">DELETE</span> <span>/v1/monitor/{vatNumber}</span></p>
+            <p>{{t.docsMonitor.deleteText}}</p>
+
+            <h3 id="monitor-event">{{t.docsMonitor.eventTitle}}</h3>
+            <p>{{t.docsMonitor.eventText}}</p>
+
+            <div class="code" data-copy>
+<pre><code><span class="tok-punc">{</span>
+  <span class="tok-key">"event"</span><span class="tok-punc">:</span> <span class="tok-str">"company.changed"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"monitor"</span><span class="tok-punc">:</span> <span class="tok-str">"01a08018-e2b8-770c-a9e6-89c82d01bf53"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"occurredAt"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-09-08T03:00:41.563Z"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"vatNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"FR95884831538"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"data"</span><span class="tok-punc">: {</span> <span class="tok-key">"name"</span><span class="tok-punc">:</span> <span class="tok-str">"ACME SARL"</span><span class="tok-punc">,</span> <span class="tok-key">"status"</span><span class="tok-punc">:</span> <span class="tok-str">"active"</span><span class="tok-punc">,</span> … <span class="tok-punc">},</span>
+  <span class="tok-key">"meta"</span><span class="tok-punc">: {</span> <span class="tok-key">"source"</span><span class="tok-punc">:</span> <span class="tok-str">"SIRENE"</span><span class="tok-punc">,</span> <span class="tok-key">"sourceDate"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-09-08"</span><span class="tok-punc">,</span> … <span class="tok-punc">},</span>
+  <span class="tok-key">"previous"</span><span class="tok-punc">: {</span> <span class="tok-key">"data"</span><span class="tok-punc">: {</span> … <span class="tok-punc">},</span> <span class="tok-key">"meta"</span><span class="tok-punc">: {</span> … <span class="tok-punc">} }</span>
+<span class="tok-punc">}</span></code></pre>
+            </div>
+
+            <p>{{t.docsMonitor.firstCheck}}</p>
+            <p>{{t.docsMonitor.limit}}</p>
+          </section>
+
+          <section id="lookup-async">
+            <h2>{{t.docsAsync.title}}</h2>
+            <p>{{t.docsAsync.text}}</p>
+
+            <h3 id="lookup-async-queue">{{t.docsAsync.queueTitle}}</h3>
+            <p class="endpoint"><span class="endpoint__verb" data-method="POST">POST</span> <span>/v1/lookup-async/{vatNumber}</span></p>
+            <p>{{t.docsAsync.queueText}}</p>
+
+            <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-flag">-X</span> POST <span class="tok-str">"{{apiBase}}/v1/lookup-async/FR95884831538"</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">"Authorization: Bearer $VATLAS_KEY"</span></code></pre>
+            </div>
+
+            <div class="code" data-copy>
+<pre><code><span class="tok-punc">{</span>
+  <span class="tok-key">"data"</span><span class="tok-punc">: {</span>
+    <span class="tok-key">"publicId"</span><span class="tok-punc">:</span> <span class="tok-str">"01a0801b-0700-715f-b982-859f0d21da79"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"vatNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"FR95884831538"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"kind"</span><span class="tok-punc">:</span> <span class="tok-str">"single"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"status"</span><span class="tok-punc">:</span> <span class="tok-str">"pending"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"attempts"</span><span class="tok-punc">:</span> <span class="tok-num">0</span>
+  <span class="tok-punc">}</span>
+<span class="tok-punc">}</span></code></pre>
+            </div>
+
+            <p>{{t.docsAsync.cost}}</p>
+
+            <h3 id="lookup-async-queue-all">{{t.docsAsync.queueAllTitle}}</h3>
+            <p class="endpoint"><span class="endpoint__verb" data-method="POST">POST</span> <span>/v1/lookup-async-all/{vatNumber}</span></p>
+            <p>{{t.docsAsync.queueAllText}}</p>
+
+            <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-flag">-X</span> POST <span class="tok-str">"{{apiBase}}/v1/lookup-async-all/FR95884831538"</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">"Authorization: Bearer $VATLAS_KEY"</span></code></pre>
+            </div>
+
+            <h3 id="lookup-async-list">{{t.docsAsync.listTitle}}</h3>
+            <p class="endpoint"><span class="endpoint__verb" data-method="GET">GET</span> <span>/v1/lookup-async</span></p>
+            <p>{{t.docsAsync.listText}}</p>
+
+            <h3 id="lookup-async-get">{{t.docsAsync.getTitle}}</h3>
+            <p class="endpoint"><span class="endpoint__verb" data-method="GET">GET</span> <span>/v1/lookup-async/id/{publicId}</span></p>
+            <p>{{t.docsAsync.getText}}</p>
+
+            <h3 id="lookup-async-cancel">{{t.docsAsync.cancelTitle}}</h3>
+            <p class="endpoint"><span class="endpoint__verb" data-method="DELETE">DELETE</span> <span>/v1/lookup-async/id/{publicId}</span></p>
+            <p>{{t.docsAsync.cancelText}}</p>
+
+            <h3 id="lookup-async-result">{{t.docsAsync.resultTitle}}</h3>
+            <p>{{t.docsAsync.resultText}}</p>
+
+            <div class="code" data-copy>
+<pre><code><span class="tok-punc">{</span>
+  <span class="tok-key">"event"</span><span class="tok-punc">:</span> <span class="tok-str">"lookup.completed"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"lookup"</span><span class="tok-punc">:</span> <span class="tok-str">"01a0801b-0700-715f-b982-859f0d21da79"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"vatNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"FR95884831538"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"data"</span><span class="tok-punc">: {</span> … <span class="tok-punc">},</span>
+  <span class="tok-key">"meta"</span><span class="tok-punc">: {</span> … <span class="tok-punc">}</span>
+<span class="tok-punc">}</span></code></pre>
+            </div>
+
+            <p>{{t.docsAsync.failed}}</p>
+          </section>
+
+          <section id="callbacks">
+            <h2>{{t.docsCallbacks.title}}</h2>
+            <p>{{t.docsCallbacks.text}}</p>
+
+            <h3 id="callbacks-request">{{t.docsCallbacks.requestTitle}}</h3>
+            <p>{{t.docsCallbacks.requestText}}</p>
+
+            <div class="code" data-copy>
+<pre><code><span class="tok-cmd">POST</span> /hooks/vatlas
+<span class="tok-key">Content-Type</span>: application/json
+<span class="tok-key">X-Vatlas-Event</span>: company.changed
+<span class="tok-key">X-Vatlas-Delivery</span>: f9b8936a-a499-489f-9099-6feb93f23bfb
+<span class="tok-key">X-Vatlas-Signature</span>: t=1788855521,v1=6bc87dd5523b8a5b…</code></pre>
+            </div>
+
+            <div class="table-wrap">
+              <table class="table">
+                <caption class="sr-only">{{t.docsCallbacks.eventsTitle}}</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">{{t.docsCallbacks.thEvent}}</th>
+                    <th scope="col">{{t.docsCallbacks.thWhen}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row"><code>company.changed</code></th><td>{{t.docsCallbacks.evChanged}}</td></tr>
+                  <tr><th scope="row"><code>monitor.test</code></th><td>{{t.docsCallbacks.evTest}}</td></tr>
+                  <tr><th scope="row"><code>lookup.completed</code></th><td>{{t.docsCallbacks.evCompleted}}</td></tr>
+                  <tr><th scope="row"><code>lookup.failed</code></th><td>{{t.docsCallbacks.evFailed}}</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 id="callbacks-signature">{{t.docsCallbacks.signatureTitle}}</h3>
+            <p>{{t.docsCallbacks.signatureIntro}}</p>
+
+            <div class="code" data-copy>
+<pre><code><span class="tok-cmd">POST</span> /hooks/vatlas
+<span class="tok-key">X-Vatlas-Event</span>: company.changed
+<span class="tok-key">X-Vatlas-Signature</span>: t=<span class="tok-num">1788855521</span>,v1=<span class="tok-str">abb136a424dd0f7c1e5b90d2a3f84c67e10b9d5a2c8e73f4061b8ad9e2c4570f</span>
+
+<span class="tok-punc">{</span><span class="tok-key">"event"</span><span class="tok-punc">:</span><span class="tok-str">"company.changed"</span><span class="tok-punc">,</span> … <span class="tok-punc">}</span></code></pre>
+            </div>
+
+            <p>{{t.docsCallbacks.signatureStep1}}</p>
+
+            <div class="code" data-copy>
+<pre><code>1788855521.{<span class="tok-key">"event"</span>:<span class="tok-str">"company.changed"</span>, … }</code></pre>
+            </div>
+
+            <p>{{t.docsCallbacks.signatureStep2}}</p>
+
+            <div class="code" data-copy>
+<pre><code><span class="tok-cmd">HmacSHA256</span>(t <span class="tok-punc">+</span> <span class="tok-str">'.'</span> <span class="tok-punc">+</span> rawBody, signingSecret) <span class="tok-punc">==</span> v1</code></pre>
+            </div>
+
+            <p>{{t.docsCallbacks.signatureExample}}</p>
+
+            <div class="code" data-copy>
+<pre><code><span class="tok-cmd">HmacSHA256</span>(<span class="tok-str">'1788855521.{"event":"company.changed", … }'</span>, <span class="tok-str">'vtl_sign_xxx…'</span>)
+  <span class="tok-punc">==</span> <span class="tok-str">'abb136a424dd0f7c1e5b90d2a3f84c67e10b9d5a2c8e73f4061b8ad9e2c4570f'</span></code></pre>
+            </div>
+
+            <p>{{t.docsCallbacks.signatureConstantTime}}</p>
+            <p>{{t.docsCallbacks.secret}}</p>
+
+            <h3 id="callbacks-retries">{{t.docsCallbacks.retriesTitle}}</h3>
+            <p>{{t.docsCallbacks.retriesText}}</p>
+            <p>{{t.docsCallbacks.test}}</p>
+          </section>
+
+          <section id="audit">
+            <h2>{{t.docsAudit.title}}</h2>
+            <p class="endpoint"><span class="endpoint__verb" data-method="GET">GET</span> <span>/v1/audit</span></p>
+            <p>{{t.docsAudit.text}}</p>
+            <p>{{t.docsAudit.cost}}</p>
+            <p>{{t.docsAudit.free}}</p>
+
+            <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-str">"{{apiBase}}/v1/audit?vatNumber=FR95884831538"</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">"Authorization: Bearer $VATLAS_KEY"</span></code></pre>
+            </div>
+
+            <div class="code" data-copy>
+<pre><code><span class="tok-punc">{</span>
+  <span class="tok-key">"data"</span><span class="tok-punc">: [</span>
+    <span class="tok-punc">{</span>
+      <span class="tok-key">"publicId"</span><span class="tok-punc">:</span> <span class="tok-str">"01a0570f-5f96-77a0-9bf3-b990b0368c0c"</span><span class="tok-punc">,</span>
+      <span class="tok-key">"vatNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"FR95884831538"</span><span class="tok-punc">,</span>
+      <span class="tok-key">"fetchedAt"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-06-14T09:12:03.000Z"</span><span class="tok-punc">,</span>
+      <span class="tok-key">"httpStatus"</span><span class="tok-punc">:</span> <span class="tok-num">200</span><span class="tok-punc">,</span>
+      <span class="tok-key">"errorCode"</span><span class="tok-punc">:</span> <span class="tok-null">null</span><span class="tok-punc">,</span>
+      <span class="tok-key">"kind"</span><span class="tok-punc">:</span> <span class="tok-str">"single"</span><span class="tok-punc">,</span>
+      <span class="tok-key">"companyName"</span><span class="tok-punc">:</span> <span class="tok-str">"SARL JULIEN MAULNY EURL"</span><span class="tok-punc">,</span>
+      <span class="tok-key">"source"</span><span class="tok-punc">:</span> <span class="tok-str">"SIRENE"</span><span class="tok-punc">,</span>
+      <span class="tok-key">"sourceDate"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-09-01"</span><span class="tok-punc">,</span>
+      <span class="tok-key">"sourceSince"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-06-01"</span><span class="tok-punc">,</span>
+      <span class="tok-key">"sources"</span><span class="tok-punc">: [</span><span class="tok-str">"SIRENE"</span><span class="tok-punc">],</span>
+      <span class="tok-key">"response"</span><span class="tok-punc">: {</span> <span class="tok-key">"data"</span><span class="tok-punc">:</span> <span class="tok-punc">{</span> … <span class="tok-punc">},</span> <span class="tok-key">"meta"</span><span class="tok-punc">:</span> <span class="tok-punc">{</span> … <span class="tok-punc">} }</span>
+    <span class="tok-punc">}</span>
+  <span class="tok-punc">],</span>
+  <span class="tok-key">"meta"</span><span class="tok-punc">: {</span> <span class="tok-key">"count"</span><span class="tok-punc">:</span> <span class="tok-num">1</span><span class="tok-punc">,</span> <span class="tok-key">"nextBefore"</span><span class="tok-punc">:</span> <span class="tok-null">null</span> <span class="tok-punc">}</span>
+<span class="tok-punc">}</span></code></pre>
+            </div>
+
+            <h3>{{t.docsAudit.paramsTitle}}</h3>
+            <div class="table-wrap">
+              <table class="table">
+                <caption class="sr-only">{{t.docsAudit.paramsTitle}}</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">{{t.docsAudit.thParam}}</th>
+                    <th scope="col">{{t.docsAudit.thMeaning}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>vatNumber</code></th>
+                    <td>{{t.docsAudit.pVat}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>limit</code></th>
+                    <td>{{t.docsAudit.pLimit}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>before</code></th>
+                    <td>{{t.docsAudit.pBefore}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>{{t.docsAudit.idNote}}</p>
+            <p>{{t.docsAudit.responseNote}}</p>
+          </section>
+
+          <section id="countries">
+            <h2>{{t.docsCountries.title}}</h2>
+            <p class="endpoint"><span class="endpoint__verb" data-method="GET">GET</span> <span>/v1/countries</span></p>
+            <p>{{t.docsCountries.text}}</p>
+            <div class="code" data-copy>
+<pre><code><span class="tok-punc">{</span>
+  <span class="tok-key">"data"</span><span class="tok-punc">: [</span>
+    <span class="tok-punc">{</span> <span class="tok-key">"countryCode"</span><span class="tok-punc">:</span> <span class="tok-str">"FR"</span><span class="tok-punc">,</span> <span class="tok-key">"name"</span><span class="tok-punc">:</span> <span class="tok-str">"France"</span><span class="tok-punc">,</span>   <span class="tok-key">"source"</span><span class="tok-punc">:</span> <span class="tok-str">"SIRENE"</span><span class="tok-punc">,</span>  <span class="tok-key">"strategy"</span><span class="tok-punc">:</span> <span class="tok-str">"bulk"</span> <span class="tok-punc">},</span>
+    <span class="tok-punc">{</span> <span class="tok-key">"countryCode"</span><span class="tok-punc">:</span> <span class="tok-str">"PL"</span><span class="tok-punc">,</span> <span class="tok-key">"name"</span><span class="tok-punc">:</span> <span class="tok-str">"Poland"</span><span class="tok-punc">,</span>   <span class="tok-key">"source"</span><span class="tok-punc">:</span> <span class="tok-str">"MF_WL"</span><span class="tok-punc">,</span>   <span class="tok-key">"strategy"</span><span class="tok-punc">:</span> <span class="tok-str">"on-demand"</span> <span class="tok-punc">},</span>
+    <span class="tok-punc">{</span> <span class="tok-key">"countryCode"</span><span class="tok-punc">:</span> <span class="tok-str">"CZ"</span><span class="tok-punc">,</span> <span class="tok-key">"name"</span><span class="tok-punc">:</span> <span class="tok-str">"Czechia"</span><span class="tok-punc">,</span>  <span class="tok-key">"source"</span><span class="tok-punc">:</span> <span class="tok-str">"ARES"</span><span class="tok-punc">,</span>    <span class="tok-key">"strategy"</span><span class="tok-punc">:</span> <span class="tok-str">"on-demand"</span> <span class="tok-punc">},</span>
+    <span class="tok-punc">{</span> <span class="tok-key">"countryCode"</span><span class="tok-punc">:</span> <span class="tok-str">"FI"</span><span class="tok-punc">,</span> <span class="tok-key">"name"</span><span class="tok-punc">:</span> <span class="tok-str">"Finland"</span><span class="tok-punc">,</span>  <span class="tok-key">"source"</span><span class="tok-punc">:</span> <span class="tok-str">"PRH"</span><span class="tok-punc">,</span>     <span class="tok-key">"strategy"</span><span class="tok-punc">:</span> <span class="tok-str">"both"</span> <span class="tok-punc">},</span>
+    <span class="tok-punc">{</span> <span class="tok-key">"countryCode"</span><span class="tok-punc">:</span> <span class="tok-str">"DE"</span><span class="tok-punc">,</span> <span class="tok-key">"name"</span><span class="tok-punc">:</span> <span class="tok-str">"Germany"</span><span class="tok-punc">,</span>  <span class="tok-key">"source"</span><span class="tok-punc">:</span> <span class="tok-str">"PEPPOL"</span><span class="tok-punc">,</span>  <span class="tok-key">"strategy"</span><span class="tok-punc">:</span> <span class="tok-str">"both"</span> <span class="tok-punc">}</span>
+  <span class="tok-punc">]</span>
+<span class="tok-punc">}</span></code></pre>
+            </div>
+          </section>
+
+          <section id="health">
+            <h2>{{t.docsHealth.title}}</h2>
+            <p class="endpoint"><span class="endpoint__verb" data-method="GET">GET</span> <span>/health</span></p>
+            <p>{{t.docsHealth.text}}</p>
+            <div class="code" data-copy>
+<pre><code><span class="tok-punc">{</span> <span class="tok-key">"status"</span><span class="tok-punc">:</span> <span class="tok-str">"ok"</span> <span class="tok-punc">}</span></code></pre>
+            </div>
+          </section>
+
+          <section id="errors">
+            <h2>{{t.docsErrors.title}}</h2>
+            <p>{{t.docsErrors.text}}</p>
+            <div class="code" data-copy>
+<pre><code><span class="tok-punc">{</span>
+  <span class="tok-key">"error"</span><span class="tok-punc">: {</span>
+    <span class="tok-key">"code"</span><span class="tok-punc">:</span> <span class="tok-str">"INVALID_VAT_FORMAT"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"message"</span><span class="tok-punc">:</span> <span class="tok-str">"Unknown VAT country prefix \"XX\""</span><span class="tok-punc">,</span>
+    <span class="tok-key">"reason"</span><span class="tok-punc">:</span> <span class="tok-str">"UNKNOWN_COUNTRY"</span>
+  <span class="tok-punc">}</span>
+<span class="tok-punc">}</span></code></pre>
+            </div>
+
+            <div class="table-wrap">
+              <table class="table">
+                <caption class="sr-only">{{t.docsErrors.caption}}</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">{{t.docsErrors.thCode}}</th>
+                    <th scope="col">{{t.docsErrors.thHttp}}</th>
+                    <th scope="col">{{t.docsErrors.thMeaning}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>INVALID_VAT_FORMAT</code></th>
+                    <td><span class="status status--4xx">400</span></td>
+                    <td>{{t.docsErrors.invalid}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>INVALID_QUERY</code></th>
+                    <td><span class="status status--4xx">400</span></td>
+                    <td>{{t.docsErrors.invalidQuery}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>INVALID_BODY</code></th>
+                    <td><span class="status status--4xx">400</span></td>
+                    <td>{{t.docsErrors.invalidBody}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>CALLBACK_URL_MISSING</code></th>
+                    <td><span class="status status--4xx">400</span></td>
+                    <td>{{t.docsErrors.callbackMissing}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>INVALID_CALLBACK_URL</code></th>
+                    <td><span class="status status--4xx">400</span></td>
+                    <td>{{t.docsErrors.invalidCallback}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>MONITOR_LIMIT_REACHED</code></th>
+                    <td><span class="status status--4xx">403</span></td>
+                    <td>{{t.docsErrors.monitorLimit}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>MONITOR_EXISTS</code></th>
+                    <td><span class="status status--4xx">409</span></td>
+                    <td>{{t.docsErrors.monitorExists}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>MISSING_SECRET_KEY</code></th>
+                    <td><span class="status status--4xx">401</span></td>
+                    <td>{{t.docsErrors.missingKey}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>INVALID_SECRET_KEY</code></th>
+                    <td><span class="status status--4xx">401</span></td>
+                    <td>{{t.docsErrors.invalidKey}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>QUOTA_EXCEEDED</code></th>
+                    <td><span class="status status--4xx">429</span></td>
+                    <td>{{t.docsErrors.quota}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>VAT_NOT_REGISTERED</code></th>
+                    <td><span class="status status--4xx">404</span></td>
+                    <td>{{t.docsErrors.notRegistered}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>COMPANY_NOT_FOUND</code></th>
+                    <td><span class="status status--4xx">404</span></td>
+                    <td>{{t.docsErrors.notFound}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>SOURCE_UNAVAILABLE</code></th>
+                    <td><span class="status status--5xx">503</span></td>
+                    <td>{{t.docsErrors.unavailable}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>PROOF_UNAVAILABLE</code></th>
+                    <td><span class="status status--5xx">503</span></td>
+                    <td>{{t.docsErrors.proofUnavailable}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>SOURCE_ERROR</code></th>
+                    <td>{{t.docsErrors.noHttp}}</td>
+                    <td>{{t.docsErrors.sourceError}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>NOT_FOUND</code></th>
+                    <td><span class="status status--4xx">404</span></td>
+                    <td>{{t.docsErrors.route}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>INTERNAL_ERROR</code></th>
+                    <td><span class="status status--5xx">500</span></td>
+                    <td>{{t.docsErrors.internal}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="quotas">
+            <h2>{{t.docsQuotas.title}}</h2>
+            <p>{{t.docsQuotas.text}}</p>
+            <div class="code" data-copy>
+<pre><code><span class="tok-key">X-RateLimit-Limit</span><span class="tok-punc">:</span> <span class="tok-num">100</span>
+<span class="tok-key">X-RateLimit-Remaining</span><span class="tok-punc">:</span> <span class="tok-num">87</span>
+<span class="tok-key">X-RateLimit-Reset</span><span class="tok-punc">:</span> <span class="tok-num">1788220800</span></code></pre>
+            </div>
+            <ul>
+              <li>{{t.docsQuotas.l1}}</li>
+              <li>{{t.docsQuotas.l2}}</li>
+              <li>{{t.docsQuotas.l3}}</li>
+              <li>{{t.docsQuotas.l4}}</li>
+            </ul>
+            <p>{{t.docsQuotas.after}}</p>
+          </section>
+
+          <section id="samples">
+            <h2>{{t.docsSamples.title}}</h2>
+            <div class="tabs" data-tabs>
+              <div class="tabs__list" role="tablist" aria-label="{{t.docsSamples.tablistLabel}}">
+                <button class="tabs__tab" role="tab" id="tab-curl" aria-controls="panel-curl" aria-selected="true">cURL</button>
+                <button class="tabs__tab" role="tab" id="tab-js" aria-controls="panel-js" aria-selected="false" tabindex="-1">JavaScript</button>
+                <button class="tabs__tab" role="tab" id="tab-py" aria-controls="panel-py" aria-selected="false" tabindex="-1">Python</button>
+                <button class="tabs__tab" role="tab" id="tab-php" aria-controls="panel-php" aria-selected="false" tabindex="-1">PHP</button>
+              </div>
+
+              <div class="code" role="tabpanel" id="panel-curl" aria-labelledby="tab-curl" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-flag">-s</span> <span class="tok-str">"{{apiBase}}/v1/lookup/FR08000325175"</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">"Authorization: Bearer $VATLAS_KEY"</span> \
+  <span class="tok-punc">|</span> <span class="tok-cmd">jq</span> <span class="tok-str">'.data.name'</span></code></pre>
+              </div>
+
+              <div class="code" role="tabpanel" id="panel-js" aria-labelledby="tab-js" data-copy hidden>
+<pre><code><span class="tok-comment">{{t.docsSamples.jsComment}}</span>
+<span class="tok-bool">const</span> lookupVat = <span class="tok-bool">async</span> (vatNumber) => {
+  <span class="tok-bool">const</span> res = <span class="tok-bool">await</span> fetch(
+    <span class="tok-str">`{{apiBase}}/v1/lookup/${encodeURIComponent(vatNumber)}`</span>,
+    { headers: { <span class="tok-str">'Authorization'</span>: <span class="tok-str">`Bearer ${process.env.VATLAS_KEY}`</span> } },
+  )
+
+  <span class="tok-bool">const</span> payload = <span class="tok-bool">await</span> res.json()
+  <span class="tok-bool">if</span> (!res.ok) <span class="tok-bool">throw</span> <span class="tok-bool">new</span> Error(<span class="tok-str">`${payload.error.code}: ${payload.error.message}`</span>)
+
+  <span class="tok-bool">return</span> payload.data
+}
+
+<span class="tok-bool">const</span> company = <span class="tok-bool">await</span> lookupVat(<span class="tok-str">'FR08000325175'</span>)
+console.log(company.name, <span class="tok-str">'-'</span>, company.address.city)</code></pre>
+              </div>
+
+              <div class="code" role="tabpanel" id="panel-py" aria-labelledby="tab-py" data-copy hidden>
+<pre><code><span class="tok-bool">import</span> os
+<span class="tok-bool">import</span> requests
+
+<span class="tok-bool">def</span> <span class="tok-cmd">lookup_vat</span>(vat_number: <span class="tok-bool">str</span>) -> <span class="tok-bool">dict</span>:
+    res = requests.get(
+        <span class="tok-str">f"{{apiBase}}/v1/lookup/{vat_number}"</span>,
+        headers={<span class="tok-str">"Authorization"</span>: <span class="tok-str">f"Bearer {os.environ['VATLAS_KEY']}"</span>},
+        timeout=<span class="tok-num">10</span>,
+    )
+    payload = res.json()
+
+    <span class="tok-bool">if</span> res.status_code != <span class="tok-num">200</span>:
+        <span class="tok-bool">raise</span> RuntimeError(payload[<span class="tok-str">"error"</span>][<span class="tok-str">"code"</span>])
+
+    <span class="tok-bool">return</span> payload[<span class="tok-str">"data"</span>]
+
+company = lookup_vat(<span class="tok-str">"FR08000325175"</span>)
+<span class="tok-cmd">print</span>(company[<span class="tok-str">"name"</span>], company[<span class="tok-str">"address"</span>][<span class="tok-str">"city"</span>])</code></pre>
+              </div>
+
+              <div class="code" role="tabpanel" id="panel-php" aria-labelledby="tab-php" data-copy hidden>
+<pre><code><span class="tok-punc">&lt;?php</span>
+
+<span class="tok-bool">function</span> <span class="tok-cmd">lookupVat</span>(<span class="tok-num">string</span> <span class="tok-key">$vatNumber</span>): <span class="tok-num">array</span>
+{
+    <span class="tok-key">$context</span> = stream_context_create([
+        <span class="tok-str">'http'</span> => [<span class="tok-str">'header'</span> => <span class="tok-str">'Authorization: Bearer '</span> . getenv(<span class="tok-str">'VATLAS_KEY'</span>)],
+    ]);
+
+    <span class="tok-key">$url</span> = <span class="tok-str">'{{apiBase}}/v1/lookup/'</span> . rawurlencode(<span class="tok-key">$vatNumber</span>);
+    <span class="tok-key">$payload</span> = json_decode(file_get_contents(<span class="tok-key">$url</span>, <span class="tok-bool">false</span>, <span class="tok-key">$context</span>), <span class="tok-bool">true</span>);
+
+    <span class="tok-bool">if</span> (isset(<span class="tok-key">$payload</span>[<span class="tok-str">'error'</span>])) {
+        <span class="tok-bool">throw</span> <span class="tok-bool">new</span> RuntimeException(<span class="tok-key">$payload</span>[<span class="tok-str">'error'</span>][<span class="tok-str">'code'</span>]);
+    }
+
+    <span class="tok-bool">return</span> <span class="tok-key">$payload</span>[<span class="tok-str">'data'</span>];
+}
+
+<span class="tok-key">$company</span> = lookupVat(<span class="tok-str">'FR08000325175'</span>);
+<span class="tok-cmd">echo</span> <span class="tok-key">$company</span>[<span class="tok-str">'name'</span>];</code></pre>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- @include partials/cta.html -->
+    <!-- @include partials/footer.html -->
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+dist/
+docs/
+node_modules/
+src/generated/
+.cache/
+package-lock.json
+site/package-lock.json
+site/public/
+benchmarks/
+data/
+test/fixtures/
+prisma/migrations/
+locales/
+site/src/**/*.html

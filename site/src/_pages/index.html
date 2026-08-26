@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="{{lang}}">
+  <head>
+    <!-- @include partials/head.html -->
+  </head>
+  <body>
+    <!-- @include partials/header.html -->
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container hero__inner">
+          <div>
+            <h1 class="hero__title">
+              <span>{{t.homeHero.title1}}</span>
+              <span class="accent-text">{{t.homeHero.title2}}</span>
+              <span>{{t.homeHero.title3}}</span>
+            </h1>
+            <p class="hero__lead">{{t.homeHero.lead}}</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#try">{{t.homeHero.ctaPrimary}}</a>
+              <a class="btn btn--ghost" href="{{docsUrl}}">{{t.homeHero.ctaSecondary}}</a>
+            </div>
+          </div>
+
+          <div class="terminal">
+            <div class="terminal__bar">
+              <span class="terminal__verb">GET</span>
+              <!-- The path only. The host is on the curl line below. -->
+              <span class="terminal__url">/v1/lookup/<span class="terminal__param">{vatNumber}</span></span>
+            </div>
+            <div class="terminal__body">
+<pre><code><span class="tok-punc">$</span> <span class="tok-cmd">curl</span> <span class="tok-str">"{{apiBase}}/v1/lookup/FR08000325175"</span> \
+    <span class="tok-flag">-H</span> <span class="tok-str">"Authorization: Bearer $VATLAS_KEY"</span>
+
+<span class="tok-punc">{</span>
+  <span class="tok-key">"data"</span><span class="tok-punc">: {</span>
+    <span class="tok-key">"vatNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"FR08000325175"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"countryCode"</span><span class="tok-punc">:</span> <span class="tok-str">"FR"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"nationalNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"08000325175"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"nationalId"</span><span class="tok-punc">:</span> <span class="tok-str">"000325175"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"name"</span><span class="tok-punc">:</span> <span class="tok-str">"THIERRY JANOYER"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"legalForm"</span><span class="tok-punc">:</span> <span class="tok-str">"Personne physique"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"status"</span><span class="tok-punc">:</span> <span class="tok-str">"active"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"address"</span><span class="tok-punc">: {</span>
+      <span class="tok-key">"line1"</span><span class="tok-punc">:</span> <span class="tok-str">"51 RUE MARX DORMOY"</span><span class="tok-punc">,</span>
+      <span class="tok-key">"line2"</span><span class="tok-punc">:</span> <span class="tok-null">null</span><span class="tok-punc">,</span>
+      <span class="tok-key">"postalCode"</span><span class="tok-punc">:</span> <span class="tok-str">"13004"</span><span class="tok-punc">,</span>
+      <span class="tok-key">"city"</span><span class="tok-punc">:</span> <span class="tok-str">"MARSEILLE"</span><span class="tok-punc">,</span>
+      <span class="tok-key">"country"</span><span class="tok-punc">:</span> <span class="tok-str">"FR"</span>
+    <span class="tok-punc">}</span>
+  <span class="tok-punc">},</span>
+  <span class="tok-key">"meta"</span><span class="tok-punc">: {</span>
+    <span class="tok-key">"source"</span><span class="tok-punc">:</span> <span class="tok-str">"SIRENE"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"sourceDate"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-01-05"</span><span class="tok-punc">,</span>
+    <span class="tok-key">"sourceUpdatedAt"</span><span class="tok-punc">:</span> <span class="tok-str">"2025-12-06T09:43:55.000Z"</span>
+  <span class="tok-punc">}</span>
+<span class="tok-punc">}</span></code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Coverage map -->
+      <!-- Countries painted from src/js/covered-countries.js. Empty without JavaScript. The coverage
+           table below is the detailed answer. -->
+      <section class="section--tight">
+        <div class="container">
+          <!-- The bubble is built in JavaScript, so its two strings are passed on the element. -->
+          <div
+            class="worldmap"
+            data-worldmap
+            role="img"
+            aria-label="{{t.homeMap.alt}}"
+            data-t-example="{{t.homeMap.example}}"
+            data-t-no-name="{{t.homeMap.noName}}"
+          ></div>
+          <ul class="worldmap__legend">
+            <li><span class="worldmap__key worldmap__key--covered" aria-hidden="true"></span>{{t.homeMap.covered}}</li>
+            <li><span class="worldmap__key" aria-hidden="true"></span>{{t.homeMap.uncovered}}</li>
+          </ul>
+
+          <!-- Stats -->
+          <!-- The last values written by `npm run stats`, so the strip works without JavaScript.
+               /js/stats.js updates them from /data/stats.json. -->
+          <div class="stats stats--home" data-stats>
+            <div class="stat">
+              <p class="stat__value" data-stat="vatNumbers">31M</p>
+              <p class="stat__label">{{t.homeStats.s1}}</p>
+            </div>
+            <div class="stat">
+              <p class="stat__value" data-stat="lookups">5k</p>
+              <p class="stat__label">{{t.homeStats.s2}}</p>
+            </div>
+            <div class="stat">
+              <p class="stat__value" data-stat="countries">32</p>
+              <p class="stat__label">{{t.homeStats.s3}}</p>
+            </div>
+            <div class="stat">
+              <p class="stat__value" data-stat="latencyP50Ms">345 ms</p>
+              <p class="stat__label">{{t.homeStats.s4}}</p>
+            </div>
+            <div class="stat">
+              <p class="stat__value" data-stat="answeredPct">92 %</p>
+              <p class="stat__label">{{t.homeStats.s5}}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Try it -->
+      <section class="section tryit" id="try">
+        <div class="container">
+          <div class="section__head">
+            <h2>{{t.homeTryit.title}}</h2>
+            <p class="section__lead">{{t.homeTryit.lead}}</p>
+          </div>
+
+          <div
+            class="tryit__panel"
+            data-tryit-i18n
+            data-t-pending="{{t.homeTryit.pending}}"
+            data-t-recorded="{{t.homeTryit.recorded}}"
+            data-t-rejected="{{t.homeTryit.rejected}}"
+            data-t-live="{{t.homeTryit.live}}"
+            data-t-left="{{t.homeTryit.left}}"
+            data-t-cached="{{t.homeTryit.cached}}"
+            data-t-cache-badge="{{t.homeTryit.cacheBadge}}"
+            data-t-limited="{{t.homeTryit.limited}}"
+            data-t-limited-cta="{{t.homeTryit.limitedCta}}"
+            data-t-failed="{{t.homeTryit.failed}}"
+            data-t-error="{{t.homeTryit.error}}"
+            data-t-fmt="{{fmtLabels}}"
+            data-api-base="{{apiBase}}"
+            data-console-url="{{signupUrl}}"
+          >
+            <!-- No endpoint next to the field: each button calls a different one. The status line under the
+                 panel names the endpoint that answered. -->
+            <form class="tryit__form" data-tryit>
+              <label class="sr-only" for="vat-input">{{t.homeTryit.inputLabel}}</label>
+              <input
+                class="tryit__input"
+                id="vat-input"
+                name="vat"
+                type="text"
+                placeholder="FR08000325175"
+                autocomplete="off"
+                spellcheck="false"
+                data-tryit-input
+              />
+              <!-- Three buttons for the call, one field for the number. Submitting the form runs the plain lookup. -->
+              <button class="btn btn--ghost" type="submit" data-tryit-mode="single" aria-pressed="true">{{t.homeTryit.submit}}</button>
+              <button class="btn btn--ghost" type="button" data-tryit-mode="proof" aria-pressed="false">{{t.homeTryit.submitProof}}</button>
+              <button class="btn btn--ghost" type="button" data-tryit-mode="all" aria-pressed="false">{{t.homeTryit.submitAll}}</button>
+            </form>
+
+            <!-- Filled by `tryit.js` from `demo-data.js`, which also holds the recorded answers. -->
+            <div class="tryit__samples">
+              <span class="tryit__samples-label">{{t.homeTryit.samples}}</span>
+              <span class="tryit__chips" data-tryit-samples></span>
+            </div>
+
+            <div class="tryit__result">
+              <div class="tryit__status" data-tryit-status aria-live="polite"></div>
+              <div class="tryit__tabs" data-tabs>
+                <div class="tabs__list" role="tablist" aria-label="{{t.homeTryit.title}}">
+                  <button
+                    class="tabs__tab"
+                    type="button"
+                    role="tab"
+                    id="tryit-tab-answer"
+                    aria-controls="tryit-pane-answer"
+                    aria-selected="true"
+                  >
+                    {{t.homeTryit.tabFormatted}}
+                  </button>
+                  <button
+                    class="tabs__tab"
+                    type="button"
+                    role="tab"
+                    id="tryit-tab-json"
+                    aria-controls="tryit-pane-json"
+                    aria-selected="false"
+                    tabindex="-1"
+                  >
+                    {{t.homeTryit.tabJson}}
+                  </button>
+                </div>
+                <div class="tryit__answer" id="tryit-pane-answer" role="tabpanel" aria-labelledby="tryit-tab-answer" data-tryit-formatted></div>
+                <pre class="tryit__output" id="tryit-pane-json" role="tabpanel" aria-labelledby="tryit-tab-json" tabindex="0" data-tryit-json hidden></pre>
+              </div>
+              <p class="tryit__hint" data-tryit-hint></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Use cases -->
+      <section class="section" id="usecases">
+        <div class="container">
+          <div class="section__head">
+            <h2>{{t.homeUsecases.title}}</h2>
+          </div>
+          <!-- One row per use case. -->
+          <div class="usecases">
+            <article class="usecase">
+              <h3 class="usecase__title">{{t.homeUsecases.c1Title}}</h3>
+              <p class="usecase__text">{{t.homeUsecases.c1Text}}</p>
+            </article>
+            <article class="usecase">
+              <h3 class="usecase__title">{{t.homeUsecases.c2Title}}</h3>
+              <p class="usecase__text">{{t.homeUsecases.c2Text}}</p>
+            </article>
+            <article class="usecase">
+              <h3 class="usecase__title">{{t.homeUsecases.c3Title}}</h3>
+              <p class="usecase__text">{{t.homeUsecases.c3Text}}</p>
+            </article>
+            <article class="usecase">
+              <h3 class="usecase__title">{{t.homeUsecases.c4Title}}</h3>
+              <p class="usecase__text">{{t.homeUsecases.c4Text}}</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sources -->
+      <section class="section section--alt" id="coverage">
+        <div class="container">
+          <div class="section__head">
+            <h2>{{t.homeCoverage.title}}</h2>
+            <p class="section__lead">{{t.homeCoverage.lead}}</p>
+          </div>
+
+          <!-- One row per country, in prefix order. The EU row comes first: it is VIES, which answers for
+               any member state without a national register here. -->
+          <div class="table-wrap">
+            <table class="table table--coverage">
+              <caption class="sr-only">{{t.homeCoverage.tableCaption}}</caption>
+              <thead>
+                <tr>
+                  <th scope="col">{{t.homeCoverage.thCountry}}</th>
+                  <th scope="col">{{t.homeCoverage.thSource}}</th>
+                  <th scope="col">{{t.homeCoverage.thWhy}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇦🇺</span>{{t.countries.AU}}</th>
+                  <td>{{t.homeCoverage.auSource}}</td>
+                  <td>{{t.homeCoverage.auWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇧🇪</span>{{t.countries.BE}}</th>
+                  <td>{{t.homeCoverage.beSource}}</td>
+                  <td>{{t.homeCoverage.beWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇧🇷</span>{{t.countries.BR}}</th>
+                  <td>{{t.homeCoverage.brSource}}</td>
+                  <td>{{t.homeCoverage.brWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇨🇦</span>{{t.countries.CA}}</th>
+                  <td>{{t.homeCoverage.caSource}}</td>
+                  <td>{{t.homeCoverage.caWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇨🇭</span>{{t.countries.CH}}</th>
+                  <td>{{t.homeCoverage.chSource}}</td>
+                  <td>{{t.homeCoverage.chWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇨🇷</span>{{t.countries.CR}}</th>
+                  <td>{{t.homeCoverage.crSource}}</td>
+                  <td>{{t.homeCoverage.crWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇨🇿</span>{{t.countries.CZ}}</th>
+                  <td>{{t.homeCoverage.czSource}}</td>
+                  <td>{{t.homeCoverage.czWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇩🇪</span>{{t.countries.DE}}</th>
+                  <td>{{t.homeCoverage.deSource}}</td>
+                  <td>{{t.homeCoverage.deWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇩🇰</span>{{t.countries.DK}}</th>
+                  <td>{{t.homeCoverage.dkSource}}</td>
+                  <td>{{t.homeCoverage.dkWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇪🇨</span>{{t.countries.EC}}</th>
+                  <td>{{t.homeCoverage.ecSource}}</td>
+                  <td>{{t.homeCoverage.ecWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇪🇪</span>{{t.countries.EE}}</th>
+                  <td>e-Business Register (RIK)</td>
+                  <td>{{t.homeCoverage.eeWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇬🇷</span>{{t.countries.EL}}</th>
+                  <td>{{t.homeCoverage.elSource}}</td>
+                  <td>{{t.homeCoverage.elWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇫🇮</span>{{t.countries.FI}}</th>
+                  <td>PRH open data</td>
+                  <td>{{t.homeCoverage.fiWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇫🇷</span>{{t.countries.FR}}</th>
+                  <td>INSEE SIRENE</td>
+                  <td>{{t.homeCoverage.frWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇬🇱</span>{{t.countries.GL}}</th>
+                  <td>{{t.homeCoverage.glSource}}</td>
+                  <td>{{t.homeCoverage.glWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇭🇷</span>{{t.countries.HR}}</th>
+                  <td>{{t.homeCoverage.hrSource}}</td>
+                  <td>{{t.homeCoverage.hrWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇮🇱</span>{{t.countries.IL}}</th>
+                  <td>{{t.homeCoverage.ilSource}}</td>
+                  <td>{{t.homeCoverage.ilWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇯🇵</span>{{t.countries.JP}}</th>
+                  <td>{{t.homeCoverage.jpSource}}</td>
+                  <td>{{t.homeCoverage.jpWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇱🇻</span>{{t.countries.LV}}</th>
+                  <td>{{t.homeCoverage.lvSource}}</td>
+                  <td>{{t.homeCoverage.lvWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇳🇬</span>{{t.countries.NG}}</th>
+                  <td>{{t.homeCoverage.ngSource}}</td>
+                  <td>{{t.homeCoverage.ngWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇳🇴</span>{{t.countries.NO}}</th>
+                  <td>{{t.homeCoverage.noSource}}</td>
+                  <td>{{t.homeCoverage.noWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇳🇿</span>{{t.countries.NZ}}</th>
+                  <td>{{t.homeCoverage.nzSource}}</td>
+                  <td>{{t.homeCoverage.nzWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇵🇪</span>{{t.countries.PE}}</th>
+                  <td>{{t.homeCoverage.peSource}}</td>
+                  <td>{{t.homeCoverage.peWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇵🇱</span>{{t.countries.PL}}</th>
+                  <td>{{t.homeCoverage.plSource}}</td>
+                  <td>{{t.homeCoverage.plWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇷🇴</span>{{t.countries.RO}}</th>
+                  <td>{{t.homeCoverage.roSource}}</td>
+                  <td>{{t.homeCoverage.roWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇷🇺</span>{{t.countries.RU}}</th>
+                  <td>{{t.homeCoverage.ruSource}}</td>
+                  <td>{{t.homeCoverage.ruWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇸🇬</span>{{t.countries.SG}}</th>
+                  <td>{{t.homeCoverage.sgSource}}</td>
+                  <td>{{t.homeCoverage.sgWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇺🇦</span>{{t.countries.UA}}</th>
+                  <td>{{t.homeCoverage.uaSource}}</td>
+                  <td>{{t.homeCoverage.uaWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇻🇳</span>{{t.countries.VN}}</th>
+                  <td>{{t.homeCoverage.vnSource}}</td>
+                  <td>{{t.homeCoverage.vnWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇹🇼</span>{{t.countries.TW}}</th>
+                  <td>{{t.homeCoverage.twSource}}</td>
+                  <td>{{t.homeCoverage.twWhy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="flag" aria-hidden="true">🇪🇺</span>{{t.homeCoverage.euCountry}}</th>
+                  <td>{{t.homeCoverage.euSource}}</td>
+                  <td>{{t.homeCoverage.euWhy}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include partials/cta.html -->
+    <!-- @include partials/footer.html -->
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

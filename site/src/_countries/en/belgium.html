@@ -1,0 +1,221 @@
+<!-- @meta
+{
+  "title": "Belgian VAT number: format, enterprise number and how to look it up",
+  "description": "BE plus ten digits, the KBO/BCE enterprise number itself. The modulo 97 check, and how to find the company behind a Belgian VAT number.",
+  "h1": "The Belgian VAT number",
+  "term": "Belgian VAT number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Belgium · BE</p>
+        <h1>The Belgian VAT number</h1>
+        <p class="section__lead">
+          Belgium runs the simplest system in the Union: the VAT number <em>is</em> the enterprise
+          number. One number, one register, and that register is open data.
+        </p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>BE</code> + 10 digits, starting with 0 or 1</p>
+        <p><strong>Example:</strong> <code>BE0411905847</code>, enterprise number <code>0411.905.847</code></p>
+        <p><strong>Issued by:</strong> the Crossroads Bank for Enterprises (KBO/BCE); activated for VAT by the finance ministry.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>
+        A Belgian VAT number is always <strong>twelve characters</strong>: the country code
+        <code>BE</code> and ten digits. Domestically it is written with dots (<code>0411.905.847</code>) which are dropped for validation and on cross-border invoices.
+      </p>
+      <ul class="breakdown">
+        <li><b>BE</b><span>The country code.</span></li>
+        <li><b>0</b><span>The first digit: 0 or 1 for an enterprise.</span></li>
+        <li><b>4119058</b><span>The sequence number.</span></li>
+        <li><b>47</b><span>The check digits, modulo 97.</span></li>
+      </ul>
+      <p>
+        Until 2003 Belgian VAT numbers had nine digits; since the enterprise number was introduced on
+        <strong>1 July 2003</strong> a leading <code>0</code> has been added. Numbers starting with
+        <code>1</code> have only been issued for a few years, as the <code>0</code> range fills up. An
+        <strong>establishment unit number</strong> also has ten digits but starts with <code>2</code>,
+        and is <em>not</em> a VAT number.
+      </p>
+
+      <h2 id="check">The check digits</h2>
+      <p>The last two digits follow from the first eight with a single division:</p>
+      <div class="code" data-copy><pre><code>check = 97 − (first 8 digits modulo 97)</code></pre></div>
+      <p>
+        For <code>0411905847</code>: <code>04119058 mod 97 = 50</code>, and <code>97 − 50 = 47</code>,
+        which matches the last two digits. The check runs offline, in one line of code, with no
+        network call at all.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>A correct check proves nothing.</strong> It only shows the number was transcribed
+          without error. Whether the company exists, and whether it is VAT-liable, is answered only by
+          the KBO or by VIES.
+        </p>
+      </div>
+
+      <h2 id="enterprise-number">Enterprise number, VAT number, RPR</h2>
+      <p>
+        The <strong>enterprise number</strong> is assigned to every legal person and every
+        self-employed person when they register with the KBO. The <strong>VAT number</strong> is
+        exactly the same number prefixed with <code>BE</code>, but it only exists if the enterprise
+        is actually VAT-liable and its VAT status has been activated.
+      </p>
+      <p>
+        That is the real distinction: <strong>every enterprise has an enterprise number, not every
+        enterprise has an active VAT number.</strong> An exempt small business, a non-profit with no
+        economic activity or a non-taxable holding all appear in the KBO and fail to validate in VIES.
+      </p>
+      <p>
+        The <strong>RPR/RPM number</strong> (register of legal persons) is the same number followed by
+        the competent enterprise court, "RPR Ghent". Not a new number, just another way of writing it.
+      </p>
+
+      <h2 id="find">Finding the company behind a number</h2>
+      <h3>KBO Public Search</h3>
+      <p>
+        <a href="https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?lang=en" rel="noopener">KBO Public Search</a>
+        is free, public and searchable directly by enterprise number. It returns the name, legal form,
+        status, registered-office address, establishment units and NACE activity codes. For a one-off
+        check by hand, nothing else is needed.
+      </p>
+      <h3>KBO Open Data</h3>
+      <p>
+        The economy ministry also publishes <strong>the full extract as open data</strong>: roughly
+        1.9 million entities, every day, kept for a month. A free account is all it takes. Because the
+        VAT number <em>is</em> the enterprise number, every row can be reached directly from a VAT
+        number, a convenience most member states do not offer.
+      </p>
+      <p>
+        Two things to know: names live in a <em>different</em> file from the enterprises themselves,
+        and the language of a name is written as a digit in one file and as a letter code in the
+        other. Miss that and you get a register entirely in German. The licence forbids reuse for
+        direct marketing.
+      </p>
+      <h3>VIES</h3>
+      <p>
+        Belgium discloses <strong>both the name and the full address</strong> through VIES, in the
+        company's own language. VIES also answers the one question the KBO does not: is this number
+        valid, right now, for intra-community trade?
+      </p>
+
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">What each source gives you for Belgium</caption>
+          <thead>
+            <tr><th scope="col">Source</th><th scope="col">Keyed by</th><th scope="col">What you get</th><th scope="col">Limit</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">KBO Public Search</th><td>Enterprise number</td>
+              <td>Name, legal form, status, address, activities</td><td>One lookup at a time</td>
+            </tr>
+            <tr>
+              <th scope="row">KBO Open Data</th><td>Enterprise number</td>
+              <td>The whole register, daily</td><td>Free account required; no direct marketing</td>
+            </tr>
+            <tr>
+              <th scope="row">VIES</th><td>VAT number</td>
+              <td>Intra-community validity, name and address</td><td>Slow, tight quotas</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="pitfalls">Belgium-specific pitfalls</h2>
+      <ul>
+        <li>
+          <strong>Being in the KBO ≠ being VAT-liable.</strong> The number always exists; the VAT
+          status does not.
+        </li>
+        <li>
+          <strong>A number starting with 2 is an establishment unit</strong>, not an enterprise. It
+          will never validate as a VAT number.
+        </li>
+        <li>
+          <strong>Old nine-digit numbers</strong> still circulate on pre-2003 documents. They need a
+          leading <code>0</code>.
+        </li>
+        <li>
+          <strong>The language of the name depends on the company</strong>, not on the region. A
+          Brussels company may register its name in Dutch, in French, or in both.
+        </li>
+        <li>
+          <strong>The number never changes</strong>, not on a change of name, address or legal form.
+        </li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Belgian VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Belgian VAT number have?</summary>
+          <p>
+            Ten digits preceded by <code>BE</code>, twelve characters in total. The first digit is 0
+            or 1.
+          </p>
+        </details>
+        <details>
+          <summary>Are the enterprise number and the VAT number the same?</summary>
+          <p>
+            They are the same digits, since 1 July 2003. The VAT number is the enterprise number
+            prefixed with <code>BE</code>, but it only exists if the enterprise is VAT-liable.
+          </p>
+        </details>
+        <details>
+          <summary>How do I check a Belgian VAT number myself?</summary>
+          <p>
+            With the modulo 97 rule: the last two digits must equal
+            <code>97 − (the first eight digits modulo 97)</code>. It runs offline, but it only proves
+            the number was copied correctly.
+          </p>
+        </details>
+        <details>
+          <summary>Why does an existing Belgian number fail in VIES?</summary>
+          <p>
+            Because the company is in the KBO but has no active VAT status, an exempt small business,
+            a non-profit with no economic activity, or a company that has ceased trading.
+          </p>
+        </details>
+        <details>
+          <summary>What is a number starting with 2?</summary>
+          <p>
+            An establishment unit number: it identifies a place of business rather than the enterprise
+            itself, and is never a VAT number.
+          </p>
+        </details>
+        <details>
+          <summary>Is there a free, complete file of Belgian companies?</summary>
+          <p>
+            Yes. KBO Open Data publishes the full extract daily and a free account is enough. Reuse for
+            direct marketing is contractually forbidden.
+          </p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/germany/">Germany</a></li>
+        <li><a href="/en/vat-number/italy/">Italy</a></li>
+        <li><a href="/en/vat-number/spain/">Spain</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

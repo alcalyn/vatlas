@@ -1,0 +1,98 @@
+<!-- @meta
+{
+  "title": "Singapore UEN: format, GST registration and lookup",
+  "description": "SG plus the Unique Entity Number. The three UEN formats, why a UEN is not a GST registration, and how to find the entity behind one.",
+  "h1": "The Singapore Unique Entity Number",
+  "term": "Singapore Unique Entity Number",
+  "updated": "2026-09-08"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Singapore · SG</p>
+        <h1>The Singapore Unique Entity Number</h1>
+        <p class="section__lead">One number for every agency: the UEN identifies an entity to ACRA, to IRAS and to everyone else. It is also, for most businesses, the GST registration number, which is not the same as saying it proves one.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>SG</code> + 9 or 10 characters, ending in a check letter</p>
+        <p><strong>Example:</strong> <code>SG00022100K</code></p>
+        <p><strong>Issued by:</strong> ACRA, or one of some thirty other UEN issuance agencies.</p>
+      </div>
+
+      <h2 id="format">The three formats</h2>
+      <p>A UEN comes in one of three shapes, and which one you have says who issued it:</p>
+      <ul class="breakdown">
+        <li><b>nnnnnnnnX</b><span>Businesses: eight digits and a check letter. <code>00022100K</code>.</span></li>
+        <li><b>yyyynnnnnX</b><span>Local companies: the year of incorporation, five digits and a check letter. <code>201512345A</code>.</span></li>
+        <li><b>TyyPQnnnnX</b><span>Everything else: a century letter, the year, a two-letter entity type, four digits and a check letter. <code>T09LL0001B</code>.</span></li>
+      </ul>
+      <p>The leading letter of the third form is <code>T</code> for this century, <code>S</code> for the last and <code>R</code> for the one before. The two-letter code in the middle names the kind of entity: <code>LL</code> for a limited liability partnership, <code>CC</code> for a charity, and so on.</p>
+
+      <h2 id="gst">A UEN is not a GST registration</h2>
+      <p>This is the point to be clear about. IRAS reuses the UEN as the GST registration number for entities registered with ACRA, so <strong>the number on a Singapore tax invoice is usually the UEN</strong>. But holding a UEN says nothing about GST: registration is compulsory above a turnover threshold and voluntary below it, and most of the two million entities on the register are not registered.</p>
+      <p>ACRA's open data, which is what {{siteName}} imports, publishes identity, not GST status. A lookup here tells you <strong>who the entity is</strong>: name, legal form, registration date, address, and whether it is live or struck off. It does not tell you whether it charges GST, and nothing on this site will pretend otherwise. For that, IRAS runs its own GST-registered business search.</p>
+
+      <h2 id="find">Finding the entity behind the number</h2>
+      <h3>ACRA open data</h3>
+      <p>ACRA publishes the register monthly on data.gov.sg, <strong>free for personal or commercial use</strong>, with no key: twenty-seven CSV files, one per initial plus an "others". Some two million entities, with the full address (block, street, level, unit, building and postcode), the entity type, the status and the incorporation date.</p>
+      <h3>The empty cell</h3>
+      <p>Worth knowing before you parse it yourself: an unset column in this dump is the two letters <code>na</code>, not a blank. Read naively, a struck-off company with no address on file comes back living at <em>na na</em>.</p>
+
+      <h2 id="pitfalls">Singapore-specific pitfalls</h2>
+      <ul>
+        <li><strong>A UEN is not proof of GST registration.</strong> The two are related and not the same.</li>
+        <li><strong>Not every UEN comes from ACRA.</strong> Some thirty agencies issue them; the third format is where the others live.</li>
+        <li><strong>Struck off is not dissolved.</strong> The register distinguishes several ways of ceasing to exist, and all of them are reported as inactive here.</li>
+        <li><strong>The check letter is real but unpublished.</strong> The syntax can be validated; the check character cannot be recomputed from any official rule.</li>
+        <li><strong>Old numbers are short.</strong> A business registered in 1975 has an eight-digit UEN with leading zeros. They are part of the number.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The UEN in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many characters does a UEN have?</summary>
+          <p>Nine or ten, depending on which of the three formats it is, and the last one is always a letter.</p>
+        </details>
+        <details>
+          <summary>Is the UEN the GST registration number?</summary>
+          <p>For an ACRA-registered entity, IRAS uses the UEN as the GST number. But holding a UEN does not mean being registered for GST.</p>
+        </details>
+        <details>
+          <summary>Does Singapore have a VAT number?</summary>
+          <p>No. It has the GST, and the number on an invoice is the UEN of a GST-registered supplier.</p>
+        </details>
+        <details>
+          <summary>What does the T at the start mean?</summary>
+          <p>The century the number was issued in: <code>T</code> for the 2000s, <code>S</code> for the 1900s, <code>R</code> for the 1800s.</p>
+        </details>
+        <details>
+          <summary>Can I download the whole Singapore register for free?</summary>
+          <p>Yes. ACRA publishes it monthly on data.gov.sg under an open licence, for personal or commercial use, with no key.</p>
+        </details>
+      </div>
+
+      <h2>Business numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/australia/">Australia</a></li>
+        <li><a href="/en/vat-number/japan/">Japan</a></li>
+        <li><a href="/en/vat-number/brazil/">Brazil</a></li>
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/germany/">Germany</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 8 September 2026.</p>
+    </div>
+  </section>
+</main>

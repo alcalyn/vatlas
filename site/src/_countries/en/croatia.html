@@ -1,0 +1,107 @@
+<!-- @meta
+{
+  "title": "Croatian VAT number: the OIB, format and company lookup",
+  "description": "HR plus eleven digits, the OIB itself. Why Croatia is one of the few countries with a single identifier, and how to find the company behind it.",
+  "h1": "The Croatian VAT number",
+  "term": "Croatian VAT identification number",
+  "updated": "2026-09-03"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Croatia · HR</p>
+        <h1>The Croatian VAT number</h1>
+        <p class="section__lead">Croatia has what most countries do not: one number for everything. The OIB is the tax number, the practical company identifier and (with an HR in front) the VAT number.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>HR</code> + 11 digits (the OIB)</p>
+        <p><strong>Example:</strong> <code>HR13579392023</code>, OIB <code>13579392023</code></p>
+        <p><strong>Issued by:</strong> the Tax Administration; the VAT number exists once the entity is in the VAT register.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Croatian VAT number is always <strong>thirteen characters</strong>: the country code and eleven digits. Those digits are the OIB, unchanged.</p>
+      <ul class="breakdown">
+        <li><b>HR</b><span>The country code.</span></li>
+        <li><b>1357939202</b><span>Ten digits of the OIB.</span></li>
+        <li><b>3</b><span>The check digit.</span></li>
+      </ul>
+      <p>The check digit follows ISO 7064, MOD 11,10, the same standard Germany uses. The OIB carries no internal meaning: the digits say nothing about the type of entity or its location.</p>
+
+      <h2 id="oib">OIB, MBS and MB</h2>
+      <p>The <strong>OIB</strong> (personal identification number) is assigned by the Tax Administration to every legal and natural person. It was introduced in 2009 precisely to replace a scattering of older numbers, and it succeeded: the same OIB is used with the tax administration, the pension and health funds and the court register.</p>
+      <p>There is also the <strong>MBS</strong>, the court register subject number, and the <strong>MB</strong>, the number from the register of business entities. Both are older and increasingly rare, but they still appear on documents. The MBS is what {{siteName}} returns as <code>nationalId</code> for Croatia, padded to its full nine digits: the OIB is already the VAT number, and repeating it would say nothing new.</p>
+      <div class="callout"><p><strong>The OIB is not the same as the VAT number.</strong> Every company has an OIB from incorporation; the VAT identification number only exists once the entity enters the VAT register. The digits are identical, but the <code>HR</code> prefix may only be used after registration.</p></div>
+
+      <h2 id="find">Finding the company</h2>
+      <h3>The court register</h3>
+      <p><a href="https://sudreg.pravosudje.hr/" rel="noopener">Sudski registar</a> is public and free, searchable by OIB, name or MBS. It holds the name, seat, legal form, share capital, authorised representatives and annual financial statements.</p>
+      <p>Alongside the web interface there is <strong>sudreg-data.gov.hr</strong>, an official API with OAuth access. Credentials are granted free of charge on request by email, with no company registration required. It is the source {{siteName}} reads for Croatia, both as a nightly bulk import and live, number by number.</p>
+      <p>The API is the register's own schema laid out table by table: the subject row carries the OIB, the status and the dates, while the name, the seat and the legal form each live in a table of their own, joined on the MBS. It publishes a fresh snapshot every working night and keeps a few days of them, so a dataset can be read whole without changing edition halfway through.</p>
+      <h3>The Tax Administration</h3>
+      <p>The Tax Administration publishes the VAT register, which is the only source that confirms an OIB actually carries VAT status.</p>
+      <h3>VIES</h3>
+      <p>Croatia <strong>discloses the name and the address</strong>. The address arrives as one comma-separated line, and the place name is often repeated, once on its own and once alongside the postcode.</p>
+      <p>The two sources do not carry the same fields. The court register knows the legal form and the registered short name, which VIES never returns; VIES carries a postcode, which the register records for only about one seat in ten. Neither is a subset of the other, and <code>GET /v1/lookup-all/:vatNumber</code> is how you see both answers side by side.</p>
+
+      <h2 id="pitfalls">Croatia-specific pitfalls</h2>
+      <ul>
+        <li><strong>The OIB is not the VAT number.</strong> The digits match, but the <code>HR</code> prefix only applies once the entity is in the VAT register.</li>
+        <li><strong>MBS and MB are not the OIB.</strong> They are older, still appear on documents, and the OIB cannot be computed from either.</li>
+        <li><strong>The OIB carries no internal meaning</strong>: nothing about the entity type or location can be read from the digits.</li>
+        <li><strong>The place name is repeated</strong> in the address VIES returns.</li>
+        <li><strong>The court register rarely publishes a postcode.</strong> Roughly nine seats in ten carry a street, a town and no postal code at all: the field is optional in the register, and VIES is the source that has it.</li>
+        <li><strong>The registered name is not the trading name.</strong> A Croatian full company name spells out the whole business purpose and often runs past two hundred characters; the short name is the one on the invoice.</li>
+        <li><strong>The court register API needs OAuth credentials</strong>, free though they are.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Croatian VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Croatian VAT number have?</summary>
+          <p>Eleven after the <code>HR</code> country code, thirteen characters in total.</p>
+        </details>
+        <details>
+          <summary>Is the OIB the same as the VAT number?</summary>
+          <p>The digits are. The VAT identification number is the OIB with an <code>HR</code> prefix, but it exists only once the entity is in the VAT register.</p>
+        </details>
+        <details>
+          <summary>What are MBS and MB?</summary>
+          <p>Older identifiers from the court register and the register of business entities. The OIB replaced them as the single identifier in 2009.</p>
+        </details>
+        <details>
+          <summary>Why does VIES reject an existing company?</summary>
+          <p>Because it is not in the VAT register. It has an OIB but no VAT status.</p>
+        </details>
+        <details>
+          <summary>Can I search the Croatian court register for free?</summary>
+          <p>Yes, it is public and free, and there is an official API with free OAuth credentials granted on request.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/">Germany</a></li>
+            <li><a href="/en/vat-number/italy/">Italy</a></li>
+            <li><a href="/en/vat-number/spain/">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 3 September 2026.</p>
+    </div>
+  </section>
+</main>

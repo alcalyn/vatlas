@@ -1,0 +1,98 @@
+<!-- @meta
+{
+  "title": "CNPJ: formato, dígitos verificadores e consulta",
+  "description": "BR mais catorze dígitos. Como o CNPJ é formado por raiz, ordem e dois dígitos verificadores, e como chegar à empresa por trás do número.",
+  "h1": "O CNPJ brasileiro",
+  "term": "Cadastro Nacional da Pessoa Jurídica",
+  "updated": "2026-09-08"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Brasil · BR</p>
+        <h1>O CNPJ brasileiro</h1>
+        <p class="section__lead">Catorze dígitos que identificam não uma empresa, mas um estabelecimento, e atrás deles um dos maiores cadastros empresariais realmente abertos do mundo.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Formato:</strong> <code>BR</code> + 14 dígitos</p>
+        <p><strong>Exemplo:</strong> <code>BR00000001000136</code>, escrito <code>00.000.001/0001-36</code></p>
+        <p><strong>Emitido por:</strong> a Receita Federal do Brasil.</p>
+      </div>
+
+      <h2 id="format">O formato</h2>
+      <p>O CNPJ tem <strong>catorze dígitos em três partes</strong>, e as partes importam:</p>
+      <ul class="breakdown">
+        <li><b>00000001</b><span>A raiz, a empresa em si. Oito dígitos, comuns a todos os seus estabelecimentos.</span></li>
+        <li><b>0001</b><span>A ordem do estabelecimento. <code>0001</code> é a matriz; o restante são filiais.</span></li>
+        <li><b>36</b><span>Dois dígitos verificadores, módulo 11, sobre tudo o que vem antes.</span></li>
+      </ul>
+      <p>Ou seja: <strong>o CNPJ identifica um estabelecimento, não uma pessoa jurídica</strong>. Uma empresa com quarenta filiais tem quarenta CNPJs com a mesma raiz, uma razão social e quarenta endereços. <code>00000000461911</code> e <code>00000000570885</code> são os dois Banco do Brasil, uma agência no Paraná e outra em São Paulo. Isso pega muita gente de surpresa: dois CNPJs diferentes podem ser a mesma empresa.</p>
+
+      <h2 id="taxes">O Brasil não tem um IVA único</h2>
+      <p>Tem vários tributos sobre o consumo ao mesmo tempo (ICMS no estado, ISS no município, IPI, PIS e COFINS na União) e uma reforma que implanta um IVA federal e subnacional ao longo da segunda metade desta década. Não existe um único “número de IVA brasileiro”.</p>
+      <p>O que existe, em toda nota fiscal e em todo contrato, é o <strong>CNPJ</strong>. É por ele que uma contraparte é identificada, e é ele que o {{siteName}} resolve. A <em>inscrição estadual</em> é outro número e não faz parte dos dados abertos federais.</p>
+
+      <h2 id="find">Chegando à empresa por trás do número</h2>
+      <h3>Os dados abertos do CNPJ</h3>
+      <p>A Receita Federal publica o <strong>cadastro inteiro todo mês</strong>, de graça e sem cadastro de usuário: todas as empresas, todos os estabelecimentos, todos os sócios. São cerca de 6,7 GB compactados e algo como cento e dezoito milhões de linhas por edição, e todas as edições mensais desde maio de 2023 continuam no ar, o que faz do Brasil um dos dois únicos cadastros deste site com histórico de verdade para percorrer.</p>
+      <h3>Dois arquivos, uma resposta</h3>
+      <p>O detalhe é que os dados vêm separados. <em>Empresas</em> traz a razão social; <em>Estabelecimentos</em> traz o endereço e a situação cadastral. Nenhum dos dois basta sozinho: uma consulta precisa do nome de um e do endereço do outro, unidos pela raiz de oito dígitos. O {{siteName}} faz essa junção na importação, para que cada resposta esteja completa na data em que foi registrada.</p>
+
+      <h2 id="pitfalls">Armadilhas específicas do Brasil</h2>
+      <ul>
+        <li><strong>CNPJ é estabelecimento.</strong> Mesma empresa, outra filial, outro número. Compare raízes, não números inteiros, para saber se dois CNPJs andam juntos.</li>
+        <li><strong>Os zeros à esquerda fazem parte.</strong> <code>00000001000136</code> não é <code>1000136</code>. Guardado como número, o CNPJ perde os primeiros dígitos em silêncio.</li>
+        <li><strong>A situação cadastral tem cinco valores.</strong> Só <code>02</code> (ATIVA) significa em atividade; nula, suspensa, inapta e baixada, não.</li>
+        <li><strong>Nome fantasia não é razão social.</strong> O nome fantasia costuma vir vazio e nunca é o nome legal.</li>
+        <li><strong>Sem inscrição estadual.</strong> Ela é emitida por cada estado e não está nos dados federais.</li>
+      </ul>
+
+      <!-- @include partials/country/pt-br.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Perguntas frequentes</p>
+        <h2>O CNPJ em resumo</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Quantos dígitos tem um CNPJ?</summary>
+          <p>Catorze: oito da empresa, quatro do estabelecimento e dois dígitos verificadores.</p>
+        </details>
+        <details>
+          <summary>Por que dois CNPJs são quase idênticos?</summary>
+          <p>São dois estabelecimentos da mesma empresa. Os oito primeiros dígitos são comuns; <code>0001</code> é a matriz e os demais são filiais.</p>
+        </details>
+        <details>
+          <summary>O Brasil tem número de IVA?</summary>
+          <p>Um só, não. O consumo é tributado por vários tributos em três níveis de governo, e o número que identifica uma empresa é o CNPJ.</p>
+        </details>
+        <details>
+          <summary>O que é a inscrição estadual?</summary>
+          <p>Um cadastro fiscal estadual, distinto do CNPJ e não publicado nos dados abertos federais.</p>
+        </details>
+        <details>
+          <summary>Dá para baixar o cadastro inteiro de graça?</summary>
+          <p>Dá, e o histórico junto: a Receita Federal publica todas as empresas e estabelecimentos todo mês, sem cadastro de usuário, e mantém as edições anteriores no ar.</p>
+        </details>
+      </div>
+
+      <h2>Números de empresas em outros países</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/brazil/" hreflang="en" lang="en">Brazil (English)</a></li>
+        <li><a href="/pt/numero-de-iva/portugal/" hreflang="pt" lang="pt">Portugal</a></li>
+        <li><a href="/en/vat-number/australia/" hreflang="en" lang="en">Australia</a></li>
+        <li><a href="/en/vat-number/japan/" hreflang="en" lang="en">Japan</a></li>
+        <li><a href="/en/vat-number/singapore/" hreflang="en" lang="en">Singapore</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Última atualização: 8 de setembro de 2026.</p>
+    </div>
+  </section>
+</main>

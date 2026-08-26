@@ -1,0 +1,225 @@
+<!-- @meta
+{
+  "title": "Italian VAT number (partita IVA): the 11 digits explained",
+  "description": "IT plus 11 digits: a sequential number, the provincial tax office code and a Luhn check digit. How it relates to the codice fiscale, and how to find the company.",
+  "h1": "The Italian VAT number (partita IVA)",
+  "term": "Italian VAT number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Italy · IT</p>
+        <h1>The Italian VAT number (partita IVA)</h1>
+        <p class="section__lead">
+          Eleven digits that are anything but random: they record which provincial tax office issued
+          the number, and they check themselves.
+        </p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>IT</code> + 11 digits</p>
+        <p><strong>Example:</strong> <code>IT00743110157</code></p>
+        <p><strong>Issued by:</strong> the Agenzia delle Entrate, when the business starts trading.</p>
+      </div>
+
+      <h2 id="format">The eleven digits</h2>
+      <p>
+        Domestically the number is written as eleven digits alone; the <code>IT</code> prefix is
+        added when it is used as an intra-community identifier, for instance on an invoice to
+        another member state. It never contains letters.
+      </p>
+      <ul class="breakdown">
+        <li><b>0074311</b><span>A sequential number assigned to the taxpayer.</span></li>
+        <li><b>015</b><span>The code of the provincial office that issued it.</span></li>
+        <li><b>7</b><span>The check digit, computed with the Luhn formula.</span></li>
+      </ul>
+      <p>
+        The three middle digits normally match the ISTAT province code (<code>015</code> is Milan,
+        <code>001</code> Turin, <code>058</code> Rome) with a few reserved codes
+        (<code>120</code>, <code>121</code>, <code>888</code>, <code>999</code>) for central offices
+        and non-resident taxpayers. They say where the VAT position was opened, not where the
+        business operates today, and they survive any relocation.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>The check digit proves nothing about the company.</strong> It only confirms that
+          the first ten digits were transcribed correctly. A well-formed partita IVA may never have
+          been issued, or may have been closed years ago.
+        </p>
+      </div>
+
+      <h2 id="codice-fiscale">Partita IVA and codice fiscale</h2>
+      <p>This is the most common confusion, and the answer depends on the taxpayer.</p>
+      <ul>
+        <li>
+          <strong>Companies and entities</strong> (S.p.A., S.r.l., cooperatives, trading
+          associations): the codice fiscale is <em>numeric, 11 digits</em>, and is the same number as
+          the partita IVA. One number, two purposes.
+        </li>
+        <li>
+          <strong>Natural persons</strong>, freelancers and sole traders: the codice fiscale is a
+          16-character alphanumeric code derived from name, date and place of birth, and the partita
+          IVA is a completely separate 11-digit number. Invoices carry both.
+        </li>
+      </ul>
+      <p>
+        There is also the <strong>REA number</strong> (Repertorio Economico Amministrativo), written
+        as a province abbreviation plus a sequence, <code>MI-1234567</code>. It identifies the
+        Chamber of Commerce registration and has no computable link to the VAT number.
+      </p>
+
+      <h2 id="find">Finding the company behind a partita IVA</h2>
+      <h3>The Agenzia delle Entrate service</h3>
+      <p>
+        The Italian tax agency runs a free
+        <a href="https://telematici.agenziaentrate.gov.it/VerificaPIVA/Scegli.do" rel="noopener">partita IVA check</a>:
+        it says whether the number is valid, whether it is active or closed, and returns the trading
+        name. It returns no address, and it is not designed for bulk querying.
+      </p>
+      <h3>The Registro delle Imprese</h3>
+      <p>
+        The business register kept by the Chambers of Commerce, at
+        <a href="https://www.registroimprese.it/" rel="noopener">registroimprese.it</a>, has
+        everything: seat, legal form, capital, directors, financial statements. It can be searched by
+        VAT number, but extracts are <strong>paid</strong> and there is no free bulk download. That
+        is why Italy, despite having an excellent register, has no open source usable at volume.
+      </p>
+      <h3>VIES</h3>
+      <p>
+        Italy behaves well here: unlike Germany and Spain, it
+        <strong>discloses both the trading name and the full address through VIES</strong>. A typical
+        answer is <code>LARGO FRANCESCO RICHINI 6</code> followed by <code>20122 MILANO MI</code>,
+        with the two-letter province appended to the town, a detail worth handling when you split the
+        address.
+      </p>
+      <p>
+        One caveat: holding a partita IVA is not enough to appear in VIES. The business must be
+        <strong>included in the VIES archive</strong>, an option taken when declaring the start of
+        activity or afterwards. Without it the number is perfectly active in Italy and comes back
+        invalid for intra-community operations.
+      </p>
+
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">What each source gives you for Italy</caption>
+          <thead>
+            <tr><th scope="col">Source</th><th scope="col">Keyed by</th><th scope="col">What you get</th><th scope="col">Limit</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Agenzia delle Entrate</th><td>Partita IVA</td>
+              <td>Validity, active or closed, trading name</td><td>No address, one-off use</td>
+            </tr>
+            <tr>
+              <th scope="row">Registro delle Imprese</th><td>Partita IVA or name</td>
+              <td>Full company record, officers, accounts</td><td>Paid extracts, no free bulk file</td>
+            </tr>
+            <tr>
+              <th scope="row">VIES</th><td>Partita IVA</td>
+              <td>Intra-community validity, name and address</td>
+              <td>Slow, tight quotas, only for businesses in the VIES archive</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="pitfalls">Italy-specific pitfalls</h2>
+      <ul>
+        <li>
+          <strong>Active in Italy ≠ valid in VIES.</strong> The costliest trap: the company exists,
+          the partita IVA is active, but because it is not in the VIES archive the number comes back
+          invalid to a foreign customer.
+        </li>
+        <li>
+          <strong>For an S.r.l. the partita IVA and the codice fiscale are the same number</strong>,
+          for a freelancer they are not. A form with a single field will collect wrong data.
+        </li>
+        <li>
+          <strong>The province abbreviation is glued to the town</strong> in VIES addresses:
+          <code>MILANO MI</code>, <code>ROMA RM</code>. It has to be split off, or it ends up inside
+          the city name.
+        </li>
+        <li>
+          <strong>The three office digits do not say where the business is today</strong>, only where
+          its VAT position was opened.
+        </li>
+        <li>
+          <strong>Closed numbers stay in the register.</strong> Closure is a status, not a deletion,
+          and a partita IVA is never reassigned.
+        </li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Italian VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does an Italian VAT number have?</summary>
+          <p>
+            Eleven digits. With the <code>IT</code> prefix used for intra-community trade, thirteen
+            characters in total.
+          </p>
+        </details>
+        <details>
+          <summary>Are the partita IVA and the codice fiscale the same?</summary>
+          <p>
+            For companies, yes: the codice fiscale is numeric, 11 digits, and identical to the partita
+            IVA. For an individual, no: the codice fiscale is a 16-character alphanumeric code and the
+            partita IVA is a separate number.
+          </p>
+        </details>
+        <details>
+          <summary>What do the three middle digits mean?</summary>
+          <p>
+            They identify the provincial office of the Agenzia delle Entrate that issued the number,
+            usually following the ISTAT province code. They record where the VAT position was opened,
+            not where the business operates now.
+          </p>
+        </details>
+        <details>
+          <summary>How do I check whether a partita IVA is active?</summary>
+          <p>
+            Through the Agenzia delle Entrate's free check, which returns the status and the trading
+            name. For cross-border trade you need VIES instead, which answers on intra-community
+            validity.
+          </p>
+        </details>
+        <details>
+          <summary>Why does VIES say a valid partita IVA is invalid?</summary>
+          <p>
+            Almost always because the business is not included in the VIES archive. Inclusion is
+            requested when declaring the start of activity or later; without it the number is active
+            in Italy but unusable for intra-community operations.
+          </p>
+        </details>
+        <details>
+          <summary>Is there a free downloadable list of Italian VAT numbers?</summary>
+          <p>
+            No. The Registro delle Imprese is complete but its extracts are paid, and the Agenzia
+            delle Entrate offers only a one-at-a-time check. There is no free bulk file.
+          </p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/">Germany</a></li>
+            <li><a href="/en/vat-number/spain/">Spain</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

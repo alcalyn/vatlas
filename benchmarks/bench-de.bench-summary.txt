@@ -1,0 +1,70 @@
+Benchmark - bench-de.txt
+  2026-08-29T16:55:47.968Z
+
+Input
+  lines read           167
+  VAT numbers          167
+  malformed            0
+  duplicates           0
+  usable               167
+
+Numbers per country
+  AT  Austria                 0
+  BE  Belgium                 0
+  BG  Bulgaria                0
+  CY  Cyprus                  0
+  CZ  Czechia                 0
+  DE  Germany               167
+  DK  Denmark                 0
+  EE  Estonia                 0
+  EL  Greece                  0
+  ES  Spain                   0
+  FI  Finland                 0
+  FR  France                  0
+  HR  Croatia                 0
+  HU  Hungary                 0
+  IE  Ireland                 0
+  IT  Italy                   0
+  LT  Lithuania               0
+  LU  Luxembourg              0
+  LV  Latvia                  0
+  MT  Malta                   0
+  NL  Netherlands             0
+  PL  Poland                  0
+  PT  Portugal                0
+  RO  Romania                 0
+  SE  Sweden                  0
+  SI  Slovenia                0
+  SK  Slovakia                0
+  XI  Northern Ireland        0
+
+Lookups - https://api.vatlas.dev - concurrency 1 - run took 50.5s
+
+Outcomes
+  found                   160  95.8%
+  INTERNAL_ERROR            4  2.4%
+  not-registered            3  1.8%
+
+Latency, every lookup (ms)
+  p50     45.3
+  p95     1742
+  max     1857
+  avg      302
+
+Completeness, over the 160 answers found
+  name            5.6%  (9/160)
+  legal form      0.0%  (0/160)
+  address         2.5%  (4/160)
+  postal code     0.0%  (0/160)
+  city            0.0%  (0/160)
+  source        100.0%  (160/160)
+
+  answered by          vies 151, database 9
+  sources              VIES 151, PEPPOL 9
+
+Per country - latency over every lookup, completeness over the ones found
+  code       n   found      p50      p95     name     form     addr     post     city      src
+  DE       167   95.8%     45.3     1742     5.6%     0.0%     2.5%     0.0%     0.0%   100.0%
+
+Per country - where the answers came from
+  DE    vies 151, database 9, INTERNAL_ERROR 4, not-registered 3

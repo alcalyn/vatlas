@@ -1,0 +1,97 @@
+<!-- @meta
+{
+  "title": "IDE suisse et numéro TVA : format, clé de contrôle et vérification",
+  "description": "CHE suivi de neuf chiffres et de TVA. Comment l'IDE est construit, pourquoi le suffixe dit autre chose que le numéro, et ce que le registre fédéral répond gratuitement.",
+  "h1": "L'IDE suisse",
+  "term": "IDE",
+  "updated": "2026-09-15"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Suisse · CHE</p>
+        <h1>L'IDE suisse</h1>
+        <p class="section__lead">La Suisse n'est pas dans l'Union : un numéro suisse n'est pas un numéro de TVA intracommunautaire et VIES ne le connaît pas. C'est l'IDE, un numéro par entreprise suisse, et l'Office fédéral de la statistique y répond par un service ouvert à tous.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format :</strong> <code>CHE</code> + 9 chiffres + <code>TVA</code>, <code>MWST</code> ou <code>IVA</code></p>
+        <p><strong>Exemple :</strong> <code>CHE-105.805.313 TVA</code></p>
+        <p><strong>Attribué par :</strong> l'Office fédéral de la statistique, qui tient le registre IDE.</p>
+      </div>
+
+      <h2 id="format">Le format</h2>
+      <p>Un IDE, c'est <code>CHE</code> suivi de <strong>neuf chiffres</strong>, écrits par groupes de trois séparés par des points : <code>CHE-105.805.313</code>. Depuis 2011, il remplace tous ses prédécesseurs (l'ancien numéro TVA à six chiffres, le numéro du registre du commerce, le numéro d'affilié AVS) par un identifiant unique valable dans toute l'administration.</p>
+      <p>Le neuvième chiffre est une <strong>clé de contrôle</strong> : modulo 11 sur les huit premiers, avec les poids 5, 4, 3, 2, 7, 6, 5, 4. Pour un reste sur onze, aucun chiffre n'est écrivable, et ces numéros ne sont tout simplement jamais attribués.</p>
+      <p>Le <code>E</code> appartient au préfixe, pas au numéro. Retirez la ponctuation de <code>CHE-105.805.313 TVA</code> : il reste <code>CHE105805313TVA</code>, dont seuls les neuf chiffres du milieu sont l'identifiant. C'est le détail à régler avant de stocker quoi que ce soit, faute de quoi la même société se retrouve sous deux clés.</p>
+
+      <h2 id="status">Ce que dit le suffixe</h2>
+      <p>Un IDE seul dit que l'entreprise existe. Le suffixe dit qu'elle est inscrite au registre de la TVA, dans l'une des trois langues officielles : <strong>TVA</strong>, <strong>MWST</strong>, <strong>IVA</strong>. Les trois disent la même chose et ne changent pas le numéro.</p>
+      <p>Le registre tient les deux faits séparés et publie les deux. La Suisse fait donc partie des rares pays hors Union où une consultation peut affirmer, date à l'appui, qu'un numéro existe et n'est <strong>pas</strong> assujetti, ou que son inscription a été radiée depuis. {{siteName}} lit les deux codes, car l'un comme l'autre met fin à une inscription.</p>
+      <p>L'assujettissement commence à 100 000 CHF de chiffre d'affaires mondial. En dessous, l'inscription est volontaire, et beaucoup de sociétés suisses bien vivantes ont un IDE sans inscription TVA.</p>
+
+      <h2 id="find">Retrouver l'entreprise derrière le numéro</h2>
+      <h3>Le service public du registre IDE</h3>
+      <p>L'Office fédéral de la statistique expose le registre par un service SOAP dont la partie publique (consultation par IDE, recherche, validation d'un numéro TVA) ne demande <strong>ni compte ni certificat</strong>. Elle renvoie la raison sociale, la forme juridique, le siège et la position TVA d'un seul coup. Le plafond publié est de vingt appels par minute.</p>
+      <h3>Un numéro, parfois deux entrées</h3>
+      <p>Un IDE peut porter plusieurs entrées : un groupe qui décompte la TVA ensemble apparaît comme <em>groupe TVA</em> à côté de l'entreprise elle-même. La première entrée est l'unité à laquelle le numéro appartient.</p>
+      <h3>Zefix et le registre du commerce</h3>
+      <p>Zefix, l'index central des raisons de commerce, porte l'inscription au registre du commerce. C'est un autre registre que l'IDE, et son interface n'est pas ouverte de la même manière.</p>
+
+      <h2 id="pitfalls">Les pièges propres à la Suisse</h2>
+      <ul>
+        <li><strong>VIES ne répondra pas.</strong> La Suisse n'est pas un État membre : il n'y a pas de numéro intracommunautaire à vérifier.</li>
+        <li><strong>Le <code>E</code> est un préfixe, le suffixe est une langue.</strong> Neuf chiffres, c'est tout le numéro.</li>
+        <li><strong>Exister n'est pas être assujetti.</strong> Le seuil de 100 000 CHF est réel.</li>
+        <li><strong>Une inscription TVA radiée laisse l'IDE en place.</strong> Seule l'inscription prend fin.</li>
+        <li><strong>Vingt appels par minute.</strong> Ce service n'est pas fait pour du traitement en masse.</li>
+      </ul>
+
+      <!-- @include partials/country/fr.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2>L'IDE en bref</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>À quoi ressemble un numéro de TVA suisse ?</summary>
+          <p><code>CHE-123.456.789 TVA</code> : les lettres CHE, neuf chiffres, et un suffixe en français, en allemand ou en italien.</p>
+        </details>
+        <details>
+          <summary>TVA, MWST et IVA, est-ce différent ?</summary>
+          <p>Non. C'est le même suffixe dans les trois langues officielles, pour la même inscription.</p>
+        </details>
+        <details>
+          <summary>VIES peut-il vérifier un numéro suisse ?</summary>
+          <p>Non. VIES ne répond que pour les États membres de l'Union.</p>
+        </details>
+        <details>
+          <summary>Pourquoi une société réelle ressort-elle « non inscrite » ?</summary>
+          <p>Parce qu'elle a un IDE sans inscription au registre de la TVA, le plus souvent sous le seuil de 100 000 CHF.</p>
+        </details>
+        <details>
+          <summary>La consultation est-elle payante ?</summary>
+          <p>Rien à la source : la partie publique du service IDE fédéral est gratuite et sans compte.</p>
+        </details>
+      </div>
+
+      <h2>Les numéros d'entreprise ailleurs</h2>
+      <ul class="otherlinks">
+        <li><a href="/fr/numero-tva-intracommunautaire/france/">France</a></li>
+        <li><a href="/fr/numero-tva-intracommunautaire/belgique/">Belgique</a></li>
+        <li><a href="/fr/numero-tva-intracommunautaire/canada/">Canada</a></li>
+        <li><a href="/de/uid-nummer/schweiz/">Schweiz (Deutsch)</a></li>
+        <li><a href="/en/vat-number/switzerland/">Switzerland (English)</a></li>
+        <li><a href="/fr/numero-tva-intracommunautaire/">Tous les pays</a></li>
+      </ul>
+      <p class="updated">Dernière mise à jour le 15 septembre 2026.</p>
+    </div>
+  </section>
+</main>

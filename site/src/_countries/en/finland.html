@@ -1,0 +1,103 @@
+<!-- @meta
+{
+  "title": "Finnish VAT number: the Business ID, format and lookup",
+  "description": "FI plus eight digits, the Business ID without its hyphen. How the number is built, and how the whole Finnish register can be downloaded in one request.",
+  "h1": "The Finnish VAT number",
+  "term": "Finnish VAT number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Finland · FI</p>
+        <h1>The Finnish VAT number</h1>
+        <p class="section__lead">The VAT number is the Business ID with the hyphen removed, so there is no derivation to get wrong, and the whole trade register downloads as one file.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>FI</code> + 8 digits (the Business ID without its hyphen)</p>
+        <p><strong>Example:</strong> <code>FI04805519</code>, Business ID <code>0480551-9</code></p>
+        <p><strong>Issued by:</strong> the Patent and Registration Office (PRH) and the Tax Administration jointly.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Finnish VAT number is always <strong>ten characters</strong>: the country code and eight digits.</p>
+      <ul class="breakdown">
+        <li><b>FI</b><span>The country code.</span></li>
+        <li><b>0480551</b><span>Seven digits of the Business ID.</span></li>
+        <li><b>9</b><span>The check digit.</span></li>
+      </ul>
+      <p>The check digit is computed modulus 11 with weights 7, 9, 10, 5, 8, 4, 2. A remainder of 1 means no such identifier exists. Domestically the Business ID is written with a hyphen before the check digit (<code>0480551-9</code>) and the hyphen is dropped in the VAT number.</p>
+
+      <h2 id="businessid">Business ID and VAT number</h2>
+      <p>The <strong>Business ID</strong> (Y-tunnus) is issued to every company and organisation when it enters the business information system. It never changes.</p>
+      <p>The <strong>VAT number</strong> is that same identifier with an <code>FI</code> prefix, but it exists only if the business is entered in the <strong>VAT register</strong>. The distinction matters: everyone has a Business ID, not everyone is VAT liable.</p>
+      <p>A company may also be in the prepayment register and the employer register, independently of one another. Neither affects the VAT number.</p>
+
+      <h2 id="find">Finding the company</h2>
+      <h3>PRH open data</h3>
+      <p>The Patent and Registration Office publishes the trade register as <strong>open data with no registration required</strong>. Single companies can be fetched from the API, but the endpoint that matters is <code>/all_companies</code>: it returns the entire register as one zipped JSON file, hundreds of thousands of companies in a few tens of seconds. Paginating the same work would take thousands of requests and hours.</p>
+      <p>One caveat: the trade register is not the VAT register. Not every company in the file is VAT liable, and ceased companies stay in it with a status flag.</p>
+      <h3>YTJ</h3>
+      <p><a href="https://tietopalvelu.ytj.fi/" rel="noopener">ytj.fi</a> is the human-facing interface to the same data: name, industry, address and register entries, VAT liability included.</p>
+      <h3>VIES</h3>
+      <p>Finland <strong>discloses name and address</strong> through VIES. The address sometimes carries a <code>c/o</code> run together with the next word without a space, which is worth allowing for when parsing.</p>
+
+      <h2 id="pitfalls">Finland-specific pitfalls</h2>
+      <ul>
+        <li><strong>Drop the hyphen.</strong> <code>FI0480551-9</code> is not valid; a VAT number is digits only.</li>
+        <li><strong>A Business ID does not imply VAT liability.</strong> The trade register and the VAT register are different registers.</li>
+        <li><strong>Ceased companies remain in the open data</strong>, so the status has to be checked separately.</li>
+        <li><strong>Do not paginate the API.</strong> The whole register is available in one request; paginating takes hours.</li>
+        <li><strong>Addresses can contain a c/o</strong> glued to the following word.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Finnish VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Finnish VAT number have?</summary>
+          <p>Eight after the <code>FI</code> country code, ten characters in total.</p>
+        </details>
+        <details>
+          <summary>Are the Business ID and the VAT number the same?</summary>
+          <p>The digits are. The VAT number is the Business ID with the hyphen removed and <code>FI</code> in front, but it exists only for businesses in the VAT register.</p>
+        </details>
+        <details>
+          <summary>Why does VIES reject an existing Business ID?</summary>
+          <p>Because the company is not in the VAT register. Everyone has a Business ID; VAT liability is separate.</p>
+        </details>
+        <details>
+          <summary>Can I download the whole Finnish trade register for free?</summary>
+          <p>Yes. PRH publishes it as open data with no registration, and the entire register comes as one compressed file.</p>
+        </details>
+        <details>
+          <summary>Do ceased companies appear in the register?</summary>
+          <p>Yes, with a status flag. Presence in the register alone does not mean the company is trading.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/germany/">Germany</a></li>
+        <li><a href="/en/vat-number/italy/">Italy</a></li>
+        <li><a href="/en/vat-number/spain/">Spain</a></li>
+        <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+        <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

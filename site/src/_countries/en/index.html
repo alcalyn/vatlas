@@ -1,0 +1,163 @@
+<!-- @meta
+{
+  "title": "VAT number formats, country by country",
+  "description": "The format of the business tax number in every country served here (the intra-community VAT number, the ABN, the CNPJ, the UEN), the national identifier behind each, and how to find the company it belongs to.",
+  "h1": "VAT numbers, country by country",
+  "updated": "2026-09-15"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Reference</p>
+        <h1>VAT numbers, country by country</h1>
+        <p class="section__lead">
+          Every country served here has a format of its own and a register of its own. These pages
+          explain each one: how the number is built, which national identifier it hides, and what it takes
+          to reach the company behind it.
+        </p>
+      </div>
+
+      <h2 id="what">What a business tax number is</h2>
+      <p>
+        In the Union it is the VAT identification number, issued by a member state's tax
+        administration to a business that trades across EU borders. It is what makes a
+        reverse-charge invoice possible: supply a valid number and your supplier invoices you
+        without VAT, which is why checking a customer's number is not paperwork but the condition
+        of the exemption. Elsewhere it is whatever number identifies a business on its invoices:
+        an ABN in Australia, a CNPJ in Brazil, a UEN in Singapore, an invoice registration number
+        in Japan. Each of them is served here the same way, from the same endpoint and with the
+        same response.
+      </p>
+      <p>
+        Every number starts with a two-letter prefix, the ISO country code, with two exceptions:
+        Greece is written <code>EL</code> rather than <code>GR</code>, and Northern Ireland keeps
+        its own prefix, <code>XI</code>, since Brexit.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>The VAT number is rarely the company number.</strong> In Belgium and Denmark they
+          are the same digits; in France the VAT number is derived from the SIREN; in Germany,
+          Ireland and Spain the tax administration assigns something entirely separate. That single
+          fact is what makes cross-border company lookup hard.
+        </p>
+      </div>
+
+      <h2 id="formats">Format, country by country</h2>
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Business tax number format in each country served here</caption>
+          <thead>
+            <tr><th scope="col">Country</th><th scope="col">Prefix</th><th scope="col">Format</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><a href="/en/vat-number/australia/">Australia</a></th><td><code>AU</code></td><td><code>AU + 11 digits</code> (ABN)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/austria/">Austria</a></th><td><code>AT</code></td><td><code>ATU + 8 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/belgium/">Belgium</a></th><td><code>BE</code></td><td><code>BE + 10 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/brazil/">Brazil</a></th><td><code>BR</code></td><td><code>BR + 14 digits</code> (CNPJ)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/bulgaria/">Bulgaria</a></th><td><code>BG</code></td><td><code>BG + 9 or 10 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/canada/">Canada</a></th><td><code>CA</code></td><td><code>CA + 9 digits</code> (business number, <code>RT0001</code> on the invoice)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/costa-rica/">Costa Rica</a></th><td><code>CR</code></td><td><code>CR + 10 digits</code> (cédula jurídica)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/croatia/">Croatia</a></th><td><code>HR</code></td><td><code>HR + 11 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/cyprus/">Cyprus</a></th><td><code>CY</code></td><td><code>CY + 8 digits + 1 letter</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/czechia/">Czechia</a></th><td><code>CZ</code></td><td><code>CZ + 8 to 10 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/ecuador/">Ecuador</a></th><td><code>EC</code></td><td><code>EC + 13 digits</code> (RUC, establishment included)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/denmark/">Denmark</a></th><td><code>DK</code></td><td><code>DK + 8 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/estonia/">Estonia</a></th><td><code>EE</code></td><td><code>EE + 9 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/finland/">Finland</a></th><td><code>FI</code></td><td><code>FI + 8 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/france/">France</a></th><td><code>FR</code></td><td><code>FR + 2 characters + 9 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/germany/">Germany</a></th><td><code>DE</code></td><td><code>DE + 9 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/greece/">Greece</a></th><td><code>EL</code></td><td><code>EL + 9 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/greenland/">Greenland</a></th><td><code>GL</code></td><td><code>GL + 8 digits</code> (CVR number, no VAT)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/hungary/">Hungary</a></th><td><code>HU</code></td><td><code>HU + 8 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/ireland/">Ireland</a></th><td><code>IE</code></td><td><code>IE + 8 or 9 characters</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/israel/">Israel</a></th><td><code>IL</code></td><td><code>IL + 9 digits</code> (company number)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/italy/">Italy</a></th><td><code>IT</code></td><td><code>IT + 11 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/japan/">Japan</a></th><td><code>JP</code></td><td><code>JPT + 13 digits</code> (invoice registration number)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/latvia/">Latvia</a></th><td><code>LV</code></td><td><code>LV + 11 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/lithuania/">Lithuania</a></th><td><code>LT</code></td><td><code>LT + 9 or 12 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/luxembourg/">Luxembourg</a></th><td><code>LU</code></td><td><code>LU + 8 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/malta/">Malta</a></th><td><code>MT</code></td><td><code>MT + 8 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/netherlands/">Netherlands</a></th><td><code>NL</code></td><td><code>NL + 9 digits + B + 2 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/new-zealand/">New Zealand</a></th><td><code>NZ</code></td><td><code>NZ + 13 digits</code> (NZBN)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/nigeria/">Nigeria</a></th><td><code>NG</code></td><td><code>NG + 10 digits</code> (TIN; the older form is 8 + 4)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/northern-ireland/">Northern Ireland</a></th><td><code>XI</code></td><td><code>XI + 9 or 12 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/norway/">Norway</a></th><td><code>NO</code></td><td><code>NO + 9 digits + MVA</code> (organisasjonsnummer)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/peru/">Peru</a></th><td><code>PE</code></td><td><code>PE + 11 digits</code> (RUC)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/poland/">Poland</a></th><td><code>PL</code></td><td><code>PL + 10 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/portugal/">Portugal</a></th><td><code>PT</code></td><td><code>PT + 9 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/romania/">Romania</a></th><td><code>RO</code></td><td><code>RO + 2 to 10 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/russia/">Russia</a></th><td><code>RU</code></td><td><code>RU + 10 digits</code> (ИНН; 12 for a sole trader)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/singapore/">Singapore</a></th><td><code>SG</code></td><td><code>SG + 9 or 10 characters</code> (UEN)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/slovakia/">Slovakia</a></th><td><code>SK</code></td><td><code>SK + 10 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/slovenia/">Slovenia</a></th><td><code>SI</code></td><td><code>SI + 8 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/spain/">Spain</a></th><td><code>ES</code></td><td><code>ES + 9 characters</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/sweden/">Sweden</a></th><td><code>SE</code></td><td><code>SE + 12 digits</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/switzerland/">Switzerland</a></th><td><code>CHE</code></td><td><code>CHE + 9 digits + MWST/TVA/IVA</code> (UID)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/taiwan/">Taiwan</a></th><td><code>TW</code></td><td><code>TW + 8 digits</code> (Unified Business Number)</td></tr>
+            <tr><th scope="row"><a href="/uk/yedrpou/ukrayina/" hreflang="uk" lang="uk">Ukraine</a></th><td><code>UA</code></td><td><code>UA + 8 digits</code> (ЄДРПОУ; the 12-digit ІПН reduces to it)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/vietnam/">Vietnam</a></th><td><code>VN</code></td><td><code>VN + 10 digits</code> (mã số thuế; 13 for a branch)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="dim">
+        The format is the syntax only. A well-formed number is not necessarily an assigned one, and
+        an assigned one is not necessarily registered for the tax: in the Union, registration for
+        intra-community trade is a separate question from the number existing, and outside it only
+        Japan's register answers it: being in that file is what makes an invoice deductible. An
+        ABN, a CNPJ, a UEN or a 統一編號 identify a business; whether it charges the tax is
+        something else. Each page says how far its register goes, including where it stops, as in
+        Costa Rica, which publishes a name and a status and no address at all.
+      </p>
+
+      <h2 id="sources">Where the data comes from</h2>
+      <p>
+        There are two kinds of source, and the difference matters more than it looks:
+      </p>
+      <ul>
+        <li>
+          <strong>National open data.</strong> France, Estonia, Latvia, Finland and Belgium publish
+          their whole register for free, and so do Brazil, Japan, Australia, Singapore and Peru.
+          The catch is never the licence, it is whether a row can be reached <em>by a VAT
+          number</em>. Ireland publishes its entire company register daily and
+          it is useless here, because the Irish VAT number is assigned by Revenue and cannot be
+          derived from the CRO number.
+        </li>
+        <li>
+          <strong>A national API.</strong> Poland, Czechia, Romania, Greece, Costa Rica, Israel and
+          Taiwan answer one number at a time, for free, each with its own protocol, its own rate
+          limit and, sometimes, its own account. The Commission's VIES is one of these, no more and
+          no less; it happens to be the one that answers whether a number is registered for intra-community trade, which no
+          register does. Germany and Spain disclose nothing beyond that, which is why Germany is
+          read from the Peppol e-invoicing directory instead, which is keyed by the VAT number.
+        </li>
+      </ul>
+
+      <h2 id="vatlas">One API for every country on this page</h2>
+      <p>
+        {{siteName}} resolves a business tax number (a VAT number, an ABN, a CNPJ, an invoice
+        registration number or a UEN) to a company record: legal name, national identifier, legal
+        form, status and address. Which register answered is a detail in <code>meta</code>, not
+        something your code has to branch on.
+      </p>
+      {{example}}
+      <div class="callout">
+        <p>
+          <strong>Free to try.</strong> An email address is all it takes to create an account, with <strong>{{quotaFree}} requests a month</strong> and a working key in about a minute.
+        </p>
+      </div>
+      <p>
+        <a class="btn btn--primary" href="{{signupUrl}}">Get a free key</a>
+        <a class="btn btn--ghost" href="{{docsUrl}}">Read the documentation</a>
+      </p>
+      <h2>Guides</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/guides/autofill-company-form-from-vat-number/">Autofill a company form from a VAT number</a></li>
+        <li><a href="/en/guides/company-name-address-from-vat-number/">Getting a company's name and address</a></li>
+        <li><a href="{{guidesUrl}}">All guides</a></li>
+      </ul>
+      <p class="updated">Last updated 15 September 2026.</p>
+    </div>
+  </section>
+</main>

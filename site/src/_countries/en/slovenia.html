@@ -1,0 +1,103 @@
+<!-- @meta
+{
+  "title": "Slovenian VAT number: format, davčna številka and lookup",
+  "description": "SI plus the eight-digit tax number. Why it cannot be derived from the registration number, what AJPES publishes, and how to find the company.",
+  "h1": "The Slovenian VAT number",
+  "term": "Slovenian VAT identification number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Slovenia · SI</p>
+        <h1>The Slovenian VAT number</h1>
+        <p class="section__lead">Eight digits that are the company’s tax number, and that cannot be derived from its registration number, even though the whole business register is published for free.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>SI</code> + 8 digits</p>
+        <p><strong>Example:</strong> <code>SI33840890</code></p>
+        <p><strong>Issued by:</strong> the Financial Administration (FURS), on VAT identification.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Slovenian VAT number always carries <strong>eight digits</strong> after the prefix. They are the company’s tax number, unchanged.</p>
+      <ul class="breakdown">
+        <li><b>SI</b><span>The country code.</span></li>
+        <li><b>3384089</b><span>Seven digits of the tax number.</span></li>
+        <li><b>0</b><span>The check digit.</span></li>
+      </ul>
+      <p>The check digit is computed modulus 11 with weights 8, 7, 6, 5, 4, 3, 2. The first digit is never 0 or 1: tax numbers start at 10000000.</p>
+
+      <h2 id="numbers">Tax number, registration number, VAT ID</h2>
+      <p>Slovenia runs two numbers that are constantly confused.</p>
+      <p>The <strong>matična številka</strong> (registration number) is 7 digits, or 10 for a branch, and is assigned by AJPES when the entity enters the business register. The <strong>davčna številka</strong> (tax number) is 8 digits and comes from FURS. Nothing computable links them.</p>
+      <p>The <strong>VAT identification number</strong> is the tax number with <code>SI</code> in front, but it exists only if the taxpayer is identified for VAT purposes. Every business has a tax number; not every business is VAT registered.</p>
+      <div class="callout"><p><strong>This is the Slovenian obstacle.</strong> AJPES publishes the entire business register free and openly, but the extract carries the registration number, not the tax number. So no row can be reached by a VAT number until FURS’s list of VAT-registered taxpayers is joined in.</p></div>
+
+      <h2 id="find">Finding the company</h2>
+      <h3>AJPES</h3>
+      <p><a href="https://www.ajpes.si/" rel="noopener">AJPES</a> keeps the business register and publishes it as open data: name, seat, legal form, activity, annual reports. It is searched by name or registration number.</p>
+      <h3>FURS</h3>
+      <p>FURS publishes the <strong>list of taxpayers identified for VAT</strong>. Only that list connects a tax number to a company, and only the two sources together make a lookup by VAT number possible.</p>
+      <h3>VIES</h3>
+      <p>Slovenia <strong>discloses the name and the address</strong> through VIES. The address comes on one line with the postcode and town at the end, and the name is sometimes very short, because the registered abbreviation is published rather than the full legal name.</p>
+
+      <h2 id="pitfalls">Slovenia-specific pitfalls</h2>
+      <ul>
+        <li><strong>The registration number is not the tax number.</strong> One comes from AJPES, the other from FURS, and no calculation links them.</li>
+        <li><strong>A tax number is not yet a VAT ID.</strong> Every taxpayer has one; VAT identification is a separate step.</li>
+        <li><strong>The <code>SI</code> prefix is not part of the tax number.</strong> Domestically it is eight digits; on an EU invoice it is <code>SI</code> plus eight digits.</li>
+        <li><strong>The name in VIES may be an abbreviation</strong>, so matching it back against AJPES by name often fails.</li>
+        <li><strong>The AJPES open data alone is not enough</strong> to look a company up by VAT number.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Slovenian VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Slovenian VAT number have?</summary>
+          <p>Eight after the <code>SI</code> prefix, ten characters in total.</p>
+        </details>
+        <details>
+          <summary>Are the tax number and the VAT ID the same?</summary>
+          <p>The digits are. The VAT ID is the tax number with <code>SI</code> in front, but it exists only once the taxpayer is identified for VAT.</p>
+        </details>
+        <details>
+          <summary>What is the difference between the registration number and the tax number?</summary>
+          <p>The registration number is assigned by AJPES on entry in the business register and has seven digits. The tax number comes from FURS and has eight. Neither can be computed from the other.</p>
+        </details>
+        <details>
+          <summary>Why does VIES reject an existing Slovenian company?</summary>
+          <p>Because it is not identified for VAT. It has a tax number but no VAT identification.</p>
+        </details>
+        <details>
+          <summary>Can I download the whole Slovenian business register for free?</summary>
+          <p>Yes, AJPES publishes it as open data, but keyed by registration number rather than tax number, so it cannot be searched by VAT number on its own.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/">Germany</a></li>
+            <li><a href="/en/vat-number/italy/">Italy</a></li>
+            <li><a href="/en/vat-number/spain/">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

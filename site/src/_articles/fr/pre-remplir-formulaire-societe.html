@@ -1,0 +1,291 @@
+<!-- @meta
+{
+  "title": "Pré-remplir un formulaire société à partir d’un numéro de TVA",
+  "description": "Un champ au lieu de six. Remplir la raison sociale et l’adresse d’un client depuis le numéro de TVA qu’il saisit, et que faire quand la réponse n’arrive pas.",
+  "h1": "Pré-remplir un formulaire société à partir d’un numéro de TVA",
+  "articleType": "TechArticle",
+  "updated": "2026-09-21",
+  "video": {
+    "file": "prefill",
+    "name": "Pré-remplir un bloc société à partir d’un numéro de TVA",
+    "description": "Un numéro de TVA est saisi dans un tunnel de commande B2B, vérifié auprès du registre, et la raison sociale, la rue, le code postal, la ville et le pays se remplissent seuls.",
+    "duration": "PT8S"
+  }
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Guide · Onboarding</p>
+        <h1>Pré-remplir un formulaire société à partir d’un numéro de TVA</h1>
+        <p class="section__lead">
+          Un client professionnel qui s’inscrit ne devrait saisir qu’une chose : son numéro de TVA.
+          Le nom, la forme juridique et l’adresse sont déjà dans un registre officiel. Les lui faire
+          retaper, c’est lui demander d’y introduire des erreurs.
+        </p>
+      </div>
+
+      <figure class="demo">
+        <video src="/demos/prefill.mp4" poster="/demos/prefill.jpg" width="1000" height="724"
+               autoplay loop muted playsinline
+               aria-label="Un formulaire d’inscription : un numéro de TVA est saisi, et la raison sociale, la forme juridique et l’adresse se remplissent seules."></video>
+        <figcaption>Un champ saisi, le reste rempli depuis le registre.</figcaption>
+      </figure>
+
+      <h2 id="formulaire">Le bloc société</h2>
+      <p>
+        Toute inscription B2B, tout tunnel de commande, tout référencement fournisseur demande les
+        mêmes six champs : raison sociale, forme juridique, rue, code postal, ville, numéro de TVA.
+        Ils sont saisis par quelqu’un qui veut en avoir fini, souvent sur un téléphone.
+      </p>
+      <p>
+        C’est là que les formulaires B2B perdent du monde, et là que se joue la qualité de la
+        facture, de la fiche CRM et de l’export comptable.
+      </p>
+
+      <h2 id="benefices">Ce que ça change</h2>
+      <p>
+        Un champ au lieu de six fait passer l’étape d’une minute environ à quelques secondes. Sur
+        une inscription déjà longue, c’est la réduction d’abandon la moins chère à obtenir.
+      </p>
+      <p>
+        L’effet plus lent compte davantage. Quand le nom et l’adresse viennent du registre plutôt
+        que d’un clavier, la facture part à la bonne entité juridique, et le CRM cesse de contenir
+        quatre fois la même société parce que quelqu’un a écrit « SARL » de trois façons.
+      </p>
+      <p>
+        La recherche dit aussi quelque chose du numéro lui-même. Un numéro qui ne résout vers rien
+        mérite d’être signalé avant la première facture hors taxe plutôt qu’après.
+      </p>
+
+      <h2 id="difficulte">Où est la difficulté</h2>
+      <p>
+        Il n’existe pas une méthode, mais une par pays. Certains publient tout leur répertoire des
+        entreprises en fichiers de plusieurs gigaoctets, la dénomination dans l’un et l’adresse
+        dans l’autre. D’autres exposent leur propre service, avec son format de requête et sa façon
+        de dire « introuvable ». Et dans quelques-uns, aucun registre ne restitue la société
+        derrière un numéro de TVA. <a href="/fr/guides/nom-adresse-entreprise-numero-tva/">Obtenir
+        le nom et l’adresse d’une entreprise</a> reprend tout cela pays par pays.
+      </p>
+      <p>Multipliez par le nombre de pays où vous vendez, puis ajoutez ce qui est partout pareil :</p>
+      <ul>
+        <li>
+          <strong>Le numéro de TVA est rarement le numéro d’entreprise.</strong> Parfois le même
+          identifiant, parfois il s’en déduit, parfois aucun rapport. Il n’y a pas une règle de
+          jointure à écrire.
+        </li>
+        <li>
+          <strong>Le nom n’est pas toujours divulgué.</strong> Quelques États membres ne publient
+          que la validité, et le formulaire doit fonctionner quand le nom revient vide.
+        </li>
+        <li>
+          <strong>L’adresse arrive en texte libre</strong>, dans une convention différente par
+          pays. La découper en <code>line1</code> / <code>postalCode</code> / <code>city</code> est
+          un travail à part entière.
+        </li>
+        <li>
+          <strong>La saisie est sale.</strong> Espaces, points, tirets, préfixe pays recopié ou
+          omis, minuscules.
+        </li>
+        <li>
+          <strong>Une clé de contrôle juste ne prouve rien.</strong> Elle reste juste pour une
+          société radiée depuis dix ans. La validation hors ligne dit que le numéro est bien formé,
+          et s’arrête là.
+        </li>
+        <li>
+          <strong>Les sources tombent.</strong> Pas souvent, pas jamais, pas quand ça vous arrange.
+          Un formulaire qui attend la réponse pour autoriser la soumission casse pendant la fenêtre
+          de maintenance de quelqu’un d’autre.
+        </li>
+      </ul>
+
+      <h2 id="appel">Un seul appel, tous les pays</h2>
+      <p>
+        Un point d’entrée, une enveloppe, les mêmes noms de champs, quel que soit le pays du
+        numéro. {{siteName}} répond de la même façon pour tous les pays qu’il couvre, et les
+        <a href="{{countryHubUrl}}">pages pays</a> en donnent la liste à jour.
+      </p>
+      <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-str">&quot;{{apiBase}}/v1/lookup/FR68005420120&quot;</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">&quot;Authorization: Bearer $VATLAS_KEY&quot;</span></code></pre>
+      </div>
+      <p>Réponse :</p>
+      <p class="endpoint"><span class="status--2xx">200 OK</span></p>
+      <div class="code" data-copy>
+<pre><code>{
+  <span class="tok-key">"data"</span><span class="tok-punc">:</span> {
+    <span class="tok-key">"vatNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"FR68005420120"</span>,
+    <span class="tok-key">"countryCode"</span><span class="tok-punc">:</span> <span class="tok-str">"FR"</span>,
+    <span class="tok-key">"nationalNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"68005420120"</span>,
+    <span class="tok-key">"nationalId"</span><span class="tok-punc">:</span> <span class="tok-str">"005420120"</span>,
+    <span class="tok-key">"name"</span><span class="tok-punc">:</span> <span class="tok-str">"SOCIETE DES SUCRERIES DU MARQUENTERRE"</span>,
+    <span class="tok-key">"legalForm"</span><span class="tok-punc">:</span> <span class="tok-str">"Autre SA à conseil d'administration"</span>,
+    <span class="tok-key">"status"</span><span class="tok-punc">:</span> <span class="tok-str">"active"</span>,
+    <span class="tok-key">"address"</span><span class="tok-punc">:</span> {
+      <span class="tok-key">"line1"</span><span class="tok-punc">:</span> <span class="tok-str">"32 CHEMIN DES GARENNES"</span>,
+      <span class="tok-key">"line2"</span><span class="tok-punc">:</span> <span class="tok-null">null</span>,
+      <span class="tok-key">"postalCode"</span><span class="tok-punc">:</span> <span class="tok-str">"80120"</span>,
+      <span class="tok-key">"city"</span><span class="tok-punc">:</span> <span class="tok-str">"SAINT-QUENTIN-EN-TOURMONT"</span>,
+      <span class="tok-key">"country"</span><span class="tok-punc">:</span> <span class="tok-str">"FR"</span>
+    }
+  },
+  <span class="tok-key">"meta"</span><span class="tok-punc">:</span> {
+    <span class="tok-key">"source"</span><span class="tok-punc">:</span> <span class="tok-str">"SIRENE"</span>,
+    <span class="tok-key">"sourceDate"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-09-01"</span>,
+    <span class="tok-key">"sourceSince"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-06-01"</span>,
+    <span class="tok-key">"sourceUpdatedAt"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-02-13T11:07:03.000Z"</span>
+  }
+}</code></pre>
+      </div>
+      <p>
+        Tout ce dont le formulaire a besoin est déjà séparé : un champ de réponse par champ de
+        formulaire, rien à parser. Le bloc <code>meta</code> nomme le registre qui a répondu et la
+        date, ce que vous conservez s’il faut un jour justifier la fiche.
+      </p>
+
+      <h2 id="regles">Concevoir le formulaire</h2>
+      <ul>
+        <li>
+          <strong>Normalisez à l’entrée.</strong> Majuscules, espaces et ponctuation retirés,
+          préfixe pays accepté présent ou absent. Une seule fois, pour que le reste du code ne voie
+          qu’une forme.
+        </li>
+        <li>
+          <strong>Appelez depuis votre serveur.</strong> La clé d’API identifie votre compte et
+          appartient derrière une route à vous, pas dans un bundle front. C’est aussi là que vous
+          temporisez un champ qui se déclenche à chaque sortie de focus.
+        </li>
+        <li>
+          <strong>Remplissez et laissez modifiable.</strong> Les registres sont en retard sur la
+          réalité, et la personne au clavier connaît sa société mieux qu’un fichier publié le mois
+          dernier.
+        </li>
+        <li>
+          <strong>Laissez le formulaire partir dans tous les cas.</strong> Délai court, la recherche
+          n’est qu’une assistance. Un nom vide n’est pas une erreur : dans quelques pays c’est la
+          réponse complète.
+        </li>
+        <li>
+          <strong>Distinguez trois issues à l’écran.</strong> Rempli depuis le registre, aucune
+          société trouvée, pas de réponse pour l’instant. La deuxième est un avertissement léger à
+          côté du champ. La troisième est votre problème, pas celui du client.
+        </li>
+        <li>
+          <strong>Conservez ce que le registre a dit, et quand.</strong> Si l’exonération est
+          contestée plus tard, la réponse est un enregistrement daté.
+        </li>
+      </ul>
+      <div class="callout">
+        <p>
+          <strong>Auto-compléter n’est pas vérifier.</strong> Remplir un formulaire est un confort
+          et peut se faire depuis une réponse déjà connue. Décider de ne pas facturer la TVA est un
+          acte juridique, qui mérite une vérification faite à ce moment-là et dont la preuve est
+          conservée. Faites les deux, et gardez-les distincts.
+        </p>
+      </div>
+
+      <h2 id="apres">Après le formulaire</h2>
+      <p>
+        Une fiche société est vraie le jour où elle est saisie, puis cesse de l’être. {{siteName}}
+        peut suivre les sociétés déjà intégrées et vous rappeler quand un registre change d’avis,
+        pour que la correction arrive avant qu’une facture parte au mauvais endroit : voir
+        <a href="{{docsUrl}}#monitor">le suivi de société</a>. Pour l’historique de ce que chaque
+        registre a dit au fil du temps, il y a
+        <a href="{{docsUrl}}#lookup-all">le détail de chaque source</a>.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>Ce que nous ne promettons pas.</strong> Certaines administrations divulguent la
+          validité et pas le nom : l’auto-complétion n’y remplira pas la raison sociale, et c’est
+          une issue que le formulaire doit savoir traiter, pas une panne. Quand une réponse ne
+          repose pas sur un registre officiel, <code>status</code> et <code>meta</code> le disent,
+          plutôt que de laisser un champ se remplir comme si de rien n’était. Et la couverture
+          n’est pas le monde entier : les <a href="{{countryHubUrl}}">pages pays</a> disent ce
+          qu’elle est aujourd’hui, pays par pays.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2>L’auto-complétion par numéro de TVA, en bref</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Peut-on remplir le nom et l’adresse d’une société à partir du seul numéro de TVA ?</summary>
+          <p>
+            Dans la plupart des pays, oui. Un registre officiel détient la raison sociale, la forme
+            juridique et l’adresse du siège, et le numéro de TVA suffit à l’atteindre. Dans quelques
+            États membres, l’administration ne publie que la validité du numéro : le nom revient
+            alors vide, et le formulaire doit être conçu pour ce cas.
+          </p>
+        </details>
+        <details>
+          <summary>Pourquoi ne pas interroger moi-même le registre de chaque pays ?</summary>
+          <p>
+            C’est possible, et raisonnable pour un ou deux pays. Chaque pays devient alors une
+            intégration séparée : sa propre API ou ses fichiers ouverts de plusieurs gigaoctets, ses
+            noms de champs, ses quotas, ses indisponibilités, et une adresse en texte libre à
+            découper. Ce qu’on achète avec une API unique, c’est une seule enveloppe pour tous.
+          </p>
+        </details>
+        <details>
+          <summary>L’auto-complétion vaut-elle vérification du numéro ?</summary>
+          <p>
+            Elle indique qu’une société a été trouvée, ce qui est un signal fort, et ce n’est pas
+            une vérification documentée faite au moment où vous décidez de ne pas facturer la TVA.
+            Faites la recherche pour le formulaire, et conservez un enregistrement daté de la
+            vérification pour la facture.
+          </p>
+        </details>
+        <details>
+          <summary>Faut-il appeler l’API depuis le navigateur ?</summary>
+          <p>
+            Non. La clé d’API identifie votre compte et doit rester côté serveur. Placez une petite
+            route proxy dans votre back-end et laissez le navigateur appeler celle-ci ; c’est aussi
+            là que vous temporisez un champ qui se déclencherait sinon à chaque frappe.
+          </p>
+        </details>
+        <details>
+          <summary>Que doit faire le formulaire si la recherche échoue ?</summary>
+          <p>
+            Laisser passer le client. Déclenchez l’appel à la sortie du champ avec un délai court,
+            et si aucune réponse n’arrive, laissez les champs vides et modifiables et autorisez la
+            soumission. Une inscription bloquée parce qu’un registre tiers passe une mauvaise
+            matinée est pire qu’une adresse saisie à la main.
+          </p>
+        </details>
+        <details>
+          <summary>Les champs pré-remplis doivent-ils être en lecture seule ?</summary>
+          <p>
+            Non. Les registres sont en retard sur la réalité, et la personne devant le formulaire en
+            sait généralement plus sur sa propre société qu’un fichier publié le mois dernier.
+            Pré-remplissez, montrez d’où vient la valeur, et laissez la corriger.
+          </p>
+        </details>
+        <details>
+          <summary>Pour combien de pays cela fonctionne-t-il ?</summary>
+          <p>
+            Un seul point d’entrée et une seule enveloppe, pour tous les pays que {{siteName}}
+            couvre. Ce que chaque pays divulgue diffère, et
+            <a href="{{countryHubUrl}}">les pages pays</a> en donnent la liste à jour, un par un.
+          </p>
+        </details>
+      </div>
+
+      <h2>À lire ensuite</h2>
+      <ul class="otherlinks">
+        <li><a href="/fr/guides/nom-adresse-entreprise-numero-tva/">Obtenir le nom et l’adresse d’une entreprise</a></li>
+        <li><a href="/fr/guides/enrichir-un-crm-avec-les-numeros-tva/">Enrichir un CRM avec les numéros de TVA</a></li>
+        <li><a href="{{countryHubUrl}}">Le numéro de TVA, pays par pays</a></li>
+        <li><a href="{{docsUrl}}">Documentation de l’API</a></li>
+        <li><a href="{{pricingUrl}}">Tarifs</a></li>
+      </ul>
+      <p class="updated">Mis à jour le 21 septembre 2026.</p>
+    </div>
+  </section>
+</main>

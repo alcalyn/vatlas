@@ -1,0 +1,15 @@
+<h2 id="vatlas">Une seule API, une seule structure de réponse</h2>
+<p>
+  {{siteName}} transforme un numéro fiscal d’entreprise en fiche société : dénomination,
+  identifiant national, forme juridique, statut et adresse. {{countryName}} : le même appel et
+  la même réponse que pour tous les autres pays couverts.
+</p>
+{{example}}
+<p><code>meta.source</code> nomme le registre qui a répondu (<code>SIRENE</code>, <code>ARES</code>, <code>VIES</code>…) et <code>meta.sourceDate</code> le jour où il l’a dit : date de publication du fichier pour un registre que nous importons, jour de l’appel pour un registre interrogé en direct. La structure de la réponse, elle, ne change jamais d’un pays à l’autre.</p>
+<div class="callout">
+  <p><strong>Essayez sur vos propres numéros.</strong> Un e-mail suffit à créer un compte, avec <strong>{{quotaFree}} requêtes par mois</strong> et une clé utilisable en une minute.</p>
+</div>
+<p>
+  <a class="btn btn--primary" href="{{signupUrl}}">Obtenir une clé gratuite</a>
+  <a class="btn btn--ghost" href="{{docsUrl}}">Lire la documentation</a>
+</p>

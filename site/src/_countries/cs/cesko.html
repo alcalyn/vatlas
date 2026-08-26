@@ -1,0 +1,104 @@
+<!-- @meta
+{
+  "title": "DIČ: formát českého daňového identifikačního čísla a jak dohledat firmu",
+  "description": "CZ plus IČO. Proč je české DIČ jedno z mála v Unii, které lze odvodit z identifikačního čísla, a jak přes ARES najít firmu.",
+  "h1": "České daňové identifikační číslo (DIČ)",
+  "term": "Daňové identifikační číslo",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Česko · CZ</p>
+        <h1>České daňové identifikační číslo (DIČ)</h1>
+        <p class="section__lead">U právnické osoby je DIČ prostě IČO s předponou CZ a ARES vrátí firmu zdarma, přes REST API bez účtu a bez klíče. Háček je v tom, že ne každé české číslo patří právnické osobě.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Formát:</strong> <code>CZ</code> + 8 až 10 číslic</p>
+        <p><strong>Příklad:</strong> <code>CZ00177041</code>, IČO <code>00177041</code></p>
+        <p><strong>Přiděluje:</strong> finanční úřad při registraci k DPH.</p>
+      </div>
+
+      <h2 id="format">Struktura</h2>
+      <p>České DIČ má po předponě <strong>osm až deset číslic</strong> a jeho podoba závisí na tom, kdo je plátcem.</p>
+      <ul class="breakdown">
+        <li><b>CZ + 8 číslic</b><span>Právnická osoba: číslice jsou její IČO.</span></li>
+        <li><b>CZ + 9 nebo 10 číslic</b><span>Fyzická osoba: rodné číslo, popřípadě zvláštní číslo.</span></li>
+      </ul>
+      <p>Osmimístné IČO nese na poslední pozici kontrolní číslici počítanou modulem 11 s váhami 8, 7, 6, 5, 4, 3, 2. Krátká IČO se zleva doplňují nulami, <code>00177041</code>, nikoli <code>177041</code>.</p>
+
+      <h2 id="ico">IČO, DIČ a spisová značka</h2>
+      <p><strong>IČO</strong> přiděluje Český statistický úřad každému podnikatelskému subjektu při vzniku a nemění se. <strong>DIČ</strong> vzniká až registrací k dani; u právnických osob jsou to tytéž číslice s předponou <code>CZ</code>.</p>
+      <p>Rozdíl, na kterém záleží: <strong>IČO má každý subjekt, DIČ pouze registrovaný plátce.</strong> Neplátce DPH má platné IČO a v systému VIES neexistuje.</p>
+      <p>Do třetice je tu <strong>spisová značka</strong> v obchodním rejstříku, například <code>B 332</code> vedená u Městského soudu v Praze. S DIČ nemá nic společného.</p>
+
+      <h2 id="dohledani">Jak dohledat firmu</h2>
+      <h3>ARES</h3>
+      <p><a href="https://ares.gov.cz/" rel="noopener">ARES</a>, Administrativní registr ekonomických subjektů Ministerstva financí, je zde tím rozhodujícím: je <strong>veřejný, bezplatný a bez registrace</strong>, má moderní REST API a vrací obchodní firmu, sídlo, právní formu, stav a (což je klíčové) <strong>samotné DIČ vedle IČO</strong>.</p>
+      <p>Protože se DIČ z IČO odvodí odstraněním předpony, stačí k vyřešení čísla jediný dotaz.</p>
+      <h3>Obchodní rejstřík</h3>
+      <p>Justice.cz obsahuje úplné veřejné rejstříky včetně sbírky listin a účetních závěrek, zdarma. Vyhledává se podle názvu nebo IČO.</p>
+      <h3>Registr plátců DPH</h3>
+      <p>Finanční správa vede registr plátců DPH, kde lze ověřit, zda je subjekt plátcem a zda není <strong>nespolehlivým plátcem</strong>, údaj, který ARES neposkytuje a který má v tuzemsku přímý daňový dopad.</p>
+      <h3>VIES</h3>
+      <p>Česko přes VIES <strong>zveřejňuje název i adresu</strong>. Adresa přichází na několika řádcích, přičemž prostřední řádek často nese městskou část a poslední poštovní obvod.</p>
+
+      <h2 id="uskali">Česká specifika</h2>
+      <ul>
+        <li><strong>Doplňujte nuly zleva.</strong> IČO se uvádí vždy na osm míst; <code>CZ177041</code> je chybný zápis <code>CZ00177041</code>.</li>
+        <li><strong>IČO neznamená plátcovství DPH.</strong> Přiděluje se každému subjektu, DIČ jen registrovaným plátcům.</li>
+        <li><strong>DIČ fyzické osoby je delší</strong> a bývá odvozeno z rodného čísla, takže má devět nebo deset číslic.</li>
+        <li><strong>Nespolehlivý plátce je česká zvláštnost.</strong> Číslo je platné, ale odběratel může ručit za nezaplacenou daň; VIES o tom mlčí.</li>
+        <li><strong>ARES je výjimka, ne pravidlo.</strong> Většina států takovou vazbu mezi identifikačním a daňovým číslem nezveřejňuje.</li>
+      </ul>
+
+      <!-- @include partials/country/cs.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Časté dotazy</p>
+        <h2>České DIČ ve zkratce</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Kolik číslic má české DIČ?</summary>
+          <p>Osm až deset po předponě <code>CZ</code>. Právnické osoby mají osm, shodných s IČO; fyzické osoby devět nebo deset.</p>
+        </details>
+        <details>
+          <summary>Je DIČ totéž co IČO?</summary>
+          <p>U právnických osob jsou to tytéž číslice s předponou <code>CZ</code>. Ale IČO má každý subjekt, zatímco DIČ vzniká až registrací k dani.</p>
+        </details>
+        <details>
+          <summary>Jak zjistím firmu podle DIČ?</summary>
+          <p>Odstraňte předponu <code>CZ</code> a zbylé IČO zadejte do ARES. Je to bezplatné, veřejné a vrátí to název, sídlo i právní formu.</p>
+        </details>
+        <details>
+          <summary>Co je nespolehlivý plátce?</summary>
+          <p>Plátce, u kterého finanční správa zjistila závažné porušení povinností. Jeho DIČ zůstává platné, ale odběratel může ručit za nezaplacenou daň.</p>
+        </details>
+        <details>
+          <summary>Proč VIES odmítá platné IČO?</summary>
+          <p>Protože IČO není DIČ. Subjekt existuje, ale není registrován k DPH, a proto ve VIES není.</p>
+        </details>
+      </div>
+
+      <h2>DIČ v dalších zemích</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+            <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/" hreflang="en" lang="en">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/" hreflang="en" lang="en">Belgium</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Aktualizováno 28. srpna 2026.</p>
+    </div>
+  </section>
+</main>

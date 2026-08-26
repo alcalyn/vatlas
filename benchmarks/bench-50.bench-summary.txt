@@ -1,0 +1,123 @@
+Benchmark - bench-50.txt
+  2026-08-30T21:50:54.641Z
+
+Input
+  lines read           1350
+  VAT numbers          1350
+  malformed            0
+  duplicates           0
+  usable               1350
+
+Numbers per country
+  AT  Austria                50
+  BE  Belgium                50
+  BG  Bulgaria               50
+  CY  Cyprus                 50
+  CZ  Czechia                50
+  DE  Germany                50
+  DK  Denmark                50
+  EE  Estonia                50
+  EL  Greece                 50
+  ES  Spain                  50
+  FI  Finland                50
+  FR  France                 50
+  HR  Croatia                50
+  HU  Hungary                50
+  IE  Ireland                50
+  IT  Italy                  50
+  LT  Lithuania              50
+  LU  Luxembourg             50
+  LV  Latvia                 50
+  MT  Malta                  50
+  NL  Netherlands            50
+  PL  Poland                 50
+  PT  Portugal               50
+  RO  Romania                50
+  SE  Sweden                 50
+  SI  Slovenia               50
+  SK  Slovakia               50
+  XI  Northern Ireland        0
+
+Lookups - https://api.vatlas.dev - concurrency 1 - run took 1889.5s
+
+Outcomes
+  found                  1179  87.3%
+  unavailable              98  7.3%
+  not-registered           53  3.9%
+  timeout                  20  1.5%
+
+Latency, every lookup (ms)
+  p50      261
+  p95     6208
+  max    30002
+  avg     1400
+
+Completeness, over the 1179 answers found
+  name           95.8%  (1130/1179)
+  legal form     26.8%  (316/1179)
+  address        93.7%  (1105/1179)
+  postal code    68.4%  (807/1179)
+  city           67.3%  (794/1179)
+  source        100.0%  (1179/1179)
+
+  answered by          vies 807, database 324, source 48
+  sources              VIES 807, KBO 50, SIRENE 50, MF_WL 49, UR_VID 48, ARES 47, RIK 47, ANAF 39, PRH 37, PEPPOL 5
+
+Per country - latency over every lookup, completeness over the ones found
+  code       n   found      p50      p95     total     name     form     addr     post     city      src
+  AT        50  100.0%      229      829     14.0s   100.0%     0.0%   100.0%     0.0%     0.0%   100.0%
+  BE        50  100.0%     18.5     80.8      1.4s   100.0%   100.0%   100.0%   100.0%   100.0%   100.0%
+  BG        50   82.0%      464      983     25.4s   100.0%     0.0%   100.0%     0.0%     0.0%   100.0%
+  CY        50  100.0%      418      608     22.9s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  CZ        50   94.0%     71.2      984     10.7s   100.0%   100.0%   100.0%   100.0%   100.0%   100.0%
+  DE        50   10.0%     6143     8309    306.1s   100.0%     0.0%    60.0%     0.0%     0.0%   100.0%
+  DK        50   54.0%     9975    30002    903.1s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  EE        50   94.0%     17.9      236      1.8s   100.0%   100.0%   100.0%    97.9%   100.0%   100.0%
+  EL        50   98.0%      415     1001     31.8s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  ES        50   98.0%      216      406     13.0s     0.0%     0.0%     0.0%     0.0%     0.0%   100.0%
+  FI        50  100.0%     19.8      767     12.5s   100.0%    74.0%   100.0%   100.0%   100.0%   100.0%
+  FR        50  100.0%     19.1     54.0      1.2s   100.0%   100.0%   100.0%   100.0%   100.0%   100.0%
+  HR        50   98.0%      314      493     16.5s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  HU        50   88.0%      235      599     13.7s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  IE        50    0.0%     6056     6437    304.9s        -        -        -        -        -        -
+  IT        50   98.0%      228      539     14.8s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  LT        50   96.0%      333      505     17.5s   100.0%     0.0%   100.0%     0.0%     0.0%   100.0%
+  LU        50   94.0%      235      428     11.3s   100.0%     0.0%   100.0%     0.0%     0.0%   100.0%
+  LV        50   96.0%     17.8      148      5.3s   100.0%    58.3%    58.3%    58.3%     0.0%   100.0%
+  MT        50   96.0%      292      380     15.0s   100.0%     0.0%   100.0%     0.0%     0.0%   100.0%
+  NL        50  100.0%      310     2432     38.6s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  PL        50   98.0%     17.9      127      3.2s   100.0%    53.1%   100.0%     0.0%     0.0%   100.0%
+  PT        50   98.0%      270     1341     19.4s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  RO        50   78.0%     82.1      615      9.3s   100.0%    79.5%   100.0%    64.1%   100.0%   100.0%
+  SE        50   94.0%      400     1463     27.9s   100.0%     0.0%    93.6%   100.0%   100.0%   100.0%
+  SI        50   94.0%      267      638     15.5s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+  SK        50  100.0%      600     1126     32.3s   100.0%     0.0%   100.0%   100.0%   100.0%   100.0%
+
+Per country - where the answers came from
+  AT    vies 50
+  BE    database 50
+  BG    vies 41, not-registered 9
+  CY    vies 50
+  CZ    database 25, source 22, not-registered 3
+  DE    unavailable 45, database 5
+  DK    vies 27, timeout 20, unavailable 3
+  EE    database 47, not-registered 3
+  EL    vies 49, not-registered 1
+  ES    vies 49, not-registered 1
+  FI    database 37, vies 13
+  FR    database 50
+  HR    vies 49, not-registered 1
+  HU    vies 44, not-registered 6
+  IE    unavailable 50
+  IT    vies 49, not-registered 1
+  LT    vies 48, not-registered 2
+  LU    vies 47, not-registered 3
+  LV    database 48, not-registered 2
+  MT    vies 48, not-registered 2
+  NL    vies 50
+  PL    database 49, not-registered 1
+  PT    vies 49, not-registered 1
+  RO    source 26, database 13, not-registered 11
+  SE    vies 47, not-registered 3
+  SI    vies 47, not-registered 3
+  SK    vies 50

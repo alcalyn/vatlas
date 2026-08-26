@@ -1,0 +1,250 @@
+<!-- @meta
+{
+  "title": "Umsatzsteuer-Identifikationsnummer: Aufbau, Prüfziffer und Abfrage",
+  "description": "DE plus neun Ziffern. Wie sich die USt-IdNr von Steuernummer, Steuer-ID und Handelsregisternummer unterscheidet, und warum kein Register sie führt.",
+  "h1": "Die deutsche Umsatzsteuer-Identifikationsnummer",
+  "term": "Umsatzsteuer-Identifikationsnummer",
+  "updated": "2026-08-29"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Deutschland · DE</p>
+        <h1>Die deutsche Umsatzsteuer-Identifikationsnummer</h1>
+        <p class="section__lead">
+          Elf Zeichen, die absichtlich nichts verraten: Die USt-IdNr ist von jeder anderen
+          deutschen Unternehmenskennung entkoppelt, und genau das macht die Recherche schwer.
+        </p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>DE</code> + 9 Ziffern (8 Ziffern + 1 Prüfziffer)</p>
+        <p><strong>Beispiel:</strong> <code>DE811907980</code></p>
+        <p><strong>Vergeben von:</strong> dem Bundeszentralamt für Steuern (BZSt), auf Antrag und kostenlos.</p>
+      </div>
+
+      <h2 id="format">Der Aufbau</h2>
+      <p>
+        Eine deutsche USt-IdNr ist immer <strong>elfstellig</strong>: das Länderkennzeichen
+        <code>DE</code> und neun Ziffern. Buchstaben, Leerzeichen oder Bindestriche kommen im
+        nationalen Teil nicht vor.
+      </p>
+      <ul class="breakdown">
+        <li><b>DE</b><span>Das Länderkennzeichen, identisch mit dem ISO-Code.</span></li>
+        <li><b>81190798</b><span>Acht Ziffern zur Identifikation des Steuerpflichtigen.</span></li>
+        <li><b>0</b><span>Die Prüfziffer.</span></li>
+      </ul>
+      <p>
+        Die Prüfziffer wird nach <strong>ISO/IEC 7064, MOD 11,10</strong> berechnet. Sie erkennt
+        jeden einzelnen Ziffernfehler und die meisten Zahlendreher, mehr nicht. Eine rechnerisch
+        korrekte Nummer kann trotzdem nie vergeben worden oder längst erloschen sein.
+      </p>
+
+      <h2 id="abgrenzung">USt-IdNr, Steuernummer, Steuer-ID, W-IdNr</h2>
+      <p>
+        Deutschland vergibt mehrere Nummern nebeneinander, und sie werden regelmäßig verwechselt.
+        Nur die erste taugt für den innergemeinschaftlichen Handel.
+      </p>
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Die deutschen Steuer- und Unternehmensnummern im Vergleich</caption>
+          <thead>
+            <tr><th scope="col">Nummer</th><th scope="col">Format</th><th scope="col">Vergeben von</th><th scope="col">Wofür</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">USt-IdNr</th><td><code>DE</code> + 9 Ziffern</td><td>BZSt</td>
+              <td>Innergemeinschaftlicher Waren- und Dienstleistungsverkehr</td>
+            </tr>
+            <tr>
+              <th scope="row">Steuernummer</th><td>10-13 Ziffern, oft mit Schrägstrichen</td><td>Das örtliche Finanzamt</td>
+              <td>Inländische Steuererklärungen. Ändert sich beim Wechsel des Finanzamts</td>
+            </tr>
+            <tr>
+              <th scope="row">Steuer-IdNr (IdNr)</th><td>11 Ziffern</td><td>BZSt</td>
+              <td>Natürliche Personen, lebenslang. Kein Unternehmensmerkmal</td>
+            </tr>
+            <tr>
+              <th scope="row">W-IdNr</th><td><code>DE</code> + 9 Ziffern + 5-stelliges Unterscheidungsmerkmal</td><td>BZSt, seit November 2024</td>
+              <td>Wirtschaftlich Tätige. Wer bereits eine USt-IdNr hat, erhält dieselben neun Ziffern</td>
+            </tr>
+            <tr>
+              <th scope="row">Handelsregisternummer</th><td><code>HRB</code>/<code>HRA</code> + Zahl + Registergericht</td><td>Das Amtsgericht</td>
+              <td>Gesellschaftsrechtliche Identifikation. Steht in keinem Verhältnis zur USt-IdNr</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <p>
+          <strong>Die Einführung der W-IdNr ist die wichtigste Neuerung.</strong> Seit November 2024
+          erhält jede wirtschaftlich tätige Person eine Wirtschafts-Identifikationsnummer. Für
+          Unternehmen mit bestehender USt-IdNr besteht sie aus denselben neun Ziffern, was
+          erstmals eine belastbare Brücke zwischen Steuerwelt und Unternehmenswelt schafft. In den
+          öffentlichen Registern angekommen ist sie noch nicht.
+        </p>
+      </div>
+
+      <h2 id="recherche">Das Unternehmen hinter einer Nummer finden</h2>
+      <p>
+        Hier liegt das eigentliche deutsche Problem: <strong>Es gibt kein Verzeichnis, das nach
+        USt-IdNr durchsuchbar wäre.</strong> Weder das Handelsregister noch das Unternehmensregister
+        führen sie, und aus der Handelsregisternummer lässt sie sich nicht herleiten.
+      </p>
+      <h3>Handelsregister und Unternehmensregister</h3>
+      <p>
+        <a href="https://www.handelsregister.de/" rel="noopener">handelsregister.de</a> ist seit
+        August 2022 kostenlos und liefert Firma, Rechtsform, Sitz, Vertretungsberechtigte und die
+        hinterlegten Dokumente. Gesucht wird nach Firma oder Registernummer, nicht nach USt-IdNr.
+        Dasselbe gilt für das Unternehmensregister und den Bundesanzeiger.
+      </p>
+      <h3>Die qualifizierte Bestätigungsabfrage des BZSt</h3>
+      <p>
+        Das BZSt bietet nach § 18e UStG eine Bestätigungsabfrage an. Sie ist für den
+        Vorsteuerabzug bei innergemeinschaftlichen Lieferungen praktisch unverzichtbar, und sie
+        arbeitet in die entgegengesetzte Richtung, als man erwartet: <strong>Sie gibt keine Daten
+        heraus.</strong> Sie vergleicht Name, Rechtsform, Ort und PLZ, die Sie selbst eingeben, mit
+        dem, was der andere Mitgliedstaat gespeichert hat, und antwortet je Feld nur mit „stimmt
+        überein“ oder „stimmt nicht überein“.
+      </p>
+      <p>
+        Wer den Namen nicht kennt, kommt damit nicht weiter. Wer ihn kennt, erhält einen
+        dokumentierbaren Nachweis, und darauf kommt es steuerlich an.
+      </p>
+      <h3>VIES</h3>
+      <p>
+        Der Dienst der Europäischen Kommission bestätigt für jede deutsche Nummer, ob sie für den
+        innergemeinschaftlichen Handel registriert ist. <strong>Name und Anschrift gibt Deutschland
+        über VIES nicht heraus</strong>: die Antwort enthält an dieser Stelle <code>---</code>.
+        Deutschland ist damit neben Spanien einer der beiden Mitgliedstaaten, bei denen europaweit
+        nur die Gültigkeit zu haben ist.
+      </p>
+      <h3>Das Peppol-Verzeichnis</h3>
+      <p>
+        Eine frei zugängliche Quelle ist nach der USt-IdNr erschlossen, und sie ist kein Register.
+        Im E-Rechnungsnetzwerk <strong>Peppol</strong> <em>ist</em> das Teilnehmerschema
+        <code>9930</code> die deutsche USt-IdNr, und das gesamte Verzeichnis wird jede Nacht
+        exportiert. Rund <strong>10 000 deutsche Unternehmen</strong> sind auf diesem Weg über ihre
+        Nummer erreichbar, ein kleiner Teil des Landes, wachsend mit der stufenweisen
+        E-Rechnungspflicht bis 2028, und der einzige kostenlose Weg von einer deutschen USt-IdNr zu
+        einem Firmennamen.
+      </p>
+      <p>
+        Zwei Einschränkungen entscheiden über den Wert: Der Name wird <strong>vom Teilnehmer selbst
+        angegeben</strong> und von keinem Register bestätigt, und die Erreichbarkeit über Peppol
+        sagt nichts darüber aus, ob die Umsatzsteuer-Registrierung noch besteht. Das ist ein
+        Anhaltspunkt, kein Nachweis; für die Betriebsprüfung zählt weiterhin die Bestätigungsabfrage
+        des BZSt.
+      </p>
+
+      <h2 id="fallstricke">Typisch deutsche Fallstricke</h2>
+      <ul>
+        <li>
+          <strong>Die USt-IdNr kommt nicht automatisch.</strong> Sie muss beim BZSt beantragt
+          werden, bei der steuerlichen Erfassung oder später online. Ein eingetragenes Unternehmen
+          ohne USt-IdNr ist völlig normal.
+        </li>
+        <li>
+          <strong>Kleinunternehmer nach § 19 UStG</strong> können eine USt-IdNr besitzen, ohne
+          Umsatzsteuer auszuweisen. Gültig heißt nicht umsatzsteuerpflichtig.
+        </li>
+        <li>
+          <strong>Die Steuernummer ändert sich, die USt-IdNr nicht.</strong> Ein Umzug in einen
+          anderen Finanzamtsbezirk vergibt eine neue Steuernummer und lässt die USt-IdNr unberührt.
+        </li>
+        <li>
+          <strong>Kein amtlicher Weg führt von der Nummer zum Namen.</strong> Über VIES nicht,
+          über die Bestätigungsabfrage nicht, über die Register nicht. Das Peppol-Verzeichnis ist die
+          praktische Ausnahme, einige tausend Unternehmen von Millionen.
+        </li>
+        <li>
+          <strong>Ein Impressum ist die praktikabelste Quelle.</strong> § 5 TMG verpflichtet
+          gewerbliche Websites, die USt-IdNr anzugeben, häufig der einzige öffentliche Ort, an dem
+          Nummer und Firma nebeneinanderstehen.
+        </li>
+      </ul>
+
+            <p>
+        Das zeigt sich in der Antwort selbst: Ein Name aus dem Peppol-Verzeichnis ist eine selbst
+        angegebene Visitenkarte, deshalb bleibt <code>status</code> auf <code>unknown</code>, statt
+        eine ungeprüfte Registrierung zu behaupten. Und eine deutsche Nummer, die nicht im
+        Verzeichnis steht, kommt mit leerem <code>name</code> und
+        <code>meta.source: &quot;VIES&quot;</code> zurück: leer, weil wir das lieber sagen, als
+        etwas zu erfinden.
+      </p>
+
+      <!-- @include partials/country/de.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Häufige Fragen</p>
+        <h2>Die USt-IdNr kurz erklärt</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Wie viele Stellen hat eine deutsche Umsatzsteuer-Identifikationsnummer?</summary>
+          <p>
+            Elf Zeichen: das Länderkennzeichen DE und neun Ziffern, von denen die letzte eine
+            Prüfziffer nach ISO/IEC 7064, MOD 11,10 ist.
+          </p>
+        </details>
+        <details>
+          <summary>Was ist der Unterschied zwischen Steuernummer und USt-IdNr?</summary>
+          <p>
+            Die Steuernummer vergibt das örtliche Finanzamt für inländische Zwecke und sie ändert
+            sich beim Wechsel des Finanzamts. Die USt-IdNr vergibt das Bundeszentralamt für Steuern
+            für den innergemeinschaftlichen Handel und sie bleibt bestehen.
+          </p>
+        </details>
+        <details>
+          <summary>Kann ich zu einer USt-IdNr den Firmennamen ermitteln?</summary>
+          <p>
+            Nicht über eine offizielle deutsche Quelle: Deutschland gibt über VIES weder Name noch
+            Anschrift heraus, die qualifizierte Bestätigungsabfrage bestätigt nur von Ihnen selbst
+            eingegebene Angaben, und die Register sind nicht nach USt-IdNr durchsuchbar. Die einzige
+            kostenlose Ausnahme ist das Peppol-Verzeichnis für E-Rechnungen, in dem die USt-IdNr
+            selbst die Teilnehmerkennung ist: rund 10 000 Unternehmen, selbst angegeben statt
+            amtlich bestätigt.
+          </p>
+        </details>
+        <details>
+          <summary>Wo beantrage ich eine USt-IdNr?</summary>
+          <p>
+            Beim Bundeszentralamt für Steuern, online oder im Rahmen der steuerlichen Erfassung
+            beim Finanzamt. Die Vergabe ist kostenlos.
+          </p>
+        </details>
+        <details>
+          <summary>Was ist die neue Wirtschafts-Identifikationsnummer?</summary>
+          <p>
+            Die W-IdNr wird seit November 2024 an alle wirtschaftlich Tätigen vergeben. Sie hat das
+            Format DE + 9 Ziffern plus ein fünfstelliges Unterscheidungsmerkmal je Tätigkeit; wer
+            bereits eine USt-IdNr besitzt, erhält deren Ziffern.
+          </p>
+        </details>
+        <details>
+          <summary>Warum weist VIES für Deutschland keine Adresse aus?</summary>
+          <p>
+            Weil jeder Mitgliedstaat selbst entscheidet, ob er Name und Anschrift freigibt.
+            Deutschland und Spanien tun das nicht und liefern dort <code>---</code>.
+          </p>
+        </details>
+      </div>
+
+      <h2>Die USt-IdNr in anderen Ländern</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+            <li><a href="/en/vat-number/belgium/" hreflang="en" lang="en">Belgium</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Aktualisiert am 29. August 2026.</p>
+    </div>
+  </section>
+</main>

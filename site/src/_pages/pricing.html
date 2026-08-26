@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="{{lang}}">
+  <head>
+    <!-- @include partials/head.html -->
+  </head>
+  <body>
+    <!-- @include partials/header.html -->
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <h1>{{t.pricing.h1}}</h1>
+            <p class="section__lead">{{t.pricing.lead}}</p>
+          </div>
+
+          <div class="plans">
+            <article class="plan">
+              <h2 class="plan__name">{{t.pricingFree.name}}</h2>
+              <p class="plan__price">
+                <span class="plan__amount">{{t.pricingFree.amount}}</span>
+                <span class="plan__period">{{t.pricingFree.period}}</span>
+              </p>
+              <p class="plan__pitch">{{t.pricingFree.pitch}}</p>
+              <ul class="plan__list">
+                <li>{{t.pricingFree.f1}}</li>
+                <li>{{t.pricingFree.f2}}</li>
+                <li>{{t.pricingFree.f6}}</li>
+                <li>{{t.pricingFree.f7}}</li>
+                <li>{{t.pricingFree.f8}}</li>
+                <!-- The feature the free plan does not get. `is-off` hollows out the marker. -->
+                <li class="is-off">{{t.pricingFree.f5}}</li>
+              </ul>
+              <a class="btn btn--ghost btn--block plan__cta" href="{{signupUrl}}">{{t.pricingFree.cta}}</a>
+              <p class="plan__foot">{{t.pricingFree.foot}}</p>
+            </article>
+
+            <article class="plan plan--featured">
+              <h2 class="plan__name">{{t.pricingPro.name}}<span class="plan__tag">{{t.pricingPro.tag}}</span></h2>
+              <p class="plan__price">
+                <span class="plan__amount">{{t.pricingPro.amount}}</span>
+                <span class="plan__period">{{t.pricingPro.period}}</span>
+              </p>
+              <p class="plan__pitch">{{t.pricingPro.pitch}}</p>
+              <ul class="plan__list">
+                <li>{{t.pricingPro.f1}}</li>
+                <li>{{t.pricingPro.f2}}</li>
+                <li>{{t.pricingPro.f6}}</li>
+                <li>{{t.pricingPro.f7}}</li>
+                <li>{{t.pricingPro.f8}}</li>
+                <li>{{t.pricingPro.f5}}</li>
+              </ul>
+              <a class="btn btn--primary btn--block plan__cta" href="{{signupUrl}}">{{t.pricingPro.cta}}</a>
+              <p class="plan__foot">{{t.pricingPro.foot}}</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Plan comparison. Every figure comes from the same variables the API enforces (`site.config.js`
+           reads them from `.env`). -->
+      <section class="section--tight">
+        <div class="container">
+          <div class="section__head">
+            <h2>{{t.pricingCompare.title}}</h2>
+          </div>
+
+          <!-- Only the lines that differ. Free and Pro columns have the same width, the label column is
+               narrower. -->
+          <div class="table-wrap">
+            <table class="table table--compare">
+              <caption class="sr-only">{{t.pricingCompare.caption}}</caption>
+              <thead>
+                <tr>
+                  <th scope="col">{{t.pricingCompare.thWhat}}</th>
+                  <th scope="col">{{t.pricingCompare.thFree}}</th>
+                  <th scope="col" class="is-pro">{{t.pricingCompare.thPro}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">{{t.pricingCompare.quota}}</th>
+                  <td>{{t.pricingCompare.quotaFree}}</td>
+                  <td>{{t.pricingCompare.quotaPro}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{t.pricingCompare.monitors}}</th>
+                  <td>{{t.pricingCompare.monitorsFree}}</td>
+                  <td>{{t.pricingCompare.monitorsPro}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{t.pricingCompare.audit}}</th>
+                  <td>{{t.pricingCompare.auditFree}}</td>
+                  <td>{{t.pricingCompare.auditPro}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{t.pricingCompare.support}}</th>
+                  <td>{{t.pricingCompare.supportFree}}</td>
+                  <td>{{t.pricingCompare.supportPro}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{t.pricingCompare.billing}}</th>
+                  <td>{{t.pricingCompare.billingFree}}</td>
+                  <td>{{t.pricingCompare.billingPro}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section--tight">
+        <div class="container">
+          <p class="note">{{t.pricing.note}}</p>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container">
+          <div class="section__head">
+            <h2>{{t.pricingFaq.title}}</h2>
+          </div>
+
+          <div class="faq">
+            <details open>
+              <summary>{{t.pricingFaq.q1}}</summary>
+              <p>{{t.pricingFaq.a1}}</p>
+            </details>
+            <details>
+              <summary>{{t.pricingFaq.q2}}</summary>
+              <p>{{t.pricingFaq.a2}}</p>
+            </details>
+            <details>
+              <summary>{{t.pricingFaq.q3}}</summary>
+              <p>{{t.pricingFaq.a3}}</p>
+            </details>
+            <details>
+              <summary>{{t.pricingFaq.q4}}</summary>
+              <p>{{t.pricingFaq.a4}}</p>
+            </details>
+            <details>
+              <summary>{{t.pricingFaq.q5}}</summary>
+              <p>{{t.pricingFaq.a5}}</p>
+            </details>
+            <details>
+              <summary>{{t.pricingFaq.q6}}</summary>
+              <p>{{t.pricingFaq.a6}}</p>
+            </details>
+            <details>
+              <summary>{{t.pricingFaq.q7}}</summary>
+              <p>{{t.pricingFaq.a7}}</p>
+            </details>
+            <details>
+              <summary>{{t.pricingFaq.q8}}</summary>
+              <p>{{t.pricingFaq.a8}}</p>
+            </details>
+            <details>
+              <summary>{{t.pricingFaq.q9}}</summary>
+              <p>{{t.pricingFaq.a9}}</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include partials/cta.html -->
+    <!-- @include partials/footer.html -->
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

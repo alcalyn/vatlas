@@ -1,0 +1,96 @@
+<!-- @meta
+{
+  "title": "Nigerian TIN: format, the two generations of number, and lookup",
+  "description": "Ten digits, or the older eight-and-four with a hyphen. How the Nigerian TIN works, which register can actually be asked, and what the answer contains.",
+  "h1": "The Nigerian TIN",
+  "term": "TIN",
+  "updated": "2026-09-15"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Nigeria · NG</p>
+        <h1>The Nigerian TIN</h1>
+        <p class="section__lead">Nigeria has VAT, and the number that carries it is the Tax Identification Number. It is also, as things stand, the only business tax number anywhere in Africa that a program can verify against a free public register.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> 10 digits, or the older <code>12345678-0001</code></p>
+        <p><strong>Example:</strong> <code>NG1002183661</code></p>
+        <p><strong>Issued by:</strong> the Nigeria Revenue Service, formerly the FIRS, with the Joint Tax Board.</p>
+      </div>
+
+      <h2 id="format">Two generations of the same number</h2>
+      <p>Nigeria has issued TINs in two shapes, and a company generally has both.</p>
+      <ul class="breakdown">
+        <li><b>1002183661</b><span>The ten-digit number issued through the Joint Tax Board. This is the modern form and the one quoted most often.</span></li>
+        <li><b>00969009-0001</b><span>The older FIRS form: eight digits, a hyphen, and four more that name the tax office. Still current on plenty of documents.</span></li>
+      </ul>
+      <p>Both find the same company. {{siteName}} accepts either, and stores one history against the company rather than two. But <strong>the hyphen is load-bearing at the register</strong>: searching <code>009690090001</code> finds nothing where <code>00969009-0001</code> finds the company, so the lookup puts it back before asking.</p>
+      <p>There is no published check digit for either form, so a Nigerian number cannot be validated offline.</p>
+
+      <h2 id="find">Finding the company behind the number</h2>
+      <h3>The NRS verification service</h3>
+      <p>The Nigeria Revenue Service publishes a free TIN verification service, open to anyone, with no account and no captcha. It takes a TIN, a registration number or a phone number, and answers with the taxpayer's name, both spellings of the TIN, the registration number and the tax office.</p>
+      <h3>What it does not answer</h3>
+      <p>No address and <strong>no status</strong>. The service says whether a number is registered, never whether the taxpayer is still trading. {{siteName}} reports that as unknown rather than inventing a state for it. That is the register's own position, not a gap in the mapping.</p>
+      <h3>The company register is out of reach</h3>
+      <p>The Corporate Affairs Commission holds the companies, and its search sits behind a challenge that no program passes. So the name on a Nigerian answer comes from the tax service and not from the company register.</p>
+
+      <h2 id="pitfalls">Nigeria-specific pitfalls</h2>
+      <ul>
+        <li><strong>Keep the hyphen in mind.</strong> Twelve bare digits will not be found; the old form needs its separator.</li>
+        <li><strong>No status, by design.</strong> A hit proves the number is registered, not that the business is active.</li>
+        <li><strong>No address.</strong> The service publishes none, and no free source will give you one from a TIN.</li>
+        <li><strong>No offline validation.</strong> There is no check digit to verify, so a typo costs a lookup.</li>
+        <li><strong>The institution is changing.</strong> The Joint Tax Board became the Joint Revenue Board on 1 January 2026, and the service has already been rebranded NRS. Expect the details to move.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Nigerian TIN in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits is a Nigerian TIN?</summary>
+          <p>Ten in the JTB form. The older FIRS form is eight digits, a hyphen and four more.</p>
+        </details>
+        <details>
+          <summary>Which of my two numbers should I use?</summary>
+          <p>Either. They find the same company, and we key one history to it.</p>
+        </details>
+        <details>
+          <summary>Is a Nigerian TIN a VAT number?</summary>
+          <p>It is the number VAT is registered and charged under. There is no separate VAT identifier.</p>
+        </details>
+        <details>
+          <summary>Why is there no address in the answer?</summary>
+          <p>Because the verification service publishes none. It exists to confirm a number, not to publish a directory.</p>
+        </details>
+        <details>
+          <summary>Can I check a Nigerian company on the CAC register?</summary>
+          <p>By hand, sometimes. Not from a program: the CAC search is behind a challenge that blocks automated access.</p>
+        </details>
+      </div>
+
+      <h2>Business numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/brazil/">Brazil</a></li>
+        <li><a href="/en/vat-number/peru/">Peru</a></li>
+        <li><a href="/en/vat-number/israel/">Israel</a></li>
+        <li><a href="/en/vat-number/vietnam/">Vietnam</a></li>
+        <li><a href="/en/vat-number/singapore/">Singapore</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 15 September 2026.</p>
+    </div>
+  </section>
+</main>

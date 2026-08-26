@@ -1,0 +1,103 @@
+<!-- @meta
+{
+  "title": "Hungarian VAT number: format, adószám and company lookup",
+  "description": "HU plus eight digits, the first eight of the Hungarian tax number. What the ninth and last two digits mean, and how to find the company.",
+  "h1": "The Hungarian VAT number",
+  "term": "Hungarian EU VAT number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Hungary · HU</p>
+        <h1>The Hungarian VAT number</h1>
+        <p class="section__lead">The EU VAT number is not a separate number: it is the first eight digits of the Hungarian tax number. The three digits it drops are the ones that say the most.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>HU</code> + 8 digits</p>
+        <p><strong>Example:</strong> <code>HU15309769</code>, tax number <code>15309769-1-42</code></p>
+        <p><strong>Issued by:</strong> the National Tax and Customs Administration (NAV).</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>The Hungarian <strong>adószám is eleven digits</strong>, written <code>12345678-1-23</code>. The EU VAT number keeps only the first eight.</p>
+      <ul class="breakdown">
+        <li><b>15309769</b><span>The core tax number: 7 digits and a check digit. This becomes the EU VAT number.</span></li>
+        <li><b>1</b><span>The VAT code: 1 exempt, 2 taxed under the general rules, 3 simplified regime, 4-5 VAT group.</span></li>
+        <li><b>42</b><span>The county code of the competent tax directorate.</span></li>
+      </ul>
+      <p>The ninth digit is the interesting one: <strong>a 2 means the business actually charges VAT</strong>, a 1 means it is exempt. That information disappears from the EU VAT number, because it is exactly the digit that gets cut off.</p>
+
+      <h2 id="numbers">Tax number, company number, statistical number</h2>
+      <p>The <strong>adószám</strong> comes from NAV and every taxpayer has one. The <strong>EU VAT number</strong> is the same core with <code>HU</code> in front, but it exists only if the business asked for it.</p>
+      <p>The <strong>company registration number</strong> comes from the court of registration, in the form <code>01-09-123456</code>: county, company type, sequence. The <strong>statistical number</strong> is 17 digits and comes from the statistical office. Neither converts into the other.</p>
+      <div class="callout"><p><strong>This is the Hungarian trap.</strong> Having a tax number does not mean the business may trade intra-community. The EU VAT number has to be requested separately, and NAV can withdraw it, at which point the number simply becomes invalid in VIES while the company carries on trading domestically.</p></div>
+
+      <h2 id="find">Finding the company</h2>
+      <h3>NAV databases</h3>
+      <p>NAV offers a public tax number check and publishes the list of taxpayers whose tax number has been <strong>suspended or cancelled</strong>. So the status of a number can be verified, but the service is not a company directory.</p>
+      <p>For machine access NAV has a <code>queryTaxpayer</code> service, which requires a <strong>registered technical user and a signed request</strong>: a considerably heavier onboarding than a simple free account.</p>
+      <h3>The company information service</h3>
+      <p>e-cegjegyzek.hu gives basic data free; detailed extracts and financial statements are paid. It is searched by company name or registration number.</p>
+      <h3>VIES</h3>
+      <p>Hungary <strong>discloses both the name and the address</strong> through VIES. The address arrives on a single line with the postcode and town at the end.</p>
+
+      <h2 id="pitfalls">Hungary-specific pitfalls</h2>
+      <ul>
+        <li><strong>Do not send all eleven digits.</strong> <code>HU153097691</code> is wrong; the EU VAT number is the first eight only.</li>
+        <li><strong>The ninth digit is the VAT code</strong>, and a 1 means the business is exempt, information the EU VAT number no longer carries.</li>
+        <li><strong>The EU VAT number must be requested separately</strong>, and NAV can suspend or cancel it.</li>
+        <li><strong>The company registration number is not the tax number</strong>, and neither can be computed from the other.</li>
+        <li><strong>There is no free bulk source</strong> for detailed company data.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Hungarian VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Hungarian EU VAT number have?</summary>
+          <p>Eight after the <code>HU</code> prefix, ten characters in total.</p>
+        </details>
+        <details>
+          <summary>What is the difference between the adószám and the EU VAT number?</summary>
+          <p>The adószám is eleven digits and every taxpayer has one. The EU VAT number is its first eight digits with <code>HU</code> in front, and exists only if the business requested it.</p>
+        </details>
+        <details>
+          <summary>What does the ninth digit of the tax number mean?</summary>
+          <p>The VAT code: 1 exempt, 2 taxed under the general rules, 3 the simplified regime, 4 and 5 VAT groups. That digit is not part of the EU VAT number.</p>
+        </details>
+        <details>
+          <summary>What do the last two digits mean?</summary>
+          <p>The county code of the competent tax directorate. They can change if the registered seat moves.</p>
+        </details>
+        <details>
+          <summary>Why is an existing Hungarian company invalid in VIES?</summary>
+          <p>Either it has no EU VAT number, or NAV has suspended or cancelled it. The company may still be trading normally at home.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/">Germany</a></li>
+            <li><a href="/en/vat-number/italy/">Italy</a></li>
+            <li><a href="/en/vat-number/spain/">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

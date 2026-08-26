@@ -1,0 +1,142 @@
+<!-- @meta
+{
+  "title": "ЄДРПОУ et ІПН ukrainiens : format, clé de contrôle et recherche",
+  "description": "UA suivi de huit chiffres pour le ЄДРПОУ, douze pour l’ІПН d’une facture. Ce qu’est chaque numéro, comment l’un se ramène à l’autre, et comment retrouver la société.",
+  "h1": "Le ЄДРПОУ ukrainien",
+  "term": "ЄДРПОУ (code au registre d’État)",
+  "updated": "2026-09-15"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Ukraine · UA</p>
+        <h1>Le ЄДРПОУ ukrainien</h1>
+        <p class="section__lead">
+          L’Ukraine prélève la TVA, la ПДВ, et attribue à chaque redevable un <strong>ІПН</strong>
+          de douze chiffres, celui que porte une facture ukrainienne. Le numéro sous lequel le
+          registre d’État classe la société est plus court : le <strong>ЄДРПОУ</strong>, huit
+          chiffres, que toute personne morale possède qu’elle facture la taxe ou non. Ce ne sont
+          pas deux numéros, et c’est là tout l’intérêt.
+        </p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format :</strong> <code>UA</code> + 8 chiffres (ЄДРПОУ) ou 12 chiffres (ІПН)</p>
+        <p><strong>Exemple :</strong> <code>UA33444728</code></p>
+        <p><strong>Attribué par :</strong> le registrateur d’État (ЄДРПОУ) et le service fiscal (ІПН).</p>
+      </div>
+
+      <h2 id="format">Une société, deux numéros, sept chiffres communs</h2>
+      <p>
+        L’ІПН est construit à partir du ЄДРПОУ. Ses <strong>sept premiers chiffres sont les sept
+        premiers du ЄДРПОУ</strong> ; les cinq suivants sont un rang et le code du bureau des
+        impôts. Le huitième chiffre du ЄДРПОУ, celui que l’ІПН laisse de côté, est une clé de
+        contrôle, donc il se recalcule :
+      </p>
+      <ul class="breakdown">
+        <li><b>ЄДРПОУ</b><span>Huit chiffres : sept de séquence et une clé <strong>modulo 11</strong>. Attribué à l’immatriculation, conservé toute la vie de la société, et clé du registre d’État.</span></li>
+        <li><b>ІПН</b><span>Douze chiffres, attribués à la seule inscription à la ПДВ : les sept premiers du ЄДРПОУ, un rang, puis le bureau des impôts. Annulé si l’inscription l’est.</span></li>
+      </ul>
+      <p>
+        Ainsi <code>UA037771118081</code> et <code>UA03777114</code> désignent la même société, et
+        {{siteName}} les traite comme un seul numéro : la forme à douze chiffres est ramenée à
+        celle à huit avant toute recherche, si bien que les deux écritures renvoient la même fiche
+        et alimentent un seul historique.
+      </p>
+
+      <h2 id="pdv">ЄДРПОУ, ІПН et РНОКПП : lequel est lequel</h2>
+      <ul class="breakdown">
+        <li><b>ЄДРПОУ</b><span>La personne morale. Huit chiffres, sur tous les contrats et toutes les factures.</span></li>
+        <li><b>ІПН</b><span>L’inscription à la TVA. Douze chiffres ; une société non inscrite à la ПДВ n’en a tout simplement pas.</span></li>
+        <li><b>РНОКПП</b><span>Dix chiffres, le numéro fiscal personnel d’un particulier, ce sous quoi exerce un entrepreneur individuel (ФОП). Il n’est publié nulle part, pour la raison indiquée plus bas.</span></li>
+      </ul>
+
+      <h2 id="find">Retrouver la société derrière le numéro</h2>
+      <h3>Ce que publie le ministère de la Justice</h3>
+      <p>
+        Le <strong>ЄДР</strong>, registre d’État unifié des personnes morales, des entrepreneurs
+        individuels et des formations publiques, est publié intégralement, chaque semaine, en
+        données ouvertes sous licence Creative Commons Attribution, sans compte ni clé. C’est ce
+        que {{siteName}} importe : une archive de 319 Mo par semaine, qui porte le nom, le nom
+        abrégé, la forme juridique, l’état de la personne morale et ses dates d’immatriculation,
+        indexés par le ЄДРПОУ.
+      </p>
+      <h3>Ce que le registre ne contient pas</h3>
+      <p>Deux choses, et les deux tiennent à la guerre plutôt qu’à un oubli.</p>
+      <p>
+        <strong>Il n’y a pas d’adresse.</strong> Pas même tronquée, pas même une ville : le siège a
+        été retiré du jeu de données publié au titre de la loi martiale, et le schéma ne comporte
+        aucun champ d’adresse. Une recherche ukrainienne renvoie un nom, une forme juridique et un
+        statut, et s’arrête là.
+      </p>
+      <p>
+        <strong>Il n’y a pas de statut ПДВ.</strong> Le registre qui dirait si l’inscription TVA
+        d’une société est en vigueur est celui du service fiscal, et il est fermé : sa publication
+        en données ouvertes s’est arrêtée le 23 février 2022, la veille de l’invasion, et la
+        recherche publique du service fiscal ne répond plus que par une phrase : l’accès aux
+        registres électroniques publics est restreint pour la durée de la loi martiale. Une
+        recherche dit donc <em>quelle société</em> porte un ІПН ; elle ne dit pas si cette
+        inscription est toujours valide.
+      </p>
+
+      <h2 id="pitfalls">Pièges propres à l’Ukraine</h2>
+      <ul>
+        <li><strong>Huit chiffres et douze chiffres, c’est une seule société.</strong> L’ІПН se ramène au ЄДРПОУ ; n’en faites pas deux fiches.</li>
+        <li><strong>Un ІПН est une inscription à la TVA, un ЄДРПОУ non.</strong> Toute société a le second ; seul un redevable inscrit a le premier.</li>
+        <li><strong>Les entrepreneurs individuels sont introuvables.</strong> La moitié ФОП du registre ne publie aucun identifiant, seulement un nom, un statut et des dates, donc aucun numéro par lequel les chercher.</li>
+        <li><strong>Aucune adresse, d’aucune source gratuite.</strong> C’est le contenu publié du registre sous loi martiale, pas une lacune de la recherche.</li>
+        <li><strong>Une société <em>в стані припинення</em> exerce toujours.</strong> En cours de dissolution n’est pas radiée ; {{siteName}} la donne active, parce qu’elle peut encore vous facturer.</li>
+        <li><strong>Les sanctions vous regardent, pas le registre.</strong> Une recherche dit à qui appartient un numéro ; savoir si vous pouvez commercer avec cette société est une vérification distincte, contre vos propres listes.</li>
+      </ul>
+
+      <!-- @include partials/country/fr.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2>Le ЄДРПОУ en bref</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Combien de chiffres compte un numéro de société ukrainien ?</summary>
+          <p>Huit pour le ЄДРПОУ, que possède toute personne morale. Le dernier chiffre est une clé modulo 11 sur les sept précédents, si bien qu’une faute de frappe est le plus souvent détectée sans recherche.</p>
+        </details>
+        <details>
+          <summary>L’ІПН est-il un numéro de TVA ?</summary>
+          <p>Oui : c’est le numéro sous lequel un redevable ukrainien de la ПДВ est inscrit, et celui qui figure sur une facture. Une société non inscrite n’a pas d’ІПН du tout, seulement un ЄДРПОУ.</p>
+        </details>
+        <details>
+          <summary>Peut-on retrouver le ЄДРПОУ à partir de l’ІПН ?</summary>
+          <p>Oui, et hors ligne. Les sept premiers chiffres sont communs, et le huitième du ЄДРПОУ est une clé qui s’en déduit. {{siteName}} le fait pour vous : les deux écritures renvoient la même société.</p>
+        </details>
+        <details>
+          <summary>Pourquoi n’y a-t-il pas d’adresse dans la réponse ?</summary>
+          <p>Parce que le registre n’en publie plus. Les adresses de sociétés ont été retirées du jeu de données ouvert au titre de la loi martiale, et aucune source ukrainienne gratuite ne les porte.</p>
+        </details>
+        <details>
+          <summary>Peut-on vérifier qu’une société ukrainienne est inscrite à la ПДВ ?</summary>
+          <p>Pas en données ouvertes. Le registre des redevables de la TVA n’est plus publié depuis le 23 février 2022 et sa recherche en ligne est restreinte pour la durée de la loi martiale.</p>
+        </details>
+        <details>
+          <summary>Pourquoi un entrepreneur individuel ne renvoie-t-il rien ?</summary>
+          <p>Parce que le registre ne publie aucun numéro pour lui. Le fichier ФОП porte un nom, un statut et des dates, sans identifiant : il n’y a rien par quoi le chercher.</p>
+        </details>
+      </div>
+
+      <h2>Numéros fiscaux d’entreprise dans d’autres pays</h2>
+      <ul class="otherlinks">
+        <li><a href="/fr/numero-tva-intracommunautaire/france/">France</a></li>
+        <li><a href="/fr/numero-tva-intracommunautaire/belgique/">Belgique</a></li>
+        <li><a href="/ru/inn/rossiya/" hreflang="ru" lang="ru">Russie</a></li>
+        <li><a href="/en/vat-number/poland/" hreflang="en" lang="en">Pologne</a></li>
+        <li><a href="/fr/numero-tva-intracommunautaire/">Tous les pays</a></li>
+      </ul>
+      <p class="updated">Dernière mise à jour le 15 septembre 2026.</p>
+    </div>
+  </section>
+</main>

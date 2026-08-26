@@ -1,0 +1,46 @@
+# GET /v1/countries - the countries served and how.
+#
+# `strategy` is derived from the sources each country declares:
+#   bulk        the register is imported into MySQL (`npm run import -- <country>`)
+#   on-demand   resolved live through the country's own API
+#   both        imported, with a live source for what the file lacks
+#   vies        no source of its own, VIES answers
+#
+# `source` is the main register: the bulk source, else the live one, else VIES.
+#
+# Run with: npx httpyac send http/countries.http --all
+
+@host = http://localhost:3000
+
+###
+
+# @name List supported countries
+# The generic call: no parameters.
+GET {{host}}/v1/countries
+
+?? status == 200
+?? js response.parsedBody.data.length > 0 == true
+
+# Example response - 200 OK
+#
+# {
+#   "data": [
+#     { "countryCode": "FR", "name": "France",  "source": "SIRENE", "strategy": "bulk" },
+#     { "countryCode": "PL", "name": "Poland",  "source": "MF_WL",  "strategy": "on-demand" },
+#     { "countryCode": "FI", "name": "Finland", "source": "PRH",    "strategy": "both" },
+#     { "countryCode": "EE", "name": "Estonia", "source": "RIK",    "strategy": "bulk" },
+#     { "countryCode": "LV", "name": "Latvia",  "source": "UR_VID", "strategy": "bulk" }
+#   ]
+# }
+
+###
+# -- Other cases --
+###
+
+# @name Check that a given country is covered
+# The response is a plain list, filter it client side.
+GET {{host}}/v1/countries
+
+?? status == 200
+?? js response.parsedBody.data.some(c => c.countryCode === 'FR') == true
+?? js response.parsedBody.data.find(c => c.countryCode === 'PL').strategy === 'on-demand' == true

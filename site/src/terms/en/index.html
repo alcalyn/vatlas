@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Terms of Service and Sale · Vatlas</title>
+    <meta name="description" content="Terms of service and sale that apply to creating an account and subscribing to the Pro plan of the Vatlas API." />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="author" content="Vatlas" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://vatlas.dev/terms/en/" />
+    <link rel="alternate" hreflang="en" href="https://vatlas.dev/terms/en/" />
+    <link rel="alternate" hreflang="fr" href="https://vatlas.dev/terms/fr/" />
+    <link rel="alternate" hreflang="x-default" href="https://vatlas.dev/terms/en/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta name="console-origin" content="https://console.vatlas.dev" />
+    <script>
+      try {
+        var url = new URLSearchParams(location.search).get('theme')
+        var stored = url === 'light' || url === 'dark' ? url : localStorage.getItem('vatlas-theme')
+        if (stored === 'light' || stored === 'dark') {
+          document.documentElement.dataset.theme = stored
+          localStorage.setItem('vatlas-theme', stored)
+        }
+      } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <!-- @include partials/header.html -->
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <p class="eyebrow">Legal</p>
+            <h1>Terms of Service and Sale</h1>
+            <p class="section__lead">
+              These terms of service and sale ("Terms") govern access to the Vatlas API, developer console and
+              site, operated by JULIEN MAULNY EURL. They serve as the terms of sale for the Pro plan. Creating
+              an account or making a call to the API constitutes acceptance of these Terms and of the
+              <a href="/privacy/en/">Privacy Policy</a>.
+            </p>
+            <p class="note">Last updated 27 August 2026.</p>
+          </div>
+
+          <div class="docs__content legal-content">
+            <section>
+              <h2>1. Scope and acceptance</h2>
+              <p>
+                The service is reserved exclusively for professionals acting for business purposes, to the
+                exclusion of any subscription by a consumer within the meaning of consumer-protection law. By
+                creating an account, you represent that you are acting in that capacity; that representation
+                alone does not override a different qualification if the facts contradict it, and we take care
+                that our sign-up flow and our marketing address professionals only.
+              </p>
+              <p>
+                In these Terms, <strong>"Vatlas"</strong> and <strong>"we"</strong> both mean JULIEN MAULNY EURL
+                acting as the provider of the service; the <strong>"Service"</strong> means the API, the developer
+                console and the site together. Vatlas is the trading name under which JULIEN MAULNY EURL operates
+                that Service.
+              </p>
+              <p>
+                By creating an account (free or paid) you acknowledge that you have read these Terms,
+                accessible from the sign-up form, and accept them. When subscribing to the Pro plan, this
+                acceptance is further confirmed before the order is completed on the Stripe payment page. The
+                version of the Terms in force at the time of your acceptance, and its date, are kept on record
+                and can be provided to you on request.
+              </p>
+            </section>
+
+            <section>
+              <h2>2. The service</h2>
+              <p>
+                Vatlas is a B2B API operated by JULIEN MAULNY EURL ("we", "us") that resolves European
+                intra-community VAT numbers into company records: legal name, national identifier, legal form,
+                status and address. Data is sourced from official national registers and from VIES; we do not
+                operate any of those registers, and the underlying administration remains the authoritative
+                source.
+              </p>
+            </section>
+
+            <section>
+              <h2>3. Accounts and API keys</h2>
+              <p>
+                One account per person or organisation. You are responsible for keeping your credentials and API
+                keys confidential and for all activity carried out under them. Revoke a key immediately from the
+                console if you suspect it has been exposed; a revoked key may continue to answer for up to sixty
+                seconds.
+              </p>
+            </section>
+
+            <section>
+              <h2>4. Acceptable use</h2>
+              <p>
+                You may not use the API to circumvent metering or authentication, to bulk-extract the underlying
+                dataset for resale as a competing data product, or for any unlawful purpose. We may suspend a key
+                used in a way that threatens the service for other customers.
+              </p>
+            </section>
+
+            <section>
+              <h2>5. Data you submit</h2>
+              <p>
+                Qualification is assessed processing by processing, by reference to who actually determines its
+                purposes and essential means. For the standard service (building and operating our database from
+                public registers, then resolving a number you send us) those decisions are ours: Vatlas acts as
+                <strong>controller</strong> for them, and you as a separate controller for the use you make of the
+                results. You answer for the lawfulness of that use, including the legal basis you rely on where a
+                result concerns a natural person, as it may for a sole trader.
+              </p>
+              <p>
+                If, on the other hand, we agreed to process data on your behalf, on your instructions and without
+                determining the purposes ourselves, Vatlas would act as <strong>processor</strong> for that
+                processing and the Article 28 terms set out in the addendum would apply. Neither qualification
+                holds in advance for everything: it follows from the processing in question.
+              </p>
+              <p>
+                The number you submit is kept in our call logs to compute your quota and produce your usage
+                history; it is not reused for any other purpose; see the
+                <a href="/privacy/en/">Privacy Policy</a>. The <a href="/dpa/en/">Data protection (DPA)</a>
+                sets out this allocation of roles, what it means for your own compliance, and the Article 28
+                terms that would apply should a genuine processor relationship ever arise.
+              </p>
+            </section>
+
+            <section>
+              <h2>6. Plans and renewal</h2>
+              <p>
+                The Free plan includes 100 requests a month at no cost. The Pro plan includes 10,000 requests a
+                month for 14 € excluding VAT per month, automatically renewed each month on the anniversary of
+                your subscription. The monthly quota does not carry over between periods: requests left unused at
+                the end of a month are lost, with no rollover and no refund. Once the quota is reached, the API
+                answers <code>429</code> until it renews.
+              </p>
+              <p>
+                Cancelling a Pro subscription does not end the service immediately: it stays active until the
+                end of the period already paid for, then falls back to Free, with no pro-rata refund for the
+                remainder of the current period. That absence of a refund covers cancellation on your initiative:
+                it does not apply where termination follows a breach on our part, a permanent discontinuation of
+                the Service, or your refusal of a substantial change under section 14, nor in any case where the
+                law requires a refund. Current plan details are on the
+                <a href="/en/pricing/">pricing page</a>.
+              </p>
+            </section>
+
+            <section>
+              <h2>7. Price and payment terms</h2>
+              <p>
+                Prices are stated <strong>excluding VAT</strong>. VAT is added at the rate in force on the
+                invoice date, except where the reverse charge applies, a VAT-registered customer established in
+                another member state who has supplied a valid intra-community VAT number, which Stripe verifies at
+                subscription. Any change to the tax regime applicable to JULIEN MAULNY EURL, or to the VAT rate,
+                applies automatically to later invoices and is not a change to these Terms.
+              </p>
+              <p>
+                The Pro plan is payable <strong>in full by automatic charge</strong> through Stripe against your
+                registered payment method, monthly and in advance, on the anniversary of your subscription, which
+                is the due date. No discount is offered for early payment. A compliant invoice is issued on every
+                payment.
+              </p>
+              <p>
+                The due date is the date shown on the invoice. Under Article L441-10 of the French Commercial
+                Code, late-payment penalties run as of right from the day after that date, with no reminder
+                required. Their rate is set at three times the French statutory interest rate, which may never be
+                lower than that legal floor. A fixed recovery indemnity of €40 is also due for each invoice paid
+                late, and where the recovery costs actually incurred exceed that amount we may claim further
+                compensation on production of evidence.
+              </p>
+              <p>
+                If an automatic charge fails, Stripe retries it on its own schedule. Those retries are a
+                commercial accommodation, not an extension of the due date: your access to the Pro plan is
+                maintained throughout, and in practice we do not claim penalties on an amount settled during that
+                period, but the legal starting point above is unaffected. If the amount is still unpaid once the
+                retries end, the subscription is suspended and then terminated, and the account falls back to
+                Free.
+              </p>
+              <p>
+                These provisions of the French Commercial Code apply to the extent that French law governs the
+                payment obligation, which these Terms provide. Where a mandatory rule of your own jurisdiction
+                displaces them, that rule prevails.
+              </p>
+            </section>
+
+            <section>
+              <h2>8. Availability and force majeure</h2>
+              <p>
+                We aim to keep the service available at all times, but make no uptime guarantee and may perform
+                maintenance with or without notice.
+              </p>
+              <p>
+                Neither party will be liable for a failure to perform its obligations where that failure results
+                from an event of force majeure within the meaning of Article 1218 of the French Civil Code, an
+                event beyond the affected party's control, which could not reasonably have been foreseen when
+                these Terms were entered into, and whose effects could not have been avoided by appropriate
+                measures. Where they meet those conditions, this may include a prolonged failure or unavailability
+                of a third-party provider (hosting, technical subcontractor), a major data-centre incident, a
+                cyberattack, a natural disaster, a network outage, or the extended unavailability of a national
+                register or of VIES.
+              </p>
+            </section>
+
+            <section>
+              <h2>9. Data accuracy</h2>
+              <p>
+                Data returned by the API comes from the official national registers we import, from the official
+                APIs of some administrations queried on demand, and from VIES, the European Commission's own
+                verification service, used as a last resort; the current list of sources per country is
+                available through <code>GET /v1/countries</code>. How often each source is updated is outside our
+                control and is not contractually guaranteed: an answer may therefore be out of date at the moment
+                you receive it. Where a discrepancy exists, the originating administration or register is
+                authoritative. We do not warrant the completeness, accuracy or continuous availability of this
+                data, and are not liable for errors, omissions or unavailability attributable to those third-party
+                sources. You agree to use the data you obtain only within the limits allowed by the reuse
+                conditions published by each of those sources, in particular VIES's own conditions. This data is
+                not legal, tax or accounting advice, and it is your responsibility to verify anything you rely on
+                for a compliance decision.
+              </p>
+            </section>
+
+            <section>
+              <h2>10. What you may do with the data returned</h2>
+              <p>
+                You may use the data returned by the API for the purposes of your own business: verifying a VAT
+                registration, pre-filling a form, enriching your customer base, populating an invoice or a
+                compliance file. You may store it in your own systems and display it to your users in that
+                context.
+              </p>
+              <p>
+                You may not, however, redistribute that data as such, republish it as a database, directory or
+                dataset consultable by third parties, or resell it as a data product.
+              </p>
+              <p>
+                What underlies that restriction differs from one source to the next, and we do not claim it is
+                uniform. Some registers are published under an open licence that permits broad reuse; others
+                attach conditions, and some are protected by the <em>sui generis</em> database right, which
+                belongs to the body that produced them. National rules on the reuse of public sector information
+                apply to several of them, and VIES has conditions of its own. We hold no rights over any of those
+                source databases and grant you none: where a source permits more than this clause does, your
+                entitlement comes from that source's own licence and not from us, and it is worth reading it
+                before relying on it. Conversely, you must not use what you obtain here in a way a source
+                prohibits.
+              </p>
+              <p>
+                Distinct from all of that: the API, its software, its documentation, and the database we build (the imports, the derivations, the normalisations and the aggregations that turn scattered
+                registers into one queryable record) are ours. These Terms grant you a right to use the Service
+                and its output as described above, and transfer no right over any of it.
+              </p>
+            </section>
+
+            <section>
+              <h2>11. Liability</h2>
+              <p>
+                To the extent permitted by law, our total liability, for all claims combined, is limited to the
+                fees you paid in the twelve months preceding the event giving rise to the claim, and we are not
+                liable for indirect or consequential loss (lost revenue, lost data, lost business, reputational
+                harm). Within the same limits, this excludes in particular any loss arising from an error,
+                omission, staleness or unavailability attributable to a national register or to VIES, as set out
+                in section 9. This limitation does not apply to gross or wilful misconduct, to personal injury,
+                or to any liability that cannot lawfully be excluded or limited. It is also without effect on
+                liability arising under the GDPR, which has its own regime and which no contract can set aside or
+                cap.
+              </p>
+            </section>
+
+            <section>
+              <h2>12. Termination</h2>
+              <p>
+                You may cancel your subscription at any time from the console, with no notice and no fee.
+                Cancellation takes effect at the end of the current monthly period, which you have already paid
+                for: until then the API stays available with the Pro quota, after which the account
+                automatically falls back to the Free plan, with no pro-rata refund. Your API keys remain valid
+                and keep working within the Free plan's quota.
+              </p>
+              <p>
+                Cancelling the subscription does not delete the account. Deleting the account is a separate
+                action, available from the billing page. It revokes all your API keys immediately, which stop
+                answering within a minute, and removes your personal data from the active database. It does not,
+                however, erase everything about you at the same instant: data whose retention remains necessary (logs,
+                within the published periods, and invoices and accounting records for their legal period)
+                survives in restricted archive until those periods end, and is then destroyed; technical backups
+                follow their own 30-day rotation. The detail is in section 7 of the
+                <a href="/privacy/en/">Privacy Policy</a>.
+              </p>
+              <p>
+                Self-service deletion from the console is available once no paid subscription is running, so that
+                an account is never erased while Stripe is still billing it: cancel the subscription first, or
+                wait for the period to end. That is a constraint of the button, not of your rights: your
+                <strong>right to erasure under Article 17 of the GDPR is exercisable at any time</strong>,
+                subscription or no subscription, by writing to
+                <a href="mailto:{{email}}">{{email}}</a>. We then cancel the subscription
+                and erase the account ourselves, subject only to the exceptions Article 17(3) provides, chiefly
+                the accounting records we are legally required to keep.
+              </p>
+              <p>
+                We may suspend or terminate an account that breaches these Terms or applicable law, as well as in
+                the event of persistent non-payment under the conditions set out in section 7.
+              </p>
+            </section>
+
+            <section>
+              <h2>13. Governing law</h2>
+              <p>
+                These Terms are governed by French law. Failing an amicable resolution, and to the extent
+                permitted by applicable law, the courts of Paris, France have exclusive jurisdiction over any
+                dispute arising from them. This clause does not displace any mandatory rule of international or
+                national jurisdiction that applies to you.
+              </p>
+            </section>
+
+            <section>
+              <h2>14. Changes to these terms</h2>
+              <p>
+                We may update these Terms from time to time; the date at the top reflects the latest revision.
+                Three kinds of change take effect on publication, because none of them alters what you owe or
+                what you get: an <strong>editorial</strong> change (a clarification, a corrected link); a
+                <strong>technical or security</strong> change that does not reduce the service or your rights; and
+                a change <strong>required by law or by a supervisory authority</strong>, which takes effect on the
+                date that law or decision imposes.
+              </p>
+              <p>
+                A <strong>substantial change</strong> is one that alters the price, the monthly quota, the scope
+                of the Service, or your obligations under these Terms. It is notified to you by email at least
+                30 days before the effective date stated in the notification. If you do not accept it, you may cancel free of charge before that date, under
+                the conditions set out in section 12. A substantial change is never applied retroactively to a
+                period already paid for: a new price takes effect only at the renewal following its effective
+                date.
+              </p>
+            </section>
+
+            <section>
+              <h2>15. Contact</h2>
+              <p>Questions about these Terms: <a href="mailto:{{email}}">{{email}}</a>.</p>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include partials/footer.html -->
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

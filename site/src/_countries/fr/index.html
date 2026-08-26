@@ -1,0 +1,163 @@
+<!-- @meta
+{
+  "title": "Le numéro de TVA et ses équivalents, pays par pays",
+  "description": "Le format du numéro d’identification fiscale des entreprises dans chacun des pays servis ici (numéro de TVA intracommunautaire, ABN, CNPJ, UEN), l’identifiant national derrière chacun, et comment retrouver la société à laquelle il appartient.",
+  "h1": "Le numéro de TVA, pays par pays",
+  "updated": "2026-09-15"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Référence</p>
+        <h1>Le numéro de TVA, pays par pays</h1>
+        <p class="section__lead">
+          Chaque pays servi ici a son format et son registre. Ces pages les expliquent un par
+          un : comment le numéro est construit, quel identifiant national il dissimule, et ce
+          qu’il faut faire pour atteindre la société qui se trouve derrière.
+        </p>
+      </div>
+
+      <h2 id="what">Ce qu’est un numéro d’identification fiscale</h2>
+      <p>
+        Dans l’Union, c’est le numéro de TVA intracommunautaire, attribué par l’administration
+        fiscale d’un État membre à une entreprise qui commerce au-delà de ses frontières. C’est lui
+        qui rend possible l’autoliquidation : fournissez un numéro valide et votre fournisseur
+        facture hors taxe. Vérifier le numéro d’un client n’est donc pas une formalité, c’est la
+        condition de l’exonération. Ailleurs, c’est le numéro sous lequel une entreprise est
+        identifiée sur ses factures : un ABN en Australie, un CNPJ au Brésil, un UEN à Singapour,
+        un numéro d’émetteur de facture au Japon. Tous sont servis ici de la même façon : même
+        endpoint, même réponse.
+      </p>
+      <p>
+        Chaque numéro commence par deux lettres, le code ISO du pays, à deux exceptions près :
+        la Grèce s’écrit <code>EL</code> et non <code>GR</code>, et l’Irlande du Nord garde depuis
+        le Brexit son propre préfixe, <code>XI</code>.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>Le numéro de TVA est rarement le numéro d’entreprise.</strong> En Belgique et au
+          Danemark, ce sont les mêmes chiffres ; en France, il se déduit du SIREN ; en Allemagne, en
+          Irlande et en Espagne, l’administration fiscale attribue un identifiant entièrement
+          distinct. C’est ce seul fait qui rend la recherche d’entreprise transfrontalière difficile.
+        </p>
+      </div>
+
+      <h2 id="formats">Le format, pays par pays</h2>
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Format du numéro d’identification fiscale des entreprises dans chacun des pays servis ici</caption>
+          <thead>
+            <tr><th scope="col">Pays</th><th scope="col">Préfixe</th><th scope="col">Format</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><a href="/en/vat-number/germany/" hreflang="en" lang="en">Allemagne</a></th><td><code>DE</code></td><td><code>DE + 9 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/australia/" hreflang="en" lang="en">Australie</a></th><td><code>AU</code></td><td><code>AU + 11 chiffres</code> (ABN)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/austria/" hreflang="en" lang="en">Autriche</a></th><td><code>AT</code></td><td><code>ATU + 8 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/fr/numero-tva-intracommunautaire/belgique/">Belgique</a></th><td><code>BE</code></td><td><code>BE + 10 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/brazil/" hreflang="en" lang="en">Brésil</a></th><td><code>BR</code></td><td><code>BR + 14 chiffres</code> (CNPJ)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/bulgaria/" hreflang="en" lang="en">Bulgarie</a></th><td><code>BG</code></td><td><code>BG + 9 ou 10 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/fr/numero-tva-intracommunautaire/canada/">Canada</a></th><td><code>CA</code></td><td><code>CA + 9 chiffres</code> (numéro d’entreprise, <code>RT0001</code> sur la facture)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/cyprus/" hreflang="en" lang="en">Chypre</a></th><td><code>CY</code></td><td><code>CY + 8 chiffres + 1 lettre</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/costa-rica/" hreflang="en" lang="en">Costa Rica</a></th><td><code>CR</code></td><td><code>CR + 10 chiffres</code> (cédula jurídica)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/croatia/" hreflang="en" lang="en">Croatie</a></th><td><code>HR</code></td><td><code>HR + 11 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/denmark/" hreflang="en" lang="en">Danemark</a></th><td><code>DK</code></td><td><code>DK + 8 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/es/numero-iva-intracomunitario/ecuador/" hreflang="es" lang="es">Équateur</a></th><td><code>EC</code></td><td><code>EC + 13 chiffres</code> (RUC, établissement compris)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/spain/" hreflang="en" lang="en">Espagne</a></th><td><code>ES</code></td><td><code>ES + 9 caractères</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/estonia/" hreflang="en" lang="en">Estonie</a></th><td><code>EE</code></td><td><code>EE + 9 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/finland/" hreflang="en" lang="en">Finlande</a></th><td><code>FI</code></td><td><code>FI + 8 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/fr/numero-tva-intracommunautaire/france/">France</a></th><td><code>FR</code></td><td><code>FR + 2 caractères + 9 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/greece/" hreflang="en" lang="en">Grèce</a></th><td><code>EL</code></td><td><code>EL + 9 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/greenland/" hreflang="en" lang="en">Groenland</a></th><td><code>GL</code></td><td><code>GL + 8 chiffres</code> (numéro CVR, pas de TVA)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/hungary/" hreflang="en" lang="en">Hongrie</a></th><td><code>HU</code></td><td><code>HU + 8 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/ireland/" hreflang="en" lang="en">Irlande</a></th><td><code>IE</code></td><td><code>IE + 8 ou 9 caractères</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/northern-ireland/" hreflang="en" lang="en">Irlande du Nord</a></th><td><code>XI</code></td><td><code>XI + 9 ou 12 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/israel/" hreflang="en" lang="en">Israël</a></th><td><code>IL</code></td><td><code>IL + 9 chiffres</code> (numéro de société)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italie</a></th><td><code>IT</code></td><td><code>IT + 11 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/japan/" hreflang="en" lang="en">Japon</a></th><td><code>JP</code></td><td><code>JPT + 13 chiffres</code> (numéro d’émetteur de facture)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/latvia/" hreflang="en" lang="en">Lettonie</a></th><td><code>LV</code></td><td><code>LV + 11 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/lithuania/" hreflang="en" lang="en">Lituanie</a></th><td><code>LT</code></td><td><code>LT + 9 ou 12 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/fr/numero-tva-intracommunautaire/luxembourg/">Luxembourg</a></th><td><code>LU</code></td><td><code>LU + 8 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/malta/" hreflang="en" lang="en">Malte</a></th><td><code>MT</code></td><td><code>MT + 8 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/nigeria/" hreflang="en" lang="en">Nigeria</a></th><td><code>NG</code></td><td><code>NG + 10 chiffres</code> (TIN ; l’ancienne forme est 8 + 4)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/norway/" hreflang="en" lang="en">Norvège</a></th><td><code>NO</code></td><td><code>NO + 9 chiffres + MVA</code> (organisasjonsnummer)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/new-zealand/" hreflang="en" lang="en">Nouvelle-Zélande</a></th><td><code>NZ</code></td><td><code>NZ + 13 chiffres</code> (NZBN)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/netherlands/" hreflang="en" lang="en">Pays-Bas</a></th><td><code>NL</code></td><td><code>NL + 9 chiffres + B + 2 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/peru/" hreflang="en" lang="en">Pérou</a></th><td><code>PE</code></td><td><code>PE + 11 chiffres</code> (RUC)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/poland/" hreflang="en" lang="en">Pologne</a></th><td><code>PL</code></td><td><code>PL + 10 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/portugal/" hreflang="en" lang="en">Portugal</a></th><td><code>PT</code></td><td><code>PT + 9 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/romania/" hreflang="en" lang="en">Roumanie</a></th><td><code>RO</code></td><td><code>RO + 2 à 10 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/ru/inn/rossiya/" hreflang="ru" lang="ru">Russie</a></th><td><code>RU</code></td><td><code>RU + 10 chiffres</code> (ИНН ; 12 pour un entrepreneur individuel)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/singapore/" hreflang="en" lang="en">Singapour</a></th><td><code>SG</code></td><td><code>SG + 9 ou 10 caractères</code> (UEN)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/slovakia/" hreflang="en" lang="en">Slovaquie</a></th><td><code>SK</code></td><td><code>SK + 10 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/slovenia/" hreflang="en" lang="en">Slovénie</a></th><td><code>SI</code></td><td><code>SI + 8 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/sweden/" hreflang="en" lang="en">Suède</a></th><td><code>SE</code></td><td><code>SE + 12 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/fr/numero-tva-intracommunautaire/suisse/">Suisse</a></th><td><code>CHE</code></td><td><code>CHE + 9 chiffres + TVA/MWST/IVA</code> (IDE)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/taiwan/" hreflang="en" lang="en">Taïwan</a></th><td><code>TW</code></td><td><code>TW + 8 chiffres</code> (numéro unifié d’entreprise)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/czechia/" hreflang="en" lang="en">Tchéquie</a></th><td><code>CZ</code></td><td><code>CZ + 8 à 10 chiffres</code></td></tr>
+            <tr><th scope="row"><a href="/uk/yedrpou/ukrayina/" hreflang="uk" lang="uk">Ukraine</a></th><td><code>UA</code></td><td><code>UA + 8 chiffres</code> (ЄДРПОУ ; l’ІПН à 12 chiffres s’y ramène)</td></tr>
+            <tr><th scope="row"><a href="/en/vat-number/vietnam/" hreflang="en" lang="en">Viêt Nam</a></th><td><code>VN</code></td><td><code>VN + 10 chiffres</code> (mã số thuế ; 13 pour un établissement)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="dim">
+        Le format ne décrit que la syntaxe. Un numéro bien formé n’est pas forcément attribué, et un
+        numéro attribué n’est pas forcément enregistré pour la taxe : dans l’Union, l’enregistrement
+        aux échanges intracommunautaires est une question distincte de l’existence du numéro, et
+        ailleurs seul le registre japonais y répond : y être inscrit est précisément ce qui rend une
+        facture déductible. Un ABN, un CNPJ, un UEN ou un 統一編號 identifient une entreprise ;
+        savoir si elle facture la taxe est une autre question. Chaque page dit jusqu’où va son
+        registre, y compris là où il s’arrête, comme au Costa Rica, qui publie un nom et un statut
+        et aucune adresse.
+      </p>
+
+      <h2 id="sources">D’où vient la donnée</h2>
+      <p>Il existe deux familles de sources, et la différence compte plus qu’il n’y paraît :</p>
+      <ul>
+        <li>
+          <strong>L’open data national.</strong> La France, l’Estonie, la Lettonie, la Finlande et la
+          Belgique publient gratuitement l’intégralité de leur registre, comme le Brésil, le Japon,
+          l’Australie, Singapour et le Pérou. L’obstacle n’est jamais la
+          licence, c’est de savoir si une ligne peut être atteinte <em>par un numéro de TVA</em>.
+          L’Irlande publie chaque jour tout son registre des sociétés, et il ne sert à rien ici :
+          le numéro de TVA irlandais est attribué par le fisc et ne se déduit pas du numéro CRO.
+        </li>
+        <li>
+          <strong>Une API nationale.</strong> La Pologne, la Tchéquie, la Roumanie, la Grèce, le
+          Costa Rica, Israël et Taïwan répondent numéro par numéro, gratuitement, chacun avec son
+          protocole, ses quotas et parfois son compte à créer. Le VIES de la Commission en est une
+          parmi d’autres ; il se trouve qu’elle est celle qui dit si un numéro est enregistré pour les échanges
+          intracommunautaires, ce qu’aucun registre ne fait. L’Allemagne et l’Espagne n’en
+          divulguent rien de plus, et c’est pourquoi l’Allemagne est lue dans l’annuaire de
+          facturation électronique Peppol, qui est indexé par le numéro de TVA.
+        </li>
+      </ul>
+
+      <h2 id="vatlas">Une seule API pour tous les pays de cette page</h2>
+      <p>
+        {{siteName}} résout un numéro d’identification fiscale (numéro de TVA, ABN, CNPJ, numéro
+        d’émetteur de facture ou UEN) en fiche société : dénomination, identifiant national,
+        forme juridique, statut et adresse. Le registre qui a
+        répondu est un détail dans <code>meta</code>, pas quelque chose que votre code doit gérer.
+      </p>
+      {{example}}
+      <div class="callout">
+        <p>
+          <strong>Gratuit à l’essai.</strong> Un e-mail suffit à créer un compte, avec <strong>{{quotaFree}} requêtes par mois</strong> et une clé utilisable en une minute.
+        </p>
+      </div>
+      <p>
+        <a class="btn btn--primary" href="{{signupUrl}}">Obtenir une clé gratuite</a>
+        <a class="btn btn--ghost" href="{{docsUrl}}">Lire la documentation</a>
+      </p>
+      <h2>Guides</h2>
+      <ul class="otherlinks">
+        <li><a href="/fr/guides/pre-remplir-formulaire-societe-numero-tva/">Pré-remplir un formulaire société</a></li>
+        <li><a href="/fr/guides/nom-adresse-entreprise-numero-tva/">Retrouver le nom et l’adresse d’une entreprise</a></li>
+        <li><a href="{{guidesUrl}}">Tous les guides</a></li>
+      </ul>
+      <p class="updated">Mis à jour le 15 septembre 2026.</p>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,115 @@
+<!-- @meta
+{
+  "title": "Numer VAT UE: NIP, REGON, KRS i biała lista podatników",
+  "description": "PL plus dziesięć cyfr NIP. Czym różni się NIP od REGON i KRS, jak działa suma kontrolna i jak znaleźć firmę przez białą listę.",
+  "h1": "Polski numer VAT UE (NIP)",
+  "term": "Numer VAT UE",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Polska · PL</p>
+        <h1>Polski numer VAT UE (NIP)</h1>
+        <p class="section__lead">NIP z przedrostkiem PL, a za nim biała lista: darmowe API, w którym kluczem jest ten sam numer, zwracające firmę, jej status VAT i rachunki bankowe zgłoszone urzędowi skarbowemu.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>PL</code> + 10 cyfr (NIP)</p>
+        <p><strong>Przykład:</strong> <code>PL5250007307</code>, NIP <code>525-000-73-07</code></p>
+        <p><strong>Nadaje:</strong> Krajowa Administracja Skarbowa.</p>
+      </div>
+
+      <h2 id="format">Budowa numeru</h2>
+      <p>Polski numer VAT UE to zawsze <strong>dwanaście znaków</strong>: przedrostek i dziesięć cyfr NIP-u, bez myślników.</p>
+      <ul class="breakdown">
+        <li><b>PL</b><span>Kod kraju.</span></li>
+        <li><b>525</b><span>Trzy pierwsze cyfry: dawny kod urzędu skarbowego.</span></li>
+        <li><b>000730</b><span>Część identyfikująca podatnika.</span></li>
+        <li><b>7</b><span>Cyfra kontrolna.</span></li>
+      </ul>
+      <p>Cyfra kontrolna liczona jest modulo 11 z wagami 6, 5, 7, 2, 3, 4, 5, 6, 7. Jeśli reszta wynosi 10, numer jest nieprawidłowy: taki NIP nie może istnieć. Pierwsze trzy cyfry były kiedyś kodem urzędu skarbowego; dziś nie mają znaczenia praktycznego, bo NIP nie zmienia się przy przeprowadzce.</p>
+
+      <h2 id="numery">NIP, REGON i KRS</h2>
+      <p>Polska prowadzi trzy numery i każdy pochodzi z innego rejestru.</p>
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Polskie numery identyfikacyjne</caption>
+          <thead><tr><th scope="col">Numer</th><th scope="col">Format</th><th scope="col">Nadaje</th><th scope="col">Do czego</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">NIP</th><td>10 cyfr</td><td>Administracja skarbowa</td><td>Podatki, w tym VAT. Jedyny, który trafia na fakturę unijną</td></tr>
+            <tr><th scope="row">REGON</th><td>9 lub 14 cyfr</td><td>Główny Urząd Statystyczny</td><td>Statystyka publiczna; 14 cyfr dla jednostki lokalnej</td></tr>
+            <tr><th scope="row">KRS</th><td>10 cyfr</td><td>Sąd rejestrowy</td><td>Wpis do Krajowego Rejestru Sądowego. Jednoosobowa działalność go nie ma</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Żadnego z nich nie da się przeliczyć na inny. Numer VAT UE powstaje wyłącznie z NIP-u, a NIP ma każdy podatnik, także ten, który nie jest czynnym podatnikiem VAT.</p>
+
+      <h2 id="szukanie">Jak znaleźć firmę</h2>
+      <h3>Biała lista podatników VAT</h3>
+      <p>To najmocniejszy punkt Polski. Ministerstwo Finansów udostępnia <strong>bezpłatne, publiczne API</strong> wyszukiwania po NIP-ie, które zwraca nazwę, adres, status podatnika VAT, REGON, KRS oraz rachunki bankowe zgłoszone do urzędu. Odpowiedź jest jakości rejestrowej, na tyle wiarygodna, że warto ją przechowywać.</p>
+      <p>Rachunki bankowe mają wymiar prawny: przelew powyżej progu na rachunek spoza białej listy pozbawia nabywcę prawa do kosztu i naraża go na odpowiedzialność solidarną. Sprawdzanie białej listy nie jest więc formalnością.</p>
+      <p>Uwaga na pułapkę: <strong>publikowany plik zbiorczy zawiera wyłącznie skróty (hashe) par NIP-rachunek</strong>, bez nazw i adresów. Do zbudowania własnej bazy się nie nadaje; liczy się API.</p>
+      <h3>KRS i CEIDG</h3>
+      <p>KRS udostępnia bezpłatne API dla spółek, a CEIDG dla jednoosobowej działalności. Oba wyszukują po własnym numerze lub po NIP-ie.</p>
+      <h3>VIES</h3>
+      <p>Polska <strong>udostępnia nazwę i adres</strong> przez VIES, ale adres przychodzi jako jeden ciąg tekstu, bez rozdzielonego kodu pocztowego i miasta.</p>
+
+      <h2 id="pulapki">Polska specyfika</h2>
+      <ul>
+        <li><strong>Myślniki trzeba usunąć.</strong> NIP zapisuje się <code>525-000-73-07</code>, ale numer VAT UE nigdy nie zawiera myślników.</li>
+        <li><strong>Posiadanie NIP-u to nie to samo co status czynnego podatnika VAT.</strong> NIP ma każdy podatnik; do VIES trafiają tylko czynni podatnicy zarejestrowani do transakcji wewnątrzwspólnotowych.</li>
+        <li><strong>Rejestracja VAT-UE jest osobna.</strong> Czynny podatnik VAT bez zgłoszenia VAT-UE nie zwaliduje się w VIES.</li>
+        <li><strong>Plik zbiorczy białej listy jest bezużyteczny do wyszukiwania</strong>: zawiera same hashe.</li>
+        <li><strong>Adres z VIES jest jednym ciągiem</strong>, więc kodu pocztowego i miasta nie da się z niego pewnie wydzielić.</li>
+      </ul>
+
+      <!-- @include partials/country/pl.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Częste pytania</p>
+        <h2>Polski numer VAT w skrócie</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Ile cyfr ma polski numer VAT UE?</summary>
+          <p>Dziesięć po przedrostku <code>PL</code>, czyli dwanaście znaków łącznie.</p>
+        </details>
+        <details>
+          <summary>Czy NIP i numer VAT UE to to samo?</summary>
+          <p>Cyfry są te same. Numer VAT UE to NIP z przedrostkiem <code>PL</code>, ale istnieje dopiero po rejestracji do transakcji wewnątrzwspólnotowych.</p>
+        </details>
+        <details>
+          <summary>Czym różni się NIP od REGON i KRS?</summary>
+          <p>NIP nadaje administracja skarbowa i służy podatkom. REGON nadaje GUS do celów statystycznych. KRS to numer wpisu do rejestru sądowego, którego jednoosobowa działalność w ogóle nie ma.</p>
+        </details>
+        <details>
+          <summary>Co to jest biała lista podatników VAT?</summary>
+          <p>Publiczny wykaz Ministerstwa Finansów z bezpłatnym API. Po NIP-ie zwraca nazwę, adres, status VAT oraz zgłoszone rachunki bankowe, a przelew na rachunek spoza listy ma realne skutki podatkowe.</p>
+        </details>
+        <details>
+          <summary>Dlaczego VIES odrzuca czynnego podatnika VAT?</summary>
+          <p>Bo rejestracja do VAT i rejestracja VAT-UE to dwie różne rzeczy. Bez tej drugiej numer nie pojawi się w VIES.</p>
+        </details>
+      </div>
+
+      <h2>Numer VAT w innych krajach</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+            <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/" hreflang="en" lang="en">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/" hreflang="en" lang="en">Belgium</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Zaktualizowano 28 sierpnia 2026.</p>
+    </div>
+  </section>
+</main>

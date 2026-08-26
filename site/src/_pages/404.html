@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="{{lang}}">
+  <head>
+    <!-- @include partials/head.html -->
+  </head>
+  <body>
+    <!-- @include partials/header.html -->
+
+    <main id="main">
+      <section class="container error-page">
+        <p class="error-page__code">404</p>
+        <h1>{{t.notFound.h1}}</h1>
+        <p class="section__lead error-page__lead">{{t.notFound.lead}}</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="{{homeUrl}}">{{t.notFound.home}}</a>
+          <a class="btn btn--ghost" href="{{docsUrl}}">{{t.notFound.docs}}</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include partials/footer.html -->
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!-- @meta
+{
+  "title": "Japanese invoice registration number: format, 法人番号 and lookup",
+  "description": "T plus thirteen digits. What the qualified invoice issuer registry is, why being in it is the whole point, and how to find the company behind a number.",
+  "h1": "The Japanese invoice registration number",
+  "term": "Japanese qualified invoice issuer registration number",
+  "updated": "2026-09-08"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Japan · JP</p>
+        <h1>The Japanese invoice registration number</h1>
+        <p class="section__lead">Of every number on this site outside Europe, this is the one closest to a VAT number: being in the register <em>is</em> being registered for the consumption tax.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>JP</code> + <code>T</code> + 13 digits</p>
+        <p><strong>Example:</strong> <code>JPT1010001001359</code></p>
+        <p><strong>Issued by:</strong> the National Tax Agency (国税庁), on registration as a qualified invoice issuer.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>The registration number is the letter <code>T</code> followed by <strong>thirteen digits</strong>. For a company those thirteen digits are its <strong>法人番号</strong> (corporate number), the identifier every Japanese administration already knows it by; for an individual or an unincorporated association they are a number issued for this purpose.</p>
+      <ul class="breakdown">
+        <li><b>T</b><span>Fixed prefix. It is part of the number, not decoration.</span></li>
+        <li><b>1</b><span>Check digit, and it comes <em>first</em>, not last.</span></li>
+        <li><b>010001001359</b><span>The twelve digits it checks.</span></li>
+      </ul>
+      <p>The check is computed over those twelve digits: read right to left, odd positions count once and even positions twice, and the check digit is 9 minus that sum modulo 9. Like the ABN, it can be verified offline.</p>
+
+      <h2 id="invoice">Why the register exists</h2>
+      <p>Japan moved to a qualified invoice system (インボイス制度) in October 2023. Since then a business can only reclaim consumption tax on a purchase if the invoice carries the supplier's registration number and the supplier is a <strong>registered qualified invoice issuer</strong>.</p>
+      <p>That gives the register a property none of the European company registers has: <strong>presence in the file is the answer</strong>. A number that is not there is not a registered issuer, and an invoice quoting it will not support a deduction.</p>
+
+      <h2 id="find">Finding the company behind the number</h2>
+      <h3>The public register</h3>
+      <p>The NTA publishes the <strong>whole register every month</strong>, as of the end of the previous month, in CSV, XML and JSON, zipped and signed, with no account. Daily difference files cover the forty days between editions. It is free, complete, and keyed by exactly the number you hold.</p>
+      <h3>What is published, and what is not</h3>
+      <p>For a <strong>corporation</strong>: the name, the head office address, the registration date, and the cancellation or lapse date when there is one. For an <strong>individual</strong>: only what the person consented to publish, which is often nothing but the number and the dates. That is a privacy rule, not a gap in the data, and it is why a lookup on a sole trader's number may confirm the registration without naming anyone.</p>
+      <p>A Japanese address is published as a <strong>single string</strong>, with the prefecture and municipality given separately as codes and no postcode at all. There is no locality to split out, so {{siteName}} returns the address as it is written.</p>
+
+      <h2 id="pitfalls">Japan-specific pitfalls</h2>
+      <ul>
+        <li><strong>Keep the <code>T</code>.</strong> It is part of the registration number. The thirteen digits alone are the corporate number, which is a different thing.</li>
+        <li><strong>A lapse date is often in the future.</strong> 失効年月日 is the day a registration <em>will</em> end; a number carrying one is still valid until then.</li>
+        <li><strong>The register is a history, not a snapshot.</strong> One number can appear several times in the file, once per event. Only the row flagged as the latest is where the registration stands.</li>
+        <li><strong>Most individuals are anonymous.</strong> Publication of a personal name is opt-in.</li>
+        <li><strong>The corporate number is not the registration.</strong> Every Japanese company has a 法人番号; only registered issuers are in this file.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Japanese registration number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>What does the T in front of the number mean?</summary>
+          <p>It marks the number as an invoice registration number. It is part of the number and belongs on the invoice.</p>
+        </details>
+        <details>
+          <summary>Is the registration number the same as the corporate number?</summary>
+          <p>For a company, the thirteen digits are its 法人番号. The registration number is those digits with a <code>T</code> in front, and it only exists if the company registered as a qualified invoice issuer.</p>
+        </details>
+        <details>
+          <summary>Why can I not find a name for a valid number?</summary>
+          <p>Individual issuers publish their name only if they consented to it. The registration is real; the name is withheld.</p>
+        </details>
+        <details>
+          <summary>The number has a lapse date. Is it still valid?</summary>
+          <p>If the date is in the future, yes. A lapse date is set ahead of time and ends nothing until it arrives.</p>
+        </details>
+        <details>
+          <summary>Can I download the whole Japanese register for free?</summary>
+          <p>Yes. The National Tax Agency publishes the full register monthly and daily differences, in CSV, XML and JSON, with no account.</p>
+        </details>
+      </div>
+
+      <h2>Business numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/australia/">Australia</a></li>
+        <li><a href="/en/vat-number/singapore/">Singapore</a></li>
+        <li><a href="/en/vat-number/brazil/">Brazil</a></li>
+        <li><a href="/en/vat-number/france/">France</a></li>
+        <li><a href="/en/vat-number/germany/">Germany</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 8 September 2026.</p>
+    </div>
+  </section>
+</main>

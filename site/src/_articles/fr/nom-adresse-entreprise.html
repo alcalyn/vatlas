@@ -1,0 +1,280 @@
+<!-- @meta
+{
+  "title": "Retrouver le nom et l’adresse d’une entreprise à partir d’un numéro de TVA",
+  "description": "Ce qu’un numéro de TVA dit d’une société, pourquoi chaque pays publie cette donnée autrement, et trois façons d’atteindre la société derrière un numéro.",
+  "h1": "Retrouver le nom et l’adresse d’une entreprise à partir d’un numéro de TVA",
+  "updated": "2026-09-21"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Guide · Données société</p>
+        <h1>Retrouver le nom et l’adresse d’une entreprise à partir d’un numéro de TVA</h1>
+        <p class="section__lead">
+          Le numéro de TVA est le seul identifiant qu’un client professionnel a toujours sous la
+          main. En tirer une raison sociale et une adresse de siège est une question bien posée dont
+          la réponse change à chaque frontière.
+        </p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Ce qui revient :</strong> raison sociale, forme juridique, identifiant national, état, adresse du siège.</p>
+        <p><strong>Couverture :</strong> chaque pays servi par son registre officiel. Les <a href="{{countryHubUrl}}">pages pays</a> en donnent la liste à jour.</p>
+      </div>
+
+      <h2 id="reponse">La réponse courte</h2>
+      <p>
+        Un appel, une fiche société, quel que soit le pays du numéro.
+      </p>
+      <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-str">&quot;{{apiBase}}/v1/lookup/FR68005420120&quot;</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">&quot;Authorization: Bearer $VATLAS_KEY&quot;</span></code></pre>
+      </div>
+      <p class="endpoint"><span class="status--2xx">200 OK</span></p>
+      <div class="code" data-copy>
+<pre><code>{
+  <span class="tok-key">"data"</span><span class="tok-punc">:</span> {
+    <span class="tok-key">"vatNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"FR68005420120"</span>,
+    <span class="tok-key">"countryCode"</span><span class="tok-punc">:</span> <span class="tok-str">"FR"</span>,
+    <span class="tok-key">"nationalNumber"</span><span class="tok-punc">:</span> <span class="tok-str">"68005420120"</span>,
+    <span class="tok-key">"nationalId"</span><span class="tok-punc">:</span> <span class="tok-str">"005420120"</span>,
+    <span class="tok-key">"name"</span><span class="tok-punc">:</span> <span class="tok-str">"SOCIETE DES SUCRERIES DU MARQUENTERRE"</span>,
+    <span class="tok-key">"legalForm"</span><span class="tok-punc">:</span> <span class="tok-str">"Autre SA à conseil d'administration"</span>,
+    <span class="tok-key">"status"</span><span class="tok-punc">:</span> <span class="tok-str">"active"</span>,
+    <span class="tok-key">"address"</span><span class="tok-punc">:</span> {
+      <span class="tok-key">"line1"</span><span class="tok-punc">:</span> <span class="tok-str">"32 CHEMIN DES GARENNES"</span>,
+      <span class="tok-key">"line2"</span><span class="tok-punc">:</span> <span class="tok-null">null</span>,
+      <span class="tok-key">"postalCode"</span><span class="tok-punc">:</span> <span class="tok-str">"80120"</span>,
+      <span class="tok-key">"city"</span><span class="tok-punc">:</span> <span class="tok-str">"SAINT-QUENTIN-EN-TOURMONT"</span>,
+      <span class="tok-key">"country"</span><span class="tok-punc">:</span> <span class="tok-str">"FR"</span>
+    }
+  },
+  <span class="tok-key">"meta"</span><span class="tok-punc">:</span> {
+    <span class="tok-key">"source"</span><span class="tok-punc">:</span> <span class="tok-str">"SIRENE"</span>,
+    <span class="tok-key">"sourceDate"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-09-01"</span>,
+    <span class="tok-key">"sourceSince"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-06-01"</span>,
+    <span class="tok-key">"sourceUpdatedAt"</span><span class="tok-punc">:</span> <span class="tok-str">"2026-02-13T11:07:03.000Z"</span>
+  }
+}</code></pre>
+      </div>
+      <p>
+        L’adresse arrive déjà découpée en champs. <code>nationalId</code> est l’identifiant
+        national de l’entreprise, le SIREN ici et un numéro d’enregistrement ailleurs.
+        <code>meta</code> nomme le registre qui a répondu et la date à laquelle il l’a dit.
+      </p>
+
+      <h2 id="contenu">Ce que contient un numéro de TVA</h2>
+      <p>
+        Deux lettres pour le pays, puis un numéro national. Ce numéro est parfois l’immatriculation
+        de la société telle quelle, parfois il s’en déduit par une formule publiée, parfois il n’a
+        aucun rapport avec le registre du commerce.
+      </p>
+      <p>
+        Toutes les difficultés qui suivent découlent de là. Il existe une règle par pays, et
+        quelques-unes se résument à « c’est impossible ».
+      </p>
+      <div class="callout">
+        <p>
+          <strong>Un numéro bien formé n’est pas une société réelle.</strong> La plupart des pays
+          intègrent une clé de contrôle au numéro, ce qui permet de repérer une faute de frappe hors
+          ligne. Cette clé reste juste pour une société radiée depuis dix ans. Seul un registre peut
+          dire s’il y a quelqu’un derrière aujourd’hui.
+        </p>
+      </div>
+
+      <h2 id="sources">Un pays, une méthode</h2>
+      <ul>
+        <li>
+          <strong>Des fichiers ouverts.</strong> Certains pays publient tout leur répertoire des
+          entreprises : complet, gratuit, plusieurs gigaoctets par édition, les dénominations dans
+          un fichier et les adresses dans un autre. Pour répondre à une question, il faut d’abord
+          avoir chargé toutes les réponses, puis les tenir à jour.
+        </li>
+        <li>
+          <strong>Une API nationale.</strong> Certaines administrations fiscales exposent leur
+          propre service, chacun avec sa forme de requête, ses limitations de débit et sa manière de
+          dire « introuvable ». Une intégration par pays, sans rien de commun.
+        </li>
+        <li>
+          <strong>Rien du tout.</strong> Dans certains pays, aucun registre ne restitue la
+          société derrière un numéro de TVA. La couverture y vient de sources plus faibles, et se
+          lit comme une indication plutôt qu’une entrée de registre.
+        </li>
+      </ul>
+      <p>
+        <a href="{{countryHubUrl}}">Les pages pays</a> reprennent tout cela un pays à la fois.
+      </p>
+
+      <h2 id="forme">La forme de ce qui revient</h2>
+      <ul>
+        <li>
+          <strong>L’adresse est du texte libre.</strong> Code postal avant la ville dans la plus
+          grande partie de l’Europe et après elle en Irlande et à Malte, province suffixée en
+          Italie, numéro de voie mêlé au libellé aux Pays-Bas. Découper cela de façon fiable relève
+          d’un analyseur, pas d’une expression régulière.
+        </li>
+        <li>
+          <strong>La forme juridique n’est pas harmonisée.</strong> Elle revient dans la langue et
+          le vocabulaire du pays, sans nomenclature européenne sur laquelle la projeter.
+        </li>
+        <li>
+          <strong>Des champs manquent, légitimement.</strong> Certains registres ne publient pas de
+          ville, seulement un code de territoire ; d’autres ne publient pas de rue. Un champ vide
+          est le plus souvent la réponse du registre.
+        </li>
+        <li>
+          <strong>La fraîcheur varie d’un ordre de grandeur.</strong> Tel registre republie chaque
+          jour, tel autre chaque mois, tel autre répond en direct. Une fiche sans date ne permet pas
+          de raisonner.
+        </li>
+      </ul>
+
+      <h2 id="sansnom">Ce que « pas de nom » veut dire</h2>
+      <p>
+        Certains États membres publient si un numéro est enregistré et rien d’autre. Là, un nom vide
+        est la réponse complète et correcte, et aucun service ne peut faire mieux. Quiconque promet
+        une raison sociale pour tous les pays d’Europe devine.
+      </p>
+      <p>
+        Le cas vide est un résultat normal, dans un ensemble de pays prévisible. Concevez pour lui
+        dès le départ.
+      </p>
+
+      <h2 id="licences">Consulter un registre n’est pas le redistribuer</h2>
+      <p>
+        Les registres publics sont publics au sens où l’on peut y consulter des informations. En
+        republier le contenu est une autre autorisation, et vendre une base dérivée permanente en
+        est une troisième. Les conditions diffèrent selon les pays.
+      </p>
+      <p>
+        Si vous envisagez d’intégrer vous-même des registres nationaux, lisez les conditions de
+        chaque source avant que la donnée n’atteigne un client. Aucune difficulté technique, des
+        conséquences réelles.
+      </p>
+
+      <h2 id="voies">Trois façons d’y arriver</h2>
+      <div class="table-wrap section--stack">
+        <table class="table">
+          <caption class="sr-only">Trois approches pour résoudre un numéro de TVA vers une société</caption>
+          <thead>
+            <tr><th scope="col">Approche</th><th scope="col">Adaptée à</th><th scope="col">Ce qu’elle coûte</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">À la main, un numéro à la fois</th>
+              <td>Quelques vérifications par mois</td>
+              <td>Du temps ; non reproductible, rien de conservé</td>
+            </tr>
+            <tr>
+              <th scope="row">Intégrer les registres soi-même</th>
+              <td>Un ou deux pays, gros volume, contrôle total</td>
+              <td>Une intégration par pays, le stockage et le rafraîchissement des fichiers, un analyseur d’adresses, et la lecture de licences ci-dessus</td>
+            </tr>
+            <tr>
+              <th scope="row">Une API pour tous les pays</th>
+              <td>Vendre au-delà des frontières</td>
+              <td>Un prix à l’appel, et une dépendance dont on doit pouvoir sortir</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        {{siteName}} est la troisième. Un point d’entrée et une enveloppe pour tous les pays, la
+        saisie normalisée quelle que soit la ponctuation, l’adresse déjà découpée en champs, et
+        chaque réponse portant le registre d’où elle vient et sa date. L’offre gratuite est de
+        {{quotaFree}} appels par mois, de quoi l’essayer sur votre propre liste ;
+        <a href="{{pricingUrl}}">Pro est à {{pricePro}} €</a> pour {{quotaPro}}.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>Où sont les limites.</strong> Certaines administrations ne divulguent aucun
+          nom, et aucune API n’y changera rien. Quand une réponse repose sur plus faible qu’un
+          registre officiel, elle le dit dans <code>status</code> et dans <code>meta</code> plutôt
+          que de faire semblant. La couverture n’est pas le monde entier : les
+          <a href="{{countryHubUrl}}">pages pays</a> disent ce qu’elle est aujourd’hui.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2>Nom et adresse depuis un numéro de TVA, en bref</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Peut-on trouver l’adresse d’une société à partir de son numéro de TVA ?</summary>
+          <p>
+            Dans la plupart des pays, oui. L’adresse du siège est détenue par un registre officiel
+            que le numéro de TVA permet d’atteindre, directement ou via l’identifiant national. Dans
+            quelques États membres, seule la validité est publiée, et l’adresse n’y est pas
+            disponible.
+          </p>
+        </details>
+        <details>
+          <summary>Existe-t-il une base européenne unique des entreprises ?</summary>
+          <p>
+            Non. Il existe un registre national par pays, chacun avec son périmètre, son format,
+            son rythme de publication et sa licence. Tout ce qui ressemble à une base unique les a
+            intégrés un par un.
+          </p>
+        </details>
+        <details>
+          <summary>Le numéro de TVA est-il le même que le numéro d’immatriculation ?</summary>
+          <p>
+            Parfois. Dans certains pays ce sont les mêmes chiffres, dans d’autres le numéro de TVA se
+            déduit du numéro d’immatriculation par une formule publiée, dans d’autres ce sont deux
+            identifiants sans rapport attribués par deux administrations différentes.
+            <a href="{{countryHubUrl}}">Les pages pays</a> disent lequel est lequel.
+          </p>
+        </details>
+        <details>
+          <summary>Pourquoi le nom revient-il vide pour certains numéros ?</summary>
+          <p>
+            Parce que l’administration de ce pays a choisi de divulguer si le numéro est enregistré,
+            et rien de plus. C’est la réponse correcte pour ce pays.
+          </p>
+        </details>
+        <details>
+          <summary>La donnée est-elle gratuite ?</summary>
+          <p>
+            Les registres sous-jacents sont largement gratuits à consulter, et certains publient des
+            fichiers ouverts. Ce qui coûte, c’est de les atteindre de façon fiable : une intégration
+            par pays, des gigaoctets à charger et à rafraîchir, un analyseur d’adresses, et des
+            conditions de licence à lire avant que tout cela n’atteigne un client.
+          </p>
+        </details>
+        <details>
+          <summary>Quelle est la fraîcheur de la réponse ?</summary>
+          <p>
+            Cela dépend du registre : quotidienne pour certains, mensuelle pour d’autres, en direct
+            pour ceux qui exposent une API. Chaque réponse que nous rendons porte la source qui l’a
+            donnée et la date à laquelle elle l’a dit, plutôt qu’un fait sans date.
+          </p>
+        </details>
+        <details>
+          <summary>Peut-on stocker les résultats ?</summary>
+          <p>
+            Pour ses propres besoins, une facture, un dossier client ou une piste d’audit, c’est
+            ordinaire. Constituer et redistribuer une base dérivée d’un registre national est régi
+            par la licence de ce registre, et mérite d’être lu avant de commencer.
+          </p>
+        </details>
+      </div>
+
+      <h2>À lire ensuite</h2>
+      <ul class="otherlinks">
+        <li><a href="/fr/guides/pre-remplir-formulaire-societe-numero-tva/">Pré-remplir un formulaire société</a></li>
+        <li><a href="/fr/guides/enrichir-un-crm-avec-les-numeros-tva/">Enrichir un CRM avec les numéros de TVA</a></li>
+        <li><a href="{{countryHubUrl}}">Le numéro de TVA, pays par pays</a></li>
+        <li><a href="{{docsUrl}}">Documentation de l’API</a></li>
+        <li><a href="{{pricingUrl}}">Tarifs</a></li>
+      </ul>
+      <p class="updated">Mis à jour le 21 septembre 2026.</p>
+    </div>
+  </section>
+</main>

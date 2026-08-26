@@ -1,0 +1,72 @@
+# GET /v1/demo/lookup/:vatNumber - the public demo, with the same three calls as the metered API.
+#
+# No key, no account, nothing audited. Same envelopes as /v1/lookup. Used by the "try it" box on
+# the website, which is why it answers `Access-Control-Allow-Origin: *` and exposes its
+# `X-RateLimit-*` headers.
+#
+#   /v1/demo/lookup/:n                  plain lookup
+#   /v1/demo/lookup/:n?prefer=proof     lookup with a proof
+#   /v1/demo/lookup-all/:n              every source
+#
+# Five calls per IP per week, shared between the three (`rate_limit_site_lookup`). Running this
+# file twice in a week ends with `429 DEMO_LIMIT_REACHED`, which the assertions accept.
+#
+# A malformed number costs nothing.
+#
+# Run with: npx httpyac send http/lookup-demo.http --all
+
+@host = http://localhost:3000
+@vat = FR95884831538
+
+###
+
+# @name The demo lookup, no credential of any kind
+# An answer without signing up, in the same envelope as the paid endpoint.
+GET {{host}}/v1/demo/lookup/{{vat}}
+
+?? status == 200
+?? body data.vatNumber == FR95884831538
+?? js response.parsedBody.meta.source.length > 0
+# Same rate limit headers as the metered endpoint.
+?? js Number(response.headers['x-ratelimit-limit']) == 5
+?? js Number(response.headers['x-ratelimit-remaining']) > -1
+# Lets the browser read the remaining count.
+?? js response.headers['access-control-allow-origin'] == *
+
+###
+
+# @name The same number, asked for a proof
+# `?prefer=proof` only answers from VIES. A 503 PROOF_UNAVAILABLE is possible and not billed.
+GET {{host}}/v1/demo/lookup/{{vat}}?prefer=proof
+
+# `indexOf(...) > -1` because httpyac splits assertions on `==`.
+?? js [200, 503].indexOf(response.statusCode) > -1
+?? js response.statusCode !== 200 ? true : ['vies_consultation_number'].indexOf(response.parsedBody.meta.proof.type) > -1
+
+###
+
+# @name The complete report, one of the five like any other call
+# 200 as soon as the number parses, even if every source failed.
+GET {{host}}/v1/demo/lookup-all/{{vat}}
+
+?? js [200, 429].indexOf(response.statusCode) > -1
+?? js response.statusCode != 200 || response.parsedBody.data.sources.length > 0
+
+###
+
+# @name A malformed number never reaches a source, and never spends a unit
+# Not billed. `reason` says which rule failed.
+GET {{host}}/v1/demo/lookup/FR00000000000
+
+?? status == 400
+?? body error.code == INVALID_VAT_FORMAT
+?? body error.reason == BAD_CHECKSUM
+
+###
+
+# @name An unknown country prefix is rejected before anything is asked
+GET {{host}}/v1/demo/lookup/XX123456789
+
+?? status == 400
+?? body error.code == INVALID_VAT_FORMAT
+?? body error.reason == UNKNOWN_COUNTRY

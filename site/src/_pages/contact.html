@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="{{lang}}">
+  <head>
+    <!-- @include partials/head.html -->
+  </head>
+  <body>
+    <!-- @include partials/header.html -->
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <h1>{{t.contact.h1}}</h1>
+            <p class="section__lead">{{t.contact.lead}}</p>
+          </div>
+
+          <div class="mailcard">
+            <p class="muted">{{t.contact.discordTo}}</p>
+            <a class="mailcard__address" href="{{discordUrl}}" rel="noopener">{{discordHandle}}</a>
+            <p class="muted">{{t.contact.discordWhy}}</p>
+            <div class="mailcard__actions">
+              <a class="btn btn--primary" href="{{discordUrl}}" rel="noopener">
+                {{t.contact.joinDiscord}}
+              </a>
+            </div>
+          </div>
+
+          <div class="mailcard mailcard--soft section--stack">
+            <p class="muted">{{t.contact.writeTo}}</p>
+            <a class="mailcard__address" href="mailto:{{email}}">{{email}}</a>
+            <div class="mailcard__actions">
+              <a class="btn btn--primary" href="mailto:{{email}}?subject={{mailAccess}}">
+                {{t.contact.openMail}}
+              </a>
+              <button
+                class="btn btn--ghost"
+                type="button"
+                data-copy-text="{{email}}"
+                data-copy-feedback="[data-copy-feedback]"
+                data-copy-ok="{{t.contact.copied}}"
+                data-copy-ko="{{t.contact.copyFailed}}"
+              >
+                {{t.contact.copyAddress}}
+              </button>
+            </div>
+            <span class="copy-feedback" data-copy-feedback role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section--tight">
+        <div class="container">
+          <div class="grid grid--3">
+            <article class="card">
+              <h3>{{t.contact.c1Title}}</h3>
+              <p>{{t.contact.c1Text}}</p>
+              <p class="card__link">
+                <a href="{{consoleUrl}}">{{t.contact.c1Link}}</a>
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>{{t.contact.c2Title}}</h3>
+              <p>{{t.contact.c2Text}}</p>
+              <p class="card__link">
+                <a href="{{discordUrl}}" rel="noopener">{{t.contact.c2Link}}</a>
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>{{t.contact.c3Title}}</h3>
+              <p>{{t.contact.c3Text}}</p>
+              <p class="card__link">
+                <a href="mailto:{{email}}?subject={{mailVolume}}">{{t.contact.c3Link}}</a>
+              </p>
+            </article>
+          </div>
+
+          <div class="callout section--stack">
+            <p><strong>{{t.contact.calloutTitle}}</strong> {{t.contact.calloutText}}</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include partials/cta.html -->
+    <!-- @include partials/footer.html -->
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+src/generated/
+.env
+.cache/
+*.log
+docs/
+site/public/data/stats.json

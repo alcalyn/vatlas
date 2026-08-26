@@ -1,0 +1,47 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{{title}}</title>
+<meta name="description" content="{{description}}" />
+<meta name="robots" content="{{robots}}" />
+<meta name="author" content="{{siteName}}" />
+<meta name="theme-color" content="{{themeColorLight}}" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="{{themeColor}}" media="(prefers-color-scheme: dark)" />
+<link rel="canonical" href="{{canonical}}" />
+{{alternates}}
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+
+<meta property="og:type" content="{{ogType}}" />
+<meta property="og:site_name" content="{{siteName}}" />
+<meta property="og:title" content="{{title}}" />
+<meta property="og:description" content="{{description}}" />
+<meta property="og:url" content="{{canonical}}" />
+<meta property="og:image" content="{{ogImage}}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="{{siteName}} · {{t.meta.tagline}}" />
+<meta property="og:locale" content="{{ogLocale}}" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{title}}" />
+<meta name="twitter:description" content="{{description}}" />
+<meta name="twitter:image" content="{{ogImage}}" />
+
+<meta name="console-origin" content="{{consoleOrigin}}" />
+<script>
+  // Applied before first paint: no flash of the wrong theme.
+  //
+  // `?theme=` wins and is stored: it means the visitor arrived from the console, which is a
+  // separate origin and therefore a separate localStorage. The link is the only carrier
+  // there is, exactly as it is for the language.
+  try {
+    var url = new URLSearchParams(location.search).get('theme')
+    var stored = url === 'light' || url === 'dark' ? url : localStorage.getItem('vatlas-theme')
+    if (stored === 'light' || stored === 'dark') {
+      document.documentElement.dataset.theme = stored
+      localStorage.setItem('vatlas-theme', stored)
+    }
+  } catch (e) {}
+</script>
+<link rel="stylesheet" href="/styles/main.css" />
+{{jsonld}}

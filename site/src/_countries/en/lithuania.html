@@ -1,0 +1,101 @@
+<!-- @meta
+{
+  "title": "Lithuanian VAT number: format, company code and lookup",
+  "description": "LT plus nine or twelve digits. Why the VAT code does not always match the company code, and how to find the company behind it.",
+  "h1": "The Lithuanian VAT number",
+  "term": "Lithuanian VAT number",
+  "updated": "2026-08-28"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Lithuania · LT</p>
+        <h1>The Lithuanian VAT number</h1>
+        <p class="section__lead">Nine digits, or twelve, and it is the second case that breaks the assumption that a Lithuanian VAT number is just the company code with a prefix.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>LT</code> + 9 or 12 digits</p>
+        <p><strong>Example:</strong> <code>LT100005517118</code></p>
+        <p><strong>Issued by:</strong> the State Tax Inspectorate (VMI), on VAT registration.</p>
+      </div>
+
+      <h2 id="format">The format</h2>
+      <p>A Lithuanian VAT number carries <strong>nine or twelve digits</strong>, and both are valid.</p>
+      <ul class="breakdown">
+        <li><b>LT + 9 digits</b><span>Usually matches the company code.</span></li>
+        <li><b>LT + 12 digits</b><span>Natural persons and some legal persons.</span></li>
+      </ul>
+      <p>The last digit is a check digit in both cases, computed modulus 11 with one set of weights and, when the remainder is 10, with a second set. In a twelve-digit code the second-to-last digit is always <code>1</code>.</p>
+
+      <h2 id="codes">Company code and VAT code</h2>
+      <p>The <strong>company code</strong> is nine digits, assigned by the Centre of Registers when the company is incorporated. It does not change for the life of the company.</p>
+      <p>The <strong>VAT code</strong> is issued separately, only on VAT registration. In many cases its nine digits match the company code, but <strong>not always</strong>: the company in the example below has a twelve-digit VAT code despite being a legal person.</p>
+      <div class="callout"><p><strong>That is why prefixing is not enough.</strong> The assumption "VAT code = LT + company code" works often and fails without warning. Linking the two reliably requires VMI’s register of VAT payers.</p></div>
+
+      <h2 id="find">Finding the company</h2>
+      <h3>Centre of Registers</h3>
+      <p><a href="https://www.registrucentras.lt/" rel="noopener">Registrų centras</a> keeps the register of legal entities: name, code, legal form, seat, status. It is searched by name or company code, <strong>not by VAT code</strong>.</p>
+      <h3>The VMI register of VAT payers</h3>
+      <p>The tax inspectorate publishes VAT payer data, and that is what links a VAT code to a company code. Only joining both sources makes a lookup by VAT number possible; neither does it alone.</p>
+      <h3>VIES</h3>
+      <p>Lithuania <strong>discloses name and address</strong>. The address arrives as one comma-separated line in which the municipality is repeated (<code>Vilniaus m., Vilniaus m. sav.</code>), so splitting it automatically is unreliable.</p>
+
+      <h2 id="pitfalls">Lithuania-specific pitfalls</h2>
+      <ul>
+        <li><strong>Nine digits is not the only shape.</strong> Twelve-digit codes are valid, including for legal persons.</li>
+        <li><strong>The company code is not always the VAT code.</strong> "<code>LT</code> + company code" works often and sometimes yields a number that does not exist.</li>
+        <li><strong>The Centre of Registers is keyed by company code</strong>, so a VAT number gets you nowhere directly.</li>
+        <li><strong>In a twelve-digit code the second-to-last digit is always 1</strong>, a handy quick check.</li>
+        <li><strong>The address repeats the municipality</strong>, and often carries no postcode at all.</li>
+      </ul>
+
+      <!-- @include partials/country/en.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>The Lithuanian VAT number in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How many digits does a Lithuanian VAT number have?</summary>
+          <p>Nine or twelve after the <code>LT</code> prefix. Both are valid.</p>
+        </details>
+        <details>
+          <summary>Are the company code and the VAT code the same?</summary>
+          <p>Often, but not always. Some legal persons have a twelve-digit VAT code, so simply prefixing the company code with <code>LT</code> is not enough.</p>
+        </details>
+        <details>
+          <summary>How do I find a company from a Lithuanian VAT number?</summary>
+          <p>You need the VMI VAT payer data, which links the VAT code to the company code, and then the Centre of Registers for the company itself.</p>
+        </details>
+        <details>
+          <summary>Why does VIES reject a trading company?</summary>
+          <p>Because it is not registered for VAT. It has a company code but no VAT code.</p>
+        </details>
+        <details>
+          <summary>What is a twelve-digit code?</summary>
+          <p>A different code range, used for natural persons and some legal persons. Its second-to-last digit is always 1.</p>
+        </details>
+      </div>
+
+      <h2>VAT numbers in other countries</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/">France</a></li>
+            <li><a href="/en/vat-number/germany/">Germany</a></li>
+            <li><a href="/en/vat-number/italy/">Italy</a></li>
+            <li><a href="/en/vat-number/spain/">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/">Belgium</a></li>
+        <li><a href="/en/vat-number/">All countries</a></li>
+      </ul>
+      <p class="updated">Last updated 28 August 2026.</p>
+    </div>
+  </section>
+</main>

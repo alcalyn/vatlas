@@ -1,0 +1,1362 @@
+{
+  "generated": "npm run country-examples - generated, do not edit. Last run 2026-09-17T09:38:58.992Z",
+  "endpoint": "http://localhost:3000/v1/lookup/{vatNumber}",
+  "countries": {
+    "AT": {
+      "vat": "ATU14189108",
+      "fetchedAt": "2026-09-15T08:46:04.627Z",
+      "response": {
+        "data": {
+          "vatNumber": "ATU14189108",
+          "countryCode": "AT",
+          "nationalNumber": "U14189108",
+          "nationalId": null,
+          "name": "OMV Aktiengesellschaft",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "Trabrennstraße 6-8",
+            "line2": "AT-1020 Wien",
+            "postalCode": null,
+            "city": null,
+            "country": "AT"
+          }
+        },
+        "meta": {
+          "source": "VIES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null,
+          "proof": {
+            "type": "vies_consultation_number",
+            "value": "109d4351-3523-45b1-a00e-af9a39c824a8"
+          }
+        }
+      }
+    },
+    "AU": {
+      "vat": "AU11000000948",
+      "fetchedAt": "2026-09-15T08:46:05.075Z",
+      "response": {
+        "data": {
+          "vatNumber": "AU11000000948",
+          "countryCode": "AU",
+          "nationalNumber": "11000000948",
+          "nationalId": "000000948",
+          "name": "QBE INSURANCE (INTERNATIONAL) LTD",
+          "legalForm": "Australian Public Company",
+          "status": "active",
+          "address": {
+            "line1": null,
+            "line2": null,
+            "postalCode": "2000",
+            "city": "NSW",
+            "country": "AU"
+          }
+        },
+        "meta": {
+          "source": "ABR",
+          "sourceDate": "2026-09-08",
+          "sourceSince": "2026-09-08",
+          "sourceUpdatedAt": "2018-02-16T00:00:00.000Z"
+        }
+      }
+    },
+    "BE": {
+      "vat": "BE0325777171",
+      "fetchedAt": "2026-09-15T08:46:05.501Z",
+      "response": {
+        "data": {
+          "vatNumber": "BE0325777171",
+          "countryCode": "BE",
+          "nationalNumber": "0325777171",
+          "nationalId": "0325777171",
+          "name": "Patrimoine de l'Université de Liège",
+          "legalForm": "Etablissement public",
+          "status": "active",
+          "address": {
+            "line1": "Place du Vingt-Août 7",
+            "line2": null,
+            "postalCode": "4000",
+            "city": "Liège",
+            "country": "BE"
+          }
+        },
+        "meta": {
+          "source": "KBO",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-08-06",
+          "sourceUpdatedAt": "1920-07-05T00:00:00.000Z"
+        }
+      }
+    },
+    "BG": {
+      "vat": "BG000662064",
+      "fetchedAt": "2026-09-15T08:46:07.584Z",
+      "response": {
+        "data": {
+          "vatNumber": "BG000662064",
+          "countryCode": "BG",
+          "nationalNumber": "000662064",
+          "nationalId": null,
+          "name": "И-Т ПО МЕТАЛОЗНАНИЕ, СЪОРЪЖЕНИЯ И ТЕХНОЛОГИИ С ЦЕНТЪР ПО ХИДРО- И АЕРОДИНАМИКА \"АКАД. А.БАЛЕВСКИ\" ПРИ БАН",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "бул. ШИПЧЕНСКИ ПРОХОД 67",
+            "line2": null,
+            "postalCode": "1574",
+            "city": "СОФИЯ",
+            "country": "BG"
+          }
+        },
+        "meta": {
+          "source": "VIES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null,
+          "proof": {
+            "type": "vies_consultation_number",
+            "value": "170f81c3-ed47-4183-bb9c-c2107fa566c5"
+          }
+        }
+      }
+    },
+    "BR": {
+      "vat": "BR00000000000191",
+      "fetchedAt": "2026-09-15T08:46:08.017Z",
+      "response": {
+        "data": {
+          "vatNumber": "BR00000000000191",
+          "countryCode": "BR",
+          "nationalNumber": "00000000000191",
+          "nationalId": "00000000000191",
+          "name": "BANCO DO BRASIL SA",
+          "legalForm": "Sociedade de Economia Mista",
+          "status": "active",
+          "address": {
+            "line1": "QUADRA SAUN QUADRA 5 BLOCO B TORRE I, II, III, SN",
+            "line2": "ANDAR T I SL S101 A S1602       T II SL C101 A C1602      TIII SL N101 A N1602, ASA NORTE",
+            "postalCode": "70040912",
+            "city": "BRASILIA - DF",
+            "country": "BR"
+          }
+        },
+        "meta": {
+          "source": "CNPJ",
+          "sourceDate": "2026-08-01",
+          "sourceSince": "2023-06-01",
+          "sourceUpdatedAt": "2005-11-03T00:00:00.000Z"
+        }
+      }
+    },
+    "CA": {
+      "vat": "CA100623040",
+      "fetchedAt": "2026-09-15T11:55:40.741Z",
+      "response": {
+        "data": {
+          "vatNumber": "CA100623040",
+          "countryCode": "CA",
+          "nationalNumber": "100623040",
+          "nationalId": "328341",
+          "name": "BRAND FELT OF CANADA LIMITED",
+          "legalForm": "Canada Business Corporations Act",
+          "status": "active",
+          "address": {
+            "line1": "2559  WHARTON GLEN AVENUE",
+            "line2": null,
+            "postalCode": "L4X 2A8",
+            "city": "MISSISSAUGA, ON",
+            "country": "CA"
+          }
+        },
+        "meta": {
+          "source": "CORPCAN",
+          "sourceDate": "2026-09-09",
+          "sourceSince": "2026-09-09",
+          "sourceUpdatedAt": "2019-05-29T10:30:47.000Z"
+        }
+      }
+    },
+    "CH": {
+      "vat": "CH105805313",
+      "fetchedAt": "2026-09-15T15:45:40.401Z",
+      "response": {
+        "data": {
+          "vatNumber": "CH105805313",
+          "countryCode": "CH",
+          "nationalNumber": "105805313",
+          "nationalId": "105805313",
+          "name": "Schneider Korbwaren AG",
+          "legalForm": "Aktiengesellschaft",
+          "status": "active",
+          "address": {
+            "line1": "Bahnhofstrasse 5",
+            "line2": null,
+            "postalCode": "9464",
+            "city": "Rüthi (Rheintal)",
+            "country": "CH"
+          }
+        },
+        "meta": {
+          "source": "UID",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null
+        }
+      }
+    },
+    "CR": {
+      "vat": "CR3101000109",
+      "fetchedAt": "2026-09-15T12:41:00.592Z",
+      "response": {
+        "data": {
+          "vatNumber": "CR3101000109",
+          "countryCode": "CR",
+          "nationalNumber": "3101000109",
+          "nationalId": "3101000109",
+          "name": "COMP BELLA VISTA",
+          "legalForm": "Sociedad Anónima",
+          "status": "active",
+          "address": {
+            "line1": null,
+            "line2": null,
+            "postalCode": null,
+            "city": null,
+            "country": "CR"
+          }
+        },
+        "meta": {
+          "source": "HACIENDA",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null
+        }
+      }
+    },
+    "CY": {
+      "vat": "CY10083353J",
+      "fetchedAt": "2026-09-15T08:46:14.286Z",
+      "response": {
+        "data": {
+          "vatNumber": "CY10083353J",
+          "countryCode": "CY",
+          "nationalNumber": "10083353J",
+          "nationalId": null,
+          "name": "EUROPEAN UNIVERSITY-CYPRUS LTD",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "ΔΙΟΓΕΝΟΥΣ 6",
+            "line2": null,
+            "postalCode": "2404",
+            "city": "ΕΓΚΩΜΗ ΛΕΥΚΩΣΙΑΣ",
+            "country": "CY"
+          }
+        },
+        "meta": {
+          "source": "VIES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null,
+          "proof": {
+            "type": "vies_consultation_number",
+            "value": "2c823f44-719f-41db-99f9-48547a72d71c"
+          }
+        }
+      }
+    },
+    "CZ": {
+      "vat": "CZ00177041",
+      "fetchedAt": "2026-09-15T08:46:15.563Z",
+      "response": {
+        "data": {
+          "vatNumber": "CZ00177041",
+          "countryCode": "CZ",
+          "nationalNumber": "00177041",
+          "nationalId": "00177041",
+          "name": "Škoda Auto a.s.",
+          "legalForm": "Akciová společnost (a.s.)",
+          "status": "active",
+          "address": {
+            "line1": "tř. Václava Klementa 869",
+            "line2": "Mladá Boleslav II",
+            "postalCode": "293 01",
+            "city": "Mladá Boleslav",
+            "country": "CZ"
+          }
+        },
+        "meta": {
+          "source": "ARES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": "2026-09-03T00:00:00.000Z"
+        }
+      }
+    },
+    "DE": {
+      "vat": "DE122624631",
+      "fetchedAt": "2026-09-15T08:46:15.994Z",
+      "response": {
+        "data": {
+          "vatNumber": "DE122624631",
+          "countryCode": "DE",
+          "nationalNumber": "122624631",
+          "nationalId": null,
+          "name": "Forschungszentrum Jülich GmbH",
+          "legalForm": null,
+          "status": "unknown",
+          "address": {
+            "line1": "Jülich",
+            "line2": null,
+            "postalCode": null,
+            "city": null,
+            "country": "DE"
+          }
+        },
+        "meta": {
+          "source": "PEPPOL",
+          "sourceDate": "2026-09-14",
+          "sourceSince": "2026-09-06",
+          "sourceUpdatedAt": "2020-03-20T00:00:00.000Z"
+        }
+      }
+    },
+    "DK": {
+      "vat": "DK28118201",
+      "fetchedAt": "2026-09-15T08:46:16.421Z",
+      "response": {
+        "data": {
+          "vatNumber": "DK28118201",
+          "countryCode": "DK",
+          "nationalNumber": "28118201",
+          "nationalId": "28118201",
+          "name": "VESTAS MEDITERRANEAN A/S",
+          "legalForm": "Aktieselskab",
+          "status": "active",
+          "address": {
+            "line1": "Hedeager 42",
+            "line2": null,
+            "postalCode": "8200",
+            "city": "Aarhus N",
+            "country": "DK"
+          }
+        },
+        "meta": {
+          "source": "CVR",
+          "sourceDate": "2026-09-14",
+          "sourceSince": "2026-09-14",
+          "sourceUpdatedAt": "2026-09-07T07:35:55.000Z"
+        }
+      }
+    },
+    "EC": {
+      "vat": "EC1790016919001",
+      "fetchedAt": "2026-09-15T15:49:55.968Z",
+      "response": {
+        "data": {
+          "vatNumber": "EC1790016919001",
+          "countryCode": "EC",
+          "nationalNumber": "1790016919001",
+          "nationalId": "1790016919001",
+          "name": "CORPORACION FAVORITA C.A.",
+          "legalForm": "SOCIEDAD",
+          "status": "active",
+          "address": {
+            "line1": "AV. GENERAL ENRIQUEZ S/N",
+            "line2": "COTOGCHOA",
+            "postalCode": null,
+            "city": "RUMIÑAHUI",
+            "country": "EC"
+          }
+        },
+        "meta": {
+          "source": "SRI",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": "2026-09-10T14:11:00.000Z"
+        }
+      }
+    },
+    "EE": {
+      "vat": "EE100031827",
+      "fetchedAt": "2026-09-15T08:46:16.851Z",
+      "response": {
+        "data": {
+          "vatNumber": "EE100031827",
+          "countryCode": "EE",
+          "nationalNumber": "100031827",
+          "nationalId": "10019242",
+          "name": "aktsiaselts HALS TRADING - T",
+          "legalForm": "Aktsiaselts",
+          "status": "active",
+          "address": {
+            "line1": "Tartu maakond, Tartu linn, Tartu linn, Sepa tn 19",
+            "line2": null,
+            "postalCode": "50113",
+            "city": "Tartu linn, Tartu linn, Tartu maakond",
+            "country": "EE"
+          }
+        },
+        "meta": {
+          "source": "RIK",
+          "sourceDate": "2026-09-14",
+          "sourceSince": "2026-09-06",
+          "sourceUpdatedAt": "1996-03-29T00:00:00.000Z"
+        }
+      }
+    },
+    "EL": {
+      "vat": "EL090101655",
+      "fetchedAt": "2026-09-15T08:46:18.315Z",
+      "response": {
+        "data": {
+          "vatNumber": "EL090101655",
+          "countryCode": "EL",
+          "nationalNumber": "090101655",
+          "nationalId": null,
+          "name": "ΙΔΡΥΜΑ ΤΕΧΝΟΛΟΓΙΑΣ ΕΡΕΥΝΑΣ",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "Ν ΠΛΑΣΤΗΡΑ ΒΑΣΙΛΙΚΑ ΒΟΥΤΩΝ 100",
+            "line2": null,
+            "postalCode": "70013",
+            "city": "ΑΓ ΜΥΡΩΝΑΣ",
+            "country": "EL"
+          }
+        },
+        "meta": {
+          "source": "VIES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null,
+          "proof": {
+            "type": "vies_consultation_number",
+            "value": "WAPIAAAAaCkPtnNK"
+          }
+        }
+      }
+    },
+    "ES": {
+      "vat": "ESA78374725",
+      "fetchedAt": "2026-09-15T08:56:16.400Z",
+      "response": {
+        "data": {
+          "vatNumber": "ESA78374725",
+          "countryCode": "ES",
+          "nationalNumber": "A78374725",
+          "nationalId": null,
+          "name": null,
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": null,
+            "line2": null,
+            "postalCode": null,
+            "city": null,
+            "country": "ES"
+          }
+        },
+        "meta": {
+          "source": "VIES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null,
+          "proof": {
+            "type": "vies_consultation_number",
+            "value": "ae3f0768-b72a-4056-b376-06037cfa7397"
+          }
+        }
+      }
+    },
+    "FI": {
+      "vat": "FI04805519",
+      "fetchedAt": "2026-09-15T08:46:22.246Z",
+      "response": {
+        "data": {
+          "vatNumber": "FI04805519",
+          "countryCode": "FI",
+          "nationalNumber": "04805519",
+          "nationalId": "0480551-9",
+          "name": "Conimex Oy",
+          "legalForm": "Limited company",
+          "status": "active",
+          "address": {
+            "line1": "Kruunuvuorenkatu 9",
+            "line2": "c/o Conimex Oy",
+            "postalCode": "00160",
+            "city": "HELSINKI",
+            "country": "FI"
+          }
+        },
+        "meta": {
+          "source": "PRH",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-06",
+          "sourceUpdatedAt": "1981-09-24T00:00:00.000Z"
+        }
+      }
+    },
+    "FR": {
+      "vat": "FR00990225757",
+      "fetchedAt": "2026-09-15T08:46:22.673Z",
+      "response": {
+        "data": {
+          "vatNumber": "FR00990225757",
+          "countryCode": "FR",
+          "nationalNumber": "00990225757",
+          "nationalId": "990225757",
+          "name": "IMMO DES HAUTS",
+          "legalForm": "Société par actions simplifiée (SAS)",
+          "status": "active",
+          "address": {
+            "line1": "60 ROUTE DU CHAPEAU ROUGE",
+            "line2": null,
+            "postalCode": "59229",
+            "city": "TETEGHEM-COUDEKERQUE-VILLAGE",
+            "country": "FR"
+          }
+        },
+        "meta": {
+          "source": "SIRENE",
+          "sourceDate": "2026-09-01",
+          "sourceSince": "2026-09-01",
+          "sourceUpdatedAt": "2025-12-06T07:38:49.000Z"
+        }
+      }
+    },
+    "GL": {
+      "vat": "GL12608950",
+      "fetchedAt": "2026-09-17T09:38:58.991Z",
+      "response": {
+        "data": {
+          "vatNumber": "GL12608950",
+          "countryCode": "GL",
+          "nationalNumber": "12608950",
+          "nationalId": "12608950",
+          "name": "KNI EJENDOMME A/S",
+          "legalForm": "Aktieselskab",
+          "status": "active",
+          "address": {
+            "line1": "J M Jensenip Aqquserna 2",
+            "line2": null,
+            "postalCode": "3911",
+            "city": "Sisimiut",
+            "country": "GL"
+          }
+        },
+        "meta": {
+          "source": "CVR-GL",
+          "sourceDate": "2026-09-17",
+          "sourceSince": "2026-09-17",
+          "sourceUpdatedAt": "2026-09-09T06:12:50.000Z"
+        }
+      }
+    },
+    "HR": {
+      "vat": "HR13579392023",
+      "fetchedAt": "2026-09-15T08:46:23.127Z",
+      "response": {
+        "data": {
+          "vatNumber": "HR13579392023",
+          "countryCode": "HR",
+          "nationalNumber": "13579392023",
+          "nationalId": "080160489",
+          "name": "HRVATSKI ŠUMARSKI INSTITUT - javni institut za znanstvenoistraživački rad u šumarstvu Hrvatske",
+          "legalForm": "ustanova",
+          "status": "active",
+          "address": {
+            "line1": "Cvjetno naselje 41",
+            "line2": null,
+            "postalCode": null,
+            "city": "Jastrebarsko",
+            "country": "HR"
+          }
+        },
+        "meta": {
+          "source": "SUDREG",
+          "sourceDate": "2026-09-11",
+          "sourceSince": "2026-09-04",
+          "sourceUpdatedAt": null
+        }
+      }
+    },
+    "HU": {
+      "vat": "HU15309769",
+      "fetchedAt": "2026-09-15T08:46:24.212Z",
+      "response": {
+        "data": {
+          "vatNumber": "HU15309769",
+          "countryCode": "HU",
+          "nationalNumber": "15309769",
+          "nationalId": null,
+          "name": "ORSZÁGOS ONKOLÓGIAI INTÉZET",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "RATH GYORGY UTCA 7-9",
+            "line2": null,
+            "postalCode": "1122",
+            "city": "BUDAPEST",
+            "country": "HU"
+          }
+        },
+        "meta": {
+          "source": "VIES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null,
+          "proof": {
+            "type": "vies_consultation_number",
+            "value": "0e3ebb1f-2d4f-4b2f-bf81-f61a2176b8c6"
+          }
+        }
+      }
+    },
+    "IE": {
+      "vat": "IE0006286E",
+      "fetchedAt": "2026-09-15T08:46:24.771Z",
+      "response": {
+        "data": {
+          "vatNumber": "IE0006286E",
+          "countryCode": "IE",
+          "nationalNumber": "0006286E",
+          "nationalId": null,
+          "name": "UNIVERSITY COLLEGE CORK",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "C/O CORMAC MCSWEENEY, FINANCE OFFICE MAIN QUADRANGLE, WESTERN ROAD, CORK",
+            "line2": null,
+            "postalCode": null,
+            "city": null,
+            "country": "IE"
+          }
+        },
+        "meta": {
+          "source": "VIES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null,
+          "proof": {
+            "type": "vies_consultation_number",
+            "value": "WAPIAAAAaCkPvP2g"
+          }
+        }
+      }
+    },
+    "IL": {
+      "vat": "IL510000011",
+      "fetchedAt": "2026-09-15T08:46:27.209Z",
+      "response": {
+        "data": {
+          "vatNumber": "IL510000011",
+          "countryCode": "IL",
+          "nationalNumber": "510000011",
+          "nationalId": "510000011",
+          "name": "אולימפיה אוטו בע\"מ",
+          "legalForm": "ישראלית חברה פרטית",
+          "status": "active",
+          "address": {
+            "line1": "הירקון 325",
+            "line2": null,
+            "postalCode": "6350454",
+            "city": "תל אביב - יפו",
+            "country": "IL"
+          }
+        },
+        "meta": {
+          "source": "RASHAM",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null
+        }
+      }
+    },
+    "IT": {
+      "vat": "IT00743110157",
+      "fetchedAt": "2026-09-15T08:46:27.948Z",
+      "response": {
+        "data": {
+          "vatNumber": "IT00743110157",
+          "countryCode": "IT",
+          "nationalNumber": "00743110157",
+          "nationalId": null,
+          "name": "MOTOROLA SOLUTIONS ITALIA SRL",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "LARGO FRANCESCO RICHINI 6",
+            "line2": null,
+            "postalCode": "20122",
+            "city": "MILANO",
+            "country": "IT"
+          }
+        },
+        "meta": {
+          "source": "VIES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null,
+          "proof": {
+            "type": "vies_consultation_number",
+            "value": "WAPIAAAAaCkPv-vh"
+          }
+        }
+      }
+    },
+    "JP": {
+      "vat": "JPT1000020012131",
+      "fetchedAt": "2026-09-15T08:46:28.374Z",
+      "response": {
+        "data": {
+          "vatNumber": "JPT1000020012131",
+          "countryCode": "JP",
+          "nationalNumber": "T1000020012131",
+          "nationalId": "1000020012131",
+          "name": "苫小牧市",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "北海道苫小牧市旭町４丁目５－６",
+            "line2": null,
+            "postalCode": null,
+            "city": null,
+            "country": "JP"
+          }
+        },
+        "meta": {
+          "source": "NTA",
+          "sourceDate": "2026-08-31",
+          "sourceSince": "2026-08-31",
+          "sourceUpdatedAt": "2022-06-13T00:00:00.000Z"
+        }
+      }
+    },
+    "LT": {
+      "vat": "LT100005517118",
+      "fetchedAt": "2026-09-15T08:46:29.367Z",
+      "response": {
+        "data": {
+          "vatNumber": "LT100005517118",
+          "countryCode": "LT",
+          "nationalNumber": "100005517118",
+          "nationalId": null,
+          "name": "UAB \"Metis Baltic\"",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "N/A",
+            "line2": null,
+            "postalCode": null,
+            "city": null,
+            "country": "LT"
+          }
+        },
+        "meta": {
+          "source": "VIES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null,
+          "proof": {
+            "type": "vies_consultation_number",
+            "value": "WAPIAAAAaCkPwVat"
+          }
+        }
+      }
+    },
+    "LU": {
+      "vat": "LU10137807",
+      "fetchedAt": "2026-09-15T08:46:29.973Z",
+      "response": {
+        "data": {
+          "vatNumber": "LU10137807",
+          "countryCode": "LU",
+          "nationalNumber": "10137807",
+          "nationalId": null,
+          "name": "CERATIZIT LUXEMBOURG, SARL",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "101, ROUTE DE HOLZEM",
+            "line2": "L-8232 MAMER",
+            "postalCode": null,
+            "city": null,
+            "country": "LU"
+          }
+        },
+        "meta": {
+          "source": "VIES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null,
+          "proof": {
+            "type": "vies_consultation_number",
+            "value": "WAPIAAAAaCkPwhFd"
+          }
+        }
+      }
+    },
+    "LV": {
+      "vat": "LV40002071224",
+      "fetchedAt": "2026-09-15T08:46:30.403Z",
+      "response": {
+        "data": {
+          "vatNumber": "LV40002071224",
+          "countryCode": "LV",
+          "nationalNumber": "40002071224",
+          "nationalId": "40002071224",
+          "name": "Sabiedrība ar ierobežotu atbildību \"FREONS\"",
+          "legalForm": "Sabiedrība ar ierobežotu atbildību",
+          "status": "active",
+          "address": {
+            "line1": "Firsa Sadovņikova iela 21 - 69",
+            "line2": null,
+            "postalCode": "LV-1003",
+            "city": "Rīga",
+            "country": "LV"
+          }
+        },
+        "meta": {
+          "source": "UR_VID",
+          "sourceDate": "2026-09-14",
+          "sourceSince": "2026-09-06",
+          "sourceUpdatedAt": null
+        }
+      }
+    },
+    "MT": {
+      "vat": "MT12894031",
+      "fetchedAt": "2026-09-15T08:46:31.036Z",
+      "response": {
+        "data": {
+          "vatNumber": "MT12894031",
+          "countryCode": "MT",
+          "nationalNumber": "12894031",
+          "nationalId": null,
+          "name": "THE UNIVERSITY OF MALTA",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "University Campus ADM Bldg.",
+            "line2": "Triq Tal-, Qroqq, MSD 06, Msida",
+            "postalCode": null,
+            "city": null,
+            "country": "MT"
+          }
+        },
+        "meta": {
+          "source": "VIES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null,
+          "proof": {
+            "type": "vies_consultation_number",
+            "value": "2b978148-d188-4dc6-8d63-a5c866761902"
+          }
+        }
+      }
+    },
+    "NG": {
+      "vat": "NG009690090001",
+      "fetchedAt": "2026-09-15T15:45:40.806Z",
+      "response": {
+        "data": {
+          "vatNumber": "NG009690090001",
+          "countryCode": "NG",
+          "nationalNumber": "009690090001",
+          "nationalId": "395010",
+          "name": "MTN NIGERIA COMMUNICATIONS PLC",
+          "legalForm": null,
+          "status": "unknown",
+          "address": {
+            "line1": null,
+            "line2": null,
+            "postalCode": null,
+            "city": null,
+            "country": "NG"
+          }
+        },
+        "meta": {
+          "source": "FIRS",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null
+        }
+      }
+    },
+    "NL": {
+      "vat": "NL001569569B01",
+      "fetchedAt": "2026-09-15T08:46:35.073Z",
+      "response": {
+        "data": {
+          "vatNumber": "NL001569569B01",
+          "countryCode": "NL",
+          "nationalNumber": "001569569B01",
+          "nationalId": null,
+          "name": "TECHNISCHE UNIVERSITEIT DELFT",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "STEVINWEG 00001",
+            "line2": null,
+            "postalCode": "2628CN",
+            "city": "DELFT",
+            "country": "NL"
+          }
+        },
+        "meta": {
+          "source": "VIES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null,
+          "proof": {
+            "type": "vies_consultation_number",
+            "value": "WAPIAAAAaCkPw6mJ"
+          }
+        }
+      }
+    },
+    "NO": {
+      "vat": "NO923609016",
+      "fetchedAt": "2026-09-15T15:45:41.219Z",
+      "response": {
+        "data": {
+          "vatNumber": "NO923609016",
+          "countryCode": "NO",
+          "nationalNumber": "923609016",
+          "nationalId": "923609016",
+          "name": "EQUINOR ASA",
+          "legalForm": "Allmennaksjeselskap",
+          "status": "active",
+          "address": {
+            "line1": "Forusbeen 50",
+            "line2": null,
+            "postalCode": "4035",
+            "city": "STAVANGER",
+            "country": "NO"
+          }
+        },
+        "meta": {
+          "source": "BRREG",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null
+        }
+      }
+    },
+    "NZ": {
+      "vat": "NZ9429040402543",
+      "fetchedAt": "2026-09-17T08:46:24.555Z",
+      "response": {
+        "data": {
+          "vatNumber": "NZ9429040402543",
+          "countryCode": "NZ",
+          "nationalNumber": "9429040402543",
+          "nationalId": "9429040402543",
+          "name": "AIR NEW ZEALAND LIMITED",
+          "legalForm": "NZ Limited Company",
+          "status": "active",
+          "address": {
+            "line1": "185 Fanshawe Street",
+            "line2": null,
+            "postalCode": "1010",
+            "city": "Auckland",
+            "country": "NZ"
+          }
+        },
+        "meta": {
+          "source": "NZBN",
+          "sourceDate": "2026-09-17",
+          "sourceSince": "2026-09-17",
+          "sourceUpdatedAt": "2026-03-11T01:28:07.000Z"
+        }
+      }
+    },
+    "PE": {
+      "vat": "PE20100017491",
+      "fetchedAt": "2026-09-15T08:46:36.792Z",
+      "response": {
+        "data": {
+          "vatNumber": "PE20100017491",
+          "countryCode": "PE",
+          "nationalNumber": "20100017491",
+          "nationalId": "20100017491",
+          "name": "INTEGRATEL PERÚ S.A.A.",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "JR. DOMINGO MARTINEZ LUJAN 1130",
+            "line2": null,
+            "postalCode": null,
+            "city": "Lima",
+            "country": "PE"
+          }
+        },
+        "meta": {
+          "source": "SUNAT",
+          "sourceDate": "2026-09-14",
+          "sourceSince": "2026-09-14",
+          "sourceUpdatedAt": null
+        }
+      }
+    },
+    "PL": {
+      "vat": "PL5250007307",
+      "fetchedAt": "2026-09-15T08:46:38.346Z",
+      "response": {
+        "data": {
+          "vatNumber": "PL5250007307",
+          "countryCode": "PL",
+          "nationalNumber": "5250007307",
+          "nationalId": "001240700",
+          "name": "INSTYTUT OCHRONY ŚRODOWISKA - PAŃSTWOWY INSTYTUT BADAWCZY",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "SŁOWICZA 32",
+            "line2": null,
+            "postalCode": "02-170",
+            "city": "WARSZAWA",
+            "country": "PL"
+          }
+        },
+        "meta": {
+          "source": "MF_WL",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": "1996-01-01T00:00:00.000Z"
+        }
+      }
+    },
+    "PT": {
+      "vat": "PT501413197",
+      "fetchedAt": "2026-09-15T08:46:39.095Z",
+      "response": {
+        "data": {
+          "vatNumber": "PT501413197",
+          "countryCode": "PT",
+          "nationalNumber": "501413197",
+          "nationalId": null,
+          "name": "UNIVERSIDADE DO PORTO",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "PRAÇA GOMES TEIXEIRA",
+            "line2": "PORTO",
+            "postalCode": "4099-002",
+            "city": "PORTO",
+            "country": "PT"
+          }
+        },
+        "meta": {
+          "source": "VIES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null,
+          "proof": {
+            "type": "vies_consultation_number",
+            "value": "WAPIAAAAaCkPys0m"
+          }
+        }
+      }
+    },
+    "RO": {
+      "vat": "RO1154",
+      "fetchedAt": "2026-09-15T08:46:39.864Z",
+      "response": {
+        "data": {
+          "vatNumber": "RO1154",
+          "countryCode": "RO",
+          "nationalNumber": "1154",
+          "nationalId": "J23/986/2002",
+          "name": "INSTITUTUL NATIONAL DE CERCETARE- DEZVOLTARE PENTRU MICROTEHNOLOGIE - IMT BUCURESTI INCD",
+          "legalForm": "ALTE FORME JURIDICE",
+          "status": "active",
+          "address": {
+            "line1": "STR. EROU IANCU NICOLAE nr. 126A",
+            "line2": "",
+            "postalCode": null,
+            "city": "Sat Voluntari Orş. Voluntari",
+            "country": "RO"
+          }
+        },
+        "meta": {
+          "source": "ANAF",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": "1992-12-10T00:00:00.000Z"
+        }
+      }
+    },
+    "RU": {
+      "vat": "RU9901037764",
+      "fetchedAt": "2026-09-15T13:56:40.674Z",
+      "response": {
+        "data": {
+          "vatNumber": "RU9901037764",
+          "countryCode": "RU",
+          "nationalNumber": "9901037764",
+          "nationalId": "1249900000020",
+          "name": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"СУНКАР\"",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": null,
+            "line2": null,
+            "postalCode": null,
+            "city": "г. Байконур",
+            "country": "RU"
+          }
+        },
+        "meta": {
+          "source": "RSMP",
+          "sourceDate": "2026-09-10",
+          "sourceSince": "2026-09-10",
+          "sourceUpdatedAt": "2024-05-10T00:00:00.000Z"
+        }
+      }
+    },
+    "SE": {
+      "vat": "SE202100293201",
+      "fetchedAt": "2026-09-15T08:46:40.686Z",
+      "response": {
+        "data": {
+          "vatNumber": "SE202100293201",
+          "countryCode": "SE",
+          "nationalNumber": "202100293201",
+          "nationalId": null,
+          "name": "UPPSALA UNIVERSITET",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "BOX 256",
+            "line2": null,
+            "postalCode": "751 05",
+            "city": "UPPSALA",
+            "country": "SE"
+          }
+        },
+        "meta": {
+          "source": "VIES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null,
+          "proof": {
+            "type": "vies_consultation_number",
+            "value": "ef566932-34d0-4421-9782-70f6d68182d6"
+          }
+        }
+      }
+    },
+    "SG": {
+      "vat": "SG190900023E",
+      "fetchedAt": "2026-09-15T08:47:45.123Z",
+      "response": {
+        "data": {
+          "vatNumber": "SG190900023E",
+          "countryCode": "SG",
+          "nationalNumber": "190900023E",
+          "nationalId": "190900023E",
+          "name": "AYER MOLEK RUBBER CO,LTD.,THE",
+          "legalForm": "Exempt Private Company Limited by Shares",
+          "status": "inactive",
+          "address": {
+            "line1": null,
+            "line2": null,
+            "postalCode": null,
+            "city": null,
+            "country": null
+          }
+        },
+        "meta": {
+          "source": "ACRA",
+          "sourceDate": "2026-08-14",
+          "sourceSince": "2026-08-14",
+          "sourceUpdatedAt": "1909-10-04T00:00:00.000Z"
+        }
+      }
+    },
+    "SI": {
+      "vat": "SI82646716",
+      "fetchedAt": "2026-09-15T08:47:44.347Z",
+      "response": {
+        "data": {
+          "vatNumber": "SI82646716",
+          "countryCode": "SI",
+          "nationalNumber": "82646716",
+          "nationalId": null,
+          "name": "KRKA, D.D., NOVO MESTO",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "ŠMARJEŠKA CESTA 6",
+            "line2": null,
+            "postalCode": "8501",
+            "city": "NOVO MESTO",
+            "country": "SI"
+          }
+        },
+        "meta": {
+          "source": "VIES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null,
+          "proof": {
+            "type": "vies_consultation_number",
+            "value": "97ed5fe7-8686-4780-bb7c-14dae1b6c28b"
+          }
+        }
+      }
+    },
+    "SK": {
+      "vat": "SK2020677824",
+      "fetchedAt": "2026-09-15T08:46:43.394Z",
+      "response": {
+        "data": {
+          "vatNumber": "SK2020677824",
+          "countryCode": "SK",
+          "nationalNumber": "2020677824",
+          "nationalId": null,
+          "name": "Žilinská univerzita v Žiline",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "Univerzitná 8215/1",
+            "line2": "Slovensko",
+            "postalCode": "01026",
+            "city": "Žilina",
+            "country": "SK"
+          }
+        },
+        "meta": {
+          "source": "VIES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null,
+          "proof": {
+            "type": "vies_consultation_number",
+            "value": "WAPIAAAAaCkPzwpn"
+          }
+        }
+      }
+    },
+    "TW": {
+      "vat": "TW04541302",
+      "fetchedAt": "2026-09-15T08:46:45.530Z",
+      "response": {
+        "data": {
+          "vatNumber": "TW04541302",
+          "countryCode": "TW",
+          "nationalNumber": "04541302",
+          "nationalId": "04541302",
+          "name": "鴻海精密工業股份有限公司",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "新北市土城區中山路66號",
+            "line2": null,
+            "postalCode": null,
+            "city": null,
+            "country": "TW"
+          }
+        },
+        "meta": {
+          "source": "GCIS",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": "2026-09-01T00:00:00.000Z"
+        }
+      }
+    },
+    "UA": {
+      "vat": "UA00373586",
+      "fetchedAt": "2026-09-15T14:57:19.867Z",
+      "response": {
+        "data": {
+          "vatNumber": "UA00373586",
+          "countryCode": "UA",
+          "nationalNumber": "00373586",
+          "nationalId": "3753",
+          "name": "ВІДКРИТЕ АКЦІОНЕРНЕ ТОВАРИСТВО \"ІВАНЬКІВСЬКИЙ ЦУКРОВИЙ КОМБІНАТ\"",
+          "legalForm": "ВІДКРИТЕ АКЦІОНЕРНЕ ТОВАРИСТВО",
+          "status": "active",
+          "address": {
+            "line1": null,
+            "line2": null,
+            "postalCode": null,
+            "city": null,
+            "country": "UA"
+          }
+        },
+        "meta": {
+          "source": "EDR",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": "2007-03-05T00:00:00.000Z"
+        }
+      }
+    },
+    "VN": {
+      "vat": "VN0100109106",
+      "fetchedAt": "2026-09-15T15:45:41.634Z",
+      "response": {
+        "data": {
+          "vatNumber": "VN0100109106",
+          "countryCode": "VN",
+          "nationalNumber": "0100109106",
+          "nationalId": "0100109106",
+          "name": "TẬP ĐOÀN CÔNG NGHIỆP - VIỄN THÔNG QUÂN ĐỘI",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "Số 5 phố Nguyễn Hữu An, Phường Cầu Giấy, TP Hà Nội",
+            "line2": null,
+            "postalCode": null,
+            "city": null,
+            "country": "VN"
+          }
+        },
+        "meta": {
+          "source": "VIETQR",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null
+        }
+      }
+    },
+    "XI": {
+      "vat": "XI197211009",
+      "fetchedAt": "2026-09-15T12:42:32.443Z",
+      "response": {
+        "data": {
+          "vatNumber": "XI197211009",
+          "countryCode": "XI",
+          "nationalNumber": "197211009",
+          "nationalId": null,
+          "name": "PROJECT PLUG LIMITED !! CLICK ENERGY",
+          "legalForm": null,
+          "status": "active",
+          "address": {
+            "line1": "1ST FLOOR TIMBERQUAY 100-114 STRAND ROAD DERRY",
+            "line2": "BT48 7NR",
+            "postalCode": null,
+            "city": null,
+            "country": "XI"
+          }
+        },
+        "meta": {
+          "source": "VIES",
+          "sourceDate": "2026-09-15",
+          "sourceSince": "2026-09-15",
+          "sourceUpdatedAt": null,
+          "proof": {
+            "type": "vies_consultation_number",
+            "value": "0ca1f918-ce81-4b12-82a6-673423f8f199"
+          }
+        }
+      }
+    }
+  }
+}

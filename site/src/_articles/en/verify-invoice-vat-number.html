@@ -1,0 +1,160 @@
+<!-- @meta
+{
+  "title": "Verify a VAT number on an invoice before paying it",
+  "description": "Check that the VAT number on an invoice belongs to a real, active company, and to the one named on it, before you pay. One call, dated record kept.",
+  "h1": "Verify a VAT number on an invoice before paying it",
+  "articleType": "TechArticle",
+  "updated": "2026-09-21",
+  "video": {
+    "file": "invoice",
+    "name": "Checking the VAT number on a supplier invoice",
+    "description": "The VAT number printed on an invoice is looked up, the company behind it is displayed with the register that answered, and a certified check is filed with the bill.",
+    "duration": "PT14S"
+  }
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Guide · Accounts payable</p>
+        <h1>Verify a VAT number on an invoice before paying it</h1>
+        <p class="section__lead">
+          An invoice arrives with a VAT number on it. Before the payment is approved, that number
+          should resolve to a real company, and to the one named at the top of the page.
+        </p>
+      </div>
+
+      <figure class="demo">
+        <video src="/demos/invoice.mp4" poster="/demos/invoice.jpg" width="1000" height="680"
+               autoplay loop muted playsinline
+               aria-label="An invoice with a VAT number on it; the number is looked up and the company behind it is shown, with the register that answered."></video>
+        <figcaption>The number on the bill, resolved to its company before approval.</figcaption>
+      </figure>
+
+      <h2 id="why">What the check catches</h2>
+      <ul>
+        <li><strong>A number that belongs to nobody.</strong> Invented, mistyped, or taken from a company struck off years ago.</li>
+        <li><strong>A number that belongs to somebody else.</strong> A real, valid number copied from a legitimate supplier onto an invoice issued by someone impersonating them.</li>
+        <li><strong>A company that is no longer active.</strong> The register says closed. The invoice does not.</li>
+        <li><strong>A zero-rated invoice you will have to justify.</strong> The intra-community exemption rests on the number being valid on the day of the transaction.</li>
+      </ul>
+      <p>
+        A checksum catches none of this. The check digit of a dissolved company is still correct,
+        and so is the check digit of a number belonging to a different company than the one on the
+        letterhead.
+      </p>
+
+      <h2 id="call">One call</h2>
+      <p>
+        Take the number off the invoice, look it up, compare what comes back with what is printed.
+      </p>
+      <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-str">&quot;{{apiBase}}/v1/lookup/FR68005420120&quot;</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">&quot;Authorization: Bearer $VATLAS_KEY&quot;</span></code></pre>
+      </div>
+      <p>
+        The answer carries <code>name</code>, <code>legalForm</code>, <code>address</code> and
+        <code>status</code>, plus a <code>meta</code> block naming the register that answered and
+        the date it said so.
+      </p>
+      <p>
+        Three outcomes are worth separating on screen: the number resolves and the name matches,
+        it resolves to a different company, or it resolves to nothing. Only the first should
+        approve itself.
+      </p>
+      <p>
+        Names rarely match character for character. <em>SARL</em> against <em>S.A.R.L.</em>, a
+        trading name against a legal one. Compare loosely, send the near misses to a human, and
+        block only on a clear mismatch.
+      </p>
+
+      <h2 id="proof">Keep the proof</h2>
+      <p>
+        Accepting an invoice that charges no VAT is a decision you may have to justify years
+        later. Ask for a documented check at the moment you make it:
+      </p>
+      <div class="code" data-copy>
+<pre><code><span class="tok-cmd">curl</span> <span class="tok-str">&quot;{{apiBase}}/v1/lookup/FR68005420120?prefer=proof&quot;</span> \
+  <span class="tok-flag">-H</span> <span class="tok-str">&quot;Authorization: Bearer $VATLAS_KEY&quot;</span></code></pre>
+      </div>
+      <p>
+        Every call is also retained on your account with its date and its raw answer, readable
+        through <a href="{{docsUrl}}#audit">the audit endpoint</a>. That is the dated trail an
+        auditor asks for, without building a log of your own.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>Verify at the moment of the decision.</strong> A lookup cached last quarter is a
+          convenience, not a check. Companies close between the order and the invoice.
+        </p>
+      </div>
+
+      <h2 id="recurring">Suppliers you pay every month</h2>
+      <p>
+        A supplier verified once does not stay verified. {{siteName}} can watch the companies you
+        already know and call back when a register changes its mind about one of them: see
+        <a href="{{docsUrl}}#monitor">the monitor endpoint</a>. The correction then lands before
+        the next payment run instead of during an audit.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Frequently asked</p>
+        <h2>Checking an invoice's VAT number, in short</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Isn't a valid checksum enough?</summary>
+          <p>
+            No. A checksum says the number is well formed. It says nothing about whether a company
+            exists behind it, whether it is still active, or whether it is the company on the
+            invoice.
+          </p>
+        </details>
+        <details>
+          <summary>What if the name comes back empty?</summary>
+          <p>
+            A few member states publish validity and no name. The number is confirmed, the
+            comparison cannot be made, and the invoice needs a human. Treat it as its own outcome
+            rather than as a failure.
+          </p>
+        </details>
+        <details>
+          <summary>Does this prove the invoice is genuine?</summary>
+          <p>
+            It proves the number resolves to a company, and says which one. That rules out a whole
+            class of fake invoices. It does not tell you the goods were delivered or that the bank
+            details belong to the supplier.
+          </p>
+        </details>
+        <details>
+          <summary>Can I check my own customers' numbers the same way?</summary>
+          <p>
+            Yes, and the stakes are higher. If you zero-rate a sale to a number that turns out to
+            be invalid, the VAT is yours to pay. Same call, proof kept the same way.
+          </p>
+        </details>
+        <details>
+          <summary>How far back does the record go?</summary>
+          <p>
+            Your lookups are retained on your account with their date and their raw answer, and
+            read back through <a href="{{docsUrl}}#audit">the audit endpoint</a>.
+          </p>
+        </details>
+      </div>
+
+      <h2>Keep reading</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/guides/enrich-a-crm-from-vat-numbers/">Enriching a CRM from VAT numbers</a></li>
+        <li><a href="/en/guides/autofill-company-form-from-vat-number/">Autofill a company form</a></li>
+        <li><a href="{{docsUrl}}">API documentation</a></li>
+        <li><a href="{{pricingUrl}}">Pricing</a></li>
+      </ul>
+      <p class="updated">Last updated 21 September 2026.</p>
+    </div>
+  </section>
+</main>

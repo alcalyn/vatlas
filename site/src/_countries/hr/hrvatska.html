@@ -1,0 +1,107 @@
+<!-- @meta
+{
+  "title": "PDV identifikacijski broj: OIB, format i pretraga tvrtke",
+  "description": "HR i jedanaest znamenki, sam OIB. Zašto je Hrvatska jedna od rijetkih zemalja s jednim jedinim identifikatorom i kako pronaći tvrtku.",
+  "h1": "Hrvatski PDV identifikacijski broj",
+  "term": "PDV identifikacijski broj",
+  "updated": "2026-09-03"
+}
+-->
+<main id="main">
+  <section class="section">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Hrvatska · HR</p>
+        <h1>Hrvatski PDV identifikacijski broj</h1>
+        <p class="section__lead">Hrvatska ima ono što većina zemalja nema: jedan broj za sve. OIB je porezni broj, matični broj u praksi i (s prefiksom HR) PDV identifikacijski broj.</p>
+      </div>
+
+      <div class="keyfact">
+        <p><strong>Format:</strong> <code>HR</code> + 11 znamenki (OIB)</p>
+        <p><strong>Primjer:</strong> <code>HR13579392023</code>, OIB <code>13579392023</code></p>
+        <p><strong>Dodjeljuje:</strong> Porezna uprava; PDV broj nastaje upisom u registar obveznika PDV-a.</p>
+      </div>
+
+      <h2 id="format">Struktura</h2>
+      <p>Hrvatski PDV identifikacijski broj uvijek ima <strong>trinaest znakova</strong>: oznaku zemlje i jedanaest znamenki. To je OIB, bez ikakve promjene.</p>
+      <ul class="breakdown">
+        <li><b>HR</b><span>Oznaka zemlje.</span></li>
+        <li><b>1357939202</b><span>Deset znamenki OIB-a.</span></li>
+        <li><b>3</b><span>Kontrolna znamenka.</span></li>
+      </ul>
+      <p>Kontrolna znamenka računa se po normi ISO 7064, MOD 11,10, istoj koja se koristi za njemački porezni broj. OIB nema unutarnje značenje: znamenke ne govore ni o vrsti subjekta ni o mjestu.</p>
+
+      <h2 id="oib">OIB, MBS i MB</h2>
+      <p><strong>OIB</strong> (osobni identifikacijski broj) dodjeljuje Porezna uprava svakoj pravnoj i fizičkoj osobi. Uveden je 2009. godine upravo zato da zamijeni niz starijih brojeva, i u tome je uspio: isti OIB koristi se prema poreznoj upravi, mirovinskom, zdravstvenom i sudskom registru.</p>
+      <p>Postoji još <strong>MBS</strong>, matični broj subjekta iz sudskog registra, i <strong>MB</strong>, matični broj iz registra poslovnih subjekata. Oba su starija i sve rjeđe se koriste, ali se i dalje pojavljuju na dokumentima. MBS je ono što {{siteName}} vraća kao <code>nationalId</code> za Hrvatsku, nadopunjen na punih devet znamenki: OIB je već sam PDV broj, pa bi njegovo ponavljanje bilo suvišno.</p>
+      <div class="callout"><p><strong>OIB nije isto što i PDV broj.</strong> Svaka tvrtka ima OIB od osnutka; PDV identifikacijski broj nastaje tek upisom u registar obveznika PDV-a. Znamenke su iste, ali prefiks <code>HR</code> smije se koristiti samo nakon upisa.</p></div>
+
+      <h2 id="pretraga">Kako pronaći tvrtku</h2>
+      <h3>Sudski registar</h3>
+      <p><a href="https://sudreg.pravosudje.hr/" rel="noopener">Sudski registar</a> je javan i besplatan, a pretražuje se po OIB-u, nazivu ili MBS-u. Sadrži naziv, sjedište, pravni oblik, temeljni kapital, osobe ovlaštene za zastupanje i godišnja financijska izvješća.</p>
+      <p>Uz web sučelje postoji i <strong>sudreg-data.gov.hr</strong>, službeno API sučelje s OAuth pristupom. Pristupni podaci dobivaju se besplatno, na zahtjev e-poštom, bez potrebe za registracijom tvrtke. To je izvor koji {{siteName}} koristi za Hrvatsku, i kao noćni skupni uvoz i uživo, broj po broj.</p>
+      <p>API je vjerna slika sheme registra, tablicu po tablicu: redak subjekta nosi OIB, status i datume, dok naziv, sjedište i pravni oblik žive svaki u svojoj tablici, povezani preko MBS-a. Svake radne noći objavljuje se novi snimak podataka i čuva ih se nekoliko dana, pa se cijeli skup može pročitati bez promjene izdanja usred posla.</p>
+      <h3>Porezna uprava</h3>
+      <p>Porezna uprava objavljuje registar obveznika PDV-a, koji je jedini izvor koji potvrđuje da OIB doista ima i PDV status.</p>
+      <h3>VIES</h3>
+      <p>Hrvatska <strong>objavljuje naziv i adresu</strong>. Adresa dolazi u jednom retku s zarezima, a naziv mjesta često se ponavlja, jednom samostalno i jednom uz poštanski broj.</p>
+      <p>Dva izvora ne nose ista polja. Sudski registar zna pravni oblik i skraćenu tvrtku, koje VIES nikada ne vraća; VIES nosi poštanski broj, koji registar bilježi za tek otprilike svako deseto sjedište. Nijedan nije podskup drugoga, a <code>GET /v1/lookup-all/:vatNumber</code> prikazuje oba odgovora jedan uz drugi.</p>
+
+      <h2 id="zamke">Hrvatske posebnosti</h2>
+      <ul>
+        <li><strong>OIB nije PDV broj.</strong> Znamenke jesu iste, ali prefiks <code>HR</code> vrijedi tek nakon upisa u registar obveznika PDV-a.</li>
+        <li><strong>MBS i MB nisu OIB.</strong> Stariji su i pojavljuju se na dokumentima, ali se iz njih ne može izračunati OIB.</li>
+        <li><strong>OIB nema unutarnje značenje</strong>: iz znamenki se ne može zaključiti ni vrsta subjekta ni mjesto.</li>
+        <li><strong>Naziv mjesta ponavlja se u adresi</strong> koju vraća VIES.</li>
+        <li><strong>Sudski registar rijetko objavljuje poštanski broj.</strong> Otprilike devet od deset sjedišta ima ulicu i mjesto, ali nijedan poštanski broj: polje je u registru neobavezno, a VIES je izvor koji ga ima.</li>
+        <li><strong>Upisana tvrtka nije ono čime se posluje.</strong> Puni naziv ispisuje cijeli predmet poslovanja i često prelazi dvjesto znakova; skraćena tvrtka je ona na računu.</li>
+        <li><strong>Pristup API-ju sudskog registra traži OAuth podatke</strong>, iako su besplatni.</li>
+      </ul>
+
+      <!-- @include partials/country/hr.html -->
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container content">
+      <div class="section__head">
+        <p class="eyebrow">Česta pitanja</p>
+        <h2>PDV broj ukratko</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Koliko znamenki ima hrvatski PDV broj?</summary>
+          <p>Jedanaest nakon oznake <code>HR</code>, dakle trinaest znakova ukupno.</p>
+        </details>
+        <details>
+          <summary>Je li OIB isto što i PDV broj?</summary>
+          <p>Znamenke jesu iste. PDV identifikacijski broj je OIB s prefiksom <code>HR</code>, ali postoji tek nakon upisa u registar obveznika PDV-a.</p>
+        </details>
+        <details>
+          <summary>Što su MBS i MB?</summary>
+          <p>Stariji matični brojevi iz sudskog registra i registra poslovnih subjekata. OIB ih je 2009. zamijenio kao jedinstveni identifikator.</p>
+        </details>
+        <details>
+          <summary>Zašto VIES odbija postojeću tvrtku?</summary>
+          <p>Zato što nije upisana u registar obveznika PDV-a. OIB ima, PDV status nema.</p>
+        </details>
+        <details>
+          <summary>Mogu li besplatno pretraživati sudski registar?</summary>
+          <p>Da, javan je i besplatan, a postoji i službeni API s besplatnim OAuth pristupom koji se dobiva na zahtjev.</p>
+        </details>
+      </div>
+
+      <h2>PDV broj u drugim zemljama</h2>
+      <ul class="otherlinks">
+        <li><a href="/en/vat-number/france/" hreflang="en" lang="en">France</a></li>
+            <li><a href="/en/vat-number/germany/" hreflang="en" lang="en">Germany</a></li>
+            <li><a href="/en/vat-number/italy/" hreflang="en" lang="en">Italy</a></li>
+            <li><a href="/en/vat-number/spain/" hreflang="en" lang="en">Spain</a></li>
+            <li><a href="/en/vat-number/netherlands/" hreflang="en" lang="en">Netherlands</a></li>
+            <li><a href="/en/vat-number/belgium/" hreflang="en" lang="en">Belgium</a></li>
+        <li><a href="/en/vat-number/" hreflang="en" lang="en">All countries</a></li>
+      </ul>
+      <p class="updated">Ažurirano 3. rujna 2026.</p>
+    </div>
+  </section>
+</main>

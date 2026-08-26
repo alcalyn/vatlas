@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="{{lang}}">
+  <head>
+    <!-- @include partials/head.html -->
+  </head>
+  <body>
+    <!-- @include partials/header.html -->
+
+    <main id="main">
+      <!-- Every figure is read at runtime from /data/benchmark.bench-compare.json, written by
+           `npm run benchmark -- <list> --paired`, which looks each number up twice within a few hundred
+           milliseconds: once through the API, once directly on VIES. See src/js/versus.js. -->
+      <section
+        class="section"
+        data-vs
+        data-t-loading="{{t.versus.loading}}"
+        data-t-error="{{t.versus.error}}"
+        data-t-run="{{t.versus.run}}"
+        data-t-nodata="{{t.versus.noData}}"
+        data-t-invalid="{{t.versus.invalid}}"
+        data-t-vatlas="{{t.versusLegend.vatlas}}"
+        data-t-vies="{{t.versusLegend.vies}}"
+      >
+        <div class="container">
+          <div class="section__head">
+            <h1>{{t.versus.h1}}</h1>
+            <p class="section__lead">{{t.versus.lead}}</p>
+            <p class="bench-run" data-vs-run>{{t.versus.loading}}</p>
+          </div>
+
+          <noscript>
+            <p class="bench-run">{{t.versus.noscript}}</p>
+          </noscript>
+
+          <p class="vs-invalid" data-vs-invalid hidden></p>
+
+          <ul class="vs-legend section--stack" data-vs-legend></ul>
+
+          <!-- The two headline figures: speed, and how often there was an answer. -->
+          <div class="vs-lines" data-vs-headline>
+            <p class="bench-empty">{{t.versus.loading}}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Response time, country by country -->
+      <section class="section section--alt">
+        <div class="container">
+          <div class="section__head">
+            <h2>{{t.versusPerCountry.title}}</h2>
+            <p class="section__lead">{{t.versusPerCountry.lead}}</p>
+          </div>
+
+          <div class="table-wrap section--stack">
+            <table class="table table--vs">
+              <caption class="sr-only">{{t.versusPerCountry.caption}}</caption>
+              <thead>
+                <tr>
+                  <th scope="col">{{t.versusTh.country}}</th>
+                  <th scope="col">{{t.versusTh.latency}}</th>
+                  <th scope="col" class="vs-delta-col">{{t.versusTh.delta}}</th>
+                  <th scope="col">{{t.versusTh.errorRate}}</th>
+                  <th scope="col">{{t.versusTh.completeness}}</th>
+                </tr>
+              </thead>
+              <tbody data-vs-latency-rows>
+                <tr>
+                  <td colspan="5">{{t.versus.loading}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Method -->
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2>{{t.versusMethod.title}}</h2>
+          </div>
+
+          <ol class="vs-method section--stack">
+            <li>
+              <h3>{{t.versusMethod.pairedTitle}}</h3>
+              <p>{{t.versusMethod.paired}}</p>
+            </li>
+            <li>
+              <h3>{{t.versusMethod.baselineTitle}}</h3>
+              <p>{{t.versusMethod.baseline}}</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- The lookup-all has no VIES equivalent to compare against, so it is described in text. -->
+      <section class="section section--alt">
+        <div class="container">
+          <div class="section__head">
+            <h2>{{t.versusBeyond.title}}</h2>
+            <p class="section__lead">{{t.versusBeyond.lead}}</p>
+          </div>
+          <p class="section--stack">{{t.versusBeyond.text}}</p>
+          <p><a class="btn btn--ghost" href="{{docsUrl}}#lookup-all">{{t.versusBeyond.cta}}</a></p>
+        </div>
+      </section>
+
+      <!-- Labels for the script, as markup rather than JSON (same reason as the benchmarks page). -->
+      <div class="bench-i18n" hidden data-vs-metrics>
+        <span data-code="p50">{{t.versusMetrics.p50}}</span>
+        <span data-code="answered">{{t.versusMetrics.answered}}</span>
+        <span data-code="p95">{{t.versusMetrics.p95}}</span>
+        <span data-code="completeness">{{t.versusMetrics.completeness}}</span>
+      </div>
+    </main>
+
+    <!-- @include partials/cta.html -->
+    <!-- @include partials/footer.html -->
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
