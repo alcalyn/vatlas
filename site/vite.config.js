@@ -142,6 +142,7 @@ function baseVars(locale, t, i18n) {
     discordUrl: site.discord,
     /** The invite URL without its scheme. */
     discordHandle: site.discord.replace(/^https?:\/\//, ''),
+    githubUrl: site.github,
     apiBase: site.apiBase,
     // The console cannot read this site's storage, so the link carries the language.
     consoleUrl: `${site.consoleUrl}?lang=${locale}`,

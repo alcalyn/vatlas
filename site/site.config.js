@@ -25,6 +25,8 @@ export const site = {
   email: process.env.CONTACT_EMAIL?.trim() || 'contact@vatlas.dev',
   // The community server. The Pro support invite is only shown in the console, which knows the plan.
   discord: env('DISCORD_INVITE_URL', 'https://discord.gg/R28nneW5xU'),
+  // The source code, for self-hosting.
+  github: 'https://github.com/alcalyn/vatlas',
   apiBase: env('API_BASE_URL', 'https://api.vatlas.dev'),
   // The developer console: sign-up, keys, usage, billing.
   consoleUrl: env('CONSOLE_BASE_URL', 'https://console.vatlas.dev'),

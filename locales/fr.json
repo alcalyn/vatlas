@@ -64,7 +64,8 @@
     "guides": "Guides",
     "benchmarks": "Benchmarks",
     "versus": "{{siteName}} vs VIES",
-    "discord": "Discord"
+    "discord": "Discord",
+    "github": "GitHub"
   },
   "countries": {
     "FR": "France",
@@ -278,6 +279,18 @@
     "f6": "Support <strong>réactif</strong> sur Discord",
     "f7": "Monitor : {{monitorsPro}} sociétés",
     "f8": "Lookup Async inclus"
+  },
+  "pricingSelfHost": {
+    "name": "Self-host",
+    "amount": "Gratuit",
+    "period": "open source",
+    "pitch": "Faites tourner Vatlas sur votre propre serveur, avec toutes les fonctionnalités.",
+    "f1": "<strong>Toutes les fonctionnalités</strong>, sans quota : lookups, monitors, Lookup Async, historique d’audit",
+    "f2": "Vos données restent sur votre infrastructure",
+    "f3": "Vous gérez les imports des registres, uniquement pour les pays qui vous intéressent",
+    "f4": "Logiciel libre, licence AGPLv3",
+    "cta": "Voir sur GitHub",
+    "foot": "L’hébergement et la maintenance sont à votre charge."
   },
   "pricingCompare": {
     "title": "Ce qui change d’une offre à l’autre",
